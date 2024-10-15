@@ -1,0 +1,41 @@
+{
+  "version": 3,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25,
+    "patch": 0
+  },
+  "configurePresets": [
+    {
+      "name": "native",
+      "description": "Build with -march=native, for local use, NOT FOR DISTRIBUTION",
+      "generator": "Ninja",
+      "binaryDir": "${sourceDir}/gen",
+      "cacheVariables": {
+        "CMAKE_C_COMPILER": "clang-19",
+        "CMAKE_CXX_COMPILER": "clang++-19",
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo",
+        "CMAKE_C_COMPILER_LAUNCHER": "ccache",
+        "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
+        "CMAKE_COLOR_DIAGNOSTICS": "ON"
+      },
+      "environment": {
+        "CCACHE_DIR": "${sourceDir}/.ccache"
+      }
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "native",
+      "configurePreset": "native",
+      "jobs": 16
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "native",
+      "configurePreset": "native"
+    }
+  ]
+}
