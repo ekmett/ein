@@ -12,7 +12,7 @@ TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build clean run test tags
 REPO := https://github.com/ekmett/ein/
 PROJECT := ein
-EXES := 
+EXES :=
 
 # run `make DEBUG=1` to see these
 ifdef DEBUG

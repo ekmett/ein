@@ -1,7 +1,7 @@
 # ein library
 # ===========
 
-add_library(ein STATIC 
+add_library(ein STATIC
   cpu.cpp
 )
 
