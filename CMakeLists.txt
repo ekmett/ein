@@ -14,6 +14,11 @@ set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+cmake_policy(SET CMP0116 NEW) # for doxygen to build
+
+# Specify the required Doxygen version for cmake module support
+set(REQUIRED_DOXYGEN_VERSION "1.12.0")
+
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
@@ -138,6 +143,7 @@ endmacro()
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads)
+find_package(Doxygen)
 
 find_library(COMPILER_RT_BUILTINS
   NAMES clang_rt.builtins-x86_64
@@ -222,3 +228,74 @@ if(ENABLE_TESTS)
 endif(ENABLE_TESTS)
 
 add_subdirectory(src)
+
+# docs
+# ====
+
+find_package(Doxygen)
+# Check Doxygen version
+function(check_doxygen_version)
+  if(DOXYGEN_FOUND)
+    execute_process(
+      COMMAND "${DOXYGEN_EXECUTABLE}" --version
+      OUTPUT_VARIABLE DOXYGEN_VERSION_OUTPUT
+      OUTPUT_STRIP_TRAILING_WHITESPACE
+    )
+    if(DOXYGEN_VERSION_OUTPUT VERSION_LESS "${REQUIRED_DOXYGEN_VERSION}")
+      set(DOXYGEN_FOUND FALSE PARENT_SCOPE)
+    else()
+      set(DOXYGEN_FOUND TRUE PARENT_SCOPE)
+      set(DOXYGEN_VERSION "${DOXYGEN_VERSION_OUTPUT}" PARENT_SCOPE)
+    endif()
+  else()
+    set(DOXYGEN_FOUND FALSE PARENT_SCOPE)
+  endif()
+endfunction()
+
+# Check if the required Doxygen version is available
+check_doxygen_version()
+
+if(NOT DOXYGEN_FOUND)
+  if(NOT EXISTS "${CMAKE_SOURCE_DIR}/lib/doxygen/bin/doxygen")
+    string(REPLACE "." "_" DOXYGEN_GIT_TAG "Release_${REQUIRED_DOXYGEN_VERSION}")
+    message(STATUS "Doxygen ${REQUIRED_DOXYGEN_VERSION} not found. Fetching and building...")
+    ExternalProject_Add(
+      DoxygenProject
+      GIT_REPOSITORY https://github.com/doxygen/doxygen.git
+      GIT_TAG ${DOXYGEN_GIT_TAG}
+      SOURCE_DIR ${CMAKE_BINARY_DIR}/doxygen-src
+      BINARY_DIR ${CMAKE_BINARY_DIR}/doxygen-build
+      CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}/lib/doxygen -Wno-dev
+      INSTALL_COMMAND make install
+    )
+  else()
+    message(STATUS "Doxygen ${REQUIRED_DOXYGEN_VERSION} not installed system-wide, but locally cached. Reusing...")
+  endif()
+  set(DOXYGEN_EXECUTABLE ${CMAKE_SOURCE_DIR}/lib/doxygen/bin/doxygen)
+else()
+  message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
+endif()
+
+# Configure Doxygen if the executable is available
+if(DOXYGEN_EXECUTABLE)
+  # Configure Doxyfile
+  set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
+  set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+
+  configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+
+  # Add a custom target for generating documentation
+  add_custom_target(
+    docs
+    ALL
+    COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
+    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Generating API documentation with Doxygen"
+    VERBATIM
+  )
+
+  # Make sure the documentation target depends on DoxygenProject if we built it
+  if(TARGET DoxygenProject)
+    add_dependencies(docs DoxygenProject)
+  endif()
+endif()
