@@ -75,6 +75,7 @@ jobs:
         -DCMAKE_BUILD_TYPE=Release
         -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
         -DCMAKE_COLOR_DIAGNOSTICS=ON
+        -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
         -G Ninja
         -S ${{ github.workspace }}
     - name: build
