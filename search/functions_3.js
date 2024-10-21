@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['operator_28_29_0',['operator()',['../structein_1_1memory_1_1c__munmap.html#a0fa2ee7e11d8fec5bb82c497c4dae9b6',1,'ein::memory::c_munmap::operator()()'],['../structein_1_1memory_1_1c__free.html#a5c566edbe61c8631927b93265a26de08',1,'ein::memory::c_free::operator()()']]]
+  ['nonnull_0',['nonnull',['../namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a',1,'ein::memory']]],
+  ['null_5fterminated_5fstring_5farg_1',['null_terminated_string_arg',['../namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e',1,'ein::memory']]]
 ];

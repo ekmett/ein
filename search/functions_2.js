@@ -1,5 +1,8 @@
 var searchData=
 [
-  ['nonnull_0',['nonnull',['../namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a',1,'ein::memory']]],
-  ['null_5fterminated_5fstring_5farg_1',['null_terminated_string_arg',['../namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e',1,'ein::memory']]]
+  ['make_5fmmap_5fptr_0',['make_mmap_ptr',['../group__memory__group.html#ga4fd564422d122e5ac77622371c61aa7e',1,'ein::memory']]],
+  ['monitor_1',['monitor',['../namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68',1,'ein::memory']]],
+  ['monitorx_2',['monitorx',['../namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe',1,'ein::memory']]],
+  ['mwait_3',['mwait',['../namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3',1,'ein::memory']]],
+  ['mwaitx_4',['mwaitx',['../namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878',1,'ein::memory']]]
 ];

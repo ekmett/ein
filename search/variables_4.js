@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['vendor_0',['vendor',['../namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8',1,'ein::cpu']]]
+  ['type_0',['type',['../namespaceein_1_1types.html#a794e800e3458965d45b95dd6d3a5e991',1,'ein::types']]]
 ];

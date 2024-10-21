@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['prelude_2ehpp_0',['prelude.hpp',['../prelude_8hpp.html',1,'']]]
+  ['numerics_2ecppm_0',['numerics.cppm',['../numerics_8cppm.html',1,'']]]
 ];

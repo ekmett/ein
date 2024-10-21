@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['unique_5fc_5fptr_0',['unique_c_ptr',['../group__memory__group.html#gae63e3353c4db8580f878b167cba377ad',1,'ein::memory']]],
-  ['unique_5fstr_1',['unique_str',['../group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc',1,'ein::memory']]]
+  ['mmap_5fptr_0',['mmap_ptr',['../group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16',1,'ein::memory']]]
 ];
