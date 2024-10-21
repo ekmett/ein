@@ -1,13 +1,13 @@
 # for muscle memory if nothing else
 
 # read requires_sudo.txt files for lists of programs that need sudo
-HEADERS := $(shell ls *.hpp)
-SOURCES := $(shell find t ein -name '*.[ch]pp' -o '*.cppm' -noth -path './gen/*' -print)
+HEADERS := $(shell find src -name '*.hpp' -print)
+SOURCES := $(shell find t src -name '*.cpp' -o -name '*.cppm' -print)
 BUILD_TYPE := RelWithDebInfo  # for release
 PRESET := native
 # BUILD_TYPE := Debug  # for debugging
 MAKEFLAGS += --no-print-directory -j
-CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find ein -type f -name CMakeLists.txt)
+CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
 TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build clean run test tags
 EXES := 
