@@ -6,6 +6,7 @@ project(ein VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
+set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/lib")
 set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
 set(CMAKE_CXX_MODULE_STD 1)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -19,11 +20,7 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(CheckIPOSupported)
 include(FetchContent)
 
-# clang-19 doesn't ship with clang-scan-deps. build the damn thing
-
 include(ExternalProject)
-
-# set(CMAKE_CXX_SCAN_DEPENDENCY_TOOL "cmake-scan-deps-19")
 
 # options
 # =======
@@ -145,7 +142,8 @@ find_package(Threads)
 find_library(COMPILER_RT_BUILTINS
   NAMES clang_rt.builtins-x86_64
   PATHS /usr/lib/llvm-19/lib/clang/19/lib/linux
-  NO_DEFAULT_PATH)
+  NO_DEFAULT_PATH
+)
 
 if(NOT COMPILER_RT_BUILTINS)
   message(FATAL_ERROR "clang_rt.builtins-x86_64 library not found")
