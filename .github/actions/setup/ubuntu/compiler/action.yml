@@ -1,0 +1,33 @@
+name: 'install the compiler'
+description: install clang, llvm and doxygen
+runs:
+  using: composite
+  steps:
+    - name: set tool path # for doxygen
+      run: |
+        echo "/usr/local/bin" >> $GITHUB_PATH
+      shell: bash
+    - name: install clang 19
+      run: |
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 19
+        sudo apt-get install -y clang-tools-19 lld-19
+        which clang++-19 && clang++-19 --version
+      shell: bash
+    - name: update alternatives
+      run: |
+        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 200
+        sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-19 200
+        sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-19 200
+        sudo update-alternatives --install /usr/bin/clang-scan-deps clang-scan-deps /usr/bin/clang-scan-deps-19 200
+      shell: bash
+    - name: install doxygen 1.12.0
+      run: |
+        sudo apt-get remove --purge -y doxygen
+        wget https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz
+        tar xvfpz doxygen-1.12.0.linux.bin.tar.gz
+        cd doxygen-1.12.0/
+        sudo make install
+        doxygen --version
+      shell: bash

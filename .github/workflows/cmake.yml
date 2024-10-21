@@ -20,17 +20,12 @@ jobs:
     runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
-    - uses: ./.github/actions/setup_ubuntu
+    - uses: ./.github/actions/setup/ubuntu/compiler
+    - uses: ./.github/actions/setup/ubuntu/build-tools
     - name: ccache
       uses: hendrikmuhs/ccache-action@v1.2
       with:
         key: ubuntu-latest-ccache
-    - name: update alternatives
-      run: |
-        sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 200
-        sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-19 200
-        sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-19 200
-        sudo update-alternatives --install /usr/bin/clang-scan-deps clang-scan-deps /usr/bin/clang-scan-deps-19 200
     - name: set reusable strings
       id: strings
       shell: bash
@@ -62,6 +57,7 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v4
+    - uses: ./.github/actions/setup/ubuntu/build-tools
     - name: set reusable strings
       id: strings
       shell: bash
@@ -72,23 +68,6 @@ jobs:
       with:
         name: Release build
         path: ${{ steps.strings.outputs.build-output-dir }}
-    - name: set tool path
-      run: |
-        export PATH=/opt/cmake/bin:/usr/local/bin:$PATH
-    - name: install cmake 3.30.5
-      run: |
-        wget https://github.com/Kitware/CMake/releases/download/v3.30.5/cmake-3.30.5-linux-x86_64.sh
-        sudo mkdir /opt/cmake
-        sudo sh cmake-3.30.5-linux-x86_64.sh --skip-license --prefix=/opt/cmake
-        sudo ln -sf /opt/cmake/bin/cmake /usr/local/bin/cmake
-        cmake --version
-    - name: install ninja 1.12.1
-      run: |
-        wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
-        sudo apt-get install -y unzip
-        unzip ninja-linux.zip -d /usr/local/bin/
-        sudo chmod +x /usr/local/bin/ninja
-        ninja --version
     - name: test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       run: |
