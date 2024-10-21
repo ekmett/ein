@@ -4,8 +4,6 @@
 
 This is a playground for wide SIMD evaluation.
 
-More to come.
-
 ## Install requirements
 
 You'll need a fairly bleeding edge compiler for this.
@@ -13,6 +11,8 @@ You'll need a fairly bleeding edge compiler for this.
 Currently the intention is to target AVX-512, and any support for something other than that (e.g. Apple Silicon, AVX-2)
 will be nominal at best, so make sure your CPU is up to snuff. Build instructions below are for Linux. I'll very likely
 take patches that broaden coverage, though.
+
+There's a lot more to come.
 
 ### ninja 1.12.1
 
