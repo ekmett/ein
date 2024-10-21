@@ -2,11 +2,27 @@
 
 This is a playground for wide SIMD evaluation.
 
+More to come.
+
 ## Install requirements
 
 You'll need a fairly bleeding edge compiler for this.
 
-### Upgrade clang to clang-19
+### Ninja 1.12.1
+
+You'll want to upgrade Ninja to a version that supports scanning for C++ modules.
+
+
+```bash
+wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+sudo apt-get install -y unzip
+unzip ninja-linux.zip -d /usr/local/bin/
+sudo chmod +x /usr/local/bin/ninja
+```
+
+### clang++-19
+
+Next you'll need a version of clang (and clang-tools) that supports c++23 pretty well. Currently this is clang++-19
 
 ```bash
 wget https://apt.llvm.org/llvm.sh
@@ -15,7 +31,9 @@ sudo ./llvm.sh 19
 sudo apt install clang-19 clang-tools-19 clangd-19 lldb-19 lld-19
 ```
 
-### Upgrade doxygen to 1.12.0
+### Doxygen 1.12.0
+
+Documentation requires doxygen 1.12.0.
 
 ```bash
 sudo apt-get uninstall doxygen
