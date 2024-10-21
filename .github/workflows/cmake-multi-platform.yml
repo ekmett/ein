@@ -45,7 +45,7 @@ jobs:
         wget https://github.com/Kitware/CMake/releases/download/v3.30.5/cmake-3.30.5-linux-x86_64.sh
         sudo mkdir /opt/cmake
         sudo sh cmake-3.30.5-linux-x86_64.sh --skip-license --prefix=/opt/cmake
-        sudo ln -s /opt/cmake/bin/cmake /usr/local/bin/cmake
+        sudo ln -sf /opt/cmake/bin/cmake /usr/local/bin/cmake
         cmake --version
 
     - name: Install Ninja 1.12.1
