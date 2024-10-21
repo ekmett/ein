@@ -12,9 +12,7 @@
 #define EIN_EVAL0_(...) __VA_ARGS__
 #define EIN_EVAL1_(...) EIN_EVAL0_(EIN_EVAL0_(EIN_EVAL0_(__VA_ARGS__)))
 #define EIN_EVAL2_(...) EIN_EVAL1_(EIN_EVAL1_(EIN_EVAL1_(__VA_ARGS__)))
-#define EIN_EVAL3_(...) EIN_EVAL2_(EIN_EVAL2_(EIN_EVAL2_(__VA_ARGS__)))
-#define EIN_EVAL4_(...) EIN_EVAL3_(EIN_EVAL3_(EIN_EVAL3_(__VA_ARGS__)))
-#define EIN_EVAL_(...)  EIN_EVAL4_(EIN_EVAL4_(EIN_EVAL4_(__VA_ARGS__)))
+#define EIN_EVAL_(...)  EIN_EVAL2_(EIN_EVAL2_(EIN_EVAL2_(__VA_ARGS__)))
 
 #define EIN_MAP_END_(...)
 #define EIN_MAP_OUT_
