@@ -54,6 +54,6 @@ doxygen --version
 
 Contributions and bug reports are welcome!
 
-Please feel free to contact me through GitHub or on the [\#haskell-lens](https://web.libera.chat/#haskell-lens) or [\#haskell](https://web.libera.chat/#haskell) IRC channel on Libera Chat. I can also be reached through Twitter/X as @kmett.
+Please feel free to contact me through GitHub or on the [\#haskell-lens](https://web.libera.chat/#haskell-lens) or [\#haskell](https://web.libera.chat/#haskell) IRC channel on Libera Chat. I can also be reached through Twitter/X as \@kmett.
 
 -Edward Kmett
