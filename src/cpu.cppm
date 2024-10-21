@@ -1,5 +1,3 @@
-module;
-
 export module ein.cpu;
 
 namespace ein::cpu {
