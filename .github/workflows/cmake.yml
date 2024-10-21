@@ -92,16 +92,16 @@ jobs:
     steps:
     - name: checkout code
       uses: actions/checkout@v4
-    - name: download build artifacts
-      uses: actions/download-artifact@v3
-      with:
-        name: Release build
-        path: ${{ steps.strings.outputs.build-output-dir }}
     - name: set reusable strings
       id: strings
       shell: bash
       run: |
         echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+    - name: download build artifacts
+      uses: actions/download-artifact@v3
+      with:
+        name: Release build
+        path: ${{ steps.strings.outputs.build-output-dir }}
     - name: set tool path
       run: |
         export PATH=/opt/cmake/bin:/usr/local/bin:$PATH
