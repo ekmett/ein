@@ -137,7 +137,7 @@ jobs:
     - name: download build artifacts
       uses: actions/download-artifact@v3
       with:
-        name: ${{ matrix.build_type}} build
+        name: Release build
         path: ${{ steps.strings.outputs.build-output-dir }}
     - name: publish docs
       uses: peaceiris/actions-gh-pages@v4
