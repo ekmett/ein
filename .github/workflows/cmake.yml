@@ -55,7 +55,6 @@ jobs:
       uses: hendrikmuhs/ccache-action@v1.2
       with:
         key: ubuntu-latest-ccache
-        create-symlink: true
     - name: update alternatives
       run: |
         sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 200
