@@ -21,7 +21,7 @@ module ein.cpu;
 
 namespace ein::cpu {
 
-const auto vendor = []() noexcept -> enum vendor {
+const enum vendor vendor = []() noexcept -> enum vendor {
   int32_t info[4] = {0};
   cpuid(info, 0, 0);
 
