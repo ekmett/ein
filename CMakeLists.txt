@@ -16,6 +16,8 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
+
+
 # Specify the required Doxygen version for cmake module support
 set(REQUIRED_DOXYGEN_VERSION "1.12.0")
 
@@ -27,7 +29,7 @@ include(FetchContent)
 
 # options
 # =======
-
+option(CODE_COVERAGE "Enable code coverage instrumentation" OFF)
 option(ENABLE_TESTS "Enable tests" ON)
 option(PRECOMPILE_HEADERS "Use precompiled headers" ON)
 option(BUILD_NATIVE "Build for current host only" ON)
@@ -51,6 +53,9 @@ set(CXX_GccOrClang "$<COMPILE_LANG_AND_ID:CXX,AppleClang,Clang,GNU>")
 set(Link_Clang "$<LINK_LANG_AND_ID:CXX,AppleClang,Clang>")
 set(Link_Gcc "$<COMPILE_LANG_AND_ID:CXX,GNU>")
 set(Link_GccOrClang "$<LINK_LANG_AND_ID:CXX,AppleClang,Clang,GNU>")
+
+# Define an option to specify the llvm-cov executable name
+set(LLVM_COV_EXECUTABLE "llvm-cov-19 gcov" CACHE STRING "Specify the llvm-cov executable name")
 
 # add lots of debug info to Debug builds
 set(CMAKE_CXX_FLAGS_DEBUG_INIT "-O0 -g3 -ggdb3 -gcolumn-info -gembed-source")
@@ -110,6 +115,15 @@ endif(UBSAN)
 
 # macros
 # ======
+
+macro(cover)
+  foreach(name IN LISTS ARGN)
+    target_compile_options(${name} PRIVATE
+      $<$<AND:$<BOOL:${CODE_COVERAGE}>,$<CXX_COMPILER_ID:Clang>>:-fprofile-instr-generate;-fcoverage-mapping>
+    )
+  endforeach()
+endmacro()
+
 
 # exclude targets from the 'all' target, so they have to be explicitly called for
 macro(exclude)
@@ -284,4 +298,19 @@ if(DOXYGEN_FOUND)
   if(TARGET DoxygenProject)
     add_dependencies(docs DoxygenProject)
   endif()
+endif()
+
+
+# If CODE_COVERAGE is enabled, add a custom target to generate coverage reports
+if(CODE_COVERAGE)
+  message(STATUS "Code coverage instrumentation enabled")
+  add_custom_target(coverage
+    COMMAND llvm-profdata merge -sparse default.profraw -o coverage.profdata
+    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o" -o -name "*.cppm.o") > coverage.info
+    COMMAND genhtml coverage.info --output-directory coverage-report
+    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMENT "Generating code coverage report"
+  )
+else()
+  message(STATUS "Code coverage instrumentation disabled")
 endif()

@@ -35,5 +35,3 @@ concept not_one_of_t = (!one_of_t<T,candidates...>);
 export namespace ein {
   using namespace ein::types;
 }
-
-
