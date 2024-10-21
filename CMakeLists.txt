@@ -1,5 +1,9 @@
-cmake_minimum_required(VERSION 3.29.20240416 FATAL_ERROR)
+cmake_minimum_required(VERSION 3.30.5 FATAL_ERROR)
 cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
+
+#set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
+set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
+# set(CMAKE_CXX_MODULE_STD TRUE)
 
 project(ein VERSION 0.0.1 LANGUAGES CXX)
 
@@ -7,25 +11,19 @@ set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
 set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/lib")
-set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
-set(CMAKE_CXX_MODULE_STD 1)
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
-cmake_policy(SET CMP0116 NEW) # for doxygen to build
 
 # Specify the required Doxygen version for cmake module support
 set(REQUIRED_DOXYGEN_VERSION "1.12.0")
-
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 
 include(CheckIPOSupported)
 include(FetchContent)
-
-include(ExternalProject)
+# include(ExternalProject)
 
 # options
 # =======
@@ -156,22 +154,18 @@ if(NOT COMPILER_RT_BUILTINS)
 endif()
 
 # spdlog is being used as our standard logging framework
-if(NOT EXISTS "${FETCHCONTENT_BASE_DIR}/spdlog-src")
-  fetchcontent_declare(
-    spdlog
-    GIT_REPOSITORY https://github.com/gabime/spdlog.git
-    GIT_TAG        v1.13.0
-    GIT_SHALLOW TRUE
-    GIT_PROGRESS TRUE
-  )
-  fetchcontent_makeavailable(spdlog)
-  # silence a third-party warning on clang++-18+
-  target_compile_options(spdlog PRIVATE
-    $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
-  )
-else()
-  set(spdlog_SOURCE_DIR "${FETCHCONTENT_BASE_DIR}/spdlog-src")
-endif()
+fetchcontent_declare(
+  spdlog
+  GIT_REPOSITORY https://github.com/gabime/spdlog.git
+  GIT_TAG        v1.13.0
+  GIT_SHALLOW TRUE
+  GIT_PROGRESS TRUE
+)
+fetchcontent_makeavailable(spdlog)
+# silence a third-party warning on clang++-18+
+target_compile_options(spdlog PRIVATE
+  $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
+)
 
 
 # nlohmann's json library provides a solid c++ API for working with json
@@ -267,29 +261,9 @@ check_doxygen_version()
 
 # Fetch Doxygen using FetchContent
 
-if(NOT DOXYGEN_FOUND)
-  set(DOXYGEN_INSTALL_DIR ${FETCHCONTENT_BASE_DIR}/doxygen-build)
-  set(DOXYGEN_SOURCE_DIR ${FETCHCONTENT_BASE_DIR}/doxygen-src)
-  set(DOXYGEN_EXECUTABLE ${DOXGEN_INSTALL_DIR}/bin/doxygen)
-  if(NOT EXISTS "${DOXYGEN_EXECUTABLE}")
-    string(REPLACE "." "_" DOXYGEN_GIT_TAG "Release_${REQUIRED_DOXYGEN_VERSION}")
-    message(STATUS "Doxygen ${REQUIRED_DOXYGEN_VERSION} not found. Fetching and building...")
-    fetchcontent_declare(
-      Doxygen
-      GIT_REPOSITORY https://github.com/doxygen/doxygen.git
-      GIT_TAG ${DOXYGEN_GIT_TAG}
-      SOURCE_DIR ${DOXYGEN_SOURCE_DIR}
-    )
-    fetchcontent_makeavailable(Doxygen)
-  else()
-    message(STATUS "Doxygen ${REQUIRED_DOXYGEN_VERSION} not installed system-wide, but locally cached. Reusing...")
-  endif()
-else()
+if(DOXYGEN_FOUND)
   message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
-endif()
 
-# Configure Doxygen if the executable is available
-if(DOXYGEN_EXECUTABLE)
   # Configure Doxyfile
   set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
   set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
