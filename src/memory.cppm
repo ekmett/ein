@@ -92,12 +92,12 @@ void mwait(uint32_t timer = 0) noexcept {
 
 // \internal
 EIN(export,inline)
-void monitorx(void const * addr, uint32_t hints = 0, uint32_t extensions = 0) noexcept {
+void monitorx(void const * addr) noexcept {
   // MONITORX: rAX = addr, ECX = extensions, EDX = hints
   __asm__ __volatile__ (
     "monitorx" // 0f 01 fa
     : // No output
-    : "rax"(addr), "rcx"(extensions), "rdx"(hints) // Input: addr, ECX = 0, EDX = 0
+    : "rax"(addr), "rcx"(0), "rdx"(0) // Input: addr, ECX = 0, EDX = 0
     : "memory" // Clobbered registers (memory is implied by monitorx)
   );
 }
@@ -111,7 +111,7 @@ void mwaitx(uint32_t timer = 0) noexcept {
 // spin using mwait/mwaitx watching memory until the target passes a test, waits timer-many cycles at a time.
 // note: waits on the cache line containing memory.
 void wait_until(auto const & m, auto p, uint32_t timer = 0) noexcept
-requires requires(decltype(p) p, decltype(*m) m) { { t(m) } -> std::convertible_to<bool>; } {
+requires requires(decltype(p) p, decltype(*m) m) { { t(m) } -> convertible_to<bool>; } {
   if (cpu::has_mwaitx) // amd
     while (!p(m)) {
       monitorx(&m);
