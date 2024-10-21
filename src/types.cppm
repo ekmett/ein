@@ -9,16 +9,15 @@ export module ein.types;
 namespace ein::types {
 
 export template <typename T>
-EIN(nodiscard,const)
-string_view type() noexcept {
-  static const string_view result = [&]() noexcept -> string_view {
+const string_view type = []() noexcept -> string_view {
+  // yo dawg
+  static const string_view bod = [&]() noexcept -> string_view {
     int status;
     size_t len = 0uz;
     const char * str = abi::__cxa_demangle(typeid(T).name(), nullptr, &len, &status);
     return {str, len};
   }();
-  return result;
-}
+}();
 
 export EIN(nodiscard,const)
 string_view type_of(auto const & t) noexcept {
