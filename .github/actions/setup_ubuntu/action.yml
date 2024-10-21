@@ -1,0 +1,43 @@
+name: setup_ubuntu
+description: Setup an Ubuntu environment
+runs:
+  using: composite
+  steps:
+    - name: set tool path
+      run: |
+        echo "/opt/cmake/bin" >> $GITHUB_PATH
+        echo "/usr/local/bin" >> $GITHUB_PATH
+      shell: bash
+    - name: install cmake 3.30.5
+      run: |
+        wget https://github.com/Kitware/CMake/releases/download/v3.30.5/cmake-3.30.5-linux-x86_64.sh
+        sudo mkdir /opt/cmake
+        sudo sh cmake-3.30.5-linux-x86_64.sh --skip-license --prefix=/opt/cmake
+        sudo ln -sf /opt/cmake/bin/cmake /usr/local/bin/cmake
+        which cmake && cmake --version
+      shell: bash
+    - name: install ninja 1.12.1
+      run: |
+        wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+        sudo apt-get install -y unzip
+        unzip ninja-linux.zip -d /usr/local/bin/
+        sudo chmod +x /usr/local/bin/ninja
+        which ninja && ninja --version
+      shell: bash
+    - name: install clang 19
+      run: |
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 19
+        sudo apt-get install -y clang-tools-19 lld-19
+        which clang++-19 && clang++-19 --version
+      shell: bash
+    - name: install doxygen 1.12.0
+      run: |
+        sudo apt-get remove --purge -y doxygen
+        wget https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz
+        tar xvfpz doxygen-1.12.0.linux.bin.tar.gz
+        cd doxygen-1.12.0/
+        sudo make install
+        doxygen --version
+      shell: bash
