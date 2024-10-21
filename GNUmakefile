@@ -10,6 +10,8 @@ MAKEFLAGS += --no-print-directory -j
 CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
 TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build clean run test tags
+REPO := https://github.com/ekmett/ein/
+PROJECT := ein
 EXES := 
 
 # run `make DEBUG=1` to see these
@@ -24,6 +26,8 @@ endif
 
 all: build
 
+#docs: gen/docs
+
 gen/ein.png: gen
 	@echo "\nDependency diagram available as gen/ein.png"
 
@@ -33,6 +37,9 @@ gen/alderaan.png: gen
 build: gen
 	@cmake --build gen -j
 	@bin/ninjatracing gen/.ninja_log > gen/trace.json
+
+#gen/docs: gen $(SOURCES) $(HEADERS)
+#	@clang-doc-19 --executor=all-TUs compile_commands.json --output=gen/doc --format=md --repository=$(REPO) --project-name=$(PROJECT) -p gen
 
 run: $(RUN)
 
