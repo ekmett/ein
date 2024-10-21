@@ -41,11 +41,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
-
-    - name: Install Clang 19
+    - name: Install Clang 19 using llvm.sh
       run: |
-        sudo apt-get update
-        sudo apt-get install -y clang-19 lld-19 clang-tools-19
+        wget https://apt.llvm.org/llvm.sh
+        chmod +x llvm.sh
+        sudo ./llvm.sh 19
+        sudo apt-get install -y clang-tools-19 lld-19
         sudo update-alternatives --install /usr/bin/clang clang /usr/bin/clang-19 100
         sudo update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-19 100
         sudo update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-19 100
