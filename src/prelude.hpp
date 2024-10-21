@@ -62,5 +62,6 @@
 #include <spdlog/fmt/ranges.h>
 #include <spdlog/fmt/ostr.h>
 #include <spdlog/fmt/bundled/color.h>
+#include <spdlog/fmt/bundled/format.h>
 #include <spdlog/cfg/env.h>
 #include <spdlog/sinks/stdout_color_sinks.h>
