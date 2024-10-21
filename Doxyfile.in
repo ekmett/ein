@@ -1,25 +1,25 @@
 # Minimal Doxyfile.in template
 
-# Project-related settings
-PROJECT_NAME           = @PROJECT_NAME@
-PROJECT_NUMBER         = @PROJECT_VERSION@
-
-# Where to find the source code to document
-INPUT                  = @CMAKE_SOURCE_DIR@/src
-
-# Directory where the documentation should be generated
-OUTPUT_DIRECTORY       = @CMAKE_BINARY_DIR@/docs
-
-# Format of generated documentation (HTML, PDF, etc.)
-GENERATE_HTML          = YES
-GENERATE_LATEX         = NO
-
-# Additional documentation options
+PROJECT_NAME = @PROJECT_NAME@
+PROJECT_NUMBER = @PROJECT_VERSION@
+QUIET = YES
+INPUT = @CMAKE_SOURCE_DIR@/src
+OUTPUT_DIRECTORY = @CMAKE_BINARY_DIR@/docs
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+EXTRACT_ALL = YES
+RECURSIVE = YES
+WARN_IF_UNDOCUMENTED = YES
+PROJECT_NUMBER = "@PROJECT_VERSION@"
+EXTENSION_MAPPING = cppm=C++
+FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm
 EXTRACT_ALL            = YES
-RECURSIVE              = YES
-
-# Optional: Treat undocumented members as warnings
-WARN_IF_UNDOCUMENTED   = YES
-
-# Optional: Set project version from CMake
-PROJECT_NUMBER         = "@PROJECT_VERSION@"
+EXTRACT_PRIVATE        = YES
+EXTRACT_STATIC         = YES
+ENABLE_PREPROCESSING   = YES
+MACRO_EXPANSION        = YES
+EXPAND_ONLY_PREDEF     = NO
+GROUP_NESTED_COMPOUNDS = YES
+PREDEFINED             = __cpp_modules=201907L
+PREDEFINED += EIN(...)=
+EXCLUDE += src/ein/map.hpp

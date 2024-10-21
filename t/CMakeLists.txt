@@ -1,14 +1,13 @@
 include(FetchContent)
 
-fetchcontent_declare(
-  Catch2
-  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-  GIT_TAG        v3.1.0 # or a later release
-)
-
 set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
 
 if(NOT EXISTS "${FETCHCONTENT_BASE_DIR}/catch2-src")
+  fetchcontent_declare(
+    Catch2
+    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+    GIT_TAG        v3.1.0 # or a later release
+  )
   fetchcontent_makeavailable(Catch2)
   # silence a third-party warning on clang++-18+
   target_compile_options(Catch2 PRIVATE

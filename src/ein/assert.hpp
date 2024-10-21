@@ -1,7 +1,5 @@
 #pragma once
 
-// use after import ein.logging;
-
 // TODO try to fuse the two spdlog::error calls below.
 #define ein_assert(cond) \
   do { \

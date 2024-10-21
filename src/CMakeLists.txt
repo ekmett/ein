@@ -8,7 +8,6 @@ set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 
 
 target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
-  ein/assert.cppm
   ein/memory.cppm
   ein/types.cppm
   ein/util.cppm)

@@ -156,14 +156,23 @@ if(NOT COMPILER_RT_BUILTINS)
 endif()
 
 # spdlog is being used as our standard logging framework
-#fetchcontent_declare(
-#  spdlog
-#  GIT_REPOSITORY https://github.com/gabime/spdlog.git
-#  GIT_TAG        v1.13.0
-#  GIT_SHALLOW TRUE
-#  GIT_PROGRESS TRUE
-#)
-#fetchcontent_makeavailable(spdlog)
+if(NOT EXISTS "${FETCHCONTENT_BASE_DIR}/spdlog-src")
+  fetchcontent_declare(
+    spdlog
+    GIT_REPOSITORY https://github.com/gabime/spdlog.git
+    GIT_TAG        v1.13.0
+    GIT_SHALLOW TRUE
+    GIT_PROGRESS TRUE
+  )
+  fetchcontent_makeavailable(spdlog)
+  # silence a third-party warning on clang++-18+
+  target_compile_options(spdlog PRIVATE
+    $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
+  )
+else()
+  set(spdlog_SOURCE_DIR "${FETCHCONTENT_BASE_DIR}/spdlog-src")
+endif()
+
 
 # nlohmann's json library provides a solid c++ API for working with json
 #fetchcontent_declare(
@@ -234,6 +243,7 @@ add_subdirectory(src)
 
 find_package(Doxygen)
 # Check Doxygen version
+
 function(check_doxygen_version)
   if(DOXYGEN_FOUND)
     execute_process(
@@ -255,23 +265,25 @@ endfunction()
 # Check if the required Doxygen version is available
 check_doxygen_version()
 
+# Fetch Doxygen using FetchContent
+
 if(NOT DOXYGEN_FOUND)
-  if(NOT EXISTS "${CMAKE_SOURCE_DIR}/lib/doxygen/bin/doxygen")
+  set(DOXYGEN_INSTALL_DIR ${FETCHCONTENT_BASE_DIR}/doxygen-build)
+  set(DOXYGEN_SOURCE_DIR ${FETCHCONTENT_BASE_DIR}/doxygen-src)
+  set(DOXYGEN_EXECUTABLE ${DOXGEN_INSTALL_DIR}/bin/doxygen)
+  if(NOT EXISTS "${DOXYGEN_EXECUTABLE}")
     string(REPLACE "." "_" DOXYGEN_GIT_TAG "Release_${REQUIRED_DOXYGEN_VERSION}")
     message(STATUS "Doxygen ${REQUIRED_DOXYGEN_VERSION} not found. Fetching and building...")
-    ExternalProject_Add(
-      DoxygenProject
+    fetchcontent_declare(
+      Doxygen
       GIT_REPOSITORY https://github.com/doxygen/doxygen.git
       GIT_TAG ${DOXYGEN_GIT_TAG}
-      SOURCE_DIR ${CMAKE_BINARY_DIR}/doxygen-src
-      BINARY_DIR ${CMAKE_BINARY_DIR}/doxygen-build
-      CMAKE_ARGS -DCMAKE_INSTALL_PREFIX=${CMAKE_SOURCE_DIR}/lib/doxygen -Wno-dev
-      INSTALL_COMMAND make install
+      SOURCE_DIR ${DOXYGEN_SOURCE_DIR}
     )
+    fetchcontent_makeavailable(Doxygen)
   else()
     message(STATUS "Doxygen ${REQUIRED_DOXYGEN_VERSION} not installed system-wide, but locally cached. Reusing...")
   endif()
-  set(DOXYGEN_EXECUTABLE ${CMAKE_SOURCE_DIR}/lib/doxygen/bin/doxygen)
 else()
   message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
 endif()
@@ -290,7 +302,7 @@ if(DOXYGEN_EXECUTABLE)
     ALL
     COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "Generating API documentation with Doxygen"
+    COMMENT "Generating API documentation with Doxygen ${DOXYGEN_EXECUTABLE}"
     VERBATIM
   )
 
