@@ -1,7 +1,7 @@
 var searchData=
 [
   ['imm_0',['imm',['../de/df9/namespaceein_1_1numerics.html#a284ac16dfa6911e9606bced23b11053f',1,'ein::numerics']]],
-  ['imm_5ft_1',['imm_t',['../d6/d84/structein_1_1numerics_1_1imm__t.html',1,'ein::numerics::imm_t&lt; N &gt;'],['../d6/d84/structein_1_1numerics_1_1imm__t.html#aac1d7fb2d492cebbd70e5993a3d79a7a',1,'ein::numerics::imm_t::imm_t() noexcept=default'],['../d6/d84/structein_1_1numerics_1_1imm__t.html#a4ab180044037b97b48e49ff180ee3661',1,'ein::numerics::imm_t::imm_t(imm_t const &amp;) noexcept=default'],['../d6/d84/structein_1_1numerics_1_1imm__t.html#aaaed4e46b45433d8f872535dd1c453ed',1,'ein::numerics::imm_t::imm_t(imm_t &amp;&amp;) noexcept=default']]],
+  ['imm_5ft_1',['imm_t',['../d6/d84/structein_1_1numerics_1_1imm__t.html',1,'ein::numerics']]],
   ['information_2',['Contact Information',['../index.html#autotoc_md5',1,'']]],
   ['install_20requirements_3',['Install requirements',['../index.html#autotoc_md1',1,'']]],
   ['int16x16_4',['int16x16',['../d7/dc1/namespaceein.html#a9116e3b64507581b031017dd2d8925c0',1,'ein']]],

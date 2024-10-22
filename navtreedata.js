@@ -80,8 +80,7 @@ var NAVTREEINDEX =
 [
 "annotated.html",
 "d4/d34/module__ein_8simd__data.html#a3eb3869fe6f24fc19b5894278c242460",
-"d7/dc1/namespaceein.html#ae22c55106d8b5926c0027ab1144e3cfa",
-"topics.html"
+"d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

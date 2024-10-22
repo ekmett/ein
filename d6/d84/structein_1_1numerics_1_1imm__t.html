@@ -150,112 +150,21 @@ $(function(){initNavTree('d6/d84/structein_1_1numerics_1_1imm__t.html','../../')
 </div><!--header-->
 <div class="contents">
 
-<p>allow passing immediate values to operators, without having to give up &lt;&lt; n as a syntactic form. xs &lt;&lt; imm&lt;n&gt; isn't much of an imposition.  
+<p>A compile time constant passed as an empty struct.  
  <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:aac1d7fb2d492cebbd70e5993a3d79a7a" id="r_aac1d7fb2d492cebbd70e5993a3d79a7a"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aac1d7fb2d492cebbd70e5993a3d79a7a">imm_t</a> () noexcept=default</td></tr>
-<tr class="separator:aac1d7fb2d492cebbd70e5993a3d79a7a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4ab180044037b97b48e49ff180ee3661" id="r_a4ab180044037b97b48e49ff180ee3661"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4ab180044037b97b48e49ff180ee3661">imm_t</a> (<a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> const &amp;) noexcept=default</td></tr>
-<tr class="separator:a4ab180044037b97b48e49ff180ee3661"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aaaed4e46b45433d8f872535dd1c453ed" id="r_aaaed4e46b45433d8f872535dd1c453ed"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaaed4e46b45433d8f872535dd1c453ed">imm_t</a> (<a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> &amp;&amp;) noexcept=default</td></tr>
-<tr class="separator:aaaed4e46b45433d8f872535dd1c453ed"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:adb699355c2edaa3dc638cc5eed95ea0e" id="r_adb699355c2edaa3dc638cc5eed95ea0e"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb699355c2edaa3dc638cc5eed95ea0e">operator=</a> (<a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> const &amp;) noexcept=default</td></tr>
-<tr class="separator:adb699355c2edaa3dc638cc5eed95ea0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a093906b2197ea617f2674818ffe34b3c" id="r_a093906b2197ea617f2674818ffe34b3c"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a093906b2197ea617f2674818ffe34b3c">operator=</a> (<a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> &amp;&amp;) noexcept=default</td></tr>
-<tr class="separator:a093906b2197ea617f2674818ffe34b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1c741f336105c30c19b38999d4875b43" id="r_a1c741f336105c30c19b38999d4875b43"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c741f336105c30c19b38999d4875b43">operator size_t</a> () noexcept</td></tr>
 <tr class="separator:a1c741f336105c30c19b38999d4875b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;size_t N&gt;<br />
-struct ein::numerics::imm_t&lt; N &gt;</div><p>allow passing immediate values to operators, without having to give up &lt;&lt; n as a syntactic form. xs &lt;&lt; imm&lt;n&gt; isn't much of an imposition. </p>
+struct ein::numerics::imm_t&lt; N &gt;</div><p>A compile time constant passed as an empty struct. </p>
+<p>Allow passing immediate values to operators without having to give up <code>x &lt;&lt; y</code> as a syntactic form. <code>xs &lt;&lt; imm&lt;n&gt;</code> isn't much of an imposition and ensures the compiler knows that n is a fixed constant known at compile time </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00034">34</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="aac1d7fb2d492cebbd70e5993a3d79a7a" name="aac1d7fb2d492cebbd70e5993a3d79a7a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aac1d7fb2d492cebbd70e5993a3d79a7a">&#9670;&#160;</a></span>imm_t() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a>&lt; N &gt;::imm_t </td>
-          <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a4ab180044037b97b48e49ff180ee3661" name="a4ab180044037b97b48e49ff180ee3661"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a4ab180044037b97b48e49ff180ee3661">&#9670;&#160;</a></span>imm_t() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a>&lt; N &gt;::imm_t </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a>&lt; N &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="aaaed4e46b45433d8f872535dd1c453ed" name="aaaed4e46b45433d8f872535dd1c453ed"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aaaed4e46b45433d8f872535dd1c453ed">&#9670;&#160;</a></span>imm_t() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a>&lt; N &gt;::imm_t </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a>&lt; N &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<h2 class="groupheader">Member Function Documentation</h2>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00038">38</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+</div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1c741f336105c30c19b38999d4875b43" name="a1c741f336105c30c19b38999d4875b43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c741f336105c30c19b38999d4875b43">&#9670;&#160;</a></span>operator size_t()</h2>
 
@@ -281,63 +190,9 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00040">40</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> N; }</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00039">39</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keywordflow">return</span> N; }</div>
 </div><!-- fragment -->
-</div>
-</div>
-<a id="a093906b2197ea617f2674818ffe34b3c" name="a093906b2197ea617f2674818ffe34b3c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a093906b2197ea617f2674818ffe34b3c">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> &amp; <a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a>&lt; N &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a>&lt; N &gt; &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="adb699355c2edaa3dc638cc5eed95ea0e" name="adb699355c2edaa3dc638cc5eed95ea0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#adb699355c2edaa3dc638cc5eed95ea0e">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a> &amp; <a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a>&lt; N &gt;::operator= </td>
-          <td>(</td>
-          <td class="paramtype"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a>&lt; N &gt; const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
