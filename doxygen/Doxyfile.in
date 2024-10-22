@@ -1,0 +1,52 @@
+# Minimal Doxyfile.in template
+
+PROJECT_NAME = @PROJECT_NAME@
+PROJECT_NUMBER = @PROJECT_VERSION@
+ENABLE_PREPROCESSING = YES
+EXCLUDE += src/ein/map.hpp
+EXPAND_ONLY_PREDEF = NO
+EXTENSION_MAPPING = cppm=C++
+EXTRACT_ALL = YES
+EXTRACT_PRIVATE = YES
+EXTRACT_STATIC = YES
+FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+GROUP_NESTED_COMPOUNDS = YES
+INPUT = @CMAKE_SOURCE_DIR@/README.md @CMAKE_SOURCE_DIR@/src
+MACRO_EXPANSION = YES
+OUTPUT_DIRECTORY = @CMAKE_BINARY_DIR@/docs
+PREDEFINED = DOXYGEN=1 __cpp_modules=201907L EIN(x)=
+PROJECT_NUMBER = "@PROJECT_VERSION@"
+QUIET = YES
+RECURSIVE = YES
+WARN_IF_DOC_ERROR = YES
+WARN_IF_UNDOCUMENTED = YES
+USE_MDFILE_AS_MAINPAGE = @CMAKE_SOURCE_DIR@/README.md
+INTERNAL_DOCS = NO
+
+# doxygen-awesome
+GENERATE_TREEVIEW      = YES # required!
+DISABLE_INDEX          = NO
+FULL_SIDEBAR           = NO
+HTML_EXTRA_STYLESHEET  = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only-darkmode-toggle.css
+HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only.css
+#HTML_EXTRA_STYLESHEET += @CMAKE_SOURCE_DIR@/doxygen/custom.css
+HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
+HTML_EXTRA_FILES       = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-darkmode-toggle.js
+HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-fragment-copy-button.js
+HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-paragraph-link.js
+HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-interactive-toc.js
+HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-tabs.js
+HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/header.html
+HTML_COPY_CLIPBOARD    = NO
+PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/doxygen/ein-logo.png
+# CREATE_SUBDIRS         = YES
+MARKDOWN_SUPPORT       = YES
+# TOC_INCLUDE_HEADINGS   = 1
+HAVE_DOT = YES
+DOT_IMAGE_FORMAT = svg
+# DOT_TRANSPARENT = YES
+DOT_GRAPH_MAX_NODES = 100
+INLINE_SIMPLE_STRUCTS = YES

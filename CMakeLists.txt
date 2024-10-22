@@ -16,8 +16,6 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-
-
 # Specify the required Doxygen version for cmake module support
 set(REQUIRED_DOXYGEN_VERSION "1.12.0")
 
@@ -181,6 +179,15 @@ target_compile_options(spdlog PRIVATE
   $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
 )
 
+# improve the formatting of css
+fetchcontent_declare(
+  doxygen-awesome-css
+  GIT_REPOSITORY https://github.com/jothepro/doxygen-awesome-css.git
+  GIT_TAG        v2.3.4
+  GIT_SHALLOW TRUE
+  GIT_PROGRESS TRUE
+)
+fetchcontent_makeavailable(doxygen-awesome-css)
 
 # nlohmann's json library provides a solid c++ API for working with json
 #fetchcontent_declare(
@@ -279,8 +286,8 @@ if(DOXYGEN_FOUND)
   message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
 
   # Configure Doxyfile
-  set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
-  set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/Doxyfile)
+  set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/doxygen/Doxyfile.in)
+  set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/doxygen/Doxyfile)
 
   configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
 

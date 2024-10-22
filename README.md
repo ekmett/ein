@@ -3,6 +3,8 @@
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
 
+[TOC]
+
 This is a playground for wide SIMD evaluation.
 
 ## Install requirements
