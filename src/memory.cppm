@@ -81,6 +81,7 @@ unique_str dup(char const * string) noexcept {
 // -----
 
 /// \brief User-land monitor for changes at the cache line containing the target address. Intel version
+/// \pre cpu::vendor == cpu::vendor::intel
 /// \ingroup memory_group
 /// \hideinlinesource
 /// \showrefs
@@ -97,6 +98,7 @@ void monitor(void const * addr) noexcept {
 
 /// \brief user-land mwait. intel version
 /// while it isn't _documented_ to support the timer options from AMD on newer cpus it does.
+/// \pre cpu::vendor == cpu::vendor::intel
 /// \ingroup memory_group
 /// \hideinlinesource
 /// \showrefs
@@ -110,6 +112,7 @@ void mwait(uint32_t timer = 0) noexcept {
 
 /// \brief user-land monitor for changes at the cache line containing the target address. AMD version
 /// \ingroup memory_group
+/// \pre cpu::vendor == cpu::vendor::amd
 /// \hideinlinesource
 /// \showrefs
 /** \cond */ EIN(inline,artificial) /** \endcond */
@@ -125,6 +128,7 @@ void monitorx(void const * addr) noexcept {
 
 /// \brief user-land mwait. AMD version
 /// \ingroup memory_group
+/// \pre cpu::vendor == cpu::vendor::amd
 /// \hideinlinesource
 /// \showrefs
 /** \cond */ EIN(inline,artificial) /** \endcond */
@@ -142,6 +146,7 @@ void mwaitx(uint32_t timer = 0) noexcept {
 /// By using MONITOR/MWAIT under the hood, this can achieve ~100ns wakeup times, while still allowing
 /// the paired hyperthread to proceed with tasks unburdened by a heavy spin-wait.
 ///
+/// \post \p f(\p m)
 /// \ingroup memory_group
 /// \hideinlinesource
 export

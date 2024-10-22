@@ -11,7 +11,7 @@ import ein.types;
 
 namespace ein {
 
-/// largest simd register width supported on this platform
+/// \brief largest simd register width supported on this platform in bytes
 export constexpr size_t max_simd_size
 #ifdef __AVX512F__
   = 64;
@@ -19,7 +19,7 @@ export constexpr size_t max_simd_size
   = 32;
 #endif
 
-/// is simd_data_t<T,N> defined?
+/// \brief \ref ein::simd_data_t<\p T,\p N> is defined
 export template <typename T, size_t N>
 concept has_simd_type =
      std::is_pod_v<T>
@@ -27,12 +27,12 @@ concept has_simd_type =
   && one_of<sizeof(T)*N,16,32,64>
   && sizeof(T)*N <= max_simd_size;
 
-// clang/gcc vector extension type
+// \brief unadulterated clang/gcc vector extension type
 export template <typename T, size_t N>
 requires has_simd_type<T,N>
 using simd_data_t = T __attribute__((__vector_size__(N*sizeof(T)),__aligned__(N*sizeof(T))));
 
-// can convert simd_data_t<U,N> -> simd_data_t<T,N> automatically using gcc vector extensions
+/// \brief can we convert simd_data_t<U,N> -> simd_data_t<T,N> automatically using gcc vector extensions?
 export template <typename U, typename T, size_t N>
 concept has_builtin_convertvector
       = has_simd_type<U,N>
@@ -41,6 +41,7 @@ concept has_builtin_convertvector
           __builtin_convertvector(x,simd_data_t<T,N>);
         };
 
+/// \brief is this type one of the types that is handed well automatically by clang/gcc vector extensions?
 export template <typename T>
 concept simd_builtin = one_of_t<T,int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,float,double>;
 
@@ -64,9 +65,9 @@ template <> struct pd<512> { using type = __m512d; };
 #endif
 /// \endcond
 
+/// \cond
 template <typename T, size_t N> struct simd_intrinsic {};
 
-/// \cond
 template <size_t N>
 struct simd_intrinsic<float,N> {
   using type = typename ps<N*sizeof(float)*8>::type;
@@ -83,11 +84,16 @@ struct simd_intrinsic<T,N> {
 };
 /// \endcond
 
+/// \brief Returns the Intel intrinsic type associated with a simd register full of \p N values of type \p T.
+/// \details this can differ from the preferred type used by clang/gcc vector extensions.
 /// \hideinitializer
 export template <typename T, size_t N>
 requires has_simd_type<T,N>
 using simd_intrinsic_t = typename simd_intrinsic<T,N>::type;
 
+/// \brief Do we want to use AVX512's notion of an _mmask8, _mmask16, _mmask32, or _mmask64 for masking operations
+// involving \p N values of type \p T at a time. Currently I prefer to use it if available, and if the `_mmaskN` type
+// matches the register size.
 export template <typename T, size_t N>
 concept has_mmask
 #if __AVX512F__
@@ -105,6 +111,7 @@ template <> struct mmask<32> { using type = __mmask32; };
 template <> struct mmask<64> { using type = __mmask64; };
 /// \endcond
 
+/// If AVX512 is enabled returns the type of an n-bit mmask.
 /// \hideinitializer
 export template <size_t N>
 requires one_of<N,8,16,32,64>
@@ -112,6 +119,7 @@ using mmask_t
   = typename mmask<N>::type;
 #endif
 
+/// What type of mask should I use?
 /// \hideinitializer
 export template <typename T, size_t N>
 requires has_simd_type<T,N>
@@ -122,13 +130,6 @@ using simd_mask_t =
   simd_intrinsic_t<T,N>;
 #endif
 
-/// \hideinitializer
-export constexpr size_t max_fp_comparison_predicate
-#ifdef AVX512
- = 32;
-#else
- = 8;
-#endif
 
 export enum class CMPINT : size_t {
   EQ    = 0x0uz
@@ -154,6 +155,15 @@ constexpr auto cmpint(T a, T b) noexcept {
   else if constexpr (imm8 == CMPINT::NE)    return a != b;
   else static_assert(false);
 }
+
+/// AVX512 added many more floating point comparison types. Do we have them?
+/// \hideinitializer
+export constexpr size_t max_fp_comparison_predicate
+#ifdef AVX512
+ = 32;
+#else
+ = 8;
+#endif
 
 export enum CMP : size_t {
   EQ_OQ     = 0x00uz  // Equal (ordered, nonsignaling)
@@ -192,6 +202,7 @@ export enum CMP : size_t {
 #endif
 };
 
+/// perform an avx512 style floating point comparison for scalar values.
 export template <CMP imm8, typename T>
 requires (one_of_t<T,float,double> && (imm8 < max_fp_comparison_predicate))
 constexpr auto cmp(T a, T b) noexcept {
@@ -203,7 +214,6 @@ constexpr auto cmp(T a, T b) noexcept {
   else if constexpr (imm8 == CMP::NLT_US)   return cmp_unord(a, b) || !(a < b);
   else if constexpr (imm8 == CMP::NLE_US)   return cmp_unord(a, b) || !(a <= b);
   else if constexpr (imm8 == CMP::ORD_Q)    return cmp_ord(a, b);
-#ifdef AVX512
   else if constexpr (imm8 == CMP::EQ_UQ)    return cmp_unord(a, b) || (a == b);
   else if constexpr (imm8 == CMP::NGE_US)   return cmp_unord(a, b) || !(a >= b);
   else if constexpr (imm8 == CMP::NGT_US)   return cmp_unord(a, b) || !(a > b);
@@ -228,7 +238,6 @@ constexpr auto cmp(T a, T b) noexcept {
   else if constexpr (imm8 == CMP::GE_OQ)    return cmp_ord(a, b) && (a >= b);
   else if constexpr (imm8 == CMP::GT_OQ)    return cmp_ord(a, b) && (a > b);
   else if constexpr (imm8 == CMP::TRUE_US)  return -1;
-#endif
   else static_assert(false);
 }
 

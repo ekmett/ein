@@ -8,6 +8,12 @@ export module ein.types;
 
 namespace ein::types {
 
+/// \brief returns the unmangled name of a the type \p T
+///
+/// \details Ideally this would be fully `constexpr`, but i'm not building my own demangler.
+///
+/// \hideinitializer
+/// \hideinlinesource
 export template <typename T>
 const string_view type = [] EIN(nodiscard,const) noexcept -> string_view {
   static const string_view body = [] EIN(nodiscard,const) noexcept -> string_view {
@@ -19,14 +25,18 @@ const string_view type = [] EIN(nodiscard,const) noexcept -> string_view {
   return body;
 }();
 
-export EIN(nodiscard,const)
+/// \brief returns the unmangled name of a the type of the (unused) argument passed to this function
+/// \hideinlinesource
+export /** \cond */ EIN(nodiscard,const) /** \endcond */
 const string_view type_of(auto const & t) noexcept {
   return type<remove_cvref_t<decltype(t)>>();
 }
 
+/// \brief type \p T is one of the \p candidates
 export template <typename T, typename ... candidates>
 concept one_of_t = (std::is_same_v<T,candidates> || ... || false);
 
+/// \brief type \p T is not one of the \p candidates
 export template <typename T, typename ... candidates>
 concept not_one_of_t = (!one_of_t<T,candidates...>);
 
