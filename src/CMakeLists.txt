@@ -3,6 +3,7 @@
 
 add_library(ein STATIC
   cpu.cpp
+  simd.cpp
 )
 
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)

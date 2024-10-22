@@ -54,7 +54,7 @@ struct simd {
   /// \inline \artificial
   /** \cond */ EIN(inline,artificial) /** \endcond */
   constexpr simd(T value) noexcept
-  : data(value) {}
+  : data(__extension__(data_t){value}) {}
 
   /// \inline \artificial
   /** \cond */ EIN(inline,artificial) /** \endcond */
@@ -73,7 +73,7 @@ struct simd {
   /** \cond */ EIN(inline,artificial) /** \endcond */
   constexpr simd(std::initializer_list<T> init) {
     // NB: initializer_lists are janky af
-    std::copy(init.begin(),std::min(N,init.size()),begin());
+    std::copy_n(init.begin(),std::min(N,init.size()),begin());
     /// TODO: (masked)loadu(std::data(init))
   }
 
@@ -148,15 +148,15 @@ struct simd {
 
   /// \inline \artificial \const
   /** \cond */ EIN(inline,artificial,const) /** \endcond */
-  constexpr T & operator[](std::size_t index) noexcept { return data[index]; }
+  constexpr T & operator[](std::size_t index) noexcept { return reinterpret_cast<T *>(&data)[index]; }
 
   /// \inline \artificial \const
   /** \cond */ EIN(inline,artificial,const) /** \endcond */
-  constexpr T const & operator[](std::size_t index) const noexcept { return data[index]; }
+  constexpr T const & operator[](std::size_t index) const noexcept { return reinterpret_cast<T const *>(&data)[index]; }
 
   /// \inline \artificial \const
   /** \cond */ EIN(inline,artificial,const) /** \endcond */
-  constexpr T * begin() noexcept { return &data; }
+  constexpr T * begin() noexcept { return reinterpret_cast<T*>(&data); }
 
   /// \inline \artificial \const
   /** \cond */ EIN(inline,artificial,const) /** \endcond */
@@ -164,7 +164,7 @@ struct simd {
 
   /// \inline \artificial \const
   /** \cond */ EIN(inline,artificial,const) /** \endcond */
-  constexpr T const * cbegin() const noexcept { return &data[0]; }
+  constexpr T const * cbegin() const noexcept { return reinterpret_cast<T const *>(&data); }
 
   /// \inline \artificial \const
   /** \cond */ EIN(inline,artificial,const) /** \endcond */
@@ -274,8 +274,8 @@ struct simd {
 
   EIN_UNARY_OP(+)
   EIN_UNARY_OP(-)
-  EIN_UNARY_OP(~)
-  EIN_UNARY_OP(!)
+  //EIN_UNARY_OP(~)
+  //EIN_UNARY_OP(!)
 
   #undef EIN_UNARY_OP
 
@@ -669,7 +669,7 @@ struct simd {
   /** \hideinlinesource \nodiscard \inline \pure */ \
   /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */ \
   friend constexpr mask_t operator op (simd a, simd b) noexcept \
-  requires has_mmask<T,N> && simd_builtin<T> { \
+  requires (has_mmask<T,N> && simd_builtin<T>) { \
     if consteval { \
       mask_t mask; \
       for (size_t i=0;i<N;++i) \
@@ -733,7 +733,7 @@ struct simd {
     else static_assert(false);
 #endif
 
-#define EIN_CASE(f) return f(p);
+#define EIN_CASE(f) return f(q);
 /// \endcond
 
   /// \hideinlinesource \nodiscard \inline \pure \artificial
@@ -745,6 +745,8 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
+      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
+      U const * q = reinterpret_cast<U const *>(p);
       EIN_SWITCH(
         _mm_load_ps,    _mm_load_pd,    _mm_load_epi32,
         _mm256_load_ps, _mm256_load_pd, _mm256_load_epi32,
@@ -762,6 +764,8 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
+      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
+      U const * q = reinterpret_cast<U const *>(p);
       EIN_SWITCH(
         _mm_loadu_ps,    _mm_loadu_pd,    _mm_loadu_epi32,
         _mm256_loadu_ps, _mm256_loadu_pd, _mm256_loadu_epi32,
@@ -780,12 +784,14 @@ struct simd {
       return result;
     } else {
 /** \cond */
-      #define ein_mm_steam_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))
-      #define ein_mm256_steam_load_ps(x) _mm256_castsi256_ps(_mm_stream_load_si256(x))
-      #define ein_mm512_steam_load_ps(x) _mm512_castsi512_ps(_mm_stream_load_si512(x))
-      #define ein_mm_steam_load_pd(x)    _mm_castsi128_pd   (_mm_stream_load_si128(x))
-      #define ein_mm256_steam_load_pd(x) _mm256_castsi256_pd(_mm_stream_load_si256(x))
-      #define ein_mm512_steam_load_pd(x) _mm512_castsi512_pd(_mm_stream_load_si512(x))
+      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
+      U const * q = reinterpret_cast<U const *>(p);
+      #define ein_mm_stream_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))
+      #define ein_mm256_stream_load_ps(x) _mm256_castsi256_ps(_mm256_stream_load_si256(x))
+      #define ein_mm512_stream_load_ps(x) _mm512_castsi512_ps(_mm512_stream_load_si512(x))
+      #define ein_mm_stream_load_pd(x)    _mm_castsi128_pd   (_mm_stream_load_si128(x))
+      #define ein_mm256_stream_load_pd(x) _mm256_castsi256_pd(_mm256_stream_load_si256(x))
+      #define ein_mm512_stream_load_pd(x) _mm512_castsi512_pd(_mm512_stream_load_si512(x))
       EIN_SWITCH(
         ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
         ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
@@ -811,6 +817,8 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
+      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
+      U const * q = reinterpret_cast<U const *>(p);
       EIN_SWITCH(
         _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,
         _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si128,
@@ -973,6 +981,9 @@ simd<T,N> stream_load(T * data) noexcept
 requires has_simd_type<T,N> {
   return simd<T,N>::stream_load(data);
 }
+
+export template struct simd<float,8>;
+export template struct simd<uint32_t,8>;
 
 } // namespace ein
 
