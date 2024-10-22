@@ -49,10 +49,12 @@ var namespaceein_1_1numerics =
       [ "NLE", "de/df9/namespaceein_1_1numerics.html#a32bdeed3721f5aacf279c4ff319be25caacd748f300c5d189c47807e2a9d6ea57", null ],
       [ "TRUE", "de/df9/namespaceein_1_1numerics.html#a32bdeed3721f5aacf279c4ff319be25cac0d83f0b82a6b30de8811e69e6d95c61", null ]
     ] ],
-    [ "cmp", "de/df9/namespaceein_1_1numerics.html#aa4539037182417945b1d77050230bc17", null ],
+    [ "cmp", "de/df9/namespaceein_1_1numerics.html#a1df7ba29c28b6ebc76b2dfec34aea3af", null ],
     [ "cmp_ord", "de/df9/namespaceein_1_1numerics.html#a6464b71a4b444b9927d67dea8c98decc", null ],
     [ "cmp_unord", "de/df9/namespaceein_1_1numerics.html#a9fa1941ec4ca8009b3b8069e5d7b57f7", null ],
     [ "cmpint", "de/df9/namespaceein_1_1numerics.html#aa0fd49d1a0e1242ba00c5413a5e4b9c9", null ],
+    [ "scalef", "de/df9/namespaceein_1_1numerics.html#a8284e830412dc7344b932477773f34e0", null ],
+    [ "scalef", "de/df9/namespaceein_1_1numerics.html#a5d8de400e0a838bc6064c93d9bbb20b6", null ],
     [ "scalef", "de/df9/namespaceein_1_1numerics.html#a15fad7b053b7e7d49e7488d62843052b", null ],
     [ "imm", "de/df9/namespaceein_1_1numerics.html#a37fc3a963d282ebcd3f98d95f8f7dfb6", null ],
     [ "max_fp_comparison_predicate", "de/df9/namespaceein_1_1numerics.html#a2f557389ce0e532829c46edfc0dacf6e", null ]

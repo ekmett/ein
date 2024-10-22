@@ -10,7 +10,7 @@ var searchData=
   ['cend_7',['cend',['../d1/d89/structein_1_1simd.html#a6dcfbcfdfe864cebdd0422b03742bffa',1,'ein::simd']]],
   ['clang_2019_8',['clang++-19',['../index.html#autotoc_md3',1,'']]],
   ['cmp_9',['CMP',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865',1,'ein::numerics']]],
-  ['cmp_10',['cmp',['../d1/d89/structein_1_1simd.html#a1f58d92e2a42a72bc4e077b9042852d3',1,'ein::simd::cmp'],['../de/df9/namespaceein_1_1numerics.html#aa4539037182417945b1d77050230bc17',1,'ein::numerics::cmp(T a, T b) noexcept']]],
+  ['cmp_10',['cmp',['../d1/d89/structein_1_1simd.html#a1f58d92e2a42a72bc4e077b9042852d3',1,'ein::simd::cmp'],['../de/df9/namespaceein_1_1numerics.html#a1df7ba29c28b6ebc76b2dfec34aea3af',1,'ein::numerics::cmp(T a, T b) noexcept']]],
   ['cmp_5ford_11',['cmp_ord',['../de/df9/namespaceein_1_1numerics.html#a6464b71a4b444b9927d67dea8c98decc',1,'ein::numerics']]],
   ['cmp_5funord_12',['cmp_unord',['../de/df9/namespaceein_1_1numerics.html#a9fa1941ec4ca8009b3b8069e5d7b57f7',1,'ein::numerics']]],
   ['cmpint_13',['CMPINT',['../de/df9/namespaceein_1_1numerics.html#a32bdeed3721f5aacf279c4ff319be25c',1,'ein::numerics']]],

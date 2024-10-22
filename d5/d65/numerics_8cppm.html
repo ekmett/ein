@@ -264,15 +264,19 @@ Functions</h2></td></tr>
 <tr class="memitem:a15fad7b053b7e7d49e7488d62843052b" id="r_a15fad7b053b7e7d49e7488d62843052b"><td class="memTemplParams" colspan="2">template&lt;one_of_t&lt; float, double &gt; T&gt; </td></tr>
 <tr class="memitem:a15fad7b053b7e7d49e7488d62843052b"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a15fad7b053b7e7d49e7488d62843052b">ein::numerics::scalef</a> (T x, T y) noexcept</td></tr>
 <tr class="separator:a15fad7b053b7e7d49e7488d62843052b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5d8de400e0a838bc6064c93d9bbb20b6" id="r_a5d8de400e0a838bc6064c93d9bbb20b6"><td class="memItemLeft" align="right" valign="top">template float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a5d8de400e0a838bc6064c93d9bbb20b6">ein::numerics::scalef</a> (float, float) noexcept</td></tr>
+<tr class="separator:a5d8de400e0a838bc6064c93d9bbb20b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8284e830412dc7344b932477773f34e0" id="r_a8284e830412dc7344b932477773f34e0"><td class="memItemLeft" align="right" valign="top">template double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a8284e830412dc7344b932477773f34e0">ein::numerics::scalef</a> (double, double) noexcept</td></tr>
+<tr class="separator:a8284e830412dc7344b932477773f34e0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa0fd49d1a0e1242ba00c5413a5e4b9c9" id="r_aa0fd49d1a0e1242ba00c5413a5e4b9c9"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a32bdeed3721f5aacf279c4ff319be25c">CMPINT</a> imm8, typename T &gt; <br />
 requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz))</td></tr>
 <tr class="memitem:aa0fd49d1a0e1242ba00c5413a5e4b9c9"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#aa0fd49d1a0e1242ba00c5413a5e4b9c9">ein::numerics::cmpint</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:aa0fd49d1a0e1242ba00c5413a5e4b9c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4539037182417945b1d77050230bc17" id="r_aa4539037182417945b1d77050230bc17"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865">CMP</a> imm8, typename T &gt; <br />
-requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (imm8 &lt; <a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a2f557389ce0e532829c46edfc0dacf6e">max_fp_comparison_predicate</a>))</td></tr>
-<tr class="memitem:aa4539037182417945b1d77050230bc17"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#aa4539037182417945b1d77050230bc17">ein::numerics::cmp</a> (T a, T b) noexcept</td></tr>
-<tr class="memdesc:aa4539037182417945b1d77050230bc17"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform an avx512 style floating point comparison for scalar values.  <br /></td></tr>
-<tr class="separator:aa4539037182417945b1d77050230bc17"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1df7ba29c28b6ebc76b2dfec34aea3af" id="r_a1df7ba29c28b6ebc76b2dfec34aea3af"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865">CMP</a> imm8, typename T &gt; <br />
+requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; 32uz))</td></tr>
+<tr class="memitem:a1df7ba29c28b6ebc76b2dfec34aea3af"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a1df7ba29c28b6ebc76b2dfec34aea3af">ein::numerics::cmp</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:a1df7ba29c28b6ebc76b2dfec34aea3af"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform an avx512 style floating point comparison for scalar values.  <br /></td></tr>
+<tr class="separator:a1df7ba29c28b6ebc76b2dfec34aea3af"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>

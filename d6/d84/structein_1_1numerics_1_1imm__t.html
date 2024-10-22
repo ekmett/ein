@@ -145,6 +145,7 @@ $(function(){initNavTree('d6/d84/structein_1_1numerics_1_1imm__t.html','../../')
 <div class="header">
   <div class="summary">
 <a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="../../db/d8a/structein_1_1numerics_1_1imm__t-members.html">List of all members</a>  </div>
   <div class="headertitle"><div class="title">ein::numerics::imm_t&lt; N &gt; Struct Template Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups">module <a class="el" href="../../da/dbc/module__ein_8numerics.html">ein.numerics</a></div></div></div>
 </div><!--header-->
@@ -157,13 +158,18 @@ $(function(){initNavTree('d6/d84/structein_1_1numerics_1_1imm__t.html','../../')
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a1c741f336105c30c19b38999d4875b43" id="r_a1c741f336105c30c19b38999d4875b43"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1c741f336105c30c19b38999d4875b43">operator size_t</a> () noexcept</td></tr>
 <tr class="separator:a1c741f336105c30c19b38999d4875b43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-attribs" name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a3b0021490f879317978c960afd69b6d9" id="r_a3b0021490f879317978c960afd69b6d9"><td class="memItemLeft" align="right" valign="top">static constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3b0021490f879317978c960afd69b6d9">value</a> = N</td></tr>
+<tr class="separator:a3b0021490f879317978c960afd69b6d9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;size_t N&gt;<br />
 struct ein::numerics::imm_t&lt; N &gt;</div><p>A compile time constant passed as an empty struct. </p>
 <p>Allow passing immediate values to operators without having to give up <code>x &lt;&lt; y</code> as a syntactic form. <code>xs &lt;&lt; imm&lt;n&gt;</code> isn't much of an imposition and ensures the compiler knows that n is a fixed constant known at compile time </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00038">38</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00040">40</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a id="a1c741f336105c30c19b38999d4875b43" name="a1c741f336105c30c19b38999d4875b43"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1c741f336105c30c19b38999d4875b43">&#9670;&#160;</a></span>operator size_t()</h2>
@@ -190,9 +196,36 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00039">39</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>{ <span class="keywordflow">return</span> N; }</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00042">42</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>{ <span class="keywordflow">return</span> N; }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a3b0021490f879317978c960afd69b6d9" name="a3b0021490f879317978c960afd69b6d9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3b0021490f879317978c960afd69b6d9">&#9670;&#160;</a></span>value</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">size_t <a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a>&lt; N &gt;::value = N</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00041">41</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+
 </div>
 </div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
