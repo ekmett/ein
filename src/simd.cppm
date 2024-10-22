@@ -770,39 +770,6 @@ struct simd {
     }
   }
 
-#if 0
-  /// \hideinlinesource \nodiscard \inline \pure \artificial
-  /** \cond */ EIN(nodiscard,inline,pure,artificial) /** \endcond */
-  static constexpr simd stream_load(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-/** \cond */
-      #define ein_mm_stream_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))
-      #define ein_mm256_stream_load_ps(x) _mm256_castsi256_ps(_mm256_stream_load_si256(x))
-      #define ein_mm512_stream_load_ps(x) _mm512_castsi512_ps(_mm512_stream_load_si512(x))
-      #define ein_mm_stream_load_pd(x)    _mm_castsi128_pd   (_mm_stream_load_si128(x))
-      #define ein_mm256_stream_load_pd(x) _mm256_castsi256_pd(_mm256_stream_load_si256(x))
-      #define ein_mm512_stream_load_pd(x) _mm512_castsi512_pd(_mm512_stream_load_si512(x))
-      EIN_SWITCH(
-        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
-        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
-        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
-      )
-
-      #undef ein_mm_stream_load_ps
-      #undef ein_mm256_stream_load_ps
-      #undef ein_mm512_stream_load_ps
-      #undef ein_mm_stream_load_pd
-      #undef ein_mm256_stream_load_pd
-      #undef ein_mm512_stream_load_pd
-/** \endcond */
-    }
-  }
-#endif
   /// \details legacy: may outperform loadu when the data crosses a cache boundary
   /// \hideinlinesource \nodiscard \inline \pure \artificial
   /** \cond */ EIN(nodiscard,inline,pure,artificial) /** \endcond */
@@ -820,6 +787,44 @@ struct simd {
       )
     }
   }
+
+/// \cond
+#undef EIN_CASE
+#define EIN_CASE(f) return f(p);
+/// \endcond
+
+  /// \hideinlinesource \nodiscard \inline \pure \artificial
+  /** \cond */ EIN(nodiscard,inline,pure,artificial) /** \endcond */
+  static constexpr simd stream_load(T const * p) noexcept {
+    if consteval {
+      simd result;
+      for (size_t i = 0;i<N;++i)
+        result[i] = p[i];
+      return result;
+    } else {
+/** \cond */
+      #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))
+      #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))
+      #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))
+      #define ein_mm_stream_load_pd(x)    cast_pd(_mm_stream_load_si128(x))
+      #define ein_mm256_stream_load_pd(x) cast_pd(_mm256_stream_load_si256(x))
+      #define ein_mm512_stream_load_pd(x) cast_pd(_mm512_stream_load_si512(x))
+      EIN_SWITCH(
+        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
+        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
+        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
+      )
+
+      #undef ein_mm_stream_load_ps
+      #undef ein_mm256_stream_load_ps
+      #undef ein_mm512_stream_load_ps
+      #undef ein_mm_stream_load_pd
+      #undef ein_mm256_stream_load_pd
+      #undef ein_mm512_stream_load_pd
+/** \endcond */
+    }
+  }
+
 /// \cond
 #undef EIN_CASE
 
