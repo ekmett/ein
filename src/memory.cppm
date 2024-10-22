@@ -83,6 +83,7 @@ unique_str dup(char const * string) noexcept {
 /// \brief User-land monitor for changes at the cache line containing the target address. Intel version
 /// \ingroup memory_group
 /// \hideinlinesource
+/// \showrefs
 /** \cond */ EIN(inline,artificial) /** \endcond */
 void monitor(void const * addr) noexcept {
   // MONITOR: rAX = addr, ECX = extensions, EDX = hints
@@ -98,6 +99,7 @@ void monitor(void const * addr) noexcept {
 /// while it isn't _documented_ to support the timer options from AMD on newer cpus it does.
 /// \ingroup memory_group
 /// \hideinlinesource
+/// \showrefs
 /** \cond */ EIN(inline,artificial) /** \endcond */
 void mwait(uint32_t timer = 0) noexcept {
   __asm__ volatile("mwait" : : "a"(0), "c"(0), "d"(timer));
@@ -109,6 +111,7 @@ void mwait(uint32_t timer = 0) noexcept {
 /// \brief user-land monitor for changes at the cache line containing the target address. AMD version
 /// \ingroup memory_group
 /// \hideinlinesource
+/// \showrefs
 /** \cond */ EIN(inline,artificial) /** \endcond */
 void monitorx(void const * addr) noexcept {
   // MONITORX: rAX = addr, ECX = extensions, EDX = hints
@@ -123,6 +126,7 @@ void monitorx(void const * addr) noexcept {
 /// \brief user-land mwait. AMD version
 /// \ingroup memory_group
 /// \hideinlinesource
+/// \showrefs
 /** \cond */ EIN(inline,artificial) /** \endcond */
 void mwaitx(uint32_t timer = 0) noexcept {
   __asm__ volatile("mwaitx" : : "a"(0), "c"(0), "d"(timer));

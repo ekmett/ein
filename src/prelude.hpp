@@ -3,6 +3,8 @@
 /// \file
 /// \brief precompiled header
 /// \author Edward Kmett
+/// \hideincludedbygraph
+/// \hideincludegraph
 
 #include <algorithm>
 #include <array>

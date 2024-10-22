@@ -11,6 +11,7 @@ import ein.types;
 
 namespace ein {
 
+/// largest simd register width supported on this platform
 export constexpr size_t max_simd_size
 #ifdef __AVX512F__
   = 64;
@@ -18,6 +19,7 @@ export constexpr size_t max_simd_size
   = 32;
 #endif
 
+/// is simd_data_t<T,N> defined?
 export template <typename T, size_t N>
 concept has_simd_type =
      std::is_pod_v<T>
