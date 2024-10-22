@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['simd_5fdata_5ft_0',['simd_data_t',['../d7/dc1/namespaceein.html#a2fe08d2d97e186bfa4d9e484443df6e8',1,'ein']]],
-  ['simd_5fintrinsic_5ft_1',['simd_intrinsic_t',['../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3',1,'ein']]],
-  ['simd_5fmask_5ft_2',['simd_mask_t',['../d7/dc1/namespaceein.html#a423156b83124d4f090aad2b1e75447b1',1,'ein']]],
-  ['simd_5ft_3',['simd_t',['../d1/d89/structein_1_1simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]]
+  ['mask_5ft_0',['mask_t',['../d1/d89/structein_1_1simd.html#a8c539e8d158e6d2f1740ee9246867cc3',1,'ein::simd']]],
+  ['mmap_5fptr_1',['mmap_ptr',['../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16',1,'ein::memory']]],
+  ['mmask_5ft_2',['mmask_t',['../d7/dc1/namespaceein.html#a239b5fd784078f2e10a6d6c43f5525dd',1,'ein']]]
 ];

@@ -51,7 +51,6 @@ var structein_1_1simd =
     [ "rend", "d1/d89/structein_1_1simd.html#a5018ddf2ac105f8189d8a72a66871545", null ],
     [ "shuffle", "d1/d89/structein_1_1simd.html#aa59ca7c3622caf2c0f038291aa162ae1", null ],
     [ "shuffle", "d1/d89/structein_1_1simd.html#af08a5da9c45a7ef484c7dafd678e49c1", null ],
-    [ "stream_load", "d1/d89/structein_1_1simd.html#a46c1b89940d707f5c9013599bac488ba", null ],
     [ "cmp", "d1/d89/structein_1_1simd.html#a1f58d92e2a42a72bc4e077b9042852d3", null ],
     [ "cmpint", "d1/d89/structein_1_1simd.html#af590ef029b533f3dfcda0f10d8e69941", null ],
     [ "get", "d1/d89/structein_1_1simd.html#a0e9cd01e79c4a86219f953f666e9a196", null ],

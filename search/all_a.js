@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['imm_0',['imm',['../de/df9/namespaceein_1_1numerics.html#a284ac16dfa6911e9606bced23b11053f',1,'ein::numerics']]],
+  ['imm_0',['imm',['../de/df9/namespaceein_1_1numerics.html#a37fc3a963d282ebcd3f98d95f8f7dfb6',1,'ein::numerics']]],
   ['imm_5ft_1',['imm_t',['../d6/d84/structein_1_1numerics_1_1imm__t.html',1,'ein::numerics']]],
   ['information_2',['Contact Information',['../index.html#autotoc_md5',1,'']]],
   ['install_20requirements_3',['Install requirements',['../index.html#autotoc_md1',1,'']]],

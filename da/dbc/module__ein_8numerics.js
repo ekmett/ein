@@ -51,8 +51,9 @@ var module__ein_8numerics =
     [ "ein::numerics::uint_t", "da/dbc/module__ein_8numerics.html#aa347122ef9a30fb2ed727fbcfa8d7f33", null ],
     [ "ein::numerics::cmp_unord", "da/dbc/module__ein_8numerics.html#a9fa1941ec4ca8009b3b8069e5d7b57f7", null ],
     [ "ein::numerics::cmp_ord", "da/dbc/module__ein_8numerics.html#a6464b71a4b444b9927d67dea8c98decc", null ],
+    [ "ein::numerics::scalef", "da/dbc/module__ein_8numerics.html#a15fad7b053b7e7d49e7488d62843052b", null ],
     [ "ein::numerics::cmpint", "da/dbc/module__ein_8numerics.html#aa0fd49d1a0e1242ba00c5413a5e4b9c9", null ],
     [ "ein::numerics::cmp", "da/dbc/module__ein_8numerics.html#aa4539037182417945b1d77050230bc17", null ],
-    [ "ein::numerics::imm", "da/dbc/module__ein_8numerics.html#a284ac16dfa6911e9606bced23b11053f", null ],
+    [ "ein::numerics::imm", "da/dbc/module__ein_8numerics.html#a37fc3a963d282ebcd3f98d95f8f7dfb6", null ],
     [ "ein::numerics::max_fp_comparison_predicate", "da/dbc/module__ein_8numerics.html#a2f557389ce0e532829c46edfc0dacf6e", null ]
 ];

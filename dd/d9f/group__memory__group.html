@@ -253,12 +253,14 @@ requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</td
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is a memory region mapped by <code>mmap</code> <code>size</code> bytes long </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd><code>p</code> has been <code>munmap</code>ped </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00032">32</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00034">34</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -295,7 +297,7 @@ requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</td
 </div><div class="memdoc">
 <div class="textblock"><p>std::unique_ptr Deleter that calls free() </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00052">52</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00055">55</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Static Public Member Functions</h3></td></tr>
 <tr class="memitem:a5c566edbe61c8631927b93265a26de08" id="r_a5c566edbe61c8631927b93265a26de08"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
@@ -323,12 +325,12 @@ template&lt;trivially_destructible T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00056">56</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00059">59</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -358,7 +360,7 @@ template&lt;trivially_destructible T&gt; </div>
 
 <p>memory mapped data, managed by std::unique_ptr. calls munmap to free. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00040">40</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00042">42</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -386,7 +388,7 @@ template&lt;trivially_destructible T&gt; </div>
 
 <p>a unique_ptr managed c pointer, deleted by free() </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00064">64</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00067">67</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -412,7 +414,7 @@ template&lt;trivially_destructible T&gt; </div>
 
 <p>a c string, managed by unique_ptr </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00070">70</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00073">73</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -435,17 +437,19 @@ template&lt;trivially_destructible T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>duplicate a c string using strdup and manage it as a unique_str </p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>string</code> is non-null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>result is a null-terminated c string to be cleaned up by free </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00075">75</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>                                             {</div>
-<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> { strdup(<span class="keywordtype">string</span>) };</div>
-<div class="ttc" id="agroup__memory__group_html_ga28e90c7a3be1dbddae254d6b9b8e42cc"><div class="ttname"><a href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">ein::memory::unique_str</a></div><div class="ttdeci">unique_c_ptr&lt; char const  &gt; unique_str</div><div class="ttdoc">a c string, managed by unique_ptr</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00070">memory.cppm:70</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00081">81</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   82</span>                                                           {</div>
+<div class="line"><span class="lineno">   83</span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> { strdup(<span class="keywordtype">string</span>) };</div>
+<div class="ttc" id="agroup__memory__group_html_ga28e90c7a3be1dbddae254d6b9b8e42cc"><div class="ttname"><a href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">ein::memory::unique_str</a></div><div class="ttdeci">unique_c_ptr&lt; char const  &gt; unique_str</div><div class="ttdoc">a c string, managed by unique_ptr</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00073">memory.cppm:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -471,14 +475,15 @@ template&lt;trivially_destructible T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>construct a mmap_ptr using a base pointer and its size for munmap </p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is non-null </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00046">46</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00049">49</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -508,7 +513,7 @@ template&lt;trivially_destructible T&gt; </div>
 <p>User-land monitor for changes at the cache line containing the target address. Intel version. </p>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a">cpu::vendor::intel</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00088">88</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00094">94</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -538,7 +543,7 @@ template&lt;trivially_destructible T&gt; </div>
 <p>user-land monitor for changes at the cache line containing the target address. AMD version </p>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">cpu::vendor::amd</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00118">118</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00124">124</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -568,7 +573,7 @@ template&lt;trivially_destructible T&gt; </div>
 <p>user-land mwait. intel version while it isn't <em>documented</em> to support the timer options from AMD on newer cpus it does. </p>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a">cpu::vendor::intel</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00105">105</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00111">111</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -598,7 +603,7 @@ template&lt;trivially_destructible T&gt; </div>
 <p>user-land mwait. AMD version </p>
 <dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">cpu::vendor::amd</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00134">134</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00140">140</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -642,7 +647,7 @@ requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</di
 <p>By using MONITOR/MWAIT under the hood, this can achieve ~100ns wakeup times, while still allowing the paired hyperthread to proceed with tasks unburdened by a heavy spin-wait.</p>
 <dl class="section post"><dt>Postcondition</dt><dd><code>f</code>(<code>m</code>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00153">153</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00159">159</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
