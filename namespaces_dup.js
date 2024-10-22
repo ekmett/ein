@@ -1,5 +1,5 @@
 var namespaces_dup =
 [
-    [ "ein", "namespaceein.html", "namespaceein" ],
-    [ "std", "namespacestd.html", "namespacestd" ]
+    [ "ein", "d7/dc1/namespaceein.html", "d7/dc1/namespaceein" ],
+    [ "std", "d8/dcc/namespacestd.html", "d8/dcc/namespacestd" ]
 ];

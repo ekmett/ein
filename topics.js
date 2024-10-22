@@ -1,5 +1,5 @@
 var topics =
 [
-    [ "memory", "group__memory__group.html", "group__memory__group" ],
-    [ "internals", "group__internals__group.html", "group__internals__group" ]
+    [ "memory", "dd/d9f/group__memory__group.html", "dd/d9f/group__memory__group" ],
+    [ "internals", "d6/d2f/group__internals__group.html", "d6/d2f/group__internals__group" ]
 ];
