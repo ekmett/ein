@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: ein.numerics Module Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -155,8 +163,6 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:d7/d1d/structein_1_1numerics_1_1integer__traits" id="r_d7/d1d/structein_1_1numerics_1_1integer__traits"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#d7/d1d/structein_1_1numerics_1_1integer__traits">ein::numerics::integer_traits&lt; N &gt;</a></td></tr>
-<tr class="separator:d7/d1d/structein_1_1numerics_1_1integer__traits"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t&lt; N &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -164,15 +170,19 @@ Classes</h2></td></tr>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab652a71f7ec533e140b934439df00802" id="r_ab652a71f7ec533e140b934439df00802"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ab652a71f7ec533e140b934439df00802"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::signed_t</td></tr>
+<tr class="memdesc:ab652a71f7ec533e140b934439df00802"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a signed integer type of the same size as T suitable for std::bitcast  <br /></td></tr>
 <tr class="separator:ab652a71f7ec533e140b934439df00802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33" id="r_aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::unsigned_t</td></tr>
+<tr class="memdesc:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an unsigned integer type of the same size as T suitable for std::bitcast  <br /></td></tr>
 <tr class="separator:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a92ba58a20dcf7edf22a4766a181a5b14" id="r_a92ba58a20dcf7edf22a4766a181a5b14"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a92ba58a20dcf7edf22a4766a181a5b14">ein::numerics::isnan</a> (auto x) noexcept</td></tr>
 <tr class="separator:a92ba58a20dcf7edf22a4766a181a5b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac084533bb490cf38963a9aad71c2fc59" id="r_ac084533bb490cf38963a9aad71c2fc59"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#ac084533bb490cf38963a9aad71c2fc59">ein::numerics::isinf</a> (auto x) noexcept</td></tr>
+<tr class="separator:ac084533bb490cf38963a9aad71c2fc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fa1941ec4ca8009b3b8069e5d7b57f7" id="r_a9fa1941ec4ca8009b3b8069e5d7b57f7"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a9fa1941ec4ca8009b3b8069e5d7b57f7">ein::numerics::cmp_unord</a> (auto a, auto b) noexcept</td></tr>
 <tr class="separator:a9fa1941ec4ca8009b3b8069e5d7b57f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6464b71a4b444b9927d67dea8c98decc" id="r_a6464b71a4b444b9927d67dea8c98decc"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a6464b71a4b444b9927d67dea8c98decc">ein::numerics::cmp_ord</a> (auto a, auto b) noexcept</td></tr>

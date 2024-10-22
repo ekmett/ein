@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: /home/runner/work/ein/ein/src/assert.hpp Source File</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -140,19 +148,19 @@ $(function(){initNavTree('d2/d54/assert_8hpp_source.html','../../'); initResizab
 <div class="contents">
 <a href="../../d2/d54/assert_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00003" data-start="" data-end="">
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno"><a class="line" href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">    3</a></span><span class="preprocessor">#define ein_assert(cond,...) \</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span><span class="preprocessor">  do { \</span></div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="preprocessor">    if ein_unlikely (!cond) { \</span></div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">      []&lt;typename ... Args&gt;(Args &amp;&amp; ... args) { \</span></div>
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">        if constexpr (sizeof...(Args) == 0) \</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \</span></div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">        else \</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}: {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,fmt::vformat(std::forward&lt;Args&gt;(args)...)); \</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">        std::abort(); \</span></div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">      }(__VA_ARGS__); \</span></div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">  } while (0)</span></div>
+<div class="foldopen" id="foldopen00006" data-start="" data-end="">
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">    6</a></span><span class="preprocessor">#define ein_assert(cond,...) \</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">  do { \</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    if ein_unlikely (!cond) { \</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">      []&lt;typename ... Args&gt;(Args &amp;&amp; ... args) { \</span></div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">        if constexpr (sizeof...(Args) == 0) \</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \</span></div>
+<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span><span class="preprocessor">        else \</span></div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}: {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,fmt::vformat(std::forward&lt;Args&gt;(args)...)); \</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">        std::abort(); \</span></div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">      }(__VA_ARGS__); \</span></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="preprocessor">    } \</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">  } while (0)</span></div>
 </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

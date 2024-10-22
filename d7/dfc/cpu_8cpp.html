@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: /home/runner/work/ein/ein/src/cpu.cpp File Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -137,11 +145,12 @@ $(function(){initNavTree('d7/dfc/cpu_8cpp.html','../../'); initResizable(true); 
 <div class="header">
   <div class="summary">
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">cpu.cpp File Reference<div class="ingroups">module <a class="el" href="../../dd/d6d/module__ein_8cpu.html">ein.cpu</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p><a href="../../d7/dfc/cpu_8cpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -150,55 +159,18 @@ Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html">ein::cpu</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a269b02d06a1c2d2c544c75469392ce3f" id="r_a269b02d06a1c2d2c544c75469392ce3f"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a269b02d06a1c2d2c544c75469392ce3f">cpuid</a> (int32_t info[4], int32_t eax, int32_t ecx) noexcept</td></tr>
-<tr class="separator:a269b02d06a1c2d2c544c75469392ce3f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae883fb4f01186eaa8185fc85bf74dee8" id="r_ae883fb4f01186eaa8185fc85bf74dee8"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8">ein::cpu::vendor</a></td></tr>
+<tr class="memdesc:ae883fb4f01186eaa8185fc85bf74dee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">current cpu vendor  <br /></td></tr>
 <tr class="separator:ae883fb4f01186eaa8185fc85bf74dee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0d02deb4179b64912ce1fa4bf1a9ce" id="r_a3c0d02deb4179b64912ce1fa4bf1a9ce"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#a3c0d02deb4179b64912ce1fa4bf1a9ce">ein::cpu::has_mwait</a></td></tr>
+<tr class="memdesc:a3c0d02deb4179b64912ce1fa4bf1a9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">intel check for user-level mwait/monitor  <br /></td></tr>
 <tr class="separator:a3c0d02deb4179b64912ce1fa4bf1a9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a453b9232fe423c4efb38077169bd955a" id="r_a453b9232fe423c4efb38077169bd955a"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#a453b9232fe423c4efb38077169bd955a">ein::cpu::has_mwaitx</a></td></tr>
+<tr class="memdesc:a453b9232fe423c4efb38077169bd955a"><td class="mdescLeft">&#160;</td><td class="mdescRight">amd check for mwaitx/monitorx  <br /></td></tr>
 <tr class="separator:a453b9232fe423c4efb38077169bd955a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a269b02d06a1c2d2c544c75469392ce3f" name="a269b02d06a1c2d2c544c75469392ce3f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a269b02d06a1c2d2c544c75469392ce3f">&#9670;&#160;</a></span>cpuid()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void cpuid </td>
-          <td>(</td>
-          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>info</em></span>[4], </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>eax</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>ecx</em></span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: ein::has_mmask Concept Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -135,14 +143,18 @@ $(function(){initNavTree('d7/dba/conceptein_1_1has__mmask.html','../../'); initR
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ein::has_mmask Concept Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups">module <a class="el" href="../../d8/da3/module__ein_8simd.html">ein.simd</a></div></div></div>
+  <div class="headertitle"><div class="title">ein::has_mmask Concept Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups">module <a class="el" href="../../d4/d34/module__ein_8simd__data.html">ein.simd_data</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a> =  <span class="keyword">false</span></div>
-<div class="ttc" id="aconceptein_1_1has__mmask_html"><div class="ttname"><a href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a></div><div class="ttdef"><b>Definition</b> simd.cppm:91</div></div>
-</div><!-- fragment --></div><!-- contents -->
+<div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a> =  <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> &amp;&amp; N &gt;= 8</div>
+<div class="ttc" id="aconceptein_1_1has__mmask_html"><div class="ttname"><a href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00090">simd_data.cppm:92</a></div></div>
+<div class="ttc" id="aconceptein_1_1has__simd__type_html"><div class="ttname"><a href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00022">simd_data.cppm:22</a></div></div>
+</div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../df/d88/simd__data_8cppm_source.html#l00090">90</a> of file <a class="el" href="../../df/d88/simd__data_8cppm_source.html">simd_data.cppm</a>.</p>
+</div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

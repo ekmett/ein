@@ -8,10 +8,15 @@ digraph "/home/runner/work/ein/ein/src/simd.cppm"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="immintrin.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node1 -> Node3 [id="edge2_Node000001_Node000003",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="ein.types",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d8/dcb/types_8cppm.html",tooltip=" "];
-  Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
-  Node4 [id="Node000004",label="cxxabi.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
-  Node1 -> Node5 [id="edge4_Node000001_Node000005",color="steelblue1",style="solid",tooltip=" "];
-  Node5 [id="Node000005",label="ein.numerics",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d5/d65/numerics_8cppm.html",tooltip=" "];
-  Node5 -> Node3 [id="edge5_Node000005_Node000003",color="steelblue1",style="solid",tooltip=" "];
+  Node3 [id="Node000003",label="ein.simd_data",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d88/simd__data_8cppm.html",tooltip=" "];
+  Node3 -> Node2 [id="edge3_Node000003_Node000002",color="steelblue1",style="solid",tooltip=" "];
+  Node3 -> Node4 [id="edge4_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="ein.types",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d8/dcb/types_8cppm.html",tooltip=" "];
+  Node4 -> Node5 [id="edge5_Node000004_Node000005",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="cxxabi.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
+  Node3 -> Node6 [id="edge6_Node000003_Node000006",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="ein.numerics",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d5/d65/numerics_8cppm.html",tooltip=" "];
+  Node6 -> Node4 [id="edge7_Node000006_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node4 [id="edge8_Node000001_Node000004",color="steelblue1",style="solid",tooltip=" "];
+  Node1 -> Node6 [id="edge9_Node000001_Node000006",color="steelblue1",style="solid",tooltip=" "];
 }

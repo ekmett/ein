@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: memory</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -195,6 +203,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00035">35</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+
 </div>
 </div>
 <a id="gae63e3353c4db8580f878b167cba377ad" name="gae63e3353c4db8580f878b167cba377ad"></a>
@@ -219,6 +229,8 @@ template&lt;trivially_destructible T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00051">51</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+
 </div>
 </div>
 <a id="ga28e90c7a3be1dbddae254d6b9b8e42cc" name="ga28e90c7a3be1dbddae254d6b9b8e42cc"></a>
@@ -240,6 +252,8 @@ template&lt;trivially_destructible T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00056">56</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -271,6 +285,110 @@ template&lt;trivially_destructible T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00038">38</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                                                      {</div>
+<div class="line"><span class="lineno">   42</span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="#gaa4b1c50ff11207294a324dcc8de92d16">mmap_ptr</a>(p,c_munmap(size));</div>
+<div class="line"><span class="lineno">   43</span>}</div>
+<div class="line"><span class="lineno">   44</span> </div>
+<div class="line"><span class="lineno">   45</span><span class="keyword">export</span> <span class="keyword">struct </span>c_free {</div>
+<div class="line"><span class="lineno">   46</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> operator()(T * p) <span class="keyword">noexcept</span> {</div>
+<div class="line"><span class="lineno">   48</span>    free(<span class="keyword">const_cast&lt;</span>remove_const_t&lt;T&gt;*<span class="keyword">&gt;</span>(p));</div>
+<div class="line"><span class="lineno">   49</span>  }</div>
+<div class="line"><span class="lineno">   50</span>};</div>
+<div class="line"><span class="lineno">   51</span> </div>
+<div class="line"><span class="lineno">   53</span><span class="keyword">export</span> <span class="keyword">template</span>&lt;trivially_destructible T&gt;</div>
+<div class="line"><span class="lineno">   54</span><span class="keyword">using </span><a class="code hl_typedef" href="#gae63e3353c4db8580f878b167cba377ad">unique_c_ptr</a> = unique_ptr&lt;T, c_free&gt;;</div>
+<div class="line"><span class="lineno">   55</span> </div>
+<div class="line"><span class="lineno">   56</span><span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *)== <span class="keyword">sizeof</span>(unique_c_ptr&lt;char&gt;),<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><span class="lineno">   57</span> </div>
+<div class="line"><span class="lineno">   59</span><span class="keyword">export</span> <span class="keyword">using </span><a class="code hl_typedef" href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> = unique_c_ptr&lt;char const&gt;;</div>
+<div class="line"><span class="lineno">   60</span> </div>
+<div class="line"><span class="lineno">   62</span><span class="keyword">export</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure,<a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a">nonnull</a>(1),<a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e">null_terminated_string_arg</a>(1))</div>
+<div class="line"><span class="lineno">   63</span>unique_str dup(<span class="keywordtype">char</span> const * <span class="keywordtype">string</span>) noexcept {</div>
+<div class="line"><span class="lineno">   64</span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> { strdup(<span class="keywordtype">string</span>) };</div>
+<div class="line"><span class="lineno">   65</span>}</div>
+<div class="line"><span class="lineno">   66</span> </div>
+<div class="line"><span class="lineno">   67</span><span class="comment">// Intel</span></div>
+<div class="line"><span class="lineno">   68</span><span class="comment">// -----</span></div>
+<div class="line"><span class="lineno">   69</span> </div>
+<div class="line"><span class="lineno">   71</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><span class="lineno">   72</span>void monitor(<span class="keywordtype">void</span> const * addr) noexcept {</div>
+<div class="line"><span class="lineno">   73</span>  <span class="comment">// MONITOR: rAX = addr, ECX = extensions, EDX = hints</span></div>
+<div class="line"><span class="lineno">   74</span>  __asm__ __volatile__ (</div>
+<div class="line"><span class="lineno">   75</span>    <span class="stringliteral">&quot;monitor&quot;</span> <span class="comment">// 0f 01 fa</span></div>
+<div class="line"><span class="lineno">   76</span>    : <span class="comment">// No output</span></div>
+<div class="line"><span class="lineno">   77</span>    : <span class="stringliteral">&quot;rax&quot;</span>(addr), <span class="stringliteral">&quot;rcx&quot;</span>(0), <span class="stringliteral">&quot;rdx&quot;</span>(0) <span class="comment">// Input: addr, ECX = 0, EDX = 0</span></div>
+<div class="line"><span class="lineno">   78</span>    : <span class="stringliteral">&quot;memory&quot;</span> <span class="comment">// Clobbered registers (memory is implied by monitor)</span></div>
+<div class="line"><span class="lineno">   79</span>  );</div>
+<div class="line"><span class="lineno">   80</span>}</div>
+<div class="line"><span class="lineno">   81</span> </div>
+<div class="line"><span class="lineno">   85</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><span class="lineno">   86</span>void mwait(uint32_t timer = 0) noexcept {</div>
+<div class="line"><span class="lineno">   87</span>  __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mwait&quot;</span> : : <span class="stringliteral">&quot;a&quot;</span>(0), <span class="stringliteral">&quot;c&quot;</span>(0), <span class="stringliteral">&quot;d&quot;</span>(timer));</div>
+<div class="line"><span class="lineno">   88</span>}</div>
+<div class="line"><span class="lineno">   89</span> </div>
+<div class="line"><span class="lineno">   90</span><span class="comment">// AMD</span></div>
+<div class="line"><span class="lineno">   91</span><span class="comment">// ---</span></div>
+<div class="line"><span class="lineno">   92</span> </div>
+<div class="line"><span class="lineno">   93</span><span class="comment">// \internal</span></div>
+<div class="line"><span class="lineno">   94</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><span class="lineno">   95</span>void monitorx(<span class="keywordtype">void</span> const * addr) noexcept {</div>
+<div class="line"><span class="lineno">   96</span>  <span class="comment">// MONITORX: rAX = addr, ECX = extensions, EDX = hints</span></div>
+<div class="line"><span class="lineno">   97</span>  __asm__ __volatile__ (</div>
+<div class="line"><span class="lineno">   98</span>    <span class="stringliteral">&quot;monitorx&quot;</span> <span class="comment">// 0f 01 fa</span></div>
+<div class="line"><span class="lineno">   99</span>    : <span class="comment">// No output</span></div>
+<div class="line"><span class="lineno">  100</span>    : <span class="stringliteral">&quot;rax&quot;</span>(addr), <span class="stringliteral">&quot;rcx&quot;</span>(0), <span class="stringliteral">&quot;rdx&quot;</span>(0) <span class="comment">// Input: addr, ECX = 0, EDX = 0</span></div>
+<div class="line"><span class="lineno">  101</span>    : <span class="stringliteral">&quot;memory&quot;</span> <span class="comment">// Clobbered registers (memory is implied by monitorx)</span></div>
+<div class="line"><span class="lineno">  102</span>  );</div>
+<div class="line"><span class="lineno">  103</span>}</div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span><span class="comment">// AMD provides mwaitx for userland mwait instead of mwait.</span></div>
+<div class="line"><span class="lineno">  106</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><span class="lineno">  107</span>void mwaitx(uint32_t timer = 0) noexcept {</div>
+<div class="line"><span class="lineno">  108</span>  __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mwaitx&quot;</span> : : <span class="stringliteral">&quot;a&quot;</span>(0), <span class="stringliteral">&quot;c&quot;</span>(0), <span class="stringliteral">&quot;d&quot;</span>(timer));</div>
+<div class="line"><span class="lineno">  109</span>}</div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span><span class="comment">// spin using mwait/mwaitx watching memory until the target passes a test, waits timer-many cycles at a time.</span></div>
+<div class="line"><span class="lineno">  112</span><span class="comment">// note: waits on the cache line containing memory.</span></div>
+<div class="line"><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7">wait_until</a>(<span class="keyword">auto</span> <span class="keyword">const</span> &amp; m, <span class="keyword">auto</span> p, uint32_t timer = 0) noexcept</div>
+<div class="line"><span class="lineno">  114</span>requires requires(decltype(p) p, decltype(*m) m) { { t(m) } -&gt; convertible_to&lt;bool&gt;; } {</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">if</span> (cpu::has_mwaitx) <span class="comment">// amd</span></div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">while</span> (!p(m)) {</div>
+<div class="line"><span class="lineno">  117</span>      <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">monitorx</a>(&amp;m);</div>
+<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">if</span> (!p(m))</div>
+<div class="line"><span class="lineno">  119</span>        <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">mwaitx</a>(&amp;m,timer);</div>
+<div class="line"><span class="lineno">  120</span>    }</div>
+<div class="line"><span class="lineno">  121</span>  <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  122</span>    <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">ein_assert</a>(cpu::has_mwait); <span class="comment">// intel</span></div>
+<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">while</span> (!p(m)) {</div>
+<div class="line"><span class="lineno">  124</span>      <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">monitor</a>(&amp;m);</div>
+<div class="line"><span class="lineno">  125</span>      <span class="keywordflow">if</span> (!p(m))</div>
+<div class="line"><span class="lineno">  126</span>        <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3">mwait</a>(&amp;m,timer);</div>
+<div class="line"><span class="lineno">  127</span>    }</div>
+<div class="line"><span class="lineno">  128</span>  }</div>
+<div class="line"><span class="lineno">  129</span>}</div>
+<div class="line"><span class="lineno">  130</span> </div>
+<div class="line"><span class="lineno">  131</span>} <span class="comment">// ein::memory</span></div>
+<div class="line"><span class="lineno">  132</span> </div>
+<div class="line"><span class="lineno">  133</span><span class="keyword">export</span> <span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/dc1/namespaceein.html">ein</a> {</div>
+<div class="line"><span class="lineno">  134</span>  <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="../../d6/d67/namespaceein_1_1memory.html">ein::memory</a>;</div>
+<div class="line"><span class="lineno">  135</span>} <span class="comment">// ein</span></div>
+<div class="ttc" id="aassert_8hpp_html_a4af23f138af62df96e8bacc71767bf00"><div class="ttname"><a href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">ein_assert</a></div><div class="ttdeci">#define ein_assert(cond,...)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d54/assert_8hpp_source.html#l00006">assert.hpp:6</a></div></div>
+<div class="ttc" id="agroup__attributes_html_ga9c72af7df8a237d25e24d5beb4d17aa1"><div class="ttname"><a href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a></div><div class="ttdeci">#define EIN(...)</div><div class="ttdoc">convenient macro for applying several attributes</div><div class="ttdef"><b>Definition</b> <a href="../../df/d6a/attributes_8hpp_source.html#l00022">attributes.hpp:22</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_ga28e90c7a3be1dbddae254d6b9b8e42cc"><div class="ttname"><a href="#ga28e90c7a3be1dbddae254d6b9b8e42cc">ein::memory::unique_str</a></div><div class="ttdeci">unique_c_ptr&lt; char const  &gt; unique_str</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00056">memory.cppm:56</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_gaa4b1c50ff11207294a324dcc8de92d16"><div class="ttname"><a href="#gaa4b1c50ff11207294a324dcc8de92d16">ein::memory::mmap_ptr</a></div><div class="ttdeci">unique_ptr&lt; void, c_munmap &gt; mmap_ptr</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00035">memory.cppm:35</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_gae63e3353c4db8580f878b167cba377ad"><div class="ttname"><a href="#gae63e3353c4db8580f878b167cba377ad">ein::memory::unique_c_ptr</a></div><div class="ttdeci">unique_ptr&lt; T, c_free &gt; unique_c_ptr</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00051">memory.cppm:51</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html">ein::memory</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00019">memory.cppm:19</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a267b037f107d63c5b3c0945e781b892a"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a">ein::memory::nonnull</a></div><div class="ttdeci">nonnull(1)</div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a5882900626b78b4c9a07f06c185dc878"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">ein::memory::mwaitx</a></div><div class="ttdeci">inline void mwaitx(uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00104">memory.cppm:104</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a771edab7c25089f112657d63d4c9ff0e"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e">ein::memory::null_terminated_string_arg</a></div><div class="ttdeci">null_terminated_string_arg(1)) unique_str dup(char const *string) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00059">memory.cppm:59</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a7887543b98c51f542ad8a7f58702dd68"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">ein::memory::monitor</a></div><div class="ttdeci">inline void monitor(void const *addr) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00069">memory.cppm:69</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a9cb64e008d59f29c3c135cd0ab2d5cfe"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">ein::memory::monitorx</a></div><div class="ttdeci">inline void monitorx(void const *addr) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00092">memory.cppm:92</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_abba63c48a1b51daaa54e4e771e0a08e3"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3">ein::memory::mwait</a></div><div class="ttdeci">inline void mwait(uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00083">memory.cppm:83</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_ada844f0a0786a195c184824654bf55b7"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7">ein::memory::wait_until</a></div><div class="ttdeci">void wait_until(auto const &amp;m, auto p, uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00110">memory.cppm:110</a></div></div>
+<div class="ttc" id="anamespaceein_html"><div class="ttname"><a href="../../d7/dc1/namespaceein.html">ein</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/dfc/cpu_8cpp_source.html#l00023">cpu.cpp:23</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -293,6 +411,8 @@ template&lt;trivially_destructible T&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00059">59</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>

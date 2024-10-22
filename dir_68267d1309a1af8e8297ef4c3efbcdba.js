@@ -9,5 +9,6 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "numerics.cppm", "d5/d65/numerics_8cppm.html", "d5/d65/numerics_8cppm" ],
     [ "prelude.hpp", "de/d13/prelude_8hpp.html", null ],
     [ "simd.cppm", "da/d01/simd_8cppm.html", "da/d01/simd_8cppm" ],
+    [ "simd_data.cppm", "df/d88/simd__data_8cppm.html", "df/d88/simd__data_8cppm" ],
     [ "types.cppm", "d8/dcb/types_8cppm.html", "d8/dcb/types_8cppm" ]
 ];

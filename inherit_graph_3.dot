@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="ein::numerics::integer\l_traits\< 16 \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/df9/namespaceein_1_1numerics.html#d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4",tooltip=" "];
+  Node0 [id="Node000000",label="ein::simd\< T, N \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d1/d89/structein_1_1simd.html",tooltip="simd primitive definition"];
 }

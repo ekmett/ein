@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['pure_0',['pure',['../d1/d89/structein_1_1simd.html#a291a1ab7a59e214e26792da5d5074877',1,'ein::simd::pure'],['../d6/d67/namespaceein_1_1memory.html#a57638e42bc8ad1f0447716c99e156924',1,'ein::memory::pure']]]
+  ['size_0',['size',['../df/df3/structein_1_1memory_1_1c__munmap.html#ade592d6246f98c6c14672798df1cf894',1,'ein::memory::c_munmap::size'],['../d1/d89/structein_1_1simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]]
 ];

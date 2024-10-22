@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: ein::cpu Namespace Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -148,15 +156,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">amd</a> =1
 , <a class="el" href="#ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a">unknown</a> =2
  }</td></tr>
+<tr class="memdesc:ae883fb4f01186eaa8185fc85bf74dee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu vendor id  <a href="#ae883fb4f01186eaa8185fc85bf74dee8">More...</a><br /></td></tr>
 <tr class="separator:ae883fb4f01186eaa8185fc85bf74dee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae883fb4f01186eaa8185fc85bf74dee8" id="r_ae883fb4f01186eaa8185fc85bf74dee8"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae883fb4f01186eaa8185fc85bf74dee8">ein::cpu::vendor</a></td></tr>
+<tr class="memdesc:ae883fb4f01186eaa8185fc85bf74dee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">current cpu vendor  <br /></td></tr>
 <tr class="separator:ae883fb4f01186eaa8185fc85bf74dee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3c0d02deb4179b64912ce1fa4bf1a9ce" id="r_a3c0d02deb4179b64912ce1fa4bf1a9ce"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3c0d02deb4179b64912ce1fa4bf1a9ce">ein::cpu::has_mwait</a></td></tr>
+<tr class="memdesc:a3c0d02deb4179b64912ce1fa4bf1a9ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">intel check for user-level mwait/monitor  <br /></td></tr>
 <tr class="separator:a3c0d02deb4179b64912ce1fa4bf1a9ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a453b9232fe423c4efb38077169bd955a" id="r_a453b9232fe423c4efb38077169bd955a"><td class="memItemLeft" align="right" valign="top">const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a453b9232fe423c4efb38077169bd955a">ein::cpu::has_mwaitx</a></td></tr>
+<tr class="memdesc:a453b9232fe423c4efb38077169bd955a"><td class="mdescLeft">&#160;</td><td class="mdescRight">amd check for mwaitx/monitorx  <br /></td></tr>
 <tr class="separator:a453b9232fe423c4efb38077169bd955a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Enumeration Type Documentation</h2>
@@ -179,12 +191,25 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>cpu vendor id </p>
+<p>current cpu vendor </p>
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a" name="ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a"></a>intel&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52" name="ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52"></a>amd&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a" name="ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
+<p class="definition">Definition at line <a class="el" href="../../d7/d81/cpu_8cppm_source.html#l00006">6</a> of file <a class="el" href="../../d7/d81/cpu_8cppm_source.html">cpu.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">    6</span>                         {</div>
+<div class="line"><span class="lineno">    7</span>  <a class="code hl_enumvalue" href="#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>=0,</div>
+<div class="line"><span class="lineno">    8</span>  <a class="code hl_enumvalue" href="#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">amd</a>=1,</div>
+<div class="line"><span class="lineno">    9</span>  <a class="code hl_enumvalue" href="#ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a">unknown</a>=2</div>
+<div class="line"><span class="lineno">   10</span>};</div>
+<div class="ttc" id="anamespaceein_1_1cpu_html_ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a"><div class="ttname"><a href="#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a">ein::cpu::vendor::intel</a></div><div class="ttdeci">@ intel</div></div>
+<div class="ttc" id="anamespaceein_1_1cpu_html_ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52"><div class="ttname"><a href="#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">ein::cpu::vendor::amd</a></div><div class="ttdeci">@ amd</div></div>
+<div class="ttc" id="anamespaceein_1_1cpu_html_ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="#ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a">ein::cpu::vendor::unknown</a></div><div class="ttdeci">@ unknown</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -207,16 +232,11 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line">  <span class="keywordflow">if</span> (vendor != vendor::intel) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">  int32_t info[4] = {0};</div>
-<div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="../../d7/dfc/cpu_8cpp.html#a269b02d06a1c2d2c544c75469392ce3f">cpuid</a>(info, 0x05, 0x00);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">return</span> (info[2] &amp; (1 &lt;&lt; 3)) != 0;</div>
-<div class="line">}()</div>
-<div class="ttc" id="acpu_8cpp_html_a269b02d06a1c2d2c544c75469392ce3f"><div class="ttname"><a href="../../d7/dfc/cpu_8cpp.html#a269b02d06a1c2d2c544c75469392ce3f">cpuid</a></div><div class="ttdeci">static void cpuid(int32_t info[4], int32_t eax, int32_t ecx) noexcept</div><div class="ttdef"><b>Definition</b> cpu.cpp:10</div></div>
-</div><!-- fragment -->
+
+<p>intel check for user-level mwait/monitor </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/cpu_8cpp_source.html#l00045">45</a> of file <a class="el" href="../../d7/dfc/cpu_8cpp_source.html">cpu.cpp</a>.</p>
+
 </div>
 </div>
 <a id="a453b9232fe423c4efb38077169bd955a" name="a453b9232fe423c4efb38077169bd955a"></a>
@@ -238,15 +258,11 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() <span class="keyword">noexcept</span> -&gt; <span class="keywordtype">bool</span> {</div>
-<div class="line">  <span class="keywordflow">if</span> (vendor != vendor::amd) <span class="keywordflow">return</span> <span class="keyword">false</span>;</div>
-<div class="line">  int32_t info[4] = {0};</div>
-<div class="line">  </div>
-<div class="line">  <a class="code hl_function" href="../../d7/dfc/cpu_8cpp.html#a269b02d06a1c2d2c544c75469392ce3f">cpuid</a>(info, 0x80000001, 0x00);</div>
-<div class="line">  </div>
-<div class="line">  <span class="keywordflow">return</span> (info[2] &amp; (1 &lt;&lt; 29)) != 0;</div>
-<div class="line">}()</div>
-</div><!-- fragment -->
+
+<p>amd check for mwaitx/monitorx </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/cpu_8cpp_source.html#l00056">56</a> of file <a class="el" href="../../d7/dfc/cpu_8cpp_source.html">cpu.cpp</a>.</p>
+
 </div>
 </div>
 <a id="ae883fb4f01186eaa8185fc85bf74dee8" name="ae883fb4f01186eaa8185fc85bf74dee8"></a>
@@ -268,23 +284,11 @@ Variables</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []() <span class="keyword">noexcept</span> -&gt; <span class="keyword">enum</span> vendor {</div>
-<div class="line">  int32_t info[4] = {0};</div>
-<div class="line">  <a class="code hl_function" href="../../d7/dfc/cpu_8cpp.html#a269b02d06a1c2d2c544c75469392ce3f">cpuid</a>(info, 0, 0);</div>
-<div class="line"> </div>
-<div class="line">  array&lt;char, 12&gt; <a class="code hl_enumeration" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>;</div>
-<div class="line">  memcpy(&amp;<a class="code hl_enumeration" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>[0], &amp;info[1], 4); </div>
-<div class="line">  memcpy(&amp;<a class="code hl_enumeration" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>[4], &amp;info[3], 4); </div>
-<div class="line">  memcpy(&amp;<a class="code hl_enumeration" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>[8], &amp;info[2], 4); </div>
-<div class="line"> </div>
-<div class="line">  string_view vendorStr { begin(<a class="code hl_enumeration" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>), end(<a class="code hl_enumeration" href="#ae883fb4f01186eaa8185fc85bf74dee8">vendor</a>) };</div>
-<div class="line"> </div>
-<div class="line">  <span class="keywordflow">if</span>      (vendorStr == <span class="stringliteral">&quot;GenuineIntel&quot;</span>) <span class="keywordflow">return</span> vendor::intel;</div>
-<div class="line">  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vendorStr == <span class="stringliteral">&quot;AuthenticAMD&quot;</span>) <span class="keywordflow">return</span> vendor::amd;</div>
-<div class="line">  <span class="keywordflow">else</span>                                  <span class="keywordflow">return</span> vendor::unknown;</div>
-<div class="line">}()</div>
-<div class="ttc" id="anamespaceein_1_1cpu_html_ae883fb4f01186eaa8185fc85bf74dee8"><div class="ttname"><a href="#ae883fb4f01186eaa8185fc85bf74dee8">ein::cpu::vendor</a></div><div class="ttdeci">vendor</div><div class="ttdef"><b>Definition</b> cpu.cppm:6</div></div>
-</div><!-- fragment -->
+
+<p>current cpu vendor </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d7/dfc/cpu_8cpp_source.html#l00027">27</a> of file <a class="el" href="../../d7/dfc/cpu_8cpp_source.html">cpu.cpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

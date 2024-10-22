@@ -1,0 +1,309 @@
+<!-- HTML header for doxygen 1.12.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ein: /home/runner/work/ein/ein/src/simd_data.cppm File Reference</title>
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="/home/runner/work/ein/ein/doxygen/mathjax.js/es5/tex-chtml.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../header.css" rel="stylesheet" type="text/css"/>
+<!-- extra scripts -->
+<script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+  DoxygenAwesomeDarkModeToggle.init()
+  DoxygenAwesomeFragmentCopyButton.init()
+  DoxygenAwesomeParagraphLink.init()
+  DoxygenAwesomeInteractiveToc.init()
+  DoxygenAwesomeTabs.init()
+</script>
+<!-- end of extra scripts -->
+</head>
+<body>
+<!-- github corners -->
+<!-- end github corner -->
+<a href="https://github.com/ekmett/ein" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 9999;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../ein-logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">ein<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('df/d88/simd__data_8cppm.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
+<a href="#concepts">Concepts</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
+  <div class="headertitle"><div class="title">simd_data.cppm File Reference<div class="ingroups">module <a class="el" href="../../d4/d34/module__ein_8simd__data.html">ein.simd_data</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &lt;immintrin.h&gt;</code><br />
+<code>import <a class="el" href="../../d8/dcb/types_8cppm_source.html">ein.types</a>;</code><br />
+<code>import <a class="el" href="../../d5/d65/numerics_8cppm_source.html">ein.numerics</a>;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for simd_data.cppm:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+</div>
+<p><a href="../../df/d88/simd__data_8cppm_source.html">Go to the source code of this file.</a></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:dc/d5b/structein_1_1simd__intrinsic" id="r_dc/d5b/structein_1_1simd__intrinsic"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#dc/d5b/structein_1_1simd__intrinsic">ein::simd_intrinsic&lt; T, N &gt;</a></td></tr>
+<tr class="separator:dc/d5b/structein_1_1simd__intrinsic"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html">ein</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
+Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/conceptein_1_1has__builtin__convertvector.html">ein::has_builtin_convertvector</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d1b/conceptein_1_1simd__builtin.html">ein::simd_builtin</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a2fe08d2d97e186bfa4d9e484443df6e8" id="r_a2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:a2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a> = T __attribute__((__vector_size__(N*sizeof(T)),__aligned__(N*sizeof(T))))</td></tr>
+<tr class="separator:a2fe08d2d97e186bfa4d9e484443df6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac990fb6f5dcea45fb2adb40514b836d3" id="r_ac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:ac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">ein::simd_intrinsic_t</a></td></tr>
+<tr class="separator:ac990fb6f5dcea45fb2adb40514b836d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a239b5fd784078f2e10a6d6c43f5525dd" id="r_a239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
+<tr class="memitem:a239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a239b5fd784078f2e10a6d6c43f5525dd">ein::mmask_t</a></td></tr>
+<tr class="separator:a239b5fd784078f2e10a6d6c43f5525dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a423156b83124d4f090aad2b1e75447b1" id="r_a423156b83124d4f090aad2b1e75447b1"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:a423156b83124d4f090aad2b1e75447b1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a423156b83124d4f090aad2b1e75447b1">ein::simd_mask_t</a></td></tr>
+<tr class="separator:a423156b83124d4f090aad2b1e75447b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
+Enumerations</h2></td></tr>
+<tr class="memitem:a3eb3869fe6f24fc19b5894278c242460" id="r_a3eb3869fe6f24fc19b5894278c242460"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460">ein::CMPINT</a> : size_t { <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47">ein::EQ</a> = 0x0uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b">ein::LT</a> = 0x1uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460acfe6055d2e0503be378bb63449ec7ba6">ein::LE</a> = 0x2uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460a946003f97ccc52d5d3b54ac0ec31bbfc">ein::FALSE</a> = 0x3uz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460adc33066c3993e0d50896e533fd692ce0">ein::NE</a> = 0x4uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8">ein::NLT</a> = 0x5uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460aacd748f300c5d189c47807e2a9d6ea57">ein::NLE</a> = 0x6uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61">ein::TRUE</a> = 0x7uz
+<br />
+ }</td></tr>
+<tr class="separator:a3eb3869fe6f24fc19b5894278c242460"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a462cd88db2679129e8c9b418fe426371" id="r_a462cd88db2679129e8c9b418fe426371"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">ein::CMP</a> : size_t { <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a94270b248ec9d52e352291ed79739944">ein::EQ_OQ</a> = 0x00uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a12d040983061b6fe28aa2555c89173bb">ein::LT_OS</a> = 0x01uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a5d707e258be8fcc41d9393601a47a9c9">ein::LE_OS</a> = 0x02uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a1adfd3c3470a45d49f541ddd27fc55c8">ein::UNORD_Q</a> = 0x03uz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ae2f0e19929d719f692d965d5ec9c9acd">ein::NEQ_UQ</a> = 0x04uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a8e9cd341ba82e736d1ada75930aaca67">ein::NLT_US</a> = 0x05uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ab79ab578660107f6f79d20b8ad6f872e">ein::NLE_US</a> = 0x06uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4841e2067e009706a0b706de9eae7dee">ein::ORD_Q</a> = 0x07uz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a658c8d0eb1a0fd67d14a328fff7b02fd">ein::EQ_UQ</a> = 0x08uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a7faabf823151beda2cad7d404aa8ebee">ein::NGE_US</a> = 0x09uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a723e7029278f429724f7b052a34f90e1">ein::NGT_US</a> = 0x0Auz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a5436022cadf478c56bef882734316166">ein::FALSE_OQ</a> = 0x0Buz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a88811c44afe357e371ca17d3e908ba1d">ein::NEQ_OQ</a> = 0x0Cuz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a6a725029b72811b0895a09a51e7db671">ein::GE_OS</a> = 0x0Duz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4686de78c77b2fc9525d83e26b33850c">ein::GT_OS</a> = 0x0Euz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371af7b78add9521557d7e422a2286791d42">ein::TRUE_UQ</a> = 0x0Fuz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a871c0db36304bf61c3a4eb5024826e78">ein::EQ_OS</a> = 0x10uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a3a54753d632414a627869dc3c64a76cb">ein::LT_OQ</a> = 0x11uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371acc31057e75e43d87a1cf7fdab04b71e9">ein::LE_OQ</a> = 0x12uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ad7fbc46939c54f9c1bf596c780875224">ein::UNORD_S</a> = 0x13uz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a38ac26ae9e73c08ca7f7ad6c6bdc9b22">ein::NEQ_US</a> = 0x14uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4061c59528de0d116b8ecef0b22dff1a">ein::NLT_UQ</a> = 0x15uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a95e7929db9a383af82d1f864659a2a5f">ein::NLE_UQ</a> = 0x16uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371aae5affac24dd7fbf363befe61f4119c2">ein::ORD_S</a> = 0x17uz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371afedb5808564269fc5894a4786c506850">ein::EQ_US</a> = 0x18uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a0a8d1a566f8a564b5af98d07e93d4ece">ein::NGE_UQ</a> = 0x19uz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371abf1f15f08c2b815d733b43a11832c9a3">ein::NGT_UQ</a> = 0x1Auz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a889f7c260de099373e04347a7ae23111">ein::FALSE_OS</a> = 0x1Buz
+, <br />
+&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a1b0ae872a03e21af7ddb40ac0516386e">ein::NEQ_OS</a> = 0x1Cuz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a21b82fecf7da6aab1130b470e014b565">ein::GE_OQ</a> = 0x1Duz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a19c8432b2e0dbb3a104be7a7dc25a048">ein::GT_OQ</a> = 0x1Euz
+, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a426a17852fdcac3ddcf322454415cb51">ein::TRUE_US</a> = 0x1Fuz
+<br />
+ }</td></tr>
+<tr class="separator:a462cd88db2679129e8c9b418fe426371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6170dc2098b97385639e73bf47488817" id="r_a6170dc2098b97385639e73bf47488817"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460">CMPINT</a> imm8, typename T &gt; <br />
+requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz))</td></tr>
+<tr class="memitem:a6170dc2098b97385639e73bf47488817"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a6170dc2098b97385639e73bf47488817">ein::cmpint</a> (T a, T b) noexcept</td></tr>
+<tr class="separator:a6170dc2098b97385639e73bf47488817"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2" id="r_ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">CMP</a> imm8, typename T &gt; <br />
+requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (imm8 &lt; <a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">max_fp_comparison_predicate</a>))</td></tr>
+<tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae65db238ed9b102d82a5c7878bec42e2">ein::cmp</a> (T a, T b) noexcept</td></tr>
+<tr class="separator:ae65db238ed9b102d82a5c7878bec42e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:ae9b13b1a14965d4f917ac518e18450e4" id="r_ae9b13b1a14965d4f917ac518e18450e4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a> = 64</td></tr>
+<tr class="separator:ae9b13b1a14965d4f917ac518e18450e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2b09119ae81703a8158113efe9708d8b" id="r_a2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">ein::max_fp_comparison_predicate</a></td></tr>
+<tr class="separator:a2b09119ae81703a8158113efe9708d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="dc/d5b/structein_1_1simd__intrinsic" id="dc/d5b/structein_1_1simd__intrinsic"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#dc/d5b/structein_1_1simd__intrinsic">&#9670;&#160;</a></span>ein::simd_intrinsic</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct ein::simd_intrinsic</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, size_t N&gt;<br />
+struct ein::simd_intrinsic&lt; T, N &gt;</div>
+<p class="definition">Definition at line <a class="el" href="../../df/d88/simd__data_8cppm_source.html#l00065">65</a> of file <a class="el" href="../../df/d88/simd__data_8cppm_source.html">simd_data.cppm</a>.</p>
+</div>
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../df/d88/simd__data_8cppm.html">simd_data.cppm</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

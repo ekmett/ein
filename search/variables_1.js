@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bytesize_0',['bytesize',['../d1/d89/structein_1_1simd.html#acf4cc627bfd5de1ea02baec7538bec23',1,'ein::simd']]]
+  ['data_0',['data',['../d1/d89/structein_1_1simd.html#a626d7155163f7ba2d66ea2cbc918b17d',1,'ein::simd']]]
 ];

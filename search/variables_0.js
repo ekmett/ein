@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['artificial_0',['artificial',['../d1/d89/structein_1_1simd.html#a418620cee3b1ea3fe37beadc270724b7',1,'ein::simd::artificial'],['../d1/d89/structein_1_1simd.html#a7eb0d1b628a344f7a9a0e908ae8e7383',1,'ein::simd::artificial']]]
+  ['bytesize_0',['bytesize',['../d1/d89/structein_1_1simd.html#af34fa79e65d1522f29b99af1a45f8dd7',1,'ein::simd']]]
 ];

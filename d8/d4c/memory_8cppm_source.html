@@ -1,0 +1,324 @@
+<!-- HTML header for doxygen 1.12.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ein: /home/runner/work/ein/ein/src/memory.cppm Source File</title>
+<link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
+<link href="../../tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../jquery.js"></script>
+<script type="text/javascript" src="../../dynsections.js"></script>
+<link href="../../navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../navtreedata.js"></script>
+<script type="text/javascript" src="../../navtree.js"></script>
+<script type="text/javascript" src="../../resize.js"></script>
+<script type="text/javascript" src="../../cookie.js"></script>
+<link href="../../search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="../../search/searchdata.js"></script>
+<script type="text/javascript" src="../../search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="/home/runner/work/ein/ein/doxygen/mathjax.js/es5/tex-chtml.js"></script>
+<link href="../../doxygen.css" rel="stylesheet" type="text/css" />
+<link href="../../doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<link href="../../doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="../../header.css" rel="stylesheet" type="text/css"/>
+<!-- extra scripts -->
+<script type="text/javascript" src="../../doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="../../doxygen-awesome-tabs.js"></script>
+<script type="text/javascript">
+  DoxygenAwesomeDarkModeToggle.init()
+  DoxygenAwesomeFragmentCopyButton.init()
+  DoxygenAwesomeParagraphLink.init()
+  DoxygenAwesomeInteractiveToc.init()
+  DoxygenAwesomeTabs.init()
+</script>
+<!-- end of extra scripts -->
+</head>
+<body>
+<!-- github corners -->
+<!-- end github corner -->
+<a href="https://github.com/ekmett/ein" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 9999;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><img alt="Logo" src="../../ein-logo.png"/></td>
+  <td id="projectalign">
+   <div id="projectname">ein<span id="projectnumber">&#160;0.0.1</span>
+   </div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "../../search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(1); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="../../menudata.js"></script>
+<script type="text/javascript" src="../../menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('../../',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('d8/d4c/memory_8cppm_source.html','../../'); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="headertitle"><div class="title">memory.cppm</div></div>
+</div><!--header-->
+<div class="contents">
+<a href="../../d8/d4c/memory_8cppm.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">module</span>;</div>
+<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;sys/mman.h&gt;</span> <span class="comment">// munmap</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &lt;string.h&gt;</span> <span class="comment">// strdup</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span><a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a>;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span> </div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">export</span> <span class="keyword">module</span> <a class="code" href="../../de/d47/module__ein_8memory.html">ein.memory</a>;</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="keyword">import</span> <a class="code" href="../../dd/d6d/module__ein_8cpu.html">ein.cpu</a>;</div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
+<div class="foldopen" id="foldopen00019" data-start="{" data-end="}">
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno"><a class="line" href="../../d6/d67/namespaceein_1_1memory.html">   19</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d6/d67/namespaceein_1_1memory.html">ein::memory</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">export</span> <span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno"><a class="line" href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">   23</a></span><span class="keyword">concept </span><a class="code hl_concept" href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">trivially_destructible</a></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  = is_trivially_destructible_v&lt;remove_extent_t&lt;T&gt;&gt;;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="foldopen" id="foldopen00026" data-start="{" data-end="};">
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno"><a class="line" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">   26</a></span><span class="keyword">export</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">c_munmap</a> {</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno"><a class="line" href="../../df/df3/structein_1_1memory_1_1c__munmap.html#ade592d6246f98c6c14672798df1cf894">   27</a></span>  <span class="keywordtype">size_t</span> <a class="code hl_variable" href="../../df/df3/structein_1_1memory_1_1c__munmap.html#ade592d6246f98c6c14672798df1cf894">size</a>;</div>
+<div class="foldopen" id="foldopen00028" data-start="{" data-end="}">
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno"><a class="line" href="../../df/df3/structein_1_1memory_1_1c__munmap.html#a0fa2ee7e11d8fec5bb82c497c4dae9b6">   28</a></span>  <span class="keywordtype">void</span> <a class="code hl_function" href="../../df/df3/structein_1_1memory_1_1c__munmap.html#a0fa2ee7e11d8fec5bb82c497c4dae9b6">operator()</a>(<span class="keywordtype">void</span> * p) <span class="keyword">const</span> <span class="keyword">noexcept</span> {</div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordflow">if</span> (p != <span class="keyword">nullptr</span>)</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>      munmap(p, <a class="code hl_variable" href="../../df/df3/structein_1_1memory_1_1c__munmap.html#ade592d6246f98c6c14672798df1cf894">size</a>);</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
+</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>};</div>
+</div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno"><a class="line" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">   35</a></span><span class="keyword">export</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span><span class="keyword">using </span><a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">mmap_ptr</a> = unique_ptr&lt;void,c_munmap&gt;;</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span><span class="keyword">export</span></div>
+<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a">nonnull</a>(1))</div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span><a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">mmap_ptr</a> <a class="code hl_function" href="../../dd/d9f/group__memory__group.html#ga4fd564422d122e5ac77622371c61aa7e">make_mmap_ptr</a>(<span class="keywordtype">void</span> * p, <span class="keywordtype">size_t</span> size) noexcept {</div>
+<div class="foldopen" id="foldopen00042" data-start="{" data-end="};">
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno"><a class="line" href="../../d8/d12/structein_1_1memory_1_1c__free.html">   42</a></span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">mmap_ptr</a>(p,<a class="code hl_struct" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">c_munmap</a>(size));</div>
+<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>}</div>
+<div class="foldopen" id="foldopen00044" data-start="{" data-end="}">
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno"><a class="line" href="../../d8/d12/structein_1_1memory_1_1c__free.html#a5c566edbe61c8631927b93265a26de08">   44</a></span> </div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span><span class="keyword">export</span> <span class="keyword">struct </span><a class="code hl_struct" href="../../d8/d12/structein_1_1memory_1_1c__free.html">c_free</a> {</div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>  <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>  <span class="keyword">static</span> <span class="keywordtype">void</span> <a class="code hl_function" href="../../d8/d12/structein_1_1memory_1_1c__free.html#a5c566edbe61c8631927b93265a26de08">operator()</a>(T * p) <span class="keyword">noexcept</span> {</div>
+</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    free(<span class="keyword">const_cast&lt;</span>remove_const_t&lt;T&gt;*<span class="keyword">&gt;</span>(p));</div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span>  }</div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>};</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno"><a class="line" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">   51</a></span> </div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="keyword">export</span> <span class="keyword">template</span>&lt;trivially_destructible T&gt;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="keyword">using </span><a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">unique_c_ptr</a> = unique_ptr&lt;T, c_free&gt;;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">   56</a></span><span class="keyword">static_assert</span>(<span class="keyword">sizeof</span>(<span class="keywordtype">char</span> *)== <span class="keyword">sizeof</span>(<a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">unique_c_ptr&lt;char&gt;</a>),<span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno"><a class="line" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">   59</a></span><span class="keyword">export</span> <span class="keyword">using </span><a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> = <a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">unique_c_ptr&lt;char const&gt;</a>;</div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span> </div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span><span class="keyword">export</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,<a class="code hl_variable" href="../../d6/d67/namespaceein_1_1memory.html#a57638e42bc8ad1f0447716c99e156924">pure</a>,<a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a">nonnull</a>(1),<a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e">null_terminated_string_arg</a>(1))</div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span><a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> dup(<span class="keywordtype">char</span> const * <span class="keywordtype">string</span>) noexcept {</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> { strdup(<span class="keywordtype">string</span>) };</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>}</div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span> </div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span><span class="comment">// Intel</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span><span class="comment">// -----</span></div>
+<div class="foldopen" id="foldopen00069" data-start="{" data-end="}">
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno"><a class="line" href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">   69</a></span> </div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span>void <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">monitor</a>(<span class="keywordtype">void</span> const * addr) noexcept {</div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>  <span class="comment">// MONITOR: rAX = addr, ECX = extensions, EDX = hints</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>  __asm__ __volatile__ (</div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="stringliteral">&quot;monitor&quot;</span> <span class="comment">// 0f 01 fa</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span>    : <span class="comment">// No output</span></div>
+<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span>    : <span class="stringliteral">&quot;rax&quot;</span>(addr), <span class="stringliteral">&quot;rcx&quot;</span>(0), <span class="stringliteral">&quot;rdx&quot;</span>(0) <span class="comment">// Input: addr, ECX = 0, EDX = 0</span></div>
+</div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    : <span class="stringliteral">&quot;memory&quot;</span> <span class="comment">// Clobbered registers (memory is implied by monitor)</span></div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span>  );</div>
+<div class="line"><a id="l00080" name="l00080"></a><span class="lineno">   80</span>}</div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span> </div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span>void <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3">mwait</a>(uint32_t timer = 0) noexcept {</div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>  __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mwait&quot;</span> : : <span class="stringliteral">&quot;a&quot;</span>(0), <span class="stringliteral">&quot;c&quot;</span>(0), <span class="stringliteral">&quot;d&quot;</span>(timer));</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>}</div>
+<div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span> </div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span><span class="comment">// AMD</span></div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="comment">// ---</span></div>
+<div class="foldopen" id="foldopen00092" data-start="{" data-end="}">
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno"><a class="line" href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">   92</a></span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="comment">// \internal</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>void <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">monitorx</a>(<span class="keywordtype">void</span> const * addr) noexcept {</div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>  <span class="comment">// MONITORX: rAX = addr, ECX = extensions, EDX = hints</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>  __asm__ __volatile__ (</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="stringliteral">&quot;monitorx&quot;</span> <span class="comment">// 0f 01 fa</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    : <span class="comment">// No output</span></div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>    : <span class="stringliteral">&quot;rax&quot;</span>(addr), <span class="stringliteral">&quot;rcx&quot;</span>(0), <span class="stringliteral">&quot;rdx&quot;</span>(0) <span class="comment">// Input: addr, ECX = 0, EDX = 0</span></div>
+</div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>    : <span class="stringliteral">&quot;memory&quot;</span> <span class="comment">// Clobbered registers (memory is implied by monitorx)</span></div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  );</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>}</div>
+<div class="foldopen" id="foldopen00104" data-start="{" data-end="}">
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno"><a class="line" href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">  104</a></span> </div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span><span class="comment">// AMD provides mwaitx for userland mwait instead of mwait.</span></div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span><a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(export,<span class="keyword">inline</span>)</div>
+</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>void <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">mwaitx</a>(uint32_t timer = 0) noexcept {</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  __asm__ <span class="keyword">volatile</span>(<span class="stringliteral">&quot;mwaitx&quot;</span> : : <span class="stringliteral">&quot;a&quot;</span>(0), <span class="stringliteral">&quot;c&quot;</span>(0), <span class="stringliteral">&quot;d&quot;</span>(timer));</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="foldopen" id="foldopen00110" data-start="{" data-end="}">
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno"><a class="line" href="../../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7">  110</a></span> </div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="comment">// spin using mwait/mwaitx watching memory until the target passes a test, waits timer-many cycles at a time.</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="comment">// note: waits on the cache line containing memory.</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="keywordtype">void</span> <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7">wait_until</a>(<span class="keyword">auto</span> <span class="keyword">const</span> &amp; m, <span class="keyword">auto</span> p, uint32_t timer = 0) noexcept</div>
+<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span>requires requires(decltype(p) p, decltype(*m) m) { { t(m) } -&gt; convertible_to&lt;bool&gt;; } {</div>
+<div class="line"><a id="l00115" name="l00115"></a><span class="lineno">  115</span>  <span class="keywordflow">if</span> (<a class="code hl_variable" href="../../db/d32/namespaceein_1_1cpu.html#a453b9232fe423c4efb38077169bd955a">cpu::has_mwaitx</a>) <span class="comment">// amd</span></div>
+<div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keywordflow">while</span> (!p(m)) {</div>
+<div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>      <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">monitorx</a>(&amp;m);</div>
+<div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span>      <span class="keywordflow">if</span> (!p(m))</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>        <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">mwaitx</a>(&amp;m,timer);</div>
+<div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>    }</div>
+<div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span>  <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">ein_assert</a>(<a class="code hl_variable" href="../../db/d32/namespaceein_1_1cpu.html#a3c0d02deb4179b64912ce1fa4bf1a9ce">cpu::has_mwait</a>); <span class="comment">// intel</span></div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span>    <span class="keywordflow">while</span> (!p(m)) {</div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span>      <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">monitor</a>(&amp;m);</div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span>      <span class="keywordflow">if</span> (!p(m))</div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span>        <a class="code hl_function" href="../../d6/d67/namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3">mwait</a>(&amp;m,timer);</div>
+</div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span>    }</div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span>  }</div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span>}</div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span> </div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span>} <span class="comment">// ein::memory</span></div>
+</div>
+<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
+<div class="line"><a id="l00133" name="l00133"></a><span class="lineno">  133</span><span class="keyword">export</span> <span class="keyword">namespace </span><a class="code hl_namespace" href="../../d7/dc1/namespaceein.html">ein</a> {</div>
+<div class="line"><a id="l00134" name="l00134"></a><span class="lineno">  134</span>  <span class="keyword">using namespace </span>::<a class="code hl_namespace" href="../../d6/d67/namespaceein_1_1memory.html">ein::memory</a>;</div>
+<div class="line"><a id="l00135" name="l00135"></a><span class="lineno">  135</span>} <span class="comment">// ein</span></div>
+<div class="ttc" id="aassert_8hpp_html_a4af23f138af62df96e8bacc71767bf00"><div class="ttname"><a href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">ein_assert</a></div><div class="ttdeci">#define ein_assert(cond,...)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d54/assert_8hpp_source.html#l00006">assert.hpp:6</a></div></div>
+<div class="ttc" id="aconceptein_1_1memory_1_1trivially__destructible_html"><div class="ttname"><a href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">ein::memory::trivially_destructible</a></div><div class="ttdef"><b>Definition</b> <a href="#l00023">memory.cppm:24</a></div></div>
+<div class="ttc" id="agroup__attributes_html_ga9c72af7df8a237d25e24d5beb4d17aa1"><div class="ttname"><a href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a></div><div class="ttdeci">#define EIN(...)</div><div class="ttdoc">convenient macro for applying several attributes</div><div class="ttdef"><b>Definition</b> <a href="../../df/d6a/attributes_8hpp_source.html#l00022">attributes.hpp:22</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_ga28e90c7a3be1dbddae254d6b9b8e42cc"><div class="ttname"><a href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">ein::memory::unique_str</a></div><div class="ttdeci">unique_c_ptr&lt; char const  &gt; unique_str</div><div class="ttdef"><b>Definition</b> <a href="#l00056">memory.cppm:56</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_ga4fd564422d122e5ac77622371c61aa7e"><div class="ttname"><a href="../../dd/d9f/group__memory__group.html#ga4fd564422d122e5ac77622371c61aa7e">ein::memory::make_mmap_ptr</a></div><div class="ttdeci">mmap_ptr make_mmap_ptr(void *p, size_t size) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00038">memory.cppm:38</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_gaa4b1c50ff11207294a324dcc8de92d16"><div class="ttname"><a href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">ein::memory::mmap_ptr</a></div><div class="ttdeci">unique_ptr&lt; void, c_munmap &gt; mmap_ptr</div><div class="ttdef"><b>Definition</b> <a href="#l00035">memory.cppm:35</a></div></div>
+<div class="ttc" id="agroup__memory__group_html_gae63e3353c4db8580f878b167cba377ad"><div class="ttname"><a href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">ein::memory::unique_c_ptr</a></div><div class="ttdeci">unique_ptr&lt; T, c_free &gt; unique_c_ptr</div><div class="ttdef"><b>Definition</b> <a href="#l00051">memory.cppm:51</a></div></div>
+<div class="ttc" id="amodule__ein_8cpu_html"><div class="ttname"><a href="../../dd/d6d/module__ein_8cpu.html">ein.cpu</a></div></div>
+<div class="ttc" id="amodule__ein_8memory_html"><div class="ttname"><a href="../../de/d47/module__ein_8memory.html">ein.memory</a></div></div>
+<div class="ttc" id="anamespaceein_1_1cpu_html_a3c0d02deb4179b64912ce1fa4bf1a9ce"><div class="ttname"><a href="../../db/d32/namespaceein_1_1cpu.html#a3c0d02deb4179b64912ce1fa4bf1a9ce">ein::cpu::has_mwait</a></div><div class="ttdeci">const bool has_mwait</div><div class="ttdoc">intel check for user-level mwait/monitor</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dfc/cpu_8cpp_source.html#l00045">cpu.cpp:45</a></div></div>
+<div class="ttc" id="anamespaceein_1_1cpu_html_a453b9232fe423c4efb38077169bd955a"><div class="ttname"><a href="../../db/d32/namespaceein_1_1cpu.html#a453b9232fe423c4efb38077169bd955a">ein::cpu::has_mwaitx</a></div><div class="ttdeci">const bool has_mwaitx</div><div class="ttdoc">amd check for mwaitx/monitorx</div><div class="ttdef"><b>Definition</b> <a href="../../d7/dfc/cpu_8cpp_source.html#l00056">cpu.cpp:56</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html">ein::memory</a></div><div class="ttdef"><b>Definition</b> <a href="#l00019">memory.cppm:19</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a267b037f107d63c5b3c0945e781b892a"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a">ein::memory::nonnull</a></div><div class="ttdeci">nonnull(1)</div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a57638e42bc8ad1f0447716c99e156924"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a57638e42bc8ad1f0447716c99e156924">ein::memory::pure</a></div><div class="ttdeci">pure</div><div class="ttdef"><b>Definition</b> <a href="#l00059">memory.cppm:59</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a5882900626b78b4c9a07f06c185dc878"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">ein::memory::mwaitx</a></div><div class="ttdeci">inline void mwaitx(uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00104">memory.cppm:104</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a771edab7c25089f112657d63d4c9ff0e"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e">ein::memory::null_terminated_string_arg</a></div><div class="ttdeci">null_terminated_string_arg(1)) unique_str dup(char const *string) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00059">memory.cppm:59</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a7887543b98c51f542ad8a7f58702dd68"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">ein::memory::monitor</a></div><div class="ttdeci">inline void monitor(void const *addr) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00069">memory.cppm:69</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_a9cb64e008d59f29c3c135cd0ab2d5cfe"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">ein::memory::monitorx</a></div><div class="ttdeci">inline void monitorx(void const *addr) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00092">memory.cppm:92</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_abba63c48a1b51daaa54e4e771e0a08e3"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3">ein::memory::mwait</a></div><div class="ttdeci">inline void mwait(uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00083">memory.cppm:83</a></div></div>
+<div class="ttc" id="anamespaceein_1_1memory_html_ada844f0a0786a195c184824654bf55b7"><div class="ttname"><a href="../../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7">ein::memory::wait_until</a></div><div class="ttdeci">void wait_until(auto const &amp;m, auto p, uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00110">memory.cppm:110</a></div></div>
+<div class="ttc" id="anamespaceein_html"><div class="ttname"><a href="../../d7/dc1/namespaceein.html">ein</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/dfc/cpu_8cpp_source.html#l00023">cpu.cpp:23</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l01002">simd.cppm:1002</a></div></div>
+<div class="ttc" id="astructein_1_1memory_1_1c__free_html"><div class="ttname"><a href="../../d8/d12/structein_1_1memory_1_1c__free.html">ein::memory::c_free</a></div><div class="ttdef"><b>Definition</b> <a href="#l00042">memory.cppm:42</a></div></div>
+<div class="ttc" id="astructein_1_1memory_1_1c__free_html_a5c566edbe61c8631927b93265a26de08"><div class="ttname"><a href="../../d8/d12/structein_1_1memory_1_1c__free.html#a5c566edbe61c8631927b93265a26de08">ein::memory::c_free::operator()</a></div><div class="ttdeci">static void operator()(T *p) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00044">memory.cppm:44</a></div></div>
+<div class="ttc" id="astructein_1_1memory_1_1c__munmap_html"><div class="ttname"><a href="../../df/df3/structein_1_1memory_1_1c__munmap.html">ein::memory::c_munmap</a></div><div class="ttdef"><b>Definition</b> <a href="#l00026">memory.cppm:26</a></div></div>
+<div class="ttc" id="astructein_1_1memory_1_1c__munmap_html_a0fa2ee7e11d8fec5bb82c497c4dae9b6"><div class="ttname"><a href="../../df/df3/structein_1_1memory_1_1c__munmap.html#a0fa2ee7e11d8fec5bb82c497c4dae9b6">ein::memory::c_munmap::operator()</a></div><div class="ttdeci">void operator()(void *p) const noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00028">memory.cppm:28</a></div></div>
+<div class="ttc" id="astructein_1_1memory_1_1c__munmap_html_ade592d6246f98c6c14672798df1cf894"><div class="ttname"><a href="../../df/df3/structein_1_1memory_1_1c__munmap.html#ade592d6246f98c6c14672798df1cf894">ein::memory::c_munmap::size</a></div><div class="ttdeci">size_t size</div><div class="ttdef"><b>Definition</b> <a href="#l00027">memory.cppm:27</a></div></div>
+</div><!-- fragment --></div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d8/d4c/memory_8cppm.html">memory.cppm</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

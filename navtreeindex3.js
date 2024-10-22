@@ -1,10 +1,5 @@
 var NAVTREEINDEX3 =
 {
-"functions_type.html":[6,3,3],
-"functions_vars.html":[6,3,2],
-"globals.html":[7,1,0],
-"globals_defs.html":[7,1,2],
-"globals_func.html":[7,1,1],
 "hierarchy.html":[6,2],
 "index.html":[],
 "index.html#autotoc_md1":[0],

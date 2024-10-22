@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: ein::numerics Namespace Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -149,16 +157,6 @@ $(function(){initNavTree('de/df9/namespaceein_1_1numerics.html','../../'); initR
 Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/d1d/structein_1_1numerics_1_1integer__traits" id="r_d7/d1d/structein_1_1numerics_1_1integer__traits"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#d7/d1d/structein_1_1numerics_1_1integer__traits">integer_traits</a></td></tr>
-<tr class="separator:d7/d1d/structein_1_1numerics_1_1integer__traits"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4" id="r_d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4">integer_traits&lt; 16 &gt;</a></td></tr>
-<tr class="separator:d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4" id="r_d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4">integer_traits&lt; 32 &gt;</a></td></tr>
-<tr class="separator:d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4" id="r_d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4">integer_traits&lt; 64 &gt;</a></td></tr>
-<tr class="separator:d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4" id="r_dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4">integer_traits&lt; 8 &gt;</a></td></tr>
-<tr class="separator:dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
@@ -170,18 +168,20 @@ Concepts</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab652a71f7ec533e140b934439df00802" id="r_ab652a71f7ec533e140b934439df00802"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab652a71f7ec533e140b934439df00802"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename <a class="el" href="#d7/d1d/structein_1_1numerics_1_1integer__traits">integer_traits</a>&lt;sizeof(T)*8&gt;::signed_t</td></tr>
+<tr class="memitem:ab652a71f7ec533e140b934439df00802"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::signed_t</td></tr>
+<tr class="memdesc:ab652a71f7ec533e140b934439df00802"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a signed integer type of the same size as T suitable for std::bitcast  <br /></td></tr>
 <tr class="separator:ab652a71f7ec533e140b934439df00802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33" id="r_aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename <a class="el" href="#d7/d1d/structein_1_1numerics_1_1integer__traits">integer_traits</a>&lt;sizeof(T)*8&gt;::unsigned_t</td></tr>
+<tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::unsigned_t</td></tr>
+<tr class="memdesc:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an unsigned integer type of the same size as T suitable for std::bitcast  <br /></td></tr>
 <tr class="separator:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:a92ba58a20dcf7edf22a4766a181a5b14" id="r_a92ba58a20dcf7edf22a4766a181a5b14"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92ba58a20dcf7edf22a4766a181a5b14">ein::numerics::isnan</a> (auto x) noexcept</td></tr>
 <tr class="separator:a92ba58a20dcf7edf22a4766a181a5b14"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2312b506fb838b9131aec85bfb271aa8" id="r_a2312b506fb838b9131aec85bfb271aa8"><td class="memItemLeft" align="right" valign="top">static constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2312b506fb838b9131aec85bfb271aa8">isinf</a> (auto x) noexcept</td></tr>
-<tr class="separator:a2312b506fb838b9131aec85bfb271aa8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac084533bb490cf38963a9aad71c2fc59" id="r_ac084533bb490cf38963a9aad71c2fc59"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac084533bb490cf38963a9aad71c2fc59">ein::numerics::isinf</a> (auto x) noexcept</td></tr>
+<tr class="separator:ac084533bb490cf38963a9aad71c2fc59"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fa1941ec4ca8009b3b8069e5d7b57f7" id="r_a9fa1941ec4ca8009b3b8069e5d7b57f7"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9fa1941ec4ca8009b3b8069e5d7b57f7">ein::numerics::cmp_unord</a> (auto a, auto b) noexcept</td></tr>
 <tr class="separator:a9fa1941ec4ca8009b3b8069e5d7b57f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a6464b71a4b444b9927d67dea8c98decc" id="r_a6464b71a4b444b9927d67dea8c98decc"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6464b71a4b444b9927d67dea8c98decc">ein::numerics::cmp_ord</a> (auto a, auto b) noexcept</td></tr>
@@ -196,138 +196,6 @@ Variables</h2></td></tr>
 <tr class="memitem:a284ac16dfa6911e9606bced23b11053f"><td class="memTemplItemLeft" align="right" valign="top">constexpr const <a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a>&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a284ac16dfa6911e9606bced23b11053f">ein::numerics::imm</a> {}</td></tr>
 <tr class="separator:a284ac16dfa6911e9606bced23b11053f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="d7/d1d/structein_1_1numerics_1_1integer__traits" id="d7/d1d/structein_1_1numerics_1_1integer__traits"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#d7/d1d/structein_1_1numerics_1_1integer__traits">&#9670;&#160;</a></span>ein::numerics::integer_traits</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ein::numerics::integer_traits</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><div class="compoundTemplParams">template&lt;size_t N&gt;<br />
-struct ein::numerics::integer_traits&lt; N &gt;</div></div>
-</div>
-</div>
-<a name="d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4" id="d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#d7/d22/structein_1_1numerics_1_1integer__traits_3_0116_01_4">&#9670;&#160;</a></span>ein::numerics::integer_traits&lt; 16 &gt;</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ein::numerics::integer_traits&lt; 16 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="acdbb1152c9241019a4d9f8ed5cd0a353" name="acdbb1152c9241019a4d9f8ed5cd0a353"></a>typedef int16_t</td>
-<td class="fieldname">
-signed_t int16_t</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="aeefd5cebf578e3ffb1c6b2b0959d0b00" name="aeefd5cebf578e3ffb1c6b2b0959d0b00"></a>typedef uint16_t</td>
-<td class="fieldname">
-unsigned_t uint16_t</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4" id="d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#d0/d77/structein_1_1numerics_1_1integer__traits_3_0132_01_4">&#9670;&#160;</a></span>ein::numerics::integer_traits&lt; 32 &gt;</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ein::numerics::integer_traits&lt; 32 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a45fb9069586aa52676c858137420d910" name="a45fb9069586aa52676c858137420d910"></a>typedef int32_t</td>
-<td class="fieldname">
-signed_t int32_t</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="ac4d76c876b2e316b8cf95ae62051f847" name="ac4d76c876b2e316b8cf95ae62051f847"></a>typedef uint32_t</td>
-<td class="fieldname">
-unsigned_t uint32_t</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4" id="d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#d3/d56/structein_1_1numerics_1_1integer__traits_3_0164_01_4">&#9670;&#160;</a></span>ein::numerics::integer_traits&lt; 64 &gt;</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ein::numerics::integer_traits&lt; 64 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a4bdd472e4e79484e94527d5e6d50c7e8" name="a4bdd472e4e79484e94527d5e6d50c7e8"></a>typedef int64_t</td>
-<td class="fieldname">
-signed_t int64_t</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a70791affe3a84fb7db6f41b06e546ca1" name="a70791affe3a84fb7db6f41b06e546ca1"></a>typedef uint64_t</td>
-<td class="fieldname">
-unsigned_t uint64_t</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
-<a name="dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4" id="dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#dc/d16/structein_1_1numerics_1_1integer__traits_3_018_01_4">&#9670;&#160;</a></span>ein::numerics::integer_traits&lt; 8 &gt;</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ein::numerics::integer_traits&lt; 8 &gt;</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"></div><table class="fieldtable">
-<tr><th colspan="3">Class Members</th></tr>
-<tr><td class="fieldtype">
-<a id="a1f9af957f23f0eee1f22a165e3d79f8d" name="a1f9af957f23f0eee1f22a165e3d79f8d"></a>typedef int8_t</td>
-<td class="fieldname">
-signed_t int8_t</td>
-<td class="fielddoc">
-</td></tr>
-<tr><td class="fieldtype">
-<a id="a8a7eb39f4a4bd50ba22e424e297d4ea4" name="a8a7eb39f4a4bd50ba22e424e297d4ea4"></a>typedef uint8_t</td>
-<td class="fieldname">
-unsigned_t uint8_t</td>
-<td class="fielddoc">
-</td></tr>
-</table>
-
-</div>
-</div>
 <h2 class="groupheader">Typedef Documentation</h2>
 <a id="ab652a71f7ec533e140b934439df00802" name="ab652a71f7ec533e140b934439df00802"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ab652a71f7ec533e140b934439df00802">&#9670;&#160;</a></span>int_t</h2>
@@ -341,7 +209,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename <a class="el" href="#d7/d1d/structein_1_1numerics_1_1integer__traits">integer_traits</a>&lt;sizeof(T)*8&gt;::signed_t</td>
+          <td class="memname">using <a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::signed_t</td>
         </tr>
       </table>
   </td>
@@ -350,6 +218,10 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>returns a signed integer type of the same size as T suitable for std::bitcast </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00024">24</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -365,7 +237,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename <a class="el" href="#d7/d1d/structein_1_1numerics_1_1integer__traits">integer_traits</a>&lt;sizeof(T)*8&gt;::unsigned_t</td>
+          <td class="memname">using <a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::unsigned_t</td>
         </tr>
       </table>
   </td>
@@ -374,6 +246,10 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>returns an unsigned integer type of the same size as T suitable for std::bitcast </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00029">29</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -405,6 +281,16 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00066">66</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   66</span>                                                              {</div>
+<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">return</span> !is_nan(a) &amp;&amp; !is_nan(b);</div>
+<div class="line"><span class="lineno">   68</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+
 </div>
 </div>
 <a id="a9fa1941ec4ca8009b3b8069e5d7b57f7" name="a9fa1941ec4ca8009b3b8069e5d7b57f7"></a>
@@ -434,10 +320,20 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00062">62</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>                                                                {</div>
+<div class="line"><span class="lineno">   63</span>  <span class="keywordflow">return</span> is_nan(a) || is_nan(b);</div>
+<div class="line"><span class="lineno">   64</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
+</div>
+
 </div>
 </div>
-<a id="a2312b506fb838b9131aec85bfb271aa8" name="a2312b506fb838b9131aec85bfb271aa8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2312b506fb838b9131aec85bfb271aa8">&#9670;&#160;</a></span>isinf()</h2>
+<a id="ac084533bb490cf38963a9aad71c2fc59" name="ac084533bb490cf38963a9aad71c2fc59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac084533bb490cf38963a9aad71c2fc59">&#9670;&#160;</a></span>isinf()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -446,7 +342,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static constexpr bool ein::numerics::isinf </td>
+          <td class="memname">bool ein::numerics::isinf </td>
           <td>(</td>
           <td class="paramtype">auto</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
@@ -454,11 +350,21 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00053">53</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                                         {</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keyword">using </span>T = std::decay_t&lt;<span class="keyword">decltype</span>(x)&gt;;</div>
+<div class="line"><span class="lineno">   55</span>  <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><span class="lineno">   56</span>    <span class="keywordflow">return</span> x == std::numeric_limits&lt;T&gt;::infinity() || x == -std::numeric_limits&lt;T&gt;::infinity();</div>
+<div class="line"><span class="lineno">   57</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">   58</span>    <span class="keywordflow">return</span> std::isinf(x);</div>
+<div class="line"><span class="lineno">   59</span>  }</div>
+<div class="line"><span class="lineno">   60</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a92ba58a20dcf7edf22a4766a181a5b14" name="a92ba58a20dcf7edf22a4766a181a5b14"></a>
@@ -483,6 +389,16 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00048">48</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>                                                         {</div>
+<div class="line"><span class="lineno">   49</span>  <span class="keywordflow">return</span> x/=x;</div>
+<div class="line"><span class="lineno">   50</span>}</div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 --></div>
+</div>
 
 </div>
 </div>
@@ -515,6 +431,55 @@ template&lt;one_of_t&lt; float, double &gt; T&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00072">72</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>                                      {</div>
+<div class="line"><span class="lineno">   73</span>  <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><span class="lineno">   74</span>    <span class="comment">// Constexpr path using bit manipulation</span></div>
+<div class="line"><span class="lineno">   75</span> </div>
+<div class="line"><span class="lineno">   76</span>    <span class="keyword">using </span>uint_type = <a class="code hl_typedef" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">uint_t&lt;T&gt;</a>; <span class="comment">//  std::conditional_t&lt;std::is_same_v&lt;T, float&gt;, uint32_t, uint64_t&gt;;</span></div>
+<div class="line"><span class="lineno">   77</span>    <span class="keyword">constexpr</span> <span class="keywordtype">int</span> exponent_bias = std::is_same_v&lt;T, float&gt; ? 127 : 1023;</div>
+<div class="line"><span class="lineno">   78</span>    <span class="keyword">constexpr</span> uint_type exponent_mask = std::is_same_v&lt;T, float&gt; ? 0x7F800000 : 0x7FF0000000000000ull;</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keyword">constexpr</span> uint_type mantissa_mask = std::is_same_v&lt;T, float&gt; ? 0x007FFFFF : 0x000FFFFFFFFFFFFFull;</div>
+<div class="line"><span class="lineno">   80</span> </div>
+<div class="line"><span class="lineno">   81</span>    <span class="keywordflow">if</span> (x == 0.0 || <a class="code hl_function" href="#a92ba58a20dcf7edf22a4766a181a5b14">isnan</a>(x) || std::isinf(x))</div>
+<div class="line"><span class="lineno">   82</span>      <span class="keywordflow">return</span> x; <span class="comment">// Handle special cases</span></div>
+<div class="line"><span class="lineno">   83</span> </div>
+<div class="line"><span class="lineno">   84</span>    <span class="comment">// Get the raw bits of the floating-point number</span></div>
+<div class="line"><span class="lineno">   85</span>    uint_type x_bits = std::bit_cast&lt;uint_type&gt;(x);</div>
+<div class="line"><span class="lineno">   86</span> </div>
+<div class="line"><span class="lineno">   87</span>    <span class="comment">// Extract exponent and mantissa</span></div>
+<div class="line"><span class="lineno">   88</span>    <span class="keywordtype">int</span> exponent = <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(((x_bits &amp; exponent_mask) &gt;&gt; (std::is_same_v&lt;T, float&gt; ? 23 : 52)) - exponent_bias);</div>
+<div class="line"><span class="lineno">   89</span>    uint_type mantissa = x_bits &amp; mantissa_mask;</div>
+<div class="line"><span class="lineno">   90</span> </div>
+<div class="line"><span class="lineno">   91</span>    <span class="comment">// Normalize the mantissa (implicit leading 1 for normalized numbers)</span></div>
+<div class="line"><span class="lineno">   92</span>    <span class="keywordflow">if</span> (exponent != -exponent_bias)</div>
+<div class="line"><span class="lineno">   93</span>      mantissa |= std::is_same_v&lt;T, float&gt; ? (1u &lt;&lt; 23) : (1ull &lt;&lt; 52); <span class="comment">// Set implicit leading bit</span></div>
+<div class="line"><span class="lineno">   94</span> </div>
+<div class="line"><span class="lineno">   95</span>    <span class="comment">// Scale the exponent by adding y</span></div>
+<div class="line"><span class="lineno">   96</span>    exponent += <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(y);</div>
+<div class="line"><span class="lineno">   97</span> </div>
+<div class="line"><span class="lineno">   98</span>    <span class="comment">// Check for overflow and underflow</span></div>
+<div class="line"><span class="lineno">   99</span>    <span class="keywordflow">if</span> (exponent &gt; std::numeric_limits&lt;T&gt;::max_exponent)</div>
+<div class="line"><span class="lineno">  100</span>      <span class="keywordflow">return</span> std::numeric_limits&lt;T&gt;::infinity();</div>
+<div class="line"><span class="lineno">  101</span> </div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">if</span> (exponent &lt; std::numeric_limits&lt;T&gt;::min_exponent)</div>
+<div class="line"><span class="lineno">  103</span>      <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>T<span class="keyword">&gt;</span>(0.0); <span class="comment">// Underflow to zero</span></div>
+<div class="line"><span class="lineno">  104</span> </div>
+<div class="line"><span class="lineno">  105</span>    <span class="comment">// Rebuild the floating-point number from the new exponent and mantissa</span></div>
+<div class="line"><span class="lineno">  106</span>    x_bits =</div>
+<div class="line"><span class="lineno">  107</span>      (x_bits &amp; (std::is_same_v&lt;T, float&gt; ? 0x80000000u : 0x8000000000000000ull)) | <span class="comment">// Preserve the sign bit</span></div>
+<div class="line"><span class="lineno">  108</span>      (<span class="keyword">static_cast&lt;</span>uint_type<span class="keyword">&gt;</span>(exponent + exponent_bias) &lt;&lt; (std::is_same_v&lt;T, float&gt; ? 23 : 52)) | <span class="comment">// Apply new exponent</span></div>
+<div class="line"><span class="lineno">  109</span>      (mantissa &amp; mantissa_mask); <span class="comment">// Mask mantissa bits</span></div>
+<div class="line"><span class="lineno">  110</span> </div>
+<div class="line"><span class="lineno">  111</span>    <span class="keywordflow">return</span> std::bit_cast&lt;T&gt;(x_bits);</div>
+<div class="line"><span class="lineno">  112</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  113</span>    <span class="comment">// Runtime path using fast standard library call</span></div>
+<div class="line"><span class="lineno">  114</span>    <span class="keywordflow">return</span> std::scalbn(x, <span class="keyword">static_cast&lt;</span><span class="keywordtype">int</span><span class="keyword">&gt;</span>(y));</div>
+<div class="line"><span class="lineno">  115</span>  }</div>
+<div class="line"><span class="lineno">  116</span>}</div>
+<div class="ttc" id="anamespaceein_1_1numerics_html_a92ba58a20dcf7edf22a4766a181a5b14"><div class="ttname"><a href="#a92ba58a20dcf7edf22a4766a181a5b14">ein::numerics::isnan</a></div><div class="ttdeci">constexpr bool isnan(auto x) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00048">numerics.cppm:48</a></div></div>
+<div class="ttc" id="anamespaceein_1_1numerics_html_aa347122ef9a30fb2ed727fbcfa8d7f33"><div class="ttname"><a href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a></div><div class="ttdeci">typename integer_traits&lt; sizeof(T) *8 &gt;::unsigned_t uint_t</div><div class="ttdoc">returns an unsigned integer type of the same size as T suitable for std::bitcast</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00029">numerics.cppm:29</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -540,6 +505,9 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00044">44</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>{};</div>
+</div><!-- fragment -->
 </div>
 </div>
 </div><!-- contents -->

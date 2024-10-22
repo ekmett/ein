@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: /home/runner/work/ein/ein/src/assert.hpp File Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -172,19 +180,10 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line">  <span class="keywordflow">do</span> { \</div>
-<div class="line">    <span class="keywordflow">if</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#gad09a5000eae7c54f3712153a59bcc790">ein_unlikely</a> (!cond) { \</div>
-<div class="line">      []&lt;<span class="keyword">typename</span> ... Args&gt;(Args &amp;&amp; ... args) { \</div>
-<div class="line">        <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (<span class="keyword">sizeof</span>...(Args) == 0) \</div>
-<div class="line">          spdlog::error(<span class="stringliteral">&quot;{}:{}: assertion failed ({}) in function {}&quot;</span>,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \</div>
-<div class="line">        else \</div>
-<div class="line">          spdlog::error(<span class="stringliteral">&quot;{}:{}: assertion failed ({}) in function {}: {}&quot;</span>,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,fmt::vformat(std::forward&lt;Args&gt;(args)...)); \</div>
-<div class="line">        std::abort(); \</div>
-<div class="line">      }(__VA_ARGS__); \</div>
-<div class="line">    } \</div>
-<div class="line">  } <span class="keywordflow">while</span> (0)</div>
-<div class="ttc" id="agroup__attributes_html_gad09a5000eae7c54f3712153a59bcc790"><div class="ttname"><a href="../../d4/d86/group__attributes.html#gad09a5000eae7c54f3712153a59bcc790">ein_unlikely</a></div><div class="ttdeci">#define ein_unlikely(x)</div><div class="ttdoc">portable [[unlikely]] or __builtin_expect(x,0) expressions</div><div class="ttdef"><b>Definition</b> attributes.hpp:66</div></div>
-</div><!-- fragment -->
+<p>This provides a variadic assert macro that is left around even in our release configuration </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d54/assert_8hpp_source.html#l00006">6</a> of file <a class="el" href="../../d2/d54/assert_8hpp_source.html">assert.hpp</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

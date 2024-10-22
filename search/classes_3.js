@@ -1,11 +1,5 @@
 var searchData=
 [
-  ['si_0',['si',['../d7/dc1/namespaceein.html#d7/dc4/structein_1_1si',1,'ein']]],
-  ['si_3c_20128_20_3e_1',['si&lt; 128 &gt;',['../d7/dc1/namespaceein.html#d0/de1/structein_1_1si_3_01128_01_4',1,'ein']]],
-  ['si_3c_20256_20_3e_2',['si&lt; 256 &gt;',['../d7/dc1/namespaceein.html#dc/d5c/structein_1_1si_3_01256_01_4',1,'ein']]],
-  ['simd_3',['simd',['../d1/d89/structein_1_1simd.html',1,'ein']]],
-  ['simd_5fintrinsic_4',['simd_intrinsic',['../d7/dc1/namespaceein.html#dc/d5b/structein_1_1simd__intrinsic',1,'ein']]],
-  ['simd_5fintrinsic_3c_20double_2c_20n_20_3e_5',['simd_intrinsic&lt; double, N &gt;',['../d7/dc1/namespaceein.html#da/dab/structein_1_1simd__intrinsic_3_01double_00_01N_01_4',1,'ein']]],
-  ['simd_5fintrinsic_3c_20float_2c_20n_20_3e_6',['simd_intrinsic&lt; float, N &gt;',['../d7/dc1/namespaceein.html#d7/d89/structein_1_1simd__intrinsic_3_01float_00_01N_01_4',1,'ein']]],
-  ['simd_5fintrinsic_3c_20t_2c_20n_20_3e_7',['simd_intrinsic&lt; T, N &gt;',['../d7/dc1/namespaceein.html#d1/d5b/structein_1_1simd__intrinsic_3_01T_00_01N_01_4',1,'ein']]]
+  ['tuple_5felement_3c_20i_2c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_0',['tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;',['../d8/dcc/namespacestd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
+  ['tuple_5fsize_3c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_1',['tuple_size&lt; ein::simd&lt; T, N &gt; &gt;',['../d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4.html',1,'std']]]
 ];

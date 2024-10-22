@@ -8,6 +8,14 @@
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
 <title>ein: ein.simd Module Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="../../favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="../../android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="../../android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="../../apple-touch-icon.png"/>
+<link rel="manifest" href="../../site.web-manifest">
+<!--alternate icons-->
 <link href="../../tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="../../jquery.js"></script>
 <script type="text/javascript" src="../../dynsections.js"></script>
@@ -136,103 +144,106 @@ $(function(){initNavTree('d8/da3/module__ein_8simd.html','../../'); initResizabl
 
 <div class="header">
   <div class="summary">
-<a href="#concepts">Concepts</a> &#124;
 <a href="#classes">Classes</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a> &#124;
 <a href="#files">Files</a>  </div>
   <div class="headertitle"><div class="title">ein.simd Module Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
-Concepts</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:d1/d5b/structein_1_1simd__intrinsic_3_01T_00_01N_01_4" id="r_d1/d5b/structein_1_1simd__intrinsic_3_01T_00_01N_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#d1/d5b/structein_1_1simd__intrinsic_3_01T_00_01N_01_4">ein::simd_intrinsic&lt; T, N &gt;</a></td></tr>
-<tr class="separator:d1/d5b/structein_1_1simd__intrinsic_3_01T_00_01N_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d89/structein_1_1simd.html">ein::simd&lt; T, N &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">simd primitive definition  <a href="../../d1/d89/structein_1_1simd.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../da/d58/structstd_1_1tuple__size_3_01ein_1_1simd_3_01T_00_01N_01_4_01_4.html">std::tuple_size&lt; ein::simd&lt; T, N &gt; &gt;</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4.html">std::tuple_size&lt; ein::simd&lt; T, N &gt; &gt;</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">needed to support for std::apply  <a href="../../d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4" id="r_de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcc/namespacestd.html#de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4">std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;</a></td></tr>
-<tr class="separator:de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a3eb3869fe6f24fc19b5894278c242460" id="r_a3eb3869fe6f24fc19b5894278c242460"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460">ein::CMPINT</a> : size_t { <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47">EQ</a> = 0x0uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b">LT</a> = 0x1uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460acfe6055d2e0503be378bb63449ec7ba6">LE</a> = 0x2uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460a946003f97ccc52d5d3b54ac0ec31bbfc">FALSE</a> = 0x3uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460adc33066c3993e0d50896e533fd692ce0">NE</a> = 0x4uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8">NLT</a> = 0x5uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460aacd748f300c5d189c47807e2a9d6ea57">NLE</a> = 0x6uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61">TRUE</a> = 0x7uz
-<br />
- }</td></tr>
-<tr class="separator:a3eb3869fe6f24fc19b5894278c242460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462cd88db2679129e8c9b418fe426371" id="r_a462cd88db2679129e8c9b418fe426371"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">ein::CMP</a> : size_t { <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a94270b248ec9d52e352291ed79739944">EQ_OQ</a> = 0x00uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a12d040983061b6fe28aa2555c89173bb">LT_OS</a> = 0x01uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a5d707e258be8fcc41d9393601a47a9c9">LE_OS</a> = 0x02uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a1adfd3c3470a45d49f541ddd27fc55c8">UNORD_Q</a> = 0x03uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ae2f0e19929d719f692d965d5ec9c9acd">NEQ_UQ</a> = 0x04uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a8e9cd341ba82e736d1ada75930aaca67">NLT_US</a> = 0x05uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ab79ab578660107f6f79d20b8ad6f872e">NLE_US</a> = 0x06uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4841e2067e009706a0b706de9eae7dee">ORD_Q</a> = 0x07uz
-<br />
- }</td></tr>
-<tr class="separator:a462cd88db2679129e8c9b418fe426371"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4" id="r_dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/dcc/namespacestd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4">std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;</a></td></tr>
+<tr class="memdesc:dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4"><td class="mdescLeft">&#160;</td><td class="mdescRight">needed to support for std::apply  <a href="../../d8/dcc/namespacestd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4">More...</a><br /></td></tr>
+<tr class="separator:dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:ac990fb6f5dcea45fb2adb40514b836d3" id="r_ac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:ac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">ein::simd_intrinsic_t</a> = typename simd_intrinsic&lt;T,N&gt;::type</td></tr>
-<tr class="separator:ac990fb6f5dcea45fb2adb40514b836d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af38a0d34a1b72ea74678a9f14a055afc" id="r_af38a0d34a1b72ea74678a9f14a055afc"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:af38a0d34a1b72ea74678a9f14a055afc"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#af38a0d34a1b72ea74678a9f14a055afc">ein::simd_mask_t</a></td></tr>
-<tr class="separator:af38a0d34a1b72ea74678a9f14a055afc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae22c55106d8b5926c0027ab1144e3cfa" id="r_ae22c55106d8b5926c0027ab1144e3cfa"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae22c55106d8b5926c0027ab1144e3cfa">ein::fp32x4</a> = simd&lt;float,4&gt;</td></tr>
+<tr class="separator:ae22c55106d8b5926c0027ab1144e3cfa"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0e9645237731cca7e56531879c34a1f" id="r_ac0e9645237731cca7e56531879c34a1f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ac0e9645237731cca7e56531879c34a1f">ein::fp32x8</a> = simd&lt;float,8&gt;</td></tr>
+<tr class="separator:ac0e9645237731cca7e56531879c34a1f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a31eb7373dc363b5520e1ba320faea936" id="r_a31eb7373dc363b5520e1ba320faea936"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a31eb7373dc363b5520e1ba320faea936">ein::fp64x2</a> = simd&lt;double,2&gt;</td></tr>
+<tr class="separator:a31eb7373dc363b5520e1ba320faea936"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3ace97d4c3a3d98da1f5fca127693a8" id="r_ae3ace97d4c3a3d98da1f5fca127693a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae3ace97d4c3a3d98da1f5fca127693a8">ein::fp64x4</a> = simd&lt;double,4&gt;</td></tr>
+<tr class="separator:ae3ace97d4c3a3d98da1f5fca127693a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78a8ff04d4d524b67d0f72d9a7af8871" id="r_a78a8ff04d4d524b67d0f72d9a7af8871"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a78a8ff04d4d524b67d0f72d9a7af8871">ein::int8x16</a> = simd&lt;int8_t,16&gt;</td></tr>
+<tr class="separator:a78a8ff04d4d524b67d0f72d9a7af8871"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acddbaeedad59c84f00e18ee001a1d4b8" id="r_acddbaeedad59c84f00e18ee001a1d4b8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#acddbaeedad59c84f00e18ee001a1d4b8">ein::int8x32</a> = simd&lt;int8_t,32&gt;</td></tr>
+<tr class="separator:acddbaeedad59c84f00e18ee001a1d4b8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2d98f3ae69221233d6d20b591e78ed4a" id="r_a2d98f3ae69221233d6d20b591e78ed4a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a2d98f3ae69221233d6d20b591e78ed4a">ein::int16x8</a> = simd&lt;int16_t,8&gt;</td></tr>
+<tr class="separator:a2d98f3ae69221233d6d20b591e78ed4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9116e3b64507581b031017dd2d8925c0" id="r_a9116e3b64507581b031017dd2d8925c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a9116e3b64507581b031017dd2d8925c0">ein::int16x16</a> = simd&lt;int16_t,16&gt;</td></tr>
+<tr class="separator:a9116e3b64507581b031017dd2d8925c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a62cafb7bab600aaa94fac7e0665f0517" id="r_a62cafb7bab600aaa94fac7e0665f0517"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a62cafb7bab600aaa94fac7e0665f0517">ein::int32x4</a> = simd&lt;int32_t,4&gt;</td></tr>
+<tr class="separator:a62cafb7bab600aaa94fac7e0665f0517"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0edd7cb4d4ab887238ce53d629c2f96" id="r_ae0edd7cb4d4ab887238ce53d629c2f96"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae0edd7cb4d4ab887238ce53d629c2f96">ein::int32x8</a> = simd&lt;int32_t,8&gt;</td></tr>
+<tr class="separator:ae0edd7cb4d4ab887238ce53d629c2f96"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a71ad105bc48578d236bef4c95852605f" id="r_a71ad105bc48578d236bef4c95852605f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a71ad105bc48578d236bef4c95852605f">ein::int64x2</a> = simd&lt;int64_t,2&gt;</td></tr>
+<tr class="separator:a71ad105bc48578d236bef4c95852605f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a195210d38f15036700309068dfc60a23" id="r_a195210d38f15036700309068dfc60a23"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a195210d38f15036700309068dfc60a23">ein::int64x4</a> = simd&lt;int64_t,4&gt;</td></tr>
+<tr class="separator:a195210d38f15036700309068dfc60a23"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab6a317e53a630dcb372cb9b98a464275" id="r_ab6a317e53a630dcb372cb9b98a464275"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ab6a317e53a630dcb372cb9b98a464275">ein::uint8x16</a> = simd&lt;uint8_t,16&gt;</td></tr>
+<tr class="separator:ab6a317e53a630dcb372cb9b98a464275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f8d4eaf871a86cdc50a4e34bf2ff3a" id="r_a23f8d4eaf871a86cdc50a4e34bf2ff3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a23f8d4eaf871a86cdc50a4e34bf2ff3a">ein::uint8x32</a> = simd&lt;uint8_t,32&gt;</td></tr>
+<tr class="separator:a23f8d4eaf871a86cdc50a4e34bf2ff3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a65ea08c7871a0a20bfb2d604430ea5a8" id="r_a65ea08c7871a0a20bfb2d604430ea5a8"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a65ea08c7871a0a20bfb2d604430ea5a8">ein::uint16x8</a> = simd&lt;uint16_t,8&gt;</td></tr>
+<tr class="separator:a65ea08c7871a0a20bfb2d604430ea5a8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a70b0e9a321d152d66046b843a770166a" id="r_a70b0e9a321d152d66046b843a770166a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a70b0e9a321d152d66046b843a770166a">ein::uint16x16</a> = simd&lt;uint16_t,16&gt;</td></tr>
+<tr class="separator:a70b0e9a321d152d66046b843a770166a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a135896288f00905e116e14110c3cc215" id="r_a135896288f00905e116e14110c3cc215"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a135896288f00905e116e14110c3cc215">ein::uint32x4</a> = simd&lt;uint32_t,4&gt;</td></tr>
+<tr class="separator:a135896288f00905e116e14110c3cc215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a10d805ff4d7af5bbc74927560b311c74" id="r_a10d805ff4d7af5bbc74927560b311c74"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a10d805ff4d7af5bbc74927560b311c74">ein::uint32x8</a> = simd&lt;uint32_t,8&gt;</td></tr>
+<tr class="separator:a10d805ff4d7af5bbc74927560b311c74"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3926de70bf4206168f9ee57b7ee8a9da" id="r_a3926de70bf4206168f9ee57b7ee8a9da"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a3926de70bf4206168f9ee57b7ee8a9da">ein::uint64x2</a> = simd&lt;uint64_t,2&gt;</td></tr>
+<tr class="separator:a3926de70bf4206168f9ee57b7ee8a9da"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5fc68faaa51cf98ee73c393addb4ed7e" id="r_a5fc68faaa51cf98ee73c393addb4ed7e"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a5fc68faaa51cf98ee73c393addb4ed7e">ein::uint64x4</a> = simd&lt;uint64_t,4&gt;</td></tr>
+<tr class="separator:a5fc68faaa51cf98ee73c393addb4ed7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4e248c9775aea65926dbebd3881e8cfe" id="r_a4e248c9775aea65926dbebd3881e8cfe"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a4e248c9775aea65926dbebd3881e8cfe">ein::fp32x16</a> = simd&lt;float,16&gt;</td></tr>
+<tr class="separator:a4e248c9775aea65926dbebd3881e8cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a007aef315a58d0005aa5cf4933f390d5" id="r_a007aef315a58d0005aa5cf4933f390d5"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a007aef315a58d0005aa5cf4933f390d5">ein::fp64x8</a> = simd&lt;double,8&gt;</td></tr>
+<tr class="separator:a007aef315a58d0005aa5cf4933f390d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a77dc7f1118a812f22838bcef0f6ffc61" id="r_a77dc7f1118a812f22838bcef0f6ffc61"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a77dc7f1118a812f22838bcef0f6ffc61">ein::int8x64</a> = simd&lt;int8_t,64&gt;</td></tr>
+<tr class="separator:a77dc7f1118a812f22838bcef0f6ffc61"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf8bc480346f66bd97a059f58ff58c90" id="r_acf8bc480346f66bd97a059f58ff58c90"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#acf8bc480346f66bd97a059f58ff58c90">ein::int32x16</a> = simd&lt;int32_t,16&gt;</td></tr>
+<tr class="separator:acf8bc480346f66bd97a059f58ff58c90"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37092d30b259ed0911f2cf28721329d4" id="r_a37092d30b259ed0911f2cf28721329d4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a37092d30b259ed0911f2cf28721329d4">ein::int16x32</a> = simd&lt;int16_t,32&gt;</td></tr>
+<tr class="separator:a37092d30b259ed0911f2cf28721329d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a22da2c3453e6bc099778ca18ca1f13be" id="r_a22da2c3453e6bc099778ca18ca1f13be"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a22da2c3453e6bc099778ca18ca1f13be">ein::int64x8</a> = simd&lt;int64_t,8&gt;</td></tr>
+<tr class="separator:a22da2c3453e6bc099778ca18ca1f13be"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43cc8e4d37711dff8660ed7d3602a275" id="r_a43cc8e4d37711dff8660ed7d3602a275"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a43cc8e4d37711dff8660ed7d3602a275">ein::uint8x64</a> = simd&lt;uint8_t,64&gt;</td></tr>
+<tr class="separator:a43cc8e4d37711dff8660ed7d3602a275"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a9596193f0c89562952f3fab8ccce3a" id="r_a9a9596193f0c89562952f3fab8ccce3a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a9a9596193f0c89562952f3fab8ccce3a">ein::uint16x32</a> = simd&lt;uint16_t,32&gt;</td></tr>
+<tr class="separator:a9a9596193f0c89562952f3fab8ccce3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0dbdd599ce1b8eeaa0ce940fead425db" id="r_a0dbdd599ce1b8eeaa0ce940fead425db"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a0dbdd599ce1b8eeaa0ce940fead425db">ein::uint32x16</a> = simd&lt;uint32_t,16&gt;</td></tr>
+<tr class="separator:a0dbdd599ce1b8eeaa0ce940fead425db"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2afaa27220f8477108a1ca9e0b23847" id="r_af2afaa27220f8477108a1ca9e0b23847"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#af2afaa27220f8477108a1ca9e0b23847">ein::uint64x8</a> = simd&lt;uint64_t,8&gt;</td></tr>
+<tr class="separator:af2afaa27220f8477108a1ca9e0b23847"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a6170dc2098b97385639e73bf47488817" id="r_a6170dc2098b97385639e73bf47488817"><td class="memTemplParams" colspan="2">template&lt;CMPINT imm8, typename T &gt; <br />
-requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz))</td></tr>
-<tr class="memitem:a6170dc2098b97385639e73bf47488817"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a6170dc2098b97385639e73bf47488817">ein::cmpint</a> (T a, T b) noexcept</td></tr>
-<tr class="separator:a6170dc2098b97385639e73bf47488817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2" id="r_ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplParams" colspan="2">template&lt;CMP imm8, typename T &gt; <br />
-requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (imm8 &lt; max_fp_comparison_predicate))</td></tr>
-<tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae65db238ed9b102d82a5c7878bec42e2">ein::cmp</a> (T a, T b) noexcept</td></tr>
-<tr class="separator:ae65db238ed9b102d82a5c7878bec42e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a736c44c8691e86d12b79abd6a696a3ec" id="r_a736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; <br />
-requires ( has_simd_type&lt;T,N&gt; &amp;&amp; (N % sizeof(T) == 0) )</td></tr>
-<tr class="memitem:a736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a736c44c8691e86d12b79abd6a696a3ec">ein::simd</a> (T __attribute((__vector_size__(N)))) -&gt; simd&lt; T, N/sizeof(T)&gt;</td></tr>
-<tr class="separator:a736c44c8691e86d12b79abd6a696a3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a48efda4dbc6203557e3d7b55af8bed6e" id="r_a48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; <br />
-requires has_simd_type&lt;std::common_type&lt;Args...&gt;, sizeof...(Args)&gt;</td></tr>
-<tr class="memitem:a48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a48efda4dbc6203557e3d7b55af8bed6e">ein::simd</a> (Args &amp;&amp;...) -&gt; simd&lt; std::common_type&lt; Args... &gt;, sizeof...(Args)&gt;</td></tr>
-<tr class="separator:a48efda4dbc6203557e3d7b55af8bed6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6def18561a39ff4a1188bc619f86d862" id="r_a6def18561a39ff4a1188bc619f86d862"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
-requires has_simd_type&lt;T,max_simd_size/sizeof(T)&gt;</td></tr>
-<tr class="memitem:a6def18561a39ff4a1188bc619f86d862"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a6def18561a39ff4a1188bc619f86d862">ein::simd</a> (T) -&gt; simd&lt; T, has_simd_type&lt; T, max_simd_size/sizeof(T)&gt; &gt;</td></tr>
-<tr class="separator:a6def18561a39ff4a1188bc619f86d862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ae9b13b1a14965d4f917ac518e18450e4" id="r_ae9b13b1a14965d4f917ac518e18450e4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a> = 32</td></tr>
-<tr class="separator:ae9b13b1a14965d4f917ac518e18450e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b09119ae81703a8158113efe9708d8b" id="r_a2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">ein::max_fp_comparison_predicate</a> = 8</td></tr>
-<tr class="separator:a2b09119ae81703a8158113efe9708d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3bed02bb933b6ce6e8babde9b6961256" id="r_a3bed02bb933b6ce6e8babde9b6961256"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; </td></tr>
-<tr class="memitem:a3bed02bb933b6ce6e8babde9b6961256"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a3bed02bb933b6ce6e8babde9b6961256">ein::inline</a></td></tr>
-<tr class="separator:a3bed02bb933b6ce6e8babde9b6961256"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed5787d13d5a0302ffa6067fbf64b954" id="r_aed5787d13d5a0302ffa6067fbf64b954"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; <br />
+requires has_simd_type&lt;T,N&gt;</td></tr>
+<tr class="memitem:aed5787d13d5a0302ffa6067fbf64b954"><td class="memTemplItemLeft" align="right" valign="top">simd&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">ein::load</a> (T *data) noexcept</td></tr>
+<tr class="memdesc:aed5787d13d5a0302ffa6067fbf64b954"><td class="mdescLeft">&#160;</td><td class="mdescRight">load data from <em>aligned</em> memory  <br /></td></tr>
+<tr class="separator:aed5787d13d5a0302ffa6067fbf64b954"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7da03f2aac209b7c98e1a339d11654b5" id="r_a7da03f2aac209b7c98e1a339d11654b5"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; <br />
+requires has_simd_type&lt;T,N&gt;</td></tr>
+<tr class="memitem:a7da03f2aac209b7c98e1a339d11654b5"><td class="memTemplItemLeft" align="right" valign="top">simd&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">ein::loadu</a> (T *data) noexcept</td></tr>
+<tr class="memdesc:a7da03f2aac209b7c98e1a339d11654b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">load data from unaligned memory  <br /></td></tr>
+<tr class="separator:a7da03f2aac209b7c98e1a339d11654b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a427f6d506790fc3fbf4aaaafbe7b3a8b" id="r_a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; <br />
+requires has_simd_type&lt;T,N&gt;</td></tr>
+<tr class="memitem:a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="memTemplItemLeft" align="right" valign="top">simd&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">ein::stream_load</a> (T *data) noexcept</td></tr>
+<tr class="memdesc:a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream data from memory non-temporally, bypassing cache  <br /></td></tr>
+<tr class="separator:a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
