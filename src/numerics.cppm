@@ -2,6 +2,8 @@ export module ein.numerics;
 
 import ein.types;
 
+using namespace std;
+
 namespace ein::numerics {
 
 /// \brief \p N is one of the \p candidates
@@ -36,6 +38,7 @@ using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 /// knows that n is a fixed constant known at compile time
 export template <size_t N>
 struct imm_t {
+  static constexpr size_t value = N;
   constexpr operator size_t () noexcept { return N; }
 };
 
@@ -45,13 +48,13 @@ constinit imm_t<N> imm {};
 /// \nodiscard \pure
 export /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
 constexpr bool cmp_unord(auto a, auto b) noexcept {
-  return is_nan(a) || is_nan(b);
+  return isnan(a) || isnan(b);
 }
 
 /// \nodiscard \pure
 export /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
 constexpr bool cmp_ord(auto a, auto b) noexcept {
-  return !is_nan(a) && !is_nan(b);
+  return !isnan(a) && !isnan(b);
 }
 
 /// \hideinlinesource \nodiscard \inline \pure
@@ -63,8 +66,8 @@ constexpr T scalef(T x, T y) noexcept {
 
     using uint_type = uint_t<T>; //  std::conditional_t<std::is_same_v<T, float>, uint32_t, uint64_t>;
     constexpr int exponent_bias = std::is_same_v<T, float> ? 127 : 1023;
-    constexpr uint_type exponent_mask = std::is_same_v<T, float> ? 0x7F800000 : 0x7FF0000000000000ull;
-    constexpr uint_type mantissa_mask = std::is_same_v<T, float> ? 0x007FFFFF : 0x000FFFFFFFFFFFFFull;
+    constexpr uint_type exponent_mask = std::is_same_v<T, float> ? uint_type(0x7F800000) : uint_type(0x7FF0000000000000ull);
+    constexpr uint_type mantissa_mask = std::is_same_v<T, float> ? uint_type(0x007FFFFF) : uint_type(0x000FFFFFFFFFFFFFull);
 
     if (x == 0.0 || isnan(x) || std::isinf(x))
       return x; // Handle special cases
@@ -103,6 +106,10 @@ constexpr T scalef(T x, T y) noexcept {
   }
 }
 
+// compile both ways
+export template float scalef(float, float) noexcept;
+export template double scalef(double, double) noexcept;
+
 /// \hideinlinesource
 export enum class CMPINT : size_t {
   EQ    = 0x0uz
@@ -131,6 +138,34 @@ constexpr bool cmpint(T a, T b) noexcept {
   else static_assert(false);
 }
 
+// precompile cmpint
+
+/// \cond
+#define EIN_CMPINT_IMPL(X,Y) \
+  export template bool cmpint<CMPINT::X,Y>(Y,Y) noexcept;
+#define EIN_CMPINT(X) \
+  EIN_CMPINT_IMPL(X,uint8_t) \
+  EIN_CMPINT_IMPL(X,uint16_t) \
+  EIN_CMPINT_IMPL(X,uint32_t) \
+  EIN_CMPINT_IMPL(X,uint64_t) \
+  EIN_CMPINT_IMPL(X,int8_t) \
+  EIN_CMPINT_IMPL(X,int16_t) \
+  EIN_CMPINT_IMPL(X,int32_t) \
+  EIN_CMPINT_IMPL(X,int64_t)
+/// \endcond
+
+EIN_CMPINT(TRUE)
+EIN_CMPINT(FALSE)
+EIN_CMPINT(LT)
+EIN_CMPINT(NLT)
+EIN_CMPINT(LE)
+EIN_CMPINT(NLE)
+EIN_CMPINT(EQ)
+EIN_CMPINT(NE)
+
+#undef EIN_CMPINT_IMPL
+#undef EIN_CMPINT
+
 /// AVX512 added many more floating point comparison types. Do we have them?
 /// \hideinitializer
 export constexpr size_t max_fp_comparison_predicate
@@ -150,7 +185,7 @@ export enum CMP : size_t {
 , NLT_US    = 0x05uz  // Not-less-than (unordered, signaling)
 , NLE_US    = 0x06uz  // Not-less-than-or-equal (unordered, signaling)
 , ORD_Q     = 0x07uz  // Ordered (nonsignaling)
-#ifdef __AVX512F__
+// note simd instructions only implement the first 8 before AVX512
 , EQ_UQ     = 0x08uz  // Equal (unordered, nonsignaling)
 , NGE_US    = 0x09uz  // Not-greater-than-or-equal (unordered, signaling)
 , NGT_US    = 0x0Auz  // Not-greater-than (unordered, signaling)
@@ -175,13 +210,12 @@ export enum CMP : size_t {
 , GE_OQ     = 0x1Duz  // Greater-than-or-equal (ordered, nonsignaling)
 , GT_OQ     = 0x1Euz  // Greater-than (ordered, nonsignaling)
 , TRUE_US   = 0x1Fuz  // True (unordered, signaling)
-#endif
 };
 
 /// perform an avx512 style floating point comparison for scalar values.
 /// \nodiscard \pure \inline
 export template <CMP imm8, typename T>
-requires (one_of_t<T,float,double> && (imm8 < max_fp_comparison_predicate))
+requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz))
 /** \cond */ EIN(nodiscard,pure,inline) /** \endcond */
 constexpr bool cmp(T a, T b) noexcept {
   if      constexpr (imm8 == CMP::EQ_OQ)    return cmp_ord(a, b) && (a == b);
@@ -218,6 +252,50 @@ constexpr bool cmp(T a, T b) noexcept {
   else if constexpr (imm8 == CMP::TRUE_US)  return -1;
   else static_assert(false);
 }
+
+/// \cond
+#define EIN_CMP_IMPL(X,Y) \
+  export template bool cmp<CMP::X,Y>(Y,Y) noexcept;
+#define EIN_CMP(X) \
+  EIN_CMP_IMPL(X,float) \
+  EIN_CMP_IMPL(X,double)
+/// \endcond
+
+EIN_CMP(EQ_OQ)
+EIN_CMP(LT_OS)
+EIN_CMP(LE_OS)
+EIN_CMP(UNORD_Q)
+EIN_CMP(NEQ_UQ)
+EIN_CMP(NLT_US)
+EIN_CMP(NLE_US)
+EIN_CMP(ORD_Q)
+EIN_CMP(EQ_UQ)
+EIN_CMP(NGE_US)
+EIN_CMP(NGT_US)
+EIN_CMP(FALSE_OQ)
+EIN_CMP(NEQ_OQ)
+EIN_CMP(GE_OS)
+EIN_CMP(GT_OS)
+EIN_CMP(TRUE_UQ)
+EIN_CMP(EQ_OS)
+EIN_CMP(LT_OQ)
+EIN_CMP(LE_OQ)
+EIN_CMP(UNORD_S)
+EIN_CMP(NEQ_US)
+EIN_CMP(NLT_UQ)
+EIN_CMP(NLE_UQ)
+EIN_CMP(ORD_S)
+EIN_CMP(EQ_US)
+EIN_CMP(NGE_UQ)
+EIN_CMP(NGT_UQ)
+EIN_CMP(FALSE_OS)
+EIN_CMP(NEQ_OS)
+EIN_CMP(GE_OQ)
+EIN_CMP(GT_OQ)
+EIN_CMP(TRUE_US)
+
+#undef EIN_CMP
+#undef EIN_CMP_IMPL
 
 } // namespace ein::numerics
 
