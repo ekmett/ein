@@ -88,6 +88,9 @@ jobs:
       with:
         name: Release build
         path: ${{ steps.strings.outputs.build-output-dir }}
+    - name: accelerate gh_pages refresh by noting there are no jekyll templates
+      run: |
+        touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
     - name: publish docs
       uses: peaceiris/actions-gh-pages@v4
       with:
