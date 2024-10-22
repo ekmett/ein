@@ -8,8 +8,7 @@ var annotated_dup =
       [ "numerics", "de/df9/namespaceein_1_1numerics.html", [
         [ "imm_t", "d6/d84/structein_1_1numerics_1_1imm__t.html", "d6/d84/structein_1_1numerics_1_1imm__t" ]
       ] ],
-      [ "simd", "d1/d89/structein_1_1simd.html", "d1/d89/structein_1_1simd" ],
-      [ "simd_intrinsic", "d7/dc1/namespaceein.html#dc/d5b/structein_1_1simd__intrinsic", null ]
+      [ "simd", "d1/d89/structein_1_1simd.html", "d1/d89/structein_1_1simd" ]
     ] ],
     [ "std", "d8/dcc/namespacestd.html", [
       [ "tuple_element< I, ein::simd< T, N > >", "d8/dcc/namespacestd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4", "d8/dcc/namespacestd_dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4_dup" ],

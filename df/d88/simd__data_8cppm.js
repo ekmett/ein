@@ -1,6 +1,5 @@
 var simd__data_8cppm =
 [
-    [ "ein::simd_intrinsic< T, N >", "d7/dc1/namespaceein.html#dc/d5b/structein_1_1simd__intrinsic", null ],
     [ "ein::has_simd_type", "df/deb/conceptein_1_1has__simd__type.html", null ],
     [ "ein::has_builtin_convertvector", "df/df1/conceptein_1_1has__builtin__convertvector.html", null ],
     [ "ein::simd_builtin", "dc/d1b/conceptein_1_1simd__builtin.html", null ],

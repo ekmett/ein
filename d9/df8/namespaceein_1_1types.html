@@ -154,24 +154,28 @@ $(function(){initNavTree('d9/df8/namespaceein_1_1types.html','../../'); initResi
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/dca/conceptein_1_1types_1_1one__of__t.html">one_of_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type <code>T</code> is one of the <code>candidates</code> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/d7d/conceptein_1_1types_1_1not__one__of__t.html">not_one_of_t</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">type <code>T</code> is not one of the <code>candidates</code> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad412739418c5aa8f73e99ae10387884b" id="r_ad412739418c5aa8f73e99ae10387884b"><td class="memItemLeft" align="right" valign="top">const const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad412739418c5aa8f73e99ae10387884b">ein::types::type_of</a> (auto const &amp;t) noexcept</td></tr>
-<tr class="separator:ad412739418c5aa8f73e99ae10387884b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a59fc9474118b3818627c1e0e0836a854" id="r_a59fc9474118b3818627c1e0e0836a854"><td class="memItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a59fc9474118b3818627c1e0e0836a854">ein::types::type_of</a> (auto const &amp;t) noexcept</td></tr>
+<tr class="memdesc:a59fc9474118b3818627c1e0e0836a854"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type of the (unused) argument passed to this function  <br /></td></tr>
+<tr class="separator:a59fc9474118b3818627c1e0e0836a854"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:a794e800e3458965d45b95dd6d3a5e991" id="r_a794e800e3458965d45b95dd6d3a5e991"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:a794e800e3458965d45b95dd6d3a5e991"><td class="memTemplItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a794e800e3458965d45b95dd6d3a5e991">ein::types::type</a></td></tr>
+<tr class="memdesc:a794e800e3458965d45b95dd6d3a5e991"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type <code>T</code>  <br /></td></tr>
 <tr class="separator:a794e800e3458965d45b95dd6d3a5e991"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ad412739418c5aa8f73e99ae10387884b" name="ad412739418c5aa8f73e99ae10387884b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad412739418c5aa8f73e99ae10387884b">&#9670;&#160;</a></span>type_of()</h2>
+<a id="a59fc9474118b3818627c1e0e0836a854" name="a59fc9474118b3818627c1e0e0836a854"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a59fc9474118b3818627c1e0e0836a854">&#9670;&#160;</a></span>type_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -180,7 +184,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">const const string_view ein::types::type_of </td>
+          <td class="memname">const string_view ein::types::type_of </td>
           <td>(</td>
           <td class="paramtype">auto const &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
           <td></td>
@@ -193,12 +197,10 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00023">23</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   23</span>                                                   {</div>
-<div class="line"><span class="lineno">   24</span>  <span class="keywordflow">return</span> <a class="code hl_variable" href="#a794e800e3458965d45b95dd6d3a5e991">type</a>&lt;remove_cvref_t&lt;<span class="keyword">decltype</span>(t)&gt;&gt;();</div>
-<div class="line"><span class="lineno">   25</span>}</div>
-<div class="ttc" id="anamespaceein_1_1types_html_a794e800e3458965d45b95dd6d3a5e991"><div class="ttname"><a href="#a794e800e3458965d45b95dd6d3a5e991">ein::types::type</a></div><div class="ttdeci">const string_view type</div><div class="ttdef"><b>Definition</b> <a href="../../d8/dcb/types_8cppm_source.html#l00012">types.cppm:12</a></div></div>
-</div><!-- fragment -->
+<p>returns the unmangled name of a the type of the (unused) argument passed to this function </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00031">31</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
+
 </div>
 </div>
 <h2 class="groupheader">Variable Documentation</h2>
@@ -223,28 +225,12 @@ template&lt;typename T &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<b>Initial value:</b><div class="fragment"><div class="line">= []   <span class="keyword">const</span>) <span class="keyword">noexcept</span> -&gt; string_view {</div>
-<div class="line">  <span class="keyword">static</span> <span class="keyword">const</span> string_view body = []   <span class="keyword">const</span>) <span class="keyword">noexcept</span> -&gt; string_view {</div>
-<div class="line">    <span class="keywordtype">int</span> status;</div>
-<div class="line">    <span class="keywordtype">size_t</span> len = 0uz;</div>
-<div class="line">    <span class="keyword">const</span> <span class="keywordtype">char</span> * str = abi::__cxa_demangle(<span class="keyword">typeid</span>(T).name(), <span class="keyword">nullptr</span>, &amp;len, &amp;status);</div>
-<div class="line">    <span class="keywordflow">return</span> {str, len};</div>
-<div class="line">  }();</div>
-<div class="line">  <span class="keywordflow">return</span> body;</div>
-<div class="line">}()</div>
-</div><!-- fragment -->
-<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00012">12</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   12</span>                                                                         {</div>
-<div class="line"><span class="lineno">   13</span>  <span class="keyword">static</span> <span class="keyword">const</span> string_view body = [] <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">const</span>) noexcept -&gt; string_view {</div>
-<div class="line"><span class="lineno">   14</span>    <span class="keywordtype">int</span> status;</div>
-<div class="line"><span class="lineno">   15</span>    <span class="keywordtype">size_t</span> len = 0uz;</div>
-<div class="line"><span class="lineno">   16</span>    <span class="keyword">const</span> <span class="keywordtype">char</span> * str = abi::__cxa_demangle(<span class="keyword">typeid</span>(T).name(), <span class="keyword">nullptr</span>, &amp;len, &amp;status);</div>
-<div class="line"><span class="lineno">   17</span>    <span class="keywordflow">return</span> {str, len};</div>
-<div class="line"><span class="lineno">   18</span>  }();</div>
-<div class="line"><span class="lineno">   19</span>  <span class="keywordflow">return</span> body;</div>
-<div class="line"><span class="lineno">   20</span>}();</div>
-<div class="ttc" id="agroup__attributes_html_ga9c72af7df8a237d25e24d5beb4d17aa1"><div class="ttname"><a href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a></div><div class="ttdeci">#define EIN(...)</div><div class="ttdoc">Applies the prefix ein_ syntactically to all arguments. Used to apply many attributes to definitions.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d6a/attributes_8hpp_source.html#l00022">attributes.hpp:22</a></div></div>
-</div><!-- fragment -->
+
+<p>returns the unmangled name of a the type <code>T</code> </p>
+<p>Ideally this would be fully <code>constexpr</code>, but i'm not building my own demangler. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00018">18</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

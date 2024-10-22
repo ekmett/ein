@@ -14,7 +14,6 @@ var namespaceein =
     [ "numerics", "de/df9/namespaceein_1_1numerics.html", "de/df9/namespaceein_1_1numerics" ],
     [ "types", "d9/df8/namespaceein_1_1types.html", "d9/df8/namespaceein_1_1types" ],
     [ "simd", "d1/d89/structein_1_1simd.html", "d1/d89/structein_1_1simd" ],
-    [ "simd_intrinsic", "d7/dc1/namespaceein.html#dc/d5b/structein_1_1simd__intrinsic", null ],
     [ "has_simd_type", "df/deb/conceptein_1_1has__simd__type.html", null ],
     [ "has_builtin_convertvector", "df/df1/conceptein_1_1has__builtin__convertvector.html", null ],
     [ "simd_builtin", "dc/d1b/conceptein_1_1simd__builtin.html", null ],

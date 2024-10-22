@@ -144,7 +144,6 @@ $(function(){initNavTree('df/d88/simd__data_8cppm.html','../../'); initResizable
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
@@ -165,11 +164,6 @@ Include dependency graph for simd_data.cppm:</div>
 </div>
 <p><a href="../../df/d88/simd__data_8cppm_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:dc/d5b/structein_1_1simd__intrinsic" id="r_dc/d5b/structein_1_1simd__intrinsic"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#dc/d5b/structein_1_1simd__intrinsic">ein::simd_intrinsic&lt; T, N &gt;</a></td></tr>
-<tr class="separator:dc/d5b/structein_1_1simd__intrinsic"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html">ein</a></td></tr>
@@ -178,13 +172,16 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">is simd_data_t&lt;T,N&gt; defined? <br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../d7/dc1/namespaceein.html#a2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df1/conceptein_1_1has__builtin__convertvector.html">ein::has_builtin_convertvector</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">can we convert simd_data_t&lt;U,N&gt; -&gt; simd_data_t&lt;T,N&gt; automatically using gcc vector extensions? <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/d1b/conceptein_1_1simd__builtin.html">ein::simd_builtin</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">is this type one of the types that is handed well automatically by clang/gcc vector extensions? <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do we want to use AVX512's notion of an _mmask8, _mmask16, _mmask32, or _mmask64 for masking operations. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
@@ -194,12 +191,15 @@ Typedefs</h2></td></tr>
 <tr class="separator:a2fe08d2d97e186bfa4d9e484443df6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac990fb6f5dcea45fb2adb40514b836d3" id="r_ac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:ac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">ein::simd_intrinsic_t</a></td></tr>
+<tr class="memdesc:ac990fb6f5dcea45fb2adb40514b836d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Intel intrinsic type associated with a simd register full of <code>N</code> values of type <code>T</code>.  <br /></td></tr>
 <tr class="separator:ac990fb6f5dcea45fb2adb40514b836d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a239b5fd784078f2e10a6d6c43f5525dd" id="r_a239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
 <tr class="memitem:a239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a239b5fd784078f2e10a6d6c43f5525dd">ein::mmask_t</a></td></tr>
+<tr class="memdesc:a239b5fd784078f2e10a6d6c43f5525dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">If AVX512 is enabled returns the type of an n-bit mmask.  <br /></td></tr>
 <tr class="separator:a239b5fd784078f2e10a6d6c43f5525dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a423156b83124d4f090aad2b1e75447b1" id="r_a423156b83124d4f090aad2b1e75447b1"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:a423156b83124d4f090aad2b1e75447b1"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a423156b83124d4f090aad2b1e75447b1">ein::simd_mask_t</a></td></tr>
+<tr class="memdesc:a423156b83124d4f090aad2b1e75447b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of mask should I use?  <br /></td></tr>
 <tr class="separator:a423156b83124d4f090aad2b1e75447b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -270,34 +270,18 @@ requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_
 <tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2" id="r_ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">CMP</a> imm8, typename T &gt; <br />
 requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (imm8 &lt; <a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">max_fp_comparison_predicate</a>))</td></tr>
 <tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae65db238ed9b102d82a5c7878bec42e2">ein::cmp</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:ae65db238ed9b102d82a5c7878bec42e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform an avx512 style floating point comparison for scalar values.  <br /></td></tr>
 <tr class="separator:ae65db238ed9b102d82a5c7878bec42e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae9b13b1a14965d4f917ac518e18450e4" id="r_ae9b13b1a14965d4f917ac518e18450e4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a> = 64</td></tr>
-<tr class="memdesc:ae9b13b1a14965d4f917ac518e18450e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">largest simd register width supported on this platform  <br /></td></tr>
+<tr class="memdesc:ae9b13b1a14965d4f917ac518e18450e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">largest simd register width supported on this platform in bytes  <br /></td></tr>
 <tr class="separator:ae9b13b1a14965d4f917ac518e18450e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b09119ae81703a8158113efe9708d8b" id="r_a2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">ein::max_fp_comparison_predicate</a></td></tr>
+<tr class="memdesc:a2b09119ae81703a8158113efe9708d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX512 added many more floating point comparison types. Do we have them?  <br /></td></tr>
 <tr class="separator:a2b09119ae81703a8158113efe9708d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<hr/><h2 class="groupheader">Class Documentation</h2>
-<a name="dc/d5b/structein_1_1simd__intrinsic" id="dc/d5b/structein_1_1simd__intrinsic"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#dc/d5b/structein_1_1simd__intrinsic">&#9670;&#160;</a></span>ein::simd_intrinsic</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">struct ein::simd_intrinsic</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-<div class="textblock"><div class="compoundTemplParams">template&lt;typename T, size_t N&gt;<br />
-struct ein::simd_intrinsic&lt; T, N &gt;</div>
-<p class="definition">Definition at line <a class="el" href="../../df/d88/simd__data_8cppm_source.html#l00067">67</a> of file <a class="el" href="../../df/d88/simd__data_8cppm_source.html">simd_data.cppm</a>.</p>
-</div>
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

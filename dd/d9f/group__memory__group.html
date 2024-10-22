@@ -506,8 +506,9 @@ template&lt;trivially_destructible T&gt; </div>
 </div><div class="memdoc">
 
 <p>User-land monitor for changes at the cache line containing the target address. Intel version. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a">cpu::vendor::intel</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00087">87</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00088">88</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -535,8 +536,9 @@ template&lt;trivially_destructible T&gt; </div>
 </div><div class="memdoc">
 
 <p>user-land monitor for changes at the cache line containing the target address. AMD version </p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">cpu::vendor::amd</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00115">115</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00118">118</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -564,8 +566,9 @@ template&lt;trivially_destructible T&gt; </div>
 </div><div class="memdoc">
 
 <p>user-land mwait. intel version while it isn't <em>documented</em> to support the timer options from AMD on newer cpus it does. </p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a">cpu::vendor::intel</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00103">103</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00105">105</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -593,8 +596,9 @@ template&lt;trivially_destructible T&gt; </div>
 </div><div class="memdoc">
 
 <p>user-land mwait. AMD version </p>
+<dl class="section pre"><dt>Precondition</dt><dd><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8" title="cpu vendor id">cpu::vendor</a> == <a class="el" href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52">cpu::vendor::amd</a> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00130">130</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00134">134</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -635,9 +639,10 @@ requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</di
 
 <p>spin using the flavor of MONITOR/MWAIT that matches your CPU until the target passes a user supplied test <code>f</code>. Waiting happens <code>timer</code> cycles at a time. </p>
 <p>Waits on the entire cache line containing memory. Automatically selects between Intel <a class="el" href="#gab1100e32ec09e3c1e873df290cb86ac5">monitor</a> / <a class="el" href="#gab67f2db34418243138891d205a4aec19">mwait</a> and AMD <a class="el" href="#ga0ff724a9b63566c929742638f5dcef06">monitorx</a> / <a class="el" href="#ga3a653e6c8178106572f3e8755f79b3d7">mwaitx</a>.</p>
-<p>By using MONITOR/MWAIT under the hood, this can achieve ~100ns wakeup times, while still allowing the paired hyperthread to proceed with tasks unburdened by a heavy spin-wait. </p>
+<p>By using MONITOR/MWAIT under the hood, this can achieve ~100ns wakeup times, while still allowing the paired hyperthread to proceed with tasks unburdened by a heavy spin-wait.</p>
+<dl class="section post"><dt>Postcondition</dt><dd><code>f</code>(<code>m</code>) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00148">148</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00153">153</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
