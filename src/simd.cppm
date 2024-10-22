@@ -940,63 +940,6 @@ requires has_simd_type<T,N> {
   return simd<T,N>::stream_load(data);
 }
 
-// compat
-
-export using fp32x4     = simd<float,4>;
-export using fp32x8     = simd<float,8>;
-export using fp64x2     = simd<double,2>;
-export using fp64x4     = simd<double,4>;
-export using int8x16    = simd<int8_t,16>;
-export using int8x32    = simd<int8_t,32>;
-export using int16x8    = simd<int16_t,8>;
-export using int16x16   = simd<int16_t,16>;
-export using int32x4    = simd<int32_t,4>;
-export using int32x8    = simd<int32_t,8>;
-export using int64x2    = simd<int64_t,2>;
-export using int64x4    = simd<int64_t,4>;
-export using uint8x16   = simd<uint8_t,16>;
-export using uint8x32   = simd<uint8_t,32>;
-export using uint16x8   = simd<uint16_t,8>;
-export using uint16x16  = simd<uint16_t,16>;
-export using uint32x4   = simd<uint32_t,4>;
-export using uint32x8   = simd<uint32_t,8>;
-export using uint64x2   = simd<uint64_t,2>;
-export using uint64x4   = simd<uint64_t,4>;
-
-#ifdef __AVX512F__
-export using fp32x16    = simd<float,16>;
-export using fp64x8     = simd<double,8>;
-export using int8x64    = simd<int8_t,64>;
-export using int32x16   = simd<int32_t,16>;
-export using int16x32   = simd<int16_t,32>;
-export using int64x8    = simd<int64_t,8>;
-export using uint8x64   = simd<uint8_t,64>;
-export using uint16x32  = simd<uint16_t,32>;
-export using uint32x16  = simd<uint32_t,16>;
-export using uint64x8   = simd<uint64_t,8>;
-#endif
-
-#if 0
-export using bf16x8     = simd<bf16,8>;
-export using bf16x16    = simd<bf16,16>;
-
-export using fp16x8     = simd<fp16,8>;
-export using fp16x16    = simd<fp16,16>;
-
-export using fp8e5m2x16 = simd<fp8e5m2,16>;
-export using fp8e5m2x32 = simd<fp8e5m2,32>;
-
-export using fp8e4m3x16 = simd<fp8e4m3,16>;
-export using fp8e4m3x32 = simd<fp8e4m3,32>;
-
-#ifdef __AVX512F__
-export using bf16x32    = simd<bf16,32>;
-export using fp16x32    = simd<fp16,32>;
-export using fp8e5m2x64 = simd<fp8e5m2,64>;
-export using fp8e4m3x64 = simd<fp8e4m3,64>;
-#endif
-#endif
-
 } // namespace ein
 
 namespace std {
