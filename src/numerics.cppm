@@ -46,16 +46,24 @@ export template <size_t N>
 constinit imm_t<N> imm {};
 
 /// \nodiscard \pure
-export /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
-constexpr bool cmp_unord(auto a, auto b) noexcept {
+export template <typename T>
+/** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+constexpr bool cmp_unord(T a, T b) noexcept {
   return isnan(a) || isnan(b);
 }
 
+export template bool cmp_unord(float,float) noexcept;
+export template bool cmp_unord(double,double) noexcept;
+
 /// \nodiscard \pure
-export /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
-constexpr bool cmp_ord(auto a, auto b) noexcept {
+export template <typename T>
+/** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+constexpr bool cmp_ord(T a, T b) noexcept {
   return !isnan(a) && !isnan(b);
 }
+
+export template bool cmp_ord(float,float) noexcept;
+export template bool cmp_ord(double,double) noexcept;
 
 /// \hideinlinesource \nodiscard \inline \pure
 export template <one_of_t<float,double> T>
