@@ -10,11 +10,11 @@
 /// \{
 ///
 /// \def EIN(...)
-/// \brief convenient macro for applying several attributes
+/// \brief
+/// Applies the prefix `ein_` syntactically to all arguments. Used to apply many attributes to definitions.
 ///
-/// e.g. EIN(hd,inline) vs. \ref ein_hd \ref ein_inline
-///
-/// this is erased for doxygen. so _only_ use this for attributes
+/// \detail
+/// This lets you write EIN(hd,inline) vs. \ref ein_hd \ref ein_inline
 
 #if !defined(DOXYGEN) && !defined(SWIG)
 #define EIN(...) EIN_MAP(ein_,__VA_ARGS__)
