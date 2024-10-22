@@ -68,6 +68,7 @@ ALIASES += "inline=@qualifier inline"
 ALIASES += "artificial=@qualifier artificial"
 ALIASES += "const=@qualifier const"
 ALIASES += "reinitializes=@qualifier reinitializes"
+ALIASES += "hidden=@qualifier hidden"
 HAVE_DOT = YES
 DOT_IMAGE_FORMAT = svg
 DOT_GRAPH_MAX_NODES = 100

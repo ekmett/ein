@@ -99,6 +99,32 @@
 ein_message("no artificial")
 #endif
 
+/// \def ein_visibility
+/// \brief portable `__attribute__((visibility(x)))`, primarily used for ein_visibility("hidden") to
+/// disable inclusion in the library
+#if ein_has_attribute(__visibility__)
+#define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))
+#else
+#define ein_visibility(...)
+ein_message("no visibility")
+#endif
+
+
+/// \def ein_exclude_from_explicit_instantiation
+/// \brief exclude this member from explicit template instantiation. paired with ein_hidden
+#if ein_has_attribute(exclude_from_explicit_instantiation)
+#define ein_exclude_from_explicit_instantiation __attribute__((exclude_from_explicit_instantiation))
+#else
+#define ein_exclude_from_explicit_instantiation
+ein_message("no exclude_from_explicit_instantiation")
+#endif
+
+/// \def ein_hidden
+/// \brief this member is excluded from both explicit instantiation and external linkage
+/// \details
+/// expands to `__attribute__((visibility("hidden"))` `__attribute__((exclude_from_explicit_instantiation))`
+#define ein_hidden ein_visibility("hidden") ein_exclude_from_explicit_instantiation
+
 /// \def ein_noinline
 /// \brief portable `__attribute__((noinline))`
 
