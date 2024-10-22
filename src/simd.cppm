@@ -733,7 +733,7 @@ struct simd {
     else static_assert(false);
 #endif
 
-#define EIN_CASE(f) return f(q);
+#define EIN_CASE(f) return f(reinterpret_cast<arg1_t<decltype(f)>>(p));
 /// \endcond
 
   /// \hideinlinesource \nodiscard \inline \pure \artificial
@@ -745,8 +745,6 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
-      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
-      U const * q = reinterpret_cast<U const *>(p);
       EIN_SWITCH(
         _mm_load_ps,    _mm_load_pd,    _mm_load_epi32,
         _mm256_load_ps, _mm256_load_pd, _mm256_load_epi32,
@@ -764,8 +762,6 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
-      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
-      U const * q = reinterpret_cast<U const *>(p);
       EIN_SWITCH(
         _mm_loadu_ps,    _mm_loadu_pd,    _mm_loadu_epi32,
         _mm256_loadu_ps, _mm256_loadu_pd, _mm256_loadu_epi32,
@@ -774,6 +770,7 @@ struct simd {
     }
   }
 
+#if 0
   /// \hideinlinesource \nodiscard \inline \pure \artificial
   /** \cond */ EIN(nodiscard,inline,pure,artificial) /** \endcond */
   static constexpr simd stream_load(T const * p) noexcept {
@@ -784,8 +781,6 @@ struct simd {
       return result;
     } else {
 /** \cond */
-      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
-      U const * q = reinterpret_cast<U const *>(p);
       #define ein_mm_stream_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))
       #define ein_mm256_stream_load_ps(x) _mm256_castsi256_ps(_mm256_stream_load_si256(x))
       #define ein_mm512_stream_load_ps(x) _mm512_castsi512_ps(_mm512_stream_load_si512(x))
@@ -797,6 +792,7 @@ struct simd {
         ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
         ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
       )
+
       #undef ein_mm_stream_load_ps
       #undef ein_mm256_stream_load_ps
       #undef ein_mm512_stream_load_ps
@@ -806,7 +802,7 @@ struct simd {
 /** \endcond */
     }
   }
-
+#endif
   /// \details legacy: may outperform loadu when the data crosses a cache boundary
   /// \hideinlinesource \nodiscard \inline \pure \artificial
   /** \cond */ EIN(nodiscard,inline,pure,artificial) /** \endcond */
@@ -817,12 +813,10 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
-      using U = std::conditional_t<std::is_same_v<data_t,intrinsic_t>,T,long long>;
-      U const * q = reinterpret_cast<U const *>(p);
       EIN_SWITCH(
         _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,
-        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si128,
-        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si128
+        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256,
+        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si512
       )
     }
   }

@@ -40,6 +40,23 @@ concept one_of_t = (std::is_same_v<T,candidates> || ... || false);
 export template <typename T, typename ... candidates>
 concept not_one_of_t = (!one_of_t<T,candidates...>);
 
+/// \cond
+template<typename T>
+struct arg1;
+
+template<typename Ret, typename Arg, typename ... Args>
+struct arg1<Ret(Arg, Args...)> {
+    using type = Arg;
+};
+
+template<typename Ret, typename Arg, typename ... Args>
+struct arg1<Ret(*)(Arg, Args...)> : arg1<Ret(Arg,Args...)> {};
+/// \endcond
+
+/// \hideinitializer \hideinlinesource
+export template <typename F>
+using arg1_t = arg1<F>::type;
+
 } // namespace ein
 
 export namespace ein {
