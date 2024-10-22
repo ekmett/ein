@@ -671,30 +671,30 @@ struct simd {
         if (cmp<imm8>(a[i],b[i]))
           result |= 1 << i;
       return result;
-#define tron_suffix(x) x##_mask
+#define ein_suffix(x) x##_mask
 #else
       mask_t result = 0;
       for (size_t i=0;i<N;++i)
         result[i] = cmp<imm8>(a[i],b[i]);
       return result;
-#define tron_suffix(x) x
+#define ein_suffix(x) x
 #endif
 
     } else {
       if constexpr(std::is_same_v<T,float>) {
-             if constexpr (bytesize==16)  return tron_suffix(_mm_cmp_ps)(a.it(),b.it(),imm8);
-        else if constexpr (bytesize==32)  return tron_suffix(_mm256_cmp_ps)(a.it(),b.it(),imm8);
+             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_ps)(a.it(),b.it(),imm8);
+        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_ps)(a.it(),b.it(),imm8);
 #ifdef __AVX512F__
-        else if constexpr (bytesize==64)  return tron_suffix(_mm512_cmp_ps)(a.it(),b.it(),imm8);
+        else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_ps)(a.it(),b.it(),imm8);
 #endif
         else static_assert(false);
       } else if constexpr (std::is_same_v<T,double>) {
-             if constexpr (bytesize==16)  return tron_suffix(_mm_cmp_pd)(a.it(),b.it(),imm8);
-        else if constexpr (bytesize==32)  return tron_suffix(_mm256_cmp_pd)(a.it(),b.it(),imm8);
+             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_pd)(a.it(),b.it(),imm8);
+        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_pd)(a.it(),b.it(),imm8);
 #ifdef __AVX512F__
-        else if constexpr (bytesize==64)  return tron_suffix(_mm512_cmp_pd)(a.it(),b.it(),imm8);
+        else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_pd)(a.it(),b.it(),imm8);
 #endif
-#undef tron_suffix
+#undef ein_suffix
         else static_assert(false);
       }
     }
@@ -714,14 +714,14 @@ struct simd {
         if (cmpint<imm8>(a[i],b[i]))
           result |= 1 << i;
       return result;
-#define tron_suffix _mask
+#define ein_suffix _mask
 #else
       mask_t result = 0;
       for (size_t i=0;i<N;++i)
         if (cmpint<imm8>(a[i],b[i]))
           result[i] = -1;
       return result;
-#define tron_suffix
+#define ein_suffix
 #endif
     } else {
 #ifdef __AVX512F__
@@ -883,23 +883,23 @@ struct simd {
         result[i] = p[i];
       return result;
     } else {
-      #define tron_mm_steam_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))
-      #define tron_mm256_steam_load_ps(x) _mm256_castsi256_ps(_mm_stream_load_si256(x))
-      #define tron_mm512_steam_load_ps(x) _mm512_castsi512_ps(_mm_stream_load_si512(x))
-      #define tron_mm_steam_load_pd(x)    _mm_castsi128_pd   (_mm_stream_load_si128(x))
-      #define tron_mm256_steam_load_pd(x) _mm256_castsi256_pd(_mm_stream_load_si256(x))
-      #define tron_mm512_steam_load_pd(x) _mm512_castsi512_pd(_mm_stream_load_si512(x))
+      #define ein_mm_steam_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))
+      #define ein_mm256_steam_load_ps(x) _mm256_castsi256_ps(_mm_stream_load_si256(x))
+      #define ein_mm512_steam_load_ps(x) _mm512_castsi512_ps(_mm_stream_load_si512(x))
+      #define ein_mm_steam_load_pd(x)    _mm_castsi128_pd   (_mm_stream_load_si128(x))
+      #define ein_mm256_steam_load_pd(x) _mm256_castsi256_pd(_mm_stream_load_si256(x))
+      #define ein_mm512_steam_load_pd(x) _mm512_castsi512_pd(_mm_stream_load_si512(x))
       EIN_SWITCH(
-        tron_mm_stream_load_ps,    tron_mm_stream_load_pd,    _mm_stream_load_si128,
-        tron_mm256_stream_load_ps, tron_mm256_stream_load_pd, _mm256_stream_load_si256,
-        tron_mm512_stream_load_ps, tron_mm512_stream_load_pd, _mm512_stream_load_si512
+        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
+        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
+        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
       )
-      #undef tron_mm_stream_load_ps
-      #undef tron_mm256_stream_load_ps
-      #undef tron_mm512_stream_load_ps
-      #undef tron_mm_stream_load_pd
-      #undef tron_mm256_stream_load_pd
-      #undef tron_mm512_stream_load_pd
+      #undef ein_mm_stream_load_ps
+      #undef ein_mm256_stream_load_ps
+      #undef ein_mm512_stream_load_ps
+      #undef ein_mm_stream_load_pd
+      #undef ein_mm256_stream_load_pd
+      #undef ein_mm512_stream_load_pd
     }
   }
 
@@ -1119,7 +1119,7 @@ using fp8e4m3x64 = simd<fp8e4m3,64>;
 #endif
 #endif
 
-} // namespace tron
+} // namespace ein
 
 namespace std {
   export template <typename T, size_t N>
