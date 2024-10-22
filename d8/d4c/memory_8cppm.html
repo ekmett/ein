@@ -148,8 +148,7 @@ $(function(){initNavTree('d8/d4c/memory_8cppm.html','../../'); initResizable(tru
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">memory.cppm File Reference<div class="ingroups">module <a class="el" href="../../de/d47/module__ein_8memory.html">ein.memory</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -169,10 +168,12 @@ Include dependency graph for memory.cppm:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">ein::memory::c_munmap</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d12/structein_1_1memory_1_1c__free.html">ein::memory::c_free</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/df3/structein_1_1memory_1_1c__munmap" id="r_df/df3/structein_1_1memory_1_1c__munmap"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap">ein::memory::c_munmap</a></td></tr>
+<tr class="memdesc:df/df3/structein_1_1memory_1_1c__munmap"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter for memory mapped data  <a href="../../dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap">More...</a><br /></td></tr>
+<tr class="separator:df/df3/structein_1_1memory_1_1c__munmap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d8/d12/structein_1_1memory_1_1c__free" id="r_d8/d12/structein_1_1memory_1_1c__free"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free">ein::memory::c_free</a></td></tr>
+<tr class="memdesc:d8/d12/structein_1_1memory_1_1c__free"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter that calls free()  <a href="../../dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free">More...</a><br /></td></tr>
+<tr class="separator:d8/d12/structein_1_1memory_1_1c__free"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
@@ -184,43 +185,47 @@ Namespaces</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">ein::memory::trivially_destructible</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a type where the destructor does no work, and therefore it is safe to simply discard. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gaa4b1c50ff11207294a324dcc8de92d16" id="r_gaa4b1c50ff11207294a324dcc8de92d16"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">ein::memory::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">c_munmap</a>&gt;</td></tr>
+<tr class="memitem:gaa4b1c50ff11207294a324dcc8de92d16" id="r_gaa4b1c50ff11207294a324dcc8de92d16"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">ein::memory::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="../../dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap">c_munmap</a>&gt;</td></tr>
+<tr class="memdesc:gaa4b1c50ff11207294a324dcc8de92d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
 <tr class="separator:gaa4b1c50ff11207294a324dcc8de92d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae63e3353c4db8580f878b167cba377ad" id="r_gae63e3353c4db8580f878b167cba377ad"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
-<tr class="memitem:gae63e3353c4db8580f878b167cba377ad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">ein::memory::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="../../d8/d12/structein_1_1memory_1_1c__free.html">c_free</a>&gt;</td></tr>
+<tr class="memitem:gae63e3353c4db8580f878b167cba377ad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">ein::memory::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="../../dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free">c_free</a>&gt;</td></tr>
+<tr class="memdesc:gae63e3353c4db8580f878b167cba377ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
 <tr class="separator:gae63e3353c4db8580f878b167cba377ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga28e90c7a3be1dbddae254d6b9b8e42cc" id="r_ga28e90c7a3be1dbddae254d6b9b8e42cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">ein::memory::unique_str</a> = <a class="el" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">unique_c_ptr</a>&lt;char const&gt;</td></tr>
+<tr class="memdesc:ga28e90c7a3be1dbddae254d6b9b8e42cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">a c string, managed by unique_ptr  <br /></td></tr>
 <tr class="separator:ga28e90c7a3be1dbddae254d6b9b8e42cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga4fd564422d122e5ac77622371c61aa7e" id="r_ga4fd564422d122e5ac77622371c61aa7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga4fd564422d122e5ac77622371c61aa7e">ein::memory::make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
+<tr class="memdesc:ga4fd564422d122e5ac77622371c61aa7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
 <tr class="separator:ga4fd564422d122e5ac77622371c61aa7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a267b037f107d63c5b3c0945e781b892a" id="r_a267b037f107d63c5b3c0945e781b892a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a">ein::memory::nonnull</a> (1)</td></tr>
-<tr class="separator:a267b037f107d63c5b3c0945e781b892a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771edab7c25089f112657d63d4c9ff0e" id="r_a771edab7c25089f112657d63d4c9ff0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e">ein::memory::null_terminated_string_arg</a> (1)) <a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> dup(char const *string) noexcept</td></tr>
-<tr class="separator:a771edab7c25089f112657d63d4c9ff0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7887543b98c51f542ad8a7f58702dd68" id="r_a7887543b98c51f542ad8a7f58702dd68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#a7887543b98c51f542ad8a7f58702dd68">ein::memory::monitor</a> (void const *addr) noexcept</td></tr>
-<tr class="separator:a7887543b98c51f542ad8a7f58702dd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba63c48a1b51daaa54e4e771e0a08e3" id="r_abba63c48a1b51daaa54e4e771e0a08e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#abba63c48a1b51daaa54e4e771e0a08e3">ein::memory::mwait</a> (uint32_t timer=0) noexcept</td></tr>
-<tr class="separator:abba63c48a1b51daaa54e4e771e0a08e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb64e008d59f29c3c135cd0ab2d5cfe" id="r_a9cb64e008d59f29c3c135cd0ab2d5cfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#a9cb64e008d59f29c3c135cd0ab2d5cfe">ein::memory::monitorx</a> (void const *addr) noexcept</td></tr>
-<tr class="separator:a9cb64e008d59f29c3c135cd0ab2d5cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5882900626b78b4c9a07f06c185dc878" id="r_a5882900626b78b4c9a07f06c185dc878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#a5882900626b78b4c9a07f06c185dc878">ein::memory::mwaitx</a> (uint32_t timer=0) noexcept</td></tr>
-<tr class="separator:a5882900626b78b4c9a07f06c185dc878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada844f0a0786a195c184824654bf55b7" id="r_ada844f0a0786a195c184824654bf55b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7">ein::memory::wait_until</a> (auto const &amp;m, auto p, uint32_t timer=0) noexcept</td></tr>
-<tr class="separator:ada844f0a0786a195c184824654bf55b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga7c7fab80fe9be545958ef2f964493408" id="r_ga7c7fab80fe9be545958ef2f964493408"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">ein::memory::inline</a></td></tr>
-<tr class="separator:ga7c7fab80fe9be545958ef2f964493408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57638e42bc8ad1f0447716c99e156924" id="r_a57638e42bc8ad1f0447716c99e156924"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d6/d67/namespaceein_1_1memory.html#a57638e42bc8ad1f0447716c99e156924">ein::memory::pure</a></td></tr>
-<tr class="separator:a57638e42bc8ad1f0447716c99e156924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf1ce06de33e9ecc557004ff969fa548" id="r_gacf1ce06de33e9ecc557004ff969fa548"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gacf1ce06de33e9ecc557004ff969fa548">ein::memory::dup</a> (char const *string) noexcept</td></tr>
+<tr class="memdesc:gacf1ce06de33e9ecc557004ff969fa548"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a c string using strdup and manage it as a unique_str  <br /></td></tr>
+<tr class="separator:gacf1ce06de33e9ecc557004ff969fa548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1100e32ec09e3c1e873df290cb86ac5" id="r_gab1100e32ec09e3c1e873df290cb86ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gab1100e32ec09e3c1e873df290cb86ac5">ein::memory::monitor</a> (void const *addr) noexcept</td></tr>
+<tr class="memdesc:gab1100e32ec09e3c1e873df290cb86ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-land monitor for changes at the cache line containing the target address. Intel version.  <br /></td></tr>
+<tr class="separator:gab1100e32ec09e3c1e873df290cb86ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab67f2db34418243138891d205a4aec19" id="r_gab67f2db34418243138891d205a4aec19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gab67f2db34418243138891d205a4aec19">ein::memory::mwait</a> (uint32_t timer=0) noexcept</td></tr>
+<tr class="memdesc:gab67f2db34418243138891d205a4aec19"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land mwait. intel version while it isn't <em>documented</em> to support the timer options from AMD on newer cpus it does.  <br /></td></tr>
+<tr class="separator:gab67f2db34418243138891d205a4aec19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ff724a9b63566c929742638f5dcef06" id="r_ga0ff724a9b63566c929742638f5dcef06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga0ff724a9b63566c929742638f5dcef06">ein::memory::monitorx</a> (void const *addr) noexcept</td></tr>
+<tr class="memdesc:ga0ff724a9b63566c929742638f5dcef06"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land monitor for changes at the cache line containing the target address. AMD version  <br /></td></tr>
+<tr class="separator:ga0ff724a9b63566c929742638f5dcef06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a653e6c8178106572f3e8755f79b3d7" id="r_ga3a653e6c8178106572f3e8755f79b3d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga3a653e6c8178106572f3e8755f79b3d7">ein::memory::mwaitx</a> (uint32_t timer=0) noexcept</td></tr>
+<tr class="memdesc:ga3a653e6c8178106572f3e8755f79b3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land mwait. AMD version  <br /></td></tr>
+<tr class="separator:ga3a653e6c8178106572f3e8755f79b3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf115f15324c6f4d0b32c2f6a1f98a1de" id="r_gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memTemplParams" colspan="2">template&lt;typename T , typename F &gt; <br />
+requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</td></tr>
+<tr class="memitem:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaf115f15324c6f4d0b32c2f6a1f98a1de">ein::memory::wait_until</a> (T const &amp;m, F f, uint32_t timer=0) noexcept</td></tr>
+<tr class="memdesc:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin using the flavor of MONITOR/MWAIT that matches your CPU until the target passes a user supplied test <code>f</code>. Waiting happens <code>timer</code> cycles at a time.  <br /></td></tr>
+<tr class="separator:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>memory primitives </p>

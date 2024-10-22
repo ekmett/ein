@@ -212,10 +212,13 @@ requires (!std::is_same_v&lt;U,T&gt; &amp;&amp; has_builtin_convertvector&lt;U,T
 <tr class="memdesc:adeebc087fec89d1c8f9e41b98eada346"><td class="mdescLeft">&#160;</td><td class="mdescRight">provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)  <br /></td></tr>
 <tr class="separator:adeebc087fec89d1c8f9e41b98eada346"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1924d4597b3b547120e74a134c67b6c3" id="r_a1924d4597b3b547120e74a134c67b6c3"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1924d4597b3b547120e74a134c67b6c3">operator intrinsic_t const &amp;</a> () const noexcept</td></tr>
+<tr class="memdesc:a1924d4597b3b547120e74a134c67b6c3"><td class="mdescLeft">&#160;</td><td class="mdescRight">provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)  <br /></td></tr>
 <tr class="separator:a1924d4597b3b547120e74a134c67b6c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1387d80d8c6f881ba38278ff1ee2b466" id="r_a1387d80d8c6f881ba38278ff1ee2b466"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a5593cabdeea2ee6a7c573fe7445cf165">intrinsic_t</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1387d80d8c6f881ba38278ff1ee2b466">it</a> () noexcept</td></tr>
+<tr class="memdesc:a1387d80d8c6f881ba38278ff1ee2b466"><td class="mdescLeft">&#160;</td><td class="mdescRight">provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)  <br /></td></tr>
 <tr class="separator:a1387d80d8c6f881ba38278ff1ee2b466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad3e25bed1ef0e0cd23791f2e621aae7d" id="r_ad3e25bed1ef0e0cd23791f2e621aae7d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a5593cabdeea2ee6a7c573fe7445cf165">intrinsic_t</a> const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad3e25bed1ef0e0cd23791f2e621aae7d">it</a> () const noexcept</td></tr>
+<tr class="memdesc:ad3e25bed1ef0e0cd23791f2e621aae7d"><td class="mdescLeft">&#160;</td><td class="mdescRight">provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)  <br /></td></tr>
 <tr class="separator:ad3e25bed1ef0e0cd23791f2e621aae7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a365b8ddd1dad52078eee5e71a698a11d" id="r_a365b8ddd1dad52078eee5e71a698a11d"><td class="memItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a365b8ddd1dad52078eee5e71a698a11d">operator[]</a> (std::size_t index) noexcept</td></tr>
 <tr class="separator:a365b8ddd1dad52078eee5e71a698a11d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -304,14 +307,17 @@ Friends</h2></td></tr>
 <tr class="memitem:a5e59cbdb4a5b6841a2c08cad38ed9be8" id="r_a5e59cbdb4a5b6841a2c08cad38ed9be8"><td class="memTemplParams" colspan="2">template&lt;size_t I&gt; <br />
 requires (I &lt; N)</td></tr>
 <tr class="memitem:a5e59cbdb4a5b6841a2c08cad38ed9be8"><td class="memTemplItemLeft" align="right" valign="top">constexpr T &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a5e59cbdb4a5b6841a2c08cad38ed9be8">get</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;s) noexcept</td></tr>
+<tr class="memdesc:a5e59cbdb4a5b6841a2c08cad38ed9be8"><td class="mdescLeft">&#160;</td><td class="mdescRight">auto [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0);  <br /></td></tr>
 <tr class="separator:a5e59cbdb4a5b6841a2c08cad38ed9be8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a08ab0c5f2341986213589fccc6a13fb7" id="r_a08ab0c5f2341986213589fccc6a13fb7"><td class="memTemplParams" colspan="2">template&lt;size_t I&gt; <br />
 requires (I &lt; N)</td></tr>
 <tr class="memitem:a08ab0c5f2341986213589fccc6a13fb7"><td class="memTemplItemLeft" align="right" valign="top">constexpr T const &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a08ab0c5f2341986213589fccc6a13fb7">get</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> const &amp;s) noexcept</td></tr>
+<tr class="memdesc:a08ab0c5f2341986213589fccc6a13fb7"><td class="mdescLeft">&#160;</td><td class="mdescRight">auto &amp; [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0);  <br /></td></tr>
 <tr class="separator:a08ab0c5f2341986213589fccc6a13fb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0e9cd01e79c4a86219f953f666e9a196" id="r_a0e9cd01e79c4a86219f953f666e9a196"><td class="memTemplParams" colspan="2">template&lt;size_t I&gt; <br />
 requires (I &lt; N)</td></tr>
 <tr class="memitem:a0e9cd01e79c4a86219f953f666e9a196"><td class="memTemplItemLeft" align="right" valign="top">constexpr T &amp;&amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a0e9cd01e79c4a86219f953f666e9a196">get</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&amp;s) noexcept</td></tr>
+<tr class="memdesc:a0e9cd01e79c4a86219f953f666e9a196"><td class="mdescLeft">&#160;</td><td class="mdescRight">auto &amp;&amp; [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0);  <br /></td></tr>
 <tr class="separator:a0e9cd01e79c4a86219f953f666e9a196"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad493fd49b441366e8f1f9ff099a535dd" id="r_ad493fd49b441366e8f1f9ff099a535dd"><td class="memTemplParams" colspan="2">template&lt;size_t K&gt; <br />
 requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a> a) { a &gt;&gt; static_cast&lt;T&gt;(K); }</td></tr>
@@ -1044,6 +1050,7 @@ template&lt;typename T , size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00130">130</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
@@ -1074,6 +1081,7 @@ template&lt;typename T , size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00122">122</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
@@ -1280,6 +1288,7 @@ template&lt;typename T , size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i) </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00114">114</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
@@ -2044,6 +2053,7 @@ requires (I &lt; N)</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>auto &amp;&amp; [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0); </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00203">203</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
@@ -2077,6 +2087,7 @@ requires (I &lt; N)</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>auto [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0); </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00183">183</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
@@ -2110,6 +2121,7 @@ requires (I &lt; N)</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
 <p>auto &amp; [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0); </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00193">193</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>

@@ -4,7 +4,7 @@ var searchData=
   ['operator_20intrinsic_5ft_20const_20_26_1',['operator intrinsic_t const &amp;',['../d1/d89/structein_1_1simd.html#a1924d4597b3b547120e74a134c67b6c3',1,'ein::simd']]],
   ['operator_20size_5ft_2',['operator size_t',['../d6/d84/structein_1_1numerics_1_1imm__t.html#a1c741f336105c30c19b38999d4875b43',1,'ein::numerics::imm_t']]],
   ['operator_21_3d_3',['operator!=',['../d1/d89/structein_1_1simd.html#a5488c27dd004a5a8cb77173c5b9e5d89',1,'ein::simd']]],
-  ['operator_28_29_4',['operator()',['../df/df3/structein_1_1memory_1_1c__munmap.html#a0fa2ee7e11d8fec5bb82c497c4dae9b6',1,'ein::memory::c_munmap::operator()()'],['../d8/d12/structein_1_1memory_1_1c__free.html#a5c566edbe61c8631927b93265a26de08',1,'ein::memory::c_free::operator()()']]],
+  ['operator_28_29_4',['operator()',['../dd/d9f/group__memory__group.html#a0fa2ee7e11d8fec5bb82c497c4dae9b6',1,'ein::memory::c_munmap::operator()()'],['../dd/d9f/group__memory__group.html#a5c566edbe61c8631927b93265a26de08',1,'ein::memory::c_free::operator()()']]],
   ['operator_2b_2b_5',['operator++',['../d1/d89/structein_1_1simd.html#aae966fb9a74e5e4b333615213fa489dd',1,'ein::simd::operator++() noexcept'],['../d1/d89/structein_1_1simd.html#ac5a24f94d1b0a7cec890d889ebbb397e',1,'ein::simd::operator++(int) noexcept']]],
   ['operator_2d_2d_6',['operator--',['../d1/d89/structein_1_1simd.html#abc01899135f65ab909058658e5338d62',1,'ein::simd::operator--() noexcept'],['../d1/d89/structein_1_1simd.html#a84c9f90eafea90634f2cb6e3c353747b',1,'ein::simd::operator--(int) noexcept']]],
   ['operator_3c_7',['operator&lt;',['../d1/d89/structein_1_1simd.html#a19c95ee0a1edb09d24dab93670237726',1,'ein::simd']]],

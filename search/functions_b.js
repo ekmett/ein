@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['wait_5funtil_0',['wait_until',['../d6/d67/namespaceein_1_1memory.html#ada844f0a0786a195c184824654bf55b7',1,'ein::memory']]]
+  ['wait_5funtil_0',['wait_until',['../dd/d9f/group__memory__group.html#gaf115f15324c6f4d0b32c2f6a1f98a1de',1,'ein::memory']]]
 ];

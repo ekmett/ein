@@ -2,8 +2,8 @@ var annotated_dup =
 [
     [ "ein", "d7/dc1/namespaceein.html", [
       [ "memory", "d6/d67/namespaceein_1_1memory.html", [
-        [ "c_free", "d8/d12/structein_1_1memory_1_1c__free.html", "d8/d12/structein_1_1memory_1_1c__free" ],
-        [ "c_munmap", "df/df3/structein_1_1memory_1_1c__munmap.html", "df/df3/structein_1_1memory_1_1c__munmap" ]
+        [ "c_free", "dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free", "dd/d9f/group__memory__group_d8/d12/structein_1_1memory_1_1c__free" ],
+        [ "c_munmap", "dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap", "dd/d9f/group__memory__group_df/df3/structein_1_1memory_1_1c__munmap" ]
       ] ],
       [ "numerics", "de/df9/namespaceein_1_1numerics.html", [
         [ "imm_t", "d6/d84/structein_1_1numerics_1_1imm__t.html", "d6/d84/structein_1_1numerics_1_1imm__t" ]

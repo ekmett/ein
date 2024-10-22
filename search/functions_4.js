@@ -1,6 +1,7 @@
 var searchData=
 [
-  ['lddqu_0',['lddqu',['../d1/d89/structein_1_1simd.html#a42d5d3b89c087711f7c7268f9872c800',1,'ein::simd']]],
-  ['load_1',['load',['../d1/d89/structein_1_1simd.html#ab84a2bbadea73893d88f5755ce94e88f',1,'ein::simd::load()'],['../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954',1,'ein::load()']]],
-  ['loadu_2',['loadu',['../d1/d89/structein_1_1simd.html#a51d72e83b553d4faabb189cb4259ad71',1,'ein::simd::loadu()'],['../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5',1,'ein::loadu()']]]
+  ['imm_5ft_0',['imm_t',['../d6/d84/structein_1_1numerics_1_1imm__t.html#aac1d7fb2d492cebbd70e5993a3d79a7a',1,'ein::numerics::imm_t::imm_t() noexcept=default'],['../d6/d84/structein_1_1numerics_1_1imm__t.html#a4ab180044037b97b48e49ff180ee3661',1,'ein::numerics::imm_t::imm_t(imm_t const &amp;) noexcept=default'],['../d6/d84/structein_1_1numerics_1_1imm__t.html#aaaed4e46b45433d8f872535dd1c453ed',1,'ein::numerics::imm_t::imm_t(imm_t &amp;&amp;) noexcept=default']]],
+  ['isinf_1',['isinf',['../de/df9/namespaceein_1_1numerics.html#ac084533bb490cf38963a9aad71c2fc59',1,'ein::numerics']]],
+  ['isnan_2',['isnan',['../de/df9/namespaceein_1_1numerics.html#a92ba58a20dcf7edf22a4766a181a5b14',1,'ein::numerics']]],
+  ['it_3',['it',['../d1/d89/structein_1_1simd.html#a1387d80d8c6f881ba38278ff1ee2b466',1,'ein::simd::it() noexcept'],['../d1/d89/structein_1_1simd.html#ad3e25bed1ef0e0cd23791f2e621aae7d',1,'ein::simd::it() const noexcept']]]
 ];

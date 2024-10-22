@@ -146,13 +146,17 @@ $(function(){initNavTree('d7/dd9/conceptein_1_1memory_1_1trivially__destructible
   <div class="headertitle"><div class="title">ein::memory::trivially_destructible Concept Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups"><a class="el" href="../../dd/d9f/group__memory__group.html">memory</a> &#124; module <a class="el" href="../../de/d47/module__ein_8memory.html">ein.memory</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>a type where the destructor does no work, and therefore it is safe to simply discard.  
+<a href="#details">More...</a></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">ein::memory::trivially_destructible</a> =  is_trivially_destructible_v&lt;remove_extent_t&lt;T&gt;&gt;</div>
-<div class="ttc" id="aconceptein_1_1memory_1_1trivially__destructible_html"><div class="ttname"><a href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">ein::memory::trivially_destructible</a></div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00023">memory.cppm:24</a></div></div>
+<div class="ttc" id="aconceptein_1_1memory_1_1trivially__destructible_html"><div class="ttname"><a href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">ein::memory::trivially_destructible</a></div><div class="ttdoc">a type where the destructor does no work, and therefore it is safe to simply discard.</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00024">memory.cppm:24</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00023">23</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<div class="textblock"><p>a type where the destructor does no work, and therefore it is safe to simply discard. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00024">24</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

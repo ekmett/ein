@@ -16,7 +16,5 @@ var searchData=
   ['nlt_13',['NLT',['../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8',1,'ein']]],
   ['nlt_5fuq_14',['NLT_UQ',['../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4061c59528de0d116b8ecef0b22dff1a',1,'ein']]],
   ['nlt_5fus_15',['NLT_US',['../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a8e9cd341ba82e736d1ada75930aaca67',1,'ein']]],
-  ['nonnull_16',['nonnull',['../d6/d67/namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a',1,'ein::memory']]],
-  ['null_5fterminated_5fstring_5farg_17',['null_terminated_string_arg',['../d6/d67/namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e',1,'ein::memory']]],
-  ['numerics_2ecppm_18',['numerics.cppm',['../d5/d65/numerics_8cppm.html',1,'']]]
+  ['numerics_2ecppm_16',['numerics.cppm',['../d5/d65/numerics_8cppm.html',1,'']]]
 ];

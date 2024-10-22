@@ -10,7 +10,7 @@ var searchData=
   ['simd_5fintrinsic_5ft_7',['simd_intrinsic_t',['../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3',1,'ein']]],
   ['simd_5fmask_5ft_8',['simd_mask_t',['../d7/dc1/namespaceein.html#a423156b83124d4f090aad2b1e75447b1',1,'ein']]],
   ['simd_5ft_9',['simd_t',['../d1/d89/structein_1_1simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]],
-  ['size_10',['size',['../df/df3/structein_1_1memory_1_1c__munmap.html#ade592d6246f98c6c14672798df1cf894',1,'ein::memory::c_munmap::size'],['../d1/d89/structein_1_1simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]],
+  ['size_10',['size',['../dd/d9f/group__memory__group.html#ade592d6246f98c6c14672798df1cf894',1,'ein::memory::c_munmap::size'],['../d1/d89/structein_1_1simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]],
   ['std_11',['std',['../d8/dcc/namespacestd.html',1,'']]],
   ['store_12',['store',['../d1/d89/structein_1_1simd.html#ad83a2f62cb6ff1355a950f46e1582b07',1,'ein::simd']]],
   ['storeu_13',['storeu',['../d1/d89/structein_1_1simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb',1,'ein::simd']]],

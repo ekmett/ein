@@ -147,294 +147,65 @@ $(function(){initNavTree('d6/d67/namespaceein_1_1memory.html','../../'); initRes
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">ein::memory Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d12/structein_1_1memory_1_1c__free.html">c_free</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">c_munmap</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:d8/d12/structein_1_1memory_1_1c__free" id="r_d8/d12/structein_1_1memory_1_1c__free"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free">c_free</a></td></tr>
+<tr class="memdesc:d8/d12/structein_1_1memory_1_1c__free"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter that calls free()  <a href="../../dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free">More...</a><br /></td></tr>
+<tr class="separator:d8/d12/structein_1_1memory_1_1c__free"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:df/df3/structein_1_1memory_1_1c__munmap" id="r_df/df3/structein_1_1memory_1_1c__munmap"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap">c_munmap</a></td></tr>
+<tr class="memdesc:df/df3/structein_1_1memory_1_1c__munmap"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter for memory mapped data  <a href="../../dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap">More...</a><br /></td></tr>
+<tr class="separator:df/df3/structein_1_1memory_1_1c__munmap"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dd9/conceptein_1_1memory_1_1trivially__destructible.html">trivially_destructible</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a type where the destructor does no work, and therefore it is safe to simply discard. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gaa4b1c50ff11207294a324dcc8de92d16" id="r_gaa4b1c50ff11207294a324dcc8de92d16"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">ein::memory::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="../../df/df3/structein_1_1memory_1_1c__munmap.html">c_munmap</a>&gt;</td></tr>
+<tr class="memitem:gaa4b1c50ff11207294a324dcc8de92d16" id="r_gaa4b1c50ff11207294a324dcc8de92d16"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">ein::memory::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="../../dd/d9f/group__memory__group.html#df/df3/structein_1_1memory_1_1c__munmap">c_munmap</a>&gt;</td></tr>
+<tr class="memdesc:gaa4b1c50ff11207294a324dcc8de92d16"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
 <tr class="separator:gaa4b1c50ff11207294a324dcc8de92d16"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae63e3353c4db8580f878b167cba377ad" id="r_gae63e3353c4db8580f878b167cba377ad"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
-<tr class="memitem:gae63e3353c4db8580f878b167cba377ad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">ein::memory::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="../../d8/d12/structein_1_1memory_1_1c__free.html">c_free</a>&gt;</td></tr>
+<tr class="memitem:gae63e3353c4db8580f878b167cba377ad"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">ein::memory::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="../../dd/d9f/group__memory__group.html#d8/d12/structein_1_1memory_1_1c__free">c_free</a>&gt;</td></tr>
+<tr class="memdesc:gae63e3353c4db8580f878b167cba377ad"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
 <tr class="separator:gae63e3353c4db8580f878b167cba377ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga28e90c7a3be1dbddae254d6b9b8e42cc" id="r_ga28e90c7a3be1dbddae254d6b9b8e42cc"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">ein::memory::unique_str</a> = <a class="el" href="../../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad">unique_c_ptr</a>&lt;char const&gt;</td></tr>
+<tr class="memdesc:ga28e90c7a3be1dbddae254d6b9b8e42cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">a c string, managed by unique_ptr  <br /></td></tr>
 <tr class="separator:ga28e90c7a3be1dbddae254d6b9b8e42cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga4fd564422d122e5ac77622371c61aa7e" id="r_ga4fd564422d122e5ac77622371c61aa7e"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#gaa4b1c50ff11207294a324dcc8de92d16">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga4fd564422d122e5ac77622371c61aa7e">ein::memory::make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
+<tr class="memdesc:ga4fd564422d122e5ac77622371c61aa7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
 <tr class="separator:ga4fd564422d122e5ac77622371c61aa7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a267b037f107d63c5b3c0945e781b892a" id="r_a267b037f107d63c5b3c0945e781b892a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a267b037f107d63c5b3c0945e781b892a">nonnull</a> (1)</td></tr>
-<tr class="separator:a267b037f107d63c5b3c0945e781b892a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a771edab7c25089f112657d63d4c9ff0e" id="r_a771edab7c25089f112657d63d4c9ff0e"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a771edab7c25089f112657d63d4c9ff0e">null_terminated_string_arg</a> (1)) <a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a> dup(char const *string) noexcept</td></tr>
-<tr class="separator:a771edab7c25089f112657d63d4c9ff0e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7887543b98c51f542ad8a7f58702dd68" id="r_a7887543b98c51f542ad8a7f58702dd68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7887543b98c51f542ad8a7f58702dd68">monitor</a> (void const *addr) noexcept</td></tr>
-<tr class="separator:a7887543b98c51f542ad8a7f58702dd68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abba63c48a1b51daaa54e4e771e0a08e3" id="r_abba63c48a1b51daaa54e4e771e0a08e3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abba63c48a1b51daaa54e4e771e0a08e3">mwait</a> (uint32_t timer=0) noexcept</td></tr>
-<tr class="separator:abba63c48a1b51daaa54e4e771e0a08e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9cb64e008d59f29c3c135cd0ab2d5cfe" id="r_a9cb64e008d59f29c3c135cd0ab2d5cfe"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9cb64e008d59f29c3c135cd0ab2d5cfe">monitorx</a> (void const *addr) noexcept</td></tr>
-<tr class="separator:a9cb64e008d59f29c3c135cd0ab2d5cfe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5882900626b78b4c9a07f06c185dc878" id="r_a5882900626b78b4c9a07f06c185dc878"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5882900626b78b4c9a07f06c185dc878">mwaitx</a> (uint32_t timer=0) noexcept</td></tr>
-<tr class="separator:a5882900626b78b4c9a07f06c185dc878"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ada844f0a0786a195c184824654bf55b7" id="r_ada844f0a0786a195c184824654bf55b7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ada844f0a0786a195c184824654bf55b7">wait_until</a> (auto const &amp;m, auto p, uint32_t timer=0) noexcept</td></tr>
-<tr class="separator:ada844f0a0786a195c184824654bf55b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:ga7c7fab80fe9be545958ef2f964493408" id="r_ga7c7fab80fe9be545958ef2f964493408"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">ein::memory::inline</a></td></tr>
-<tr class="separator:ga7c7fab80fe9be545958ef2f964493408"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a57638e42bc8ad1f0447716c99e156924" id="r_a57638e42bc8ad1f0447716c99e156924"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57638e42bc8ad1f0447716c99e156924">pure</a></td></tr>
-<tr class="separator:a57638e42bc8ad1f0447716c99e156924"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf1ce06de33e9ecc557004ff969fa548" id="r_gacf1ce06de33e9ecc557004ff969fa548"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gacf1ce06de33e9ecc557004ff969fa548">ein::memory::dup</a> (char const *string) noexcept</td></tr>
+<tr class="memdesc:gacf1ce06de33e9ecc557004ff969fa548"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a c string using strdup and manage it as a unique_str  <br /></td></tr>
+<tr class="separator:gacf1ce06de33e9ecc557004ff969fa548"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab1100e32ec09e3c1e873df290cb86ac5" id="r_gab1100e32ec09e3c1e873df290cb86ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gab1100e32ec09e3c1e873df290cb86ac5">monitor</a> (void const *addr) noexcept</td></tr>
+<tr class="memdesc:gab1100e32ec09e3c1e873df290cb86ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-land monitor for changes at the cache line containing the target address. Intel version.  <br /></td></tr>
+<tr class="separator:gab1100e32ec09e3c1e873df290cb86ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab67f2db34418243138891d205a4aec19" id="r_gab67f2db34418243138891d205a4aec19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gab67f2db34418243138891d205a4aec19">mwait</a> (uint32_t timer=0) noexcept</td></tr>
+<tr class="memdesc:gab67f2db34418243138891d205a4aec19"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land mwait. intel version while it isn't <em>documented</em> to support the timer options from AMD on newer cpus it does.  <br /></td></tr>
+<tr class="separator:gab67f2db34418243138891d205a4aec19"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ff724a9b63566c929742638f5dcef06" id="r_ga0ff724a9b63566c929742638f5dcef06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga0ff724a9b63566c929742638f5dcef06">monitorx</a> (void const *addr) noexcept</td></tr>
+<tr class="memdesc:ga0ff724a9b63566c929742638f5dcef06"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land monitor for changes at the cache line containing the target address. AMD version  <br /></td></tr>
+<tr class="separator:ga0ff724a9b63566c929742638f5dcef06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3a653e6c8178106572f3e8755f79b3d7" id="r_ga3a653e6c8178106572f3e8755f79b3d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga3a653e6c8178106572f3e8755f79b3d7">mwaitx</a> (uint32_t timer=0) noexcept</td></tr>
+<tr class="memdesc:ga3a653e6c8178106572f3e8755f79b3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land mwait. AMD version  <br /></td></tr>
+<tr class="separator:ga3a653e6c8178106572f3e8755f79b3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf115f15324c6f4d0b32c2f6a1f98a1de" id="r_gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memTemplParams" colspan="2">template&lt;typename T , typename F &gt; <br />
+requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</td></tr>
+<tr class="memitem:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaf115f15324c6f4d0b32c2f6a1f98a1de">ein::memory::wait_until</a> (T const &amp;m, F f, uint32_t timer=0) noexcept</td></tr>
+<tr class="memdesc:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin using the flavor of MONITOR/MWAIT that matches your CPU until the target passes a user supplied test <code>f</code>. Waiting happens <code>timer</code> cycles at a time.  <br /></td></tr>
+<tr class="separator:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Function Documentation</h2>
-<a id="a7887543b98c51f542ad8a7f58702dd68" name="a7887543b98c51f542ad8a7f58702dd68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7887543b98c51f542ad8a7f58702dd68">&#9670;&#160;</a></span>monitor()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void ein::memory::monitor </td>
-          <td>(</td>
-          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00069">69</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   72</span>                                         {</div>
-<div class="line"><span class="lineno">   73</span>  <span class="comment">// MONITOR: rAX = addr, ECX = extensions, EDX = hints</span></div>
-<div class="line"><span class="lineno">   74</span>  __asm__ __volatile__ (</div>
-<div class="line"><span class="lineno">   75</span>    <span class="stringliteral">&quot;monitor&quot;</span> <span class="comment">// 0f 01 fa</span></div>
-<div class="line"><span class="lineno">   76</span>    : <span class="comment">// No output</span></div>
-<div class="line"><span class="lineno">   77</span>    : <span class="stringliteral">&quot;rax&quot;</span>(addr), <span class="stringliteral">&quot;rcx&quot;</span>(0), <span class="stringliteral">&quot;rdx&quot;</span>(0) <span class="comment">// Input: addr, ECX = 0, EDX = 0</span></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="a9cb64e008d59f29c3c135cd0ab2d5cfe" name="a9cb64e008d59f29c3c135cd0ab2d5cfe"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9cb64e008d59f29c3c135cd0ab2d5cfe">&#9670;&#160;</a></span>monitorx()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void ein::memory::monitorx </td>
-          <td>(</td>
-          <td class="paramtype">void const *</td>          <td class="paramname"><span class="paramname"><em>addr</em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00092">92</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   95</span>                                          {</div>
-<div class="line"><span class="lineno">   96</span>  <span class="comment">// MONITORX: rAX = addr, ECX = extensions, EDX = hints</span></div>
-<div class="line"><span class="lineno">   97</span>  __asm__ __volatile__ (</div>
-<div class="line"><span class="lineno">   98</span>    <span class="stringliteral">&quot;monitorx&quot;</span> <span class="comment">// 0f 01 fa</span></div>
-<div class="line"><span class="lineno">   99</span>    : <span class="comment">// No output</span></div>
-<div class="line"><span class="lineno">  100</span>    : <span class="stringliteral">&quot;rax&quot;</span>(addr), <span class="stringliteral">&quot;rcx&quot;</span>(0), <span class="stringliteral">&quot;rdx&quot;</span>(0) <span class="comment">// Input: addr, ECX = 0, EDX = 0</span></div>
-</div><!-- fragment -->
-</div>
-</div>
-<a id="abba63c48a1b51daaa54e4e771e0a08e3" name="abba63c48a1b51daaa54e4e771e0a08e3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abba63c48a1b51daaa54e4e771e0a08e3">&#9670;&#160;</a></span>mwait()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void ein::memory::mwait </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timer</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00083">83</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-
-</div>
-</div>
-<a id="a5882900626b78b4c9a07f06c185dc878" name="a5882900626b78b4c9a07f06c185dc878"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5882900626b78b4c9a07f06c185dc878">&#9670;&#160;</a></span>mwaitx()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname"><a class="el" href="../../dd/d9f/group__memory__group.html#ga7c7fab80fe9be545958ef2f964493408">inline</a> void ein::memory::mwaitx </td>
-          <td>(</td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timer</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00104">104</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-
-</div>
-</div>
-<a id="a267b037f107d63c5b3c0945e781b892a" name="a267b037f107d63c5b3c0945e781b892a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a267b037f107d63c5b3c0945e781b892a">&#9670;&#160;</a></span>nonnull()</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ein::memory::nonnull </td>
-          <td>(</td>
-          <td class="paramtype">1</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a771edab7c25089f112657d63d4c9ff0e" name="a771edab7c25089f112657d63d4c9ff0e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a771edab7c25089f112657d63d4c9ff0e">&#9670;&#160;</a></span>null_terminated_string_arg()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">ein::memory::null_terminated_string_arg </td>
-          <td>(</td>
-          <td class="paramtype">1</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00059">59</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-
-</div>
-</div>
-<a id="ada844f0a0786a195c184824654bf55b7" name="ada844f0a0786a195c184824654bf55b7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ada844f0a0786a195c184824654bf55b7">&#9670;&#160;</a></span>wait_until()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">void ein::memory::wait_until </td>
-          <td>(</td>
-          <td class="paramtype">auto const &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">auto</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">uint32_t</td>          <td class="paramname"><span class="paramname"><em>timer</em></span><span class="paramdefsep"> = </span><span class="paramdefval">0</span>&#160;)</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00110">110</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  114</span>                                                 { { t(m) } -&gt; convertible_to&lt;bool&gt;; } {</div>
-<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">if</span> (cpu::has_mwaitx) <span class="comment">// amd</span></div>
-<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">while</span> (!p(m)) {</div>
-<div class="line"><span class="lineno">  117</span>      monitorx(&amp;m);</div>
-<div class="line"><span class="lineno">  118</span>      <span class="keywordflow">if</span> (!p(m))</div>
-<div class="line"><span class="lineno">  119</span>        mwaitx(&amp;m,timer);</div>
-<div class="line"><span class="lineno">  120</span>    }</div>
-<div class="line"><span class="lineno">  121</span>  <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  122</span>    <a class="code hl_define" href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">ein_assert</a>(cpu::has_mwait); <span class="comment">// intel</span></div>
-<div class="line"><span class="lineno">  123</span>    <span class="keywordflow">while</span> (!p(m)) {</div>
-<div class="line"><span class="lineno">  124</span>      <a class="code hl_function" href="#a7887543b98c51f542ad8a7f58702dd68">monitor</a>(&amp;m);</div>
-<div class="line"><span class="lineno">  125</span>      <span class="keywordflow">if</span> (!p(m))</div>
-<div class="line"><span class="lineno">  126</span>        <a class="code hl_function" href="#abba63c48a1b51daaa54e4e771e0a08e3">mwait</a>(&amp;m,timer);</div>
-<div class="ttc" id="aassert_8hpp_html_a4af23f138af62df96e8bacc71767bf00"><div class="ttname"><a href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">ein_assert</a></div><div class="ttdeci">#define ein_assert(cond,...)</div><div class="ttdef"><b>Definition</b> <a href="../../d2/d54/assert_8hpp_source.html#l00006">assert.hpp:6</a></div></div>
-<div class="ttc" id="anamespaceein_1_1memory_html_a7887543b98c51f542ad8a7f58702dd68"><div class="ttname"><a href="#a7887543b98c51f542ad8a7f58702dd68">ein::memory::monitor</a></div><div class="ttdeci">inline void monitor(void const *addr) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00069">memory.cppm:69</a></div></div>
-<div class="ttc" id="anamespaceein_1_1memory_html_abba63c48a1b51daaa54e4e771e0a08e3"><div class="ttname"><a href="#abba63c48a1b51daaa54e4e771e0a08e3">ein::memory::mwait</a></div><div class="ttdeci">inline void mwait(uint32_t timer=0) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00083">memory.cppm:83</a></div></div>
-</div><!-- fragment -->
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="a57638e42bc8ad1f0447716c99e156924" name="a57638e42bc8ad1f0447716c99e156924"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a57638e42bc8ad1f0447716c99e156924">&#9670;&#160;</a></span>pure</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">ein::memory::pure</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00059">59</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-
-</div>
-</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

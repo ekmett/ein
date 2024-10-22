@@ -1,25 +1,4 @@
 var NAVTREEINDEX3 =
 {
-"hierarchy.html":[6,2],
-"index.html":[],
-"index.html#autotoc_md1":[0],
-"index.html#autotoc_md2":[0,0],
-"index.html#autotoc_md3":[0,1],
-"index.html#autotoc_md4":[0,2],
-"index.html#autotoc_md5":[1],
-"modulemembers.html":[3,1,0],
-"modulemembers_enum.html":[3,1,4],
-"modulemembers_func.html":[3,1,1],
-"modulemembers_type.html":[3,1,3],
-"modulemembers_vars.html":[3,1,2],
-"modules.html":[3,0],
-"namespacemembers.html":[4,1,0],
-"namespacemembers_enum.html":[4,1,4],
-"namespacemembers_eval.html":[4,1,5],
-"namespacemembers_func.html":[4,1,1],
-"namespacemembers_type.html":[4,1,3],
-"namespacemembers_vars.html":[4,1,2],
-"namespaces.html":[4,0],
-"pages.html":[],
 "topics.html":[2]
 };
