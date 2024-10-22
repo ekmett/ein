@@ -10,22 +10,26 @@ concept one_of = ((N==candidates) || ... || false);
 export template <auto N, auto ... candidates>
 concept not_one_of = (!one_of<N,candidates...>);
 
+/// \cond
 export template <size_t N> struct integer_traits {};
 template <> struct integer_traits<8>  { using signed_t = int8_t;  using unsigned_t = uint8_t; };
 template <> struct integer_traits<16> { using signed_t = int16_t; using unsigned_t = uint16_t; };
 template <> struct integer_traits<32> { using signed_t = int32_t; using unsigned_t = uint32_t; };
 template <> struct integer_traits<64> { using signed_t = int64_t; using unsigned_t = uint64_t; };
+/// \endcond
 
+/// returns a signed integer type of the same size as T suitable for std::bitcast
 export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using int_t = typename integer_traits<sizeof(T)*8>::signed_t;
 
+/// returns an unsigned integer type of the same size as T suitable for std::bitcast
 export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 
-// allow passing immediate values to operators, without having to give up << n
-// as a syntactic form. xs << imm<n> isn't much of an imposition.
+/// allow passing immediate values to operators, without having to give up << n
+/// as a syntactic form. xs << imm<n> isn't much of an imposition.
 export template <size_t N>
 struct imm_t {
   constexpr imm_t() noexcept = default;
@@ -46,7 +50,7 @@ export EIN(inline) constexpr bool isnan(auto x) noexcept {
 }
 
 // std::isinf is not constexpr until c++23 (todo: retire this)
-static EIN(inline) constexpr bool isinf(auto x) noexcept {
+export EIN(inline) constexpr bool isinf(auto x) noexcept {
   using T = std::decay_t<decltype(x)>;
   if consteval {
     return x == std::numeric_limits<T>::infinity() || x == -std::numeric_limits<T>::infinity();

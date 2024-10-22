@@ -22,9 +22,17 @@
 #define EIN(...)
 #endif
 
+/// \cond
 #define ein_pragma_(x) _Pragma (#x)
+/// \endcond
+
+/// \def ein_pragma
+/// \hideinitializer
+/// \brief emit a \#pragma
 #define ein_pragma(x) ein_pragma_(x)
 
+/// \def ein_export
+/// \brief export from the current module
 #define ein_export export
 
 /// \def ein_message
@@ -71,7 +79,6 @@
 
 /// \def ein_inline
 /// \brief portable `inline __forceinline` or `inline __attribute__((always_inline))`
-
 #if ein_has_attribute(always_inline)
 #define ein_inline inline __attribute__((always_inline))
 #elif defined _WIN32
@@ -83,7 +90,6 @@
 /// \def ein_artificial
 /// \brief portable `__attribute__((artificial))`. The debugger should not single-step into this function.
 /// Treat it as atomic and associate it with the debug information for the use site instead.
-
 #if ein_has_attribute(artificial)
 #define ein_artificial __attribute__((artificial))
 #elif ein_has_attribute(__artificial__)

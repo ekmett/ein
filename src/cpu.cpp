@@ -6,7 +6,7 @@ module;
   #include <cpuid.h>
 #endif
 
-/// \internal
+/// \cond
 static void cpuid(int32_t info[4], int32_t eax, int32_t ecx) noexcept {
 #if defined(_MSC_VER)
   __cpuidex(info, eax, ecx);
@@ -14,6 +14,7 @@ static void cpuid(int32_t info[4], int32_t eax, int32_t ecx) noexcept {
   __cpuid_count(eax, ecx, info[0], info[1], info[2], info[3]);
 #endif
 }
+/// \endcond
 
 using namespace std;
 
@@ -21,6 +22,8 @@ module ein.cpu;
 
 namespace ein::cpu {
 
+/// \hideinitializer
+/// \hideinlinesource
 const enum vendor vendor = []() noexcept -> enum vendor {
   int32_t info[4] = {0};
   cpuid(info, 0, 0);
@@ -37,6 +40,8 @@ const enum vendor vendor = []() noexcept -> enum vendor {
   else                                  return vendor::unknown;
 }();
 
+/// \hideinitializer
+/// \hideinlinesource
 const bool has_mwait = []() noexcept -> bool {
   if (vendor != vendor::intel) return false;
   int32_t info[4] = {0};
@@ -46,6 +51,8 @@ const bool has_mwait = []() noexcept -> bool {
   return (info[2] & (1 << 3)) != 0;
 }();
 
+/// \hideinitializer
+/// \hideinlinesource
 const bool has_mwaitx = []() noexcept -> bool {
   if (vendor != vendor::amd) return false;
   int32_t info[4] = {0};

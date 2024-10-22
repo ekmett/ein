@@ -1,5 +1,8 @@
 #pragma once
 
+/// This provides a variadic assert macro that is left around even in our release configuration
+/// \hideinitializer
+/// \hideinlinesource
 #define ein_assert(cond,...) \
   do { \
     if ein_unlikely (!cond) { \

@@ -9,6 +9,7 @@
 /// \brief variadic macro utilities
 /// \ingroup internals_group
 
+/// \cond
 #define EIN_EVAL0_(...) __VA_ARGS__
 #define EIN_EVAL1_(...) EIN_EVAL0_(EIN_EVAL0_(EIN_EVAL0_(__VA_ARGS__)))
 #define EIN_EVAL2_(...) EIN_EVAL1_(EIN_EVAL1_(EIN_EVAL1_(__VA_ARGS__)))
@@ -36,12 +37,15 @@
 #define EIN_JOIN_(X,Y) X ## Y
 #define ein_(Y) EIN_JOIN_(ein_,Y)
 
+/// \endcond
 /// \{
 
 /// Applies macro `f` to each parameter.
+/// \hideinitializer
 #define EIN_MAP(f, ...) EIN_EVAL_(EIN_MAP1_(f, __VA_ARGS__, ()()(), ()()(), ()()(), 0))
 
 /// Applies macro `f` to each parameter. Inserts commas between the results.
+/// \hideinitializer
 #define EIN_MAP_LIST(f, ...) EIN_EVAL_(EIN_MAP_LIST1_(f, __VA_ARGS__, ()()(), ()()(), ()()(), 0))
 
 /// \}
