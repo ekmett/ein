@@ -6,8 +6,8 @@ var searchData=
   ['cbegin_3',['cbegin',['../d1/d89/structein_1_1simd.html#a702d0930b328ad8146e2760e8ae81bbb',1,'ein::simd']]],
   ['cend_4',['cend',['../d1/d89/structein_1_1simd.html#a6dcfbcfdfe864cebdd0422b03742bffa',1,'ein::simd']]],
   ['cmp_5',['cmp',['../de/df9/namespaceein_1_1numerics.html#a1df7ba29c28b6ebc76b2dfec34aea3af',1,'ein::numerics']]],
-  ['cmp_5ford_6',['cmp_ord',['../de/df9/namespaceein_1_1numerics.html#a6464b71a4b444b9927d67dea8c98decc',1,'ein::numerics']]],
-  ['cmp_5funord_7',['cmp_unord',['../de/df9/namespaceein_1_1numerics.html#a9fa1941ec4ca8009b3b8069e5d7b57f7',1,'ein::numerics']]],
+  ['cmp_5ford_6',['cmp_ord',['../de/df9/namespaceein_1_1numerics.html#a0285936fcf2e25f4c004f70badd4ccab',1,'ein::numerics::cmp_ord(T a, T b) noexcept'],['../de/df9/namespaceein_1_1numerics.html#a04f18d860c9cfd5da4bcd238b6013c10',1,'ein::numerics::cmp_ord(float, float) noexcept'],['../de/df9/namespaceein_1_1numerics.html#a094aa28052ed168b5bc0b64ad321e4fa',1,'ein::numerics::cmp_ord(double, double) noexcept']]],
+  ['cmp_5funord_7',['cmp_unord',['../de/df9/namespaceein_1_1numerics.html#a4ede68c2c05406c46cafb93c7ab08d2c',1,'ein::numerics::cmp_unord(T a, T b) noexcept'],['../de/df9/namespaceein_1_1numerics.html#a43312769bc8a0a19b0eb32e08b1ef150',1,'ein::numerics::cmp_unord(float, float) noexcept'],['../de/df9/namespaceein_1_1numerics.html#a7c3ee533ac5fb4ff22f72432a1be3973',1,'ein::numerics::cmp_unord(double, double) noexcept']]],
   ['cmpint_8',['cmpint',['../de/df9/namespaceein_1_1numerics.html#aa0fd49d1a0e1242ba00c5413a5e4b9c9',1,'ein::numerics']]],
   ['crbegin_9',['crbegin',['../d1/d89/structein_1_1simd.html#af8b2df4654d2ca4e6c5bf108f8c34b4c',1,'ein::simd']]],
   ['crend_10',['crend',['../d1/d89/structein_1_1simd.html#a057a57e21079d8ed1ead803ed97cb81f',1,'ein::simd']]]
