@@ -4,9 +4,11 @@ import ein.types;
 
 namespace ein::numerics {
 
+/// \brief \p N is one of the \p candidates
 export template <auto N, auto ... candidates>
 concept one_of = ((N==candidates) || ... || false);
 
+/// \brief \p N is not one of the \p candidates
 export template <auto N, auto ... candidates>
 concept not_one_of = (!one_of<N,candidates...>);
 
@@ -18,25 +20,22 @@ template <> struct integer_traits<32> { using signed_t = int32_t; using unsigned
 template <> struct integer_traits<64> { using signed_t = int64_t; using unsigned_t = uint64_t; };
 /// \endcond
 
-/// returns a signed integer type of the same size as T suitable for std::bitcast
+/// returns a signed integer type of the same size as \p T suitable for `std::bitcast`
 export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using int_t = typename integer_traits<sizeof(T)*8>::signed_t;
 
-/// returns an unsigned integer type of the same size as T suitable for std::bitcast
+/// returns an unsigned integer type of the same size as \p T suitable for `std::bitcast`
 export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 
-/// allow passing immediate values to operators, without having to give up << n
-/// as a syntactic form. xs << imm<n> isn't much of an imposition.
+/// \brief A compile time constant passed as an empty struct
+/// \details Allow passing immediate values to operators without having to give up `x << y`
+/// as a syntactic form. `xs << imm<n>` isn't much of an imposition and ensures the compiler
+/// knows that n is a fixed constant known at compile time
 export template <size_t N>
 struct imm_t {
-  constexpr imm_t() noexcept = default;
-  constexpr imm_t(imm_t const &) noexcept = default;
-  constexpr imm_t(imm_t &&) noexcept = default;
-  constexpr imm_t & operator = (imm_t const &) noexcept = default;
-  constexpr imm_t & operator = (imm_t &&) noexcept = default;
   constexpr operator size_t () noexcept { return N; }
 };
 

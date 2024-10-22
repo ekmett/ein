@@ -13,7 +13,7 @@
 /// \brief
 /// Applies the prefix `ein_` syntactically to all arguments. Used to apply many attributes to definitions.
 ///
-/// \detail
+/// \details
 /// This lets you write EIN(hd,inline) vs. \ref ein_hd \ref ein_inline
 
 #if !defined(DOXYGEN) && !defined(SWIG)
@@ -27,8 +27,8 @@
 /// \endcond
 
 /// \def ein_pragma
-/// \hideinitializer
 /// \brief emit a \#pragma
+/// \hideinitializer
 #define ein_pragma(x) ein_pragma_(x)
 
 /// \def ein_export
