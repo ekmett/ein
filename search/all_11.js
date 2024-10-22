@@ -15,6 +15,6 @@ var searchData=
   ['store_12',['store',['../d1/d89/structein_1_1simd.html#ad83a2f62cb6ff1355a950f46e1582b07',1,'ein::simd']]],
   ['storeu_13',['storeu',['../d1/d89/structein_1_1simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb',1,'ein::simd']]],
   ['stream_14',['stream',['../d1/d89/structein_1_1simd.html#ac63f866959420086bd65699045c575d2',1,'ein::simd']]],
-  ['stream_5fload_15',['stream_load',['../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b',1,'ein']]],
+  ['stream_5fload_15',['stream_load',['../d1/d89/structein_1_1simd.html#a46c1b89940d707f5c9013599bac488ba',1,'ein::simd::stream_load()'],['../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b',1,'ein::stream_load()']]],
   ['swap_16',['swap',['../d1/d89/structein_1_1simd.html#ae0c6eef701036b515f4a4f6fc18b9974',1,'ein::simd']]]
 ];

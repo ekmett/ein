@@ -911,230 +911,235 @@ $(function(){initNavTree('da/d01/simd_8cppm_source.html','../../'); initResizabl
 <div class="line"><a id="l00771" name="l00771"></a><span class="lineno">  771</span>  }</div>
 </div>
 <div class="line"><a id="l00772" name="l00772"></a><span class="lineno">  772</span> </div>
-<div class="line"><a id="l00773" name="l00773"></a><span class="lineno">  773</span><span class="preprocessor">#if 0</span></div>
 <div class="line"><a id="l00775" name="l00775"></a><span class="lineno">  775</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure,artificial) </div>
-<div class="line"><a id="l00776" name="l00776"></a><span class="lineno">  776</span>  <span class="keyword">static</span> <span class="keyword">constexpr</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">stream_load</a>(T <span class="keyword">const</span> * p) <span class="keyword">noexcept</span> {</div>
+<div class="foldopen" id="foldopen00776" data-start="{" data-end="}">
+<div class="line"><a id="l00776" name="l00776"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#a42d5d3b89c087711f7c7268f9872c800">  776</a></span>  static constexpr <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> lddqu(T const * p) noexcept {</div>
 <div class="line"><a id="l00777" name="l00777"></a><span class="lineno">  777</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
 <div class="line"><a id="l00778" name="l00778"></a><span class="lineno">  778</span>      <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> result;</div>
 <div class="line"><a id="l00779" name="l00779"></a><span class="lineno">  779</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
 <div class="line"><a id="l00780" name="l00780"></a><span class="lineno">  780</span>        result[i] = p[i];</div>
 <div class="line"><a id="l00781" name="l00781"></a><span class="lineno">  781</span>      <span class="keywordflow">return</span> result;</div>
 <div class="line"><a id="l00782" name="l00782"></a><span class="lineno">  782</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span><span class="preprocessor">      #define ein_mm_stream_load_ps(x)    _mm_castsi128_ps   (_mm_stream_load_si128(x))</span></div>
-<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span><span class="preprocessor">      #define ein_mm256_stream_load_ps(x) _mm256_castsi256_ps(_mm256_stream_load_si256(x))</span></div>
-<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span><span class="preprocessor">      #define ein_mm512_stream_load_ps(x) _mm512_castsi512_ps(_mm512_stream_load_si512(x))</span></div>
-<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span><span class="preprocessor">      #define ein_mm_stream_load_pd(x)    _mm_castsi128_pd   (_mm_stream_load_si128(x))</span></div>
-<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span><span class="preprocessor">      #define ein_mm256_stream_load_pd(x) _mm256_castsi256_pd(_mm256_stream_load_si256(x))</span></div>
-<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span><span class="preprocessor">      #define ein_mm512_stream_load_pd(x) _mm512_castsi512_pd(_mm512_stream_load_si512(x))</span></div>
-<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span>      EIN_SWITCH(</div>
-<div class="line"><a id="l00791" name="l00791"></a><span class="lineno">  791</span>        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,</div>
-<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span>        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,</div>
-<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span>        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512</div>
-<div class="line"><a id="l00794" name="l00794"></a><span class="lineno">  794</span>      )</div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span>      EIN_SWITCH(</div>
+<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span>        _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,</div>
+<div class="line"><a id="l00785" name="l00785"></a><span class="lineno">  785</span>        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256,</div>
+<div class="line"><a id="l00786" name="l00786"></a><span class="lineno">  786</span>        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si512</div>
+<div class="line"><a id="l00787" name="l00787"></a><span class="lineno">  787</span>      )</div>
+<div class="line"><a id="l00788" name="l00788"></a><span class="lineno">  788</span>    }</div>
+<div class="line"><a id="l00789" name="l00789"></a><span class="lineno">  789</span>  }</div>
+</div>
+<div class="line"><a id="l00790" name="l00790"></a><span class="lineno">  790</span> </div>
+<div class="line"><a id="l00792" name="l00792"></a><span class="lineno">  792</span><span class="preprocessor">#undef EIN_CASE</span></div>
+<div class="line"><a id="l00793" name="l00793"></a><span class="lineno">  793</span><span class="preprocessor">#define EIN_CASE(f) return f(p);</span></div>
 <div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span> </div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span>      <span class="preprocessor">#undef ein_mm_stream_load_ps</span></div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="preprocessor">      #undef ein_mm256_stream_load_ps</span></div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="preprocessor">      #undef ein_mm512_stream_load_ps</span></div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="preprocessor">      #undef ein_mm_stream_load_pd</span></div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="preprocessor">      #undef ein_mm256_stream_load_pd</span></div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span><span class="preprocessor">      #undef ein_mm512_stream_load_pd</span></div>
-<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>    }</div>
-<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>  }</div>
-<div class="line"><a id="l00805" name="l00805"></a><span class="lineno">  805</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure,artificial) </div>
-<div class="foldopen" id="foldopen00809" data-start="{" data-end="}">
-<div class="line"><a id="l00809" name="l00809"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#a42d5d3b89c087711f7c7268f9872c800">  809</a></span>  static constexpr <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> lddqu(T const * p) noexcept {</div>
-<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span>      <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> result;</div>
-<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
-<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>        result[i] = p[i];</div>
-<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>      EIN_SWITCH(</div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span>        _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,</div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256,</div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span>        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si512</div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span>      )</div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span>    }</div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span>  }</div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure,artificial) </div>
+<div class="foldopen" id="foldopen00798" data-start="{" data-end="}">
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#a46c1b89940d707f5c9013599bac488ba">  798</a></span>  static constexpr <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">stream_load</a>(T const * p) noexcept {</div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span>      <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> result;</div>
+<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
+<div class="line"><a id="l00802" name="l00802"></a><span class="lineno">  802</span>        result[i] = p[i];</div>
+<div class="line"><a id="l00803" name="l00803"></a><span class="lineno">  803</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00804" name="l00804"></a><span class="lineno">  804</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span><span class="preprocessor">      #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))</span></div>
+<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span><span class="preprocessor">      #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))</span></div>
+<div class="line"><a id="l00808" name="l00808"></a><span class="lineno">  808</span><span class="preprocessor">      #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))</span></div>
+<div class="line"><a id="l00809" name="l00809"></a><span class="lineno">  809</span><span class="preprocessor">      #define ein_mm_stream_load_pd(x)    cast_pd(_mm_stream_load_si128(x))</span></div>
+<div class="line"><a id="l00810" name="l00810"></a><span class="lineno">  810</span><span class="preprocessor">      #define ein_mm256_stream_load_pd(x) cast_pd(_mm256_stream_load_si256(x))</span></div>
+<div class="line"><a id="l00811" name="l00811"></a><span class="lineno">  811</span><span class="preprocessor">      #define ein_mm512_stream_load_pd(x) cast_pd(_mm512_stream_load_si512(x))</span></div>
+<div class="line"><a id="l00812" name="l00812"></a><span class="lineno">  812</span>      EIN_SWITCH(</div>
+<div class="line"><a id="l00813" name="l00813"></a><span class="lineno">  813</span>        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,</div>
+<div class="line"><a id="l00814" name="l00814"></a><span class="lineno">  814</span>        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,</div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span>        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512</div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span>      )</div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span> </div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span>      <span class="preprocessor">#undef ein_mm_stream_load_ps</span></div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="preprocessor">      #undef ein_mm256_stream_load_ps</span></div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="preprocessor">      #undef ein_mm512_stream_load_ps</span></div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="preprocessor">      #undef ein_mm_stream_load_pd</span></div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="preprocessor">      #undef ein_mm256_stream_load_pd</span></div>
+<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span><span class="preprocessor">      #undef ein_mm512_stream_load_pd</span></div>
+<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span>    }</div>
+<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span>  }</div>
 </div>
-<div class="line"><a id="l00824" name="l00824"></a><span class="lineno">  824</span><span class="preprocessor">#undef EIN_CASE</span></div>
-<div class="line"><a id="l00825" name="l00825"></a><span class="lineno">  825</span> </div>
-<div class="line"><a id="l00826" name="l00826"></a><span class="lineno">  826</span><span class="preprocessor">#define EIN_CASE(f) f(p,x.it());</span></div>
-<div class="line"><a id="l00828" name="l00828"></a><span class="lineno">  828</span> </div>
-<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span>  <span class="comment">// stores</span></div>
-<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span>  <span class="comment">// ======</span></div>
-<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span> </div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
-<div class="foldopen" id="foldopen00834" data-start="{" data-end="};">
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ad83a2f62cb6ff1355a950f46e1582b07">  834</a></span>  friend constexpr <span class="keywordtype">void</span> store(T * p, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x) noexcept {</div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span>        p[i] = x.data[i];</div>
-<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00839" name="l00839"></a><span class="lineno">  839</span>      EIN_SWITCH(</div>
-<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,</div>
-<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,</div>
-<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32</div>
-<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>      )</div>
-<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>    }</div>
-<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>  }</div>
+<div class="line"><a id="l00827" name="l00827"></a><span class="lineno">  827</span> </div>
+<div class="line"><a id="l00829" name="l00829"></a><span class="lineno">  829</span><span class="preprocessor">#undef EIN_CASE</span></div>
+<div class="line"><a id="l00830" name="l00830"></a><span class="lineno">  830</span> </div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span><span class="preprocessor">#define EIN_CASE(f) f(p,x.it());</span></div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span> </div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span>  <span class="comment">// stores</span></div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span>  <span class="comment">// ======</span></div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span> </div>
+<div class="line"><a id="l00838" name="l00838"></a><span class="lineno">  838</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
+<div class="foldopen" id="foldopen00839" data-start="{" data-end="};">
+<div class="line"><a id="l00839" name="l00839"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ad83a2f62cb6ff1355a950f46e1582b07">  839</a></span>  friend constexpr <span class="keywordtype">void</span> store(T * p, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x) noexcept {</div>
+<div class="line"><a id="l00840" name="l00840"></a><span class="lineno">  840</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><a id="l00841" name="l00841"></a><span class="lineno">  841</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
+<div class="line"><a id="l00842" name="l00842"></a><span class="lineno">  842</span>        p[i] = x.data[i];</div>
+<div class="line"><a id="l00843" name="l00843"></a><span class="lineno">  843</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00844" name="l00844"></a><span class="lineno">  844</span>      EIN_SWITCH(</div>
+<div class="line"><a id="l00845" name="l00845"></a><span class="lineno">  845</span>        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,</div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span>        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,</div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span>        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32</div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span>      )</div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span>    }</div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>  }</div>
 </div>
-<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span> </div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
-<div class="foldopen" id="foldopen00849" data-start="{" data-end="};">
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb">  849</a></span>  friend constexpr <span class="keywordtype">void</span> storeu(T * p, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x) noexcept {</div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span>        p[i] = x.data[i];</div>
-<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00854" name="l00854"></a><span class="lineno">  854</span>      EIN_SWITCH(</div>
-<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,</div>
-<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,</div>
-<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32</div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>      )</div>
-<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>    }</div>
-<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>  }</div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
+<div class="line"><a id="l00853" name="l00853"></a><span class="lineno">  853</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
+<div class="foldopen" id="foldopen00854" data-start="{" data-end="};">
+<div class="line"><a id="l00854" name="l00854"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb">  854</a></span>  friend constexpr <span class="keywordtype">void</span> storeu(T * p, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x) noexcept {</div>
+<div class="line"><a id="l00855" name="l00855"></a><span class="lineno">  855</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><a id="l00856" name="l00856"></a><span class="lineno">  856</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span>        p[i] = x.data[i];</div>
+<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00859" name="l00859"></a><span class="lineno">  859</span>      EIN_SWITCH(</div>
+<div class="line"><a id="l00860" name="l00860"></a><span class="lineno">  860</span>        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,</div>
+<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span>        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,</div>
+<div class="line"><a id="l00862" name="l00862"></a><span class="lineno">  862</span>        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32</div>
+<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span>      )</div>
+<div class="line"><a id="l00864" name="l00864"></a><span class="lineno">  864</span>    }</div>
+<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>  }</div>
 </div>
-<div class="line"><a id="l00861" name="l00861"></a><span class="lineno">  861</span> </div>
-<div class="line"><a id="l00863" name="l00863"></a><span class="lineno">  863</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
-<div class="foldopen" id="foldopen00864" data-start="{" data-end="};">
-<div class="line"><a id="l00864" name="l00864"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ac63f866959420086bd65699045c575d2">  864</a></span>  friend constexpr <span class="keywordtype">void</span> stream(T * p, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x) noexcept {</div>
-<div class="line"><a id="l00865" name="l00865"></a><span class="lineno">  865</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
-<div class="line"><a id="l00867" name="l00867"></a><span class="lineno">  867</span>        p[i] = x.data[i];</div>
-<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00869" name="l00869"></a><span class="lineno">  869</span>      EIN_SWITCH(</div>
-<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>        _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,</div>
-<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>        _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,</div>
-<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>        _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512</div>
-<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>      )</div>
-<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>    }</div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>  }</div>
+<div class="line"><a id="l00866" name="l00866"></a><span class="lineno">  866</span> </div>
+<div class="line"><a id="l00868" name="l00868"></a><span class="lineno">  868</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
+<div class="foldopen" id="foldopen00869" data-start="{" data-end="};">
+<div class="line"><a id="l00869" name="l00869"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ac63f866959420086bd65699045c575d2">  869</a></span>  friend constexpr <span class="keywordtype">void</span> stream(T * p, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x) noexcept {</div>
+<div class="line"><a id="l00870" name="l00870"></a><span class="lineno">  870</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><a id="l00871" name="l00871"></a><span class="lineno">  871</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i = 0;i&lt;N;++i)</div>
+<div class="line"><a id="l00872" name="l00872"></a><span class="lineno">  872</span>        p[i] = x.data[i];</div>
+<div class="line"><a id="l00873" name="l00873"></a><span class="lineno">  873</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span>      EIN_SWITCH(</div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span>        _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,</div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span>        _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,</div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span>        _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512</div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span>      )</div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span>    }</div>
+<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span>  }</div>
 </div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span> </div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span><span class="preprocessor">#undef EIN_CASE</span></div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span><span class="preprocessor">#undef EIN_SWITCH</span></div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span> </div>
-<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,artificial,pure) </div>
-<div class="foldopen" id="foldopen00882" data-start="{" data-end="};">
-<div class="line"><a id="l00882" name="l00882"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ab38049d4edbb98ef7eee0bf68d08f322">  882</a></span>  friend constexpr <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> <a class="code hl_function" href="../../de/df9/namespaceein_1_1numerics.html#a15fad7b053b7e7d49e7488d62843052b">scalef</a>(<a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> y) noexcept</div>
-<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span>  requires one_of_t&lt;T,<span class="keywordtype">float</span>,<span class="keywordtype">double</span>&gt; {</div>
-<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><a id="l00885" name="l00885"></a><span class="lineno">  885</span>      <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> result;</div>
-<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0;i&lt;N;++i)</div>
-<div class="line"><a id="l00887" name="l00887"></a><span class="lineno">  887</span>        result[i] = <a class="code hl_function" href="../../de/df9/namespaceein_1_1numerics.html#a15fad7b053b7e7d49e7488d62843052b">scalef</a>(x[i],y[i]);</div>
-<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>      <span class="keywordflow">return</span> result;</div>
-<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T,float&gt;) {</div>
-<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>             <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==16) <span class="keywordflow">return</span> _mm_scalef_ps(x,y);</div>
-<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==32) <span class="keywordflow">return</span> _mm256_scalef_ps(x,y);</div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span><span class="preprocessor">#ifdef __AVX512F__</span></div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==64) <span class="keywordflow">return</span> _mm512_scalef_ps(x,y);</div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>        <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T,double&gt;) {</div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span>             <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==16) <span class="keywordflow">return</span> _mm_scalef_pd(x,y);</div>
-<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==32) <span class="keywordflow">return</span> _mm256_scalef_pd(x,y);</div>
-<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span><span class="preprocessor">#ifdef __AVX512F__</span></div>
-<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==64) <span class="keywordflow">return</span> _mm512_scalef_pd(x,y);</div>
-<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>        <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
-<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>      }</div>
-<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span>    }</div>
-<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>  }</div>
+<div class="line"><a id="l00881" name="l00881"></a><span class="lineno">  881</span> </div>
+<div class="line"><a id="l00882" name="l00882"></a><span class="lineno">  882</span><span class="preprocessor">#undef EIN_CASE</span></div>
+<div class="line"><a id="l00883" name="l00883"></a><span class="lineno">  883</span><span class="preprocessor">#undef EIN_SWITCH</span></div>
+<div class="line"><a id="l00884" name="l00884"></a><span class="lineno">  884</span> </div>
+<div class="line"><a id="l00886" name="l00886"></a><span class="lineno">  886</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,artificial,pure) </div>
+<div class="foldopen" id="foldopen00887" data-start="{" data-end="};">
+<div class="line"><a id="l00887" name="l00887"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ab38049d4edbb98ef7eee0bf68d08f322">  887</a></span>  friend constexpr <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> <a class="code hl_function" href="../../de/df9/namespaceein_1_1numerics.html#a15fad7b053b7e7d49e7488d62843052b">scalef</a>(<a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> x, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> y) noexcept</div>
+<div class="line"><a id="l00888" name="l00888"></a><span class="lineno">  888</span>  requires one_of_t&lt;T,<span class="keywordtype">float</span>,<span class="keywordtype">double</span>&gt; {</div>
+<div class="line"><a id="l00889" name="l00889"></a><span class="lineno">  889</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><a id="l00890" name="l00890"></a><span class="lineno">  890</span>      <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> result;</div>
+<div class="line"><a id="l00891" name="l00891"></a><span class="lineno">  891</span>      <span class="keywordflow">for</span> (<span class="keywordtype">size_t</span> i=0;i&lt;N;++i)</div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span>        result[i] = <a class="code hl_function" href="../../de/df9/namespaceein_1_1numerics.html#a15fad7b053b7e7d49e7488d62843052b">scalef</a>(x[i],y[i]);</div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span>      <span class="keywordflow">return</span> result;</div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span>      <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T,float&gt;) {</div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span>             <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==16) <span class="keywordflow">return</span> _mm_scalef_ps(x,y);</div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==32) <span class="keywordflow">return</span> _mm256_scalef_ps(x,y);</div>
+<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span><span class="preprocessor">#ifdef __AVX512F__</span></div>
+<div class="line"><a id="l00899" name="l00899"></a><span class="lineno">  899</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==64) <span class="keywordflow">return</span> _mm512_scalef_ps(x,y);</div>
+<div class="line"><a id="l00900" name="l00900"></a><span class="lineno">  900</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00901" name="l00901"></a><span class="lineno">  901</span>        <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00902" name="l00902"></a><span class="lineno">  902</span>      } <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;T,double&gt;) {</div>
+<div class="line"><a id="l00903" name="l00903"></a><span class="lineno">  903</span>             <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==16) <span class="keywordflow">return</span> _mm_scalef_pd(x,y);</div>
+<div class="line"><a id="l00904" name="l00904"></a><span class="lineno">  904</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==32) <span class="keywordflow">return</span> _mm256_scalef_pd(x,y);</div>
+<div class="line"><a id="l00905" name="l00905"></a><span class="lineno">  905</span><span class="preprocessor">#ifdef __AVX512F__</span></div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span>        <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (bytesize==64) <span class="keywordflow">return</span> _mm512_scalef_pd(x,y);</div>
+<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00908" name="l00908"></a><span class="lineno">  908</span>        <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
+<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span>      }</div>
+<div class="line"><a id="l00910" name="l00910"></a><span class="lineno">  910</span>    }</div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>  }</div>
 </div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span> </div>
-<div class="line"><a id="l00909" name="l00909"></a><span class="lineno">  909</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
-<div class="foldopen" id="foldopen00910" data-start="{" data-end="};">
-<div class="line"><a id="l00910" name="l00910"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ae0c6eef701036b515f4a4f6fc18b9974">  910</a></span>  friend constexpr <span class="keywordtype">void</span> swap(<a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp; x, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp; y) noexcept {</div>
-<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;N;++i)</div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span>        swap(x[i],y[i]);</div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span>      swap(x.data,y.data);</div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>    }</div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>  }</div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span> </div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(<span class="keyword">inline</span>,artificial) </div>
+<div class="foldopen" id="foldopen00915" data-start="{" data-end="};">
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno"><a class="line" href="../../d1/d89/structein_1_1simd.html#ae0c6eef701036b515f4a4f6fc18b9974">  915</a></span>  friend constexpr <span class="keywordtype">void</span> swap(<a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp; x, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp; y) noexcept {</div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;N;++i)</div>
+<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>        swap(x[i],y[i]);</div>
+<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><a id="l00920" name="l00920"></a><span class="lineno">  920</span>      swap(x.data,y.data);</div>
+<div class="line"><a id="l00921" name="l00921"></a><span class="lineno">  921</span>    }</div>
+<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span>  }</div>
 </div>
-<div class="line"><a id="l00918" name="l00918"></a><span class="lineno">  918</span>};</div>
+<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span>};</div>
 </div>
-<div class="line"><a id="l00919" name="l00919"></a><span class="lineno">  919</span> </div>
-<div class="line"><a id="l00922" name="l00922"></a><span class="lineno">  922</span><span class="preprocessor">#if defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)</span></div>
-<div class="line"><a id="l00923" name="l00923"></a><span class="lineno">  923</span><span class="keyword">export</span> simd(__m128) -&gt; simd&lt;float,4&gt;;</div>
-<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span><span class="keyword">export</span> simd(__m128d) -&gt; simd&lt;double,2&gt;;</div>
-<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span><span class="keyword">export</span> simd(__m256) -&gt; simd&lt;float,8&gt;;</div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="keyword">export</span> simd(__m256d) -&gt; simd&lt;double,4&gt;;</div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span><span class="preprocessor">#ifdef __AVX512F__</span></div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span><span class="keyword">export</span> simd(__m512) -&gt; simd&lt;float,16&gt;;</div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span><span class="keyword">export</span> simd(__m512d) -&gt; simd&lt;double,8&gt;;</div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span> </div>
-<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span><span class="keyword">requires</span> (</div>
-<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span>     has_simd_type&lt;T,N&gt;</div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span>  &amp;&amp; (N % <span class="keyword">sizeof</span>(T) == 0)</div>
-<div class="line"><a id="l00938" name="l00938"></a><span class="lineno">  938</span><span class="preprocessor">#if  defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)</span></div>
-<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span>  &amp;&amp; !one_of_t&lt;T, long long, float, double&gt;</div>
-<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>)</div>
-<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>simd(T __attribute ((__vector_size__(N)))) -&gt; simd&lt;T,N/<span class="keyword">sizeof</span>(T)&gt;;</div>
-<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span> </div>
-<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ... Args&gt;</div>
-<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span><span class="keyword">requires</span> has_simd_type&lt;std::common_type&lt;Args...&gt;, <span class="keyword">sizeof</span>...(Args)&gt;</div>
-<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>simd(Args&amp;&amp;...) -&gt; simd&lt;std::common_type&lt;Args...&gt;,<span class="keyword">sizeof</span>...(Args)&gt;;</div>
-<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span> </div>
-<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span><span class="keyword">requires</span> has_simd_type&lt;T,<a class="code hl_variable" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/<span class="keyword">sizeof</span>(T)&gt;</div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>simd(T) -&gt; simd&lt;T,has_simd_type&lt;T,<a class="code hl_variable" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/<span class="keyword">sizeof</span>(T)&gt;&gt;;</div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span><span class="keyword">export</span></div>
-<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00957" data-start="{" data-end="}">
-<div class="line"><a id="l00957" name="l00957"></a><span class="lineno"><a class="line" href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">  957</a></span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure) </div>
-<div class="line"><a id="l00958" name="l00958"></a><span class="lineno">  958</span><a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">load</a>(T * data) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00959" name="l00959"></a><span class="lineno">  959</span><span class="keyword">requires</span> <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> {</div>
-<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d1/d89/structein_1_1simd.html#ab84a2bbadea73893d88f5755ce94e88f">simd&lt;T,N&gt;::load</a>(data);</div>
+<div class="line"><a id="l00924" name="l00924"></a><span class="lineno">  924</span> </div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span><span class="preprocessor">#if defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)</span></div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span><span class="keyword">export</span> simd(__m128) -&gt; simd&lt;float,4&gt;;</div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span><span class="keyword">export</span> simd(__m128d) -&gt; simd&lt;double,2&gt;;</div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span><span class="keyword">export</span> simd(__m256) -&gt; simd&lt;float,8&gt;;</div>
+<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span><span class="keyword">export</span> simd(__m256d) -&gt; simd&lt;double,4&gt;;</div>
+<div class="line"><a id="l00932" name="l00932"></a><span class="lineno">  932</span><span class="preprocessor">#ifdef __AVX512F__</span></div>
+<div class="line"><a id="l00933" name="l00933"></a><span class="lineno">  933</span><span class="keyword">export</span> simd(__m512) -&gt; simd&lt;float,16&gt;;</div>
+<div class="line"><a id="l00934" name="l00934"></a><span class="lineno">  934</span><span class="keyword">export</span> simd(__m512d) -&gt; simd&lt;double,8&gt;;</div>
+<div class="line"><a id="l00935" name="l00935"></a><span class="lineno">  935</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span> </div>
+<div class="line"><a id="l00939" name="l00939"></a><span class="lineno">  939</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a id="l00940" name="l00940"></a><span class="lineno">  940</span><span class="keyword">requires</span> (</div>
+<div class="line"><a id="l00941" name="l00941"></a><span class="lineno">  941</span>     has_simd_type&lt;T,N&gt;</div>
+<div class="line"><a id="l00942" name="l00942"></a><span class="lineno">  942</span>  &amp;&amp; (N % <span class="keyword">sizeof</span>(T) == 0)</div>
+<div class="line"><a id="l00943" name="l00943"></a><span class="lineno">  943</span><span class="preprocessor">#if  defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)</span></div>
+<div class="line"><a id="l00944" name="l00944"></a><span class="lineno">  944</span>  &amp;&amp; !one_of_t&lt;T, long long, float, double&gt;</div>
+<div class="line"><a id="l00945" name="l00945"></a><span class="lineno">  945</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00946" name="l00946"></a><span class="lineno">  946</span>)</div>
+<div class="line"><a id="l00947" name="l00947"></a><span class="lineno">  947</span>simd(T __attribute ((__vector_size__(N)))) -&gt; simd&lt;T,N/<span class="keyword">sizeof</span>(T)&gt;;</div>
+<div class="line"><a id="l00948" name="l00948"></a><span class="lineno">  948</span> </div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> ... Args&gt;</div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span><span class="keyword">requires</span> has_simd_type&lt;std::common_type&lt;Args...&gt;, <span class="keyword">sizeof</span>...(Args)&gt;</div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span>simd(Args&amp;&amp;...) -&gt; simd&lt;std::common_type&lt;Args...&gt;,<span class="keyword">sizeof</span>...(Args)&gt;;</div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span> </div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span><span class="keyword">requires</span> has_simd_type&lt;T,<a class="code hl_variable" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/<span class="keyword">sizeof</span>(T)&gt;</div>
+<div class="line"><a id="l00956" name="l00956"></a><span class="lineno">  956</span>simd(T) -&gt; simd&lt;T,has_simd_type&lt;T,<a class="code hl_variable" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/<span class="keyword">sizeof</span>(T)&gt;&gt;;</div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span><span class="keyword">export</span></div>
+<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span><span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00962" data-start="{" data-end="}">
+<div class="line"><a id="l00962" name="l00962"></a><span class="lineno"><a class="line" href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">  962</a></span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure) </div>
+<div class="line"><a id="l00963" name="l00963"></a><span class="lineno">  963</span><a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">load</a>(T * data) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span><span class="keyword">requires</span> <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> {</div>
+<div class="line"><a id="l00965" name="l00965"></a><span class="lineno">  965</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d1/d89/structein_1_1simd.html#ab84a2bbadea73893d88f5755ce94e88f">simd&lt;T,N&gt;::load</a>(data);</div>
 </div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span>}</div>
-<div class="line"><a id="l00962" name="l00962"></a><span class="lineno">  962</span> </div>
-<div class="line"><a id="l00964" name="l00964"></a><span class="lineno">  964</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00965" data-start="{" data-end="}">
-<div class="line"><a id="l00965" name="l00965"></a><span class="lineno"><a class="line" href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">  965</a></span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure) </div>
-<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span><a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">loadu</a>(T * data) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span><span class="keyword">requires</span> <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> {</div>
-<div class="line"><a id="l00968" name="l00968"></a><span class="lineno">  968</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d1/d89/structein_1_1simd.html#a51d72e83b553d4faabb189cb4259ad71">simd&lt;T,N&gt;::loadu</a>(data);</div>
+<div class="line"><a id="l00966" name="l00966"></a><span class="lineno">  966</span>}</div>
+<div class="line"><a id="l00967" name="l00967"></a><span class="lineno">  967</span> </div>
+<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00970" data-start="{" data-end="}">
+<div class="line"><a id="l00970" name="l00970"></a><span class="lineno"><a class="line" href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">  970</a></span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure) </div>
+<div class="line"><a id="l00971" name="l00971"></a><span class="lineno">  971</span><a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">loadu</a>(T * data) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span><span class="keyword">requires</span> <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> {</div>
+<div class="line"><a id="l00973" name="l00973"></a><span class="lineno">  973</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d1/d89/structein_1_1simd.html#a51d72e83b553d4faabb189cb4259ad71">simd&lt;T,N&gt;::loadu</a>(data);</div>
 </div>
-<div class="line"><a id="l00969" name="l00969"></a><span class="lineno">  969</span>}</div>
-<div class="line"><a id="l00970" name="l00970"></a><span class="lineno">  970</span> </div>
-<div class="line"><a id="l00972" name="l00972"></a><span class="lineno">  972</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span> T&gt;</div>
-<div class="foldopen" id="foldopen00973" data-start="{" data-end="}">
-<div class="line"><a id="l00973" name="l00973"></a><span class="lineno"><a class="line" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">  973</a></span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure) </div>
-<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span><a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">stream_load</a>(T * data) <span class="keyword">noexcept</span></div>
-<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span><span class="keyword">requires</span> <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> {</div>
-<div class="line"><a id="l00976" name="l00976"></a><span class="lineno">  976</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::stream_load</a>(data);</div>
+<div class="line"><a id="l00974" name="l00974"></a><span class="lineno">  974</span>}</div>
+<div class="line"><a id="l00975" name="l00975"></a><span class="lineno">  975</span> </div>
+<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span><span class="keyword">export</span> <span class="keyword">template</span> &lt;std::<span class="keywordtype">size_t</span> N, <span class="keyword">typename</span> T&gt;</div>
+<div class="foldopen" id="foldopen00978" data-start="{" data-end="}">
+<div class="line"><a id="l00978" name="l00978"></a><span class="lineno"><a class="line" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">  978</a></span> <a class="code hl_define" href="../../d4/d86/group__attributes.html#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(nodiscard,<span class="keyword">inline</span>,pure) </div>
+<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span><a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;</a> <a class="code hl_function" href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">stream_load</a>(T * data) <span class="keyword">noexcept</span></div>
+<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="keyword">requires</span> <a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a> {</div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="../../d1/d89/structein_1_1simd.html#a46c1b89940d707f5c9013599bac488ba">simd&lt;T,N&gt;::stream_load</a>(data);</div>
 </div>
-<div class="line"><a id="l00977" name="l00977"></a><span class="lineno">  977</span>}</div>
-<div class="line"><a id="l00978" name="l00978"></a><span class="lineno">  978</span> </div>
-<div class="line"><a id="l00979" name="l00979"></a><span class="lineno">  979</span><span class="keyword">export</span> <span class="keyword">template</span> <span class="keyword">struct </span>simd&lt;float,8&gt;;</div>
-<div class="line"><a id="l00980" name="l00980"></a><span class="lineno">  980</span><span class="keyword">export</span> <span class="keyword">template</span> <span class="keyword">struct </span>simd&lt;uint32_t,8&gt;;</div>
-<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span> </div>
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>} <span class="comment">// namespace ein</span></div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span>}</div>
 <div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span> </div>
-<div class="foldopen" id="foldopen00984" data-start="{" data-end="}">
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno"><a class="line" href="../../d8/dcc/namespacestd.html">  984</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a> {</div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span>  <span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a id="l00987" name="l00987"></a><span class="lineno"><a class="line" href="../../d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4.html">  987</a></span>  <span class="keyword">struct </span>tuple_size&lt;ein::simd&lt;T, N&gt;&gt; : integral_constant&lt;size_t, N&gt; {};</div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span><span class="keyword">export</span> <span class="keyword">template</span> <span class="keyword">struct </span>simd&lt;float,8&gt;;</div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span><span class="keyword">export</span> <span class="keyword">template</span> <span class="keyword">struct </span>simd&lt;uint32_t,8&gt;;</div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span> </div>
+<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span>} <span class="comment">// namespace ein</span></div>
 <div class="line"><a id="l00988" name="l00988"></a><span class="lineno">  988</span> </div>
-<div class="line"><a id="l00990" name="l00990"></a><span class="lineno">  990</span>  <span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> I, <span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
-<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>  <span class="keyword">requires</span> (I &lt; N)</div>
-<div class="foldopen" id="foldopen00992" data-start="{" data-end="};">
-<div class="line"><a id="l00992" name="l00992"></a><span class="lineno"><a class="line" href="../../d8/dcc/namespacestd.html">  992</a></span>  <span class="keyword">struct</span> tuple_element&lt;I, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">ein::simd&lt;T, N&gt;</a>&gt; {</div>
-<div class="line"><a id="l00993" name="l00993"></a><span class="lineno"><a class="line" href="../../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d">  993</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d">type</a> = T;</div>
-<div class="line"><a id="l00994" name="l00994"></a><span class="lineno">  994</span>  };</div>
+<div class="foldopen" id="foldopen00989" data-start="{" data-end="}">
+<div class="line"><a id="l00989" name="l00989"></a><span class="lineno"><a class="line" href="../../d8/dcc/namespacestd.html">  989</a></span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a> {</div>
+<div class="line"><a id="l00991" name="l00991"></a><span class="lineno">  991</span>  <span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a id="l00992" name="l00992"></a><span class="lineno"><a class="line" href="../../d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4.html">  992</a></span>  <span class="keyword">struct </span>tuple_size&lt;ein::simd&lt;T, N&gt;&gt; : integral_constant&lt;size_t, N&gt; {};</div>
+<div class="line"><a id="l00993" name="l00993"></a><span class="lineno">  993</span> </div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>  <span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keywordtype">size_t</span> I, <span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span>  <span class="keyword">requires</span> (I &lt; N)</div>
+<div class="foldopen" id="foldopen00997" data-start="{" data-end="};">
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno"><a class="line" href="../../d8/dcc/namespacestd.html">  997</a></span>  <span class="keyword">struct</span> tuple_element&lt;I, <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">ein::simd&lt;T, N&gt;</a>&gt; {</div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno"><a class="line" href="../../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d">  998</a></span>    <span class="keyword">using </span><a class="code hl_typedef" href="../../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d">type</a> = T;</div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span>  };</div>
 </div>
-<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span>}</div>
+<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span>}</div>
 </div>
-<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span> </div>
+<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span> </div>
 <div class="ttc" id="aconceptein_1_1has__builtin__convertvector_html"><div class="ttname"><a href="../../df/df1/conceptein_1_1has__builtin__convertvector.html">ein::has_builtin_convertvector</a></div><div class="ttdoc">can we convert simd_data_t&lt;U,N&gt; -&gt; simd_data_t&lt;T,N&gt; automatically using gcc vector extensions?</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00037">simd_data.cppm:38</a></div></div>
 <div class="ttc" id="aconceptein_1_1has__mmask_html"><div class="ttname"><a href="../../d7/dba/conceptein_1_1has__mmask.html">ein::has_mmask</a></div><div class="ttdoc">Do we want to use AVX512's notion of an _mmask8, _mmask16, _mmask32, or _mmask64 for masking operatio...</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00098">simd_data.cppm:100</a></div></div>
 <div class="ttc" id="aconceptein_1_1has__simd__type_html"><div class="ttname"><a href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></div><div class="ttdoc">ein::simd_data_t&lt;T,N&gt; is defined</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00024">simd_data.cppm:24</a></div></div>
@@ -1150,19 +1155,20 @@ $(function(){initNavTree('da/d01/simd_8cppm_source.html','../../'); initResizabl
 <div class="ttc" id="anamespaceein_html"><div class="ttname"><a href="../../d7/dc1/namespaceein.html">ein</a></div><div class="ttdef"><b>Definition</b> <a href="../../d7/dfc/cpu_8cpp_source.html#l00023">cpu.cpp:23</a></div></div>
 <div class="ttc" id="anamespaceein_html_a2fe08d2d97e186bfa4d9e484443df6e8"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#a2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a></div><div class="ttdeci">T __attribute__((__vector_size__(N *sizeof(T)), __aligned__(N *sizeof(T)))) simd_data_t</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00033">simd_data.cppm:33</a></div></div>
 <div class="ttc" id="anamespaceein_html_a423156b83124d4f090aad2b1e75447b1"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#a423156b83124d4f090aad2b1e75447b1">ein::simd_mask_t</a></div><div class="ttdeci">std::conditional_t&lt; one_of&lt; N, 8, 16, 32, 64 &gt;, mmask_t&lt; N &gt;, simd_intrinsic_t&lt; T, N &gt; &gt; simd_mask_t</div><div class="ttdoc">What type of mask should I use?</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00125">simd_data.cppm:125</a></div></div>
-<div class="ttc" id="anamespaceein_html_a427f6d506790fc3fbf4aaaafbe7b3a8b"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">ein::stream_load</a></div><div class="ttdeci">simd&lt; T, N &gt; stream_load(T *data) noexcept</div><div class="ttdoc">stream data from memory non-temporally, bypassing cache</div><div class="ttdef"><b>Definition</b> <a href="#l00973">simd.cppm:973</a></div></div>
-<div class="ttc" id="anamespaceein_html_a7da03f2aac209b7c98e1a339d11654b5"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">ein::loadu</a></div><div class="ttdeci">simd&lt; T, N &gt; loadu(T *data) noexcept</div><div class="ttdoc">load data from unaligned memory</div><div class="ttdef"><b>Definition</b> <a href="#l00965">simd.cppm:965</a></div></div>
+<div class="ttc" id="anamespaceein_html_a427f6d506790fc3fbf4aaaafbe7b3a8b"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b">ein::stream_load</a></div><div class="ttdeci">simd&lt; T, N &gt; stream_load(T *data) noexcept</div><div class="ttdoc">stream data from memory non-temporally, bypassing cache</div><div class="ttdef"><b>Definition</b> <a href="#l00978">simd.cppm:978</a></div></div>
+<div class="ttc" id="anamespaceein_html_a7da03f2aac209b7c98e1a339d11654b5"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5">ein::loadu</a></div><div class="ttdeci">simd&lt; T, N &gt; loadu(T *data) noexcept</div><div class="ttdoc">load data from unaligned memory</div><div class="ttdef"><b>Definition</b> <a href="#l00970">simd.cppm:970</a></div></div>
 <div class="ttc" id="anamespaceein_html_ac990fb6f5dcea45fb2adb40514b836d3"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">ein::simd_intrinsic_t</a></div><div class="ttdeci">typename simd_intrinsic&lt; T, N &gt;::type simd_intrinsic_t</div><div class="ttdoc">Returns the Intel intrinsic type associated with a simd register full of N values of type T.</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00092">simd_data.cppm:92</a></div></div>
 <div class="ttc" id="anamespaceein_html_ae9b13b1a14965d4f917ac518e18450e4"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a></div><div class="ttdeci">constexpr size_t max_simd_size</div><div class="ttdoc">largest simd register width supported on this platform in bytes</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00015">simd_data.cppm:17</a></div></div>
-<div class="ttc" id="anamespaceein_html_aed5787d13d5a0302ffa6067fbf64b954"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">ein::load</a></div><div class="ttdeci">simd&lt; T, N &gt; load(T *data) noexcept</div><div class="ttdoc">load data from aligned memory</div><div class="ttdef"><b>Definition</b> <a href="#l00957">simd.cppm:957</a></div></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="#l00984">simd.cppm:984</a></div></div>
-<div class="ttc" id="anamespacestd_html_a19c2978201d48d6253eb5be0da2d359d"><div class="ttname"><a href="../../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d">std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition</b> <a href="#l00993">simd.cppm:993</a></div></div>
+<div class="ttc" id="anamespaceein_html_aed5787d13d5a0302ffa6067fbf64b954"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954">ein::load</a></div><div class="ttdeci">simd&lt; T, N &gt; load(T *data) noexcept</div><div class="ttdoc">load data from aligned memory</div><div class="ttdef"><b>Definition</b> <a href="#l00962">simd.cppm:962</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="#l00989">simd.cppm:989</a></div></div>
+<div class="ttc" id="anamespacestd_html_a19c2978201d48d6253eb5be0da2d359d"><div class="ttname"><a href="../../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d">std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;::type</a></div><div class="ttdeci">T type</div><div class="ttdef"><b>Definition</b> <a href="#l00998">simd.cppm:998</a></div></div>
 <div class="ttc" id="astructein_1_1numerics_1_1imm__t_html"><div class="ttname"><a href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">ein::numerics::imm_t</a></div><div class="ttdoc">A compile time constant passed as an empty struct.</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00038">numerics.cppm:38</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html">ein::simd</a></div><div class="ttdoc">simd primitive definition</div><div class="ttdef"><b>Definition</b> <a href="#l00018">simd.cppm:18</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a08ab0c5f2341986213589fccc6a13fb7"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a08ab0c5f2341986213589fccc6a13fb7">ein::simd::get</a></div><div class="ttdeci">friend constexpr T const &amp; get(simd const &amp;s) noexcept</div><div class="ttdoc">auto &amp; [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0);</div><div class="ttdef"><b>Definition</b> <a href="#l00221">simd.cppm:221</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a0e9cd01e79c4a86219f953f666e9a196"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a0e9cd01e79c4a86219f953f666e9a196">ein::simd::get</a></div><div class="ttdeci">friend constexpr T &amp;&amp; get(simd &amp;&amp;s) noexcept</div><div class="ttdoc">auto &amp;&amp; [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0);</div><div class="ttdef"><b>Definition</b> <a href="#l00231">simd.cppm:231</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a1f58d92e2a42a72bc4e077b9042852d3"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a1f58d92e2a42a72bc4e077b9042852d3">ein::simd::cmp</a></div><div class="ttdeci">friend constexpr mask_t cmp(simd a, simd b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00542">simd.cppm:542</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a35f55b75d393fe01bc91b609738a771e"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a35f55b75d393fe01bc91b609738a771e">ein::simd::value_type</a></div><div class="ttdeci">T value_type</div><div class="ttdef"><b>Definition</b> <a href="#l00030">simd.cppm:30</a></div></div>
+<div class="ttc" id="astructein_1_1simd_html_a46c1b89940d707f5c9013599bac488ba"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a46c1b89940d707f5c9013599bac488ba">ein::simd::stream_load</a></div><div class="ttdeci">static constexpr simd stream_load(T const *p) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00798">simd.cppm:798</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a51d72e83b553d4faabb189cb4259ad71"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a51d72e83b553d4faabb189cb4259ad71">ein::simd::loadu</a></div><div class="ttdeci">static constexpr simd loadu(T const *p) noexcept</div><div class="ttdef"><b>Definition</b> <a href="#l00758">simd.cppm:758</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a5593cabdeea2ee6a7c573fe7445cf165"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a5593cabdeea2ee6a7c573fe7445cf165">ein::simd::intrinsic_t</a></div><div class="ttdeci">simd_intrinsic_t&lt; T, N &gt; intrinsic_t</div><div class="ttdef"><b>Definition</b> <a href="#l00021">simd.cppm:21</a></div></div>
 <div class="ttc" id="astructein_1_1simd_html_a5e59cbdb4a5b6841a2c08cad38ed9be8"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html#a5e59cbdb4a5b6841a2c08cad38ed9be8">ein::simd::get</a></div><div class="ttdeci">friend constexpr T &amp; get(simd &amp;s) noexcept</div><div class="ttdoc">auto [x,y,z,w] = simd&lt;float,4&gt;(1.0,2.0,3.0,4.0);</div><div class="ttdef"><b>Definition</b> <a href="#l00211">simd.cppm:211</a></div></div>

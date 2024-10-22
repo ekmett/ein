@@ -288,6 +288,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="separator:a51d72e83b553d4faabb189cb4259ad71"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a42d5d3b89c087711f7c7268f9872c800" id="r_a42d5d3b89c087711f7c7268f9872c800"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a42d5d3b89c087711f7c7268f9872c800">lddqu</a> (T const *p) noexcept</td></tr>
 <tr class="separator:a42d5d3b89c087711f7c7268f9872c800"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a46c1b89940d707f5c9013599bac488ba" id="r_a46c1b89940d707f5c9013599bac488ba"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a46c1b89940d707f5c9013599bac488ba">stream_load</a> (T const *p) noexcept</td></tr>
+<tr class="separator:a46c1b89940d707f5c9013599bac488ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -1113,7 +1115,7 @@ template&lt;typename T , size_t N&gt; </div>
 </div><div class="memdoc">
 <p>legacy: may outperform loadu when the data crosses a cache boundary </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00809">809</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00776">776</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1878,6 +1880,40 @@ requires (((is &lt; N*2) &amp;&amp; ... &amp;&amp; has_simd_type&lt;T,sizeof...(
 </div><!-- fragment -->
 </div>
 </div>
+<a id="a46c1b89940d707f5c9013599bac488ba" name="a46c1b89940d707f5c9013599bac488ba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a46c1b89940d707f5c9013599bac488ba">&#9670;&#160;</a></span>stream_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T , size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> <a class="el" href="../../d1/d89/structein_1_1simd.html">ein::simd</a>&lt; T, N &gt;::stream_load </td>
+          <td>(</td>
+          <td class="paramtype">T const *</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">pure</span><span class="mlabel">artificial</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00798">798</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 2 --></div>
+</div>
+
+</div>
+</div>
 <h2 class="groupheader">Friends And Related Symbol Documentation</h2>
 <a id="a1f58d92e2a42a72bc4e077b9042852d3" name="a1f58d92e2a42a72bc4e077b9042852d3"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a1f58d92e2a42a72bc4e077b9042852d3">&#9670;&#160;</a></span>cmp</h2>
@@ -2484,7 +2520,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00882">882</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00887">887</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2517,7 +2553,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00834">834</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00839">839</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2550,7 +2586,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00849">849</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00854">854</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2583,7 +2619,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00864">864</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00869">869</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2616,7 +2652,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00910">910</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00915">915</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
