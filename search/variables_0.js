@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['has_5fmwait_0',['has_mwait',['../namespaceein_1_1cpu.html#a3c0d02deb4179b64912ce1fa4bf1a9ce',1,'ein::cpu']]],
-  ['has_5fmwaitx_1',['has_mwaitx',['../namespaceein_1_1cpu.html#a453b9232fe423c4efb38077169bd955a',1,'ein::cpu']]]
+  ['artificial_0',['artificial',['../structein_1_1simd.html#a418620cee3b1ea3fe37beadc270724b7',1,'ein::simd::artificial'],['../structein_1_1simd.html#a7eb0d1b628a344f7a9a0e908ae8e7383',1,'ein::simd::artificial']]]
 ];

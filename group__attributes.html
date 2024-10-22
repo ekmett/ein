@@ -122,6 +122,9 @@ Macros</h2></td></tr>
 <tr class="memitem:gae478383afcbcd2db052f49d41e72763d" id="r_gae478383afcbcd2db052f49d41e72763d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a>&#160;&#160;&#160;inline</td></tr>
 <tr class="memdesc:gae478383afcbcd2db052f49d41e72763d"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>inline __forceinline</code> or <code>inline __attribute__((always_inline))</code>  <br /></td></tr>
 <tr class="separator:gae478383afcbcd2db052f49d41e72763d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga339fea4b0350c64584a58eb87db76f6b" id="r_ga339fea4b0350c64584a58eb87db76f6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga339fea4b0350c64584a58eb87db76f6b">ein_artificial</a></td></tr>
+<tr class="memdesc:ga339fea4b0350c64584a58eb87db76f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((artificial))</code>. The debugger should not single-step into this function. Treat it as atomic and associate it with the debug information for the use site instead.  <br /></td></tr>
+<tr class="separator:ga339fea4b0350c64584a58eb87db76f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga912f9e7fd37d0754ab1ed64e8545bbd1" id="r_ga912f9e7fd37d0754ab1ed64e8545bbd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga912f9e7fd37d0754ab1ed64e8545bbd1">ein_noinline</a></td></tr>
 <tr class="memdesc:ga912f9e7fd37d0754ab1ed64e8545bbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((noinline))</code>  <br /></td></tr>
 <tr class="separator:ga912f9e7fd37d0754ab1ed64e8545bbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -442,6 +445,22 @@ Macros</h2></td></tr>
 
 <p>portable <code>__attribute__((alloc_size(x)))</code> </p>
 <p>arg # (1-based) of the attribute that tells you the size of the result in bytes </p>
+
+</div>
+</div>
+<a id="ga339fea4b0350c64584a58eb87db76f6b" name="ga339fea4b0350c64584a58eb87db76f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga339fea4b0350c64584a58eb87db76f6b">&#9670;&#160;</a></span>ein_artificial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_artificial</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((artificial))</code>. The debugger should not single-step into this function. Treat it as atomic and associate it with the debug information for the use site instead. </p>
 
 </div>
 </div>

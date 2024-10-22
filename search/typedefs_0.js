@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['int_5ft_0',['int_t',['../namespaceein_1_1numerics.html#ab652a71f7ec533e140b934439df00802',1,'ein::numerics']]]
+  ['cast_5ft_0',['cast_t',['../structein_1_1simd.html#ace4ca46f5cc8e9be9c91be19a69f8732',1,'ein::simd']]]
 ];

@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['ninja_201_2012_201_0',['ninja 1.12.1',['../index.html#autotoc_md2',1,'']]],
-  ['nonnull_1',['nonnull',['../namespaceein_1_1memory.html#a267b037f107d63c5b3c0945e781b892a',1,'ein::memory']]],
-  ['null_5fterminated_5fstring_5farg_2',['null_terminated_string_arg',['../namespaceein_1_1memory.html#a771edab7c25089f112657d63d4c9ff0e',1,'ein::memory']]],
-  ['numerics_2ecppm_3',['numerics.cppm',['../numerics_8cppm.html',1,'']]]
+  ['has_5fmwait_0',['has_mwait',['../namespaceein_1_1cpu.html#a3c0d02deb4179b64912ce1fa4bf1a9ce',1,'ein::cpu']]],
+  ['has_5fmwaitx_1',['has_mwaitx',['../namespaceein_1_1cpu.html#a453b9232fe423c4efb38077169bd955a',1,'ein::cpu']]]
 ];
