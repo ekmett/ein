@@ -42,8 +42,14 @@ HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-paragraph-link.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-interactive-toc.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-tabs.js
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/favicon.ico
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/ein-logo.png
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/favicon.ico
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/favicon-16x16.png
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/favicon-32x32.png
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/android-chrome-192x192.png
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/android-chrome-512x512.png
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/apple-touch-icon.png
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/site.webmanifest
 
 HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/header.html
 HTML_COPY_CLIPBOARD    = NO
