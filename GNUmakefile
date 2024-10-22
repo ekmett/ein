@@ -49,8 +49,7 @@ gen: $(CMAKELISTS)
 	@touch gen
 
 lint:
-	@git --no-pager diff --check origin/main HEAD -- \
-		':!lib/**' \
+	@git --no-pager diff --check origin/main HEAD \
 		|| { echo "Trailing whitespace detected. Please run 'make format'."; exit 1; }
 	@for file in $(shell git diff --name-only origin/main HEAD); do \
 		if [ -f "$$file" ] && [ -n "$$(tail -c 1 "$$file")" ]; then \

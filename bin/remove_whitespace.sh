@@ -35,14 +35,6 @@ git grep -I --name-only -e . | grep -v -e '^gen/' -e '^lib/' -e '^.ccache/' | wh
       echo >> "$file"
     fi
 
-    # Run `nbstripout` on Jupyter notebooks
-    if ! command -v nbstripout &> /dev/null; then
-        echo "nbstripout is missing. Please run `pip install nbstripout`."
-        exit 1
-    fi
-    if [[ "$file" == *.ipynb ]]; then
-        nbstripout "$file"
-    fi
 done
 
 echo "Trailing whitespace cleanup completed."
