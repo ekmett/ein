@@ -26,7 +26,7 @@ const string_view type = [] EIN(nodiscard,const) noexcept -> string_view {
 }();
 
 /// \brief returns the unmangled name of a the type of the (unused) argument passed to this function
-/// \hideinlinesource
+/// \hideinlinesource \nodiscard \const
 export /** \cond */ EIN(nodiscard,const) /** \endcond */
 const string_view type_of(auto const & t) noexcept {
   return type<remove_cvref_t<decltype(t)>>();

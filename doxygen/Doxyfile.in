@@ -62,6 +62,12 @@ PROJECT_ICON           = @CMAKE_SOURCE_DIR@/doxygen/favicon.ico
 CREATE_SUBDIRS         = YES
 MARKDOWN_SUPPORT       = YES
 TOC_INCLUDE_HEADINGS   = 3
+ALIASES  = "nodiscard=@qualifier nodiscard"
+ALIASES += "pure=@qualifier pure"
+ALIASES += "inline=@qualifier inline"
+ALIASES += "artificial=@qualifier artificial"
+ALIASES += "const=@qualifier const"
+ALIASES += "reinitializes=@qualifier reinitializes"
 HAVE_DOT = YES
 DOT_IMAGE_FORMAT = svg
 DOT_GRAPH_MAX_NODES = 100

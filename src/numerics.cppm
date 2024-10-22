@@ -40,34 +40,23 @@ struct imm_t {
 };
 
 export template <size_t N>
-constexpr const imm_t<N> imm {};
+constinit imm_t<N> imm {};
 
-/*
-export EIN(inline) constexpr bool isnan(auto x) noexcept {
-  return x/=x;
-}
-
-// std::isinf is not constexpr until c++23 (todo: retire this)
-export EIN(inline) constexpr bool isinf(auto x) noexcept {
-  using T = std::decay_t<decltype(x)>;
-  if consteval {
-    return x == std::numeric_limits<T>::infinity() || x == -std::numeric_limits<T>::infinity();
-  } else {
-    return std::isinf(x);
-  }
-}
-*/
-
-export inline constexpr bool cmp_unord(auto a, auto b) noexcept {
+/// \nodiscard \pure
+export /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+constexpr bool cmp_unord(auto a, auto b) noexcept {
   return is_nan(a) || is_nan(b);
 }
 
-export inline constexpr bool cmp_ord(auto a, auto b) noexcept {
+/// \nodiscard \pure
+export /** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+constexpr bool cmp_ord(auto a, auto b) noexcept {
   return !is_nan(a) && !is_nan(b);
 }
 
-
-template <one_of_t<float,double> T>
+/// \hideinlinesource \nodiscard \inline \pure
+export template <one_of_t<float,double> T>
+/** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
 constexpr T scalef(T x, T y) noexcept {
   if consteval {
     // Constexpr path using bit manipulation
@@ -114,6 +103,7 @@ constexpr T scalef(T x, T y) noexcept {
   }
 }
 
+/// \hideinlinesource
 export enum class CMPINT : size_t {
   EQ    = 0x0uz
 , LT    = 0x1uz
@@ -125,8 +115,10 @@ export enum class CMPINT : size_t {
 , TRUE  = 0x7uz
 };
 
+/// \nodiscard \inline \const
 export template <CMPINT imm8, typename T>
 requires (one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz))
+/** \cond */ EIN(nodiscard,inline,const) /** \endcond */
 constexpr bool cmpint(T a, T b) noexcept {
   if      constexpr (imm8 == CMPINT::TRUE)  return -1;
   else if constexpr (imm8 == CMPINT::FALSE) return 0;
@@ -148,6 +140,7 @@ export constexpr size_t max_fp_comparison_predicate
  = 8;
 #endif
 
+/// \hideinlinesource
 export enum CMP : size_t {
   EQ_OQ     = 0x00uz  // Equal (ordered, nonsignaling)
 , LT_OS     = 0x01uz  // Less-than (ordered, signaling)
@@ -186,8 +179,10 @@ export enum CMP : size_t {
 };
 
 /// perform an avx512 style floating point comparison for scalar values.
+/// \nodiscard \pure \inline
 export template <CMP imm8, typename T>
 requires (one_of_t<T,float,double> && (imm8 < max_fp_comparison_predicate))
+/** \cond */ EIN(nodiscard,pure,inline) /** \endcond */
 constexpr bool cmp(T a, T b) noexcept {
   if      constexpr (imm8 == CMP::EQ_OQ)    return cmp_ord(a, b) && (a == b);
   else if constexpr (imm8 == CMP::LT_OS)    return cmp_ord(a, b) && (a < b);
