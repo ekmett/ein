@@ -1,9 +1,5 @@
 var searchData=
 [
-  ['fp32x16_0',['fp32x16',['../d7/dc1/namespaceein.html#a4e248c9775aea65926dbebd3881e8cfe',1,'ein']]],
-  ['fp32x4_1',['fp32x4',['../d7/dc1/namespaceein.html#ae22c55106d8b5926c0027ab1144e3cfa',1,'ein']]],
-  ['fp32x8_2',['fp32x8',['../d7/dc1/namespaceein.html#ac0e9645237731cca7e56531879c34a1f',1,'ein']]],
-  ['fp64x2_3',['fp64x2',['../d7/dc1/namespaceein.html#a31eb7373dc363b5520e1ba320faea936',1,'ein']]],
-  ['fp64x4_4',['fp64x4',['../d7/dc1/namespaceein.html#ae3ace97d4c3a3d98da1f5fca127693a8',1,'ein']]],
-  ['fp64x8_5',['fp64x8',['../d7/dc1/namespaceein.html#a007aef315a58d0005aa5cf4933f390d5',1,'ein']]]
+  ['int_5ft_0',['int_t',['../de/df9/namespaceein_1_1numerics.html#ab652a71f7ec533e140b934439df00802',1,'ein::numerics']]],
+  ['intrinsic_5ft_1',['intrinsic_t',['../d1/d89/structein_1_1simd.html#a5593cabdeea2ee6a7c573fe7445cf165',1,'ein::simd']]]
 ];

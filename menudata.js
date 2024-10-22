@@ -31,7 +31,6 @@ var menudata={children:[
 {text:"All",url:"modulemembers.html",children:[
 {text:"c",url:"modulemembers.html#index_c"},
 {text:"d",url:"modulemembers.html#index_d"},
-{text:"f",url:"modulemembers.html#index_f"},
 {text:"h",url:"modulemembers.html#index_h"},
 {text:"i",url:"modulemembers.html#index_i"},
 {text:"l",url:"modulemembers.html#index_l"},
@@ -43,12 +42,7 @@ var menudata={children:[
 {text:"w",url:"modulemembers.html#index_w"}]},
 {text:"Functions",url:"modulemembers_func.html"},
 {text:"Variables",url:"modulemembers_vars.html"},
-{text:"Typedefs",url:"modulemembers_type.html",children:[
-{text:"f",url:"modulemembers_type.html#index_f"},
-{text:"i",url:"modulemembers_type.html#index_i"},
-{text:"m",url:"modulemembers_type.html#index_m"},
-{text:"s",url:"modulemembers_type.html#index_s"},
-{text:"u",url:"modulemembers_type.html#index_u"}]},
+{text:"Typedefs",url:"modulemembers_type.html"},
 {text:"Enumerations",url:"modulemembers_enum.html"}]}]},
 {text:"Namespaces",url:"namespaces.html",children:[
 {text:"Namespace List",url:"namespaces.html"},
@@ -72,12 +66,7 @@ var menudata={children:[
 {text:"w",url:"namespacemembers.html#index_w"}]},
 {text:"Functions",url:"namespacemembers_func.html"},
 {text:"Variables",url:"namespacemembers_vars.html"},
-{text:"Typedefs",url:"namespacemembers_type.html",children:[
-{text:"f",url:"namespacemembers_type.html#index_f"},
-{text:"i",url:"namespacemembers_type.html#index_i"},
-{text:"m",url:"namespacemembers_type.html#index_m"},
-{text:"s",url:"namespacemembers_type.html#index_s"},
-{text:"u",url:"namespacemembers_type.html#index_u"}]},
+{text:"Typedefs",url:"namespacemembers_type.html"},
 {text:"Enumerations",url:"namespacemembers_enum.html"},
 {text:"Enumerator",url:"namespacemembers_eval.html",children:[
 {text:"e",url:"namespacemembers_eval.html#index_e"},
