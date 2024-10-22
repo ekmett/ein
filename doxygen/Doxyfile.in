@@ -33,26 +33,27 @@ FULL_SIDEBAR           = NO
 HTML_EXTRA_STYLESHEET  = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only-darkmode-toggle.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only.css
-
 HTML_EXTRA_STYLESHEET += @CMAKE_SOURCE_DIR@/doxygen/header.css
+
 HTML_COLORSTYLE        = LIGHT # required with Doxygen >= 1.9.5
 
-HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-darkmode-toggle.js
+HTML_EXTRA_FILES       = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-darkmode-toggle.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-fragment-copy-button.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-paragraph-link.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-interactive-toc.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-tabs.js
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/favicon.ico
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/ein-logo.png
 
 HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/header.html
 HTML_COPY_CLIPBOARD    = NO
 PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/doxygen/ein-logo.png
 PROJECT_ICON           = @CMAKE_SOURCE_DIR@/doxygen/favicon.ico
-# CREATE_SUBDIRS         = YES
+CREATE_SUBDIRS         = YES
 MARKDOWN_SUPPORT       = YES
-# TOC_INCLUDE_HEADINGS   = 1
+TOC_INCLUDE_HEADINGS   = 3
 HAVE_DOT = YES
 DOT_IMAGE_FORMAT = svg
-# DOT_TRANSPARENT = YES
 DOT_GRAPH_MAX_NODES = 100
 INLINE_SIMPLE_STRUCTS = YES
 USE_MATHJAX = YES
