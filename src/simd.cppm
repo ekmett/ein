@@ -981,7 +981,11 @@ requires has_simd_type<T,N> {
   return simd<T,N>::stream_load(data);
 }
 
+//export template struct simd<float,4>;
 export template struct simd<float,8>;
+//export template struct simd<uint16_t,8>;
+//export template struct simd<uint16_t,16>;
+//export template struct simd<uint32_t,4>;
 export template struct simd<uint32_t,8>;
 
 } // namespace ein
