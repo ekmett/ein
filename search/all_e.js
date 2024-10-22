@@ -18,6 +18,6 @@ var searchData=
   ['operator_3e_3e_15',['operator&gt;&gt;',['../d1/d89/structein_1_1simd.html#ad493fd49b441366e8f1f9ff099a535dd',1,'ein::simd::operator&gt;&gt;'],['../d1/d89/structein_1_1simd.html#a0d78be816f0c52a90ab329aa32dc2e4b',1,'ein::simd::operator&gt;&gt;'],['../d1/d89/structein_1_1simd.html#a3820090f749d74bc11b60cc0d58fb72d',1,'ein::simd::operator&gt;&gt;']]],
   ['operator_3e_3e_3d_16',['operator&gt;&gt;=',['../d1/d89/structein_1_1simd.html#a8e8a4fde7b29e57970321b674669d45d',1,'ein::simd::operator&gt;&gt;=(imm_t&lt; K &gt;) noexcept'],['../d1/d89/structein_1_1simd.html#a92bdbb382ace38f32c305fa333037e48',1,'ein::simd::operator&gt;&gt;=(simd y) noexcept']]],
   ['operator_5b_5d_17',['operator[]',['../d1/d89/structein_1_1simd.html#a365b8ddd1dad52078eee5e71a698a11d',1,'ein::simd::operator[](std::size_t index) noexcept'],['../d1/d89/structein_1_1simd.html#adeabfb5867585a0f588dd32ab6527456',1,'ein::simd::operator[](std::size_t index) const noexcept']]],
-  ['ord_5fq_18',['ORD_Q',['../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4841e2067e009706a0b706de9eae7dee',1,'ein']]],
-  ['ord_5fs_19',['ORD_S',['../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371aae5affac24dd7fbf363befe61f4119c2',1,'ein']]]
+  ['ord_5fq_18',['ORD_Q',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865a29e5d1713f0a04235e13e85807c912bf',1,'ein::numerics']]],
+  ['ord_5fs_19',['ORD_S',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865a0289550bb8324f8008ec6555007f0d9a',1,'ein::numerics']]]
 ];

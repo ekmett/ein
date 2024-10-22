@@ -145,9 +145,7 @@ $(function(){initNavTree('d4/d34/module__ein_8simd__data.html','../../'); initRe
 <div class="header">
   <div class="summary">
 <a href="#concepts">Concepts</a> &#124;
-<a href="#enum-members">Enumerations</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a> &#124;
 <a href="#files">Files</a>  </div>
   <div class="headertitle"><div class="title">ein.simd_data Module Reference</div></div>
@@ -169,65 +167,6 @@ Concepts</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Do we want to use AVX512's notion of an _mmask8, _mmask16, _mmask32, or _mmask64 for masking operations. <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
-Enumerations</h2></td></tr>
-<tr class="memitem:a3eb3869fe6f24fc19b5894278c242460" id="r_a3eb3869fe6f24fc19b5894278c242460"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460">ein::CMPINT</a> : size_t { <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47">EQ</a> = 0x0uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b">LT</a> = 0x1uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460acfe6055d2e0503be378bb63449ec7ba6">LE</a> = 0x2uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460a946003f97ccc52d5d3b54ac0ec31bbfc">FALSE</a> = 0x3uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460adc33066c3993e0d50896e533fd692ce0">NE</a> = 0x4uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8">NLT</a> = 0x5uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460aacd748f300c5d189c47807e2a9d6ea57">NLE</a> = 0x6uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61">TRUE</a> = 0x7uz
-<br />
- }</td></tr>
-<tr class="separator:a3eb3869fe6f24fc19b5894278c242460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a462cd88db2679129e8c9b418fe426371" id="r_a462cd88db2679129e8c9b418fe426371"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">ein::CMP</a> : size_t { <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a94270b248ec9d52e352291ed79739944">EQ_OQ</a> = 0x00uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a12d040983061b6fe28aa2555c89173bb">LT_OS</a> = 0x01uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a5d707e258be8fcc41d9393601a47a9c9">LE_OS</a> = 0x02uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a1adfd3c3470a45d49f541ddd27fc55c8">UNORD_Q</a> = 0x03uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ae2f0e19929d719f692d965d5ec9c9acd">NEQ_UQ</a> = 0x04uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a8e9cd341ba82e736d1ada75930aaca67">NLT_US</a> = 0x05uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ab79ab578660107f6f79d20b8ad6f872e">NLE_US</a> = 0x06uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4841e2067e009706a0b706de9eae7dee">ORD_Q</a> = 0x07uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a658c8d0eb1a0fd67d14a328fff7b02fd">EQ_UQ</a> = 0x08uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a7faabf823151beda2cad7d404aa8ebee">NGE_US</a> = 0x09uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a723e7029278f429724f7b052a34f90e1">NGT_US</a> = 0x0Auz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a5436022cadf478c56bef882734316166">FALSE_OQ</a> = 0x0Buz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a88811c44afe357e371ca17d3e908ba1d">NEQ_OQ</a> = 0x0Cuz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a6a725029b72811b0895a09a51e7db671">GE_OS</a> = 0x0Duz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4686de78c77b2fc9525d83e26b33850c">GT_OS</a> = 0x0Euz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371af7b78add9521557d7e422a2286791d42">TRUE_UQ</a> = 0x0Fuz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a871c0db36304bf61c3a4eb5024826e78">EQ_OS</a> = 0x10uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a3a54753d632414a627869dc3c64a76cb">LT_OQ</a> = 0x11uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371acc31057e75e43d87a1cf7fdab04b71e9">LE_OQ</a> = 0x12uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371ad7fbc46939c54f9c1bf596c780875224">UNORD_S</a> = 0x13uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a38ac26ae9e73c08ca7f7ad6c6bdc9b22">NEQ_US</a> = 0x14uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a4061c59528de0d116b8ecef0b22dff1a">NLT_UQ</a> = 0x15uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a95e7929db9a383af82d1f864659a2a5f">NLE_UQ</a> = 0x16uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371aae5affac24dd7fbf363befe61f4119c2">ORD_S</a> = 0x17uz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371afedb5808564269fc5894a4786c506850">EQ_US</a> = 0x18uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a0a8d1a566f8a564b5af98d07e93d4ece">NGE_UQ</a> = 0x19uz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371abf1f15f08c2b815d733b43a11832c9a3">NGT_UQ</a> = 0x1Auz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a889f7c260de099373e04347a7ae23111">FALSE_OS</a> = 0x1Buz
-, <br />
-&#160;&#160;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a1b0ae872a03e21af7ddb40ac0516386e">NEQ_OS</a> = 0x1Cuz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a21b82fecf7da6aab1130b470e014b565">GE_OQ</a> = 0x1Duz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a19c8432b2e0dbb3a104be7a7dc25a048">GT_OQ</a> = 0x1Euz
-, <a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371a426a17852fdcac3ddcf322454415cb51">TRUE_US</a> = 0x1Fuz
-<br />
- }</td></tr>
-<tr class="separator:a462cd88db2679129e8c9b418fe426371"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:a2fe08d2d97e186bfa4d9e484443df6e8" id="r_a2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
@@ -246,26 +185,11 @@ Typedefs</h2></td></tr>
 <tr class="memdesc:a423156b83124d4f090aad2b1e75447b1"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of mask should I use?  <br /></td></tr>
 <tr class="separator:a423156b83124d4f090aad2b1e75447b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:a6170dc2098b97385639e73bf47488817" id="r_a6170dc2098b97385639e73bf47488817"><td class="memTemplParams" colspan="2">template&lt;CMPINT imm8, typename T &gt; <br />
-requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz))</td></tr>
-<tr class="memitem:a6170dc2098b97385639e73bf47488817"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a6170dc2098b97385639e73bf47488817">ein::cmpint</a> (T a, T b) noexcept</td></tr>
-<tr class="separator:a6170dc2098b97385639e73bf47488817"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2" id="r_ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplParams" colspan="2">template&lt;CMP imm8, typename T &gt; <br />
-requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (imm8 &lt; max_fp_comparison_predicate))</td></tr>
-<tr class="memitem:ae65db238ed9b102d82a5c7878bec42e2"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae65db238ed9b102d82a5c7878bec42e2">ein::cmp</a> (T a, T b) noexcept</td></tr>
-<tr class="memdesc:ae65db238ed9b102d82a5c7878bec42e2"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform an avx512 style floating point comparison for scalar values.  <br /></td></tr>
-<tr class="separator:ae65db238ed9b102d82a5c7878bec42e2"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ae9b13b1a14965d4f917ac518e18450e4" id="r_ae9b13b1a14965d4f917ac518e18450e4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a> = 64</td></tr>
 <tr class="memdesc:ae9b13b1a14965d4f917ac518e18450e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">largest simd register width supported on this platform in bytes  <br /></td></tr>
 <tr class="separator:ae9b13b1a14965d4f917ac518e18450e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2b09119ae81703a8158113efe9708d8b" id="r_a2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">ein::max_fp_comparison_predicate</a></td></tr>
-<tr class="memdesc:a2b09119ae81703a8158113efe9708d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX512 added many more floating point comparison types. Do we have them?  <br /></td></tr>
-<tr class="separator:a2b09119ae81703a8158113efe9708d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>

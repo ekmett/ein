@@ -347,11 +347,11 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
 <tr class="separator:aca8298a78b5ea2285272bbe855db543d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5488c27dd004a5a8cb77173c5b9e5d89" id="r_a5488c27dd004a5a8cb77173c5b9e5d89"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a8c539e8d158e6d2f1740ee9246867cc3">mask_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5488c27dd004a5a8cb77173c5b9e5d89">operator!=</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> x, <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> y) noexcept</td></tr>
 <tr class="separator:a5488c27dd004a5a8cb77173c5b9e5d89"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1f58d92e2a42a72bc4e077b9042852d3" id="r_a1f58d92e2a42a72bc4e077b9042852d3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">CMP</a> imm8&gt; <br />
-requires one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; <a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">max_fp_comparison_predicate</a>)</td></tr>
+<tr class="memitem:a1f58d92e2a42a72bc4e077b9042852d3" id="r_a1f58d92e2a42a72bc4e077b9042852d3"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865">CMP</a> imm8&gt; <br />
+requires one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; <a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a2f557389ce0e532829c46edfc0dacf6e">max_fp_comparison_predicate</a>)</td></tr>
 <tr class="memitem:a1f58d92e2a42a72bc4e077b9042852d3"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="#a8c539e8d158e6d2f1740ee9246867cc3">mask_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1f58d92e2a42a72bc4e077b9042852d3">cmp</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> a, <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> b) noexcept</td></tr>
 <tr class="separator:a1f58d92e2a42a72bc4e077b9042852d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af590ef029b533f3dfcda0f10d8e69941" id="r_af590ef029b533f3dfcda0f10d8e69941"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460">CMPINT</a> imm8&gt; <br />
+<tr class="memitem:af590ef029b533f3dfcda0f10d8e69941" id="r_af590ef029b533f3dfcda0f10d8e69941"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a32bdeed3721f5aacf279c4ff319be25c">CMPINT</a> imm8&gt; <br />
 requires one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz)</td></tr>
 <tr class="memitem:af590ef029b533f3dfcda0f10d8e69941"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="#a8c539e8d158e6d2f1740ee9246867cc3">mask_t</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af590ef029b533f3dfcda0f10d8e69941">cmpint</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> a, <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> b) noexcept</td></tr>
 <tr class="separator:af590ef029b533f3dfcda0f10d8e69941"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -1962,8 +1962,8 @@ Here is the caller graph for this function:</div>
 <div class="memtemplate">
 template&lt;typename T , size_t N&gt; </div>
 <div class="memtemplate">
-template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a462cd88db2679129e8c9b418fe426371">CMP</a> imm8&gt; <br />
-requires one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; <a class="el" href="../../d7/dc1/namespaceein.html#a2b09119ae81703a8158113efe9708d8b">max_fp_comparison_predicate</a>)</div>
+template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865">CMP</a> imm8&gt; <br />
+requires one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; <a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a2f557389ce0e532829c46edfc0dacf6e">max_fp_comparison_predicate</a>)</div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -1998,7 +1998,7 @@ requires one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; <a class="
 <div class="memtemplate">
 template&lt;typename T , size_t N&gt; </div>
 <div class="memtemplate">
-template&lt;<a class="el" href="../../d7/dc1/namespaceein.html#a3eb3869fe6f24fc19b5894278c242460">CMPINT</a> imm8&gt; <br />
+template&lt;<a class="el" href="../../de/df9/namespaceein_1_1numerics.html#a32bdeed3721f5aacf279c4ff319be25c">CMPINT</a> imm8&gt; <br />
 requires one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz)</div>
 <table class="mlabels">
   <tr>
