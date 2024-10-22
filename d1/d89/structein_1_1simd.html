@@ -251,7 +251,6 @@ requires (!std::is_same_v&lt;U,T&gt; &amp;&amp; has_builtin_convertvector&lt;U,T
 <tr class="memitem:abc01899135f65ab909058658e5338d62" id="r_abc01899135f65ab909058658e5338d62"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abc01899135f65ab909058658e5338d62">operator--</a> () noexcept</td></tr>
 <tr class="separator:abc01899135f65ab909058658e5338d62"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a84c9f90eafea90634f2cb6e3c353747b" id="r_a84c9f90eafea90634f2cb6e3c353747b"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a84c9f90eafea90634f2cb6e3c353747b">operator--</a> (int) noexcept</td></tr>
-<tr class="memdesc:a84c9f90eafea90634f2cb6e3c353747b"><td class="mdescLeft">&#160;</td><td class="mdescRight">artificial  <br /></td></tr>
 <tr class="separator:a84c9f90eafea90634f2cb6e3c353747b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aae966fb9a74e5e4b333615213fa489dd" id="r_aae966fb9a74e5e4b333615213fa489dd"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aae966fb9a74e5e4b333615213fa489dd">operator++</a> () noexcept</td></tr>
 <tr class="separator:aae966fb9a74e5e4b333615213fa489dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -507,7 +506,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -534,7 +533,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -561,7 +560,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -591,7 +590,7 @@ requires (sizeof...(Args) == N)</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -622,13 +621,13 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00056">56</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>  : <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>(__extension__(<a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a>){value}) {}</div>
+<div class="fragment"><div class="line"><span class="lineno">   57</span>  : <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>(__extension__(<a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a>)(value)) {}</div>
 <div class="ttc" id="astructein_1_1simd_html_a6b9e2f8e14605b5ed5af1115d3f80648"><div class="ttname"><a href="#a6b9e2f8e14605b5ed5af1115d3f80648">ein::simd::data_t</a></div><div class="ttdeci">simd_data_t&lt; T, N &gt; data_t</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00019">simd.cppm:19</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -653,7 +652,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -683,7 +682,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -713,7 +712,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -743,7 +742,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -773,7 +772,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -804,7 +803,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -835,7 +834,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -865,7 +864,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -895,7 +894,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -926,7 +925,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -957,7 +956,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -987,7 +986,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1017,7 +1016,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1047,7 +1046,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1078,7 +1077,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1115,7 +1114,7 @@ template&lt;typename T , size_t N&gt; </div>
 </div><div class="memdoc">
 <p>legacy: may outperform loadu when the data crosses a cache boundary </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00776">776</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00777">777</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1143,8 +1142,9 @@ template&lt;typename T , size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is a pointer to memory with alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00741">741</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00742">742</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1178,7 +1178,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00758">758</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00759">759</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1243,7 +1243,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1274,7 +1274,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1303,7 +1303,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1332,7 +1332,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1361,12 +1361,10 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>artificial </p>
 
 <p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00292">292</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
@@ -1395,7 +1393,7 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1424,7 +1422,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1453,7 +1451,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1482,7 +1480,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">reinitializes</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">reinitializes</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1509,7 +1507,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">reinitializes</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">reinitializes</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1581,7 +1579,7 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1610,7 +1608,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1639,7 +1637,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1669,7 +1667,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1699,7 +1697,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1730,7 +1728,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1761,7 +1759,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1792,7 +1790,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1904,8 +1902,9 @@ template&lt;typename T , size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is a pointer to memory with alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00798">798</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00800">800</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2010,7 +2009,7 @@ requires (I &lt; N)</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2044,7 +2043,7 @@ requires (I &lt; N)</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2078,7 +2077,7 @@ requires (I &lt; N)</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">const</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2113,7 +2112,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2146,7 +2145,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2182,7 +2181,7 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2215,7 +2214,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2248,7 +2247,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2281,7 +2280,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2314,7 +2313,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2347,7 +2346,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2380,7 +2379,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2416,7 +2415,7 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2449,7 +2448,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2482,7 +2481,7 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -2520,7 +2519,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00887">887</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00889">889</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2548,12 +2547,12 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00839">839</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00841">841</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2581,12 +2580,12 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00854">854</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00856">856</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2614,12 +2613,12 @@ template&lt;typename T , size_t N&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span></span>  </td>
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">hidden</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00869">869</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00871">871</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2652,7 +2651,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00915">915</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00917">917</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>

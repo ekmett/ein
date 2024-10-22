@@ -17,6 +17,7 @@ var attributes_8hpp =
     [ "ein_consumable", "d4/d86/group__attributes.html#ga6816203e87326e14923cb87cb116059a", null ],
     [ "ein_deprecated", "d4/d86/group__attributes.html#ga5ceac2cdbd3ec6ad801b9052bad26023", null ],
     [ "ein_device", "d4/d86/group__attributes.html#ga568ecfa2358b6bc209393b8a6dc9fbca", null ],
+    [ "ein_exclude_from_explicit_instantiation", "d4/d86/group__attributes.html#ga24a2cafa9f882b8f2d0772140597277b", null ],
     [ "ein_exclusive_lock_function", "d4/d86/group__attributes.html#gac8c4b65cde1558800e117b00d2d65466", null ],
     [ "ein_exclusive_locks_required", "d4/d86/group__attributes.html#gaaf4bbafcdf5c35392234f136d137ecf9", null ],
     [ "ein_export", "d4/d86/group__attributes.html#gae214831d8e46b8e85c40ae495dd1bb12", null ],
@@ -27,6 +28,7 @@ var attributes_8hpp =
     [ "ein_has_attribute", "d4/d86/group__attributes.html#gad3739858c2f6f373697b155ce4acac3a", null ],
     [ "ein_has_declspec_attribute", "d4/d86/group__attributes.html#ga634fb93c90b0fefd7994f40126573295", null ],
     [ "ein_hd", "d4/d86/group__attributes.html#ga42f2a4944074f350ddba96f086c308e8", null ],
+    [ "ein_hidden", "d4/d86/group__attributes.html#ga12a3fcb0577a0041f5d44071a82f0e8f", null ],
     [ "ein_host", "d4/d86/group__attributes.html#ga285634c6b28883bfdeed6cbadbcf6fee", null ],
     [ "ein_hot", "d4/d86/group__attributes.html#ga6bf1d5ecc125d67c5ccce0b79764a603", null ],
     [ "ein_inline", "d4/d86/group__attributes.html#gae478383afcbcd2db052f49d41e72763d", null ],
@@ -75,5 +77,6 @@ var attributes_8hpp =
     [ "ein_unroll", "d4/d86/group__attributes.html#ga8697fca92cf196aa90c8cfcf36cb4bae", null ],
     [ "ein_unroll_full", "d4/d86/group__attributes.html#ga9d16124a2225305208af3eeb3124128b", null ],
     [ "ein_use_handle", "d4/d86/group__attributes.html#ga11e25e384da6f9c2c1f696a30a58a670", null ],
+    [ "ein_visibility", "d4/d86/group__attributes.html#ga5165837aaf9cdf9743915da8d274f7a6", null ],
     [ "ein_weak", "d4/d86/group__attributes.html#ga9a1d6e122e659dcfea11d62158ee3625", null ]
 ];
