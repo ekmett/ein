@@ -55,6 +55,15 @@ static EIN(inline) constexpr bool isinf(auto x) noexcept {
   }
 }
 
+export inline constexpr bool cmp_unord(auto a, auto b) noexcept {
+  return is_nan(a) || is_nan(b);
+}
+
+export inline constexpr bool cmp_ord(auto a, auto b) noexcept {
+  return !is_nan(a) && !is_nan(b);
+}
+
+
 template <one_of_t<float,double> T>
 constexpr T scalef(T x, T y) noexcept {
   if consteval {

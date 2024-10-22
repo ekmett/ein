@@ -16,6 +16,7 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   memory.cppm
   types.cppm
   numerics.cppm
+  simd.cppm
 )
 
 # find_package(Threads REQUIRED)

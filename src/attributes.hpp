@@ -80,6 +80,19 @@
 #define ein_inline inline
 #endif
 
+/// \def ein_artificial
+/// \brief portable `__attribute__((artificial))`. The debugger should not single-step into this function.
+/// Treat it as atomic and associate it with the debug information for the use site instead.
+
+#if ein_has_attribute(artificial)
+#define ein_artificial __attribute__((artificial))
+#elif ein_has_attribute(__artificial__)
+#define ein_artificial __attribute__((__artificial__))
+#else
+#define ein_artificial
+ein_message("no artificial")
+#endif
+
 /// \def ein_noinline
 /// \brief portable `__attribute__((noinline))`
 
