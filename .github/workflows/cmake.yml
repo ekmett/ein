@@ -30,21 +30,10 @@ jobs:
       id: strings
       shell: bash
       run: |
-        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
-    - name: configure
-      run: >
-        cmake -B ${{ steps.strings.outputs.build-output-dir }}
-        -DCMAKE_CXX_COMPILER=clang++
-        -DCMAKE_C_COMPILER=clang
-        -DCMAKE_BUILD_TYPE=Release
-        -DCMAKE_EXPORT_COMPILE_COMMANDS=ON
-        -DCMAKE_COLOR_DIAGNOSTICS=ON
-        -DCMAKE_CXX_COMPILER_LAUNCHER=ccache
-        -G Ninja
-        -S ${{ github.workspace }}
-    - name: build
+        echo "build-output-dir=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
+    - name: configure and build
       run: |
-        cmake --build ${{ steps.strings.outputs.build-output-dir }} --config Release
+        make -C ${{ github.workspace }}
     - name: upload binaries
       uses: actions/upload-artifact@v4.4.3
       with:
@@ -54,8 +43,7 @@ jobs:
           ${{ steps.strings.outputs.build-output-dir }}/lib/
           ${{ steps.strings.outputs.build-output-dir }}/CMakeCache.txt
           ${{ steps.strings.outputs.build-output-dir }}/CMakeFiles/
-          ${{ steps.strings.outputs.build-output-dir }}/t/**/CTestTestfile.cmake
-          ${{ steps.strings.outputs.build-output-dir }}/src/**/CTestTestfile.cmake
+          ${{ steps.strings.outputs.build-output-dir }}/**/CTestTestfile.cmake
     - name: upload docs
       uses: actions/upload-artifact@v4.4.3
       with:
@@ -73,7 +61,7 @@ jobs:
       id: strings
       shell: bash
       run: |
-        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+        echo "build-output-dir=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
     - name: download build artifacts
       uses: actions/download-artifact@v4.1.8
       with:
@@ -96,7 +84,7 @@ jobs:
       id: strings
       shell: bash
       run: |
-        echo "build-output-dir=${{ github.workspace }}/build" >> "$GITHUB_OUTPUT"
+        echo "build-output-dir=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
     - name: download build artifacts
       uses: actions/download-artifact@v4.1.8
       with:
