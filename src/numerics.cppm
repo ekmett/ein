@@ -46,8 +46,8 @@ export template <size_t N>
 constinit imm_t<N> imm {};
 
 /// \nodiscard \pure
-export template <typename T>
-/** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+export template <typename T>   /// \cond
+[[nodiscard]] EIN(inline,pure) /// \endcond
 constexpr bool cmp_unord(T a, T b) noexcept {
   return isnan(a) || isnan(b);
 }
@@ -56,8 +56,8 @@ export template bool cmp_unord(float,float) noexcept;
 export template bool cmp_unord(double,double) noexcept;
 
 /// \nodiscard \pure
-export template <typename T>
-/** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+export template <typename T>   /// \cond
+[[nodiscard]] EIN(inline,pure) /// \endcond
 constexpr bool cmp_ord(T a, T b) noexcept {
   return !isnan(a) && !isnan(b);
 }
@@ -66,8 +66,8 @@ export template bool cmp_ord(float,float) noexcept;
 export template bool cmp_ord(double,double) noexcept;
 
 /// \hideinlinesource \nodiscard \inline \pure
-export template <one_of_t<float,double> T>
-/** \cond */ EIN(nodiscard,inline,pure) /** \endcond */
+export template <one_of_t<float,double> T> /// \cond
+[[nodiscard]] EIN(inline,pure) /// \endcond
 constexpr T scalef(T x, T y) noexcept {
   if consteval {
     // Constexpr path using bit manipulation
@@ -132,8 +132,8 @@ export enum class CMPINT : size_t {
 
 /// \nodiscard \inline \const
 export template <CMPINT imm8, typename T>
-requires (one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz))
-/** \cond */ EIN(nodiscard,inline,const) /** \endcond */
+requires (one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz)) /// \cond
+[[nodiscard]] EIN(inline,const) /// \endcond
 constexpr bool cmpint(T a, T b) noexcept {
   if      constexpr (imm8 == CMPINT::TRUE)  return -1;
   else if constexpr (imm8 == CMPINT::FALSE) return 0;
@@ -223,8 +223,8 @@ export enum CMP : size_t {
 /// perform an avx512 style floating point comparison for scalar values.
 /// \nodiscard \pure \inline
 export template <CMP imm8, typename T>
-requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz))
-/** \cond */ EIN(nodiscard,pure,inline) /** \endcond */
+requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz)) /// \cond
+[[nodiscard]] EIN(pure,inline) /// \endcond
 constexpr bool cmp(T a, T b) noexcept {
   if      constexpr (imm8 == CMP::EQ_OQ)    return cmp_ord(a, b) && (a == b);
   else if constexpr (imm8 == CMP::LT_OS)    return cmp_ord(a, b) && (a < b);
