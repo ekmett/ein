@@ -68,18 +68,18 @@ tags:
 	@find . -name '*.[ch]pp' -o -name '*.cppm' -type f -not -path './gen/*' -exec ctags {} +
 	@echo tags updated
 
-gen/t_%: gen $(HEADERS) $(SOURCES)
+gen/bin/t_%: gen $(HEADERS) $(SOURCES)
 	@cmake --build gen --target $(notdir $@) -j
 
-t_%: gen/t_%
+t_%: gen/bin/t_%
 	@gen/$@
 
 define EXE_TEMPLATE
-gen/$(1): gen $(HEADERS) $(SOURCES)
+gen/bin/$(1): gen $(HEADERS) $(SOURCES)
 	@cmake --build gen --target $(1) -j
 
-$(1): gen/$(1)
-	@gen/$(1)
+$(1): gen/bin/$(1)
+	@gen/bin/$(1)
 endef
 
 $(foreach exe,$(EXES),$(eval $(call EXE_TEMPLATE,$(exe))))
