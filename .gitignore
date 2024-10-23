@@ -1,2 +1,13 @@
 lib/
 gen/
+old/
+*.o
+*.d
+*.so
+*.a
+Testing
+*.trace
+*.perfetto-trace
+.ccache/*
+!.ccache/ccache.conf
+.ipynb_checkpoints/
