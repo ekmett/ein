@@ -47,7 +47,7 @@ if(PRECOMPILE_HEADERS)
   target_precompile_headers(ein PRIVATE prelude.hpp)
 endif()
 
+target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
-target_compile_options(ein PRIVATE "$<${CXX_Clang}:-Wno-c++23-extensions>")
-# target_compile_options(ein PUBLIC -stdlib=libc++ -std=c++20)
+# target_compile_options(ein PRIVATE "$<${CXX_Clang}:-Wno-c++23-extensions>")
