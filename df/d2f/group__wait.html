@@ -190,7 +190,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:ga805390b4d14945a27b4293a10735ef6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
 <tr class="separator:ga805390b4d14945a27b4293a10735ef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae6d4eb7ee861f0a0eac680b954937413" id="r_gae6d4eb7ee861f0a0eac680b954937413"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae6d4eb7ee861f0a0eac680b954937413">ein::with_waiter</a> (auto k)</td></tr>
-<tr class="memdesc:gae6d4eb7ee861f0a0eac680b954937413"><td class="mdescLeft">&#160;</td><td class="mdescRight">Usage:  <br /></td></tr>
+<tr class="memdesc:gae6d4eb7ee861f0a0eac680b954937413"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds an appropriate waiter for the current CPU  <br /></td></tr>
 <tr class="separator:gae6d4eb7ee861f0a0eac680b954937413"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
@@ -319,7 +319,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p><a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> using UMONITOR/UMWAIT for Intel </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00069">69</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00070">70</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Types</h3></td></tr>
 <tr class="memitem:ae187508a4587b0d74db55f3ef08eb654" id="r_ae187508a4587b0d74db55f3ef08eb654"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae187508a4587b0d74db55f3ef08eb654">timer_t</a> = uint64_t</td></tr>
@@ -346,7 +346,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00070">70</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00071">71</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
 
 </div>
 </div>
@@ -374,8 +374,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00073">73</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   73</span>{ <span class="keywordflow">return</span> _umonitor(p); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00074">74</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>{ <span class="keywordflow">return</span> _umonitor(p); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -402,8 +402,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00076">76</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>{ <span class="keywordflow">return</span> _umwait(1,timer); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00077">77</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   77</span>{ <span class="keywordflow">return</span> _umwait(1,timer); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -423,7 +423,7 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>spin <a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00087">87</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00089">89</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Types</h3></td></tr>
 <tr class="memitem:a04ecd724c01f16fe2a82fc7987f3b13a" id="r_a04ecd724c01f16fe2a82fc7987f3b13a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04ecd724c01f16fe2a82fc7987f3b13a">timer_t</a> = uint64_t</td></tr>
@@ -451,7 +451,7 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00088">88</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00090">90</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
 
 </div>
 </div>
@@ -479,8 +479,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00091">91</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   91</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00093">93</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   93</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -507,8 +507,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00094">94</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   94</span>{ _mm_pause(); }</div>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00096">96</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>{ _mm_pause(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -535,7 +535,7 @@ Variables</h2></td></tr>
 
 <p>hideinlinesource </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00096">96</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00098">98</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
 
 </div>
 </div>
@@ -617,19 +617,19 @@ template&lt;waiter W&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>Usage: </p>
-<div class="fragment"><div class="line">\ref <a class="code hl_function" href="#gae6d4eb7ee861f0a0eac680b954937413">with_waiter</a>([]&lt;\ref <a class="code hl_concept" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> w&gt; { ...; \ref <a class="code hl_function" href="#ga805390b4d14945a27b4293a10735ef6b">wait_until&lt;w&gt;</a>(p,f); ... }); </div>
+<p>finds an appropriate waiter for the current CPU </p>
+<p>Usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#gae6d4eb7ee861f0a0eac680b954937413">with_waiter</a>([]&lt;<a class="code hl_concept" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> w&gt; { ...; <a class="code hl_function" href="#ga805390b4d14945a27b4293a10735ef6b">wait_until&lt;w&gt;</a>(p,f); ... });</div>
 <div class="ttc" id="aconceptein_1_1waiter_html"><div class="ttname"><a href="../../db/dcb/conceptein_1_1waiter.html">ein::waiter</a></div><div class="ttdoc">some way to wait for a value to change</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00025">wait.cppm:25</a></div></div>
 <div class="ttc" id="agroup__wait_html_ga805390b4d14945a27b4293a10735ef6b"><div class="ttname"><a href="#ga805390b4d14945a27b4293a10735ef6b">ein::wait_until</a></div><div class="ttdeci">void wait_until(auto *p, auto f)</div><div class="ttdoc">Wait until a predicate holds about a given memory location.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00039">wait.cppm:39</a></div></div>
-<div class="ttc" id="agroup__wait_html_gae6d4eb7ee861f0a0eac680b954937413"><div class="ttname"><a href="#gae6d4eb7ee861f0a0eac680b954937413">ein::with_waiter</a></div><div class="ttdeci">auto with_waiter(auto k)</div><div class="ttdoc">Usage:</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00101">wait.cppm:101</a></div></div>
+<div class="ttc" id="agroup__wait_html_gae6d4eb7ee861f0a0eac680b954937413"><div class="ttname"><a href="#gae6d4eb7ee861f0a0eac680b954937413">ein::with_waiter</a></div><div class="ttdeci">auto with_waiter(auto k)</div><div class="ttdoc">finds an appropriate waiter for the current CPU</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00108">wait.cppm:108</a></div></div>
 </div><!-- fragment --><p> invokes <code>k</code> with a waiter as a template parameter. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00101">101</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  101</span>                                {</div>
-<div class="line"><span class="lineno">  102</span>  <span class="keywordflow">if</span> (mwaitx::supported) <span class="keywordflow">return</span> k.template operator()&lt;mwaitx&gt;();</div>
-<div class="line"><span class="lineno">  103</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (umwait::supported) <span class="keywordflow">return</span> k.template operator()&lt;umwait&gt;();</div>
-<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">else</span> k.template operator()&lt;spin&gt;();</div>
-<div class="line"><span class="lineno">  105</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00108">108</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                                {</div>
+<div class="line"><span class="lineno">  109</span>  <span class="keywordflow">if</span> (mwaitx::supported) <span class="keywordflow">return</span> k.template operator()&lt;mwaitx&gt;();</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (umwait::supported) <span class="keywordflow">return</span> k.template operator()&lt;umwait&gt;();</div>
+<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">else</span> k.template operator()&lt;spin&gt;();</div>
+<div class="line"><span class="lineno">  112</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -678,7 +678,7 @@ template&lt;waiter W&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00078">78</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00079">79</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
 
 </div>
 </div>
