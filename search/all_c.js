@@ -1,16 +1,15 @@
 var searchData=
 [
-  ['macros_0',['macros',['../d5/dfd/group__macros.html',1,'']]],
-  ['make_5fmmap_5fptr_1',['make_mmap_ptr',['../d7/ded/group__memory.html#gac2663d41f31490e13670ae3e6ce98f83',1,'ein']]],
-  ['map_2ehpp_2',['map.hpp',['../df/d7c/map_8hpp.html',1,'']]],
-  ['mask_5ft_3',['mask_t',['../dc/d7b/group__simd.html#a8c539e8d158e6d2f1740ee9246867cc3',1,'ein::simd']]],
-  ['max_5ffp_5fcomparison_5fpredicate_4',['max_fp_comparison_predicate',['../dc/db9/group__numerics.html#ga2b09119ae81703a8158113efe9708d8b',1,'ein']]],
-  ['max_5fsimd_5fsize_5',['max_simd_size',['../dc/d7b/group__simd.html#gae9b13b1a14965d4f917ac518e18450e4',1,'ein']]],
-  ['memory_6',['memory',['../d7/ded/group__memory.html',1,'']]],
-  ['memory_2ecppm_7',['memory.cppm',['../d8/d4c/memory_8cppm.html',1,'']]],
-  ['mmap_5fptr_8',['mmap_ptr',['../d7/ded/group__memory.html#gabac483c5eb9fb59c662014d36ce22a49',1,'ein']]],
-  ['mmask_5ft_9',['mmask_t',['../dc/d7b/group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd',1,'ein']]],
-  ['monitor_10',['monitor',['../df/d2f/group__wait.html#a3993acfadc722397212f4d983986bf21',1,'ein::mwaitx::monitor()'],['../df/d2f/group__wait.html#a376bf3e1e66eb57013fea08af54c7906',1,'ein::umwait::monitor()'],['../df/d2f/group__wait.html#a89f5d0f22dc2c948835409712a458895',1,'ein::spin::monitor()']]],
-  ['mwait_11',['mwait',['../df/d2f/group__wait.html#a9971c090707423cab25a15f40dc749dc',1,'ein::mwaitx::mwait()'],['../df/d2f/group__wait.html#aad483eaa0919765ec050f3e9eb42d083',1,'ein::umwait::mwait()'],['../df/d2f/group__wait.html#a83985e645823a822d89ca8104485a22f',1,'ein::spin::mwait()']]],
-  ['mwaitx_12',['mwaitx',['../df/d2f/group__wait.html#d7/d59/structein_1_1mwaitx',1,'ein']]]
+  ['lddqu_0',['lddqu',['../dc/d7b/group__simd.html#a42d5d3b89c087711f7c7268f9872c800',1,'ein::simd::lddqu()'],['../dc/d7b/group__simd.html#ga4ded656b3d1da0d7acd986b7acf789a1',1,'ein::lddqu(auto const *data) noexcept -&gt; simd&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;']]],
+  ['le_1',['LE',['../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460acfe6055d2e0503be378bb63449ec7ba6',1,'ein']]],
+  ['le_5foq_2',['LE_OQ',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a0c3b84f1e518911c7e6d1b749e41c8b6',1,'ein']]],
+  ['le_5fos_3',['LE_OS',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a8f6dd857aa6a21af37ee80e2d1501680',1,'ein']]],
+  ['license_4',['License',['../d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md8',1,'Apache License'],['../d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md7',1,'BSD 2-Clause License'],['../d2/d35/md__l_i_c_e_n_s_e.html',1,'License']]],
+  ['license_20to_20your_20work_5',['APPENDIX: How to apply the Apache License to your work',['../d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md10',1,'']]],
+  ['license_2emd_6',['LICENSE.md',['../dd/d79/_l_i_c_e_n_s_e_8md.html',1,'']]],
+  ['load_7',['load',['../dc/d7b/group__simd.html#ab84a2bbadea73893d88f5755ce94e88f',1,'ein::simd::load()'],['../dc/d7b/group__simd.html#gad2e79d4163046939c2ae3473a9069bb6',1,'ein::load()']]],
+  ['loadu_8',['loadu',['../dc/d7b/group__simd.html#a51d72e83b553d4faabb189cb4259ad71',1,'ein::simd::loadu()'],['../dc/d7b/group__simd.html#gaed90a3dee286dda1af9ca5f28513bc3a',1,'ein::loadu(auto const *data) noexcept -&gt; simd&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;']]],
+  ['lt_9',['LT',['../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b',1,'ein']]],
+  ['lt_5foq_10',['LT_OQ',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac80bf7e6ae5bc282b3c7878e0f9fcec6',1,'ein']]],
+  ['lt_5fos_11',['LT_OS',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a44a8abcbdbbb9d5cd4211ccc3036dae0',1,'ein']]]
 ];

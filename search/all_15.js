@@ -1,7 +1,5 @@
 var searchData=
 [
-  ['wait_0',['wait',['../df/d2f/group__wait.html',1,'']]],
-  ['wait_2ecppm_1',['wait.cppm',['../d0/def/wait_8cppm.html',1,'']]],
-  ['wait_5funtil_2',['wait_until',['../df/d2f/group__wait.html#gabf5a7b298fd0bf71181c18be243c0e76',1,'ein']]],
-  ['with_5fwaiter_3',['with_waiter',['../df/d2f/group__wait.html#ga15797fd5aad0c604b5951f50d53d3623',1,'ein']]]
+  ['value_0',['value',['../dc/db9/group__numerics.html#afa2b66046ea1aedfd916e12d1bb2289a',1,'ein::imm_t']]],
+  ['value_5ftype_1',['value_type',['../dc/d7b/group__simd.html#a35f55b75d393fe01bc91b609738a771e',1,'ein::simd']]]
 ];

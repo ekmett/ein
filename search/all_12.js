@@ -1,13 +1,21 @@
 var searchData=
 [
-  ['timer_5ft_0',['timer_t',['../df/d2f/group__wait.html#a4de38c21779e017ba18e38a712c7fb77',1,'ein::mwaitx::timer_t'],['../df/d2f/group__wait.html#ae187508a4587b0d74db55f3ef08eb654',1,'ein::umwait::timer_t'],['../df/d2f/group__wait.html#a04ecd724c01f16fe2a82fc7987f3b13a',1,'ein::spin::timer_t']]],
-  ['true_1',['TRUE',['../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61',1,'ein']]],
-  ['true_5fuq_2',['TRUE_UQ',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a53aba1168d225ae0208df944cb21359c',1,'ein']]],
-  ['true_5fus_3',['TRUE_US',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a1c3d12169a208ae1f88560f70e762b9c',1,'ein']]],
-  ['tuple_5felement_3c_20i_2c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_4',['tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;',['../dc/d7b/group__simd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
-  ['tuple_5fsize_3c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_5',['tuple_size&lt; ein::simd&lt; T, N &gt; &gt;',['../dc/d7b/group__simd.html#d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
-  ['type_6',['type',['../dc/d7b/group__simd.html#a19c2978201d48d6253eb5be0da2d359d',1,'std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;::type'],['../d6/d59/group__types.html#gafe3cd68979730cc4ce2fd0800e31d494',1,'ein::type']]],
-  ['type_5fof_7',['type_of',['../d6/d59/group__types.html#gaeff5354fcf4acab5497e2b60433e75b6',1,'ein']]],
-  ['types_8',['types',['../d6/d59/group__types.html',1,'']]],
-  ['types_2ecppm_9',['types.cppm',['../d8/dcb/types_8cppm.html',1,'']]]
+  ['scalef_0',['scalef',['../dc/d7b/group__simd.html#ab38049d4edbb98ef7eee0bf68d08f322',1,'ein::simd::scalef'],['../dc/db9/group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f',1,'ein::scalef(T x, T y) noexcept'],['../dc/db9/group__numerics.html#ga30597d79f07c0ef140788dc10f28e6db',1,'ein::scalef(float, float) noexcept'],['../dc/db9/group__numerics.html#gafc5e1abfa9151a232a6c694150f3340d',1,'ein::scalef(double, double) noexcept']]],
+  ['shuffle_1',['shuffle',['../dc/d7b/group__simd.html#a9db6ce886e40f067782bfdd8a2384446',1,'ein::simd::shuffle() noexcept'],['../dc/d7b/group__simd.html#af08a5da9c45a7ef484c7dafd678e49c1',1,'ein::simd::shuffle(simd&lt; T, N &gt; b) noexcept'],['../dc/d7b/group__simd.html#gac2c105a2927f9ca9e44820eb74633c12',1,'ein::shuffle(simd_type auto x)'],['../dc/d7b/group__simd.html#ga186940519ca17135b07b6816ae6402cd',1,'ein::shuffle(simd_type auto x, simd_type auto y)']]],
+  ['simd_2',['simd',['../dc/d7b/group__simd.html#d1/d89/structein_1_1simd',1,'ein::simd&lt; T, N &gt;'],['../dc/d7b/group__simd.html#a3408587fc28bf3d2cf4d5d495862de9e',1,'ein::simd::simd() noexcept=default'],['../dc/d7b/group__simd.html#a920da6993ced9d57cf006bcd6e8c9237',1,'ein::simd::simd(simd const &amp;) noexcept=default'],['../dc/d7b/group__simd.html#a14e0032a21cbbcb940bd0db9d0620ac3',1,'ein::simd::simd(simd &amp;&amp;) noexcept=default'],['../dc/d7b/group__simd.html#a9c135cd57d5d4504aeb43b45e2ddaa24',1,'ein::simd::simd(Args &amp;&amp;... args) noexcept'],['../dc/d7b/group__simd.html#aa8b77703fe9289a7ee8d885400970d98',1,'ein::simd::simd(T value) noexcept'],['../dc/d7b/group__simd.html#a76efac59689a5ce4973a19bb1cfda23c',1,'ein::simd::simd(data_t const &amp;data) noexcept'],['../dc/d7b/group__simd.html#ae61b7ea8d9d414e95a4bc490b786a47e',1,'ein::simd::simd(data_t &amp;&amp;data) noexcept'],['../dc/d7b/group__simd.html#a3122a0f63504a4bce3710397b4630037',1,'ein::simd::simd(std::initializer_list&lt; T &gt; init)'],['../dc/d7b/group__simd.html#a7502f39916d168aceddb5399223d3429',1,'ein::simd::simd(intrinsic_t const &amp;data) noexcept'],['../dc/d7b/group__simd.html#a7154a5703961ddb411b1d2e763244aaf',1,'ein::simd::simd(intrinsic_t &amp;&amp;data) noexcept'],['../dc/d7b/group__simd.html#ga736c44c8691e86d12b79abd6a696a3ec',1,'ein::simd(T __attribute((__vector_size__(N)))) -&gt; simd&lt; T, N/sizeof(T)&gt;'],['../dc/d7b/group__simd.html#ga48efda4dbc6203557e3d7b55af8bed6e',1,'ein::simd(Args &amp;&amp;...) -&gt; simd&lt; std::common_type&lt; Args... &gt;, sizeof...(Args)&gt;'],['../dc/d7b/group__simd.html#ga6def18561a39ff4a1188bc619f86d862',1,'ein::simd(T) -&gt; simd&lt; T, has_simd_type&lt; T, max_simd_size/sizeof(T)&gt; &gt;'],['../dc/d7b/group__simd.html',1,'simd']]],
+  ['simd_2ecppm_3',['simd.cppm',['../da/d01/simd_8cppm.html',1,'']]],
+  ['simd_5fdata_2ecppm_4',['simd_data.cppm',['../df/d88/simd__data_8cppm.html',1,'']]],
+  ['simd_5fdata_5ft_5',['simd_data_t',['../dc/d7b/group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8',1,'ein']]],
+  ['simd_5fintrinsic_5ft_6',['simd_intrinsic_t',['../dc/d7b/group__simd.html#gac990fb6f5dcea45fb2adb40514b836d3',1,'ein']]],
+  ['simd_5fmask_5ft_7',['simd_mask_t',['../dc/d7b/group__simd.html#ga423156b83124d4f090aad2b1e75447b1',1,'ein']]],
+  ['simd_5ft_8',['simd_t',['../dc/d7b/group__simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]],
+  ['size_9',['size',['../d7/ded/group__memory.html#ab2b8b1c7eb7749c161999be99e91870f',1,'ein::c_munmap::size'],['../dc/d7b/group__simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]],
+  ['spin_10',['spin',['../df/d2f/group__wait.html#d8/d42/structein_1_1spin',1,'ein']]],
+  ['std_11',['std',['../d8/dcc/namespacestd.html',1,'']]],
+  ['store_12',['store',['../dc/d7b/group__simd.html#ad83a2f62cb6ff1355a950f46e1582b07',1,'ein::simd']]],
+  ['storeu_13',['storeu',['../dc/d7b/group__simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb',1,'ein::simd']]],
+  ['stream_14',['stream',['../dc/d7b/group__simd.html#ac63f866959420086bd65699045c575d2',1,'ein::simd']]],
+  ['stream_5fload_15',['stream_load',['../dc/d7b/group__simd.html#a46c1b89940d707f5c9013599bac488ba',1,'ein::simd::stream_load()'],['../dc/d7b/group__simd.html#gaf84aa0909d95f9faf66f5ee344285677',1,'ein::stream_load()']]],
+  ['supported_16',['supported',['../df/d2f/group__wait.html#gaaa1c31bb64256e696333d924bb50a90d',1,'ein::mwaitx::supported'],['../df/d2f/group__wait.html#ga94f77adfbc306130e869173daf6ea96d',1,'ein::umwait::supported'],['../df/d2f/group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73',1,'ein::spin::supported']]],
+  ['swap_17',['swap',['../dc/d7b/group__simd.html#ae0c6eef701036b515f4a4f6fc18b9974',1,'ein::simd']]]
 ];

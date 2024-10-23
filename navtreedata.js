@@ -31,6 +31,13 @@ var NAVTREE =
       [ "doxygen 1.12.0", "index.html#autotoc_md4", null ]
     ] ],
     [ "Contact Information", "index.html#autotoc_md5", null ],
+    [ "License", "d2/d35/md__l_i_c_e_n_s_e.html", [
+      [ "BSD 2-Clause License", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md7", null ],
+      [ "Apache License", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md8", [
+        [ "Terms and Conditions for use, reproduction, and distribution", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md9", null ],
+        [ "APPENDIX: How to apply the Apache License to your work", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md10", null ]
+      ] ]
+    ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Modules", "modules.html", [
       [ "Modules List", "modules.html", "modules_dup" ],
@@ -78,7 +85,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dc/db9/group__numerics.html#ga2e9e352aca0eb99e5bff21db2bcf7029"
+"dc/db9/group__numerics.html#afa2b66046ea1aedfd916e12d1bb2289a"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

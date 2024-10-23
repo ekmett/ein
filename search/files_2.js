@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['map_2ehpp_0',['map.hpp',['../df/d7c/map_8hpp.html',1,'']]],
-  ['memory_2ecppm_1',['memory.cppm',['../d8/d4c/memory_8cppm.html',1,'']]]
+  ['license_2emd_0',['LICENSE.md',['../dd/d79/_l_i_c_e_n_s_e_8md.html',1,'']]]
 ];
