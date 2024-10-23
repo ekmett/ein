@@ -96,7 +96,6 @@ ein_message("no artificial")
 ein_message("no visibility")
 #endif
 
-
 /// \def ein_exclude_from_explicit_instantiation
 /// \brief exclude this member from explicit template instantiation. paired with ein_hidden
 #if ein_has_attribute(exclude_from_explicit_instantiation)
@@ -111,6 +110,17 @@ ein_message("no exclude_from_explicit_instantiation")
 /// \details
 /// expands to `__attribute__((visibility("hidden"))` `__attribute__((exclude_from_explicit_instantiation))`
 #define ein_hidden ein_visibility("hidden") ein_exclude_from_explicit_instantiation
+
+/// \def ein_target
+/// \brief this indicates a required feature set for the current multiversioned function.
+/// \details overloads will be resolved at load time
+#define ein_target(x) __attribute__((target(x)))
+
+/// \def ein_target
+/// \brief this indicates a required feature set for the current multiversioned function.
+/// \details overloads will be resolved at load time
+#define ein_target_clones(...) __attribute__((target_clones(_VA_ARGS_)))
+
 
 /// \def ein_noinline
 /// \brief portable `__attribute__((noinline))`
