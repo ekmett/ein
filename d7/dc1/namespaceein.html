@@ -1005,13 +1005,13 @@ template&lt;std::size_t N&gt; </div>
 
 <p>load <code>data</code> from unaligned memory, optimized for crossing cachelines (legacy approach) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01055">1055</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1056</span>                                                                                     {</div>
-<div class="line"><span class="lineno"> 1057</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
-<div class="line"><span class="lineno"> 1058</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
-<div class="line"><span class="lineno"> 1059</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::lddqu</a>(data);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01056">1056</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1057</span>                                                                                     {</div>
+<div class="line"><span class="lineno"> 1058</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1059</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1060</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::lddqu</a>(data);</div>
 <div class="ttc" id="aconceptein_1_1has__simd__type_html"><div class="ttname"><a href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></div><div class="ttdoc">ein::simd_data_t&lt;T,N&gt; is defined</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00024">simd_data.cppm:24</a></div></div>
-<div class="ttc" id="astructein_1_1simd_html"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html">ein::simd</a></div><div class="ttdoc">simd primitive definition</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00025">simd.cppm:25</a></div></div>
+<div class="ttc" id="astructein_1_1simd_html"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html">ein::simd</a></div><div class="ttdoc">simd primitive definition</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00026">simd.cppm:26</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1043,11 +1043,11 @@ template&lt;std::size_t N&gt; </div>
 <p>load <code>data</code> from aligned memory </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>data</code> has alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01035">1035</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1036</span>                                                                                    {</div>
-<div class="line"><span class="lineno"> 1037</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
-<div class="line"><span class="lineno"> 1038</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
-<div class="line"><span class="lineno"> 1039</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::load</a>(data);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01036">1036</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1037</span>                                                                                    {</div>
+<div class="line"><span class="lineno"> 1038</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1039</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1040</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::load</a>(data);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1078,11 +1078,11 @@ template&lt;std::size_t N&gt; </div>
 
 <p>load <code>data</code> from unaligned memory </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01045">1045</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1046</span>                                                                                     {</div>
-<div class="line"><span class="lineno"> 1047</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
-<div class="line"><span class="lineno"> 1048</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
-<div class="line"><span class="lineno"> 1049</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::loadu</a>(data);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01046">1046</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1047</span>                                                                                     {</div>
+<div class="line"><span class="lineno"> 1048</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1049</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1050</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::loadu</a>(data);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1113,10 +1113,10 @@ template&lt;size_t ... is&gt; </div>
 
 <p>create a new simd register with contents drawn from this one </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01089">1089</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1090</span>                               {</div>
-<div class="line"><span class="lineno"> 1091</span>  <span class="keywordflow">return</span> x.template <a class="code hl_function" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a>&lt;is...&gt;();</div>
-<div class="ttc" id="anamespaceein_html_ac2c105a2927f9ca9e44820eb74633c12"><div class="ttname"><a href="#ac2c105a2927f9ca9e44820eb74633c12">ein::shuffle</a></div><div class="ttdeci">auto shuffle(simd_type auto x)</div><div class="ttdoc">create a new simd register with contents drawn from this one</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l01089">simd.cppm:1089</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01090">1090</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1091</span>                               {</div>
+<div class="line"><span class="lineno"> 1092</span>  <span class="keywordflow">return</span> x.template <a class="code hl_function" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a>&lt;is...&gt;();</div>
+<div class="ttc" id="anamespaceein_html_ac2c105a2927f9ca9e44820eb74633c12"><div class="ttname"><a href="#ac2c105a2927f9ca9e44820eb74633c12">ein::shuffle</a></div><div class="ttdeci">auto shuffle(simd_type auto x)</div><div class="ttdoc">create a new simd register with contents drawn from this one</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l01090">simd.cppm:1090</a></div></div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1156,9 +1156,9 @@ template&lt;size_t ... is&gt; </div>
 
 <p>create a new simd register with contents drawn from these two </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01097">1097</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1098</span>                                                 {</div>
-<div class="line"><span class="lineno"> 1099</span>  <span class="keywordflow">return</span> x.template <a class="code hl_function" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a>&lt;is...&gt;(y);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01098">1098</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1099</span>                                                 {</div>
+<div class="line"><span class="lineno"> 1100</span>  <span class="keywordflow">return</span> x.template <a class="code hl_function" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a>&lt;is...&gt;(y);</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1279,11 +1279,11 @@ template&lt;std::size_t N&gt; </div>
 <p>stream <code>data</code> from memory non-temporally, bypassing cache </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>data</code> has alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01066">1066</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno"> 1067</span>                                                                                           {</div>
-<div class="line"><span class="lineno"> 1068</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
-<div class="line"><span class="lineno"> 1069</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
-<div class="line"><span class="lineno"> 1070</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::stream_load</a>(data);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01067">1067</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1068</span>                                                                                           {</div>
+<div class="line"><span class="lineno"> 1069</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1070</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1071</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::stream_load</a>(data);</div>
 </div><!-- fragment -->
 </div>
 </div>
