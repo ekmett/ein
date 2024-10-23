@@ -16,6 +16,7 @@ namespace ein {
 export template <typename T, size_t N>
 requires (has_simd_type<T,N>)
 struct simd {
+private:
   using data_t = simd_data_t<T,N>;
   using mask_t = simd_mask_t<T,N>;
   using intrinsic_t = simd_intrinsic_t<T,N>;
@@ -29,6 +30,7 @@ struct simd {
 
   using value_type = T;
   static constexpr size_t size = N;
+public:
 
   data_t data;
 
