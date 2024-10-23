@@ -151,7 +151,7 @@ $(function(){initNavTree('d2/d54/assert_8hpp_source.html','../../'); initResizab
 <div class="foldopen" id="foldopen00006" data-start="" data-end="">
 <div class="line"><a id="l00006" name="l00006"></a><span class="lineno"><a class="line" href="../../d2/d54/assert_8hpp.html#a4af23f138af62df96e8bacc71767bf00">    6</a></span><span class="preprocessor">#define ein_assert(cond,...) \</span></div>
 <div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">  do { \</span></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    if ein_unlikely (!cond) { \</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">    if (!cond) [[unlikely]] { \</span></div>
 <div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span><span class="preprocessor">      []&lt;typename ... Args&gt;(Args &amp;&amp; ... args) { \</span></div>
 <div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="preprocessor">        if constexpr (sizeof...(Args) == 0) \</span></div>
 <div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \</span></div>

@@ -1,10 +1,6 @@
 var NAVTREEINDEX2 =
 {
-"d8/dcc/namespacestd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4":[7,0,0,9,2],
-"d9/df8/namespaceein_1_1types.html":[4,0,0,3],
-"d9/df8/namespaceein_1_1types.html#a59fc9474118b3818627c1e0e0836a854":[4,0,0,3,3],
-"d9/df8/namespaceein_1_1types.html#a70c88314413edb0f7259ab9ff71361f2":[4,0,0,3,2],
-"d9/df8/namespaceein_1_1types.html#a794e800e3458965d45b95dd6d3a5e991":[4,0,0,3,4],
+"d9/df8/namespaceein_1_1types.html#a794e800e3458965d45b95dd6d3a5e991":[4,0,0,3,3],
 "da/d01/simd_8cppm.html":[7,0,0,9],
 "da/d01/simd_8cppm.html#a186940519ca17135b07b6816ae6402cd":[7,0,0,9,8],
 "da/d01/simd_8cppm.html#a4ded656b3d1da0d7acd986b7acf789a1":[7,0,0,9,4],
@@ -83,9 +79,8 @@ var NAVTREEINDEX2 =
 "dc/d1b/conceptein_1_1simd__builtin.html":[4,0,0,8],
 "dc/d1b/conceptein_1_1simd__builtin.html":[5,0,6],
 "dc/d24/module__ein_8types.html":[3,0,5],
-"dc/d24/module__ein_8types.html#a59fc9474118b3818627c1e0e0836a854":[3,0,5,3],
-"dc/d24/module__ein_8types.html#a70c88314413edb0f7259ab9ff71361f2":[3,0,5,2],
-"dc/d24/module__ein_8types.html#a794e800e3458965d45b95dd6d3a5e991":[3,0,5,4],
+"dc/d24/module__ein_8types.html#a59fc9474118b3818627c1e0e0836a854":[3,0,5,2],
+"dc/d24/module__ein_8types.html#a794e800e3458965d45b95dd6d3a5e991":[3,0,5,3],
 "dd/d4b/simd_8cpp.html":[7,0,0,8],
 "dd/d4b/simd_8cpp_source.html":[7,0,0,8],
 "dd/d6d/module__ein_8cpu.html":[3,0,0],
