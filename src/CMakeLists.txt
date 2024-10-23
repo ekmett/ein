@@ -1,5 +1,6 @@
-# ein library
-# ===========
+# SPDX-FileType: Source
+# SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+# SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 
 add_library(ein STATIC)
 
@@ -28,7 +29,7 @@ target_link_libraries(ein PUBLIC
 )
 
 target_include_directories(ein PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/src>
+  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/h>
   $<INSTALL_INTERFACE:include>)
 
 install(TARGETS ein
@@ -42,7 +43,7 @@ set_target_properties(ein PROPERTIES PUBLIC_HEADER "assert.hpp;attributes.hpp;ma
 lto(ein)
 
 if(PRECOMPILE_HEADERS)
-  target_precompile_headers(ein PRIVATE prelude.hpp)
+  target_precompile_headers(ein PRIVATE ${CMAKE_SOURCE_DIR}/h/prelude.hpp)
 endif()
 
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!

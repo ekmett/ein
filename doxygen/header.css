@@ -1,3 +1,30 @@
 div.header div.summary {
   padding-right: 80px;
 }
+
+ {
+  font-family: 'Hasklig';
+  src: url('Hasklig-Regular.woff2') format('woff2'),
+       url('Hasklig-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-It.woff2') format('woff2'),
+    url('Hasklig-It.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-Bold.woff2') format('woff2'),
+    url('Hasklig-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}

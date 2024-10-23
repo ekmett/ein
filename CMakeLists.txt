@@ -1,3 +1,7 @@
+# SPDX-FileType: Source
+# SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+# SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+
 cmake_minimum_required(VERSION 3.30.5 FATAL_ERROR)
 cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 
