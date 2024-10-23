@@ -34,18 +34,23 @@ public:
 
   data_t data;
 
+  /// \brief default initialization
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd() noexcept = default;
 
+  /// \brief copy construction
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(simd const &) noexcept = default;
 
+  /// \brief move construction
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(simd &&) noexcept = default;
 
+  /// \brief array initialization
+  /// \details e.g. `simd<float,4>{1.0,2.0,3.0,4.0}`
   /// \inline \artificial \hidden
   template <std::convertible_to<T> ... Args>
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
@@ -53,16 +58,20 @@ public:
   requires (sizeof...(Args) == N)
   : data(std::forward<Args>(args)...) {}
 
+  /// \brief broadcast construction
+  /// \details sets every member of the simd structure to the same value
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(T value) noexcept
   : data(__extension__(data_t)(value)) {}
 
+  /// \brief copy construction from clang/gcc vector intrinsics
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(data_t const & data) noexcept
   : data(data) {}
 
+  /// \brief move construction from clang/gcc vector intrinsics
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(data_t && data) noexcept
@@ -70,24 +79,28 @@ public:
 
   // constexpr simd(const T (&list)[N]) :data(list) {}
 
+  /// \brief initialize firt \p init `.size` values from an initializer_list
+  /// TODO: use a masked unaligned load
   /// \inline \artificial \hidden
   /// \hideinlinesource
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(std::initializer_list<T> init) {
     // NB: initializer_lists are janky af
     std::copy_n(init.begin(),std::min(N,init.size()),begin());
-    /// TODO: (masked)loadu(std::data(init))
   }
 
+  // TODO: append
   // concat
   //constexpr simd(simd<T,N/2> a, simd<T,N/2> b) : data(__builtin_shufflevector(a,b,...,...) {}
 
+  /// \brief copy construct from the corresponding intel intrinsic type (if different than the gcc/clang one)
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(intrinsic_t const & data) noexcept
   requires (!std::is_same_v<data_t, intrinsic_t>)
   : data(reinterpret_cast<data_t>(data)) {}
 
+  /// \brief move construct from the corresponding intel intrinsic type (if different than the gcc/clang one)
   /// \inline \artificial \hidden
   /** \cond */ EIN(inline,artificial,hidden) /** \endcond */
   constexpr simd(intrinsic_t && data) noexcept
@@ -116,15 +129,15 @@ public:
     }
   }
 
-  /// provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)
-  // \inline \artificial \const \hidden
+  /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> &
+  /// \inline \artificial \const \hidden
   /** \cond */ EIN(inline,artificial,const,hidden) /** \endcond */
   constexpr operator intrinsic_t & () noexcept {
     if constexpr (std::is_same_v<intrinsic_t,data_t>) return data;
     else return reinterpret_cast<intrinsic_t &>(data);
   }
 
-  /// provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)
+  /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> const &
   /// \hideinlinesource \inline \artificial \const \hidden
   /** \cond */ EIN(inline,artificial,const,hidden) /** \endcond */
   constexpr operator intrinsic_t const & () const noexcept {
@@ -132,7 +145,7 @@ public:
     else return reinterpret_cast<intrinsic_t const &>(data);
   }
 
-  /// provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)
+  /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> &
   /// \hideinlinesource \inline \artificial \const \hidden
   /** \cond */ EIN(inline,artificial,const,hidden) /** \endcond */
   constexpr intrinsic_t & it() noexcept {
@@ -140,7 +153,7 @@ public:
     else return reinterpret_cast<intrinsic_t &>(data);
   }
 
-  /// provide compatibility with intel intrinsics by casting to __m(128|256|512)(|d|i)
+  /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> const &
   /// \hideinlinesource \inline \artificial \const \hidden
   /** \cond */ EIN(inline,artificial,const,hidden) /** \endcond */
   constexpr intrinsic_t const & it() const noexcept {
