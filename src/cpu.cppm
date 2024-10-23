@@ -8,11 +8,9 @@ export module ein.cpu;
 namespace ein::cpu {
 
 /// \nodiscard
-export struct [[nodiscard]] id_t {
-  int32_t eax, ebx, ecx, edx;
-};
+export struct [[nodiscard]] id_t { int32_t eax, ebx, ecx, edx; };
 
-/// \inline \pure
+/// \hideinlinesource \inline \pure
 export /// \cond
 EIN(inline,pure) /// \endcond
 id_t id(int32_t eax, int32_t ecx) noexcept {
