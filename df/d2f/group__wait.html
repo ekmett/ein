@@ -185,13 +185,13 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga805390b4d14945a27b4293a10735ef6b" id="r_ga805390b4d14945a27b4293a10735ef6b"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
-<tr class="memitem:ga805390b4d14945a27b4293a10735ef6b"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ga805390b4d14945a27b4293a10735ef6b">ein::wait_until</a> (auto *p, auto f)</td></tr>
-<tr class="memdesc:ga805390b4d14945a27b4293a10735ef6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
-<tr class="separator:ga805390b4d14945a27b4293a10735ef6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae6d4eb7ee861f0a0eac680b954937413" id="r_gae6d4eb7ee861f0a0eac680b954937413"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae6d4eb7ee861f0a0eac680b954937413">ein::with_waiter</a> (auto k)</td></tr>
-<tr class="memdesc:gae6d4eb7ee861f0a0eac680b954937413"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds an appropriate waiter for the current CPU  <br /></td></tr>
-<tr class="separator:gae6d4eb7ee861f0a0eac680b954937413"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabf5a7b298fd0bf71181c18be243c0e76" id="r_gabf5a7b298fd0bf71181c18be243c0e76"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
+<tr class="memitem:gabf5a7b298fd0bf71181c18be243c0e76"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gabf5a7b298fd0bf71181c18be243c0e76">ein::wait_until</a> (auto *p, auto f) noexcept</td></tr>
+<tr class="memdesc:gabf5a7b298fd0bf71181c18be243c0e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
+<tr class="separator:gabf5a7b298fd0bf71181c18be243c0e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15797fd5aad0c604b5951f50d53d3623" id="r_ga15797fd5aad0c604b5951f50d53d3623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a> (auto k) noexcept</td></tr>
+<tr class="memdesc:ga15797fd5aad0c604b5951f50d53d3623"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds an appropriate waiter for the current CPU  <br /></td></tr>
+<tr class="separator:ga15797fd5aad0c604b5951f50d53d3623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -540,8 +540,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga805390b4d14945a27b4293a10735ef6b" name="ga805390b4d14945a27b4293a10735ef6b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga805390b4d14945a27b4293a10735ef6b">&#9670;&#160;</a></span>wait_until()</h2>
+<a id="gabf5a7b298fd0bf71181c18be243c0e76" name="gabf5a7b298fd0bf71181c18be243c0e76"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabf5a7b298fd0bf71181c18be243c0e76">&#9670;&#160;</a></span>wait_until()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -564,7 +564,7 @@ template&lt;waiter W&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">flatten</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">flatten</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -580,7 +580,7 @@ template&lt;waiter W&gt; </div>
 <dl class="section post"><dt>Postcondition</dt><dd>f(p) </dd></dl>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00039">39</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   39</span>                                  {</div>
+<div class="fragment"><div class="line"><span class="lineno">   39</span>                                           {</div>
 <div class="line"><span class="lineno">   40</span>  assume(W::supported);</div>
 <div class="line"><span class="lineno">   41</span>  <span class="keywordflow">while</span> (!f(p)) {</div>
 <div class="line"><span class="lineno">   42</span>    W::monitor(p);</div>
@@ -591,8 +591,8 @@ template&lt;waiter W&gt; </div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="gae6d4eb7ee861f0a0eac680b954937413" name="gae6d4eb7ee861f0a0eac680b954937413"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gae6d4eb7ee861f0a0eac680b954937413">&#9670;&#160;</a></span>with_waiter()</h2>
+<a id="ga15797fd5aad0c604b5951f50d53d3623" name="ga15797fd5aad0c604b5951f50d53d3623"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga15797fd5aad0c604b5951f50d53d3623">&#9670;&#160;</a></span>with_waiter()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -609,20 +609,20 @@ template&lt;waiter W&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>finds an appropriate waiter for the current CPU </p>
-<p>Usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#gae6d4eb7ee861f0a0eac680b954937413">with_waiter</a>([]&lt;<a class="code hl_concept" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> w&gt; { ...; <a class="code hl_function" href="#ga805390b4d14945a27b4293a10735ef6b">wait_until&lt;w&gt;</a>(p,f); ... });</div>
+<p>Usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#ga15797fd5aad0c604b5951f50d53d3623">with_waiter</a>([]&lt;<a class="code hl_concept" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> w&gt; <span class="keyword">noexcept</span> { ...; <a class="code hl_function" href="#gabf5a7b298fd0bf71181c18be243c0e76">wait_until&lt;w&gt;</a>(p,f); ... });</div>
 <div class="ttc" id="aconceptein_1_1waiter_html"><div class="ttname"><a href="../../db/dcb/conceptein_1_1waiter.html">ein::waiter</a></div><div class="ttdoc">some way to wait for a value to change</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00025">wait.cppm:25</a></div></div>
-<div class="ttc" id="agroup__wait_html_ga805390b4d14945a27b4293a10735ef6b"><div class="ttname"><a href="#ga805390b4d14945a27b4293a10735ef6b">ein::wait_until</a></div><div class="ttdeci">void wait_until(auto *p, auto f)</div><div class="ttdoc">Wait until a predicate holds about a given memory location.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00039">wait.cppm:39</a></div></div>
-<div class="ttc" id="agroup__wait_html_gae6d4eb7ee861f0a0eac680b954937413"><div class="ttname"><a href="#gae6d4eb7ee861f0a0eac680b954937413">ein::with_waiter</a></div><div class="ttdeci">auto with_waiter(auto k)</div><div class="ttdoc">finds an appropriate waiter for the current CPU</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00108">wait.cppm:108</a></div></div>
+<div class="ttc" id="agroup__wait_html_ga15797fd5aad0c604b5951f50d53d3623"><div class="ttname"><a href="#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a></div><div class="ttdeci">auto with_waiter(auto k) noexcept</div><div class="ttdoc">finds an appropriate waiter for the current CPU</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00108">wait.cppm:108</a></div></div>
+<div class="ttc" id="agroup__wait_html_gabf5a7b298fd0bf71181c18be243c0e76"><div class="ttname"><a href="#gabf5a7b298fd0bf71181c18be243c0e76">ein::wait_until</a></div><div class="ttdeci">void wait_until(auto *p, auto f) noexcept</div><div class="ttdoc">Wait until a predicate holds about a given memory location.</div><div class="ttdef"><b>Definition</b> <a href="../../d0/def/wait_8cppm_source.html#l00039">wait.cppm:39</a></div></div>
 </div><!-- fragment --><p> invokes <code>k</code> with a waiter as a template parameter. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../d0/def/wait_8cppm_source.html#l00108">108</a> of file <a class="el" href="../../d0/def/wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>                                {</div>
+<div class="fragment"><div class="line"><span class="lineno">  108</span>                                         {</div>
 <div class="line"><span class="lineno">  109</span>  <span class="keywordflow">if</span> (mwaitx::supported) <span class="keywordflow">return</span> k.template operator()&lt;mwaitx&gt;();</div>
 <div class="line"><span class="lineno">  110</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (umwait::supported) <span class="keywordflow">return</span> k.template operator()&lt;umwait&gt;();</div>
 <div class="line"><span class="lineno">  111</span>  <span class="keywordflow">else</span> k.template operator()&lt;spin&gt;();</div>

@@ -18,6 +18,6 @@ var searchData=
   ['operator_3e_3e_15',['operator&gt;&gt;',['../dc/d7b/group__simd.html#ad493fd49b441366e8f1f9ff099a535dd',1,'ein::simd::operator&gt;&gt;'],['../dc/d7b/group__simd.html#a0d78be816f0c52a90ab329aa32dc2e4b',1,'ein::simd::operator&gt;&gt;'],['../dc/d7b/group__simd.html#a3820090f749d74bc11b60cc0d58fb72d',1,'ein::simd::operator&gt;&gt;']]],
   ['operator_3e_3e_3d_16',['operator&gt;&gt;=',['../dc/d7b/group__simd.html#a8e8a4fde7b29e57970321b674669d45d',1,'ein::simd::operator&gt;&gt;=(imm_t&lt; K &gt;) noexcept'],['../dc/d7b/group__simd.html#adb6dbde0743d2d026b6558323134dc29',1,'ein::simd::operator&gt;&gt;=(T y) noexcept'],['../dc/d7b/group__simd.html#a408ceb42d76ae2c53ecdfa94e3fc636a',1,'ein::simd::operator&gt;&gt;=(simd y) noexcept']]],
   ['operator_5b_5d_17',['operator[]',['../dc/d7b/group__simd.html#a8ff89060b3b5ec0b5941e3435569711c',1,'ein::simd::operator[](std::size_t i) noexcept'],['../dc/d7b/group__simd.html#a729d5bbe62b20b1c10dd33e1b7454685',1,'ein::simd::operator[](std::size_t i) const noexcept']]],
-  ['ord_5fq_18',['ORD_Q',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a4841e2067e009706a0b706de9eae7dee',1,'ein']]],
-  ['ord_5fs_19',['ORD_S',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371aae5affac24dd7fbf363befe61f4119c2',1,'ein']]]
+  ['ord_5fq_18',['ORD_Q',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a3b81c807768a0b8bac541c1049c5d3c6',1,'ein']]],
+  ['ord_5fs_19',['ORD_S',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a70d733e8deddfedf56bef14be8bac670',1,'ein']]]
 ];
