@@ -69,11 +69,11 @@ jobs:
         path: ${{ steps.strings.outputs.build-output-dir }}
     - name: chmod
       run: |
-        chmod -f 755 ${{ steps.strings.outputs.build-output-dir }}/bin/*
+        chmod -f +x ${{ steps.strings.outputs.build-output-dir }}/bin/* 2>/dev/null || true
     - name: test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       run: |
-        ctest --build-config Release
+        ctest --test-dir ${{ steps.strings.outputs.build-output-dir }} -V
 
   publish:
     runs-on: ubuntu-latest
