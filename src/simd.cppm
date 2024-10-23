@@ -21,7 +21,7 @@ template <typename F> using arg1_t = arg1<F>::type;
 /// \endcond
 };
 
-/// ingroup simd
+/// \ingroup simd
 export module ein.simd;
 
 import ein.numerics;
