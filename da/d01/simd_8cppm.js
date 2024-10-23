@@ -11,5 +11,8 @@ var simd_8cppm =
     [ "loadu", "da/d01/simd_8cppm.html#aed90a3dee286dda1af9ca5f28513bc3a", null ],
     [ "shuffle", "da/d01/simd_8cppm.html#ac2c105a2927f9ca9e44820eb74633c12", null ],
     [ "shuffle", "da/d01/simd_8cppm.html#a186940519ca17135b07b6816ae6402cd", null ],
+    [ "simd", "da/d01/simd_8cppm.html#a48efda4dbc6203557e3d7b55af8bed6e", null ],
+    [ "simd", "da/d01/simd_8cppm.html#a736c44c8691e86d12b79abd6a696a3ec", null ],
+    [ "simd", "da/d01/simd_8cppm.html#a6def18561a39ff4a1188bc619f86d862", null ],
     [ "stream_load", "da/d01/simd_8cppm.html#af84aa0909d95f9faf66f5ee344285677", null ]
 ];

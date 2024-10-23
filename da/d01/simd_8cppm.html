@@ -190,6 +190,20 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:a736c44c8691e86d12b79abd6a696a3ec" id="r_a736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; <br />
+requires ( has_simd_type&lt;T,N&gt; &amp;&amp; (N % sizeof(T) == 0) )</td></tr>
+<tr class="memitem:a736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a736c44c8691e86d12b79abd6a696a3ec">ein::simd</a> (T __attribute((__vector_size__(N)))) -&gt; simd&lt; T, N/sizeof(T)&gt;</td></tr>
+<tr class="memdesc:a736c44c8691e86d12b79abd6a696a3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">CTAD guides for intel &ndash; these are fairly limited.  <br /></td></tr>
+<tr class="separator:a736c44c8691e86d12b79abd6a696a3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a48efda4dbc6203557e3d7b55af8bed6e" id="r_a48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; <br />
+requires has_simd_type&lt;std::common_type&lt;Args...&gt;, sizeof...(Args)&gt;</td></tr>
+<tr class="memitem:a48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a48efda4dbc6203557e3d7b55af8bed6e">ein::simd</a> (Args &amp;&amp;...) -&gt; simd&lt; std::common_type&lt; Args... &gt;, sizeof...(Args)&gt;</td></tr>
+<tr class="separator:a48efda4dbc6203557e3d7b55af8bed6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6def18561a39ff4a1188bc619f86d862" id="r_a6def18561a39ff4a1188bc619f86d862"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
+requires has_simd_type&lt;T,<a class="el" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/sizeof(T)&gt;</td></tr>
+<tr class="memitem:a6def18561a39ff4a1188bc619f86d862"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#a6def18561a39ff4a1188bc619f86d862">ein::simd</a> (T) -&gt; simd&lt; T, has_simd_type&lt; T, <a class="el" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/sizeof(T)&gt; &gt;</td></tr>
+<tr class="memdesc:a6def18561a39ff4a1188bc619f86d862"><td class="mdescLeft">&#160;</td><td class="mdescRight">default to max simd size for broadcast  <br /></td></tr>
+<tr class="separator:a6def18561a39ff4a1188bc619f86d862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad2e79d4163046939c2ae3473a9069bb6" id="r_ad2e79d4163046939c2ae3473a9069bb6"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
 <tr class="memitem:ad2e79d4163046939c2ae3473a9069bb6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html#ad2e79d4163046939c2ae3473a9069bb6">ein::load</a> (auto const *data) noexcept -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
 <tr class="memdesc:ad2e79d4163046939c2ae3473a9069bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from aligned memory  <br /></td></tr>
@@ -231,7 +245,7 @@ Functions</h2></td></tr>
 requires (I &lt; N)<br />
 struct std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;</div><p>needed to support for std::apply </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01124">1124</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01119">1119</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">

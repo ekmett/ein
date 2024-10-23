@@ -49,6 +49,9 @@ var namespaceein =
     [ "loadu", "d7/dc1/namespaceein.html#aed90a3dee286dda1af9ca5f28513bc3a", null ],
     [ "shuffle", "d7/dc1/namespaceein.html#ac2c105a2927f9ca9e44820eb74633c12", null ],
     [ "shuffle", "d7/dc1/namespaceein.html#a186940519ca17135b07b6816ae6402cd", null ],
+    [ "simd", "d7/dc1/namespaceein.html#a48efda4dbc6203557e3d7b55af8bed6e", null ],
+    [ "simd", "d7/dc1/namespaceein.html#a736c44c8691e86d12b79abd6a696a3ec", null ],
+    [ "simd", "d7/dc1/namespaceein.html#a6def18561a39ff4a1188bc619f86d862", null ],
     [ "stream_load", "d7/dc1/namespaceein.html#af84aa0909d95f9faf66f5ee344285677", null ],
     [ "max_simd_size", "d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4", null ]
 ];

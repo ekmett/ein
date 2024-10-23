@@ -232,8 +232,10 @@ requires (!std::is_same_v&lt;U,T&gt; &amp;&amp; has_builtin_convertvector&lt;U,T
 <tr class="memdesc:a6dcfbcfdfe864cebdd0422b03742bffa"><td class="mdescLeft">&#160;</td><td class="mdescRight">const end iterator  <br /></td></tr>
 <tr class="separator:a6dcfbcfdfe864cebdd0422b03742bffa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a13b00a131976b1dfd9ccf4946c005ea2" id="r_a13b00a131976b1dfd9ccf4946c005ea2"><td class="memItemLeft" align="right" valign="top">constexpr T const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a13b00a131976b1dfd9ccf4946c005ea2">begin</a> () const noexcept</td></tr>
+<tr class="memdesc:a13b00a131976b1dfd9ccf4946c005ea2"><td class="mdescLeft">&#160;</td><td class="mdescRight">const start iterator  <br /></td></tr>
 <tr class="separator:a13b00a131976b1dfd9ccf4946c005ea2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:abda7f4523729262d8447b237fa939904" id="r_abda7f4523729262d8447b237fa939904"><td class="memItemLeft" align="right" valign="top">constexpr T const *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abda7f4523729262d8447b237fa939904">end</a> () const noexcept</td></tr>
+<tr class="memdesc:abda7f4523729262d8447b237fa939904"><td class="mdescLeft">&#160;</td><td class="mdescRight">const end iterator  <br /></td></tr>
 <tr class="separator:abda7f4523729262d8447b237fa939904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af1d7ff1e2564a09161d40a59994e2433" id="r_af1d7ff1e2564a09161d40a59994e2433"><td class="memItemLeft" align="right" valign="top">constexpr std::reverse_iterator&lt; T * &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af1d7ff1e2564a09161d40a59994e2433">rbegin</a> () noexcept</td></tr>
 <tr class="memdesc:af1d7ff1e2564a09161d40a59994e2433"><td class="mdescLeft">&#160;</td><td class="mdescRight">reverse start iterator  <br /></td></tr>
@@ -273,9 +275,9 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
 <tr class="memitem:adb6dbde0743d2d026b6558323134dc29" id="r_adb6dbde0743d2d026b6558323134dc29"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adb6dbde0743d2d026b6558323134dc29">operator&gt;&gt;=</a> (T y) noexcept</td></tr>
 <tr class="memdesc:adb6dbde0743d2d026b6558323134dc29"><td class="mdescLeft">&#160;</td><td class="mdescRight">self-shift right by a scalar  <br /></td></tr>
 <tr class="separator:adb6dbde0743d2d026b6558323134dc29"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a92bdbb382ace38f32c305fa333037e48" id="r_a92bdbb382ace38f32c305fa333037e48"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a92bdbb382ace38f32c305fa333037e48">operator&gt;&gt;=</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> y) noexcept</td></tr>
-<tr class="memdesc:a92bdbb382ace38f32c305fa333037e48"><td class="mdescLeft">&#160;</td><td class="mdescRight">self-shift right elementwise  <br /></td></tr>
-<tr class="separator:a92bdbb382ace38f32c305fa333037e48"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a408ceb42d76ae2c53ecdfa94e3fc636a" id="r_a408ceb42d76ae2c53ecdfa94e3fc636a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a408ceb42d76ae2c53ecdfa94e3fc636a">operator&gt;&gt;=</a> (<a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> y) noexcept</td></tr>
+<tr class="memdesc:a408ceb42d76ae2c53ecdfa94e3fc636a"><td class="mdescLeft">&#160;</td><td class="mdescRight">self-shift right elementwise  <br /></td></tr>
+<tr class="separator:a408ceb42d76ae2c53ecdfa94e3fc636a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a15021cf11ade9364d68a56b8b2dbf3a9" id="r_a15021cf11ade9364d68a56b8b2dbf3a9"><td class="memTemplParams" colspan="2">template&lt;size_t K&gt; <br />
 requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a> x) { x &lt;&lt;= K; }</td></tr>
 <tr class="memitem:a15021cf11ade9364d68a56b8b2dbf3a9"><td class="memTemplItemLeft" align="right" valign="top">constexpr <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a> &amp;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a15021cf11ade9364d68a56b8b2dbf3a9">operator&lt;&lt;=</a> (<a class="el" href="../../d6/d84/structein_1_1numerics_1_1imm__t.html">imm_t</a>&lt; K &gt;) noexcept</td></tr>
@@ -825,7 +827,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>initialize the first <code>init</code> <code>.size</code> values from an initializer_list TODO: use a masked unaligned load </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00094">94</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00093">93</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -856,8 +858,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>copy construct from the corresponding intel intrinsic type (if different than the gcc/clang one) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00106">106</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  108</span>  : <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>(<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a><span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>)) {}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00105">105</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  107</span>  : <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>(<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a><span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>)) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -888,8 +890,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>move construct from the corresponding intel intrinsic type (if different than the gcc/clang one) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00113">113</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  115</span>  : <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>(<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a><span class="keyword">&gt;</span>(std::move(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>))) {}</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00112">112</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>  : <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>(<span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a><span class="keyword">&gt;</span>(std::move(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>))) {}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -919,9 +921,11 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00204">204</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a702d0930b328ad8146e2760e8ae81bbb">cbegin</a>(); }</div>
-<div class="ttc" id="astructein_1_1simd_html_a702d0930b328ad8146e2760e8ae81bbb"><div class="ttname"><a href="#a702d0930b328ad8146e2760e8ae81bbb">ein::simd::cbegin</a></div><div class="ttdeci">constexpr T const * cbegin() const noexcept</div><div class="ttdoc">const start iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00194">simd.cppm:194</a></div></div>
+<p>const start iterator </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00203">203</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a702d0930b328ad8146e2760e8ae81bbb">cbegin</a>(); }</div>
+<div class="ttc" id="astructein_1_1simd_html_a702d0930b328ad8146e2760e8ae81bbb"><div class="ttname"><a href="#a702d0930b328ad8146e2760e8ae81bbb">ein::simd::cbegin</a></div><div class="ttdeci">constexpr T const * cbegin() const noexcept</div><div class="ttdoc">const start iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00193">simd.cppm:193</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -952,8 +956,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>start iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00184">184</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  184</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00183">183</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  183</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -984,8 +988,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>const start iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00194">194</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  194</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T <span class="keyword">const </span>*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>); }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00193">193</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  193</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T <span class="keyword">const </span>*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1016,9 +1020,9 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>const end iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00199">199</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  199</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#ad3060907ab6bf5d9364fd0403bac506e">begin</a>() + N; }</div>
-<div class="ttc" id="astructein_1_1simd_html_ad3060907ab6bf5d9364fd0403bac506e"><div class="ttname"><a href="#ad3060907ab6bf5d9364fd0403bac506e">ein::simd::begin</a></div><div class="ttdeci">constexpr T * begin() noexcept</div><div class="ttdoc">start iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00184">simd.cppm:184</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00198">198</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  198</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#ad3060907ab6bf5d9364fd0403bac506e">begin</a>() + N; }</div>
+<div class="ttc" id="astructein_1_1simd_html_ad3060907ab6bf5d9364fd0403bac506e"><div class="ttname"><a href="#ad3060907ab6bf5d9364fd0403bac506e">ein::simd::begin</a></div><div class="ttdeci">constexpr T * begin() noexcept</div><div class="ttdoc">start iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00183">simd.cppm:183</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1049,9 +1053,9 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>const reverse start iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00224">224</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  224</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const T*&gt;(<a class="code hl_function" href="#a6dcfbcfdfe864cebdd0422b03742bffa">cend</a>()); }</div>
-<div class="ttc" id="astructein_1_1simd_html_a6dcfbcfdfe864cebdd0422b03742bffa"><div class="ttname"><a href="#a6dcfbcfdfe864cebdd0422b03742bffa">ein::simd::cend</a></div><div class="ttdeci">constexpr T const * cend() const noexcept</div><div class="ttdoc">const end iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00199">simd.cppm:199</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00223">223</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const T*&gt;(<a class="code hl_function" href="#a6dcfbcfdfe864cebdd0422b03742bffa">cend</a>()); }</div>
+<div class="ttc" id="astructein_1_1simd_html_a6dcfbcfdfe864cebdd0422b03742bffa"><div class="ttname"><a href="#a6dcfbcfdfe864cebdd0422b03742bffa">ein::simd::cend</a></div><div class="ttdeci">constexpr T const * cend() const noexcept</div><div class="ttdoc">const end iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00198">simd.cppm:198</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1082,8 +1086,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>const reverse end iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00229">229</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  229</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const T*&gt;(<a class="code hl_function" href="#a702d0930b328ad8146e2760e8ae81bbb">cbegin</a>()); }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00228">228</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  228</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const T*&gt;(<a class="code hl_function" href="#a702d0930b328ad8146e2760e8ae81bbb">cbegin</a>()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1112,8 +1116,10 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00209">209</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  209</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a6dcfbcfdfe864cebdd0422b03742bffa">cend</a>(); }</div>
+<p>const end iterator </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00208">208</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  208</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a6dcfbcfdfe864cebdd0422b03742bffa">cend</a>(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1144,8 +1150,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>end iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00189">189</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#ad3060907ab6bf5d9364fd0403bac506e">begin</a>() + N; }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00188">188</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  188</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#ad3060907ab6bf5d9364fd0403bac506e">begin</a>() + N; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1176,7 +1182,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>provide compatibility with Intel intrinsics by freely using this as <a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">simd_intrinsic_t</a>&lt;<code>T</code>,<code>N&gt;</code> const &amp; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00166">166</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00165">165</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1213,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>provide compatibility with Intel intrinsics by freely using this as <a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">simd_intrinsic_t</a>&lt;<code>T</code>,<code>N&gt;</code> &amp; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00158">158</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00157">157</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1237,7 +1243,7 @@ template&lt;typename T , size_t N&gt; </div>
 </div><div class="memdoc">
 <p>legacy: may outperform loadu when the data crosses a cache boundary </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00851">851</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00848">848</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1272,7 +1278,7 @@ template&lt;typename T , size_t N&gt; </div>
 </div><div class="memdoc">
 <dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is a pointer to memory with alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00816">816</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00813">813</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1306,7 +1312,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00833">833</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00830">830</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1342,11 +1348,11 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>provide compatibility with Intel intrinsics by freely using this as <a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">simd_intrinsic_t</a>&lt;<code>T</code>,<code>N&gt;</code> &amp; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00142">142</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  142</span>                                               {</div>
-<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;intrinsic_t,data_t&gt;) <span class="keywordflow">return</span> <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>;</div>
-<div class="line"><span class="lineno">  144</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="#a5593cabdeea2ee6a7c573fe7445cf165">intrinsic_t</a> &amp;<span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>);</div>
-<div class="line"><span class="lineno">  145</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00141">141</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  141</span>                                               {</div>
+<div class="line"><span class="lineno">  142</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;intrinsic_t,data_t&gt;) <span class="keywordflow">return</span> <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>;</div>
+<div class="line"><span class="lineno">  143</span>    <span class="keywordflow">else</span> <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span><a class="code hl_typedef" href="#a5593cabdeea2ee6a7c573fe7445cf165">intrinsic_t</a> &amp;<span class="keyword">&gt;</span>(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>);</div>
+<div class="line"><span class="lineno">  144</span>  }</div>
 <div class="ttc" id="astructein_1_1simd_html_a5593cabdeea2ee6a7c573fe7445cf165"><div class="ttname"><a href="#a5593cabdeea2ee6a7c573fe7445cf165">ein::simd::intrinsic_t</a></div><div class="ttdeci">simd_intrinsic_t&lt; T, N &gt; intrinsic_t</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00029">simd.cppm:29</a></div></div>
 </div><!-- fragment -->
 </div>
@@ -1378,7 +1384,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>provide compatibility with Intel intrinsics by freely using this as <a class="el" href="../../d7/dc1/namespaceein.html#ac990fb6f5dcea45fb2adb40514b836d3">simd_intrinsic_t</a>&lt;<code>T</code>,<code>N&gt;</code> const &amp; </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00150">150</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00149">149</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1409,7 +1415,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p><code>++x</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00352">352</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00351">351</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1440,7 +1446,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p><code>x++</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00361">361</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00360">360</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1471,7 +1477,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p><code>\--x</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00333">333</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00332">332</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1502,7 +1508,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p><code>x--</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00342">342</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00341">341</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1536,7 +1542,7 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
 
 <p>self-shift left by an immediate constant </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00454">454</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00453">453</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1567,7 +1573,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>self-shift left elementwise </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00474">474</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00473">473</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1598,7 +1604,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>self-shift left by a scalar </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00465">465</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00464">464</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1686,15 +1692,15 @@ requires (!std::is_same_v&lt;U,T&gt; &amp;&amp; has_builtin_convertvector&lt;U,T
 
 <p>automatic conversion for types supported by <code>__builtin_convertvector</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00130">130</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  130</span>                                                         {</div>
-<div class="line"><span class="lineno">  131</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><span class="lineno">  132</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;N;++i)</div>
-<div class="line"><span class="lineno">  133</span>        <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>[i] = T(other.data[i]);</div>
-<div class="line"><span class="lineno">  134</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  135</span>      <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a> = __builtin_convertvector(other.data,<a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a>);</div>
-<div class="line"><span class="lineno">  136</span>    }</div>
-<div class="line"><span class="lineno">  137</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00129">129</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>                                                         {</div>
+<div class="line"><span class="lineno">  130</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><span class="lineno">  131</span>      <span class="keywordflow">for</span> (<span class="keywordtype">int</span> i=0;i&lt;N;++i)</div>
+<div class="line"><span class="lineno">  132</span>        <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>[i] = T(other.data[i]);</div>
+<div class="line"><span class="lineno">  133</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  134</span>      <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a> = __builtin_convertvector(other.data,<a class="code hl_typedef" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_t</a>);</div>
+<div class="line"><span class="lineno">  135</span>    }</div>
+<div class="line"><span class="lineno">  136</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1732,8 +1738,8 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
 
 </div>
 </div>
-<a id="a92bdbb382ace38f32c305fa333037e48" name="a92bdbb382ace38f32c305fa333037e48"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a92bdbb382ace38f32c305fa333037e48">&#9670;&#160;</a></span>operator&gt;&gt;=() <span class="overload">[2/3]</span></h2>
+<a id="a408ceb42d76ae2c53ecdfa94e3fc636a" name="a408ceb42d76ae2c53ecdfa94e3fc636a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a408ceb42d76ae2c53ecdfa94e3fc636a">&#9670;&#160;</a></span>operator&gt;&gt;=() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1759,7 +1765,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>self-shift right elementwise </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00444">444</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00443">443</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1790,7 +1796,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>self-shift right by a scalar </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00435">435</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00434">434</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -1821,8 +1827,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>access the element in the <code>i</code> th lane </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00179">179</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  179</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T <span class="keyword">const </span>*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>)[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00178">178</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  178</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T <span class="keyword">const </span>*<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>)[i]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1853,8 +1859,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>access the element in the <code>i</code> th lane </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00174">174</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  174</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>)[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00173">173</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  173</span>{ <span class="keywordflow">return</span> <span class="keyword">reinterpret_cast&lt;</span>T *<span class="keyword">&gt;</span>(&amp;<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>)[i]; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1885,9 +1891,9 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>const reverse start iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00234">234</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  234</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#af8b2df4654d2ca4e6c5bf108f8c34b4c">crbegin</a>(); }</div>
-<div class="ttc" id="astructein_1_1simd_html_af8b2df4654d2ca4e6c5bf108f8c34b4c"><div class="ttname"><a href="#af8b2df4654d2ca4e6c5bf108f8c34b4c">ein::simd::crbegin</a></div><div class="ttdeci">constexpr std::reverse_iterator&lt; const T * &gt; crbegin() const noexcept</div><div class="ttdoc">const reverse start iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00224">simd.cppm:224</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00233">233</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#af8b2df4654d2ca4e6c5bf108f8c34b4c">crbegin</a>(); }</div>
+<div class="ttc" id="astructein_1_1simd_html_af8b2df4654d2ca4e6c5bf108f8c34b4c"><div class="ttname"><a href="#af8b2df4654d2ca4e6c5bf108f8c34b4c">ein::simd::crbegin</a></div><div class="ttdeci">constexpr std::reverse_iterator&lt; const T * &gt; crbegin() const noexcept</div><div class="ttdoc">const reverse start iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00223">simd.cppm:223</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1918,9 +1924,9 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>reverse start iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00214">214</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  214</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;T*&gt;(<a class="code hl_function" href="#ad02d0923f7774642fa5a6a6027aa1818">end</a>()); }</div>
-<div class="ttc" id="astructein_1_1simd_html_ad02d0923f7774642fa5a6a6027aa1818"><div class="ttname"><a href="#ad02d0923f7774642fa5a6a6027aa1818">ein::simd::end</a></div><div class="ttdeci">constexpr T * end() noexcept</div><div class="ttdoc">end iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00189">simd.cppm:189</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00213">213</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  213</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;T*&gt;(<a class="code hl_function" href="#ad02d0923f7774642fa5a6a6027aa1818">end</a>()); }</div>
+<div class="ttc" id="astructein_1_1simd_html_ad02d0923f7774642fa5a6a6027aa1818"><div class="ttname"><a href="#ad02d0923f7774642fa5a6a6027aa1818">ein::simd::end</a></div><div class="ttdeci">constexpr T * end() noexcept</div><div class="ttdoc">end iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00188">simd.cppm:188</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1951,9 +1957,9 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>const reverse end iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00239">239</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  239</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a057a57e21079d8ed1ead803ed97cb81f">crend</a>(); }</div>
-<div class="ttc" id="astructein_1_1simd_html_a057a57e21079d8ed1ead803ed97cb81f"><div class="ttname"><a href="#a057a57e21079d8ed1ead803ed97cb81f">ein::simd::crend</a></div><div class="ttdeci">constexpr std::reverse_iterator&lt; const T * &gt; crend() const noexcept</div><div class="ttdoc">const reverse end iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00229">simd.cppm:229</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00238">238</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>{ <span class="keywordflow">return</span> <a class="code hl_function" href="#a057a57e21079d8ed1ead803ed97cb81f">crend</a>(); }</div>
+<div class="ttc" id="astructein_1_1simd_html_a057a57e21079d8ed1ead803ed97cb81f"><div class="ttname"><a href="#a057a57e21079d8ed1ead803ed97cb81f">ein::simd::crend</a></div><div class="ttdeci">constexpr std::reverse_iterator&lt; const T * &gt; crend() const noexcept</div><div class="ttdoc">const reverse end iterator</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00228">simd.cppm:228</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1984,8 +1990,8 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>reverse end iterator </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00219">219</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  219</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;T*&gt;(<a class="code hl_function" href="#ad3060907ab6bf5d9364fd0403bac506e">begin</a>()); }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00218">218</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;T*&gt;(<a class="code hl_function" href="#ad3060907ab6bf5d9364fd0403bac506e">begin</a>()); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2019,14 +2025,14 @@ requires (((is &lt; N) &amp;&amp; ... &amp;&amp; has_simd_type&lt;T,sizeof...(is
 
 <p>shuffle selected elements to produce a new simd register </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00486">486</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  486</span>                                                     {</div>
-<div class="line"><span class="lineno">  487</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><span class="lineno">  488</span>      <span class="keywordflow">return</span> { <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>[is]... };</div>
-<div class="line"><span class="lineno">  489</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  490</span>      <span class="keywordflow">return</span> __builtin_shufflevector(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>,is...);</div>
-<div class="line"><span class="lineno">  491</span>    }</div>
-<div class="line"><span class="lineno">  492</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00485">485</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  485</span>                                                     {</div>
+<div class="line"><span class="lineno">  486</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><span class="lineno">  487</span>      <span class="keywordflow">return</span> { <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>[is]... };</div>
+<div class="line"><span class="lineno">  488</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  489</span>      <span class="keywordflow">return</span> __builtin_shufflevector(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>,is...);</div>
+<div class="line"><span class="lineno">  490</span>    }</div>
+<div class="line"><span class="lineno">  491</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2060,14 +2066,14 @@ requires (((is &lt; N*2) &amp;&amp; ... &amp;&amp; has_simd_type&lt;T,sizeof...(
 
 <p>Use elements taken from this and another simd register to construct another. If an index <code>i</code> in <code>is</code> is less than <code>N</code>, it draw from <code>this</code>, otherwise it draws from the <code>i - N</code>th position in <code>b</code>. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00501">501</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  501</span>                                                                {</div>
-<div class="line"><span class="lineno">  502</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
-<div class="line"><span class="lineno">  503</span>      <span class="keywordflow">return</span> { (is &lt; N ? <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>[is] : b[is-N])... };</div>
-<div class="line"><span class="lineno">  504</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  505</span>      <span class="keywordflow">return</span> __builtin_shufflevector(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>,b.data,is...);</div>
-<div class="line"><span class="lineno">  506</span>    }</div>
-<div class="line"><span class="lineno">  507</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00500">500</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  500</span>                                                                {</div>
+<div class="line"><span class="lineno">  501</span>    <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><span class="lineno">  502</span>      <span class="keywordflow">return</span> { (is &lt; N ? <a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>[is] : b[is-N])... };</div>
+<div class="line"><span class="lineno">  503</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  504</span>      <span class="keywordflow">return</span> __builtin_shufflevector(<a class="code hl_variable" href="#a626d7155163f7ba2d66ea2cbc918b17d">data</a>,b.data,is...);</div>
+<div class="line"><span class="lineno">  505</span>    }</div>
+<div class="line"><span class="lineno">  506</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -2097,7 +2103,7 @@ template&lt;typename T , size_t N&gt; </div>
 </div><div class="memdoc">
 <dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is a pointer to memory with alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00874">874</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00871">871</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -2139,7 +2145,7 @@ requires one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; <a class="
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00616">616</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00615">615</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2175,7 +2181,7 @@ requires one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00667">667</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00666">666</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2211,7 +2217,7 @@ requires (I &lt; N)</div>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> &amp;&amp; [x,y,z,w] = <a class="code hl_function" href="#a3408587fc28bf3d2cf4d5d495862de9e">simd&lt;float,4&gt;</a>(1.0,2.0,3.0,4.0);</div>
 <div class="ttc" id="astructein_1_1simd_html_a3408587fc28bf3d2cf4d5d495862de9e"><div class="ttname"><a href="#a3408587fc28bf3d2cf4d5d495862de9e">ein::simd::simd</a></div><div class="ttdeci">constexpr simd() noexcept=default</div><div class="ttdoc">default initialization</div></div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00279">279</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00278">278</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2246,7 +2252,7 @@ requires (I &lt; N)</div>
 <p>enables destructuring reference </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> &amp; [x,y,z,w] = <a class="code hl_function" href="#a3408587fc28bf3d2cf4d5d495862de9e">simd&lt;float,4&gt;</a>(1.0,2.0,3.0,4.0);</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00251">251</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00250">250</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2281,7 +2287,7 @@ requires (I &lt; N)</div>
 <p>enables destructuring constant reference </p>
 <div class="fragment"><div class="line"><span class="keyword">auto</span> <span class="keyword">const</span> &amp; [x,y,z,w] = <a class="code hl_function" href="#a3408587fc28bf3d2cf4d5d495862de9e">simd&lt;float,4&gt;</a>(1.0,2.0,3.0,4.0);</div>
 </div><!-- fragment --> 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00265">265</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00264">264</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2314,7 +2320,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00548">548</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00547">547</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2347,7 +2353,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00513">513</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00512">512</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2420,7 +2426,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>shift left elementwise </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00415">415</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00414">414</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2455,7 +2461,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>shift left by a scalar </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00407">407</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00406">406</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2488,7 +2494,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00527">527</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00526">526</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2521,7 +2527,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00541">541</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00540">540</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2554,7 +2560,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00520">520</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00519">519</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2587,7 +2593,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00534">534</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00533">533</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2625,7 +2631,7 @@ requires requires (<a class="el" href="#a6b9e2f8e14605b5ed5af1115d3f80648">data_
 
 <p>shift right by an immediate constant </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00373">373</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00372">372</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2660,7 +2666,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>shift right elementwise </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00388">388</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00387">387</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2695,7 +2701,7 @@ template&lt;typename T , size_t N&gt; </div>
 
 <p>shift right by a scalar </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00380">380</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00379">379</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2728,7 +2734,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00963">963</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00960">960</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2761,7 +2767,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00915">915</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00912">912</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2794,7 +2800,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00930">930</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00927">927</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2827,7 +2833,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00945">945</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00942">942</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
@@ -2860,7 +2866,7 @@ template&lt;typename T , size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00991">991</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00988">988</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
 
 </div>
 </div>
