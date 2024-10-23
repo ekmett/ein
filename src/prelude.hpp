@@ -3,11 +3,15 @@
 /// \defgroup headers headers
 
 /// \file
-/// \brief precompiled header
-/// \author Edward Kmett
 /// \ingroup headers
-/// \hideincludedbygraph
-/// \hideincludegraph
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2021-2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-FileCopyrightText: 2012 William Swanson
+/// SPDX-License-Identifier: MIT
+/// \endlicense
+/// \brief precompiled header
+/// \hideincludedbygraph hideincludegraph
 
 #include <algorithm>
 #include <array>
@@ -52,9 +56,6 @@
 #include <utility>
 #include <vector>
 #include <version>
-
-/// \defgroup internals_group internals
-/// stuff the user shouldn't need to care much about
 
 #include "attributes.hpp" // EIN(..)
 #include "assert.hpp" // ein_assert(...)

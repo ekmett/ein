@@ -280,7 +280,22 @@ endfunction()
 # Check if the required Doxygen version is available
 check_doxygen_version()
 
-# Fetch Doxygen using FetchContent
+# Set the base URL to MathJax's CDN path
+set(MATHJAX_URL "https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.min.js")
+set(MATHJAX_OUTPUT_PATH "${CMAKE_BINARY_DIR}/third_party/mathjax/tex-mml-chtml.min.js")
+set(EXPECTED_SHA256 "f182aef990a28dd3a816c866dcb18727d42f221f30a5946761b4272573d44148")
+file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/third_party/mathjax")
+message(STATUS "Downloading MathJax 3 minified JavaScript from ${MATHJAX_URL}...")
+file(DOWNLOAD ${MATHJAX_URL} ${MATHJAX_OUTPUT_PATH} STATUS download_status)
+if(NOT download_status EQUAL 0)
+  message(FATAL_ERROR "Failed to download MathJax 3 minified JavaScript from ${MATHJAX_URL}")
+endif()
+file(SHA256 ${MATHJAX_OUTPUT_PATH} DOWNLOADED_SHA256)
+if(NOT DOWNLOADED_SHA256 STREQUAL EXPECTED_SHA256)
+  message(FATAL_ERROR "SHA256 mismatch for ${MATHJAX_OUTPUT_PATH}. Expected ${EXPECTED_SHA256}, but got ${DOWNLOADED_SHA256}.")
+else()
+  message(STATUS "SHA256 verified successfully for ${MATHJAX_OUTPUT_PATH}.")
+endif()
 
 if(DOXYGEN_FOUND)
   message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
@@ -290,6 +305,8 @@ if(DOXYGEN_FOUND)
   set(DOXYFILE_OUT ${CMAKE_CURRENT_BINARY_DIR}/doxygen/Doxyfile)
 
   configure_file(${DOXYFILE_IN} ${DOXYFILE_OUT} @ONLY)
+
+
 
   # Add a custom target for generating documentation
   add_custom_target(

@@ -45,11 +45,22 @@ jobs:
     - name: build
       run: |
         cmake --build ${{ steps.strings.outputs.build-output-dir }} --config Release
-    - name: upload build artifacts
+    - name: upload binaries
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: Release build
-        path: ${{ steps.strings.outputs.build-output-dir }}
+        name: bin
+        path: |
+          ${{ steps.strings.outputs.build-output-dir }}/bin/
+          ${{ steps.strings.outputs.build-output-dir }}/lib/
+          ${{ steps.strings.outputs.build-output-dir }}/CMakeCache.txt
+          ${{ steps.strings.outputs.build-output-dir }}/CMakeFiles/
+          ${{ steps.strings.outputs.build-output-dir }}/t/**/CTestTestfile.cmake
+          ${{ steps.strings.outputs.build-output-dir }}/src/**/CTestTestfile.cmake
+    - name: upload docs
+      uses: actions/upload-artifact@v4.4.3
+      with:
+        name: docs
+        path: ${{ steps.strings.outputs.build-output-dir }}/docs/html/
 
   test:
     runs-on: ubuntu-latest
@@ -66,8 +77,11 @@ jobs:
     - name: download build artifacts
       uses: actions/download-artifact@v4.1.8
       with:
-        name: Release build
+        name: bin
         path: ${{ steps.strings.outputs.build-output-dir }}
+    - name: chmod
+      run: |
+        chmod 755 ${{ steps.strings.outputs.build-output-dir }}/bin/*
     - name: test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       run: |
@@ -86,8 +100,8 @@ jobs:
     - name: download build artifacts
       uses: actions/download-artifact@v4.1.8
       with:
-        name: Release build
-        path: ${{ steps.strings.outputs.build-output-dir }}
+        name: docs
+        path: ${{ steps.strings.outputs.build-output-dir }}/docs/html/
     - name: accelerate gh_pages refresh by noting there are no jekyll templates
       run: |
         touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
@@ -95,4 +109,4 @@ jobs:
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ${{ steps.strings.outputs.build-output-dir}}/docs/html
+        publish_dir: ${{ steps.strings.outputs.build-output-dir}}/docs/html/

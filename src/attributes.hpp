@@ -13,7 +13,6 @@
 /// \ingroup macros
 /// \{
 
-
 #include "map.hpp"
 
 /// \def EIN(...)
@@ -93,7 +92,7 @@
 ein_message("no artificial")
 #endif
 
-/// \def ein_visibility
+/// \def ein_visibility(...)
 /// \brief portable `__attribute__((visibility(x)))`, primarily used for ein_visibility("hidden") to
 /// disable inclusion in the library
 #if ein_has_attribute(__visibility__)
@@ -118,16 +117,15 @@ ein_message("no exclude_from_explicit_instantiation")
 /// expands to `__attribute__((visibility("hidden"))` `__attribute__((exclude_from_explicit_instantiation))`
 #define ein_hidden ein_visibility("hidden") ein_exclude_from_explicit_instantiation
 
-/// \def ein_target
+/// \def ein_target(x)
 /// \brief this indicates a required feature set for the current multiversioned function.
 /// \details overloads will be resolved at load time
 #define ein_target(x) __attribute__((target(x)))
 
-/// \def ein_target
+/// \def ein_target_clones(...)
 /// \brief this indicates a required feature set for the current multiversioned function.
 /// \details overloads will be resolved at load time
 #define ein_target_clones(...) __attribute__((target_clones(_VA_ARGS_)))
-
 
 /// \def ein_noinline
 /// \brief portable `__attribute__((noinline))`
