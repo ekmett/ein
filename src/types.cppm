@@ -25,8 +25,8 @@ export namespace ein {
 /// \hideinitializer
 /// \hideinlinesource
 template <typename T>
-const string_view type = [] EIN(nodiscard,const) noexcept -> string_view {
-  static const string_view body = [] EIN(nodiscard,const) noexcept -> string_view {
+const string_view type = [] EIN(nodiscard,const) static noexcept -> string_view {
+  static const string_view body = [] EIN(nodiscard,const) static noexcept -> string_view {
     int status;
     size_t len = 0uz;
     const char * str = abi::__cxa_demangle(typeid(T).name(), nullptr, &len, &status);
