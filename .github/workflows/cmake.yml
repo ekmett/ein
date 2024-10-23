@@ -69,7 +69,7 @@ jobs:
         path: ${{ steps.strings.outputs.build-output-dir }}
     - name: chmod
       run: |
-        chmod 755 ${{ steps.strings.outputs.build-output-dir }}/bin/*
+        chmod -f 755 ${{ steps.strings.outputs.build-output-dir }}/bin/*
     - name: test
       working-directory: ${{ steps.strings.outputs.build-output-dir }}
       run: |
