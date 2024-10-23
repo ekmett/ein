@@ -172,11 +172,11 @@ Concepts</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ab652a71f7ec533e140b934439df00802" id="r_ab652a71f7ec533e140b934439df00802"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ab652a71f7ec533e140b934439df00802"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::signed_t</td></tr>
+<tr class="memitem:ab652a71f7ec533e140b934439df00802"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a></td></tr>
 <tr class="memdesc:ab652a71f7ec533e140b934439df00802"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a signed integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code>  <br /></td></tr>
 <tr class="separator:ab652a71f7ec533e140b934439df00802"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33" id="r_aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::unsigned_t</td></tr>
+<tr class="memitem:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a></td></tr>
 <tr class="memdesc:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an unsigned integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code>  <br /></td></tr>
 <tr class="separator:aa347122ef9a30fb2ed727fbcfa8d7f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -294,7 +294,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::signed_t</td>
+          <td class="memname">using <a class="el" href="#ab652a71f7ec533e140b934439df00802">ein::numerics::int_t</a></td>
         </tr>
       </table>
   </td>
@@ -306,7 +306,7 @@ template&lt;typename T &gt; </div>
 
 <p>returns a signed integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00028">28</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00029">29</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -322,7 +322,7 @@ template&lt;typename T &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a> = typename integer_traits&lt;sizeof(T)*8&gt;::unsigned_t</td>
+          <td class="memname">using <a class="el" href="#aa347122ef9a30fb2ed727fbcfa8d7f33">ein::numerics::uint_t</a></td>
         </tr>
       </table>
   </td>
@@ -334,7 +334,7 @@ template&lt;typename T &gt; </div>
 
 <p>returns an unsigned integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00033">33</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00035">35</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -359,41 +359,73 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865accd35d9cbbd5142289bf92998db12e10" name="a497aa39e7403e6185fd8154d35b5b865accd35d9cbbd5142289bf92998db12e10"></a>EQ_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a01e760647cc78eb654d2c6f0c1a1bc6e" name="a497aa39e7403e6185fd8154d35b5b865a01e760647cc78eb654d2c6f0c1a1bc6e"></a>LT_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ad27229b1e26dfa42f9175241f3e69ea1" name="a497aa39e7403e6185fd8154d35b5b865ad27229b1e26dfa42f9175241f3e69ea1"></a>LE_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aa148d0b72a4831a6fe52b4ac3ee27ab5" name="a497aa39e7403e6185fd8154d35b5b865aa148d0b72a4831a6fe52b4ac3ee27ab5"></a>UNORD_Q&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ae49e1f5f20631e0e1efb3cac68ce375a" name="a497aa39e7403e6185fd8154d35b5b865ae49e1f5f20631e0e1efb3cac68ce375a"></a>NEQ_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a19debd7bc0c3d1f7ec803fd07274f049" name="a497aa39e7403e6185fd8154d35b5b865a19debd7bc0c3d1f7ec803fd07274f049"></a>NLT_US&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a36afc066977c16331b641fcca7c72ccc" name="a497aa39e7403e6185fd8154d35b5b865a36afc066977c16331b641fcca7c72ccc"></a>NLE_US&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a29e5d1713f0a04235e13e85807c912bf" name="a497aa39e7403e6185fd8154d35b5b865a29e5d1713f0a04235e13e85807c912bf"></a>ORD_Q&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0800d97c2147ccb05e122cb8d5e84f8b" name="a497aa39e7403e6185fd8154d35b5b865a0800d97c2147ccb05e122cb8d5e84f8b"></a>EQ_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aa45b1e395d182e6e3fc4945518af229f" name="a497aa39e7403e6185fd8154d35b5b865aa45b1e395d182e6e3fc4945518af229f"></a>NGE_US&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a71497ddb29463fbc85a73105d4d15ea2" name="a497aa39e7403e6185fd8154d35b5b865a71497ddb29463fbc85a73105d4d15ea2"></a>NGT_US&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a057cd21ed26aa3ab1460cbc4c3052864" name="a497aa39e7403e6185fd8154d35b5b865a057cd21ed26aa3ab1460cbc4c3052864"></a>FALSE_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ac7313126a90e315889159fb1e4e1c844" name="a497aa39e7403e6185fd8154d35b5b865ac7313126a90e315889159fb1e4e1c844"></a>NEQ_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a7dd3969cbfb66312dcaf7efc3ecca8d6" name="a497aa39e7403e6185fd8154d35b5b865a7dd3969cbfb66312dcaf7efc3ecca8d6"></a>GE_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a55d4cabaee1cab5aeab295f811e9d745" name="a497aa39e7403e6185fd8154d35b5b865a55d4cabaee1cab5aeab295f811e9d745"></a>GT_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a430e8824dcdcec1312a4a11d8367fe14" name="a497aa39e7403e6185fd8154d35b5b865a430e8824dcdcec1312a4a11d8367fe14"></a>TRUE_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0518c3e790a7c5b249d95c7402114ac8" name="a497aa39e7403e6185fd8154d35b5b865a0518c3e790a7c5b249d95c7402114ac8"></a>EQ_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ad59a5bc55eb3ce4589805bf9aa5733ed" name="a497aa39e7403e6185fd8154d35b5b865ad59a5bc55eb3ce4589805bf9aa5733ed"></a>LT_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ae093eeb3576a25b1a6294896e5b78548" name="a497aa39e7403e6185fd8154d35b5b865ae093eeb3576a25b1a6294896e5b78548"></a>LE_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a9a7fd190d0dbfa5508428f1f42154e9a" name="a497aa39e7403e6185fd8154d35b5b865a9a7fd190d0dbfa5508428f1f42154e9a"></a>UNORD_S&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aaae425a3ab9ab7f65087686fbfc72904" name="a497aa39e7403e6185fd8154d35b5b865aaae425a3ab9ab7f65087686fbfc72904"></a>NEQ_US&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ad131def5714c94ec5e5f9e91a54b69cb" name="a497aa39e7403e6185fd8154d35b5b865ad131def5714c94ec5e5f9e91a54b69cb"></a>NLT_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a42996a00c0b6b3524309e3f731cbc83c" name="a497aa39e7403e6185fd8154d35b5b865a42996a00c0b6b3524309e3f731cbc83c"></a>NLE_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0289550bb8324f8008ec6555007f0d9a" name="a497aa39e7403e6185fd8154d35b5b865a0289550bb8324f8008ec6555007f0d9a"></a>ORD_S&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ae01631d8108eb94f0aff191ace07567e" name="a497aa39e7403e6185fd8154d35b5b865ae01631d8108eb94f0aff191ace07567e"></a>EQ_US&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0bf2b63f92ed8358487d10dffc5a6407" name="a497aa39e7403e6185fd8154d35b5b865a0bf2b63f92ed8358487d10dffc5a6407"></a>NGE_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a6dd2c782601a3130e8db4fc35cbcf2f2" name="a497aa39e7403e6185fd8154d35b5b865a6dd2c782601a3130e8db4fc35cbcf2f2"></a>NGT_UQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a4eb0e96e5da342148139404bebc6d732" name="a497aa39e7403e6185fd8154d35b5b865a4eb0e96e5da342148139404bebc6d732"></a>FALSE_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aef7e26472d44469d4de23a89e2215254" name="a497aa39e7403e6185fd8154d35b5b865aef7e26472d44469d4de23a89e2215254"></a>NEQ_OS&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a435c2fac5c780c5e8da07e26df61c59d" name="a497aa39e7403e6185fd8154d35b5b865a435c2fac5c780c5e8da07e26df61c59d"></a>GE_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a8b07b021555f97cf0274bf7c28e0f61a" name="a497aa39e7403e6185fd8154d35b5b865a8b07b021555f97cf0274bf7c28e0f61a"></a>GT_OQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865acd54e51c65cc945cd465e52b238e1be5" name="a497aa39e7403e6185fd8154d35b5b865acd54e51c65cc945cd465e52b238e1be5"></a>TRUE_US&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865accd35d9cbbd5142289bf92998db12e10" name="a497aa39e7403e6185fd8154d35b5b865accd35d9cbbd5142289bf92998db12e10"></a>EQ_OQ&#160;</td><td class="fielddoc"><p>Equal (ordered, nonsignaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a01e760647cc78eb654d2c6f0c1a1bc6e" name="a497aa39e7403e6185fd8154d35b5b865a01e760647cc78eb654d2c6f0c1a1bc6e"></a>LT_OS&#160;</td><td class="fielddoc"><p>Less-than (ordered, signaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ad27229b1e26dfa42f9175241f3e69ea1" name="a497aa39e7403e6185fd8154d35b5b865ad27229b1e26dfa42f9175241f3e69ea1"></a>LE_OS&#160;</td><td class="fielddoc"><p>Less-than-or-equal (ordered, signaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aa148d0b72a4831a6fe52b4ac3ee27ab5" name="a497aa39e7403e6185fd8154d35b5b865aa148d0b72a4831a6fe52b4ac3ee27ab5"></a>UNORD_Q&#160;</td><td class="fielddoc"><p>Unordered (nonsignaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ae49e1f5f20631e0e1efb3cac68ce375a" name="a497aa39e7403e6185fd8154d35b5b865ae49e1f5f20631e0e1efb3cac68ce375a"></a>NEQ_UQ&#160;</td><td class="fielddoc"><p>Not-equal (unordered, nonsignaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a19debd7bc0c3d1f7ec803fd07274f049" name="a497aa39e7403e6185fd8154d35b5b865a19debd7bc0c3d1f7ec803fd07274f049"></a>NLT_US&#160;</td><td class="fielddoc"><p>Not-less-than (unordered, signaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a36afc066977c16331b641fcca7c72ccc" name="a497aa39e7403e6185fd8154d35b5b865a36afc066977c16331b641fcca7c72ccc"></a>NLE_US&#160;</td><td class="fielddoc"><p>Not-less-than-or-equal (unordered, signaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a29e5d1713f0a04235e13e85807c912bf" name="a497aa39e7403e6185fd8154d35b5b865a29e5d1713f0a04235e13e85807c912bf"></a>ORD_Q&#160;</td><td class="fielddoc"><p>Ordered (nonsignaling) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0800d97c2147ccb05e122cb8d5e84f8b" name="a497aa39e7403e6185fd8154d35b5b865a0800d97c2147ccb05e122cb8d5e84f8b"></a>EQ_UQ&#160;</td><td class="fielddoc"><p>Equal (unordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aa45b1e395d182e6e3fc4945518af229f" name="a497aa39e7403e6185fd8154d35b5b865aa45b1e395d182e6e3fc4945518af229f"></a>NGE_US&#160;</td><td class="fielddoc"><p>Not-greater-than-or-equal (unordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a71497ddb29463fbc85a73105d4d15ea2" name="a497aa39e7403e6185fd8154d35b5b865a71497ddb29463fbc85a73105d4d15ea2"></a>NGT_US&#160;</td><td class="fielddoc"><p>Not-greater-than (unordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a057cd21ed26aa3ab1460cbc4c3052864" name="a497aa39e7403e6185fd8154d35b5b865a057cd21ed26aa3ab1460cbc4c3052864"></a>FALSE_OQ&#160;</td><td class="fielddoc"><p>False (ordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ac7313126a90e315889159fb1e4e1c844" name="a497aa39e7403e6185fd8154d35b5b865ac7313126a90e315889159fb1e4e1c844"></a>NEQ_OQ&#160;</td><td class="fielddoc"><p>Not-equal (ordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a7dd3969cbfb66312dcaf7efc3ecca8d6" name="a497aa39e7403e6185fd8154d35b5b865a7dd3969cbfb66312dcaf7efc3ecca8d6"></a>GE_OS&#160;</td><td class="fielddoc"><p>Greater-than-or-equal (ordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a55d4cabaee1cab5aeab295f811e9d745" name="a497aa39e7403e6185fd8154d35b5b865a55d4cabaee1cab5aeab295f811e9d745"></a>GT_OS&#160;</td><td class="fielddoc"><p>Greater-than (ordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a430e8824dcdcec1312a4a11d8367fe14" name="a497aa39e7403e6185fd8154d35b5b865a430e8824dcdcec1312a4a11d8367fe14"></a>TRUE_UQ&#160;</td><td class="fielddoc"><p>True (unordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0518c3e790a7c5b249d95c7402114ac8" name="a497aa39e7403e6185fd8154d35b5b865a0518c3e790a7c5b249d95c7402114ac8"></a>EQ_OS&#160;</td><td class="fielddoc"><p>Equal (ordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ad59a5bc55eb3ce4589805bf9aa5733ed" name="a497aa39e7403e6185fd8154d35b5b865ad59a5bc55eb3ce4589805bf9aa5733ed"></a>LT_OQ&#160;</td><td class="fielddoc"><p>Less-than (ordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ae093eeb3576a25b1a6294896e5b78548" name="a497aa39e7403e6185fd8154d35b5b865ae093eeb3576a25b1a6294896e5b78548"></a>LE_OQ&#160;</td><td class="fielddoc"><p>Less-than-or-equal (ordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a9a7fd190d0dbfa5508428f1f42154e9a" name="a497aa39e7403e6185fd8154d35b5b865a9a7fd190d0dbfa5508428f1f42154e9a"></a>UNORD_S&#160;</td><td class="fielddoc"><p>Unordered (signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aaae425a3ab9ab7f65087686fbfc72904" name="a497aa39e7403e6185fd8154d35b5b865aaae425a3ab9ab7f65087686fbfc72904"></a>NEQ_US&#160;</td><td class="fielddoc"><p>Not-equal (unordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ad131def5714c94ec5e5f9e91a54b69cb" name="a497aa39e7403e6185fd8154d35b5b865ad131def5714c94ec5e5f9e91a54b69cb"></a>NLT_UQ&#160;</td><td class="fielddoc"><p>Not-less-than (unordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a42996a00c0b6b3524309e3f731cbc83c" name="a497aa39e7403e6185fd8154d35b5b865a42996a00c0b6b3524309e3f731cbc83c"></a>NLE_UQ&#160;</td><td class="fielddoc"><p>Not-less-than-or-equal (unordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0289550bb8324f8008ec6555007f0d9a" name="a497aa39e7403e6185fd8154d35b5b865a0289550bb8324f8008ec6555007f0d9a"></a>ORD_S&#160;</td><td class="fielddoc"><p>Ordered (signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865ae01631d8108eb94f0aff191ace07567e" name="a497aa39e7403e6185fd8154d35b5b865ae01631d8108eb94f0aff191ace07567e"></a>EQ_US&#160;</td><td class="fielddoc"><p>Equal (unordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a0bf2b63f92ed8358487d10dffc5a6407" name="a497aa39e7403e6185fd8154d35b5b865a0bf2b63f92ed8358487d10dffc5a6407"></a>NGE_UQ&#160;</td><td class="fielddoc"><p>Not-greater-than-or-equal (unordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a6dd2c782601a3130e8db4fc35cbcf2f2" name="a497aa39e7403e6185fd8154d35b5b865a6dd2c782601a3130e8db4fc35cbcf2f2"></a>NGT_UQ&#160;</td><td class="fielddoc"><p>Not-greater-than (unordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a4eb0e96e5da342148139404bebc6d732" name="a497aa39e7403e6185fd8154d35b5b865a4eb0e96e5da342148139404bebc6d732"></a>FALSE_OS&#160;</td><td class="fielddoc"><p>False (ordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865aef7e26472d44469d4de23a89e2215254" name="a497aa39e7403e6185fd8154d35b5b865aef7e26472d44469d4de23a89e2215254"></a>NEQ_OS&#160;</td><td class="fielddoc"><p>Not-equal (ordered, signaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a435c2fac5c780c5e8da07e26df61c59d" name="a497aa39e7403e6185fd8154d35b5b865a435c2fac5c780c5e8da07e26df61c59d"></a>GE_OQ&#160;</td><td class="fielddoc"><p>Greater-than-or-equal (ordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865a8b07b021555f97cf0274bf7c28e0f61a" name="a497aa39e7403e6185fd8154d35b5b865a8b07b021555f97cf0274bf7c28e0f61a"></a>GT_OQ&#160;</td><td class="fielddoc"><p>Greater-than (ordered, nonsignaling) (AVX-512) </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a497aa39e7403e6185fd8154d35b5b865acd54e51c65cc945cd465e52b238e1be5" name="a497aa39e7403e6185fd8154d35b5b865acd54e51c65cc945cd465e52b238e1be5"></a>TRUE_US&#160;</td><td class="fielddoc"><p>True (unordered, signaling) (AVX-512) </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00187">187</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00189">189</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -417,17 +449,25 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25ca2dcbad7477fd40561e8b8198f173bd47" name="a32bdeed3721f5aacf279c4ff319be25ca2dcbad7477fd40561e8b8198f173bd47"></a>EQ&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cac562607189d77eb9dfb707464c1e7b0b" name="a32bdeed3721f5aacf279c4ff319be25cac562607189d77eb9dfb707464c1e7b0b"></a>LT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cacfe6055d2e0503be378bb63449ec7ba6" name="a32bdeed3721f5aacf279c4ff319be25cacfe6055d2e0503be378bb63449ec7ba6"></a>LE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25ca946003f97ccc52d5d3b54ac0ec31bbfc" name="a32bdeed3721f5aacf279c4ff319be25ca946003f97ccc52d5d3b54ac0ec31bbfc"></a>FALSE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cadc33066c3993e0d50896e533fd692ce0" name="a32bdeed3721f5aacf279c4ff319be25cadc33066c3993e0d50896e533fd692ce0"></a>NE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cad7d6a13c7b311ec8a3c9fcfb1919a2f8" name="a32bdeed3721f5aacf279c4ff319be25cad7d6a13c7b311ec8a3c9fcfb1919a2f8"></a>NLT&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25caacd748f300c5d189c47807e2a9d6ea57" name="a32bdeed3721f5aacf279c4ff319be25caacd748f300c5d189c47807e2a9d6ea57"></a>NLE&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cac0d83f0b82a6b30de8811e69e6d95c61" name="a32bdeed3721f5aacf279c4ff319be25cac0d83f0b82a6b30de8811e69e6d95c61"></a>TRUE&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25ca2dcbad7477fd40561e8b8198f173bd47" name="a32bdeed3721f5aacf279c4ff319be25ca2dcbad7477fd40561e8b8198f173bd47"></a>EQ&#160;</td><td class="fielddoc"><p><code>==</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cac562607189d77eb9dfb707464c1e7b0b" name="a32bdeed3721f5aacf279c4ff319be25cac562607189d77eb9dfb707464c1e7b0b"></a>LT&#160;</td><td class="fielddoc"><p><code>&lt;</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cacfe6055d2e0503be378bb63449ec7ba6" name="a32bdeed3721f5aacf279c4ff319be25cacfe6055d2e0503be378bb63449ec7ba6"></a>LE&#160;</td><td class="fielddoc"><p><code>&lt;=</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25ca946003f97ccc52d5d3b54ac0ec31bbfc" name="a32bdeed3721f5aacf279c4ff319be25ca946003f97ccc52d5d3b54ac0ec31bbfc"></a>FALSE&#160;</td><td class="fielddoc"><p>always <code>false</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cadc33066c3993e0d50896e533fd692ce0" name="a32bdeed3721f5aacf279c4ff319be25cadc33066c3993e0d50896e533fd692ce0"></a>NE&#160;</td><td class="fielddoc"><p><code>!=</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cad7d6a13c7b311ec8a3c9fcfb1919a2f8" name="a32bdeed3721f5aacf279c4ff319be25cad7d6a13c7b311ec8a3c9fcfb1919a2f8"></a>NLT&#160;</td><td class="fielddoc"><p><code>&gt;=</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25caacd748f300c5d189c47807e2a9d6ea57" name="a32bdeed3721f5aacf279c4ff319be25caacd748f300c5d189c47807e2a9d6ea57"></a>NLE&#160;</td><td class="fielddoc"><p><code>&gt;</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a32bdeed3721f5aacf279c4ff319be25cac0d83f0b82a6b30de8811e69e6d95c61" name="a32bdeed3721f5aacf279c4ff319be25cac0d83f0b82a6b30de8811e69e6d95c61"></a>TRUE&#160;</td><td class="fielddoc"><p>always <code>true</code> </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00122">122</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00124">124</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -464,44 +504,44 @@ requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; 32uz))</d
 
 <p>perform an avx512 style floating point comparison for scalar values. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00228">228</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  228</span>                                      {</div>
-<div class="line"><span class="lineno">  229</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
-<div class="line"><span class="lineno">  230</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
-<div class="line"><span class="lineno">  231</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
-<div class="line"><span class="lineno">  232</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_Q)  <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b);</div>
-<div class="line"><span class="lineno">  233</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a != b);</div>
-<div class="line"><span class="lineno">  234</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt; b);</div>
-<div class="line"><span class="lineno">  235</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
-<div class="line"><span class="lineno">  236</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_Q)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b);</div>
-<div class="line"><span class="lineno">  237</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_UQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a == b);</div>
-<div class="line"><span class="lineno">  238</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
-<div class="line"><span class="lineno">  239</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt; b);</div>
-<div class="line"><span class="lineno">  240</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OQ) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  241</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
-<div class="line"><span class="lineno">  242</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
-<div class="line"><span class="lineno">  243</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
-<div class="line"><span class="lineno">  244</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_UQ)  <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
-<div class="line"><span class="lineno">  246</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
-<div class="line"><span class="lineno">  247</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
-<div class="line"><span class="lineno">  248</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_S)  <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b);</div>
-<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a != b);</div>
-<div class="line"><span class="lineno">  250</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt; b);</div>
-<div class="line"><span class="lineno">  251</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
-<div class="line"><span class="lineno">  252</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_S)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b);</div>
-<div class="line"><span class="lineno">  253</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_US)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a == b);</div>
-<div class="line"><span class="lineno">  254</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
-<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt; b);</div>
-<div class="line"><span class="lineno">  256</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OS) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OS)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
-<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
-<div class="line"><span class="lineno">  259</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
-<div class="line"><span class="lineno">  260</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_US)  <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  261</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  262</span>}</div>
-<div class="ttc" id="anamespaceein_1_1numerics_html_a0285936fcf2e25f4c004f70badd4ccab"><div class="ttname"><a href="#a0285936fcf2e25f4c004f70badd4ccab">ein::numerics::cmp_ord</a></div><div class="ttdeci">constexpr bool cmp_ord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00061">numerics.cppm:61</a></div></div>
-<div class="ttc" id="anamespaceein_1_1numerics_html_a4ede68c2c05406c46cafb93c7ab08d2c"><div class="ttname"><a href="#a4ede68c2c05406c46cafb93c7ab08d2c">ein::numerics::cmp_unord</a></div><div class="ttdeci">constexpr bool cmp_unord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00051">numerics.cppm:51</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00229">229</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  229</span>                                      {</div>
+<div class="line"><span class="lineno">  230</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
+<div class="line"><span class="lineno">  231</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
+<div class="line"><span class="lineno">  232</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
+<div class="line"><span class="lineno">  233</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_Q)  <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b);</div>
+<div class="line"><span class="lineno">  234</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a != b);</div>
+<div class="line"><span class="lineno">  235</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt; b);</div>
+<div class="line"><span class="lineno">  236</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
+<div class="line"><span class="lineno">  237</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_Q)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b);</div>
+<div class="line"><span class="lineno">  238</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_UQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a == b);</div>
+<div class="line"><span class="lineno">  239</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
+<div class="line"><span class="lineno">  240</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt; b);</div>
+<div class="line"><span class="lineno">  241</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OQ) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  242</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
+<div class="line"><span class="lineno">  243</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
+<div class="line"><span class="lineno">  244</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
+<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_UQ)  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  246</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
+<div class="line"><span class="lineno">  247</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
+<div class="line"><span class="lineno">  248</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
+<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_S)  <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b);</div>
+<div class="line"><span class="lineno">  250</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a != b);</div>
+<div class="line"><span class="lineno">  251</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt; b);</div>
+<div class="line"><span class="lineno">  252</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
+<div class="line"><span class="lineno">  253</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_S)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b);</div>
+<div class="line"><span class="lineno">  254</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_US)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || (a == b);</div>
+<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
+<div class="line"><span class="lineno">  256</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a4ede68c2c05406c46cafb93c7ab08d2c">cmp_unord</a>(a, b) || !(a &gt; b);</div>
+<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OS) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OS)   <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
+<div class="line"><span class="lineno">  259</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
+<div class="line"><span class="lineno">  260</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#a0285936fcf2e25f4c004f70badd4ccab">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
+<div class="line"><span class="lineno">  261</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_US)  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  262</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  263</span>}</div>
+<div class="ttc" id="anamespaceein_1_1numerics_html_a0285936fcf2e25f4c004f70badd4ccab"><div class="ttname"><a href="#a0285936fcf2e25f4c004f70badd4ccab">ein::numerics::cmp_ord</a></div><div class="ttdeci">constexpr bool cmp_ord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00063">numerics.cppm:63</a></div></div>
+<div class="ttc" id="anamespaceein_1_1numerics_html_a4ede68c2c05406c46cafb93c7ab08d2c"><div class="ttname"><a href="#a4ede68c2c05406c46cafb93c7ab08d2c">ein::numerics::cmp_unord</a></div><div class="ttdeci">constexpr bool cmp_unord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00053">numerics.cppm:53</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -592,10 +632,10 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00061">61</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>                                          {</div>
-<div class="line"><span class="lineno">   62</span>  <span class="keywordflow">return</span> !isnan(a) &amp;&amp; !isnan(b);</div>
-<div class="line"><span class="lineno">   63</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00063">63</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>                                          {</div>
+<div class="line"><span class="lineno">   64</span>  <span class="keywordflow">return</span> !isnan(a) &amp;&amp; !isnan(b);</div>
+<div class="line"><span class="lineno">   65</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -691,10 +731,10 @@ template&lt;typename T &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00051">51</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   51</span>                                            {</div>
-<div class="line"><span class="lineno">   52</span>  <span class="keywordflow">return</span> isnan(a) || isnan(b);</div>
-<div class="line"><span class="lineno">   53</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00053">53</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>                                            {</div>
+<div class="line"><span class="lineno">   54</span>  <span class="keywordflow">return</span> isnan(a) || isnan(b);</div>
+<div class="line"><span class="lineno">   55</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -733,18 +773,18 @@ requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00137">137</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  137</span>                                         {</div>
-<div class="line"><span class="lineno">  138</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMPINT::TRUE)  <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  139</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::FALSE) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  140</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LT)    <span class="keywordflow">return</span> a &lt; b;</div>
-<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLT)   <span class="keywordflow">return</span> a &gt;= b;</div>
-<div class="line"><span class="lineno">  142</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LE)    <span class="keywordflow">return</span> a &lt;= b;</div>
-<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLE)   <span class="keywordflow">return</span> a &gt; b;</div>
-<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::EQ)    <span class="keywordflow">return</span> a == b;</div>
-<div class="line"><span class="lineno">  145</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NE)    <span class="keywordflow">return</span> a != b;</div>
-<div class="line"><span class="lineno">  146</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  147</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00139">139</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  139</span>                                         {</div>
+<div class="line"><span class="lineno">  140</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMPINT::TRUE)  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  141</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::FALSE) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  142</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LT)    <span class="keywordflow">return</span> a &lt; b;</div>
+<div class="line"><span class="lineno">  143</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLT)   <span class="keywordflow">return</span> a &gt;= b;</div>
+<div class="line"><span class="lineno">  144</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LE)    <span class="keywordflow">return</span> a &lt;= b;</div>
+<div class="line"><span class="lineno">  145</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLE)   <span class="keywordflow">return</span> a &gt; b;</div>
+<div class="line"><span class="lineno">  146</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::EQ)    <span class="keywordflow">return</span> a == b;</div>
+<div class="line"><span class="lineno">  147</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NE)    <span class="keywordflow">return</span> a != b;</div>
+<div class="line"><span class="lineno">  148</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  149</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -835,7 +875,7 @@ template&lt;one_of_t&lt; float, double &gt; T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00071">71</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00073">73</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -862,8 +902,8 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00046">46</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   46</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00048">48</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   48</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -889,7 +929,7 @@ template&lt;size_t N&gt; </div>
 
 <p>AVX512 added many more floating point comparison types. Do we have them? </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00179">179</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00181">181</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>

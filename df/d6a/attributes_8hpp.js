@@ -67,6 +67,8 @@ var attributes_8hpp =
     [ "ein_set_typestate", "d4/d86/group__attributes.html#gaeafae2f2d44edb1f1ee3b659fbb48f82", null ],
     [ "ein_shared_locks_required", "d4/d86/group__attributes.html#ga7468e42fee3b2135260f226e60cb5bfd", null ],
     [ "ein_shared_trylock_function", "d4/d86/group__attributes.html#gaa9bf61cf820ce95d780384f4857978d8", null ],
+    [ "ein_target", "d4/d86/group__attributes.html#ga3246ec3ea286643d128185234256d627", null ],
+    [ "ein_target_clones", "d4/d86/group__attributes.html#ga3f032504b976d681e8f72fed67395746", null ],
     [ "ein_test_typestate", "d4/d86/group__attributes.html#gabc6a227c8893803b9d294e0270c554fc", null ],
     [ "ein_test_typestate", "d4/d86/group__attributes.html#gab32569903e90f2ddf32220e9c7aae740", null ],
     [ "ein_this_lifetimebound", "d4/d86/group__attributes.html#ga209744b1d888bcad7fd9ea9bb1a9f24c", null ],
