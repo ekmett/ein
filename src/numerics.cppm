@@ -23,11 +23,13 @@ template <> struct integer_traits<64> { using signed_t = int64_t; using unsigned
 /// \endcond
 
 /// returns a signed integer type of the same size as \p T suitable for `std::bitcast`
+/// \hideinitializer \hideinlinesource
 export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using int_t = typename integer_traits<sizeof(T)*8>::signed_t;
 
 /// returns an unsigned integer type of the same size as \p T suitable for `std::bitcast`
+/// \hideinitializer \hideinlinesource
 export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
@@ -120,14 +122,14 @@ export template double scalef(double, double) noexcept;
 
 /// \hideinlinesource
 export enum class CMPINT : size_t {
-  EQ    = 0x0uz
-, LT    = 0x1uz
-, LE    = 0x2uz
-, FALSE = 0x3uz
-, NE    = 0x4uz
-, NLT   = 0x5uz
-, NLE   = 0x6uz
-, TRUE  = 0x7uz
+  EQ    = 0x0uz ///< `==`
+, LT    = 0x1uz ///< `<`
+, LE    = 0x2uz ///< `<=`
+, FALSE = 0x3uz ///< always `false`
+, NE    = 0x4uz ///< `!=`
+, NLT   = 0x5uz ///< `>=`
+, NLE   = 0x6uz ///< `>`
+, TRUE  = 0x7uz ///< always `true`
 };
 
 /// \nodiscard \inline \const
@@ -185,39 +187,38 @@ export constexpr size_t max_fp_comparison_predicate
 
 /// \hideinlinesource
 export enum CMP : size_t {
-  EQ_OQ     = 0x00uz  // Equal (ordered, nonsignaling)
-, LT_OS     = 0x01uz  // Less-than (ordered, signaling)
-, LE_OS     = 0x02uz  // Less-than-or-equal (ordered, signaling)
-, UNORD_Q   = 0x03uz  // Unordered (nonsignaling)
-, NEQ_UQ    = 0x04uz  // Not-equal (unordered, nonsignaling)
-, NLT_US    = 0x05uz  // Not-less-than (unordered, signaling)
-, NLE_US    = 0x06uz  // Not-less-than-or-equal (unordered, signaling)
-, ORD_Q     = 0x07uz  // Ordered (nonsignaling)
-// note simd instructions only implement the first 8 before AVX512
-, EQ_UQ     = 0x08uz  // Equal (unordered, nonsignaling)
-, NGE_US    = 0x09uz  // Not-greater-than-or-equal (unordered, signaling)
-, NGT_US    = 0x0Auz  // Not-greater-than (unordered, signaling)
-, FALSE_OQ  = 0x0Buz  // False (ordered, nonsignaling)
-, NEQ_OQ    = 0x0Cuz  // Not-equal (ordered, nonsignaling)
-, GE_OS     = 0x0Duz  // Greater-than-or-equal (ordered, signaling)
-, GT_OS     = 0x0Euz  // Greater-than (ordered, signaling)
-, TRUE_UQ   = 0x0Fuz  // True (unordered, nonsignaling)
-, EQ_OS     = 0x10uz  // Equal (ordered, signaling)
-, LT_OQ     = 0x11uz  // Less-than (ordered, nonsignaling)
-, LE_OQ     = 0x12uz  // Less-than-or-equal (ordered, nonsignaling)
-, UNORD_S   = 0x13uz  // Unordered (signaling)
-, NEQ_US    = 0x14uz  // Not-equal (unordered, signaling)
-, NLT_UQ    = 0x15uz  // Not-less-than (unordered, nonsignaling)
-, NLE_UQ    = 0x16uz  // Not-less-than-or-equal (unordered, nonsignaling)
-, ORD_S     = 0x17uz  // Ordered (signaling)
-, EQ_US     = 0x18uz  // Equal (unordered, signaling)
-, NGE_UQ    = 0x19uz  // Not-greater-than-or-equal (unordered, nonsignaling)
-, NGT_UQ    = 0x1Auz  // Not-greater-than (unordered, nonsignaling)
-, FALSE_OS  = 0x1Buz  // False (ordered, signaling)
-, NEQ_OS    = 0x1Cuz  // Not-equal (ordered, signaling)
-, GE_OQ     = 0x1Duz  // Greater-than-or-equal (ordered, nonsignaling)
-, GT_OQ     = 0x1Euz  // Greater-than (ordered, nonsignaling)
-, TRUE_US   = 0x1Fuz  // True (unordered, signaling)
+  EQ_OQ     = 0x00uz  ///< Equal (ordered, nonsignaling)
+, LT_OS     = 0x01uz  ///< Less-than (ordered, signaling)
+, LE_OS     = 0x02uz  ///< Less-than-or-equal (ordered, signaling)
+, UNORD_Q   = 0x03uz  ///< Unordered (nonsignaling)
+, NEQ_UQ    = 0x04uz  ///< Not-equal (unordered, nonsignaling)
+, NLT_US    = 0x05uz  ///< Not-less-than (unordered, signaling)
+, NLE_US    = 0x06uz  ///< Not-less-than-or-equal (unordered, signaling)
+, ORD_Q     = 0x07uz  ///< Ordered (nonsignaling)
+, EQ_UQ     = 0x08uz  ///< Equal (unordered, nonsignaling) (AVX-512)
+, NGE_US    = 0x09uz  ///< Not-greater-than-or-equal (unordered, signaling) (AVX-512)
+, NGT_US    = 0x0Auz  ///< Not-greater-than (unordered, signaling) (AVX-512)
+, FALSE_OQ  = 0x0Buz  ///< False (ordered, nonsignaling) (AVX-512)
+, NEQ_OQ    = 0x0Cuz  ///< Not-equal (ordered, nonsignaling) (AVX-512)
+, GE_OS     = 0x0Duz  ///< Greater-than-or-equal (ordered, signaling) (AVX-512)
+, GT_OS     = 0x0Euz  ///< Greater-than (ordered, signaling) (AVX-512)
+, TRUE_UQ   = 0x0Fuz  ///< True (unordered, nonsignaling) (AVX-512)
+, EQ_OS     = 0x10uz  ///< Equal (ordered, signaling) (AVX-512)
+, LT_OQ     = 0x11uz  ///< Less-than (ordered, nonsignaling) (AVX-512)
+, LE_OQ     = 0x12uz  ///< Less-than-or-equal (ordered, nonsignaling) (AVX-512)
+, UNORD_S   = 0x13uz  ///< Unordered (signaling) (AVX-512)
+, NEQ_US    = 0x14uz  ///< Not-equal (unordered, signaling) (AVX-512)
+, NLT_UQ    = 0x15uz  ///< Not-less-than (unordered, nonsignaling) (AVX-512)
+, NLE_UQ    = 0x16uz  ///< Not-less-than-or-equal (unordered, nonsignaling) (AVX-512)
+, ORD_S     = 0x17uz  ///< Ordered (signaling) (AVX-512)
+, EQ_US     = 0x18uz  ///< Equal (unordered, signaling) (AVX-512)
+, NGE_UQ    = 0x19uz  ///< Not-greater-than-or-equal (unordered, nonsignaling) (AVX-512)
+, NGT_UQ    = 0x1Auz  ///< Not-greater-than (unordered, nonsignaling) (AVX-512)
+, FALSE_OS  = 0x1Buz  ///< False (ordered, signaling) (AVX-512)
+, NEQ_OS    = 0x1Cuz  ///< Not-equal (ordered, signaling) (AVX-512)
+, GE_OQ     = 0x1Duz  ///< Greater-than-or-equal (ordered, nonsignaling) (AVX-512)
+, GT_OQ     = 0x1Euz  ///< Greater-than (ordered, nonsignaling) (AVX-512)
+, TRUE_US   = 0x1Fuz  ///< True (unordered, signaling) (AVX-512)
 };
 
 /// perform an avx512 style floating point comparison for scalar values.
