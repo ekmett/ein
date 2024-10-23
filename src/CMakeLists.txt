@@ -4,6 +4,7 @@
 add_library(ein STATIC
   cpu.cpp
   simd.cpp
+  wait.cpp
 )
 
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
@@ -19,6 +20,7 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   numerics.cppm
   simd.cppm
   simd_data.cppm
+  wait.cppm
 )
 
 # find_package(Threads REQUIRED)

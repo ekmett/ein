@@ -1,65 +1,22 @@
 module;
 
-#if defined(_MSC_VER)
-  #include <intrin.h>
-#elif defined(__GNUC__) || defined(__clang__)
-  #include <cpuid.h>
-#endif
-
-/// \cond
-static void cpuid(int32_t info[4], int32_t eax, int32_t ecx) noexcept {
-#if defined(_MSC_VER)
-  __cpuidex(info, eax, ecx);
-#elif defined(__GNUC__) || defined(__clang__)
-  __cpuid_count(eax, ecx, info[0], info[1], info[2], info[3]);
-#endif
-}
-/// \endcond
-
 using namespace std;
 
 module ein.cpu;
 
 namespace ein::cpu {
 
-/// \hideinitializer
-/// \hideinlinesource
-const enum vendor vendor = [] noexcept -> enum vendor {
-  int32_t info[4] = {0};
-  cpuid(info, 0, 0);
-
+/// \hideinitializer \hideinlinesource
+const enum vendor vendor = [] static noexcept -> enum vendor {
+  auto result = id(0, 0);
   array<char, 12> vendor;
-  memcpy(&vendor[0], &info[1], 4); // EBX
-  memcpy(&vendor[4], &info[3], 4); // EDX
-  memcpy(&vendor[8], &info[2], 4); // ECX
-
+  *reinterpret_cast<int32_t*>(&vendor[0]) = result.ebx;
+  *reinterpret_cast<int32_t*>(&vendor[4]) = result.edx;
+  *reinterpret_cast<int32_t*>(&vendor[8]) = result.ecx;
   string_view vendorStr { begin(vendor), end(vendor) };
-
   if      (vendorStr == "GenuineIntel") return vendor::intel;
   else if (vendorStr == "AuthenticAMD") return vendor::amd;
   else                                  return vendor::unknown;
-}();
-
-/// \hideinitializer
-/// \hideinlinesource
-const bool has_mwait = [] noexcept -> bool {
-  if (vendor != vendor::intel) return false;
-  int32_t info[4] = {0};
-  // CPUID.05H to check Intel MONITOR/MWAIT
-  cpuid(info, 0x05, 0x00);
-  // ECX[3] indicates if MONITOR/MWAIT can be executed in user mode on Intel
-  return (info[2] & (1 << 3)) != 0;
-}();
-
-/// \hideinitializer
-/// \hideinlinesource
-const bool has_mwaitx = [] noexcept -> bool {
-  if (vendor != vendor::amd) return false;
-  int32_t info[4] = {0};
-  // CPUID.80000001H to check AMD MONITORX/MWAITX
-  cpuid(info, 0x80000001, 0x00);
-  // ECX[29] indicates MONITORX/MWAITX availability on AMD
-  return (info[2] & (1 << 29)) != 0;
 }();
 
 } // ein::cpu
