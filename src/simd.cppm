@@ -22,7 +22,7 @@ namespace ein {
 /// \brief simd primitive definition
 export template <typename T, size_t N>
 requires (has_simd_type<T,N>)
-struct simd {
+struct [[nodiscard]] simd {
 private:
   using data_t = simd_data_t<T,N>;
   using mask_t = simd_mask_t<T,N>;
@@ -808,8 +808,8 @@ public:
 /// \endcond
 
   /// \pre \p p is a pointer to memory with alignment >= \p N
-  /// \hideinlinesource \nodiscard \inline \pure \artificial \cond
-  [[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial \cond
+  EIN(inline,pure,artificial) /// \endcond
   static constexpr simd load(T const * p) noexcept {
     if consteval {
       simd result;
@@ -825,8 +825,8 @@ public:
     }
   }
 
-  /// \hideinlinesource \nodiscard \inline \pure \artificial \cond
-  [[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial \cond
+  EIN(inline,pure,artificial) /// \endcond
   static constexpr simd loadu(T const * p) noexcept {
     if consteval {
       simd result;
@@ -843,8 +843,8 @@ public:
   }
 
   /// \details legacy: may outperform loadu when the data crosses a cache boundary
-  /// \hideinlinesource \nodiscard \inline \pure \artificial \cond
-  [[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial \cond
+  EIN(inline,pure,artificial) /// \endcond
   static constexpr simd lddqu(T const * p) noexcept {
     if consteval {
       simd result;
@@ -866,8 +866,8 @@ public:
 /// \endcond
 
   /// \pre \p p is a pointer to memory with alignment >= \p N
-  /// \hideinlinesource \nodiscard \inline \pure \artificial \cond
-  [[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial \cond
+  EIN(inline,pure,artificial) /// \endcond
   static constexpr simd stream_load(T const * p) noexcept {
     if consteval {
       simd result;
@@ -955,8 +955,8 @@ public:
 #undef EIN_CASE
 #undef EIN_SWITCH
 
-  /// \hideinlinesource \nodiscard \inline \artificial \pure \cond
-  [[nodiscard]] EIN(inline,artificial,pure) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \cond
+  EIN(inline,artificial,pure) /// \endcond
   friend constexpr simd scalef(simd x, simd y) noexcept
   requires one_of_t<T,float,double> {
     if consteval {
@@ -1029,10 +1029,10 @@ simd(T) -> simd<T,has_simd_type<T,max_simd_size/sizeof(T)>>;
 
 /// load \p data from aligned memory
 /// \pre \p data has alignment >= \p N
-/// \nodiscard \inline \pure \artificial
+/// \inline \pure \artificial
 export
 template <std::size_t N> /// \cond
-[[nodiscard]] EIN(inline,pure) /// \endcond
+EIN(inline,pure) /// \endcond
 auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1040,9 +1040,9 @@ auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data
 }
 
 /// load \p data from unaligned memory
-/// \nodiscard \inline \pure \artificial
+/// \inline \pure \artificial
 export template <std::size_t N> /// \cond
-[[nodiscard]] EIN(inline,pure) /// \endcond
+EIN(inline,pure) /// \endcond
 auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1050,9 +1050,9 @@ auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*dat
 }
 
 /// load \p data from unaligned memory, optimized for crossing cachelines (legacy approach)
-/// \nodiscard \inline \pure \artificial
+/// \inline \pure \artificial
 export template <std::size_t N> /// \cond
-[[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+EIN(inline,pure,artificial) /// \endcond
 auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1061,9 +1061,9 @@ auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*dat
 
 /// stream \p data from memory non-temporally, bypassing cache
 /// \pre \p data has alignment >= \p N
-/// \nodiscard \inline \pure \artificial
+/// \inline \pure \artificial
 export template <std::size_t N> /// \cond
-[[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+EIN(inline,pure,artificial) /// \endcond
 auto stream_load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1084,17 +1084,17 @@ export template <typename SIMD>
 concept simd_type = simd_type_impl<SIMD>::value;
 
 /// create a new simd register with contents drawn from this one
-/// \nodiscard \inline \artificial \pure
+/// \inline \artificial \pure
 template <size_t ... is> /// \cond
-[[nodiscard]] EIN(inline,artificial,pure) /// \endcond
+EIN(inline,artificial,pure) /// \endcond
 auto shuffle(simd_type auto x) {
   return x.template shuffle<is...>();
 }
 
 /// create a new simd register with contents drawn from these two
-/// \nodiscard \inline \artificial \pure
+/// \inline \artificial \pure
 template <size_t ... is> /// \cond
-[[nodiscard]] EIN(inline,artificial,pure) /// \endcond
+EIN(inline,artificial,pure) /// \endcond
 auto shuffle(simd_type auto x, simd_type auto y) {
   return x.template shuffle<is...>(y);
 }
