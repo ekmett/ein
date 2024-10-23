@@ -1,14 +1,21 @@
 #pragma once
 
+/// \file
 /// \brief defines used to indicate useful attributes for the compiler
+/// \ingroup macros
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2021-2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-FileCopyrightText: 2012 William Swanson
+/// SPDX-License-Identifier: MIT
+/// \endlicense
+
+/// \ingroup macros
+/// \{
+
 
 #include "map.hpp"
 
-/// \defgroup attributes attributes
-/// \ingroup internals_group
-/// macros for applying attributes to functions, members, arguments, etc.
-/// \{
-///
 /// \def EIN(...)
 /// \brief
 /// Applies the prefix `ein_` syntactically to all arguments. Used to apply many attributes to definitions.

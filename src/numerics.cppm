@@ -1,10 +1,21 @@
+/// \file
+/// \ingroup numerics
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+/// \endlicense
+
+/// \ingroup numerics
 export module ein.numerics;
 
 import ein.types;
 
 using namespace std;
 
-namespace ein::numerics {
+namespace ein {
+/// \defgroup numerics numerics
+/// \{
 
 /// \brief \p N is one of the \p candidates
 export template <auto N, auto ... candidates>
@@ -306,8 +317,5 @@ EIN_CMP(TRUE_US)
 #undef EIN_CMP
 #undef EIN_CMP_IMPL
 
-} // namespace ein::numerics
-
-export namespace ein {
-  using namespace ein::numerics;
+/// \}
 }

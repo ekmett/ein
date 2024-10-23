@@ -1,14 +1,26 @@
+/// \file
+/// \ingroup wait
+/// \brief waiting strategies
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+/// \endlicense
 module;
 
 #include <x86intrin.h>
 
+/// \ingroup wait
 export module ein.wait;
 
-import ein.cpu;
+import ein.cpuid;
 
-namespace ein::wait {
+namespace ein {
+/// \defgroup wait wait
+/// \{
 
-/// some way to wait for a value to change
+/// \brief some way to wait for a value to change
+/// \tparam T type to check
 export template <typename T>
 concept waiter = requires (void * p, uint32_t t) {
   bool(T::supported);
@@ -16,22 +28,25 @@ concept waiter = requires (void * p, uint32_t t) {
   T::mwait(t);
 };
 
-/// wait until a predicte no longer holds about a given memory location
-/// may probe periodically, or after any write to the target cache line
-/// timer is max mwait duration, it is not a timeout for now.
+/// \brief Wait until a predicate holds about a given memory location
+/// \param p pointer to data. activity on its cache line will wake us up
+/// \param f predicate to check about the pointer
+///
 /// \post f(p)
 export template <waiter W>
 /// \flatten \cond
 EIN(flatten) /// \endcond
-void wait_until(auto * p, auto f, uint32_t timer = 0) {
+void wait_until(auto * p, auto f) {
   assume(W::supported);
   while (!f(p)) {
     W::monitor(p);
     if (!f(p))
-      W::mwait(timer);
+      W::mwait(0);
   }
 }
 
+
+/// \ref waiter using MONITORX/MWAITX for AMD
 export struct mwaitx {
   using timer_t = uint64_t;
   /// \inline \artificial \cond
@@ -40,9 +55,17 @@ export struct mwaitx {
   /// \inline \artificial \cond
   EIN(inline,artificial) /// \endcond
   static void mwait(uint32_t timer = 0) noexcept { _mm_mwaitx(0,0,timer); }
+  /// \hideinlinesource
   static const bool supported;
 };
 
+/// \hideinitializer \hideinlinesource
+const bool mwaitx::supported = [] static noexcept -> bool {
+  return (cpu_vendor == cpu_vendor::amd) && ((cpuid(0x80000001,0).ecx & (1 << 29)) != 0);
+}();
+
+
+/// \ref waiter using UMONITOR/UMWAIT for Intel
 export struct umwait {
   using timer_t = uint64_t;
   /// \inline \artificial \cond
@@ -51,9 +74,16 @@ export struct umwait {
   /// \inline \artificial \cond
   EIN(inline,artificial) /// \endcond
   static uint8_t mwait(uint32_t timer = 0) noexcept { return _umwait(1,timer); }
+  /// \hideinlinesource
   static const bool supported;
 };
 
+/// \hideinitializer \hideinlinesource
+const bool umwait::supported = [] static noexcept -> bool {
+  return (cpu_vendor == cpu_vendor::intel) && ((cpuid(0x7,0).ecx & (1 << 5)) != 0);
+}();
+
+/// spin \ref waiter
 export struct spin {
   using timer_t = uint64_t;
   /// \inline \artificial \cond
@@ -62,10 +92,11 @@ export struct spin {
   /// \inline \artificial \cond
   EIN(inline,artificial) /// \endcond
   static void mwait(uint32_t = 0) noexcept { _mm_pause(); }
-  static constexpr bool supported = true;
+  /// hideinlinesource
+  inline static constinit bool supported = true;
 };
 
-/// Usage: \code with_waiter([]<waiter w> { ...; wait_until<w>(p,f); ... }); \endcode
+/// Usage: \code \ref with_waiter([]<\ref waiter w> { ...; \ref wait_until<w>(p,f); ... }); \endcode
 /// invokes \p k with a waiter as a template parameter.
 export auto with_waiter(auto k) {
   if (mwaitx::supported) return k.template operator()<mwaitx>();
@@ -73,8 +104,5 @@ export auto with_waiter(auto k) {
   else k.template operator()<spin>();
 }
 
-} // ein::wait
-
-namespace ein {
-  using namespace ::ein::wait;
+/// \}
 }

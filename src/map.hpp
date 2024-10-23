@@ -1,13 +1,17 @@
 #pragma once
 
 /// \file
-/// \brief variadic macro utilities
-/// \author William Swanson
-/// \author Edward Kmett
+/// \ingroup macros
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2021-2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-FileCopyrightText: 2012 William Swanson
+/// SPDX-License-Identifier: MIT
+/// \endlicense
 
 /// \defgroup macros macros
 /// \brief variadic macro utilities
-/// \ingroup internals_group
+/// \ingroup headers
 
 /// \cond
 #define EIN_EVAL0_(...) __VA_ARGS__
@@ -38,6 +42,8 @@
 #define ein_(Y) EIN_JOIN_(ein_,Y)
 
 /// \endcond
+
+/// \ingroup macros
 /// \{
 
 /// Applies macro `f` to each parameter.

@@ -1,8 +1,11 @@
 #pragma once
 
+/// \defgroup headers headers
+
 /// \file
 /// \brief precompiled header
 /// \author Edward Kmett
+/// \ingroup headers
 /// \hideincludedbygraph
 /// \hideincludegraph
 

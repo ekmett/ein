@@ -1,16 +1,27 @@
+/// \file
+/// \ingroup simd
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+/// \endlicense
+
 module;
 
 #include <immintrin.h>
 
 using namespace std;
 
-/// \cond
+namespace {
+/// \cond local
 template<typename T> struct arg1 {};
 template<typename Ret, typename Arg, typename ... Args> struct arg1<Ret(Arg, Args...)> { using type = Arg; };
 template<typename Ret, typename Arg, typename ... Args> struct arg1<Ret(*)(Arg, Args...)> : arg1<Ret(Arg,Args...)> {};
 template <typename F> using arg1_t = arg1<F>::type;
 /// \endcond
+};
 
+/// ingroup simd
 export module ein.simd;
 
 import ein.numerics;
@@ -18,6 +29,8 @@ import ein.types;
 import ein.simd_data;
 
 namespace ein {
+/// \defgroup simd simd
+/// \{
 
 /// \brief simd primitive definition
 /// \nodiscard
@@ -1107,9 +1120,12 @@ export template struct simd<float,8>;
 //export template struct simd<uint32_t,4>;
 export template struct simd<uint32_t,8>;
 
+/// \}
 } // namespace ein
 
 namespace std {
+/// \addtogroup simd
+/// \{
   /// needed to support for std::apply
   export template <typename T, size_t N>
   struct tuple_size<ein::simd<T, N>> : integral_constant<size_t, N> {};
@@ -1120,5 +1136,7 @@ namespace std {
   struct tuple_element<I, ein::simd<T, N>> {
     using type = T;
   };
+/// \}
 }
+
 

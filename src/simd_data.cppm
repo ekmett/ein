@@ -1,15 +1,26 @@
+/// \file
+/// \ingroup simd
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+/// \endlicense
+
 module;
 
 #include <immintrin.h>
 
 using namespace std;
 
+/// \ingroup simd
 export module ein.simd_data;
 
 import ein.numerics;
 import ein.types;
 
 namespace ein {
+/// \addtogroup simd
+/// \{
 
 /// \brief largest simd register width supported on this platform in bytes
 export constexpr size_t max_simd_size
@@ -220,4 +231,5 @@ __m512i cast_si(__m512i a) noexcept { return a; }
 
 #endif // __AVX512F__
 
+/// \}
 } // namespace ein

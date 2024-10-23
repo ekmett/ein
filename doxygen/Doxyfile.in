@@ -70,6 +70,8 @@ ALIASES += "const=@qualifier const"
 ALIASES += "reinitializes=@qualifier reinitializes"
 ALIASES += "hidden=@qualifier hidden"
 ALIASES += "flatten=@qualifier flatten"
+ALIASES += "license=@code{.spdx}"
+ALIASES += "endlicense=@endcode"
 HAVE_DOT = YES
 DOT_IMAGE_FORMAT = svg
 DOT_GRAPH_MAX_NODES = 100

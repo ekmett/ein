@@ -1,8 +1,18 @@
 #pragma once
 
-/// This provides a variadic assert macro that is left around even in our release configuration
-/// \hideinitializer
-/// \hideinlinesource
+/// \file
+/// \brief assert even during release
+/// \ingroup macros
+/// \license
+/// SPDX-FileType: Source
+/// SPDX-FileCopyrightText: 2021-2024 Edward Kmett <ekmett@gmail.com>
+/// SPDX-FileCopyrightText: 2012 William Swanson
+/// SPDX-License-Identifier: MIT
+/// \endlicense
+
+/// \def ein_assert
+/// \ingroup macros
+/// \hideinitializer \hideinlinesource
 #define ein_assert(cond,...) \
   do { \
     if (!cond) [[unlikely]] { \

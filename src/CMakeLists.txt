@@ -1,11 +1,7 @@
 # ein library
 # ===========
 
-add_library(ein STATIC
-  cpu.cpp
-  simd.cpp
-  wait.cpp
-)
+add_library(ein STATIC)
 
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 
@@ -14,7 +10,7 @@ target_link_libraries(ein PUBLIC
 )
 
 target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
-  cpu.cppm
+  cpuid.cppm
   memory.cppm
   types.cppm
   numerics.cppm
