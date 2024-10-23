@@ -11,7 +11,7 @@
 /// SPDX-License-Identifier: MIT
 /// \endlicense
 /// \brief precompiled header
-/// \hideincludedbygraph hideincludegraph
+/// \hideincludedbygraph \hideincludegraph
 
 #include <algorithm>
 #include <array>

@@ -94,7 +94,7 @@ export struct spin {
   /// \inline \artificial \cond
   EIN(inline,artificial) /// \endcond
   static void mwait(uint32_t = 0) noexcept { _mm_pause(); }
-  /// hideinlinesource
+  /// \hideinlinesource
   inline static constinit bool supported = true;
 };
 
