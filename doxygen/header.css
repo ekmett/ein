@@ -2,7 +2,18 @@ div.header div.summary {
   padding-right: 80px;
 }
 
- {
+/* Apply font to Doxygen code blocks */
+pre, code {
+  font-family: 'Hasklig', monospace;
+}
+
+/* Padding for headers in Doxygen */
+div.header div.summary {
+  padding-right: 80px;
+}
+
+/* Font-face declarations for Hasklig */
+@font-face {
   font-family: 'Hasklig';
   src: url('Hasklig-Regular.woff2') format('woff2'),
        url('Hasklig-Regular.woff') format('woff');
@@ -14,7 +25,7 @@ div.header div.summary {
 @font-face {
   font-family: 'Hasklig';
   src: url('Hasklig-It.woff2') format('woff2'),
-    url('Hasklig-It.woff') format('woff');
+       url('Hasklig-It.woff') format('woff');
   font-weight: normal;
   font-style: italic;
   font-display: swap;
@@ -23,7 +34,7 @@ div.header div.summary {
 @font-face {
   font-family: 'Hasklig';
   src: url('Hasklig-Bold.woff2') format('woff2'),
-    url('Hasklig-Bold.woff') format('woff');
+       url('Hasklig-Bold.woff') format('woff');
   font-weight: bold;
   font-style: normal;
   font-display: swap;

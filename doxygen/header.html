@@ -36,6 +36,33 @@ $mathjax
 $darkmode
 <link href="$relpath^$stylesheet" rel="stylesheet" type="text/css" />
 $extrastylesheet
+<style>
+div.header div.summary { padding-right: 80px; }
+:root {
+  --font-family-monospace: 'Hasklig', monospace;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('$relpath^Hasklig-Regular.woff2') format('woff2'), url('$relpath^Hasklig-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('$relpath^Hasklig-It.woff2') format('woff2'), url('$relpath^Hasklig-It.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('$relpath^Hasklig-Bold.woff2') format('woff2'), url('$relpath^Hasklig-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
 <!-- extra scripts -->
 <script type="text/javascript" src="$relpath^doxygen-awesome-darkmode-toggle.js"></script>
 <script type="text/javascript" src="$relpath^doxygen-awesome-fragment-copy-button.js"></script>
