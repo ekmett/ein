@@ -36,7 +36,7 @@ concept waiter = requires (void * p, uint32_t t) {
 export template <waiter W>
 /// \flatten \cond
 EIN(flatten) /// \endcond
-void wait_until(auto * p, auto f) {
+void wait_until(auto * p, auto f) noexcept {
   assume(W::supported);
   while (!f(p)) {
     W::monitor(p);
@@ -102,10 +102,10 @@ export struct spin {
 /// \details
 /// Usage:
 /// \code{.cpp}
-///   with_waiter([]<waiter w> { ...; wait_until<w>(p,f); ... });
+///   with_waiter([]<waiter w> noexcept { ...; wait_until<w>(p,f); ... });
 /// \endcode
 /// invokes \p k with a waiter as a template parameter.
-export auto with_waiter(auto k) {
+export auto with_waiter(auto k) noexcept {
   if (mwaitx::supported) return k.template operator()<mwaitx>();
   else if (umwait::supported) return k.template operator()<umwait>();
   else k.template operator()<spin>();

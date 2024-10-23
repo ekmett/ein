@@ -52,13 +52,15 @@ using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 export template <size_t N>
 struct imm_t {
   static constexpr size_t value = N;
+  /// \nodiscard \inline \const \artificial \cond
+  EIN(nodiscard,inline,const,artificial) /// \endcond
   constexpr operator size_t () noexcept { return N; }
 };
 
 export template <size_t N>
 constinit imm_t<N> imm {};
 
-/// \nodiscard \pure
+/// \nodiscard \inline \pure
 export template <typename T>   /// \cond
 [[nodiscard]] EIN(inline,pure) /// \endcond
 constexpr bool cmp_unord(T a, T b) noexcept {
@@ -68,7 +70,7 @@ constexpr bool cmp_unord(T a, T b) noexcept {
 export template bool cmp_unord(float,float) noexcept;
 export template bool cmp_unord(double,double) noexcept;
 
-/// \nodiscard \pure
+/// \nodiscard \inline \pure
 export template <typename T>   /// \cond
 [[nodiscard]] EIN(inline,pure) /// \endcond
 constexpr bool cmp_ord(T a, T b) noexcept {
@@ -132,7 +134,7 @@ export template float scalef(float, float) noexcept;
 export template double scalef(double, double) noexcept;
 
 /// \hideinlinesource
-export enum class CMPINT : size_t {
+export enum class [[nodiscard]] CMPINT : size_t {
   EQ    = 0x0uz ///< `==`
 , LT    = 0x1uz ///< `<`
 , LE    = 0x2uz ///< `<=`
@@ -197,7 +199,7 @@ export constexpr size_t max_fp_comparison_predicate
 #endif
 
 /// \hideinlinesource
-export enum CMP : size_t {
+export enum class [[nodiscard]] CMP : size_t {
   EQ_OQ     = 0x00uz  ///< Equal (ordered, nonsignaling)
 , LT_OS     = 0x01uz  ///< Less-than (ordered, signaling)
 , LE_OS     = 0x02uz  ///< Less-than-or-equal (ordered, signaling)

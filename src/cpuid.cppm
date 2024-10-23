@@ -40,7 +40,7 @@ export enum class [[nodiscard]] cpu_vendor {
 
 /// current cpu vendor
 /// \hideinitializer \hideinlinesource
-export const enum cpu_vendor cpu_vendor = [] static noexcept -> enum cpu_vendor {
+export const enum cpu_vendor cpu_vendor = [] static noexcept {
   auto result = cpuid(0, 0);
   array<char, 12> vendor;
   *reinterpret_cast<int32_t*>(&vendor[0]) = result.ebx;
