@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="std::tuple_element\l\< I, ein::simd\< T, N \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d8/dcc/namespacestd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4",tooltip="needed to support for std::apply"];
+  Node0 [id="Node000000",label="std::tuple_element\l\< I, ein::simd\< T, N \> \>",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$dc/d7b/group__simd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4",tooltip="needed to support for std::apply"];
 }

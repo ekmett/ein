@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['make_5fmmap_5fptr_0',['make_mmap_ptr',['../dd/d9f/group__memory__group.html#ga4fd564422d122e5ac77622371c61aa7e',1,'ein::memory']]],
-  ['monitor_1',['monitor',['../df/dc6/structein_1_1wait_1_1mwaitx.html#a6533af2d95847228385e3bfe82884ea1',1,'ein::wait::mwaitx::monitor()'],['../d0/d17/structein_1_1wait_1_1umwait.html#a2e1e3042be65543e88db614ecc38a072',1,'ein::wait::umwait::monitor()'],['../d7/d38/structein_1_1wait_1_1spin.html#aee69ef67cf6cf5b31d981e317f0f8058',1,'ein::wait::spin::monitor()']]],
-  ['mwait_2',['mwait',['../df/dc6/structein_1_1wait_1_1mwaitx.html#a39e4e265cefe57bd2e77fd63ee3518fe',1,'ein::wait::mwaitx::mwait()'],['../d0/d17/structein_1_1wait_1_1umwait.html#a1e60532d961b7fd88847783ba8707bcb',1,'ein::wait::umwait::mwait()'],['../d7/d38/structein_1_1wait_1_1spin.html#aad620510146264cce4a3fc93855937f4',1,'ein::wait::spin::mwait()']]]
+  ['make_5fmmap_5fptr_0',['make_mmap_ptr',['../d7/ded/group__memory.html#gac2663d41f31490e13670ae3e6ce98f83',1,'ein']]],
+  ['monitor_1',['monitor',['../df/d2f/group__wait.html#a3993acfadc722397212f4d983986bf21',1,'ein::mwaitx::monitor()'],['../df/d2f/group__wait.html#a376bf3e1e66eb57013fea08af54c7906',1,'ein::umwait::monitor()'],['../df/d2f/group__wait.html#a89f5d0f22dc2c948835409712a458895',1,'ein::spin::monitor()']]],
+  ['mwait_2',['mwait',['../df/d2f/group__wait.html#a9971c090707423cab25a15f40dc749dc',1,'ein::mwaitx::mwait()'],['../df/d2f/group__wait.html#aad483eaa0919765ec050f3e9eb42d083',1,'ein::umwait::mwait()'],['../df/d2f/group__wait.html#a83985e645823a822d89ca8104485a22f',1,'ein::spin::mwait()']]]
 ];

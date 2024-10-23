@@ -1,10 +1,13 @@
 var searchData=
 [
-  ['uint_5ft_0',['uint_t',['../de/df9/namespaceein_1_1numerics.html#aa347122ef9a30fb2ed727fbcfa8d7f33',1,'ein::numerics']]],
-  ['umwait_1',['umwait',['../d0/d17/structein_1_1wait_1_1umwait.html',1,'ein::wait']]],
-  ['unique_5fc_5fptr_2',['unique_c_ptr',['../dd/d9f/group__memory__group.html#gae63e3353c4db8580f878b167cba377ad',1,'ein::memory']]],
-  ['unique_5fstr_3',['unique_str',['../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc',1,'ein::memory']]],
-  ['unknown_4',['unknown',['../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a',1,'ein::cpu']]],
-  ['unord_5fq_5',['UNORD_Q',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865aa148d0b72a4831a6fe52b4ac3ee27ab5',1,'ein::numerics']]],
-  ['unord_5fs_6',['UNORD_S',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865a9a7fd190d0dbfa5508428f1f42154e9a',1,'ein::numerics']]]
+  ['timer_5ft_0',['timer_t',['../df/d2f/group__wait.html#a4de38c21779e017ba18e38a712c7fb77',1,'ein::mwaitx::timer_t'],['../df/d2f/group__wait.html#ae187508a4587b0d74db55f3ef08eb654',1,'ein::umwait::timer_t'],['../df/d2f/group__wait.html#a04ecd724c01f16fe2a82fc7987f3b13a',1,'ein::spin::timer_t']]],
+  ['true_1',['TRUE',['../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61',1,'ein']]],
+  ['true_5fuq_2',['TRUE_UQ',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371af7b78add9521557d7e422a2286791d42',1,'ein']]],
+  ['true_5fus_3',['TRUE_US',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a426a17852fdcac3ddcf322454415cb51',1,'ein']]],
+  ['tuple_5felement_3c_20i_2c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_4',['tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;',['../dc/d7b/group__simd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
+  ['tuple_5fsize_3c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_5',['tuple_size&lt; ein::simd&lt; T, N &gt; &gt;',['../dc/d7b/group__simd.html#d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
+  ['type_6',['type',['../dc/d7b/group__simd.html#a19c2978201d48d6253eb5be0da2d359d',1,'std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;::type'],['../d6/d59/group__types.html#gafe3cd68979730cc4ce2fd0800e31d494',1,'ein::type']]],
+  ['type_5fof_7',['type_of',['../d6/d59/group__types.html#gaeff5354fcf4acab5497e2b60433e75b6',1,'ein']]],
+  ['types_8',['types',['../d6/d59/group__types.html',1,'']]],
+  ['types_2ecppm_9',['types.cppm',['../d8/dcb/types_8cppm.html',1,'']]]
 ];

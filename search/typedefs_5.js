@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['timer_5ft_0',['timer_t',['../df/dc6/structein_1_1wait_1_1mwaitx.html#a4b0ca7bec98455cd960d33d218bd8c5d',1,'ein::wait::mwaitx::timer_t'],['../d0/d17/structein_1_1wait_1_1umwait.html#a0a0c3959e72b6e33a1e9fcfe737dc7e5',1,'ein::wait::umwait::timer_t'],['../d7/d38/structein_1_1wait_1_1spin.html#abf950f607f780a31f2cc09567adcc580',1,'ein::wait::spin::timer_t']]],
-  ['type_1',['type',['../d8/dcc/namespacestd.html#a19c2978201d48d6253eb5be0da2d359d',1,'std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;']]]
+  ['timer_5ft_0',['timer_t',['../df/d2f/group__wait.html#a4de38c21779e017ba18e38a712c7fb77',1,'ein::mwaitx::timer_t'],['../df/d2f/group__wait.html#ae187508a4587b0d74db55f3ef08eb654',1,'ein::umwait::timer_t'],['../df/d2f/group__wait.html#a04ecd724c01f16fe2a82fc7987f3b13a',1,'ein::spin::timer_t']]],
+  ['type_1',['type',['../dc/d7b/group__simd.html#a19c2978201d48d6253eb5be0da2d359d',1,'std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;']]]
 ];

@@ -144,8 +144,9 @@ $(function(){initNavTree('d5/dfd/group__macros.html','../../'); initResizable(tr
 
 <div class="header">
   <div class="summary">
+<a href="#files">Files</a> &#124;
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">macros<div class="ingroups"><a class="el" href="../../d6/d2f/group__internals__group.html">internals</a></div></div></div>
+  <div class="headertitle"><div class="title">macros<div class="ingroups"><a class="el" href="../../d6/df4/group__headers.html">headers</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -157,10 +158,259 @@ Collaboration diagram for macros:</div>
 <div class="center"><!-- SVG 0 --></div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
+Files</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d54/assert_8hpp.html">assert.hpp</a></td></tr>
+<tr class="memdesc:d2/d54/assert_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">assert even during release <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d6a/attributes_8hpp.html">attributes.hpp</a></td></tr>
+<tr class="memdesc:df/d6a/attributes_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">defines used to indicate useful attributes for the compiler <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d7c/map_8hpp.html">map.hpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
+<tr class="memitem:ga4af23f138af62df96e8bacc71767bf00" id="r_ga4af23f138af62df96e8bacc71767bf00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4af23f138af62df96e8bacc71767bf00">ein_assert</a>(cond, ...)</td></tr>
+<tr class="separator:ga4af23f138af62df96e8bacc71767bf00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9c72af7df8a237d25e24d5beb4d17aa1" id="r_ga9c72af7df8a237d25e24d5beb4d17aa1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9c72af7df8a237d25e24d5beb4d17aa1">EIN</a>(...)</td></tr>
+<tr class="memdesc:ga9c72af7df8a237d25e24d5beb4d17aa1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions.  <br /></td></tr>
+<tr class="separator:ga9c72af7df8a237d25e24d5beb4d17aa1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1cac2f7563012b7a84ab80e388d1b487" id="r_ga1cac2f7563012b7a84ab80e388d1b487"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1cac2f7563012b7a84ab80e388d1b487">ein_pragma</a>(x)</td></tr>
+<tr class="memdesc:ga1cac2f7563012b7a84ab80e388d1b487"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit a #pragma  <br /></td></tr>
+<tr class="separator:ga1cac2f7563012b7a84ab80e388d1b487"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae214831d8e46b8e85c40ae495dd1bb12" id="r_gae214831d8e46b8e85c40ae495dd1bb12"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae214831d8e46b8e85c40ae495dd1bb12">ein_export</a>&#160;&#160;&#160;export</td></tr>
+<tr class="memdesc:gae214831d8e46b8e85c40ae495dd1bb12"><td class="mdescLeft">&#160;</td><td class="mdescRight">export from the current module  <br /></td></tr>
+<tr class="separator:gae214831d8e46b8e85c40ae495dd1bb12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf16f2b5fd14f833898362f536ac33de3" id="r_gaf16f2b5fd14f833898362f536ac33de3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf16f2b5fd14f833898362f536ac33de3">ein_message</a>(n)</td></tr>
+<tr class="memdesc:gaf16f2b5fd14f833898362f536ac33de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit a warning if EIN_VERBOSE is set during compile  <br /></td></tr>
+<tr class="separator:gaf16f2b5fd14f833898362f536ac33de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad3739858c2f6f373697b155ce4acac3a" id="r_gad3739858c2f6f373697b155ce4acac3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3739858c2f6f373697b155ce4acac3a">ein_has_attribute</a>(__x)</td></tr>
+<tr class="memdesc:gad3739858c2f6f373697b155ce4acac3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__has_attribute(x)</code>  <br /></td></tr>
+<tr class="separator:gad3739858c2f6f373697b155ce4acac3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga634fb93c90b0fefd7994f40126573295" id="r_ga634fb93c90b0fefd7994f40126573295"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga634fb93c90b0fefd7994f40126573295">ein_has_declspec_attribute</a>(__x)</td></tr>
+<tr class="memdesc:ga634fb93c90b0fefd7994f40126573295"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__has_declspec_attribute(__x)</code>  <br /></td></tr>
+<tr class="separator:ga634fb93c90b0fefd7994f40126573295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae478383afcbcd2db052f49d41e72763d" id="r_gae478383afcbcd2db052f49d41e72763d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a>&#160;&#160;&#160;inline</td></tr>
+<tr class="memdesc:gae478383afcbcd2db052f49d41e72763d"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>inline __forceinline</code> or <code>inline __attribute__((always_inline))</code>  <br /></td></tr>
+<tr class="separator:gae478383afcbcd2db052f49d41e72763d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga339fea4b0350c64584a58eb87db76f6b" id="r_ga339fea4b0350c64584a58eb87db76f6b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga339fea4b0350c64584a58eb87db76f6b">ein_artificial</a></td></tr>
+<tr class="memdesc:ga339fea4b0350c64584a58eb87db76f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((artificial))</code>. The debugger should not single-step into this function. Treat it as atomic and associate it with the debug information for the use site instead.  <br /></td></tr>
+<tr class="separator:ga339fea4b0350c64584a58eb87db76f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5165837aaf9cdf9743915da8d274f7a6" id="r_ga5165837aaf9cdf9743915da8d274f7a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5165837aaf9cdf9743915da8d274f7a6">ein_visibility</a>(...)</td></tr>
+<tr class="memdesc:ga5165837aaf9cdf9743915da8d274f7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((visibility(x)))</code>, primarily used for ein_visibility("hidden") to disable inclusion in the library  <br /></td></tr>
+<tr class="separator:ga5165837aaf9cdf9743915da8d274f7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga24a2cafa9f882b8f2d0772140597277b" id="r_ga24a2cafa9f882b8f2d0772140597277b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24a2cafa9f882b8f2d0772140597277b">ein_exclude_from_explicit_instantiation</a></td></tr>
+<tr class="memdesc:ga24a2cafa9f882b8f2d0772140597277b"><td class="mdescLeft">&#160;</td><td class="mdescRight">exclude this member from explicit template instantiation. paired with ein_hidden  <br /></td></tr>
+<tr class="separator:ga24a2cafa9f882b8f2d0772140597277b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga12a3fcb0577a0041f5d44071a82f0e8f" id="r_ga12a3fcb0577a0041f5d44071a82f0e8f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga12a3fcb0577a0041f5d44071a82f0e8f">ein_hidden</a>&#160;&#160;&#160;<a class="el" href="#ga5165837aaf9cdf9743915da8d274f7a6">ein_visibility</a>(&quot;hidden&quot;) <a class="el" href="#ga24a2cafa9f882b8f2d0772140597277b">ein_exclude_from_explicit_instantiation</a></td></tr>
+<tr class="memdesc:ga12a3fcb0577a0041f5d44071a82f0e8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">this member is excluded from both explicit instantiation and external linkage  <br /></td></tr>
+<tr class="separator:ga12a3fcb0577a0041f5d44071a82f0e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3246ec3ea286643d128185234256d627" id="r_ga3246ec3ea286643d128185234256d627"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3246ec3ea286643d128185234256d627">ein_target</a>(x)</td></tr>
+<tr class="memdesc:ga3246ec3ea286643d128185234256d627"><td class="mdescLeft">&#160;</td><td class="mdescRight">this indicates a required feature set for the current multiversioned function.  <br /></td></tr>
+<tr class="separator:ga3246ec3ea286643d128185234256d627"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3f032504b976d681e8f72fed67395746" id="r_ga3f032504b976d681e8f72fed67395746"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3f032504b976d681e8f72fed67395746">ein_target_clones</a>(...)</td></tr>
+<tr class="memdesc:ga3f032504b976d681e8f72fed67395746"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions.  <br /></td></tr>
+<tr class="separator:ga3f032504b976d681e8f72fed67395746"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga912f9e7fd37d0754ab1ed64e8545bbd1" id="r_ga912f9e7fd37d0754ab1ed64e8545bbd1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga912f9e7fd37d0754ab1ed64e8545bbd1">ein_noinline</a></td></tr>
+<tr class="memdesc:ga912f9e7fd37d0754ab1ed64e8545bbd1"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((noinline))</code>  <br /></td></tr>
+<tr class="separator:ga912f9e7fd37d0754ab1ed64e8545bbd1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga10f15c098a2fe5e78e9074f9025aee73" id="r_ga10f15c098a2fe5e78e9074f9025aee73"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga10f15c098a2fe5e78e9074f9025aee73">ein_optnone</a></td></tr>
+<tr class="memdesc:ga10f15c098a2fe5e78e9074f9025aee73"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((optnone))</code> Used to indicate that regardless of optimization level, you shouldn't optimize this one function. Useful for local debugging when you can't disable optimization for the entire build. (e.g. ours!)  <br /></td></tr>
+<tr class="separator:ga10f15c098a2fe5e78e9074f9025aee73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6bf1d5ecc125d67c5ccce0b79764a603" id="r_ga6bf1d5ecc125d67c5ccce0b79764a603"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6bf1d5ecc125d67c5ccce0b79764a603">ein_hot</a></td></tr>
+<tr class="memdesc:ga6bf1d5ecc125d67c5ccce0b79764a603"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((hot))</code> calling convention frequent inner loop calls  <br /></td></tr>
+<tr class="separator:ga6bf1d5ecc125d67c5ccce0b79764a603"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga027c41ab022e6867200f6bb9886a8586" id="r_ga027c41ab022e6867200f6bb9886a8586"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga027c41ab022e6867200f6bb9886a8586">ein_cold</a></td></tr>
+<tr class="memdesc:ga027c41ab022e6867200f6bb9886a8586"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((cold))</code> calling convention very infrequent calls (initializers and the like)  <br /></td></tr>
+<tr class="separator:ga027c41ab022e6867200f6bb9886a8586"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9a1d6e122e659dcfea11d62158ee3625" id="r_ga9a1d6e122e659dcfea11d62158ee3625"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a1d6e122e659dcfea11d62158ee3625">ein_weak</a></td></tr>
+<tr class="memdesc:ga9a1d6e122e659dcfea11d62158ee3625"><td class="mdescLeft">&#160;</td><td class="mdescRight"><b>attribute</b>((weak)) used to generate a symbol that can be easily overriden by the linker. intended for 'fake pos' support  <br /></td></tr>
+<tr class="separator:ga9a1d6e122e659dcfea11d62158ee3625"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3ed525e656ee312db463b70cda1f37eb" id="r_ga3ed525e656ee312db463b70cda1f37eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga3ed525e656ee312db463b70cda1f37eb">ein_callable_when</a>(...)</td></tr>
+<tr class="memdesc:ga3ed525e656ee312db463b70cda1f37eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((callable_when(...))) to indicate what states a method may be called in. Valid states are unconsumed, consumed, or unknown. Each argument to this attribute must be a quoted string. E.g.:  <br /></td></tr>
+<tr class="separator:ga3ed525e656ee312db463b70cda1f37eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6816203e87326e14923cb87cb116059a" id="r_ga6816203e87326e14923cb87cb116059a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6816203e87326e14923cb87cb116059a">ein_consumable</a>(__x)</td></tr>
+<tr class="memdesc:ga6816203e87326e14923cb87cb116059a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Each class that uses any of the typestate annotations must first be marked using the consumable attribute. Failure to do so will result in a warning. This attribute accepts a single parameter that must be one of the following: unknown, consumed, or unconsumed.  <br /></td></tr>
+<tr class="separator:ga6816203e87326e14923cb87cb116059a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa8bf1d39883569a1a0dfc129bafbfcbe" id="r_gaa8bf1d39883569a1a0dfc129bafbfcbe"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa8bf1d39883569a1a0dfc129bafbfcbe">ein_param_typestate</a>(...)</td></tr>
+<tr class="memdesc:gaa8bf1d39883569a1a0dfc129bafbfcbe"><td class="mdescLeft">&#160;</td><td class="mdescRight">This attribute specifies expectations about function parameters. Calls to an function with annotated parameters will issue a warning if the corresponding argument isn’t in the expected state. The attribute is also used to set the initial state of the parameter when analyzing the function’s body.  <br /></td></tr>
+<tr class="separator:gaa8bf1d39883569a1a0dfc129bafbfcbe"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf79c37c326b25ea1a46b05b2a3c9474c" id="r_gaf79c37c326b25ea1a46b05b2a3c9474c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf79c37c326b25ea1a46b05b2a3c9474c">ein_return_typestate</a>(...)</td></tr>
+<tr class="memdesc:gaf79c37c326b25ea1a46b05b2a3c9474c"><td class="mdescLeft">&#160;</td><td class="mdescRight">The return_typestate attribute can be applied to functions or parameters. When applied to a function the attribute specifies the state of the returned value. The function’s body is checked to ensure that it always returns a value in the specified state. On the caller side, values returned by the annotated function are initialized to the given state. When applied to a function parameter it modifies the state of an argument after a call to the function returns. The function’s body is checked to ensure that the parameter is in the expected state before returning.  <br /></td></tr>
+<tr class="separator:gaf79c37c326b25ea1a46b05b2a3c9474c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga803c31f81bce5e57eb8a6fe88f558488" id="r_ga803c31f81bce5e57eb8a6fe88f558488"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga803c31f81bce5e57eb8a6fe88f558488">ein_moving</a>&#160;&#160;&#160;<a class="el" href="#gaf79c37c326b25ea1a46b05b2a3c9474c">ein_return_typestate</a>(consumed) <a class="el" href="#gaa8bf1d39883569a1a0dfc129bafbfcbe">ein_param_typestate</a>(unconsumed)</td></tr>
+<tr class="memdesc:ga803c31f81bce5e57eb8a6fe88f558488"><td class="mdescLeft">&#160;</td><td class="mdescRight">short-hand for indicating that this argument was moved and is now consumed, assuming it was unconsumed before.  <br /></td></tr>
+<tr class="separator:ga803c31f81bce5e57eb8a6fe88f558488"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeafae2f2d44edb1f1ee3b659fbb48f82" id="r_gaeafae2f2d44edb1f1ee3b659fbb48f82"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeafae2f2d44edb1f1ee3b659fbb48f82">ein_set_typestate</a>(...)</td></tr>
+<tr class="memdesc:gaeafae2f2d44edb1f1ee3b659fbb48f82"><td class="mdescLeft">&#160;</td><td class="mdescRight">Annotate methods that transition an object into a new state with <b>attribute</b>((set_typestate(new_state))). The new state must be unconsumed, consumed, or unknown.  <br /></td></tr>
+<tr class="separator:gaeafae2f2d44edb1f1ee3b659fbb48f82"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc6a227c8893803b9d294e0270c554fc" id="r_gabc6a227c8893803b9d294e0270c554fc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabc6a227c8893803b9d294e0270c554fc">ein_test_typestate</a></td></tr>
+<tr class="memdesc:gabc6a227c8893803b9d294e0270c554fc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((test_typestate(tested_state))) to indicate that a method returns true if the object is in the specified state.  <br /></td></tr>
+<tr class="separator:gabc6a227c8893803b9d294e0270c554fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab32569903e90f2ddf32220e9c7aae740" id="r_gab32569903e90f2ddf32220e9c7aae740"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab32569903e90f2ddf32220e9c7aae740">ein_test_typestate</a>(...)</td></tr>
+<tr class="memdesc:gab32569903e90f2ddf32220e9c7aae740"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((test_typestate(tested_state))) to indicate that a method returns true if the object is in the specified state.  <br /></td></tr>
+<tr class="separator:gab32569903e90f2ddf32220e9c7aae740"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaac01069ede01c32428a5e002f63736c2" id="r_gaac01069ede01c32428a5e002f63736c2"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaac01069ede01c32428a5e002f63736c2">ein_no_thread_safety_analysis</a></td></tr>
+<tr class="memdesc:gaac01069ede01c32428a5e002f63736c2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((no_thread_safety_analysis)) on a function declaration to specify that the thread safety analysis should not be run on that function. This attribute provides an escape hatch (e.g. for situations when it is difficult to annotate the locking policy).  <br /></td></tr>
+<tr class="separator:gaac01069ede01c32428a5e002f63736c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf15e613c18a7be270ef85fff88a59024" id="r_gaf15e613c18a7be270ef85fff88a59024"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf15e613c18a7be270ef85fff88a59024">ein_lockable</a></td></tr>
+<tr class="memdesc:gaf15e613c18a7be270ef85fff88a59024"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((lockable)) on a class definition to specify that it has a lockable type (e.g. a Mutex class). This annotation is primarily used to check consistency.  <br /></td></tr>
+<tr class="separator:gaf15e613c18a7be270ef85fff88a59024"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gab7cb0527c87347f71f39f6a1f52849c7" id="r_gab7cb0527c87347f71f39f6a1f52849c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gab7cb0527c87347f71f39f6a1f52849c7">ein_scoped_lockable</a></td></tr>
+<tr class="memdesc:gab7cb0527c87347f71f39f6a1f52849c7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((scoped_lockable)) on a class definition to specify that it has a “scoped” lockable type. Objects of this type will acquire the lock upon construction and release it upon going out of scope. This annotation is primarily used to check consistency.  <br /></td></tr>
+<tr class="separator:gab7cb0527c87347f71f39f6a1f52849c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad7190177010e77e36f790e6b59c02848" id="r_gad7190177010e77e36f790e6b59c02848"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad7190177010e77e36f790e6b59c02848">ein_guarded_var</a></td></tr>
+<tr class="memdesc:gad7190177010e77e36f790e6b59c02848"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((guarded_var)) on a variable declaration to specify that the variable must be accessed while holding some lock.  <br /></td></tr>
+<tr class="separator:gad7190177010e77e36f790e6b59c02848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaace8337cd5e623fc678eda34aae9ba4a" id="r_gaace8337cd5e623fc678eda34aae9ba4a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaace8337cd5e623fc678eda34aae9ba4a">ein_pt_guarded_var</a></td></tr>
+<tr class="memdesc:gaace8337cd5e623fc678eda34aae9ba4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((pt_guarded_var)) on a pointer declaration to specify that the pointer must be dereferenced while holding some lock.  <br /></td></tr>
+<tr class="separator:gaace8337cd5e623fc678eda34aae9ba4a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga39a485487cc620756412124718939b57" id="r_ga39a485487cc620756412124718939b57"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga39a485487cc620756412124718939b57">ein_guarded_by</a>(__x)</td></tr>
+<tr class="memdesc:ga39a485487cc620756412124718939b57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((guarded_by(l))) on a variable declaration to specify that the variable must be accessed while holding lock l.  <br /></td></tr>
+<tr class="separator:ga39a485487cc620756412124718939b57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga18275b567b8f98b9b1f68192ad7b2be5" id="r_ga18275b567b8f98b9b1f68192ad7b2be5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga18275b567b8f98b9b1f68192ad7b2be5">ein_pt_guarded_by</a>(__x)</td></tr>
+<tr class="memdesc:ga18275b567b8f98b9b1f68192ad7b2be5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((pt_guarded_by(l))) on a pointer declaration to specify that the pointer must be dereferenced while holding lock l.  <br /></td></tr>
+<tr class="separator:ga18275b567b8f98b9b1f68192ad7b2be5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga421858e8fce70bb2eb94570ba522a435" id="r_ga421858e8fce70bb2eb94570ba522a435"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga421858e8fce70bb2eb94570ba522a435">ein_acquired_before</a>(...)</td></tr>
+<tr class="memdesc:ga421858e8fce70bb2eb94570ba522a435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((acquired_before(...))) on a declaration of a lockable variable to specify that the lock must be acquired before all attribute arguments. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
+<tr class="separator:ga421858e8fce70bb2eb94570ba522a435"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabe3f95fa2b7f62691b5b4133b43f877b" id="r_gabe3f95fa2b7f62691b5b4133b43f877b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe3f95fa2b7f62691b5b4133b43f877b">ein_acquired_after</a>(...)</td></tr>
+<tr class="memdesc:gabe3f95fa2b7f62691b5b4133b43f877b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((acquired_after(...))) on a declaration of a lockable variable to specify that the lock must be acquired after all attribute arguments. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
+<tr class="separator:gabe3f95fa2b7f62691b5b4133b43f877b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gac8c4b65cde1558800e117b00d2d65466" id="r_gac8c4b65cde1558800e117b00d2d65466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8c4b65cde1558800e117b00d2d65466">ein_exclusive_lock_function</a>(...)</td></tr>
+<tr class="memdesc:gac8c4b65cde1558800e117b00d2d65466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((exclusive_lock_function(...))) on a function declaration to specify that the function acquires all listed locks exclusively. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object.  <br /></td></tr>
+<tr class="separator:gac8c4b65cde1558800e117b00d2d65466"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa9bf61cf820ce95d780384f4857978d8" id="r_gaa9bf61cf820ce95d780384f4857978d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa9bf61cf820ce95d780384f4857978d8">ein_shared_trylock_function</a>(...)</td></tr>
+<tr class="memdesc:gaa9bf61cf820ce95d780384f4857978d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((shared_lock_function(...))) on a function declaration to specify that the function will try (without blocking) to acquire all listed locks, although the locks may be shared (e.g. read locks). This attribute takes one or more arguments. The first argument is an integer or boolean value specifying the return value of a successful lock acquisition. The remaining arugments are either of lockable type or integers indexing into function parameters of lockable type. If only one argument is given, the acquired lock is implicitly this of the enclosing object.  <br /></td></tr>
+<tr class="separator:gaa9bf61cf820ce95d780384f4857978d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad37ff4fae131feae423d5feea1b8b1cd" id="r_gad37ff4fae131feae423d5feea1b8b1cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad37ff4fae131feae423d5feea1b8b1cd">ein_unlock_function</a>(...)</td></tr>
+<tr class="memdesc:gad37ff4fae131feae423d5feea1b8b1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((unlock_function(...))) on a function declaration to specify that the function release all listed locks. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object.  <br /></td></tr>
+<tr class="separator:gad37ff4fae131feae423d5feea1b8b1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b" id="r_ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b">ein_lock_returned</a>(__x)</td></tr>
+<tr class="memdesc:ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((lock_returned(l))) on a function declaration to specify that the function returns lock l (l must be of lockable type). This annotation is used to aid in resolving lock expressions.  <br /></td></tr>
+<tr class="separator:ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5bb9e819a1b0706fa0e644a2583e4519" id="r_ga5bb9e819a1b0706fa0e644a2583e4519"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5bb9e819a1b0706fa0e644a2583e4519">ein_locks_excluded</a>(...)</td></tr>
+<tr class="memdesc:ga5bb9e819a1b0706fa0e644a2583e4519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((locks_excluded(...))) on a function declaration to specify that the function must not be called with the listed locks. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
+<tr class="separator:ga5bb9e819a1b0706fa0e644a2583e4519"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaaf4bbafcdf5c35392234f136d137ecf9" id="r_gaaf4bbafcdf5c35392234f136d137ecf9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf4bbafcdf5c35392234f136d137ecf9">ein_exclusive_locks_required</a>(...)</td></tr>
+<tr class="memdesc:gaaf4bbafcdf5c35392234f136d137ecf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((exclusive_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed exclusive locks. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
+<tr class="separator:gaaf4bbafcdf5c35392234f136d137ecf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7468e42fee3b2135260f226e60cb5bfd" id="r_ga7468e42fee3b2135260f226e60cb5bfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7468e42fee3b2135260f226e60cb5bfd">ein_shared_locks_required</a>(...)</td></tr>
+<tr class="memdesc:ga7468e42fee3b2135260f226e60cb5bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((shared_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed shared locks. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
+<tr class="separator:ga7468e42fee3b2135260f226e60cb5bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1594d8c5a04ac97dfde52250be9378fb" id="r_ga1594d8c5a04ac97dfde52250be9378fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1594d8c5a04ac97dfde52250be9378fb">ein_preferred_name</a>(__x)</td></tr>
+<tr class="memdesc:ga1594d8c5a04ac97dfde52250be9378fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>[[clang::preferred_name(x)]]</code> annotations  <br /></td></tr>
+<tr class="separator:ga1594d8c5a04ac97dfde52250be9378fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5984a15e443d18d17fb5d9568058ee01" id="r_ga5984a15e443d18d17fb5d9568058ee01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5984a15e443d18d17fb5d9568058ee01">ein_acquire_handle</a>(__x)</td></tr>
+<tr class="memdesc:ga5984a15e443d18d17fb5d9568058ee01"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates this method returns an acquired resource, and names its type with a tag if applied to a method it refers to the function result if applied to an argument it indicates that argument is an out-parameter providing the value  <br /></td></tr>
+<tr class="separator:ga5984a15e443d18d17fb5d9568058ee01"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga361c9cfbfecfa7f44c9cc3a56044f3dd" id="r_ga361c9cfbfecfa7f44c9cc3a56044f3dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga361c9cfbfecfa7f44c9cc3a56044f3dd">ein_release_handle</a>(__x)</td></tr>
+<tr class="memdesc:ga361c9cfbfecfa7f44c9cc3a56044f3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates this argument is an acquired resource that is being released, with a tag  <br /></td></tr>
+<tr class="separator:ga361c9cfbfecfa7f44c9cc3a56044f3dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga11e25e384da6f9c2c1f696a30a58a670" id="r_ga11e25e384da6f9c2c1f696a30a58a670"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga11e25e384da6f9c2c1f696a30a58a670">ein_use_handle</a>(__x)</td></tr>
+<tr class="memdesc:ga11e25e384da6f9c2c1f696a30a58a670"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates this argument is a use of a resource, but does not release it.  <br /></td></tr>
+<tr class="separator:ga11e25e384da6f9c2c1f696a30a58a670"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6b3e26976553b387008cfe072f52d736" id="r_ga6b3e26976553b387008cfe072f52d736"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6b3e26976553b387008cfe072f52d736">ein_flatten</a></td></tr>
+<tr class="memdesc:ga6b3e26976553b387008cfe072f52d736"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>[[flatten]]</code>  <br /></td></tr>
+<tr class="separator:ga6b3e26976553b387008cfe072f52d736"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaa91386cc9617c1ed6a169b86d3b67920" id="r_gaa91386cc9617c1ed6a169b86d3b67920"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa91386cc9617c1ed6a169b86d3b67920">ein_malloc</a></td></tr>
+<tr class="memdesc:gaa91386cc9617c1ed6a169b86d3b67920"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((malloc))</code> attribute  <br /></td></tr>
+<tr class="separator:gaa91386cc9617c1ed6a169b86d3b67920"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gabc749cb20f7bd00a53af2054eb27a88c" id="r_gabc749cb20f7bd00a53af2054eb27a88c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabc749cb20f7bd00a53af2054eb27a88c">ein_uninitialized</a></td></tr>
+<tr class="memdesc:gabc749cb20f7bd00a53af2054eb27a88c"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>[[clang::uninitialized]]</code> attribute  <br /></td></tr>
+<tr class="separator:gabc749cb20f7bd00a53af2054eb27a88c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeda66ae7036fd89b3bcf6f73b5d402ae" id="r_gaeda66ae7036fd89b3bcf6f73b5d402ae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeda66ae7036fd89b3bcf6f73b5d402ae">ein_noalias</a></td></tr>
+<tr class="memdesc:gaeda66ae7036fd89b3bcf6f73b5d402ae"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__declspec(noalias)</code>  <br /></td></tr>
+<tr class="separator:gaeda66ae7036fd89b3bcf6f73b5d402ae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf397348fbe805db999b295b6bdb1f42a" id="r_gaf397348fbe805db999b295b6bdb1f42a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf397348fbe805db999b295b6bdb1f42a">ein_constinit</a></td></tr>
+<tr class="memdesc:gaf397348fbe805db999b295b6bdb1f42a"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>constinit</code>  <br /></td></tr>
+<tr class="separator:gaf397348fbe805db999b295b6bdb1f42a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga0ecafe8bfaa651c77ef7c817c5ea6ae7" id="r_ga0ecafe8bfaa651c77ef7c817c5ea6ae7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">ein_const</a></td></tr>
+<tr class="memdesc:ga0ecafe8bfaa651c77ef7c817c5ea6ae7"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((const))</code>. NOT <code>const</code>  <br /></td></tr>
+<tr class="separator:ga0ecafe8bfaa651c77ef7c817c5ea6ae7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9e124f20ef90b8f2f68c0e1a1f7d00cf" id="r_ga9e124f20ef90b8f2f68c0e1a1f7d00cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">ein_pure</a></td></tr>
+<tr class="memdesc:ga9e124f20ef90b8f2f68c0e1a1f7d00cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((pure))</code>  <br /></td></tr>
+<tr class="separator:ga9e124f20ef90b8f2f68c0e1a1f7d00cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae992904b95446a57f0e0c5925a9ce7c4" id="r_gae992904b95446a57f0e0c5925a9ce7c4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a></td></tr>
+<tr class="memdesc:gae992904b95446a57f0e0c5925a9ce7c4"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>[[clang::reinitializes]]</code>  <br /></td></tr>
+<tr class="separator:gae992904b95446a57f0e0c5925a9ce7c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6f4b8057008c82a521677147524538c1" id="r_ga6f4b8057008c82a521677147524538c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6f4b8057008c82a521677147524538c1">ein_assume_aligned</a>(x)</td></tr>
+<tr class="memdesc:ga6f4b8057008c82a521677147524538c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((assume_aligned(x)))</code>  <br /></td></tr>
+<tr class="separator:ga6f4b8057008c82a521677147524538c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga6750630680f23aa4dfdbc11f41745a3a" id="r_ga6750630680f23aa4dfdbc11f41745a3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga6750630680f23aa4dfdbc11f41745a3a">ein_align_value</a>(x)</td></tr>
+<tr class="memdesc:ga6750630680f23aa4dfdbc11f41745a3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((align_value(x)))</code>  <br /></td></tr>
+<tr class="separator:ga6750630680f23aa4dfdbc11f41745a3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f2bbeb43a4aefac5efbf1aebe0bfac1" id="r_ga7f2bbeb43a4aefac5efbf1aebe0bfac1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7f2bbeb43a4aefac5efbf1aebe0bfac1">ein_null_terminated_string_arg</a>(x)</td></tr>
+<tr class="memdesc:ga7f2bbeb43a4aefac5efbf1aebe0bfac1"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((align_value(x)))</code>  <br /></td></tr>
+<tr class="separator:ga7f2bbeb43a4aefac5efbf1aebe0bfac1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4f81dab45fbe8400f7a06c4e7574cba6" id="r_ga4f81dab45fbe8400f7a06c4e7574cba6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4f81dab45fbe8400f7a06c4e7574cba6">ein_alloc_align</a>(x)</td></tr>
+<tr class="memdesc:ga4f81dab45fbe8400f7a06c4e7574cba6"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((alloc_align(x)))</code>  <br /></td></tr>
+<tr class="separator:ga4f81dab45fbe8400f7a06c4e7574cba6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga93a512415659da05f7bf41e5933a3bf9" id="r_ga93a512415659da05f7bf41e5933a3bf9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga93a512415659da05f7bf41e5933a3bf9">ein_alloc_size</a>(x)</td></tr>
+<tr class="memdesc:ga93a512415659da05f7bf41e5933a3bf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((alloc_size(x)))</code>  <br /></td></tr>
+<tr class="separator:ga93a512415659da05f7bf41e5933a3bf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacf7c010fc15ca58dd6f66ec3b8b186ac" id="r_gacf7c010fc15ca58dd6f66ec3b8b186ac"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacf7c010fc15ca58dd6f66ec3b8b186ac">ein_noescape</a></td></tr>
+<tr class="memdesc:gacf7c010fc15ca58dd6f66ec3b8b186ac"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((noescape))</code>  <br /></td></tr>
+<tr class="separator:gacf7c010fc15ca58dd6f66ec3b8b186ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga7f0591009c487cfe5e40c698c0dab4bd" id="r_ga7f0591009c487cfe5e40c698c0dab4bd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7f0591009c487cfe5e40c698c0dab4bd">ein_callback</a>(...)</td></tr>
+<tr class="memdesc:ga7f0591009c487cfe5e40c698c0dab4bd"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((callback(...)))</code>  <br /></td></tr>
+<tr class="separator:ga7f0591009c487cfe5e40c698c0dab4bd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4ab4dd1ef8e9e510c050cc09c5eb4302" id="r_ga4ab4dd1ef8e9e510c050cc09c5eb4302"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ab4dd1ef8e9e510c050cc09c5eb4302">ein_lifetimebound</a></td></tr>
+<tr class="memdesc:ga4ab4dd1ef8e9e510c050cc09c5eb4302"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((lifetimebound))</code>  <br /></td></tr>
+<tr class="separator:ga4ab4dd1ef8e9e510c050cc09c5eb4302"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga209744b1d888bcad7fd9ea9bb1a9f24c" id="r_ga209744b1d888bcad7fd9ea9bb1a9f24c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga209744b1d888bcad7fd9ea9bb1a9f24c">ein_this_lifetimebound</a></td></tr>
+<tr class="memdesc:ga209744b1d888bcad7fd9ea9bb1a9f24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions.  <br /></td></tr>
+<tr class="separator:ga209744b1d888bcad7fd9ea9bb1a9f24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga74fe033a58e1d901c981bbe183b94950" id="r_ga74fe033a58e1d901c981bbe183b94950"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74fe033a58e1d901c981bbe183b94950">ein_returns_nonnull</a></td></tr>
+<tr class="memdesc:ga74fe033a58e1d901c981bbe183b94950"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((returns_nonnnull))</code>  <br /></td></tr>
+<tr class="separator:ga74fe033a58e1d901c981bbe183b94950"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf81d090cd9ae791301fe54b4f00df3e9" id="r_gaf81d090cd9ae791301fe54b4f00df3e9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf81d090cd9ae791301fe54b4f00df3e9">ein_nonnull</a>(...)</td></tr>
+<tr class="memdesc:gaf81d090cd9ae791301fe54b4f00df3e9"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((nonnnull(...)))</code>  <br /></td></tr>
+<tr class="separator:gaf81d090cd9ae791301fe54b4f00df3e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae6d077c859dd50d89cd1cef82d9382c1" id="r_gae6d077c859dd50d89cd1cef82d9382c1"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae6d077c859dd50d89cd1cef82d9382c1">ein_noreturn</a></td></tr>
+<tr class="memdesc:gae6d077c859dd50d89cd1cef82d9382c1"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((noreturn)))</code>  <br /></td></tr>
+<tr class="separator:gae6d077c859dd50d89cd1cef82d9382c1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga37449812b4a259b4ebfbd1871fd38af9" id="r_ga37449812b4a259b4ebfbd1871fd38af9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga37449812b4a259b4ebfbd1871fd38af9">ein_Nonnull</a></td></tr>
+<tr class="memdesc:ga37449812b4a259b4ebfbd1871fd38af9"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>_Nonnull</code>  <br /></td></tr>
+<tr class="separator:ga37449812b4a259b4ebfbd1871fd38af9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaf5a93200e11a60bb36396f6cd02775e5" id="r_gaf5a93200e11a60bb36396f6cd02775e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf5a93200e11a60bb36396f6cd02775e5">ein_Nullable</a></td></tr>
+<tr class="memdesc:gaf5a93200e11a60bb36396f6cd02775e5"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>_Nullable</code>  <br /></td></tr>
+<tr class="separator:gaf5a93200e11a60bb36396f6cd02775e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga77135d06c7a6c988e5d4efb8b3686a7e" id="r_ga77135d06c7a6c988e5d4efb8b3686a7e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga77135d06c7a6c988e5d4efb8b3686a7e">ein_Null_unspecified</a></td></tr>
+<tr class="memdesc:ga77135d06c7a6c988e5d4efb8b3686a7e"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>_Null_unspecified</code>  <br /></td></tr>
+<tr class="separator:ga77135d06c7a6c988e5d4efb8b3686a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga285634c6b28883bfdeed6cbadbcf6fee" id="r_ga285634c6b28883bfdeed6cbadbcf6fee"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga285634c6b28883bfdeed6cbadbcf6fee">ein_host</a></td></tr>
+<tr class="memdesc:ga285634c6b28883bfdeed6cbadbcf6fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__host__</code> for cuda  <br /></td></tr>
+<tr class="separator:ga285634c6b28883bfdeed6cbadbcf6fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga568ecfa2358b6bc209393b8a6dc9fbca" id="r_ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga568ecfa2358b6bc209393b8a6dc9fbca">ein_device</a></td></tr>
+<tr class="memdesc:ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates the function should be available on the host  <br /></td></tr>
+<tr class="separator:ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8147ec32b85ddfb4657c8bd5ad9c0fab" id="r_ga8147ec32b85ddfb4657c8bd5ad9c0fab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8147ec32b85ddfb4657c8bd5ad9c0fab">ein_global</a></td></tr>
+<tr class="memdesc:ga8147ec32b85ddfb4657c8bd5ad9c0fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__global__</code> for cuda  <br /></td></tr>
+<tr class="separator:ga8147ec32b85ddfb4657c8bd5ad9c0fab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga42f2a4944074f350ddba96f086c308e8" id="r_ga42f2a4944074f350ddba96f086c308e8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga42f2a4944074f350ddba96f086c308e8">ein_hd</a>&#160;&#160;&#160;<a class="el" href="#ga285634c6b28883bfdeed6cbadbcf6fee">ein_host</a> <a class="el" href="#ga568ecfa2358b6bc209393b8a6dc9fbca">ein_device</a></td></tr>
+<tr class="memdesc:ga42f2a4944074f350ddba96f086c308e8"><td class="mdescLeft">&#160;</td><td class="mdescRight">applies both <a class="el" href="#ga285634c6b28883bfdeed6cbadbcf6fee">ein_host</a> and <a class="el" href="#ga568ecfa2358b6bc209393b8a6dc9fbca">ein_device</a>  <br /></td></tr>
+<tr class="separator:ga42f2a4944074f350ddba96f086c308e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gae8944a0472bcc41d24af5a143201f3ff" id="r_gae8944a0472bcc41d24af5a143201f3ff"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae8944a0472bcc41d24af5a143201f3ff">ein_no_unique_address</a></td></tr>
+<tr class="memdesc:gae8944a0472bcc41d24af5a143201f3ff"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable c++20 <code>[[no_unique_address]]</code>  <br /></td></tr>
+<tr class="separator:gae8944a0472bcc41d24af5a143201f3ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga900bb11066d3b975a4680919da073bbc" id="r_ga900bb11066d3b975a4680919da073bbc"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga900bb11066d3b975a4680919da073bbc">ein_maybe_unused</a>&#160;&#160;&#160;[[maybe_unused]]</td></tr>
+<tr class="memdesc:ga900bb11066d3b975a4680919da073bbc"><td class="mdescLeft">&#160;</td><td class="mdescRight">argument, member or definition <code>[[maybe_unused]]</code>  <br /></td></tr>
+<tr class="separator:ga900bb11066d3b975a4680919da073bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga5ceac2cdbd3ec6ad801b9052bad26023" id="r_ga5ceac2cdbd3ec6ad801b9052bad26023"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5ceac2cdbd3ec6ad801b9052bad26023">ein_deprecated</a>&#160;&#160;&#160;[[deprecated]]</td></tr>
+<tr class="memdesc:ga5ceac2cdbd3ec6ad801b9052bad26023"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>[[deprecated]]</code>  <br /></td></tr>
+<tr class="separator:ga5ceac2cdbd3ec6ad801b9052bad26023"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gad58fdb2d0a42845b0f16b84446dff7d4" id="r_gad58fdb2d0a42845b0f16b84446dff7d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad58fdb2d0a42845b0f16b84446dff7d4">ein_nodiscard</a>&#160;&#160;&#160;[[nodiscard]]</td></tr>
+<tr class="memdesc:gad58fdb2d0a42845b0f16b84446dff7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++17 <code>[[nodiscard]]</code>. The user should explicitly throw away the result rather than let it be silently discarded.  <br /></td></tr>
+<tr class="separator:gad58fdb2d0a42845b0f16b84446dff7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga8697fca92cf196aa90c8cfcf36cb4bae" id="r_ga8697fca92cf196aa90c8cfcf36cb4bae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8697fca92cf196aa90c8cfcf36cb4bae">ein_unroll</a>(N)</td></tr>
+<tr class="memdesc:ga8697fca92cf196aa90c8cfcf36cb4bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">hint to unroll the following loop N times. (clang-specific)  <br /></td></tr>
+<tr class="separator:ga8697fca92cf196aa90c8cfcf36cb4bae"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga9d16124a2225305208af3eeb3124128b" id="r_ga9d16124a2225305208af3eeb3124128b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9d16124a2225305208af3eeb3124128b">ein_unroll_full</a></td></tr>
+<tr class="memdesc:ga9d16124a2225305208af3eeb3124128b"><td class="mdescLeft">&#160;</td><td class="mdescRight">hint to unroll the following loop fully. (clang-specific)  <br /></td></tr>
+<tr class="separator:ga9d16124a2225305208af3eeb3124128b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gacd2a33cadfbfd5d42f1d3d534bd80060" id="r_gacd2a33cadfbfd5d42f1d3d534bd80060"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gacd2a33cadfbfd5d42f1d3d534bd80060">EIN_MAP</a>(f, ...)</td></tr>
-<tr class="memdesc:gacd2a33cadfbfd5d42f1d3d534bd80060"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies macro <code>f</code> to each parameter.  <br /></td></tr>
 <tr class="separator:gacd2a33cadfbfd5d42f1d3d534bd80060"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa69ff0ade85a5d8646964328eeb20d1b" id="r_gaa69ff0ade85a5d8646964328eeb20d1b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa69ff0ade85a5d8646964328eeb20d1b">EIN_MAP_LIST</a>(f, ...)</td></tr>
 <tr class="memdesc:gaa69ff0ade85a5d8646964328eeb20d1b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies macro <code>f</code> to each parameter. Inserts commas between the results.  <br /></td></tr>
@@ -169,6 +419,772 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>variadic macro utilities </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="ga9c72af7df8a237d25e24d5beb4d17aa1" name="ga9c72af7df8a237d25e24d5beb4d17aa1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9c72af7df8a237d25e24d5beb4d17aa1">&#9670;&#160;</a></span>EIN</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EIN</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions. </p>
+<p>This lets you write <a class="el" href="#ga9c72af7df8a237d25e24d5beb4d17aa1" title="Applies the prefix ein_ syntactically to all arguments. Used to apply many attributes to definitions.">EIN(hd,inline)</a> vs. <a class="el" href="#ga42f2a4944074f350ddba96f086c308e8">ein_hd</a> <a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00029">29</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga5984a15e443d18d17fb5d9568058ee01" name="ga5984a15e443d18d17fb5d9568058ee01"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5984a15e443d18d17fb5d9568058ee01">&#9670;&#160;</a></span>ein_acquire_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_acquire_handle</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>indicates this method returns an acquired resource, and names its type with a tag if applied to a method it refers to the function result if applied to an argument it indicates that argument is an out-parameter providing the value </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00466">466</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gabe3f95fa2b7f62691b5b4133b43f877b" name="gabe3f95fa2b7f62691b5b4133b43f877b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabe3f95fa2b7f62691b5b4133b43f877b">&#9670;&#160;</a></span>ein_acquired_after</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_acquired_after</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((acquired_after(...))) on a declaration of a lockable variable to specify that the lock must be acquired after all attribute arguments. Arguments must be lockable type, and there must be at least one argument. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00350">350</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga421858e8fce70bb2eb94570ba522a435" name="ga421858e8fce70bb2eb94570ba522a435"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga421858e8fce70bb2eb94570ba522a435">&#9670;&#160;</a></span>ein_acquired_before</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_acquired_before</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((acquired_before(...))) on a declaration of a lockable variable to specify that the lock must be acquired before all attribute arguments. Arguments must be lockable type, and there must be at least one argument. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00338">338</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6750630680f23aa4dfdbc11f41745a3a" name="ga6750630680f23aa4dfdbc11f41745a3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6750630680f23aa4dfdbc11f41745a3a">&#9670;&#160;</a></span>ein_align_value</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_align_value</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((align_value(x)))</code> </p>
+<p>the annotated pointer specified has alignment at least x </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00616">616</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga4f81dab45fbe8400f7a06c4e7574cba6" name="ga4f81dab45fbe8400f7a06c4e7574cba6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4f81dab45fbe8400f7a06c4e7574cba6">&#9670;&#160;</a></span>ein_alloc_align</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_alloc_align</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((alloc_align(x)))</code> </p>
+<p>Indicates the 1-based argument number of a function that indicates the alignment of the returned result </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00639">639</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga93a512415659da05f7bf41e5933a3bf9" name="ga93a512415659da05f7bf41e5933a3bf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga93a512415659da05f7bf41e5933a3bf9">&#9670;&#160;</a></span>ein_alloc_size</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_alloc_size</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((alloc_size(x)))</code> </p>
+<p>arg # (1-based) of the attribute that tells you the size of the result in bytes </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00650">650</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga339fea4b0350c64584a58eb87db76f6b" name="ga339fea4b0350c64584a58eb87db76f6b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga339fea4b0350c64584a58eb87db76f6b">&#9670;&#160;</a></span>ein_artificial</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_artificial</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((artificial))</code>. The debugger should not single-step into this function. Treat it as atomic and associate it with the debug information for the use site instead. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00092">92</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga4af23f138af62df96e8bacc71767bf00" name="ga4af23f138af62df96e8bacc71767bf00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4af23f138af62df96e8bacc71767bf00">&#9670;&#160;</a></span>ein_assert</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_assert</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cond</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d54/assert_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d2/d54/assert_8hpp_source.html">assert.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6f4b8057008c82a521677147524538c1" name="ga6f4b8057008c82a521677147524538c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6f4b8057008c82a521677147524538c1">&#9670;&#160;</a></span>ein_assume_aligned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_assume_aligned</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((assume_aligned(x)))</code> </p>
+<p>function returns a pointer with alignment that is at least x </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00604">604</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga3ed525e656ee312db463b70cda1f37eb" name="ga3ed525e656ee312db463b70cda1f37eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3ed525e656ee312db463b70cda1f37eb">&#9670;&#160;</a></span>ein_callable_when</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_callable_when</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((callable_when(...))) to indicate what states a method may be called in. Valid states are unconsumed, consumed, or unknown. Each argument to this attribute must be a quoted string. E.g.: </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00202">202</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga7f0591009c487cfe5e40c698c0dab4bd" name="ga7f0591009c487cfe5e40c698c0dab4bd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f0591009c487cfe5e40c698c0dab4bd">&#9670;&#160;</a></span>ein_callback</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_callback</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((callback(...)))</code> </p>
+<p>indicates the specified argument will be called back with the other named arguments. complicated, see clang docs.</p>
+<p>allows better interprocedural analysis </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00677">677</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga027c41ab022e6867200f6bb9886a8586" name="ga027c41ab022e6867200f6bb9886a8586"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga027c41ab022e6867200f6bb9886a8586">&#9670;&#160;</a></span>ein_cold</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_cold</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((cold))</code> calling convention very infrequent calls (initializers and the like) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00169">169</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga0ecafe8bfaa651c77ef7c817c5ea6ae7" name="ga0ecafe8bfaa651c77ef7c817c5ea6ae7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">&#9670;&#160;</a></span>ein_const</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_const</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((const))</code>. NOT <code>const</code> </p>
+<p>indicates the result is entirely determined by the arguments and does not access main memory in any way, including accessing members of this</p>
+<p>allows the compiler to easily elide/duplicate calls </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00566">566</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf397348fbe805db999b295b6bdb1f42a" name="gaf397348fbe805db999b295b6bdb1f42a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf397348fbe805db999b295b6bdb1f42a">&#9670;&#160;</a></span>ein_constinit</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_constinit</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>constinit</code> </p>
+<p><code>constinit</code> requires C++20, but <b>attribute</b>((require_constant_initialization)) is available earlier </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00544">544</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6816203e87326e14923cb87cb116059a" name="ga6816203e87326e14923cb87cb116059a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6816203e87326e14923cb87cb116059a">&#9670;&#160;</a></span>ein_consumable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_consumable</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Each class that uses any of the typestate annotations must first be marked using the consumable attribute. Failure to do so will result in a warning. This attribute accepts a single parameter that must be one of the following: unknown, consumed, or unconsumed. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00211">211</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga5ceac2cdbd3ec6ad801b9052bad26023" name="ga5ceac2cdbd3ec6ad801b9052bad26023"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5ceac2cdbd3ec6ad801b9052bad26023">&#9670;&#160;</a></span>ein_deprecated</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_deprecated&#160;&#160;&#160;[[deprecated]]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><code>[[deprecated]]</code> </p>
+<dl class="section since"><dt>Since</dt><dd>C++14 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00848">848</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga568ecfa2358b6bc209393b8a6dc9fbca" name="ga568ecfa2358b6bc209393b8a6dc9fbca"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga568ecfa2358b6bc209393b8a6dc9fbca">&#9670;&#160;</a></span>ein_device</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_device</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>indicates the function should be available on the host </p>
+<p>portable <code>__device__</code> for cuda</p>
+<p>indicates the function should be available on the device </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00799">799</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga24a2cafa9f882b8f2d0772140597277b" name="ga24a2cafa9f882b8f2d0772140597277b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga24a2cafa9f882b8f2d0772140597277b">&#9670;&#160;</a></span>ein_exclude_from_explicit_instantiation</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_exclude_from_explicit_instantiation</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>exclude this member from explicit template instantiation. paired with ein_hidden </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00111">111</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gac8c4b65cde1558800e117b00d2d65466" name="gac8c4b65cde1558800e117b00d2d65466"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gac8c4b65cde1558800e117b00d2d65466">&#9670;&#160;</a></span>ein_exclusive_lock_function</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_exclusive_lock_function</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((exclusive_lock_function(...))) on a function declaration to specify that the function acquires all listed locks exclusively. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00364">364</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaaf4bbafcdf5c35392234f136d137ecf9" name="gaaf4bbafcdf5c35392234f136d137ecf9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaaf4bbafcdf5c35392234f136d137ecf9">&#9670;&#160;</a></span>ein_exclusive_locks_required</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_exclusive_locks_required</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((exclusive_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed exclusive locks. Arguments must be lockable type, and there must be at least one argument. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00432">432</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae214831d8e46b8e85c40ae495dd1bb12" name="gae214831d8e46b8e85c40ae495dd1bb12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae214831d8e46b8e85c40ae495dd1bb12">&#9670;&#160;</a></span>ein_export</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_export&#160;&#160;&#160;export</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>export from the current module </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00043">43</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6b3e26976553b387008cfe072f52d736" name="ga6b3e26976553b387008cfe072f52d736"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6b3e26976553b387008cfe072f52d736">&#9670;&#160;</a></span>ein_flatten</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_flatten</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>[[flatten]]</code> </p>
+<p>the compiler should inline recursively aggressively under this definition. use with care, good for expression templates </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00494">494</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga8147ec32b85ddfb4657c8bd5ad9c0fab" name="ga8147ec32b85ddfb4657c8bd5ad9c0fab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8147ec32b85ddfb4657c8bd5ad9c0fab">&#9670;&#160;</a></span>ein_global</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_global</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__global__</code> for cuda </p>
+<p>indicates the function is a global entry point for a compute kernel </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00800">800</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga39a485487cc620756412124718939b57" name="ga39a485487cc620756412124718939b57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga39a485487cc620756412124718939b57">&#9670;&#160;</a></span>ein_guarded_by</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_guarded_by</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((guarded_by(l))) on a variable declaration to specify that the variable must be accessed while holding lock l. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00317">317</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gad7190177010e77e36f790e6b59c02848" name="gad7190177010e77e36f790e6b59c02848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad7190177010e77e36f790e6b59c02848">&#9670;&#160;</a></span>ein_guarded_var</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_guarded_var</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((guarded_var)) on a variable declaration to specify that the variable must be accessed while holding some lock. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00295">295</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gad3739858c2f6f373697b155ce4acac3a" name="gad3739858c2f6f373697b155ce4acac3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad3739858c2f6f373697b155ce4acac3a">&#9670;&#160;</a></span>ein_has_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_has_attribute</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">0</div>
+</div><!-- fragment -->
+<p>portable <code>__has_attribute(x)</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00058">58</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga634fb93c90b0fefd7994f40126573295" name="ga634fb93c90b0fefd7994f40126573295"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga634fb93c90b0fefd7994f40126573295">&#9670;&#160;</a></span>ein_has_declspec_attribute</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_has_declspec_attribute</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">0</div>
+</div><!-- fragment -->
+<p>portable <code>__has_declspec_attribute(__x)</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00068">68</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga42f2a4944074f350ddba96f086c308e8" name="ga42f2a4944074f350ddba96f086c308e8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga42f2a4944074f350ddba96f086c308e8">&#9670;&#160;</a></span>ein_hd</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_hd&#160;&#160;&#160;<a class="el" href="#ga285634c6b28883bfdeed6cbadbcf6fee">ein_host</a> <a class="el" href="#ga568ecfa2358b6bc209393b8a6dc9fbca">ein_device</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>applies both <a class="el" href="#ga285634c6b28883bfdeed6cbadbcf6fee">ein_host</a> and <a class="el" href="#ga568ecfa2358b6bc209393b8a6dc9fbca">ein_device</a> </p>
+<p>most functions in the library should be defined this way</p>
+<p>may eventually add similar annotations for sycl and the like </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00810">810</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga12a3fcb0577a0041f5d44071a82f0e8f" name="ga12a3fcb0577a0041f5d44071a82f0e8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga12a3fcb0577a0041f5d44071a82f0e8f">&#9670;&#160;</a></span>ein_hidden</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_hidden&#160;&#160;&#160;<a class="el" href="#ga5165837aaf9cdf9743915da8d274f7a6">ein_visibility</a>(&quot;hidden&quot;) <a class="el" href="#ga24a2cafa9f882b8f2d0772140597277b">ein_exclude_from_explicit_instantiation</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>this member is excluded from both explicit instantiation and external linkage </p>
+<p>expands to <code>__attribute__((visibility("hidden"))</code> <code>__attribute__((exclude_from_explicit_instantiation))</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00119">119</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga285634c6b28883bfdeed6cbadbcf6fee" name="ga285634c6b28883bfdeed6cbadbcf6fee"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga285634c6b28883bfdeed6cbadbcf6fee">&#9670;&#160;</a></span>ein_host</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_host</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__host__</code> for cuda </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00798">798</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga6bf1d5ecc125d67c5ccce0b79764a603" name="ga6bf1d5ecc125d67c5ccce0b79764a603"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga6bf1d5ecc125d67c5ccce0b79764a603">&#9670;&#160;</a></span>ein_hot</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_hot</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((hot))</code> calling convention frequent inner loop calls </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00159">159</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae478383afcbcd2db052f49d41e72763d" name="gae478383afcbcd2db052f49d41e72763d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae478383afcbcd2db052f49d41e72763d">&#9670;&#160;</a></span>ein_inline</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_inline&#160;&#160;&#160;inline</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>inline __forceinline</code> or <code>inline __attribute__((always_inline))</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00081">81</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga4ab4dd1ef8e9e510c050cc09c5eb4302" name="ga4ab4dd1ef8e9e510c050cc09c5eb4302"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4ab4dd1ef8e9e510c050cc09c5eb4302">&#9670;&#160;</a></span>ein_lifetimebound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_lifetimebound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((lifetimebound))</code> </p>
+<p>the argument must be kept alive as long as the result of the function is alive. Should be used for functions that return references or views into the target object.</p>
+<p>Sadly, clang (as of Jan 2021) does not yet allow it to be applied to the implicit this argument of an member function </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00695">695</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b" name="ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b">&#9670;&#160;</a></span>ein_lock_returned</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_lock_returned</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((lock_returned(l))) on a function declaration to specify that the function returns lock l (l must be of lockable type). This annotation is used to aid in resolving lock expressions. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00408">408</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf15e613c18a7be270ef85fff88a59024" name="gaf15e613c18a7be270ef85fff88a59024"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf15e613c18a7be270ef85fff88a59024">&#9670;&#160;</a></span>ein_lockable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_lockable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((lockable)) on a class definition to specify that it has a lockable type (e.g. a Mutex class). This annotation is primarily used to check consistency. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00271">271</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga5bb9e819a1b0706fa0e644a2583e4519" name="ga5bb9e819a1b0706fa0e644a2583e4519"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5bb9e819a1b0706fa0e644a2583e4519">&#9670;&#160;</a></span>ein_locks_excluded</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_locks_excluded</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((locks_excluded(...))) on a function declaration to specify that the function must not be called with the listed locks. Arguments must be lockable type, and there must be at least one argument. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00420">420</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa91386cc9617c1ed6a169b86d3b67920" name="gaa91386cc9617c1ed6a169b86d3b67920"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa91386cc9617c1ed6a169b86d3b67920">&#9670;&#160;</a></span>ein_malloc</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_malloc</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((malloc))</code> attribute </p>
+<p>indicates the returned memory does not alias with any other pointer </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00506">506</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
 <a id="gacd2a33cadfbfd5d42f1d3d534bd80060" name="gacd2a33cadfbfd5d42f1d3d534bd80060"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#gacd2a33cadfbfd5d42f1d3d534bd80060">&#9670;&#160;</a></span>EIN_MAP</h2>
 
@@ -187,10 +1203,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Applies macro <code>f</code> to each parameter. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7c/map_8hpp_source.html#l00045">45</a> of file <a class="el" href="../../df/d7c/map_8hpp_source.html">map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7c/map_8hpp_source.html#l00051">51</a> of file <a class="el" href="../../df/d7c/map_8hpp_source.html">map.hpp</a>.</p>
 
 </div>
 </div>
@@ -215,7 +1230,842 @@ Macros</h2></td></tr>
 
 <p>Applies macro <code>f</code> to each parameter. Inserts commas between the results. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d7c/map_8hpp_source.html#l00049">49</a> of file <a class="el" href="../../df/d7c/map_8hpp_source.html">map.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d7c/map_8hpp_source.html#l00055">55</a> of file <a class="el" href="../../df/d7c/map_8hpp_source.html">map.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga900bb11066d3b975a4680919da073bbc" name="ga900bb11066d3b975a4680919da073bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga900bb11066d3b975a4680919da073bbc">&#9670;&#160;</a></span>ein_maybe_unused</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_maybe_unused&#160;&#160;&#160;[[maybe_unused]]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>argument, member or definition <code>[[maybe_unused]]</code> </p>
+<dl class="section since"><dt>Since</dt><dd>C++17 </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00842">842</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf16f2b5fd14f833898362f536ac33de3" name="gaf16f2b5fd14f833898362f536ac33de3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf16f2b5fd14f833898362f536ac33de3">&#9670;&#160;</a></span>ein_message</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_message</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>n</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>emit a warning if EIN_VERBOSE is set during compile </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00050">50</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga803c31f81bce5e57eb8a6fe88f558488" name="ga803c31f81bce5e57eb8a6fe88f558488"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga803c31f81bce5e57eb8a6fe88f558488">&#9670;&#160;</a></span>ein_moving</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_moving&#160;&#160;&#160;<a class="el" href="#gaf79c37c326b25ea1a46b05b2a3c9474c">ein_return_typestate</a>(consumed) <a class="el" href="#gaa8bf1d39883569a1a0dfc129bafbfcbe">ein_param_typestate</a>(unconsumed)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>short-hand for indicating that this argument was moved and is now consumed, assuming it was unconsumed before. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00233">233</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaac01069ede01c32428a5e002f63736c2" name="gaac01069ede01c32428a5e002f63736c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaac01069ede01c32428a5e002f63736c2">&#9670;&#160;</a></span>ein_no_thread_safety_analysis</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_no_thread_safety_analysis</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((no_thread_safety_analysis)) on a function declaration to specify that the thread safety analysis should not be run on that function. This attribute provides an escape hatch (e.g. for situations when it is difficult to annotate the locking policy). </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00262">262</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae8944a0472bcc41d24af5a143201f3ff" name="gae8944a0472bcc41d24af5a143201f3ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae8944a0472bcc41d24af5a143201f3ff">&#9670;&#160;</a></span>ein_no_unique_address</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_no_unique_address</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable c++20 <code>[[no_unique_address]]</code> </p>
+<p>clang makes this available slightly earlier </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00820">820</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaeda66ae7036fd89b3bcf6f73b5d402ae" name="gaeda66ae7036fd89b3bcf6f73b5d402ae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeda66ae7036fd89b3bcf6f73b5d402ae">&#9670;&#160;</a></span>ein_noalias</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_noalias</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__declspec(noalias)</code> </p>
+<p>indicates a function only accesses data through pointer arguments</p>
+<p>requires clang to be running with <code>-fdeclspec</code> or <code>-fms-extensions</code> but can aid alias analysis </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00533">533</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gad58fdb2d0a42845b0f16b84446dff7d4" name="gad58fdb2d0a42845b0f16b84446dff7d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad58fdb2d0a42845b0f16b84446dff7d4">&#9670;&#160;</a></span>ein_nodiscard</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_nodiscard&#160;&#160;&#160;[[nodiscard]]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>C++17 <code>[[nodiscard]]</code>. The user should explicitly throw away the result rather than let it be silently discarded. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00853">853</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gacf7c010fc15ca58dd6f66ec3b8b186ac" name="gacf7c010fc15ca58dd6f66ec3b8b186ac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gacf7c010fc15ca58dd6f66ec3b8b186ac">&#9670;&#160;</a></span>ein_noescape</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_noescape</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((noescape))</code> </p>
+<p>argument is not captured by the function (rust-style borrow) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00662">662</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga912f9e7fd37d0754ab1ed64e8545bbd1" name="ga912f9e7fd37d0754ab1ed64e8545bbd1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga912f9e7fd37d0754ab1ed64e8545bbd1">&#9670;&#160;</a></span>ein_noinline</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_noinline</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((noinline))</code> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00138">138</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga37449812b4a259b4ebfbd1871fd38af9" name="ga37449812b4a259b4ebfbd1871fd38af9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga37449812b4a259b4ebfbd1871fd38af9">&#9670;&#160;</a></span>ein_Nonnull</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_Nonnull</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>_Nonnull</code> </p>
+<p>can be applied to each * in an data type to indicate that argument should never be null. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00771">771</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf81d090cd9ae791301fe54b4f00df3e9" name="gaf81d090cd9ae791301fe54b4f00df3e9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf81d090cd9ae791301fe54b4f00df3e9">&#9670;&#160;</a></span>ein_nonnull</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_nonnull</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((nonnnull(...)))</code> </p>
+<p>Indicates the selected (1-based) indexed arguments to this function must be non-null. Passing a null pointer to such an argument is undefined behavior. GCC-style. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00736">736</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae6d077c859dd50d89cd1cef82d9382c1" name="gae6d077c859dd50d89cd1cef82d9382c1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae6d077c859dd50d89cd1cef82d9382c1">&#9670;&#160;</a></span>ein_noreturn</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_noreturn</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((noreturn)))</code> </p>
+<p>Indicates the method does not return to the caller. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00748">748</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga7f2bbeb43a4aefac5efbf1aebe0bfac1" name="ga7f2bbeb43a4aefac5efbf1aebe0bfac1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7f2bbeb43a4aefac5efbf1aebe0bfac1">&#9670;&#160;</a></span>ein_null_terminated_string_arg</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_null_terminated_string_arg</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((align_value(x)))</code> </p>
+<p>the annotated pointer specified has alignment at least x </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00628">628</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga77135d06c7a6c988e5d4efb8b3686a7e" name="ga77135d06c7a6c988e5d4efb8b3686a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga77135d06c7a6c988e5d4efb8b3686a7e">&#9670;&#160;</a></span>ein_Null_unspecified</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_Null_unspecified</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>_Null_unspecified</code> </p>
+<p>applied to each * in an data type to indicate that the nullability of it is unknown or complicated </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00773">773</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf5a93200e11a60bb36396f6cd02775e5" name="gaf5a93200e11a60bb36396f6cd02775e5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf5a93200e11a60bb36396f6cd02775e5">&#9670;&#160;</a></span>ein_Nullable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_Nullable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>_Nullable</code> </p>
+<p>can be applied to each * in an data type to indicate that argument might be null. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00772">772</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga10f15c098a2fe5e78e9074f9025aee73" name="ga10f15c098a2fe5e78e9074f9025aee73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga10f15c098a2fe5e78e9074f9025aee73">&#9670;&#160;</a></span>ein_optnone</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_optnone</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((optnone))</code> Used to indicate that regardless of optimization level, you shouldn't optimize this one function. Useful for local debugging when you can't disable optimization for the entire build. (e.g. ours!) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00149">149</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa8bf1d39883569a1a0dfc129bafbfcbe" name="gaa8bf1d39883569a1a0dfc129bafbfcbe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa8bf1d39883569a1a0dfc129bafbfcbe">&#9670;&#160;</a></span>ein_param_typestate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_param_typestate</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>This attribute specifies expectations about function parameters. Calls to an function with annotated parameters will issue a warning if the corresponding argument isn’t in the expected state. The attribute is also used to set the initial state of the parameter when analyzing the function’s body. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00219">219</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1cac2f7563012b7a84ab80e388d1b487" name="ga1cac2f7563012b7a84ab80e388d1b487"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1cac2f7563012b7a84ab80e388d1b487">&#9670;&#160;</a></span>ein_pragma</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_pragma</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>emit a #pragma </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00039">39</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga1594d8c5a04ac97dfde52250be9378fb" name="ga1594d8c5a04ac97dfde52250be9378fb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1594d8c5a04ac97dfde52250be9378fb">&#9670;&#160;</a></span>ein_preferred_name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_preferred_name</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>[[clang::preferred_name(x)]]</code> annotations </p>
+<p>can be applied to a template struct to provide better names for some concrete instantiations </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00456">456</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga18275b567b8f98b9b1f68192ad7b2be5" name="ga18275b567b8f98b9b1f68192ad7b2be5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga18275b567b8f98b9b1f68192ad7b2be5">&#9670;&#160;</a></span>ein_pt_guarded_by</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_pt_guarded_by</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((pt_guarded_by(l))) on a pointer declaration to specify that the pointer must be dereferenced while holding lock l. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00326">326</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaace8337cd5e623fc678eda34aae9ba4a" name="gaace8337cd5e623fc678eda34aae9ba4a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaace8337cd5e623fc678eda34aae9ba4a">&#9670;&#160;</a></span>ein_pt_guarded_var</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_pt_guarded_var</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((pt_guarded_var)) on a pointer declaration to specify that the pointer must be dereferenced while holding some lock. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00306">306</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga9e124f20ef90b8f2f68c0e1a1f7d00cf" name="ga9e124f20ef90b8f2f68c0e1a1f7d00cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">&#9670;&#160;</a></span>ein_pure</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_pure</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((pure))</code> </p>
+<p>no side-effects other than return value, may inspect globals</p>
+<p>allows the compiler to easily elide/duplicate calls </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00579">579</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gae992904b95446a57f0e0c5925a9ce7c4" name="gae992904b95446a57f0e0c5925a9ce7c4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gae992904b95446a57f0e0c5925a9ce7c4">&#9670;&#160;</a></span>ein_reinitializes</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_reinitializes</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>[[clang::reinitializes]]</code> </p>
+<p>indicates to any uninitialised object state sanitizer that this restores an object to a fresh state independent of its previous state </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00592">592</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga361c9cfbfecfa7f44c9cc3a56044f3dd" name="ga361c9cfbfecfa7f44c9cc3a56044f3dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga361c9cfbfecfa7f44c9cc3a56044f3dd">&#9670;&#160;</a></span>ein_release_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_release_handle</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>indicates this argument is an acquired resource that is being released, with a tag </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00474">474</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaf79c37c326b25ea1a46b05b2a3c9474c" name="gaf79c37c326b25ea1a46b05b2a3c9474c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaf79c37c326b25ea1a46b05b2a3c9474c">&#9670;&#160;</a></span>ein_return_typestate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_return_typestate</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>The return_typestate attribute can be applied to functions or parameters. When applied to a function the attribute specifies the state of the returned value. The function’s body is checked to ensure that it always returns a value in the specified state. On the caller side, values returned by the annotated function are initialized to the given state. When applied to a function parameter it modifies the state of an argument after a call to the function returns. The function’s body is checked to ensure that the parameter is in the expected state before returning. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00228">228</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga74fe033a58e1d901c981bbe183b94950" name="ga74fe033a58e1d901c981bbe183b94950"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga74fe033a58e1d901c981bbe183b94950">&#9670;&#160;</a></span>ein_returns_nonnull</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_returns_nonnull</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((returns_nonnnull))</code> </p>
+<p>The result of this function will be non-null </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00722">722</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gab7cb0527c87347f71f39f6a1f52849c7" name="gab7cb0527c87347f71f39f6a1f52849c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab7cb0527c87347f71f39f6a1f52849c7">&#9670;&#160;</a></span>ein_scoped_lockable</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_scoped_lockable</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((scoped_lockable)) on a class definition to specify that it has a “scoped” lockable type. Objects of this type will acquire the lock upon construction and release it upon going out of scope. This annotation is primarily used to check consistency. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00284">284</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaeafae2f2d44edb1f1ee3b659fbb48f82" name="gaeafae2f2d44edb1f1ee3b659fbb48f82"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeafae2f2d44edb1f1ee3b659fbb48f82">&#9670;&#160;</a></span>ein_set_typestate</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_set_typestate</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Annotate methods that transition an object into a new state with <b>attribute</b>((set_typestate(new_state))). The new state must be unconsumed, consumed, or unknown. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00240">240</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga7468e42fee3b2135260f226e60cb5bfd" name="ga7468e42fee3b2135260f226e60cb5bfd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga7468e42fee3b2135260f226e60cb5bfd">&#9670;&#160;</a></span>ein_shared_locks_required</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_shared_locks_required</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((shared_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed shared locks. Arguments must be lockable type, and there must be at least one argument. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00444">444</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gaa9bf61cf820ce95d780384f4857978d8" name="gaa9bf61cf820ce95d780384f4857978d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaa9bf61cf820ce95d780384f4857978d8">&#9670;&#160;</a></span>ein_shared_trylock_function</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_shared_trylock_function</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((shared_lock_function(...))) on a function declaration to specify that the function will try (without blocking) to acquire all listed locks, although the locks may be shared (e.g. read locks). This attribute takes one or more arguments. The first argument is an integer or boolean value specifying the return value of a successful lock acquisition. The remaining arugments are either of lockable type or integers indexing into function parameters of lockable type. If only one argument is given, the acquired lock is implicitly this of the enclosing object. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00382">382</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga3246ec3ea286643d128185234256d627" name="ga3246ec3ea286643d128185234256d627"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3246ec3ea286643d128185234256d627">&#9670;&#160;</a></span>ein_target</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_target</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">__attribute__((target(x)))</div>
+</div><!-- fragment -->
+<p>this indicates a required feature set for the current multiversioned function. </p>
+<p>overloads will be resolved at load time </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00124">124</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga3f032504b976d681e8f72fed67395746" name="ga3f032504b976d681e8f72fed67395746"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga3f032504b976d681e8f72fed67395746">&#9670;&#160;</a></span>ein_target_clones</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_target_clones</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">__attribute__((target_clones(_VA_ARGS_)))</div>
+</div><!-- fragment -->
+<p>Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions. </p>
+<p>This lets you write <a class="el" href="#ga9c72af7df8a237d25e24d5beb4d17aa1" title="Applies the prefix ein_ syntactically to all arguments. Used to apply many attributes to definitions.">EIN(hd,inline)</a> vs. <a class="el" href="#ga42f2a4944074f350ddba96f086c308e8">ein_hd</a> <a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00129">129</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gabc6a227c8893803b9d294e0270c554fc" name="gabc6a227c8893803b9d294e0270c554fc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc6a227c8893803b9d294e0270c554fc">&#9670;&#160;</a></span>ein_test_typestate <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_test_typestate</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((test_typestate(tested_state))) to indicate that a method returns true if the object is in the specified state. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00249">249</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gab32569903e90f2ddf32220e9c7aae740" name="gab32569903e90f2ddf32220e9c7aae740"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gab32569903e90f2ddf32220e9c7aae740">&#9670;&#160;</a></span>ein_test_typestate <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_test_typestate</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((test_typestate(tested_state))) to indicate that a method returns true if the object is in the specified state. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00249">249</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga209744b1d888bcad7fd9ea9bb1a9f24c" name="ga209744b1d888bcad7fd9ea9bb1a9f24c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga209744b1d888bcad7fd9ea9bb1a9f24c">&#9670;&#160;</a></span>ein_this_lifetimebound</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_this_lifetimebound</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions. </p>
+<p>This lets you write <a class="el" href="#ga9c72af7df8a237d25e24d5beb4d17aa1" title="Applies the prefix ein_ syntactically to all arguments. Used to apply many attributes to definitions.">EIN(hd,inline)</a> vs. <a class="el" href="#ga42f2a4944074f350ddba96f086c308e8">ein_hd</a> <a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a> </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00708">708</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gabc749cb20f7bd00a53af2054eb27a88c" name="gabc749cb20f7bd00a53af2054eb27a88c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gabc749cb20f7bd00a53af2054eb27a88c">&#9670;&#160;</a></span>ein_uninitialized</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_uninitialized</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>[[clang::uninitialized]]</code> attribute </p>
+<p>ensures a stack variable remains uninitialized regardless of <code>-ftrivial-auto-var-init=*</code> settings passed to the compiler </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00519">519</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="gad37ff4fae131feae423d5feea1b8b1cd" name="gad37ff4fae131feae423d5feea1b8b1cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gad37ff4fae131feae423d5feea1b8b1cd">&#9670;&#160;</a></span>ein_unlock_function</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_unlock_function</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Use <b>attribute</b>((unlock_function(...))) on a function declaration to specify that the function release all listed locks. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00396">396</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga8697fca92cf196aa90c8cfcf36cb4bae" name="ga8697fca92cf196aa90c8cfcf36cb4bae"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga8697fca92cf196aa90c8cfcf36cb4bae">&#9670;&#160;</a></span>ein_unroll</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_unroll</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>N</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>hint to unroll the following loop N times. (clang-specific) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00864">864</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga9d16124a2225305208af3eeb3124128b" name="ga9d16124a2225305208af3eeb3124128b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9d16124a2225305208af3eeb3124128b">&#9670;&#160;</a></span>ein_unroll_full</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_unroll_full</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>hint to unroll the following loop fully. (clang-specific) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00865">865</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga11e25e384da6f9c2c1f696a30a58a670" name="ga11e25e384da6f9c2c1f696a30a58a670"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga11e25e384da6f9c2c1f696a30a58a670">&#9670;&#160;</a></span>ein_use_handle</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_use_handle</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>indicates this argument is a use of a resource, but does not release it. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00482">482</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga5165837aaf9cdf9743915da8d274f7a6" name="ga5165837aaf9cdf9743915da8d274f7a6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga5165837aaf9cdf9743915da8d274f7a6">&#9670;&#160;</a></span>ein_visibility</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_visibility</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...</td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>portable <code>__attribute__((visibility(x)))</code>, primarily used for ein_visibility("hidden") to disable inclusion in the library </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00102">102</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+
+</div>
+</div>
+<a id="ga9a1d6e122e659dcfea11d62158ee3625" name="ga9a1d6e122e659dcfea11d62158ee3625"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga9a1d6e122e659dcfea11d62158ee3625">&#9670;&#160;</a></span>ein_weak</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_weak</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p><b>attribute</b>((weak)) used to generate a symbol that can be easily overriden by the linker. intended for 'fake pos' support </p>
+
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00182">182</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>

@@ -5,5 +5,5 @@ digraph "Graphical Class Hierarchy"
   edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   rankdir="LR";
-  Node0 [id="Node000000",label="ein::cpu::id_t",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$db/d32/namespaceein_1_1cpu.html#d3/de8/structein_1_1cpu_1_1id__t",tooltip=" "];
+  Node0 [id="Node000000",label="ein::c_free",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d7/ded/group__memory.html#d1/d85/structein_1_1c__free",tooltip="std::unique_ptr Deleter that calls free()"];
 }

@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['unknown_0',['unknown',['../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a',1,'ein::cpu']]],
-  ['unord_5fq_1',['UNORD_Q',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865aa148d0b72a4831a6fe52b4ac3ee27ab5',1,'ein::numerics']]],
-  ['unord_5fs_2',['UNORD_S',['../de/df9/namespaceein_1_1numerics.html#a497aa39e7403e6185fd8154d35b5b865a9a7fd190d0dbfa5508428f1f42154e9a',1,'ein::numerics']]]
+  ['unknown_0',['unknown',['../df/d08/group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a',1,'ein']]],
+  ['unord_5fq_1',['UNORD_Q',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a1adfd3c3470a45d49f541ddd27fc55c8',1,'ein']]],
+  ['unord_5fs_2',['UNORD_S',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ad7fbc46939c54f9c1bf596c780875224',1,'ein']]]
 ];

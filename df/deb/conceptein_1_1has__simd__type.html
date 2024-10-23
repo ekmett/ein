@@ -143,25 +143,26 @@ $(function(){initNavTree('df/deb/conceptein_1_1has__simd__type.html','../../'); 
 </div>
 
 <div class="header">
-  <div class="headertitle"><div class="title">ein::has_simd_type Concept Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups">module <a class="el" href="../../d4/d34/module__ein_8simd__data.html">ein.simd_data</a></div></div></div>
+  <div class="headertitle"><div class="title">ein::has_simd_type Concept Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups"><a class="el" href="../../dc/d7b/group__simd.html">simd</a> &#124; module <a class="el" href="../../d4/d34/module__ein_8simd__data.html">ein.simd_data</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 
-<p><a class="el" href="../../d7/dc1/namespaceein.html#a2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined  
+<p><a class="el" href="../../dc/d7b/group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined  
 <a href="#details">More...</a></p>
 <h2 class="groupheader">Concept definition</h2>
 <div class="fragment"><div class="line"><span class="keyword">template</span>&lt;<span class="keyword">typename</span> T, <span class="keywordtype">size_t</span> N&gt;</div>
 <div class="line"><span class="keyword">concept </span><a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a> = </div>
 <div class="line">     std::is_pod_v&lt;T&gt;</div>
-<div class="line">  &amp;&amp; one_of&lt;<span class="keyword">sizeof</span>(T),1,2,4,8&gt;</div>
-<div class="line">  &amp;&amp; one_of&lt;<span class="keyword">sizeof</span>(T)*N,16,32,64&gt;</div>
-<div class="line">  &amp;&amp; <span class="keyword">sizeof</span>(T)*N &lt;= <a class="code hl_variable" href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a></div>
-<div class="ttc" id="aconceptein_1_1has__simd__type_html"><div class="ttname"><a href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></div><div class="ttdoc">ein::simd_data_t&lt;T,N&gt; is defined</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00024">simd_data.cppm:24</a></div></div>
-<div class="ttc" id="anamespaceein_html_ae9b13b1a14965d4f917ac518e18450e4"><div class="ttname"><a href="../../d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a></div><div class="ttdeci">constexpr size_t max_simd_size</div><div class="ttdoc">largest simd register width supported on this platform in bytes</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00015">simd_data.cppm:17</a></div></div>
+<div class="line">  &amp;&amp; <a class="code hl_concept" href="../../d9/d5f/conceptein_1_1one__of.html">one_of</a>&lt;<span class="keyword">sizeof</span>(T),1,2,4,8&gt;</div>
+<div class="line">  &amp;&amp; <a class="code hl_concept" href="../../d9/d5f/conceptein_1_1one__of.html">one_of</a>&lt;<span class="keyword">sizeof</span>(T)*N,16,32,64&gt;</div>
+<div class="line">  &amp;&amp; <span class="keyword">sizeof</span>(T)*N &lt;= <a class="code hl_variable" href="../../dc/d7b/group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a></div>
+<div class="ttc" id="aconceptein_1_1has__simd__type_html"><div class="ttname"><a href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></div><div class="ttdoc">ein::simd_data_t&lt;T,N&gt; is defined</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00035">simd_data.cppm:35</a></div></div>
+<div class="ttc" id="aconceptein_1_1one__of_html"><div class="ttname"><a href="../../d9/d5f/conceptein_1_1one__of.html">ein::one_of</a></div><div class="ttdoc">N is one of the candidates</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00022">numerics.cppm:22</a></div></div>
+<div class="ttc" id="agroup__simd_html_gae9b13b1a14965d4f917ac518e18450e4"><div class="ttname"><a href="../../dc/d7b/group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a></div><div class="ttdeci">constexpr size_t max_simd_size</div><div class="ttdoc">largest simd register width supported on this platform in bytes</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00026">simd_data.cppm:28</a></div></div>
 </div><!-- fragment --><a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><p><a class="el" href="../../d7/dc1/namespaceein.html#a2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined </p>
+<div class="textblock"><p><a class="el" href="../../dc/d7b/group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d88/simd__data_8cppm_source.html#l00024">24</a> of file <a class="el" href="../../df/d88/simd__data_8cppm_source.html">simd_data.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d88/simd__data_8cppm_source.html#l00035">35</a> of file <a class="el" href="../../df/d88/simd__data_8cppm_source.html">simd_data.cppm</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
