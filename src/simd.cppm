@@ -4,6 +4,13 @@ module;
 
 using namespace std;
 
+/// \cond
+template<typename T> struct arg1 {};
+template<typename Ret, typename Arg, typename ... Args> struct arg1<Ret(Arg, Args...)> { using type = Arg; };
+template<typename Ret, typename Arg, typename ... Args> struct arg1<Ret(*)(Arg, Args...)> : arg1<Ret(Arg,Args...)> {};
+template <typename F> using arg1_t = arg1<F>::type;
+/// \endcond
+
 export module ein.simd;
 
 import ein.numerics;

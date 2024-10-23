@@ -5,7 +5,7 @@
 /// \hideinlinesource
 #define ein_assert(cond,...) \
   do { \
-    if ein_unlikely (!cond) { \
+    if (!cond) [[unlikely]] { \
       []<typename ... Args>(Args && ... args) { \
         if constexpr (sizeof...(Args) == 0) \
           spdlog::error("{}:{}: assertion failed ({}) in function {}",__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \

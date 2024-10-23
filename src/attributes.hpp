@@ -61,19 +61,6 @@
 #define ein_has_declspec_attribute(__x) 0
 #endif
 
-/// \def ein_likely(x)
-/// \brief portable `[[likely]]` or `__builtin_expect(x,1)` expressions
-
-/// \def ein_unlikely(x)
-/// \brief portable `[[unlikely]]` or `__builtin_expect(x,0)` expressions
-#if __has_cpp_attribute(likely)
-#define ein_likely(x) (x) [[likely]]
-#define ein_unlikely(x) (x) [[unlikely]]
-#else
-#define ein_likely(x) (__builtin_expect(!!(x),1))
-#define ein_unlikely(x) (__builtin_expect(!!(x),0))
-#endif
-
 // TODO: restrict
 // TODO: gsl::Owner, gsl::Pointer?
 
