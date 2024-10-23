@@ -1,0 +1,25 @@
+# Directory: catch2-src
+# SPDX-FileType: Source
+# SPDX-FileCopyrightText: Martin Hořeňovský <github@philnash.me>
+# SPDX-License-Identifier: Boost Software License 1.0
+# LicenseFile: catch2-src/LICENSE.txt
+# Git-Repository: https://github.com/catchorg/Catch2.git
+# Git-Tag: v3.7.1
+# Git-Hash: fa43b77429ba76c462b1898d6cd2f2d7a9416b14
+
+# Directory: doxygen-awesome-css-src
+# SPDX-FileType: Source
+# SPDX-FileCopyrightText: 2021-2023 joethepro
+# SPDX-License-Identifier: MIT
+# LicenseFile: doxygen-awesome-css-src/LICENSE
+# Git-Repository: https://github.com/jothepro/doxygen-awesome-css.git
+# Git-Tag: v2.3.4
+# Git-Hash: 568f56cde6ac78b6dfcc14acd380b2e745c301ea
+
+# Directory: spdlog-src
+# SPDX-FileType: Source
+# SPDX-FileCopyrightText: 2016 Gabi Melman <gmelman1@gmail.com>
+# SPDX-License-Identifier: MIT
+# LicenseFile: spdlog-src/LICENSE
+# Git-Tag: v1.13.0
+# Git-Hash: 7c02e204c92545f869e2f04edaab1f19fe8b19fd

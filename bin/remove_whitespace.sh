@@ -1,5 +1,9 @@
 #!/bin/bash
 
+# SPDX-FileType: Source
+# SPDX-FileCopyrightText: 2024 Shayne Fletcher <shayne@shaynefletcher.org>
+# SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+
 # This script recursively scans for source files and removes trailing
 # whitespace in-place. It also fixes source files that don't end with
 # a newline.
