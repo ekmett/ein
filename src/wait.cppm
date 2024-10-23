@@ -60,8 +60,9 @@ export struct mwaitx {
 };
 
 /// \hideinitializer \hideinlinesource
-const bool mwaitx::supported = [] static noexcept -> bool {
-  return (cpu_vendor == cpu_vendor::amd) && ((cpuid(0x80000001,0).ecx & (1 << 29)) != 0);
+const bool mwaitx::supported = [] static noexcept {
+  return (cpu_vendor == cpu_vendor::amd)
+      && ((cpuid(0x80000001,0).ecx & (1 << 29)) != 0);
 }();
 
 
@@ -79,8 +80,9 @@ export struct umwait {
 };
 
 /// \hideinitializer \hideinlinesource
-const bool umwait::supported = [] static noexcept -> bool {
-  return (cpu_vendor == cpu_vendor::intel) && ((cpuid(0x7,0).ecx & (1 << 5)) != 0);
+const bool umwait::supported = [] static noexcept {
+  return (cpu_vendor == cpu_vendor::intel)
+      && ((cpuid(0x7,0).ecx & (1 << 5)) != 0);
 }();
 
 /// spin \ref waiter
@@ -96,7 +98,12 @@ export struct spin {
   inline static constinit bool supported = true;
 };
 
-/// Usage: \code \ref with_waiter([]<\ref waiter w> { ...; \ref wait_until<w>(p,f); ... }); \endcode
+/// \brief finds an appropriate waiter for the current CPU
+/// \details
+/// Usage:
+/// \code{.cpp}
+///   with_waiter([]<waiter w> { ...; wait_until<w>(p,f); ... });
+/// \endcode
 /// invokes \p k with a waiter as a template parameter.
 export auto with_waiter(auto k) {
   if (mwaitx::supported) return k.template operator()<mwaitx>();
