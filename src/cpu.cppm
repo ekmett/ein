@@ -7,6 +7,7 @@ export module ein.cpu;
 
 namespace ein::cpu {
 
+/// \nodiscard
 export struct [[nodiscard]] id_t {
   int32_t eax, ebx, ecx, edx;
 };
@@ -21,6 +22,7 @@ id_t id(int32_t eax, int32_t ecx) noexcept {
 }
 
 /// \brief cpu vendor id
+/// \nodiscard
 export enum class [[nodiscard]] vendor {
   intel=0,
   amd=1,

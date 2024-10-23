@@ -20,6 +20,7 @@ import ein.simd_data;
 namespace ein {
 
 /// \brief simd primitive definition
+/// \nodiscard
 export template <typename T, size_t N>
 requires (has_simd_type<T,N>)
 struct [[nodiscard]] simd {
