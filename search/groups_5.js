@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['simd_0',['simd',['../dc/d7b/group__simd.html',1,'']]]
+  ['types_0',['types',['../d6/d59/group__types.html',1,'']]]
 ];

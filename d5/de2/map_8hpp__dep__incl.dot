@@ -8,5 +8,5 @@ digraph "/home/runner/work/ein/ein/src/map.hpp"
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node2 [id="Node000002",label="/home/runner/work/ein\l/ein/src/attributes.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d6a/attributes_8hpp.html",tooltip="defines used to indicate useful attributes for the compiler"];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node3 [id="Node000003",label="/home/runner/work/ein\l/ein/src/prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/d13/prelude_8hpp.html",tooltip="precompiled header"];
+  Node3 [id="Node000003",label="/home/runner/work/ein\l/ein/src/prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/d13/prelude_8hpp.html",tooltip="precompiled header hideincludegraph"];
 }
