@@ -173,6 +173,9 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
 Concepts</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/conceptein_1_1simd__type.html">simd_type</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">recognizes any valid simd type <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="#a2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -206,21 +209,30 @@ Typedefs</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:aed5787d13d5a0302ffa6067fbf64b954" id="r_aed5787d13d5a0302ffa6067fbf64b954"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; <br />
-requires has_simd_type&lt;T,N&gt;</td></tr>
-<tr class="memitem:aed5787d13d5a0302ffa6067fbf64b954"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aed5787d13d5a0302ffa6067fbf64b954">ein::load</a> (T *data) noexcept</td></tr>
-<tr class="memdesc:aed5787d13d5a0302ffa6067fbf64b954"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from aligned memory  <br /></td></tr>
-<tr class="separator:aed5787d13d5a0302ffa6067fbf64b954"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7da03f2aac209b7c98e1a339d11654b5" id="r_a7da03f2aac209b7c98e1a339d11654b5"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; <br />
-requires has_simd_type&lt;T,N&gt;</td></tr>
-<tr class="memitem:a7da03f2aac209b7c98e1a339d11654b5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7da03f2aac209b7c98e1a339d11654b5">ein::loadu</a> (T *data) noexcept</td></tr>
-<tr class="memdesc:a7da03f2aac209b7c98e1a339d11654b5"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory  <br /></td></tr>
-<tr class="separator:a7da03f2aac209b7c98e1a339d11654b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a427f6d506790fc3fbf4aaaafbe7b3a8b" id="r_a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="memTemplParams" colspan="2">template&lt;std::size_t N, typename T &gt; <br />
-requires has_simd_type&lt;T,N&gt;</td></tr>
-<tr class="memitem:a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; T, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a427f6d506790fc3fbf4aaaafbe7b3a8b">ein::stream_load</a> (T *data) noexcept</td></tr>
-<tr class="memdesc:a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream <code>data</code> from memory non-temporally, bypassing cache  <br /></td></tr>
-<tr class="separator:a427f6d506790fc3fbf4aaaafbe7b3a8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2e79d4163046939c2ae3473a9069bb6" id="r_ad2e79d4163046939c2ae3473a9069bb6"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:ad2e79d4163046939c2ae3473a9069bb6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad2e79d4163046939c2ae3473a9069bb6">ein::load</a> (auto const *data) noexcept -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memdesc:ad2e79d4163046939c2ae3473a9069bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from aligned memory  <br /></td></tr>
+<tr class="separator:ad2e79d4163046939c2ae3473a9069bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aed90a3dee286dda1af9ca5f28513bc3a" id="r_aed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:aed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aed90a3dee286dda1af9ca5f28513bc3a">ein::loadu</a> (auto const *data) noexcept -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memdesc:aed90a3dee286dda1af9ca5f28513bc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory  <br /></td></tr>
+<tr class="separator:aed90a3dee286dda1af9ca5f28513bc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4ded656b3d1da0d7acd986b7acf789a1" id="r_a4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:a4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a4ded656b3d1da0d7acd986b7acf789a1">ein::lddqu</a> (auto const *data) noexcept -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memdesc:a4ded656b3d1da0d7acd986b7acf789a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory, optimized for crossing cachelines (legacy approach)  <br /></td></tr>
+<tr class="separator:a4ded656b3d1da0d7acd986b7acf789a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af84aa0909d95f9faf66f5ee344285677" id="r_af84aa0909d95f9faf66f5ee344285677"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:af84aa0909d95f9faf66f5ee344285677"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af84aa0909d95f9faf66f5ee344285677">ein::stream_load</a> (auto const *data) noexcept -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memdesc:af84aa0909d95f9faf66f5ee344285677"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream <code>data</code> from memory non-temporally, bypassing cache  <br /></td></tr>
+<tr class="separator:af84aa0909d95f9faf66f5ee344285677"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2c105a2927f9ca9e44820eb74633c12" id="r_ac2c105a2927f9ca9e44820eb74633c12"><td class="memTemplParams" colspan="2">template&lt;size_t ... is&gt; </td></tr>
+<tr class="memitem:ac2c105a2927f9ca9e44820eb74633c12"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a> (simd_type auto x)</td></tr>
+<tr class="memdesc:ac2c105a2927f9ca9e44820eb74633c12"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new simd register with contents drawn from this one  <br /></td></tr>
+<tr class="separator:ac2c105a2927f9ca9e44820eb74633c12"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a186940519ca17135b07b6816ae6402cd" id="r_a186940519ca17135b07b6816ae6402cd"><td class="memTemplParams" colspan="2">template&lt;size_t ... is&gt; </td></tr>
+<tr class="memitem:a186940519ca17135b07b6816ae6402cd"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a186940519ca17135b07b6816ae6402cd">shuffle</a> (simd_type auto x, simd_type auto y)</td></tr>
+<tr class="memdesc:a186940519ca17135b07b6816ae6402cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">create a new simd register with contents drawn from these two  <br /></td></tr>
+<tr class="separator:a186940519ca17135b07b6816ae6402cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a48e448cefd9b722a4c66bf734601dee6" id="r_a48e448cefd9b722a4c66bf734601dee6"><td class="memItemLeft" align="right" valign="top">__m128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a48e448cefd9b722a4c66bf734601dee6">ein::cast_ps</a> (__m128i a) noexcept</td></tr>
 <tr class="separator:a48e448cefd9b722a4c66bf734601dee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aa8e64744d683dfa56429a68a3e224b7c" id="r_aa8e64744d683dfa56429a68a3e224b7c"><td class="memItemLeft" align="right" valign="top">__m128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa8e64744d683dfa56429a68a3e224b7c">ein::cast_ps</a> (__m128 a) noexcept</td></tr>
@@ -950,28 +962,64 @@ template&lt;typename T , size_t N&gt; </div>
 
 </div>
 </div>
-<a id="aed5787d13d5a0302ffa6067fbf64b954" name="aed5787d13d5a0302ffa6067fbf64b954"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aed5787d13d5a0302ffa6067fbf64b954">&#9670;&#160;</a></span>load()</h2>
+<a id="a4ded656b3d1da0d7acd986b7acf789a1" name="a4ded656b3d1da0d7acd986b7acf789a1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4ded656b3d1da0d7acd986b7acf789a1">&#9670;&#160;</a></span>lddqu()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t N, typename T &gt; <br />
-requires has_simd_type&lt;T,N&gt;</div>
+template&lt;std::size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; T, N &gt; ein::load </td>
+          <td class="memname">auto ein::lddqu </td>
           <td>(</td>
-          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">auto const *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt;std::remove_cvref_t&lt;decltype(*data)&gt;,N&gt; </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span><span class="mlabel">artificial</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>load <code>data</code> from unaligned memory, optimized for crossing cachelines (legacy approach) </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01053">1053</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1054</span>                                                                                     {</div>
+<div class="line"><span class="lineno"> 1055</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1056</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1057</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::lddqu</a>(data);</div>
+<div class="ttc" id="aconceptein_1_1has__simd__type_html"><div class="ttname"><a href="../../df/deb/conceptein_1_1has__simd__type.html">ein::has_simd_type</a></div><div class="ttdoc">ein::simd_data_t&lt;T,N&gt; is defined</div><div class="ttdef"><b>Definition</b> <a href="../../df/d88/simd__data_8cppm_source.html#l00024">simd_data.cppm:24</a></div></div>
+<div class="ttc" id="astructein_1_1simd_html"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html">ein::simd</a></div><div class="ttdoc">simd primitive definition</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00018">simd.cppm:18</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ad2e79d4163046939c2ae3473a9069bb6" name="ad2e79d4163046939c2ae3473a9069bb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad2e79d4163046939c2ae3473a9069bb6">&#9670;&#160;</a></span>load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::load </td>
+          <td>(</td>
+          <td class="paramtype">auto const *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt;std::remove_cvref_t&lt;decltype(*data)&gt;,N&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span><span class="mlabel">artificial</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -979,69 +1027,146 @@ requires has_simd_type&lt;T,N&gt;</div>
 <p>load <code>data</code> from aligned memory </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>data</code> has alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00980">980</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  982</span>                            {</div>
-<div class="line"><span class="lineno">  983</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::load</a>(data);</div>
-<div class="ttc" id="astructein_1_1simd_html"><div class="ttname"><a href="../../d1/d89/structein_1_1simd.html">ein::simd</a></div><div class="ttdoc">simd primitive definition</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l00018">simd.cppm:18</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01033">1033</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1034</span>                                                                                    {</div>
+<div class="line"><span class="lineno"> 1035</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1036</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1037</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::load</a>(data);</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a7da03f2aac209b7c98e1a339d11654b5" name="a7da03f2aac209b7c98e1a339d11654b5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7da03f2aac209b7c98e1a339d11654b5">&#9670;&#160;</a></span>loadu()</h2>
+<a id="aed90a3dee286dda1af9ca5f28513bc3a" name="aed90a3dee286dda1af9ca5f28513bc3a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aed90a3dee286dda1af9ca5f28513bc3a">&#9670;&#160;</a></span>loadu()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t N, typename T &gt; <br />
-requires has_simd_type&lt;T,N&gt;</div>
+template&lt;std::size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; T, N &gt; ein::loadu </td>
+          <td class="memname">auto ein::loadu </td>
           <td>(</td>
-          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
-          <td></td>
+          <td class="paramtype">auto const *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt;std::remove_cvref_t&lt;decltype(*data)&gt;,N&gt; </td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span><span class="mlabel">artificial</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>load <code>data</code> from unaligned memory </p>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00988">988</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  990</span>                            {</div>
-<div class="line"><span class="lineno">  991</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::loadu</a>(data);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01043">1043</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1044</span>                                                                                     {</div>
+<div class="line"><span class="lineno"> 1045</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1046</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1047</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::loadu</a>(data);</div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a427f6d506790fc3fbf4aaaafbe7b3a8b" name="a427f6d506790fc3fbf4aaaafbe7b3a8b"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a427f6d506790fc3fbf4aaaafbe7b3a8b">&#9670;&#160;</a></span>stream_load()</h2>
+<a id="ac2c105a2927f9ca9e44820eb74633c12" name="ac2c105a2927f9ca9e44820eb74633c12"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2c105a2927f9ca9e44820eb74633c12">&#9670;&#160;</a></span>shuffle() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;std::size_t N, typename T &gt; <br />
-requires has_simd_type&lt;T,N&gt;</div>
+template&lt;size_t ... is&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt; T, N &gt; ein::stream_load </td>
+          <td class="memname">auto ein::shuffle </td>
           <td>(</td>
-          <td class="paramtype">T *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td class="paramtype">simd_type auto</td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new simd register with contents drawn from this one </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01087">1087</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1088</span>                               {</div>
+<div class="line"><span class="lineno"> 1089</span>  <span class="keywordflow">return</span> x.template <a class="code hl_function" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a>&lt;is...&gt;();</div>
+<div class="ttc" id="anamespaceein_html_ac2c105a2927f9ca9e44820eb74633c12"><div class="ttname"><a href="#ac2c105a2927f9ca9e44820eb74633c12">ein::shuffle</a></div><div class="ttdeci">auto shuffle(simd_type auto x)</div><div class="ttdoc">create a new simd register with contents drawn from this one</div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l01087">simd.cppm:1087</a></div></div>
+</div><!-- fragment --><div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+
+</div>
+</div>
+<a id="a186940519ca17135b07b6816ae6402cd" name="a186940519ca17135b07b6816ae6402cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a186940519ca17135b07b6816ae6402cd">&#9670;&#160;</a></span>shuffle() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;size_t ... is&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::shuffle </td>
+          <td>(</td>
+          <td class="paramtype">simd_type auto</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">simd_type auto</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">artificial</span><span class="mlabel">pure</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>create a new simd register with contents drawn from these two </p>
+
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01095">1095</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1096</span>                                                 {</div>
+<div class="line"><span class="lineno"> 1097</span>  <span class="keywordflow">return</span> x.template <a class="code hl_function" href="#ac2c105a2927f9ca9e44820eb74633c12">shuffle</a>&lt;is...&gt;(y);</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af84aa0909d95f9faf66f5ee344285677" name="af84aa0909d95f9faf66f5ee344285677"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af84aa0909d95f9faf66f5ee344285677">&#9670;&#160;</a></span>stream_load()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;std::size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::stream_load </td>
+          <td>(</td>
+          <td class="paramtype">auto const *</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td> -&gt; <a class="el" href="../../d1/d89/structein_1_1simd.html">simd</a>&lt;std::remove_cvref_t&lt;decltype(*data)&gt;,N&gt; </td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span><span class="mlabel">artificial</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -1049,9 +1174,11 @@ requires has_simd_type&lt;T,N&gt;</div>
 <p>stream <code>data</code> from memory non-temporally, bypassing cache </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>data</code> has alignment &gt;= <code>N</code> </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00997">997</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  999</span>                            {</div>
-<div class="line"><span class="lineno"> 1000</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::stream_load</a>(data);</div>
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l01064">1064</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno"> 1065</span>                                                                                           {</div>
+<div class="line"><span class="lineno"> 1066</span>  <span class="keyword">using </span>T = std::remove_cvref_t&lt;<span class="keyword">decltype</span>(*data)&gt;;</div>
+<div class="line"><span class="lineno"> 1067</span>  <span class="keyword">static_assert</span>(<a class="code hl_concept" href="../../df/deb/conceptein_1_1has__simd__type.html">has_simd_type&lt;T,N&gt;</a>);</div>
+<div class="line"><span class="lineno"> 1068</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="../../d1/d89/structein_1_1simd.html">simd&lt;T,N&gt;::stream_load</a>(data);</div>
 </div><!-- fragment -->
 </div>
 </div>

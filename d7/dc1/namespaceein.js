@@ -14,6 +14,7 @@ var namespaceein =
     [ "numerics", "de/df9/namespaceein_1_1numerics.html", "de/df9/namespaceein_1_1numerics" ],
     [ "types", "d9/df8/namespaceein_1_1types.html", "d9/df8/namespaceein_1_1types" ],
     [ "simd", "d1/d89/structein_1_1simd.html", "d1/d89/structein_1_1simd" ],
+    [ "simd_type", "d8/d21/conceptein_1_1simd__type.html", null ],
     [ "has_simd_type", "df/deb/conceptein_1_1has__simd__type.html", null ],
     [ "has_builtin_convertvector", "df/df1/conceptein_1_1has__builtin__convertvector.html", null ],
     [ "simd_builtin", "dc/d1b/conceptein_1_1simd__builtin.html", null ],
@@ -43,8 +44,11 @@ var namespaceein =
     [ "cast_si", "d7/dc1/namespaceein.html#ad8b51db18ce16f0b9aa1dd233a015fbb", null ],
     [ "cast_si", "d7/dc1/namespaceein.html#a88363bb5eaba546cfb6c6c7e6c29ffdb", null ],
     [ "cast_si", "d7/dc1/namespaceein.html#ab11385ef90487a80bff66f69735ae7e9", null ],
-    [ "load", "d7/dc1/namespaceein.html#aed5787d13d5a0302ffa6067fbf64b954", null ],
-    [ "loadu", "d7/dc1/namespaceein.html#a7da03f2aac209b7c98e1a339d11654b5", null ],
-    [ "stream_load", "d7/dc1/namespaceein.html#a427f6d506790fc3fbf4aaaafbe7b3a8b", null ],
+    [ "lddqu", "d7/dc1/namespaceein.html#a4ded656b3d1da0d7acd986b7acf789a1", null ],
+    [ "load", "d7/dc1/namespaceein.html#ad2e79d4163046939c2ae3473a9069bb6", null ],
+    [ "loadu", "d7/dc1/namespaceein.html#aed90a3dee286dda1af9ca5f28513bc3a", null ],
+    [ "shuffle", "d7/dc1/namespaceein.html#ac2c105a2927f9ca9e44820eb74633c12", null ],
+    [ "shuffle", "d7/dc1/namespaceein.html#a186940519ca17135b07b6816ae6402cd", null ],
+    [ "stream_load", "d7/dc1/namespaceein.html#af84aa0909d95f9faf66f5ee344285677", null ],
     [ "max_simd_size", "d7/dc1/namespaceein.html#ae9b13b1a14965d4f917ac518e18450e4", null ]
 ];
