@@ -12,6 +12,9 @@ var concepts =
         [ "one_of_t", "d2/dca/conceptein_1_1types_1_1one__of__t.html", null ],
         [ "not_one_of_t", "d1/d7d/conceptein_1_1types_1_1not__one__of__t.html", null ]
       ] ],
+      [ "wait", "de/d86/namespaceein_1_1wait.html", [
+        [ "waiter", "db/dc4/conceptein_1_1wait_1_1waiter.html", null ]
+      ] ],
       [ "simd_type", "d8/d21/conceptein_1_1simd__type.html", null ],
       [ "has_simd_type", "df/deb/conceptein_1_1has__simd__type.html", null ],
       [ "has_builtin_convertvector", "df/df1/conceptein_1_1has__builtin__convertvector.html", null ],

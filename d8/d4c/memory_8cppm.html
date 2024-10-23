@@ -209,23 +209,6 @@ Functions</h2></td></tr>
 <tr class="memitem:gacf1ce06de33e9ecc557004ff969fa548" id="r_gacf1ce06de33e9ecc557004ff969fa548"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../dd/d9f/group__memory__group.html#ga28e90c7a3be1dbddae254d6b9b8e42cc">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gacf1ce06de33e9ecc557004ff969fa548">ein::memory::dup</a> (char const *string) noexcept</td></tr>
 <tr class="memdesc:gacf1ce06de33e9ecc557004ff969fa548"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a c string using strdup and manage it as a unique_str  <br /></td></tr>
 <tr class="separator:gacf1ce06de33e9ecc557004ff969fa548"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab1100e32ec09e3c1e873df290cb86ac5" id="r_gab1100e32ec09e3c1e873df290cb86ac5"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gab1100e32ec09e3c1e873df290cb86ac5">ein::memory::monitor</a> (void const *addr) noexcept</td></tr>
-<tr class="memdesc:gab1100e32ec09e3c1e873df290cb86ac5"><td class="mdescLeft">&#160;</td><td class="mdescRight">User-land monitor for changes at the cache line containing the target address. Intel version.  <br /></td></tr>
-<tr class="separator:gab1100e32ec09e3c1e873df290cb86ac5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab67f2db34418243138891d205a4aec19" id="r_gab67f2db34418243138891d205a4aec19"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gab67f2db34418243138891d205a4aec19">ein::memory::mwait</a> (uint32_t timer=0) noexcept</td></tr>
-<tr class="memdesc:gab67f2db34418243138891d205a4aec19"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land mwait. intel version while it isn't <em>documented</em> to support the timer options from AMD on newer cpus it does.  <br /></td></tr>
-<tr class="separator:gab67f2db34418243138891d205a4aec19"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0ff724a9b63566c929742638f5dcef06" id="r_ga0ff724a9b63566c929742638f5dcef06"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga0ff724a9b63566c929742638f5dcef06">ein::memory::monitorx</a> (void const *addr) noexcept</td></tr>
-<tr class="memdesc:ga0ff724a9b63566c929742638f5dcef06"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land monitor for changes at the cache line containing the target address. AMD version  <br /></td></tr>
-<tr class="separator:ga0ff724a9b63566c929742638f5dcef06"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3a653e6c8178106572f3e8755f79b3d7" id="r_ga3a653e6c8178106572f3e8755f79b3d7"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#ga3a653e6c8178106572f3e8755f79b3d7">ein::memory::mwaitx</a> (uint32_t timer=0) noexcept</td></tr>
-<tr class="memdesc:ga3a653e6c8178106572f3e8755f79b3d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">user-land mwait. AMD version  <br /></td></tr>
-<tr class="separator:ga3a653e6c8178106572f3e8755f79b3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf115f15324c6f4d0b32c2f6a1f98a1de" id="r_gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memTemplParams" colspan="2">template&lt;typename T , typename F &gt; <br />
-requires requires(F f, T * p) { { f(p) } -&gt; convertible_to&lt;bool&gt;; }</td></tr>
-<tr class="memitem:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dd/d9f/group__memory__group.html#gaf115f15324c6f4d0b32c2f6a1f98a1de">ein::memory::wait_until</a> (T const &amp;m, F f, uint32_t timer=0) noexcept</td></tr>
-<tr class="memdesc:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin using the flavor of MONITOR/MWAIT that matches your CPU until the target passes a user supplied test <code>f</code>. Waiting happens <code>timer</code> cycles at a time.  <br /></td></tr>
-<tr class="separator:gaf115f15324c6f4d0b32c2f6a1f98a1de"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>memory primitives </p>

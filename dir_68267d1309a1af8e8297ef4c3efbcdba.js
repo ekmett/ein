@@ -11,5 +11,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "simd.cpp", "dd/d4b/simd_8cpp.html", null ],
     [ "simd.cppm", "da/d01/simd_8cppm.html", "da/d01/simd_8cppm" ],
     [ "simd_data.cppm", "df/d88/simd__data_8cppm.html", "df/d88/simd__data_8cppm" ],
-    [ "types.cppm", "d8/dcb/types_8cppm.html", "d8/dcb/types_8cppm" ]
+    [ "types.cppm", "d8/dcb/types_8cppm.html", "d8/dcb/types_8cppm" ],
+    [ "wait.cpp", "d3/dbb/wait_8cpp.html", null ],
+    [ "wait.cppm", "d0/def/wait_8cppm.html", "d0/def/wait_8cppm" ]
 ];

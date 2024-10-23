@@ -1,18 +1,10 @@
 var namespaceein =
 [
-    [ "cpu", "db/d32/namespaceein_1_1cpu.html", [
-      [ "vendor", "db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8", [
-        [ "intel", "db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a4e5bbaeafc82ab7aa1385bea8ef5d30a", null ],
-        [ "amd", "db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8a5dc984e2aef527ea2daaeffe646a6a52", null ],
-        [ "unknown", "db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8aad921d60486366258809553a3db49a4a", null ]
-      ] ],
-      [ "has_mwait", "db/d32/namespaceein_1_1cpu.html#a3c0d02deb4179b64912ce1fa4bf1a9ce", null ],
-      [ "has_mwaitx", "db/d32/namespaceein_1_1cpu.html#a453b9232fe423c4efb38077169bd955a", null ],
-      [ "vendor", "db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8", null ]
-    ] ],
+    [ "cpu", "db/d32/namespaceein_1_1cpu.html", "db/d32/namespaceein_1_1cpu" ],
     [ "memory", "d6/d67/namespaceein_1_1memory.html", "d6/d67/namespaceein_1_1memory" ],
     [ "numerics", "de/df9/namespaceein_1_1numerics.html", "de/df9/namespaceein_1_1numerics" ],
     [ "types", "d9/df8/namespaceein_1_1types.html", "d9/df8/namespaceein_1_1types" ],
+    [ "wait", "de/d86/namespaceein_1_1wait.html", "de/d86/namespaceein_1_1wait" ],
     [ "simd", "d1/d89/structein_1_1simd.html", "d1/d89/structein_1_1simd" ],
     [ "simd_type", "d8/d21/conceptein_1_1simd__type.html", null ],
     [ "has_simd_type", "df/deb/conceptein_1_1has__simd__type.html", null ],

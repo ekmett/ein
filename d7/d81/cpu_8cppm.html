@@ -144,14 +144,27 @@ $(function(){initNavTree('d7/d81/cpu_8cppm.html','../../'); initResizable(true);
 
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#enum-members">Enumerations</a>  </div>
+<a href="#enum-members">Enumerations</a> &#124;
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">cpu.cppm File Reference<div class="ingroups">module <a class="el" href="../../dd/d6d/module__ein_8cpu.html">ein.cpu</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-
+<div class="textblock"><code>#include &lt;cpuid.h&gt;</code><br />
+</div><div class="textblock"><div class="dynheader">
+Include dependency graph for cpu.cppm:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+</div>
 <p><a href="../../d7/d81/cpu_8cppm_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:d3/de8/structein_1_1cpu_1_1id__t" id="r_d3/de8/structein_1_1cpu_1_1id__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#d3/de8/structein_1_1cpu_1_1id__t">ein::cpu::id_t</a></td></tr>
+<tr class="separator:d3/de8/structein_1_1cpu_1_1id__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html">ein</a></td></tr>
@@ -167,7 +180,56 @@ Enumerations</h2></td></tr>
  }</td></tr>
 <tr class="memdesc:ae883fb4f01186eaa8185fc85bf74dee8"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu vendor id  <a href="../../db/d32/namespaceein_1_1cpu.html#ae883fb4f01186eaa8185fc85bf74dee8">More...</a><br /></td></tr>
 <tr class="separator:ae883fb4f01186eaa8185fc85bf74dee8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
+Functions</h2></td></tr>
+<tr class="memitem:a6d1b96f920591076f406556732e4c411" id="r_a6d1b96f920591076f406556732e4c411"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#d3/de8/structein_1_1cpu_1_1id__t">id_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../db/d32/namespaceein_1_1cpu.html#a6d1b96f920591076f406556732e4c411">ein::cpu::id</a> (int32_t eax, int32_t ecx) noexcept</td></tr>
+<tr class="separator:a6d1b96f920591076f406556732e4c411"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="d3/de8/structein_1_1cpu_1_1id__t" id="d3/de8/structein_1_1cpu_1_1id__t"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#d3/de8/structein_1_1cpu_1_1id__t">&#9670;&#160;</a></span>ein::cpu::id_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">struct ein::cpu::id_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="../../d7/d81/cpu_8cppm_source.html#l00010">10</a> of file <a class="el" href="../../d7/d81/cpu_8cppm_source.html">cpu.cppm</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a25e4ebde02fa0db536398af91b1013dc" name="a25e4ebde02fa0db536398af91b1013dc"></a>int32_t</td>
+<td class="fieldname">
+eax</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="aafc0b708300c8abd42c6c767aed7c58e" name="aafc0b708300c8abd42c6c767aed7c58e"></a>int32_t</td>
+<td class="fieldname">
+ebx</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a7d5aa5ae23fa0397ec6f7b8db712260a" name="a7d5aa5ae23fa0397ec6f7b8db712260a"></a>int32_t</td>
+<td class="fieldname">
+ecx</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a6bd3f3c16a6f78e1217e7b6c21e008c3" name="a6bd3f3c16a6f78e1217e7b6c21e008c3"></a>int32_t</td>
+<td class="fieldname">
+edx</td>
+<td class="fielddoc">
+</td></tr>
+</table>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
