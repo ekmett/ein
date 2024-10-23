@@ -24,7 +24,7 @@ namespace ein::cpu {
 
 /// \hideinitializer
 /// \hideinlinesource
-const enum vendor vendor = []() noexcept -> enum vendor {
+const enum vendor vendor = [] noexcept -> enum vendor {
   int32_t info[4] = {0};
   cpuid(info, 0, 0);
 
@@ -42,7 +42,7 @@ const enum vendor vendor = []() noexcept -> enum vendor {
 
 /// \hideinitializer
 /// \hideinlinesource
-const bool has_mwait = []() noexcept -> bool {
+const bool has_mwait = [] noexcept -> bool {
   if (vendor != vendor::intel) return false;
   int32_t info[4] = {0};
   // CPUID.05H to check Intel MONITOR/MWAIT
@@ -53,7 +53,7 @@ const bool has_mwait = []() noexcept -> bool {
 
 /// \hideinitializer
 /// \hideinlinesource
-const bool has_mwaitx = []() noexcept -> bool {
+const bool has_mwaitx = [] noexcept -> bool {
   if (vendor != vendor::amd) return false;
   int32_t info[4] = {0};
   // CPUID.80000001H to check AMD MONITORX/MWAITX
