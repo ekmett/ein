@@ -1,7 +1,6 @@
 #pragma once
 
-/**
-    \defgroup headers headers
+/*! \defgroup headers headers
     \file
     \ingroup headers
     \license
@@ -24,5 +23,5 @@
 */
 
 #include "third-party.hpp"
-#include "attributes.hpp" // EIN(..)
-#include "assert.hpp" // ein_assert(...)
+#include "attributes.hpp"
+#include "assert.hpp"

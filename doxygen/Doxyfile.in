@@ -98,18 +98,14 @@ PROJECT_ICON           = @CMAKE_SOURCE_DIR@/doxygen/favicon.ico
 CREATE_SUBDIRS         = YES
 MARKDOWN_SUPPORT       = YES
 TOC_INCLUDE_HEADINGS   = 3
-ALIASES  = "nodiscard=@qualifier nodiscard"
-ALIASES += "pure=@qualifier pure"
-ALIASES += "inline=@qualifier inline"
-ALIASES += "always_inline=@qualifier always_inline"
-ALIASES += "artificial=@qualifier artificial"
-ALIASES += "const=@qualifier const"
-ALIASES += "reinitializes=@qualifier reinitializes"
-ALIASES += "hidden=@qualifier hidden"
-ALIASES += "flatten=@qualifier flatten"
-ALIASES += "license=@code{.spdx}"
+ALIASES  = "license=@code{.spdx}"
 ALIASES += "endlicense=@endcode"
 ALIASES += "CPUID=<a href='https://en.wikipedia.org/wiki/CPUID'>CPUID</a>"
+ALIASES += "MWAIT=<a href='https://www.felixcloutier.com/x86/mwait'>MWAIT</a>"
+ALIASES += "MONITOR=<a href='https://www.felixcloutier.com/x86/monitor'>MONITOR</a>"
+ALIASES += "UMWAIT=<a href='https://www.felixcloutier.com/x86/umwait'>UMWAIT</a>"
+ALIASES += "UMONITOR=<a href='https://www.felixcloutier.com/x86/umonitor'>UMONITOR</a>"
+ALIASES += "PAUSE=<a href='https://www.felixcloutier.com/x86/pause'>PAUSE</a>"
 HAVE_DOT = YES
 DOT_IMAGE_FORMAT = svg
 DOT_GRAPH_MAX_NODES = 100
@@ -123,3 +119,4 @@ SOURCE_BROWSER = YES
 INLINE_SOURCES = YES
 CALLER_GRAPH = YES
 MULTILINE_CPP_IS_BRIEF = YES
+ENUM_VALUES_PER_LINE = 1

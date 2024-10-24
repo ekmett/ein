@@ -12,6 +12,12 @@ module;
 #include "prelude.hpp"
 #endif
 
+#ifdef __AVX512F__
+#define IFAVX512(x,y) x
+#else
+#define IFAVX512(x,y) y
+#endif
+
 using namespace std;
 
 import ein.types;
@@ -71,8 +77,10 @@ constexpr bool cmp_unord(T a, T b) noexcept {
   return isnan(a) || isnan(b);
 }
 
+/// \cond precompile
 export template bool cmp_unord(float,float) noexcept;
 export template bool cmp_unord(double,double) noexcept;
+/// \endcond
 
 export template <typename T>
 ein_nodiscard ein_inline ein_pure
@@ -80,8 +88,10 @@ constexpr bool cmp_ord(T a, T b) noexcept {
   return !isnan(a) && !isnan(b);
 }
 
+/// \cond precompile
 export template bool cmp_ord(float,float) noexcept;
 export template bool cmp_ord(double,double) noexcept;
+/// \endcond
 
 /// \hideinlinesource
 export template <one_of_t<float,double> T>
@@ -132,9 +142,10 @@ constexpr T scalef(T x, T y) noexcept {
   }
 }
 
-// compile both ways
+/// \cond precompile
 export template float scalef(float, float) noexcept;
 export template double scalef(double, double) noexcept;
+/// \endcond
 
 /// \hideinlinesource
 export enum class ein_nodiscard CMPINT : size_t {
@@ -163,9 +174,7 @@ constexpr bool cmpint(T a, T b) noexcept {
   else static_assert(false);
 }
 
-// precompile cmpint
-
-/// \cond
+/// \cond precompile
 #define EIN_CMPINT_IMPL(X,Y) \
   export template bool cmpint<CMPINT::X,Y>(Y,Y) noexcept;
 #define EIN_CMPINT(X) \
@@ -177,8 +186,6 @@ constexpr bool cmpint(T a, T b) noexcept {
   EIN_CMPINT_IMPL(X,int16_t) \
   EIN_CMPINT_IMPL(X,int32_t) \
   EIN_CMPINT_IMPL(X,int64_t)
-/// \endcond
-
 EIN_CMPINT(TRUE)
 EIN_CMPINT(FALSE)
 EIN_CMPINT(LT)
@@ -187,18 +194,13 @@ EIN_CMPINT(LE)
 EIN_CMPINT(NLE)
 EIN_CMPINT(EQ)
 EIN_CMPINT(NE)
-
 #undef EIN_CMPINT_IMPL
 #undef EIN_CMPINT
+/// \endcond
 
 /// AVX512 added many more floating point comparison types. Do we have them?
 /// \hideinitializer
-export constexpr size_t max_fp_comparison_predicate
-#ifdef AVX512
- = 32;
-#else
- = 8;
-#endif
+export constexpr size_t max_fp_comparison_predicate = IFAVX512(32,8);
 
 /// \hideinlinesource
 export enum class ein_nodiscard CMP : size_t {

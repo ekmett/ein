@@ -22,7 +22,6 @@ namespace ein {
 /// \{
 
 /// result from calling the \CPUID instruction
-/// \nodiscard
 export struct [[nodiscard]] cpuid_t {
   int32_t eax, ebx, ecx, edx;
 };
@@ -38,7 +37,6 @@ export ein_inline ein_pure cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept {
 }
 
 /// \brief CPU vendor id
-/// \nodiscard
 export enum class [[nodiscard]] cpu_vendor {
   intel=0,  ///< \CPUID reported "GenuineIntel"
   amd=1,    ///< \CPUID reported "AuthenticAMD"
@@ -53,9 +51,11 @@ export const enum cpu_vendor cpu_vendor = [] static noexcept {
   string_view vendor {reinterpret_cast<char const *>(begin(data)), 12};
   if      (vendor == "GenuineIntel") return cpu_vendor::intel;
   else if (vendor == "AuthenticAMD") return cpu_vendor::amd;
-  else                                  return cpu_vendor::unknown;
+  else                               return cpu_vendor::unknown;
 }();
 
 
 /// \}
-} // namespace ein
+// end defgroup cpuid
+
+} // end namespace ein

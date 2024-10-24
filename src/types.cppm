@@ -23,14 +23,11 @@ export namespace ein {
 /// \{
 
 /// \brief returns the unmangled name of a the type \p T
-///
-/// \details Ideally this would be fully `constexpr`, but i'm not building my own demangler.
-///
-/// \hideinitializer
-/// \hideinlinesource
+/// \details Ideally this would be fully `constexpr`, but I'm not building my own demangler.
+/// \hideinitializer \hideinlinesource
 template <typename T>
-const string_view type = [] EIN(nodiscard,const) static noexcept -> string_view {
-  static const string_view body = [] EIN(nodiscard,const) static noexcept -> string_view {
+const string_view type = [] ein_nodiscard ein_const static noexcept -> string_view {
+  static const string_view body = [] ein_nodiscard ein_const static noexcept -> string_view {
     int status;
     size_t len = 0uz;
     const char * str = abi::__cxa_demangle(typeid(T).name(), nullptr, &len, &status);
@@ -40,8 +37,8 @@ const string_view type = [] EIN(nodiscard,const) static noexcept -> string_view 
 }();
 
 /// \brief returns the unmangled name of a the type of the (unused) argument passed to this function
-/// \hideinlinesource \nodiscard \const \cond
-EIN(nodiscard,const) /// \endcond
+/// \hideinlinesource
+ein_nodiscard ein_const
 const string_view type_of(auto const & t) noexcept {
   return type<remove_cvref_t<decltype(t)>>();
 }

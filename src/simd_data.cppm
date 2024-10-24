@@ -145,92 +145,69 @@ using simd_mask_t =
   simd_intrinsic_t<T,N>;
 #endif
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128 cast_ps(__m128i a) noexcept { return _mm_castsi128_ps(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128 cast_ps(__m128 a) noexcept { return a; }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256 cast_ps(__m256i a) noexcept { return _mm256_castsi256_ps(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256 cast_ps(__m256 a) noexcept { return a; }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128d cast_pd(__m128i a) noexcept { return _mm_castsi128_pd(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128d cast_pd(__m128d a) noexcept { return a; }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256d cast_pd(__m256i a) noexcept { return _mm256_castsi256_pd(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256d cast_pd(__m256d a) noexcept { return a; }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128i cast_si(__m128 a) noexcept { return _mm_castps_si128(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128i cast_si(__m128d a) noexcept { return _mm_castpd_si128(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m128i cast_si(__m128i a) noexcept { return a; }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256i cast_si(__m256 a) noexcept { return _mm256_castps_si256(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256i cast_si(__m256d a) noexcept { return _mm256_castpd_si256(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m256i cast_si(__m256i a) noexcept { return a; }
-
 
 #ifdef __AVX512F__
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512 cast_ps(__m512i a) noexcept { return _mm512_castsi512_ps(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512d cast_pd(__m512i a) noexcept { return _mm512_castsi512_pd(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512 cast_ps(__m512 a) noexcept { return a; }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512d cast_pd(__m512d a) noexcept { return a; }
 
-
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512i cast_si(__m512 a) noexcept { return _mm512_castps_si512(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512i cast_si(__m512d a) noexcept { return _mm512_castpd_si512(a); }
 
-/// \hideinlinesource \nodiscard \inline \const \artificial
-export /** \cond */ EIN(nodiscard,inline,const,artificial) /** \endcond */
+export ein_nodiscard ein_inline ein_const ein_artificial
 __m512i cast_si(__m512i a) noexcept { return a; }
 
 #endif // __AVX512F__
