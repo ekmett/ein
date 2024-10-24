@@ -1,27 +1,27 @@
 #pragma once
 
-/// \file
-/// \brief defines used to indicate useful attributes for the compiler
-/// \ingroup macros
-/// \license
-/// SPDX-FileType: Source
-/// SPDX-FileCopyrightText: 2021-2024 Edward Kmett <ekmett@gmail.com>
-/// SPDX-FileCopyrightText: 2012 William Swanson
-/// SPDX-License-Identifier: MIT
-/// \endlicense
+/**
+  \file
+  \brief defines used to indicate useful attributes for the compiler
+  \ingroup macros
+  \license
+  SPDX-FileType: Source
+  SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+  SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+  \endlicense
+*/
 
 /// \ingroup macros
 /// \{
 
 #include "map.hpp"
 
-/// \def EIN(...)
-/// \brief
-/// Applies the prefix `ein_` syntactically to all arguments. Used to apply many attributes to definitions.
-///
-/// \details
-/// This lets you write EIN(hd,inline) vs. \ref ein_hd \ref ein_inline
-
+/** \def EIN(...)
+    \brief
+    Applies the prefix `ein_` syntactically to all arguments. Used to apply many attributes to definitions.
+    \details
+    This lets you write EIN(hd,inline) vs. \ref ein_hd \ref ein_inline
+*/
 #if !defined(DOXYGEN) && !defined(SWIG)
 #define EIN(...) EIN_MAP(ein_,__VA_ARGS__)
 #else
@@ -49,26 +49,23 @@
 #define ein_message(n)
 #endif
 
-/// \def ein_has_attribute(__x)
+/// \def ein_has_attribute(x)
 /// \brief portable `__has_attribute(x)`
 #ifdef __has_attribute
-#define ein_has_attribute(__x) __has_attribute(__x)
+#define ein_has_attribute(x) __has_attribute(x)
 #else
-#define ein_has_attribute(__x) 0
+#define ein_has_attribute(x) 0
 #endif
 
 /// \def ein_has_declspec_attribute(__x)
 /// \brief portable `__has_declspec_attribute(__x)`
 #if defined(_MSC_VER)
-#define ein_has_declspec_attribute(__x) 1
+#define ein_has_declspec_attribute(x) 1
 #elif defined(EIN_USE_DECLSPEC) && defined(__has_declspec_attribute)
-#define ein_has_declspec_attribute(__x) __has_declspec_attribute(__x)
+#define ein_has_declspec_attribute(x) __has_declspec_attribute(x)
 #else
-#define ein_has_declspec_attribute(__x) 0
+#define ein_has_declspec_attribute(x) 0
 #endif
-
-// TODO: restrict
-// TODO: gsl::Owner, gsl::Pointer?
 
 /// \def ein_inline
 /// \brief portable `inline __forceinline` or `inline __attribute__((always_inline))`
@@ -92,8 +89,8 @@
 ein_message("no artificial")
 #endif
 
-/// \def ein_visibility(...)
-/// \brief portable `__attribute__((visibility(x)))`, primarily used for ein_visibility("hidden") to
+/// \def ein_visibility
+/// \brief portable `__attribute__((visibility(x)))`, primarily used for `visibility("hidden")` to
 /// disable inclusion in the library
 #if ein_has_attribute(__visibility__)
 #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))
@@ -338,6 +335,7 @@ ein_message("no acquired_before")
 #endif // ein_has_attribute(acquired_before)
 
 /// \def ein_acquired_after(...)
+/// \details
 /// Use __attribute__((acquired_after(...))) on a declaration of a
 /// lockable variable to specify that the lock must be acquired after
 /// all attribute arguments. Arguments must be lockable type, and
@@ -350,6 +348,7 @@ ein_message("no acquired_after")
 #endif // ein_has_attribute(acquired_after)
 
 /// \def ein_exclusive_lock_function(...)
+/// \details
 /// Use __attribute__((exclusive_lock_function(...))) on a function
 /// declaration to specify that the function acquires all listed locks
 /// exclusively. This attribute takes zero or more arguments: either
@@ -364,6 +363,7 @@ ein_message("no exclusive_lock_function")
 #endif // ein_has_attribute(exclusive_lock_function)
 
 /// \def ein_shared_trylock_function(...)
+/// \details
 /// Use __attribute__((shared_lock_function(...))) on a function
 /// declaration to specify that the function will try (without
 /// blocking) to acquire all listed locks, although the locks may be
@@ -382,12 +382,13 @@ ein_message("no shared_trylock_function")
 #endif // ein_has_attribute(shared_trylock_function)
 
 /// \def ein_unlock_function(...)
-///Use __attribute__((unlock_function(...))) on a function declaration
-///to specify that the function release all listed locks. This
-///attribute takes zero or more arguments: either of lockable type or
-///integers indexing into function parameters of lockable type. If no
-///arguments are given, the acquired lock is implicitly this of the
-///enclosing object.
+/// \details
+/// Use __attribute__((unlock_function(...))) on a function declaration
+/// to specify that the function release all listed locks. This
+/// attribute takes zero or more arguments: either of lockable type or
+/// integers indexing into function parameters of lockable type. If no
+/// arguments are given, the acquired lock is implicitly this of the
+/// enclosing object.
 #if ein_has_attribute(unlock_function)
 #  define ein_unlock_function(...) __attribute__((unlock_function(__VA_ARGS__)))
 #else
@@ -396,6 +397,7 @@ ein_message("no unlock_function")
 #endif // ein_has_attribute(unlock_function)
 
 /// \def ein_lock_returned(l)
+/// \details
 /// Use __attribute__((lock_returned(l))) on a function declaration to
 /// specify that the function returns lock l (l must be of lockable
 /// type). This annotation is used to aid in resolving lock
@@ -408,6 +410,7 @@ ein_message("no lock_returned")
 #endif // ein_has_attribute(lock_returned)
 
 /// \def ein_locks_excluded(...)
+/// \details
 /// Use __attribute__((locks_excluded(...))) on a function declaration
 /// to specify that the function must not be called with the listed
 /// locks. Arguments must be lockable type, and there must be at least
@@ -420,6 +423,7 @@ ein_message("no locks_excluded")
 #endif // ein_has_attribute(locks_excluded)
 
 /// \def ein_exclusive_locks_required(...)
+/// \details
 /// Use __attribute__((exclusive_locks_required(...))) on a function
 /// declaration to specify that the function must be called while
 /// holding the listed exclusive locks. Arguments must be lockable
@@ -432,6 +436,7 @@ ein_message("no exclusive_locks_required")
 #endif // ein_has_attribute(exclusive_locks_required)
 
 /// \def ein_shared_locks_required(...)
+/// \details
 /// Use __attribute__((shared_locks_required(...))) on a function
 /// declaration to specify that the function must be called while
 /// holding the listed shared locks. Arguments must be lockable type,
@@ -445,7 +450,7 @@ ein_message("no shared_locks_required")
 
 /// \def ein_preferred_name(x)
 /// \brief portable `[[clang::preferred_name(x)]]` annotations
-///
+/// \details
 /// can be applied to a template struct to provide better names
 /// for some concrete instantiations
 #if __has_cpp_attribute(clang::preferred_name)
@@ -455,7 +460,9 @@ ein_message("no shared_locks_required")
 #endif
 
 /// \def ein_acquire_handle(x)
-/// \brief indicates this method returns an acquired resource, and names its type with a tag
+/// \brief indicates this method returns an acquired resource
+/// \details
+/// names its type with a tag
 /// if applied to a method it refers to the function result
 /// if applied to an argument it indicates that argument is an out-parameter providing the value
 #if __has_cpp_attribute(acquire_handle)
@@ -482,10 +489,9 @@ ein_message("no shared_locks_required")
 
 /// \def ein_flatten
 /// \brief portable `[[flatten]]`
-///
+/// \details
 /// the compiler should inline recursively aggressively under
 /// this definition. use with care, good for expression templates
-
 #if ein_has_attribute(flatten)
 #define ein_flatten __attribute__((flatten))
 #else
@@ -495,7 +501,7 @@ ein_message("no flatten")
 
 /// \def ein_malloc
 /// \brief portable `__attribute__((malloc))` attribute
-///
+/// \details
 /// indicates the returned memory does not alias with any other pointer
 
 #if ein_has_attribute(malloc)
@@ -507,7 +513,7 @@ ein_message("no malloc")
 
 /// \def ein_uninitialized
 /// \brief portable `[[clang::uninitialized]]` attribute
-///
+/// \details
 /// ensures a stack variable remains uninitialized regardless of
 /// `-ftrivial-auto-var-init=*` settings passed to the compiler
 
@@ -520,7 +526,7 @@ ein_message("no unitialized")
 
 /// \def ein_noalias
 /// \brief portable `__declspec(noalias)`
-///
+/// \details
 /// indicates a function only accesses data through pointer arguments
 ///
 /// requires clang to be running with `-fdeclspec` or `-fms-extensions`
@@ -534,7 +540,7 @@ ein_message("no noalias")
 
 /// \def ein_constinit
 /// \brief portable `constinit`
-///
+/// \details
 /// `constinit` requires C++20, but __attribute__((require_constant_initialization)) is available earlier
 #if ein_has_attribute(require_constant_initialization)
 #define ein_constinit __attribute__((require_constant_initialization))
@@ -552,7 +558,7 @@ ein_message("no constinit")
 
 /// \def ein_const
 /// \brief portable `__attribute__((const))`. NOT `const`
-///
+/// \details
 /// indicates the result is entirely determined by the arguments
 /// and does not access main memory in any way, including accessing
 /// members of this
@@ -567,7 +573,7 @@ ein_message("no const")
 
 /// \def ein_pure
 /// \brief portable `__attribute__((pure))`
-///
+/// \details
 /// no side-effects other than return value, may inspect globals
 ///
 /// allows the compiler to easily elide/duplicate calls
@@ -580,7 +586,7 @@ ein_message("no pure")
 
 /// \def ein_reinitializes
 /// \brief portable `[[clang::reinitializes]]`
-///
+/// \details
 /// indicates to any uninitialised object state sanitizer
 /// that this restores an object to a fresh state independent
 /// of its previous state
@@ -593,7 +599,7 @@ ein_message("no reinitializes")
 
 /// \def ein_assume_aligned(x)
 /// \brief portable `__attribute__((assume_aligned(x)))`
-///
+/// \details
 /// function returns a pointer with alignment that is at least x
 
 #if ein_has_attribute(assume_aligned)
@@ -605,7 +611,7 @@ ein_message("no assume_aligned")
 
 /// \def ein_align_value(x)
 /// \brief portable `__attribute__((align_value(x)))`
-///
+/// \details
 /// the annotated pointer specified has alignment at least x
 
 #if ein_has_attribute(align_value)
@@ -617,7 +623,7 @@ ein_message("no align_value")
 
 /// \def ein_null_terminated_string_arg(x)
 /// \brief portable `__attribute__((align_value(x)))`
-///
+/// \details
 /// the annotated pointer specified has alignment at least x
 
 #if ein_has_attribute(null_terminated_string_arg)
@@ -629,7 +635,7 @@ ein_message("no align_value")
 
 /// \def ein_alloc_align(x)
 /// \brief portable `__attribute__((alloc_align(x)))`
-///
+/// \details
 /// Indicates the 1-based argument number of a function that indicates the alignment of the returned result
 #if ein_has_attribute(alloc_align)
 #define ein_alloc_align(x) __attribute__((alloc_align(x)))
@@ -640,7 +646,7 @@ ein_message("no alloc_align")
 
 /// \def ein_alloc_size(x)
 /// \brief portable `__attribute__((alloc_size(x)))`
-///
+/// \details
 /// arg # (1-based) of the attribute that tells you the size of the result in bytes
 #if ein_has_attribute(alloc_size)
 #define ein_alloc_size(x) __attribute__((alloc_size(x)))
@@ -651,7 +657,7 @@ ein_message("no alloc_size")
 
 /// \def ein_noescape
 /// \brief portable `__attribute__((noescape))`
-///
+/// \details
 /// argument is not captured by the function (rust-style borrow)
 
 #if ein_has_attribute(noescape)
@@ -663,7 +669,7 @@ ein_message("no noescape")
 
 /// \def ein_callback(...)
 /// \brief portable `__attribute__((callback(...)))`
-///
+/// \details
 /// indicates the specified argument will be called back with the
 /// other named arguments. complicated, see clang docs.
 ///
@@ -678,7 +684,7 @@ ein_message("no callback")
 
 /// \def ein_lifetimebound
 /// \brief portable `__attribute__((lifetimebound))`
-///
+/// \details
 /// the argument must be kept alive as long as the result of the
 /// function is alive. Should be used for functions that return
 /// references or views into the target object.
@@ -694,24 +700,9 @@ ein_message("no callback")
 ein_message("no lifetimebound")
 #endif
 
-// TODO: find a way to detect if we support lifetimebound on this!
-// Apple clang version 14.0.3 (clang-1403.0.22.14.1) does not support this
-// gcc version 11.4.0 does support this
-
-/*
-#if ein_has_attribute(lifetimebound)
-  #define ein_this_lifetimebound [[lifetimebound]]
-#else
-*/
-#define ein_this_lifetimebound
-/*
-ein_message(no lifetimebound)
-#endif
-*/
-
 /// \def ein_returns_nonnull
 /// \brief portable `__attribute__((returns_nonnnull))`
-///
+/// \details
 /// The result of this function will be non-null
 
 #if ein_has_attribute(returns_nonnull)
@@ -723,7 +714,7 @@ ein_message("no returns_nonnull")
 
 /// \def ein_nonnull(...)
 /// \brief portable `__attribute__((nonnnull(...)))`
-///
+/// \details
 /// Indicates the selected (1-based) indexed arguments to this function
 /// must be non-null. Passing a null pointer to such an argument is
 /// undefined behavior. GCC-style.
@@ -737,7 +728,7 @@ ein_message("no gcc-style nonnull")
 
 /// \def ein_noreturn
 /// \brief portable `__attribute__((noreturn)))`
-///
+/// \details
 /// Indicates the method does not return to the caller.
 
 #if ein_has_attribute(noreturn)
@@ -749,17 +740,17 @@ ein_message("no gcc-style noreturn")
 
 /// \def ein_Nonnull
 /// \brief portable `_Nonnull`
-///
+/// \details
 /// can be applied to each * in an data type to indicate that argument should never be null.
 ///
 /// \def ein_Nullable
 /// \brief portable `_Nullable`
-///
+/// \details
 /// can be applied to each * in an data type to indicate that argument might be null.
 ///
 /// \def ein_Null_unspecified
 /// \brief portable `_Null_unspecified`
-///
+/// \details
 /// applied to each * in an data type to indicate that the nullability of it is unknown or complicated
 #ifdef __clang__
 #define ein_Nonnull _Nonnull
@@ -774,17 +765,17 @@ ein_message("no gcc-style noreturn")
 
 /// \def ein_host
 /// \brief portable `__host__` for cuda
-//
+/// \details
 /// indicates the function should be available on the host
-//
+///
 /// \def ein_device
 /// \brief portable `__device__` for cuda
-///
+/// \details
 /// indicates the function should be available on the device
-//
+///
 /// \def ein_global
 /// \brief portable `__global__` for cuda
-///
+/// \details
 /// indicates the function is a global entry point for a
 /// compute kernel
 
@@ -800,7 +791,7 @@ ein_message("no gcc-style noreturn")
 
 /// \def ein_hd
 /// \brief applies both \ref ein_host and \ref ein_device
-///
+/// \details
 /// most functions in the library should be defined this way
 ///
 /// may eventually add similar annotations for sycl and the like
@@ -809,7 +800,7 @@ ein_message("no gcc-style noreturn")
 
 /// \def ein_no_unique_address
 /// \brief portable c++20 `[[no_unique_address]]`
-///
+/// \details
 /// clang makes this available slightly earlier
 
 #if __has_cpp_attribute(no_unique_address)
@@ -822,7 +813,7 @@ ein_message("no gcc-style noreturn")
 
 /// \def ein_empty_bases
 /// \brief portable __declspec(empty_bases)
-///
+/// \details
 /// just for msvc for now.
 
 #if defined(_MSC_VER) && !defined(__clang__)
@@ -835,24 +826,22 @@ ein_message("no gcc-style noreturn")
 
 /// \def ein_maybe_unused
 /// \brief argument, member or definition `[[maybe_unused]]`
-///
 /// \since C++17
 #define ein_maybe_unused [[maybe_unused]]
 
 /// \def ein_deprecated
 /// \brief `[[deprecated]]`
-///
 /// \since C++14
 #define ein_deprecated [[deprecated]]
 
 /// \def ein_nodiscard
 /// \brief C++17 `[[nodiscard]]`.
+/// \details
 /// The user should explicitly throw away the result rather than let it be silently discarded
 #define ein_nodiscard [[nodiscard]]
 
 /// \def ein_unroll
 /// \brief hint to unroll the following loop N times. (clang-specific)
-//
 /// \def ein_unroll_full
 /// \brief hint to unroll the following loop fully. (clang-specific)
 #ifdef __clang__

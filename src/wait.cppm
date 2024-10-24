@@ -8,7 +8,13 @@
 /// \endlicense
 module;
 
+#ifndef EIN_PCH
+#include "prelude.hpp"
+#endif
+
 #include <x86intrin.h>
+
+using namespace std;
 
 /// \ingroup wait
 export module ein.wait;

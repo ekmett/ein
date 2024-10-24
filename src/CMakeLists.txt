@@ -45,6 +45,7 @@ lto(ein)
 
 if(PRECOMPILE_HEADERS)
   target_precompile_headers(ein PRIVATE ${CMAKE_SOURCE_DIR}/h/prelude.hpp)
+  target_compile_definitions(ein PUBLIC EIN_PCH=1)
 endif()
 
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!

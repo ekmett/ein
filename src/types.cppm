@@ -7,6 +7,10 @@
 /// \endlicense
 module;
 
+#ifndef EIN_PCH
+#include "prelude.hpp"
+#endif
+
 #include <cxxabi.h>
 
 using namespace std;

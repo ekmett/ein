@@ -1,3 +1,5 @@
+module;
+
 /// \file
 /// \ingroup numerics
 /// \license
@@ -6,12 +8,16 @@
 /// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 /// \endlicense
 
-/// \ingroup numerics
-export module ein.numerics;
+#ifndef EIN_PCH
+#include "prelude.hpp"
+#endif
+
+using namespace std;
 
 import ein.types;
 
-using namespace std;
+/// \ingroup numerics
+export module ein.numerics;
 
 namespace ein {
 /// \defgroup numerics numerics

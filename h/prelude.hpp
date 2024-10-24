@@ -1,76 +1,28 @@
 #pragma once
 
-/// \defgroup headers headers
+/**
+    \defgroup headers headers
+    \file
+    \ingroup headers
+    \license
+    SPDX-FileType: Source
+    SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+    SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+    \endlicense
+    \brief precompiled header
+    \details
+    this file contains the same files as the precompiled header would
+    but clangd can't handle precompiled headers and c++ modules together
+    so we just include the files we need directly when running in that mode.
 
-/// \file
-/// \ingroup headers
-/// \license
-/// SPDX-FileType: Source
-/// SPDX-FileCopyrightText: 2021-2024 Edward Kmett <ekmett@gmail.com>
-/// SPDX-FileCopyrightText: 2012 William Swanson
-/// SPDX-License-Identifier: MIT
-/// \endlicense
-/// \brief precompiled header
-/// \hideincludedbygraph \hideincludegraph
+    we'd just make this the precompiled header, but then cmake would fail
+    to rebuild it when we change any of the local header files we include here.
+    so instead we tell cmake about each of our headers in turn, and only use
+    this header when not running in that mode.
 
-#include <algorithm>
-#include <array>
-#include <atomic>
-#include <bit>
-#include <cassert>
-#include <chrono>
-#include <cmath>
-#include <concepts>
-#include <condition_variable>
-#include <coroutine>
-#include <cstddef>
-#include <cstdint>
-#include <cstdio>
-#include <cstdlib>
-#include <cstring>
-#include <ctime>
-#include <exception>
-#include <fstream>
-#include <functional>
-#include <initializer_list>
-#include <iomanip>
-#include <iostream>
-#include <iterator>
-#include <limits>
-#include <list>
-#include <map>
-#include <memory>
-#include <mutex>
-#include <numeric>
-#include <queue>
-#include <random>
-#include <ratio>
-#include <stdexcept>
-#include <string>
-#include <string_view>
-#include <system_error>
-#include <thread>
-#include <tuple>
-#include <type_traits>
-#include <unordered_map>
-#include <utility>
-#include <vector>
-#include <version>
+    \hideincludedbygraph \hideincludegraph
+*/
 
+#include "third-party.hpp"
 #include "attributes.hpp" // EIN(..)
 #include "assert.hpp" // ein_assert(...)
-
-// simd intrinsics
-// #include <immintrin.h>
-
-// json
-//#include <nlohmann/json.hpp>
-
-// logging/formatting
-#include <spdlog/spdlog.h>
-#include <spdlog/fmt/ranges.h>
-#include <spdlog/fmt/ostr.h>
-#include <spdlog/fmt/bundled/color.h>
-#include <spdlog/fmt/bundled/format.h>
-#include <spdlog/cfg/env.h>
-#include <spdlog/sinks/stdout_color_sinks.h>

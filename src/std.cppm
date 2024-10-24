@@ -10,6 +10,10 @@ module;
 /// \brief polyfill missing standard library functions
 /// \details This file works around limitations of the installed libc++ / stdc++
 
+#ifndef EIN_PCH
+#include "prelude.hpp"
+#endif
+
 /// \defgroup std std
 export module ein.std;
 
