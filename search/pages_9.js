@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['todo_20list_0',['Todo List',['../dd/da0/todo.html',1,'']]]
+  ['vs_20clangd_0',['On cmake vs. clangd',['../df/dff/pch_cmake_vs_clangd.html',1,'pch']]]
 ];

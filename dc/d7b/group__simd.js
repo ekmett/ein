@@ -115,8 +115,8 @@ var group__simd =
       [ "data", "dc/d7b/group__simd.html#a626d7155163f7ba2d66ea2cbc918b17d", null ],
       [ "size", "dc/d7b/group__simd.html#a3249827db9003cca7c7e91299ac133f1", null ]
     ] ],
-    [ "std::tuple_size< ein::simd< T, N > >", "dc/d7b/group__simd.html#d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4", null ],
-    [ "std::tuple_element< I, ein::simd< T, N > >", "dc/d7b/group__simd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4", [
+    [ "std::tuple_size< ein::simd< T, N > >", "dc/d7b/group__simd.html#da/d58/structstd_1_1tuple__size_3_01ein_1_1simd_3_01T_00_01N_01_4_01_4", null ],
+    [ "std::tuple_element< I, ein::simd< T, N > >", "dc/d7b/group__simd.html#de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4", [
       [ "type", "dc/d7b/group__simd.html#a19c2978201d48d6253eb5be0da2d359d", null ]
     ] ],
     [ "ein::mmask_t", "dc/d7b/group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],

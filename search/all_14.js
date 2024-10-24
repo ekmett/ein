@@ -7,5 +7,5 @@ var searchData=
   ['unknown_4',['unknown',['../df/d08/group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a',1,'ein']]],
   ['unord_5fq_5',['UNORD_Q',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac32999178de1032ff3264f95a571234d',1,'ein']]],
   ['unord_5fs_6',['UNORD_S',['../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a89525ea7b625593b12619c0aac7c3970',1,'ein']]],
-  ['use_20reproduction_20and_20distribution_7',['Terms and Conditions for use, reproduction, and distribution',['../d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md9',1,'']]]
+  ['use_20reproduction_20and_20distribution_7',['Terms and Conditions for use, reproduction, and distribution',['../da/d19/md_LICENSE.html#autotoc_md3',1,'']]]
 ];

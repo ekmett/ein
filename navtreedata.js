@@ -25,21 +25,20 @@
 var NAVTREE =
 [
   [ "ein", "index.html", [
-    [ "Install requirements", "index.html#autotoc_md1", [
-      [ "ninja 1.12.1", "index.html#autotoc_md2", null ],
-      [ "clang++-19", "index.html#autotoc_md3", null ],
-      [ "doxygen 1.12.0", "index.html#autotoc_md4", null ]
-    ] ],
-    [ "Contact Information", "index.html#autotoc_md5", null ],
-    [ "License", "d2/d35/md__l_i_c_e_n_s_e.html", [
-      [ "BSD 2-Clause License", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md7", null ],
-      [ "Apache License", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md8", [
-        [ "Terms and Conditions for use, reproduction, and distribution", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md9", null ],
-        [ "APPENDIX: How to apply the Apache License to your work", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md10", null ]
+    [ "License", "da/d19/md_LICENSE.html", [
+      [ "Contact Information", "index.html#autotoc_md5", null ],
+      [ "BSD 2-Clause License", "da/d19/md_LICENSE.html#autotoc_md1", null ],
+      [ "Apache License", "da/d19/md_LICENSE.html#autotoc_md2", [
+        [ "Terms and Conditions for use, reproduction, and distribution", "da/d19/md_LICENSE.html#autotoc_md3", null ],
+        [ "APPENDIX: How to apply the Apache License to your work", "da/d19/md_LICENSE.html#autotoc_md4", null ]
       ] ]
     ] ],
+    [ "Installation", "d9/d87/install.html", [
+      [ "Ninja 1.12.1", "d9/d87/install.html#install_ninja", null ],
+      [ "Clang++-19", "d9/d87/install.html#install_clang", null ],
+      [ "Doxygen 1.12.0", "d9/d87/install.html#install_doxygen", null ]
+    ] ],
     [ "On Precompiled Headers", "d2/d4d/pch.html", "d2/d4d/pch" ],
-    [ "Todo List", "dd/da0/todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Modules", "modules.html", [
       [ "Modules List", "modules.html", "modules_dup" ],
@@ -87,7 +86,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dc/d7b/group__simd.html#ga242628bef83df6e1fc502a79fbb75806"
+"dc/d7b/group__simd.html#af590ef029b533f3dfcda0f10d8e69941"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

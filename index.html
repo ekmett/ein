@@ -175,60 +175,22 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
-  <li class="level1">
-    <a href="#autotoc_md1">Install requirements</a>
+  <li class="level1 empty">
     <ul>
       <li class="level2">
-        <a href="#autotoc_md2">ninja 1.12.1</a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md3">clang++-19</a>
-      </li>
-      <li class="level2">
-        <a href="#autotoc_md4">doxygen 1.12.0</a>
+        <a href="#autotoc_md5">Contact Information</a>
       </li>
     </ul>
   </li>
-  <li class="level1">
-    <a href="#autotoc_md5">Contact Information</a>
-  </li>
 </ul>
 </div>
-<div class="textblock"><p><a class="anchor" id="md__r_e_a_d_m_e"></a></p>
-<p><a href="https://github.com/ekmett/ein/actions/workflows/cmake.yml"><img src="https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg" alt="CMake" style="pointer-events: none;" class="inline"/></a> <a href="https://ekmett.github.io/ein/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Doxygen" style="pointer-events: none;" class="inline"/></a></p>
+<div class="textblock"><p><a href="https://github.com/ekmett/ein/actions/workflows/cmake.yml"><img src="https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg" alt="CMake" style="pointer-events: none;" class="inline"/></a> <a href="https://ekmett.github.io/ein/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Doxygen" style="pointer-events: none;" class="inline"/></a></p>
 <p>This is a playground for wide SIMD evaluation.</p>
-<h1><a class="anchor" id="autotoc_md1"></a>
-Install requirements</h1>
-<p>You'll need a fairly bleeding edge compiler for this.</p>
-<p>Currently the intention is to target AVX-512, and any support for something other than that (e.g. Apple Silicon, AVX-2) will be nominal at best, so make sure your CPU is up to snuff. Build instructions below are for Linux. I'll very likely take patches that broaden coverage, though.</p>
-<p>There's a lot more to come.</p>
-<h2><a class="anchor" id="autotoc_md2"></a>
-ninja 1.12.1</h2>
-<p>You'll want to upgrade Ninja to a version that supports scanning for C++ modules.</p>
-<div class="fragment"><div class="line">wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip</div>
-<div class="line">sudo apt-get install -y unzip</div>
-<div class="line">unzip ninja-linux.zip -d /usr/local/bin/</div>
-<div class="line">sudo chmod +x /usr/local/bin/ninja</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md3"></a>
-clang++-19</h2>
-<p>Next you'll need a version of clang (and clang-tools) that supports c++23 pretty well. Currently this is clang++-19</p>
-<div class="fragment"><div class="line">wget https://apt.llvm.org/llvm.sh</div>
-<div class="line">chmod +x llvm.sh</div>
-<div class="line">sudo ./llvm.sh 19</div>
-<div class="line">sudo apt install clang-19 clang-tools-19 clangd-19 lldb-19 lld-19</div>
-</div><!-- fragment --><h2><a class="anchor" id="autotoc_md4"></a>
-doxygen 1.12.0</h2>
-<p>Documentation requires doxygen 1.12.0.</p>
-<div class="fragment"><div class="line">sudo apt-get uninstall doxygen</div>
-<div class="line">wget https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz</div>
-<div class="line">tar xvfpz doxygen-1.12.0.linux.bin.tar.gz</div>
-<div class="line">cd doxygen-1.12.0/</div>
-<div class="line">sudo make install</div>
-<div class="line">doxygen --version</div>
-</div><!-- fragment --><h1><a class="anchor" id="autotoc_md5"></a>
-Contact Information</h1>
+<h2><a class="anchor" id="autotoc_md5"></a>
+Contact Information</h2>
 <p>Contributions and bug reports are welcome!</p>
-<p>Please feel free to contact me through GitHub or on the <a href="https://web.libera.chat/#haskell-lens">#haskell-lens</a> or <a href="https://web.libera.chat/#haskell">#haskell</a> IRC channel on Libera Chat. I can also be reached through Twitter/X as @kmett.</p>
+<p>Please feel free to contact me through <a href="https://github.com/ekmett">GitHub</a> or on the <a href="https://web.libera.chat/#haskell-lens">#haskell-lens</a> or <a href="https://web.libera.chat/#haskell">#haskell</a> IRC channel on Libera Chat.</p>
+<p>I can also be reached through Twitter/X as @kmett.</p>
 <p>-Edward Kmett </p>
 </div></div><!-- PageDoc -->
 <a href="doxygen_crawl.html"></a>

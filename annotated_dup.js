@@ -11,7 +11,7 @@ var annotated_dup =
       [ "umwait", "df/d2f/group__wait.html#d1/d64/structein_1_1umwait", "df/d2f/group__wait_d1/d64/structein_1_1umwait" ]
     ] ],
     [ "std", "d8/dcc/namespacestd.html", [
-      [ "tuple_element< I, ein::simd< T, N > >", "dc/d7b/group__simd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4", "dc/d7b/group__simd_dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4" ],
-      [ "tuple_size< ein::simd< T, N > >", "dc/d7b/group__simd.html#d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4", null ]
+      [ "tuple_element< I, ein::simd< T, N > >", "dc/d7b/group__simd.html#de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4", "dc/d7b/group__simd_de/dc4/structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4" ],
+      [ "tuple_size< ein::simd< T, N > >", "dc/d7b/group__simd.html#da/d58/structstd_1_1tuple__size_3_01ein_1_1simd_3_01T_00_01N_01_4_01_4", null ]
     ] ]
 ];

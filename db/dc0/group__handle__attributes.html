@@ -196,7 +196,8 @@ Macros</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <p>Handles are a way to identify resources like files, sockets, and processes.</p>
 <p>They are more opaque than pointers and widely used in system programming. They have similar risks such as never releasing a resource associated with a handle, attempting to use a handle that was already released, or trying to release a handle twice.</p>
-<p>Using the annotations below it is possible to make the ownership of the handles clear: whose responsibility is to release them. They can also aid static analysis tools to find bugs. *&zwj;/ </p>
+<p>Using the annotations below it is possible to make the ownership of the handles clear: whose responsibility is to release them. They can also aid static analysis tools to find bugs.</p>
+<p>*&zwj;/ </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga5984a15e443d18d17fb5d9568058ee01" name="ga5984a15e443d18d17fb5d9568058ee01"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga5984a15e443d18d17fb5d9568058ee01">&#9670;&#160;</a></span>ein_acquire_handle</h2>
@@ -217,7 +218,7 @@ Macros</h2></td></tr>
 <p>Names its type with a tag.</p>
 <p>If applied to a method it refers to the function result If applied to an argument it indicates that argument is an out-parameter providing the value </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00746">746</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00747">747</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -238,7 +239,7 @@ Macros</h2></td></tr>
 
 <p>Indicates this argument is an acquired resource that is being released with a tag. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00756">756</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00757">757</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -259,7 +260,7 @@ Macros</h2></td></tr>
 
 <p>indicates this argument is a use of a resource, but does not release it. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00766">766</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00767">767</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
