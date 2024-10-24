@@ -39,12 +39,17 @@ install(TARGETS ein
   PUBLIC_HEADER DESTINATION include
   INCLUDES DESTINATION include)
 
-set_target_properties(ein PROPERTIES PUBLIC_HEADER "assert.hpp;attributes.hpp;map.hpp;prelude.hpp")
+set_target_properties(ein PROPERTIES PUBLIC_HEADER "assert.hpp;attributes.hpp;map.hpp;prelude.hpp;third-party.hpp")
 
 lto(ein)
 
 if(PRECOMPILE_HEADERS)
-  target_precompile_headers(ein PRIVATE ${CMAKE_SOURCE_DIR}/h/prelude.hpp)
+  target_precompile_headers(ein PRIVATE
+    ${CMAKE_SOURCE_DIR}/h/assert.hpp
+    ${CMAKE_SOURCE_DIR}/h/attributes.hpp
+    ${CMAKE_SOURCE_DIR}/h/map.hpp
+    ${CMAKE_SOURCE_DIR}/h/third-party.hpp
+  )
   target_compile_definitions(ein PUBLIC EIN_PCH=1)
 endif()
 
