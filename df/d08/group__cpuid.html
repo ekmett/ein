@@ -193,6 +193,7 @@ Files</h2></td></tr>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
 <tr class="memitem:d4/d6b/structein_1_1cpuid__t" id="r_d4/d6b/structein_1_1cpuid__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#d4/d6b/structein_1_1cpuid__t">ein::cpuid_t</a></td></tr>
+<tr class="memdesc:d4/d6b/structein_1_1cpuid__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">result from calling the <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> instruction  <a href="#d4/d6b/structein_1_1cpuid__t">More...</a><br /></td></tr>
 <tr class="separator:d4/d6b/structein_1_1cpuid__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
@@ -201,18 +202,19 @@ Enumerations</h2></td></tr>
 , <a class="el" href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">ein::cpu_vendor::amd</a> =1
 , <a class="el" href="#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">ein::cpu_vendor::unknown</a> =2
  }</td></tr>
-<tr class="memdesc:ga7f13ea202e71639d6c875e4e301f3ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">cpu vendor id  <a href="#ga7f13ea202e71639d6c875e4e301f3ca4">More...</a><br /></td></tr>
+<tr class="memdesc:ga7f13ea202e71639d6c875e4e301f3ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU vendor id.  <a href="#ga7f13ea202e71639d6c875e4e301f3ca4">More...</a><br /></td></tr>
 <tr class="separator:ga7f13ea202e71639d6c875e4e301f3ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
 <tr class="memitem:ga849cffec87c96e71e01ec367f5bb01ea" id="r_ga849cffec87c96e71e01ec367f5bb01ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#d4/d6b/structein_1_1cpuid__t">cpuid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga849cffec87c96e71e01ec367f5bb01ea">ein::cpuid</a> (int32_t eax, int32_t ecx) noexcept</td></tr>
+<tr class="memdesc:ga849cffec87c96e71e01ec367f5bb01ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> and returns all of the registers that it responds with.  <br /></td></tr>
 <tr class="separator:ga849cffec87c96e71e01ec367f5bb01ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
 <tr class="memitem:ga4639c74c35d500365670dd87c558c0c5" id="r_ga4639c74c35d500365670dd87c558c0c5"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#ga7f13ea202e71639d6c875e4e301f3ca4">cpu_vendor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4639c74c35d500365670dd87c558c0c5">ein::cpu_vendor</a></td></tr>
-<tr class="memdesc:ga4639c74c35d500365670dd87c558c0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">current cpu vendor  <br /></td></tr>
+<tr class="memdesc:ga4639c74c35d500365670dd87c558c0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports the vendor of the CPU encountered at runtime. Cached.  <br /></td></tr>
 <tr class="separator:ga4639c74c35d500365670dd87c558c0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -228,8 +230,9 @@ Variables</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-<div class="textblock">
-<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00022">22</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
+<div class="textblock"><p>result from calling the <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> instruction </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00026">26</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
 </div><table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
@@ -281,22 +284,22 @@ edx</td>
 </table>
 </div><div class="memdoc">
 
-<p>cpu vendor id </p>
+<p>CPU vendor id. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a" name="gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a"></a>intel&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52" name="gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52"></a>amd&#160;</td><td class="fielddoc"></td></tr>
-<tr><td class="fieldname"><a id="gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a" name="gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a" name="gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a"></a>intel&#160;</td><td class="fielddoc"><p><a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> reported "GenuineIntel" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52" name="gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52"></a>amd&#160;</td><td class="fielddoc"><p><a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> reported "AuthenticAMD" </p>
+</td></tr>
+<tr><td class="fieldname"><a id="gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a" name="gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"><p><a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> reported something else </p>
+</td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00035">35</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   35</span>                                           {</div>
-<div class="line"><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>=0,</div>
-<div class="line"><span class="lineno">   37</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">amd</a>=1,</div>
-<div class="line"><span class="lineno">   38</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">unknown</a>=2</div>
-<div class="line"><span class="lineno">   39</span>};</div>
-<div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">ein::cpu_vendor::intel</a></div><div class="ttdeci">@ intel</div></div>
-<div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">ein::cpu_vendor::amd</a></div><div class="ttdeci">@ amd</div></div>
-<div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">ein::cpu_vendor::unknown</a></div><div class="ttdeci">@ unknown</div></div>
+<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00042">42</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   44</span>                                           {</div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>=0,  </div>
+<div class="line"><span class="lineno">   46</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">amd</a>=1,    </div>
+<div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">ein::cpu_vendor::intel</a></div><div class="ttdeci">@ intel</div><div class="ttdoc">CPUID reported &quot;GenuineIntel&quot;</div></div>
+<div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">ein::cpu_vendor::amd</a></div><div class="ttdeci">@ amd</div><div class="ttdoc">CPUID reported &quot;AuthenticAMD&quot;</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,7 +331,10 @@ edx</td>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00027">27</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
+<p>calls <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> and returns all of the registers that it responds with. </p>
+<p>this can take a 100+ cycles and stalls everything waiting for writes so please, do this outside of the critical path. </p>
+
+<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00034">34</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
 
 </div>
 </div>
@@ -353,9 +359,9 @@ edx</td>
 </table>
 </div><div class="memdoc">
 
-<p>current cpu vendor </p>
+<p>Reports the vendor of the CPU encountered at runtime. Cached. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00043">43</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00050">50</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
 
 </div>
 </div>

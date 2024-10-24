@@ -211,12 +211,12 @@ Macros</h2></td></tr>
 <tr class="memitem:gaf16f2b5fd14f833898362f536ac33de3" id="r_gaf16f2b5fd14f833898362f536ac33de3"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaf16f2b5fd14f833898362f536ac33de3">ein_message</a>(n)</td></tr>
 <tr class="memdesc:gaf16f2b5fd14f833898362f536ac33de3"><td class="mdescLeft">&#160;</td><td class="mdescRight">emit a warning if EIN_VERBOSE is set during compile  <br /></td></tr>
 <tr class="separator:gaf16f2b5fd14f833898362f536ac33de3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad3739858c2f6f373697b155ce4acac3a" id="r_gad3739858c2f6f373697b155ce4acac3a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad3739858c2f6f373697b155ce4acac3a">ein_has_attribute</a>(__x)</td></tr>
-<tr class="memdesc:gad3739858c2f6f373697b155ce4acac3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__has_attribute(x)</code>  <br /></td></tr>
-<tr class="separator:gad3739858c2f6f373697b155ce4acac3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga634fb93c90b0fefd7994f40126573295" id="r_ga634fb93c90b0fefd7994f40126573295"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga634fb93c90b0fefd7994f40126573295">ein_has_declspec_attribute</a>(__x)</td></tr>
-<tr class="memdesc:ga634fb93c90b0fefd7994f40126573295"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__has_declspec_attribute(__x)</code>  <br /></td></tr>
-<tr class="separator:ga634fb93c90b0fefd7994f40126573295"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga1464cdce97768a44f01f0888b22c412c" id="r_ga1464cdce97768a44f01f0888b22c412c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1464cdce97768a44f01f0888b22c412c">ein_has_attribute</a>(x)</td></tr>
+<tr class="memdesc:ga1464cdce97768a44f01f0888b22c412c"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__has_attribute(x)</code>  <br /></td></tr>
+<tr class="separator:ga1464cdce97768a44f01f0888b22c412c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4434fc5d90d5e9d0359cf53e4b89e79f" id="r_ga4434fc5d90d5e9d0359cf53e4b89e79f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4434fc5d90d5e9d0359cf53e4b89e79f">ein_has_declspec_attribute</a>(x)</td></tr>
+<tr class="memdesc:ga4434fc5d90d5e9d0359cf53e4b89e79f"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__has_declspec_attribute(__x)</code>  <br /></td></tr>
+<tr class="separator:ga4434fc5d90d5e9d0359cf53e4b89e79f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae478383afcbcd2db052f49d41e72763d" id="r_gae478383afcbcd2db052f49d41e72763d"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a>&#160;&#160;&#160;inline</td></tr>
 <tr class="memdesc:gae478383afcbcd2db052f49d41e72763d"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>inline __forceinline</code> or <code>inline __attribute__((always_inline))</code>  <br /></td></tr>
 <tr class="separator:gae478383afcbcd2db052f49d41e72763d"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -224,7 +224,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga339fea4b0350c64584a58eb87db76f6b"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((artificial))</code>. The debugger should not single-step into this function. Treat it as atomic and associate it with the debug information for the use site instead.  <br /></td></tr>
 <tr class="separator:ga339fea4b0350c64584a58eb87db76f6b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5165837aaf9cdf9743915da8d274f7a6" id="r_ga5165837aaf9cdf9743915da8d274f7a6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5165837aaf9cdf9743915da8d274f7a6">ein_visibility</a>(...)</td></tr>
-<tr class="memdesc:ga5165837aaf9cdf9743915da8d274f7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((visibility(x)))</code>, primarily used for ein_visibility("hidden") to disable inclusion in the library  <br /></td></tr>
+<tr class="memdesc:ga5165837aaf9cdf9743915da8d274f7a6"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((visibility(x)))</code>, primarily used for <code>visibility("hidden")</code> to disable inclusion in the library  <br /></td></tr>
 <tr class="separator:ga5165837aaf9cdf9743915da8d274f7a6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga24a2cafa9f882b8f2d0772140597277b" id="r_ga24a2cafa9f882b8f2d0772140597277b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga24a2cafa9f882b8f2d0772140597277b">ein_exclude_from_explicit_instantiation</a></td></tr>
 <tr class="memdesc:ga24a2cafa9f882b8f2d0772140597277b"><td class="mdescLeft">&#160;</td><td class="mdescRight">exclude this member from explicit template instantiation. paired with ein_hidden  <br /></td></tr>
@@ -302,34 +302,26 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga421858e8fce70bb2eb94570ba522a435"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((acquired_before(...))) on a declaration of a lockable variable to specify that the lock must be acquired before all attribute arguments. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
 <tr class="separator:ga421858e8fce70bb2eb94570ba522a435"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gabe3f95fa2b7f62691b5b4133b43f877b" id="r_gabe3f95fa2b7f62691b5b4133b43f877b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gabe3f95fa2b7f62691b5b4133b43f877b">ein_acquired_after</a>(...)</td></tr>
-<tr class="memdesc:gabe3f95fa2b7f62691b5b4133b43f877b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((acquired_after(...))) on a declaration of a lockable variable to specify that the lock must be acquired after all attribute arguments. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
 <tr class="separator:gabe3f95fa2b7f62691b5b4133b43f877b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac8c4b65cde1558800e117b00d2d65466" id="r_gac8c4b65cde1558800e117b00d2d65466"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gac8c4b65cde1558800e117b00d2d65466">ein_exclusive_lock_function</a>(...)</td></tr>
-<tr class="memdesc:gac8c4b65cde1558800e117b00d2d65466"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((exclusive_lock_function(...))) on a function declaration to specify that the function acquires all listed locks exclusively. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object.  <br /></td></tr>
 <tr class="separator:gac8c4b65cde1558800e117b00d2d65466"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaa9bf61cf820ce95d780384f4857978d8" id="r_gaa9bf61cf820ce95d780384f4857978d8"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaa9bf61cf820ce95d780384f4857978d8">ein_shared_trylock_function</a>(...)</td></tr>
-<tr class="memdesc:gaa9bf61cf820ce95d780384f4857978d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((shared_lock_function(...))) on a function declaration to specify that the function will try (without blocking) to acquire all listed locks, although the locks may be shared (e.g. read locks). This attribute takes one or more arguments. The first argument is an integer or boolean value specifying the return value of a successful lock acquisition. The remaining arugments are either of lockable type or integers indexing into function parameters of lockable type. If only one argument is given, the acquired lock is implicitly this of the enclosing object.  <br /></td></tr>
 <tr class="separator:gaa9bf61cf820ce95d780384f4857978d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad37ff4fae131feae423d5feea1b8b1cd" id="r_gad37ff4fae131feae423d5feea1b8b1cd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad37ff4fae131feae423d5feea1b8b1cd">ein_unlock_function</a>(...)</td></tr>
-<tr class="memdesc:gad37ff4fae131feae423d5feea1b8b1cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((unlock_function(...))) on a function declaration to specify that the function release all listed locks. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object.  <br /></td></tr>
 <tr class="separator:gad37ff4fae131feae423d5feea1b8b1cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b" id="r_ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b">ein_lock_returned</a>(__x)</td></tr>
-<tr class="memdesc:ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((lock_returned(l))) on a function declaration to specify that the function returns lock l (l must be of lockable type). This annotation is used to aid in resolving lock expressions.  <br /></td></tr>
 <tr class="separator:ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5bb9e819a1b0706fa0e644a2583e4519" id="r_ga5bb9e819a1b0706fa0e644a2583e4519"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5bb9e819a1b0706fa0e644a2583e4519">ein_locks_excluded</a>(...)</td></tr>
-<tr class="memdesc:ga5bb9e819a1b0706fa0e644a2583e4519"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((locks_excluded(...))) on a function declaration to specify that the function must not be called with the listed locks. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
 <tr class="separator:ga5bb9e819a1b0706fa0e644a2583e4519"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaaf4bbafcdf5c35392234f136d137ecf9" id="r_gaaf4bbafcdf5c35392234f136d137ecf9"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaf4bbafcdf5c35392234f136d137ecf9">ein_exclusive_locks_required</a>(...)</td></tr>
-<tr class="memdesc:gaaf4bbafcdf5c35392234f136d137ecf9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((exclusive_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed exclusive locks. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
 <tr class="separator:gaaf4bbafcdf5c35392234f136d137ecf9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga7468e42fee3b2135260f226e60cb5bfd" id="r_ga7468e42fee3b2135260f226e60cb5bfd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga7468e42fee3b2135260f226e60cb5bfd">ein_shared_locks_required</a>(...)</td></tr>
-<tr class="memdesc:ga7468e42fee3b2135260f226e60cb5bfd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Use <b>attribute</b>((shared_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed shared locks. Arguments must be lockable type, and there must be at least one argument.  <br /></td></tr>
 <tr class="separator:ga7468e42fee3b2135260f226e60cb5bfd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga1594d8c5a04ac97dfde52250be9378fb" id="r_ga1594d8c5a04ac97dfde52250be9378fb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga1594d8c5a04ac97dfde52250be9378fb">ein_preferred_name</a>(__x)</td></tr>
 <tr class="memdesc:ga1594d8c5a04ac97dfde52250be9378fb"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>[[clang::preferred_name(x)]]</code> annotations  <br /></td></tr>
 <tr class="separator:ga1594d8c5a04ac97dfde52250be9378fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5984a15e443d18d17fb5d9568058ee01" id="r_ga5984a15e443d18d17fb5d9568058ee01"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga5984a15e443d18d17fb5d9568058ee01">ein_acquire_handle</a>(__x)</td></tr>
-<tr class="memdesc:ga5984a15e443d18d17fb5d9568058ee01"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates this method returns an acquired resource, and names its type with a tag if applied to a method it refers to the function result if applied to an argument it indicates that argument is an out-parameter providing the value  <br /></td></tr>
+<tr class="memdesc:ga5984a15e443d18d17fb5d9568058ee01"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates this method returns an acquired resource  <br /></td></tr>
 <tr class="separator:ga5984a15e443d18d17fb5d9568058ee01"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga361c9cfbfecfa7f44c9cc3a56044f3dd" id="r_ga361c9cfbfecfa7f44c9cc3a56044f3dd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga361c9cfbfecfa7f44c9cc3a56044f3dd">ein_release_handle</a>(__x)</td></tr>
 <tr class="memdesc:ga361c9cfbfecfa7f44c9cc3a56044f3dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates this argument is an acquired resource that is being released, with a tag  <br /></td></tr>
@@ -385,9 +377,6 @@ Macros</h2></td></tr>
 <tr class="memitem:ga4ab4dd1ef8e9e510c050cc09c5eb4302" id="r_ga4ab4dd1ef8e9e510c050cc09c5eb4302"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga4ab4dd1ef8e9e510c050cc09c5eb4302">ein_lifetimebound</a></td></tr>
 <tr class="memdesc:ga4ab4dd1ef8e9e510c050cc09c5eb4302"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((lifetimebound))</code>  <br /></td></tr>
 <tr class="separator:ga4ab4dd1ef8e9e510c050cc09c5eb4302"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga209744b1d888bcad7fd9ea9bb1a9f24c" id="r_ga209744b1d888bcad7fd9ea9bb1a9f24c"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga209744b1d888bcad7fd9ea9bb1a9f24c">ein_this_lifetimebound</a></td></tr>
-<tr class="memdesc:ga209744b1d888bcad7fd9ea9bb1a9f24c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions.  <br /></td></tr>
-<tr class="separator:ga209744b1d888bcad7fd9ea9bb1a9f24c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga74fe033a58e1d901c981bbe183b94950" id="r_ga74fe033a58e1d901c981bbe183b94950"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga74fe033a58e1d901c981bbe183b94950">ein_returns_nonnull</a></td></tr>
 <tr class="memdesc:ga74fe033a58e1d901c981bbe183b94950"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__attribute__((returns_nonnnull))</code>  <br /></td></tr>
 <tr class="separator:ga74fe033a58e1d901c981bbe183b94950"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -410,7 +399,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga285634c6b28883bfdeed6cbadbcf6fee"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__host__</code> for cuda  <br /></td></tr>
 <tr class="separator:ga285634c6b28883bfdeed6cbadbcf6fee"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga568ecfa2358b6bc209393b8a6dc9fbca" id="r_ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga568ecfa2358b6bc209393b8a6dc9fbca">ein_device</a></td></tr>
-<tr class="memdesc:ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">indicates the function should be available on the host  <br /></td></tr>
+<tr class="memdesc:ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__device__</code> for cuda  <br /></td></tr>
 <tr class="separator:ga568ecfa2358b6bc209393b8a6dc9fbca"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8147ec32b85ddfb4657c8bd5ad9c0fab" id="r_ga8147ec32b85ddfb4657c8bd5ad9c0fab"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8147ec32b85ddfb4657c8bd5ad9c0fab">ein_global</a></td></tr>
 <tr class="memdesc:ga8147ec32b85ddfb4657c8bd5ad9c0fab"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>__global__</code> for cuda  <br /></td></tr>
@@ -428,7 +417,7 @@ Macros</h2></td></tr>
 <tr class="memdesc:ga5ceac2cdbd3ec6ad801b9052bad26023"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>[[deprecated]]</code>  <br /></td></tr>
 <tr class="separator:ga5ceac2cdbd3ec6ad801b9052bad26023"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gad58fdb2d0a42845b0f16b84446dff7d4" id="r_gad58fdb2d0a42845b0f16b84446dff7d4"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gad58fdb2d0a42845b0f16b84446dff7d4">ein_nodiscard</a>&#160;&#160;&#160;[[nodiscard]]</td></tr>
-<tr class="memdesc:gad58fdb2d0a42845b0f16b84446dff7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++17 <code>[[nodiscard]]</code>. The user should explicitly throw away the result rather than let it be silently discarded.  <br /></td></tr>
+<tr class="memdesc:gad58fdb2d0a42845b0f16b84446dff7d4"><td class="mdescLeft">&#160;</td><td class="mdescRight">C++17 <code>[[nodiscard]]</code>.  <br /></td></tr>
 <tr class="separator:gad58fdb2d0a42845b0f16b84446dff7d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga8697fca92cf196aa90c8cfcf36cb4bae" id="r_ga8697fca92cf196aa90c8cfcf36cb4bae"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga8697fca92cf196aa90c8cfcf36cb4bae">ein_unroll</a>(N)</td></tr>
 <tr class="memdesc:ga8697fca92cf196aa90c8cfcf36cb4bae"><td class="mdescLeft">&#160;</td><td class="mdescRight">hint to unroll the following loop N times. (clang-specific)  <br /></td></tr>
@@ -482,9 +471,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>indicates this method returns an acquired resource, and names its type with a tag if applied to a method it refers to the function result if applied to an argument it indicates that argument is an out-parameter providing the value </p>
+<p>indicates this method returns an acquired resource </p>
+<p>names its type with a tag if applied to a method it refers to the function result if applied to an argument it indicates that argument is an out-parameter providing the value </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00464">464</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00471">471</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -502,10 +492,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((acquired_after(...))) on a declaration of a lockable variable to specify that the lock must be acquired after all attribute arguments. Arguments must be lockable type, and there must be at least one argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00348">348</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00346">346</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -526,7 +515,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((acquired_before(...))) on a declaration of a lockable variable to specify that the lock must be acquired before all attribute arguments. Arguments must be lockable type, and there must be at least one argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00336">336</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00333">333</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -548,7 +537,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((align_value(x)))</code> </p>
 <p>the annotated pointer specified has alignment at least x </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00614">614</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00620">620</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -570,7 +559,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((alloc_align(x)))</code> </p>
 <p>Indicates the 1-based argument number of a function that indicates the alignment of the returned result </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00637">637</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00643">643</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -592,7 +581,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((alloc_size(x)))</code> </p>
 <p>arg # (1-based) of the attribute that tells you the size of the result in bytes </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00648">648</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00654">654</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -610,7 +599,7 @@ Macros</h2></td></tr>
 
 <p>portable <code>__attribute__((artificial))</code>. The debugger should not single-step into this function. Treat it as atomic and associate it with the debug information for the use site instead. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00091">91</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00088">88</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -633,7 +622,7 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d2/d54/assert_8hpp_source.html#l00016">16</a> of file <a class="el" href="../../d2/d54/assert_8hpp_source.html">assert.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d2/d54/assert_8hpp_source.html#l00017">17</a> of file <a class="el" href="../../d2/d54/assert_8hpp_source.html">assert.hpp</a>.</p>
 
 </div>
 </div>
@@ -655,7 +644,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((assume_aligned(x)))</code> </p>
 <p>function returns a pointer with alignment that is at least x </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00602">602</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00608">608</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -676,7 +665,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((callable_when(...))) to indicate what states a method may be called in. Valid states are unconsumed, consumed, or unknown. Each argument to this attribute must be a quoted string. E.g.: </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00200">200</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00197">197</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -699,7 +688,7 @@ Macros</h2></td></tr>
 <p>indicates the specified argument will be called back with the other named arguments. complicated, see clang docs.</p>
 <p>allows better interprocedural analysis </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00675">675</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00681">681</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -717,7 +706,7 @@ Macros</h2></td></tr>
 
 <p>portable <code>__attribute__((cold))</code> calling convention very infrequent calls (initializers and the like) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00167">167</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00164">164</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -737,7 +726,7 @@ Macros</h2></td></tr>
 <p>indicates the result is entirely determined by the arguments and does not access main memory in any way, including accessing members of this</p>
 <p>allows the compiler to easily elide/duplicate calls </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00564">564</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00570">570</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -756,7 +745,7 @@ Macros</h2></td></tr>
 <p>portable <code>constinit</code> </p>
 <p><code>constinit</code> requires C++20, but <b>attribute</b>((require_constant_initialization)) is available earlier </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00542">542</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00548">548</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -777,7 +766,7 @@ Macros</h2></td></tr>
 
 <p>Each class that uses any of the typestate annotations must first be marked using the consumable attribute. Failure to do so will result in a warning. This attribute accepts a single parameter that must be one of the following: unknown, consumed, or unconsumed. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00209">209</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00206">206</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -796,7 +785,7 @@ Macros</h2></td></tr>
 <p><code>[[deprecated]]</code> </p>
 <dl class="section since"><dt>Since</dt><dd>C++14 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00846">846</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00835">835</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -812,11 +801,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>indicates the function should be available on the host </p>
-<p>portable <code>__device__</code> for cuda</p>
+<p>portable <code>__device__</code> for cuda </p>
 <p>indicates the function should be available on the device </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00797">797</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00788">788</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -834,7 +822,7 @@ Macros</h2></td></tr>
 
 <p>exclude this member from explicit template instantiation. paired with ein_hidden </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00110">110</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00107">107</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -852,10 +840,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((exclusive_lock_function(...))) on a function declaration to specify that the function acquires all listed locks exclusively. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00362">362</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00361">361</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -873,10 +860,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((exclusive_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed exclusive locks. Arguments must be lockable type, and there must be at least one argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00430">430</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00434">434</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -913,7 +899,7 @@ Macros</h2></td></tr>
 <p>portable <code>[[flatten]]</code> </p>
 <p>the compiler should inline recursively aggressively under this definition. use with care, good for expression templates </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00492">492</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00498">498</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -932,7 +918,7 @@ Macros</h2></td></tr>
 <p>portable <code>__global__</code> for cuda </p>
 <p>indicates the function is a global entry point for a compute kernel </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00798">798</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00789">789</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -953,7 +939,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((guarded_by(l))) on a variable declaration to specify that the variable must be accessed while holding lock l. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00315">315</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00312">312</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -971,12 +957,12 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((guarded_var)) on a variable declaration to specify that the variable must be accessed while holding some lock. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00293">293</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00290">290</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
-<a id="gad3739858c2f6f373697b155ce4acac3a" name="gad3739858c2f6f373697b155ce4acac3a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gad3739858c2f6f373697b155ce4acac3a">&#9670;&#160;</a></span>ein_has_attribute</h2>
+<a id="ga1464cdce97768a44f01f0888b22c412c" name="ga1464cdce97768a44f01f0888b22c412c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga1464cdce97768a44f01f0888b22c412c">&#9670;&#160;</a></span>ein_has_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -984,7 +970,7 @@ Macros</h2></td></tr>
         <tr>
           <td class="memname">#define ein_has_attribute</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -997,8 +983,8 @@ Macros</h2></td></tr>
 
 </div>
 </div>
-<a id="ga634fb93c90b0fefd7994f40126573295" name="ga634fb93c90b0fefd7994f40126573295"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga634fb93c90b0fefd7994f40126573295">&#9670;&#160;</a></span>ein_has_declspec_attribute</h2>
+<a id="ga4434fc5d90d5e9d0359cf53e4b89e79f" name="ga4434fc5d90d5e9d0359cf53e4b89e79f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ga4434fc5d90d5e9d0359cf53e4b89e79f">&#9670;&#160;</a></span>ein_has_declspec_attribute</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1006,7 +992,7 @@ Macros</h2></td></tr>
         <tr>
           <td class="memname">#define ein_has_declspec_attribute</td>
           <td>(</td>
-          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>__x</em></span></td><td>)</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -1035,7 +1021,7 @@ Macros</h2></td></tr>
 <p>most functions in the library should be defined this way</p>
 <p>may eventually add similar annotations for sycl and the like </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00808">808</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00799">799</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1054,7 +1040,7 @@ Macros</h2></td></tr>
 <p>this member is excluded from both explicit instantiation and external linkage </p>
 <p>expands to <code>__attribute__((visibility("hidden"))</code> <code>__attribute__((exclude_from_explicit_instantiation))</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00118">118</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00115">115</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1071,8 +1057,9 @@ Macros</h2></td></tr>
 </div><div class="memdoc">
 
 <p>portable <code>__host__</code> for cuda </p>
+<p>indicates the function should be available on the host </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00796">796</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00787">787</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1090,7 +1077,7 @@ Macros</h2></td></tr>
 
 <p>portable <code>__attribute__((hot))</code> calling convention frequent inner loop calls </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00157">157</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00154">154</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1108,7 +1095,7 @@ Macros</h2></td></tr>
 
 <p>portable <code>inline __forceinline</code> or <code>inline __attribute__((always_inline))</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00080">80</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00077">77</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1128,7 +1115,7 @@ Macros</h2></td></tr>
 <p>the argument must be kept alive as long as the result of the function is alive. Should be used for functions that return references or views into the target object.</p>
 <p>Sadly, clang (as of Jan 2021) does not yet allow it to be applied to the implicit this argument of an member function </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00693">693</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00699">699</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1146,10 +1133,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((lock_returned(l))) on a function declaration to specify that the function returns lock l (l must be of lockable type). This annotation is used to aid in resolving lock expressions. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00406">406</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00408">408</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1167,7 +1153,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((lockable)) on a class definition to specify that it has a lockable type (e.g. a Mutex class). This annotation is primarily used to check consistency. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00269">269</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00266">266</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1185,10 +1171,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((locks_excluded(...))) on a function declaration to specify that the function must not be called with the listed locks. Arguments must be lockable type, and there must be at least one argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00418">418</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00421">421</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1207,7 +1192,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((malloc))</code> attribute </p>
 <p>indicates the returned memory does not alias with any other pointer </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00504">504</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00510">510</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1275,7 +1260,7 @@ Macros</h2></td></tr>
 <p>argument, member or definition <code>[[maybe_unused]]</code> </p>
 <dl class="section since"><dt>Since</dt><dd>C++17 </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00840">840</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00830">830</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1314,7 +1299,7 @@ Macros</h2></td></tr>
 
 <p>short-hand for indicating that this argument was moved and is now consumed, assuming it was unconsumed before. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00231">231</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00228">228</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1332,7 +1317,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((no_thread_safety_analysis)) on a function declaration to specify that the thread safety analysis should not be run on that function. This attribute provides an escape hatch (e.g. for situations when it is difficult to annotate the locking policy). </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00260">260</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00257">257</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1351,7 +1336,7 @@ Macros</h2></td></tr>
 <p>portable c++20 <code>[[no_unique_address]]</code> </p>
 <p>clang makes this available slightly earlier </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00818">818</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00809">809</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1371,7 +1356,7 @@ Macros</h2></td></tr>
 <p>indicates a function only accesses data through pointer arguments</p>
 <p>requires clang to be running with <code>-fdeclspec</code> or <code>-fms-extensions</code> but can aid alias analysis </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00531">531</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00537">537</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1387,9 +1372,10 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>C++17 <code>[[nodiscard]]</code>. The user should explicitly throw away the result rather than let it be silently discarded. </p>
+<p>C++17 <code>[[nodiscard]]</code>. </p>
+<p>The user should explicitly throw away the result rather than let it be silently discarded </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00851">851</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00841">841</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1408,7 +1394,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((noescape))</code> </p>
 <p>argument is not captured by the function (rust-style borrow) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00660">660</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00666">666</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1426,7 +1412,7 @@ Macros</h2></td></tr>
 
 <p>portable <code>__attribute__((noinline))</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00136">136</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00133">133</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1445,7 +1431,7 @@ Macros</h2></td></tr>
 <p>portable <code>_Nonnull</code> </p>
 <p>can be applied to each * in an data type to indicate that argument should never be null. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00769">769</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00760">760</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1467,7 +1453,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((nonnnull(...)))</code> </p>
 <p>Indicates the selected (1-based) indexed arguments to this function must be non-null. Passing a null pointer to such an argument is undefined behavior. GCC-style. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00734">734</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00725">725</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1486,7 +1472,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((noreturn)))</code> </p>
 <p>Indicates the method does not return to the caller. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00746">746</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00737">737</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1508,7 +1494,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((align_value(x)))</code> </p>
 <p>the annotated pointer specified has alignment at least x </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00626">626</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00632">632</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1527,7 +1513,7 @@ Macros</h2></td></tr>
 <p>portable <code>_Null_unspecified</code> </p>
 <p>applied to each * in an data type to indicate that the nullability of it is unknown or complicated </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00771">771</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00762">762</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1546,7 +1532,7 @@ Macros</h2></td></tr>
 <p>portable <code>_Nullable</code> </p>
 <p>can be applied to each * in an data type to indicate that argument might be null. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00770">770</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00761">761</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1564,7 +1550,7 @@ Macros</h2></td></tr>
 
 <p>portable <code>__attribute__((optnone))</code> Used to indicate that regardless of optimization level, you shouldn't optimize this one function. Useful for local debugging when you can't disable optimization for the entire build. (e.g. ours!) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00147">147</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00144">144</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1585,7 +1571,7 @@ Macros</h2></td></tr>
 
 <p>This attribute specifies expectations about function parameters. Calls to an function with annotated parameters will issue a warning if the corresponding argument isn’t in the expected state. The attribute is also used to set the initial state of the parameter when analyzing the function’s body. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00217">217</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00214">214</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1628,7 +1614,7 @@ Macros</h2></td></tr>
 <p>portable <code>[[clang::preferred_name(x)]]</code> annotations </p>
 <p>can be applied to a template struct to provide better names for some concrete instantiations </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00454">454</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00459">459</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1649,7 +1635,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((pt_guarded_by(l))) on a pointer declaration to specify that the pointer must be dereferenced while holding lock l. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00324">324</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00321">321</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1667,7 +1653,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((pt_guarded_var)) on a pointer declaration to specify that the pointer must be dereferenced while holding some lock. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00304">304</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00301">301</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1687,7 +1673,7 @@ Macros</h2></td></tr>
 <p>no side-effects other than return value, may inspect globals</p>
 <p>allows the compiler to easily elide/duplicate calls </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00577">577</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00583">583</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1706,7 +1692,7 @@ Macros</h2></td></tr>
 <p>portable <code>[[clang::reinitializes]]</code> </p>
 <p>indicates to any uninitialised object state sanitizer that this restores an object to a fresh state independent of its previous state </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00590">590</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00596">596</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1727,7 +1713,7 @@ Macros</h2></td></tr>
 
 <p>indicates this argument is an acquired resource that is being released, with a tag </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00472">472</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00479">479</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1748,7 +1734,7 @@ Macros</h2></td></tr>
 
 <p>The return_typestate attribute can be applied to functions or parameters. When applied to a function the attribute specifies the state of the returned value. The function’s body is checked to ensure that it always returns a value in the specified state. On the caller side, values returned by the annotated function are initialized to the given state. When applied to a function parameter it modifies the state of an argument after a call to the function returns. The function’s body is checked to ensure that the parameter is in the expected state before returning. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00226">226</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00223">223</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1767,7 +1753,7 @@ Macros</h2></td></tr>
 <p>portable <code>__attribute__((returns_nonnnull))</code> </p>
 <p>The result of this function will be non-null </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00720">720</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00711">711</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1785,7 +1771,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((scoped_lockable)) on a class definition to specify that it has a “scoped” lockable type. Objects of this type will acquire the lock upon construction and release it upon going out of scope. This annotation is primarily used to check consistency. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00282">282</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00279">279</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1806,7 +1792,7 @@ Macros</h2></td></tr>
 
 <p>Annotate methods that transition an object into a new state with <b>attribute</b>((set_typestate(new_state))). The new state must be unconsumed, consumed, or unknown. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00238">238</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00235">235</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1824,10 +1810,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((shared_locks_required(...))) on a function declaration to specify that the function must be called while holding the listed shared locks. Arguments must be lockable type, and there must be at least one argument. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00442">442</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00447">447</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1845,7 +1830,6 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((shared_lock_function(...))) on a function declaration to specify that the function will try (without blocking) to acquire all listed locks, although the locks may be shared (e.g. read locks). This attribute takes one or more arguments. The first argument is an integer or boolean value specifying the return value of a successful lock acquisition. The remaining arugments are either of lockable type or integers indexing into function parameters of lockable type. If only one argument is given, the acquired lock is implicitly this of the enclosing object. </p>
 
 <p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00380">380</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
@@ -1871,7 +1855,7 @@ Macros</h2></td></tr>
 <p>this indicates a required feature set for the current multiversioned function. </p>
 <p>overloads will be resolved at load time </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00123">123</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00120">120</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1894,7 +1878,7 @@ Macros</h2></td></tr>
 <p>this indicates a required feature set for the current multiversioned function. </p>
 <p>overloads will be resolved at load time </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00128">128</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00125">125</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1912,7 +1896,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((test_typestate(tested_state))) to indicate that a method returns true if the object is in the specified state. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00247">247</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00244">244</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1933,26 +1917,7 @@ Macros</h2></td></tr>
 
 <p>Use <b>attribute</b>((test_typestate(tested_state))) to indicate that a method returns true if the object is in the specified state. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00247">247</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
-
-</div>
-</div>
-<a id="ga209744b1d888bcad7fd9ea9bb1a9f24c" name="ga209744b1d888bcad7fd9ea9bb1a9f24c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga209744b1d888bcad7fd9ea9bb1a9f24c">&#9670;&#160;</a></span>ein_this_lifetimebound</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define ein_this_lifetimebound</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>Applies the prefix <code>ein_</code> syntactically to all arguments. Used to apply many attributes to definitions. </p>
-<p>This lets you write <a class="el" href="#ga9c72af7df8a237d25e24d5beb4d17aa1" title="Applies the prefix ein_ syntactically to all arguments. Used to apply many attributes to definitions.">EIN(hd,inline)</a> vs. <a class="el" href="#ga42f2a4944074f350ddba96f086c308e8">ein_hd</a> <a class="el" href="#gae478383afcbcd2db052f49d41e72763d">ein_inline</a> </p>
-
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00706">706</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00244">244</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1971,7 +1936,7 @@ Macros</h2></td></tr>
 <p>portable <code>[[clang::uninitialized]]</code> attribute </p>
 <p>ensures a stack variable remains uninitialized regardless of <code>-ftrivial-auto-var-init=*</code> settings passed to the compiler </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00517">517</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00523">523</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -1989,10 +1954,9 @@ Macros</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
-
 <p>Use <b>attribute</b>((unlock_function(...))) on a function declaration to specify that the function release all listed locks. This attribute takes zero or more arguments: either of lockable type or integers indexing into function parameters of lockable type. If no arguments are given, the acquired lock is implicitly this of the enclosing object. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00394">394</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00395">395</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -2013,7 +1977,7 @@ Macros</h2></td></tr>
 
 <p>hint to unroll the following loop N times. (clang-specific) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00862">862</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00851">851</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -2031,7 +1995,7 @@ Macros</h2></td></tr>
 
 <p>hint to unroll the following loop fully. (clang-specific) </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00863">863</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00852">852</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -2052,7 +2016,7 @@ Macros</h2></td></tr>
 
 <p>indicates this argument is a use of a resource, but does not release it. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00480">480</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00487">487</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -2071,9 +2035,9 @@ Macros</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p>portable <code>__attribute__((visibility(x)))</code>, primarily used for ein_visibility("hidden") to disable inclusion in the library </p>
+<p>portable <code>__attribute__((visibility(x)))</code>, primarily used for <code>visibility("hidden")</code> to disable inclusion in the library </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00101">101</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00098">98</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -2091,7 +2055,7 @@ Macros</h2></td></tr>
 
 <p><b>attribute</b>((weak)) used to generate a symbol that can be easily overriden by the linker. intended for 'fake pos' support </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00180">180</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00177">177</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>

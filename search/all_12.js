@@ -11,11 +11,12 @@ var searchData=
   ['simd_5ft_8',['simd_t',['../dc/d7b/group__simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]],
   ['size_9',['size',['../d7/ded/group__memory.html#ab2b8b1c7eb7749c161999be99e91870f',1,'ein::c_munmap::size'],['../dc/d7b/group__simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]],
   ['spin_10',['spin',['../df/d2f/group__wait.html#d8/d42/structein_1_1spin',1,'ein']]],
-  ['std_11',['std',['../d8/dcc/namespacestd.html',1,'']]],
-  ['store_12',['store',['../dc/d7b/group__simd.html#ad83a2f62cb6ff1355a950f46e1582b07',1,'ein::simd']]],
-  ['storeu_13',['storeu',['../dc/d7b/group__simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb',1,'ein::simd']]],
-  ['stream_14',['stream',['../dc/d7b/group__simd.html#ac63f866959420086bd65699045c575d2',1,'ein::simd']]],
-  ['stream_5fload_15',['stream_load',['../dc/d7b/group__simd.html#a46c1b89940d707f5c9013599bac488ba',1,'ein::simd::stream_load()'],['../dc/d7b/group__simd.html#gaf84aa0909d95f9faf66f5ee344285677',1,'ein::stream_load()']]],
-  ['supported_16',['supported',['../df/d2f/group__wait.html#gaaa1c31bb64256e696333d924bb50a90d',1,'ein::mwaitx::supported'],['../df/d2f/group__wait.html#ga94f77adfbc306130e869173daf6ea96d',1,'ein::umwait::supported'],['../df/d2f/group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73',1,'ein::spin::supported']]],
-  ['swap_17',['swap',['../dc/d7b/group__simd.html#ae0c6eef701036b515f4a4f6fc18b9974',1,'ein::simd']]]
+  ['std_11',['std',['../d8/dcc/namespacestd.html',1,'std'],['../dd/d0c/group__std.html',1,'std']]],
+  ['std_2ecppm_12',['std.cppm',['../d8/d08/std_8cppm.html',1,'']]],
+  ['store_13',['store',['../dc/d7b/group__simd.html#ad83a2f62cb6ff1355a950f46e1582b07',1,'ein::simd']]],
+  ['storeu_14',['storeu',['../dc/d7b/group__simd.html#a7313bfd3cd7cab7c2ad9ea26930006eb',1,'ein::simd']]],
+  ['stream_15',['stream',['../dc/d7b/group__simd.html#ac63f866959420086bd65699045c575d2',1,'ein::simd']]],
+  ['stream_5fload_16',['stream_load',['../dc/d7b/group__simd.html#a46c1b89940d707f5c9013599bac488ba',1,'ein::simd::stream_load()'],['../dc/d7b/group__simd.html#gaf84aa0909d95f9faf66f5ee344285677',1,'ein::stream_load()']]],
+  ['supported_17',['supported',['../df/d2f/group__wait.html#gaaa1c31bb64256e696333d924bb50a90d',1,'ein::mwaitx::supported'],['../df/d2f/group__wait.html#ga94f77adfbc306130e869173daf6ea96d',1,'ein::umwait::supported'],['../df/d2f/group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73',1,'ein::spin::supported']]],
+  ['swap_18',['swap',['../dc/d7b/group__simd.html#ae0c6eef701036b515f4a4f6fc18b9974',1,'ein::simd']]]
 ];

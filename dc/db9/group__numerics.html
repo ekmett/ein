@@ -336,7 +336,7 @@ Variables</h2></td></tr>
 struct ein::imm_t&lt; N &gt;</div><p>A compile time constant passed as an empty struct. </p>
 <p>Allow passing immediate values to operators without having to give up <code>x &lt;&lt; y</code> as a syntactic form. <code>xs &lt;&lt; imm&lt;n&gt;</code> isn't much of an imposition and ensures the compiler knows that n is a fixed constant known at compile time </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00053">53</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00059">59</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Member Functions</h3></td></tr>
 <tr class="memitem:afb3ffad544d48567a335b195795cdab3" id="r_afb3ffad544d48567a335b195795cdab3"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afb3ffad544d48567a335b195795cdab3">operator size_t</a> () noexcept</td></tr>
@@ -371,8 +371,8 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00057">57</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   57</span>{ <span class="keywordflow">return</span> N; }</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00063">63</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{ <span class="keywordflow">return</span> N; }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -399,7 +399,7 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00054">54</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00060">60</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -431,7 +431,7 @@ template&lt;typename T &gt; </div>
 
 <p>returns a signed integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00040">40</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00046">46</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -459,7 +459,7 @@ template&lt;typename T &gt; </div>
 
 <p>returns an unsigned integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00046">46</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00052">52</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -550,7 +550,7 @@ template&lt;typename T &gt; </div>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00202">202</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00212">212</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -592,7 +592,7 @@ template&lt;typename T &gt; </div>
 </td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00137">137</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00146">146</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -622,51 +622,51 @@ requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; 32uz))</d
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">pure</span><span class="mlabel">inline</span></span>  </td>
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">pure</span><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>perform an avx512 style floating point comparison for scalar values. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00242">242</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  242</span>                                      {</div>
-<div class="line"><span class="lineno">  243</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
-<div class="line"><span class="lineno">  244</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
-<div class="line"><span class="lineno">  245</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
-<div class="line"><span class="lineno">  246</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_Q)  <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b);</div>
-<div class="line"><span class="lineno">  247</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a != b);</div>
-<div class="line"><span class="lineno">  248</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt; b);</div>
-<div class="line"><span class="lineno">  249</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
-<div class="line"><span class="lineno">  250</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_Q)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b);</div>
-<div class="line"><span class="lineno">  251</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_UQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a == b);</div>
-<div class="line"><span class="lineno">  252</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
-<div class="line"><span class="lineno">  253</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt; b);</div>
-<div class="line"><span class="lineno">  254</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OQ) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
-<div class="line"><span class="lineno">  256</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
-<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
-<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_UQ)  <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  259</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
-<div class="line"><span class="lineno">  260</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
-<div class="line"><span class="lineno">  261</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
-<div class="line"><span class="lineno">  262</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_S)  <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b);</div>
-<div class="line"><span class="lineno">  263</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a != b);</div>
-<div class="line"><span class="lineno">  264</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt; b);</div>
-<div class="line"><span class="lineno">  265</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
-<div class="line"><span class="lineno">  266</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_S)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b);</div>
-<div class="line"><span class="lineno">  267</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_US)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a == b);</div>
-<div class="line"><span class="lineno">  268</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
-<div class="line"><span class="lineno">  269</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt; b);</div>
-<div class="line"><span class="lineno">  270</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OS) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  271</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OS)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
-<div class="line"><span class="lineno">  272</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
-<div class="line"><span class="lineno">  273</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
-<div class="line"><span class="lineno">  274</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_US)  <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  275</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  276</span>}</div>
-<div class="ttc" id="agroup__numerics_html_ga2b74567fe42c868dbbe6ce8f60a3538f"><div class="ttname"><a href="#ga2b74567fe42c868dbbe6ce8f60a3538f">ein::cmp_ord</a></div><div class="ttdeci">constexpr bool cmp_ord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00076">numerics.cppm:76</a></div></div>
-<div class="ttc" id="agroup__numerics_html_ga3997cf126ca7b03242a0bcd636d3b11e"><div class="ttname"><a href="#ga3997cf126ca7b03242a0bcd636d3b11e">ein::cmp_unord</a></div><div class="ttdeci">constexpr bool cmp_unord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00066">numerics.cppm:66</a></div></div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00253">253</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  253</span>                                      {</div>
+<div class="line"><span class="lineno">  254</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
+<div class="line"><span class="lineno">  255</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
+<div class="line"><span class="lineno">  256</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
+<div class="line"><span class="lineno">  257</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_Q)  <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b);</div>
+<div class="line"><span class="lineno">  258</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a != b);</div>
+<div class="line"><span class="lineno">  259</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt; b);</div>
+<div class="line"><span class="lineno">  260</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
+<div class="line"><span class="lineno">  261</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_Q)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b);</div>
+<div class="line"><span class="lineno">  262</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_UQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a == b);</div>
+<div class="line"><span class="lineno">  263</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
+<div class="line"><span class="lineno">  264</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt; b);</div>
+<div class="line"><span class="lineno">  265</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OQ) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  266</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
+<div class="line"><span class="lineno">  267</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
+<div class="line"><span class="lineno">  268</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
+<div class="line"><span class="lineno">  269</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_UQ)  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  270</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_OS)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a == b);</div>
+<div class="line"><span class="lineno">  271</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt; b);</div>
+<div class="line"><span class="lineno">  272</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::LE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &lt;= b);</div>
+<div class="line"><span class="lineno">  273</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::UNORD_S)  <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b);</div>
+<div class="line"><span class="lineno">  274</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_US)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a != b);</div>
+<div class="line"><span class="lineno">  275</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt; b);</div>
+<div class="line"><span class="lineno">  276</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NLE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &lt;= b);</div>
+<div class="line"><span class="lineno">  277</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::ORD_S)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b);</div>
+<div class="line"><span class="lineno">  278</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::EQ_US)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || (a == b);</div>
+<div class="line"><span class="lineno">  279</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGE_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt;= b);</div>
+<div class="line"><span class="lineno">  280</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NGT_UQ)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a>(a, b) || !(a &gt; b);</div>
+<div class="line"><span class="lineno">  281</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::FALSE_OS) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  282</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::NEQ_OS)   <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a != b);</div>
+<div class="line"><span class="lineno">  283</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GE_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt;= b);</div>
+<div class="line"><span class="lineno">  284</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::GT_OQ)    <span class="keywordflow">return</span> <a class="code hl_function" href="#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a>(a, b) &amp;&amp; (a &gt; b);</div>
+<div class="line"><span class="lineno">  285</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMP::TRUE_US)  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  286</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  287</span>}</div>
+<div class="ttc" id="agroup__numerics_html_ga2b74567fe42c868dbbe6ce8f60a3538f"><div class="ttname"><a href="#ga2b74567fe42c868dbbe6ce8f60a3538f">ein::cmp_ord</a></div><div class="ttdeci">constexpr bool cmp_ord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00084">numerics.cppm:84</a></div></div>
+<div class="ttc" id="agroup__numerics_html_ga3997cf126ca7b03242a0bcd636d3b11e"><div class="ttname"><a href="#ga3997cf126ca7b03242a0bcd636d3b11e">ein::cmp_unord</a></div><div class="ttdeci">constexpr bool cmp_unord(T a, T b) noexcept</div><div class="ttdef"><b>Definition</b> <a href="../../d5/d65/numerics_8cppm_source.html#l00073">numerics.cppm:73</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -752,15 +752,15 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00076">76</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   76</span>                                          {</div>
-<div class="line"><span class="lineno">   77</span>  <span class="keywordflow">return</span> !isnan(a) &amp;&amp; !isnan(b);</div>
-<div class="line"><span class="lineno">   78</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00084">84</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                          {</div>
+<div class="line"><span class="lineno">   85</span>  <span class="keywordflow">return</span> !isnan(a) &amp;&amp; !isnan(b);</div>
+<div class="line"><span class="lineno">   86</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -851,15 +851,15 @@ template&lt;typename T &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00066">66</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   66</span>                                            {</div>
-<div class="line"><span class="lineno">   67</span>  <span class="keywordflow">return</span> isnan(a) || isnan(b);</div>
-<div class="line"><span class="lineno">   68</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00073">73</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   73</span>                                            {</div>
+<div class="line"><span class="lineno">   74</span>  <span class="keywordflow">return</span> isnan(a) || isnan(b);</div>
+<div class="line"><span class="lineno">   75</span>}</div>
 </div><!-- fragment --><div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -893,23 +893,23 @@ requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">const</span></span>  </td>
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">const</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00152">152</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  152</span>                                         {</div>
-<div class="line"><span class="lineno">  153</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMPINT::TRUE)  <span class="keywordflow">return</span> -1;</div>
-<div class="line"><span class="lineno">  154</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::FALSE) <span class="keywordflow">return</span> 0;</div>
-<div class="line"><span class="lineno">  155</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LT)    <span class="keywordflow">return</span> a &lt; b;</div>
-<div class="line"><span class="lineno">  156</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLT)   <span class="keywordflow">return</span> a &gt;= b;</div>
-<div class="line"><span class="lineno">  157</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LE)    <span class="keywordflow">return</span> a &lt;= b;</div>
-<div class="line"><span class="lineno">  158</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLE)   <span class="keywordflow">return</span> a &gt; b;</div>
-<div class="line"><span class="lineno">  159</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::EQ)    <span class="keywordflow">return</span> a == b;</div>
-<div class="line"><span class="lineno">  160</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NE)    <span class="keywordflow">return</span> a != b;</div>
-<div class="line"><span class="lineno">  161</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
-<div class="line"><span class="lineno">  162</span>}</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00162">162</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>                                         {</div>
+<div class="line"><span class="lineno">  163</span>  <span class="keywordflow">if</span>      <span class="keyword">constexpr</span> (imm8 == CMPINT::TRUE)  <span class="keywordflow">return</span> -1;</div>
+<div class="line"><span class="lineno">  164</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::FALSE) <span class="keywordflow">return</span> 0;</div>
+<div class="line"><span class="lineno">  165</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LT)    <span class="keywordflow">return</span> a &lt; b;</div>
+<div class="line"><span class="lineno">  166</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLT)   <span class="keywordflow">return</span> a &gt;= b;</div>
+<div class="line"><span class="lineno">  167</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::LE)    <span class="keywordflow">return</span> a &lt;= b;</div>
+<div class="line"><span class="lineno">  168</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NLE)   <span class="keywordflow">return</span> a &gt; b;</div>
+<div class="line"><span class="lineno">  169</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::EQ)    <span class="keywordflow">return</span> a == b;</div>
+<div class="line"><span class="lineno">  170</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (imm8 == CMPINT::NE)    <span class="keywordflow">return</span> a != b;</div>
+<div class="line"><span class="lineno">  171</span>  <span class="keywordflow">else</span> <span class="keyword">static_assert</span>(<span class="keyword">false</span>);</div>
+<div class="line"><span class="lineno">  172</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -995,12 +995,12 @@ template&lt;one_of_t&lt; float, double &gt; T&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">nodiscard</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">nodiscard</span><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00086">86</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00095">95</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>
@@ -1027,8 +1027,8 @@ template&lt;size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00061">61</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{};</div>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00067">67</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   67</span>{};</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1054,7 +1054,7 @@ template&lt;size_t N&gt; </div>
 
 <p>AVX512 added many more floating point comparison types. Do we have them? </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00194">194</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00204">204</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
 
 </div>
 </div>

@@ -9,4 +9,20 @@ digraph "h/map.hpp"
   Node2 [id="Node000002",label="h/attributes.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d6a/attributes_8hpp.html",tooltip="defines used to indicate useful attributes for the compiler"];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="h/prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$de/d13/prelude_8hpp.html",tooltip="precompiled header"];
+  Node3 -> Node4 [id="edge3_Node000003_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node4 [id="Node000004",label="src/cpuid.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d2/d8a/cpuid_8cppm.html",tooltip=" "];
+  Node3 -> Node5 [id="edge4_Node000003_Node000005",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node5 [id="Node000005",label="src/memory.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d8/d4c/memory_8cppm.html",tooltip=" "];
+  Node3 -> Node6 [id="edge5_Node000003_Node000006",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node6 [id="Node000006",label="src/numerics.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d5/d65/numerics_8cppm.html",tooltip=" "];
+  Node3 -> Node7 [id="edge6_Node000003_Node000007",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node7 [id="Node000007",label="src/simd.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$da/d01/simd_8cppm.html",tooltip=" "];
+  Node3 -> Node8 [id="edge7_Node000003_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node8 [id="Node000008",label="src/simd_data.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d88/simd__data_8cppm.html",tooltip=" "];
+  Node3 -> Node9 [id="edge8_Node000003_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node9 [id="Node000009",label="src/std.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d8/d08/std_8cppm.html",tooltip="polyfill missing standard library functions"];
+  Node3 -> Node10 [id="edge9_Node000003_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node10 [id="Node000010",label="src/types.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d8/dcb/types_8cppm.html",tooltip=" "];
+  Node3 -> Node11 [id="edge10_Node000003_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node11 [id="Node000011",label="src/wait.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d0/def/wait_8cppm.html",tooltip="waiting strategies"];
 }

@@ -218,7 +218,7 @@ Functions</h2></td></tr>
 <tr class="memdesc:gac2663d41f31490e13670ae3e6ce98f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
 <tr class="separator:gac2663d41f31490e13670ae3e6ce98f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaea392313e0b52aaba01039483b6d673f" id="r_gaea392313e0b52aaba01039483b6d673f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaea392313e0b52aaba01039483b6d673f">ein::dup</a> (char const *string) noexcept</td></tr>
-<tr class="memdesc:gaea392313e0b52aaba01039483b6d673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a c string using strdup and manage it as a unique_str  <br /></td></tr>
+<tr class="memdesc:gaea392313e0b52aaba01039483b6d673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>  <br /></td></tr>
 <tr class="separator:gaea392313e0b52aaba01039483b6d673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
@@ -236,7 +236,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>std::unique_ptr Deleter for memory mapped data </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00027">27</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00031">31</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Member Functions</h3></td></tr>
 <tr class="memitem:a22ce4e54a52f548d740dfe636cf2e871" id="r_a22ce4e54a52f548d740dfe636cf2e871"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a22ce4e54a52f548d740dfe636cf2e871">operator()</a> (void *p) const noexcept</td></tr>
@@ -271,7 +271,7 @@ Functions</h2></td></tr>
 <dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is a memory region mapped by <code>mmap</code> <code>size</code> bytes long </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd><code>p</code> has been <code>munmap</code>ped </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00033">33</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00037">37</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -288,7 +288,7 @@ Functions</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00028">28</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00032">32</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -308,7 +308,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>std::unique_ptr Deleter that calls free() </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00051">51</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00054">54</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Static Public Member Functions</h3></td></tr>
 <tr class="memitem:a0bafb8036819160bb7de0f15694152b9" id="r_a0bafb8036819160bb7de0f15694152b9"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
@@ -341,7 +341,7 @@ template&lt;trivially_destructible T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00055">55</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00058">58</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -371,7 +371,7 @@ template&lt;trivially_destructible T&gt; </div>
 
 <p>memory mapped data, managed by std::unique_ptr. calls munmap to free. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00040">40</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00044">44</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -399,7 +399,7 @@ template&lt;trivially_destructible T&gt; </div>
 
 <p>a unique_ptr managed c pointer, deleted by free() </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00062">62</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00065">65</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -425,7 +425,7 @@ template&lt;trivially_destructible T&gt; </div>
 
 <p>a c string, managed by unique_ptr </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00067">67</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00070">70</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>
@@ -453,15 +453,12 @@ template&lt;trivially_destructible T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>duplicate a c string using strdup and manage it as a unique_str </p>
+<p>duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a> </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>string</code> is non-null </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>result is a null-terminated c string to be cleaned up by free </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00074">74</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   75</span>                                                           {</div>
-<div class="line"><span class="lineno">   76</span>  <span class="keywordflow">return</span> <a class="code hl_typedef" href="#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a> { strdup(<span class="keywordtype">string</span>) };</div>
-<div class="ttc" id="agroup__memory_html_gad20e043c6e8f44fc20d90e797dc0bf4b"><div class="ttname"><a href="#gad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a></div><div class="ttdeci">unique_c_ptr&lt; char const  &gt; unique_str</div><div class="ttdoc">a c string, managed by unique_ptr</div><div class="ttdef"><b>Definition</b> <a href="../../d8/d4c/memory_8cppm_source.html#l00067">memory.cppm:67</a></div></div>
-</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00078">78</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+
 </div>
 </div>
 <a id="gac2663d41f31490e13670ae3e6ce98f83" name="gac2663d41f31490e13670ae3e6ce98f83"></a>
@@ -494,7 +491,7 @@ template&lt;trivially_destructible T&gt; </div>
 <p>construct a mmap_ptr using a base pointer and its size for munmap </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is non-null </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00046">46</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/d4c/memory_8cppm_source.html#l00049">49</a> of file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
 
 </div>
 </div>

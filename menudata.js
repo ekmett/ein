@@ -32,6 +32,7 @@ var menudata={children:[
 {text:"All",url:"modulemembers.html",children:[
 {text:"c",url:"modulemembers.html#index_c"},
 {text:"d",url:"modulemembers.html#index_d"},
+{text:"f",url:"modulemembers.html#index_f"},
 {text:"i",url:"modulemembers.html#index_i"},
 {text:"l",url:"modulemembers.html#index_l"},
 {text:"m",url:"modulemembers.html#index_m"},
@@ -42,6 +43,7 @@ var menudata={children:[
 {text:"Functions",url:"modulemembers_func.html",children:[
 {text:"c",url:"modulemembers_func.html#index_c"},
 {text:"d",url:"modulemembers_func.html#index_d"},
+{text:"f",url:"modulemembers_func.html#index_f"},
 {text:"l",url:"modulemembers_func.html#index_l"},
 {text:"m",url:"modulemembers_func.html#index_m"},
 {text:"s",url:"modulemembers_func.html#index_s"},
@@ -56,6 +58,7 @@ var menudata={children:[
 {text:"All",url:"namespacemembers.html",children:[
 {text:"c",url:"namespacemembers.html#index_c"},
 {text:"d",url:"namespacemembers.html#index_d"},
+{text:"f",url:"namespacemembers.html#index_f"},
 {text:"i",url:"namespacemembers.html#index_i"},
 {text:"l",url:"namespacemembers.html#index_l"},
 {text:"m",url:"namespacemembers.html#index_m"},
@@ -66,6 +69,7 @@ var menudata={children:[
 {text:"Functions",url:"namespacemembers_func.html",children:[
 {text:"c",url:"namespacemembers_func.html#index_c"},
 {text:"d",url:"namespacemembers_func.html#index_d"},
+{text:"f",url:"namespacemembers_func.html#index_f"},
 {text:"l",url:"namespacemembers_func.html#index_l"},
 {text:"m",url:"namespacemembers_func.html#index_m"},
 {text:"s",url:"namespacemembers_func.html#index_s"},
@@ -106,7 +110,11 @@ var menudata={children:[
 {text:"s",url:"functions_func.html#index_s"}]},
 {text:"Variables",url:"functions_vars.html"},
 {text:"Typedefs",url:"functions_type.html"},
-{text:"Related Symbols",url:"functions_rela.html"}]}]},
+{text:"Related Symbols",url:"functions_rela.html",children:[
+{text:"c",url:"functions_rela.html#index_c"},
+{text:"g",url:"functions_rela.html#index_g"},
+{text:"o",url:"functions_rela.html#index_o"},
+{text:"s",url:"functions_rela.html#index_s"}]}]}]},
 {text:"Files",url:"files.html",children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
