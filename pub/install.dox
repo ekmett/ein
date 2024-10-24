@@ -1,0 +1,51 @@
+/**
+
+\page install Installation
+
+\internal
+  \license
+    SPDX-FileType: Source
+    SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+    SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+  \endlicense
+\endinternal
+
+\tableofcontents
+
+You'll need a fairly bleeding edge compiler and build system for this.
+
+\section install_ninja Ninja 1.12.1
+
+You'll want to upgrade Ninja to a version that supports scanning for C++ modules.
+
+\code{.bash}
+wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
+sudo apt-get install -y unzip
+unzip ninja-linux.zip -d /usr/local/bin/
+sudo chmod +x /usr/local/bin/ninja
+\endcode
+
+\section install_clang Clang++-19
+
+Next you'll need a version of clang (and clang-tools) that supports c++23 pretty well. Currently this is clang++-19
+
+\code{.bash}
+wget https://apt.llvm.org/llvm.sh
+chmod +x llvm.sh
+sudo ./llvm.sh 19
+sudo apt install clang-19 clang-tools-19 clangd-19 lldb-19 lld-19
+\endcode
+
+\section install_doxygen Doxygen 1.12.0
+
+Documentation requires doxygen 1.12.0 or later.
+
+\code{.bash}
+sudo apt-get uninstall doxygen
+wget https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz
+tar xvfpz doxygen-1.12.0.linux.bin.tar.gz
+cd doxygen-1.12.0/
+sudo make install
+doxygen --version
+\endcode
+*/

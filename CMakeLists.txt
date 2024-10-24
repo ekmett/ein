@@ -64,6 +64,9 @@ else()
   message(WARNING "IPO/LTO is not supported: ${lto_check_output}")
 endif()
 
+# Use the restrict keyword check
+message(STATUS "Detected restrict: ${RESTRICT_KEYWORD}")
+
 if (BUILD_NATIVE)
   # Check for AVX512 support.
   execute_process(
@@ -220,6 +223,7 @@ if(ENABLE_TESTS)
   add_subdirectory(t)
 endif(ENABLE_TESTS)
 
+add_subdirectory(h)
 add_subdirectory(src)
 add_subdirectory(doxygen)
 

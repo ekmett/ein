@@ -1,5 +1,7 @@
 # License
 
+[TOC]
+
 Licensed under either of
  * Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  * BSD 2-Clause license (https://opensource.org/licenses/BSD-2-Clause)

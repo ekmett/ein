@@ -249,7 +249,7 @@
 
 /** \def ein_weak
 
-      \brief __attribute__((weak))
+      \brief `[[weak]]`
 
       \details
 
@@ -312,7 +312,7 @@
 
       \details
 
-        Primarily used for `visibility("hidden")` to disable inclusion in the library */
+        Primarily used for `[[visibility("hidden")]]` to disable inclusion of the symbol in the resulting library */
 
 #if ein_has_attribute(__visibility__)
   #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))
@@ -773,14 +773,12 @@
 ///
 ///   \brief see also #ein_malloc
 ///
-///   \details
-///
-///     \todo add `__restrict__`
-///
 ///   \ingroup attributes
 ///
 /// \{
 ///
+
+#define ein_restrict __restrict__
 
 /** \def ein_noalias
 

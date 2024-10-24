@@ -26,7 +26,7 @@ import ein.types;
 export module ein.numerics;
 
 namespace ein {
-/// \defgroup numerics numerics
+/// \defgroup numerics Numerics
 /// \{
 
 /// \brief \p N is one of the \p candidates

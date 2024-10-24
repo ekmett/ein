@@ -9,6 +9,8 @@
   \endlicense
 \endinternal
 
+\tableofcontents
+
 We build a precompiled header to accelerate the build at present.
 
 We need at least some headers because C++ modules don't handle

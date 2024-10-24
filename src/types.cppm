@@ -20,7 +20,7 @@ using namespace std;
 export module ein.types;
 
 export namespace ein {
-/// \defgroup types types
+/// \defgroup types Types
 /// \{
 
 /// \brief returns the unmangled name of a the type \p T

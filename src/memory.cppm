@@ -17,10 +17,10 @@ module;
 
 using namespace std;
 
-export module ein;
+export module ein.memory;
 
 namespace ein {
-/// \defgroup memory memory
+/// \defgroup memory Memory Management
 /// \{
 
 /// \brief a type where the destructor does no work, and therefore it is safe to simply discard.

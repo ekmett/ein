@@ -23,7 +23,7 @@ export module ein.wait;
 import ein.cpuid;
 
 namespace ein {
-/// \defgroup wait wait
+/// \defgroup wait Waiting
 /// \{
 
 /// \brief some way to wait for a value to change

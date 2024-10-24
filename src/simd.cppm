@@ -40,7 +40,7 @@ import ein.types;
 import ein.simd_data;
 
 namespace ein {
-/// \defgroup simd simd
+/// \defgroup simd SIMD
 /// \{
 
 /// \brief simd primitive definition

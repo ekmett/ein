@@ -19,7 +19,7 @@ module;
 
 #include "prelude.hpp"
 
-/// \defgroup std std
+/// \defgroup std C++ Standard Library
 export module ein.std;
 
 //// \ingroup std
