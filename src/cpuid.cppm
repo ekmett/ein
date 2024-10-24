@@ -23,7 +23,7 @@ namespace ein {
 /// \{
 
 /// result from calling the \CPUID instruction
-export struct [[nodiscard]] cpuid_t {
+export struct ein_nodiscard cpuid_t {
   int32_t eax, ebx, ecx, edx;
 };
 
@@ -38,7 +38,7 @@ export ein_inline ein_pure cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept {
 }
 
 /// \brief CPU vendor id
-export enum class [[nodiscard]] cpu_vendor {
+export enum class ein_nodiscard cpu_vendor {
   intel=0,  ///< \CPUID reported "GenuineIntel"
   amd=1,    ///< \CPUID reported "AuthenticAMD"
   unknown=2 ///< \CPUID reported something else
