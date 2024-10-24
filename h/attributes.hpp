@@ -13,9 +13,9 @@
         if we might need it, we may as well keep it.
 
       \license
-      SPDX-FileType: Source
-      SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-      SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
     \defgroup attributes Attributes
@@ -161,7 +161,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup multiversioning Function Multi-Versioning
+/// \defgroup multiversioning_attributes Function Multi-Versioning
 ///
 ///   \brief attributes for function multiversioning
 ///
@@ -202,7 +202,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup calling_conventions Calling Conventions
+/// \defgroup calling_convention_attributes Calling Conventions
 ///
 ///   \brief alternative calling conventions
 ///
@@ -240,9 +240,9 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup linkage Linkage Control
+/// \defgroup linkage_attributes Linkage Control
 ///
-///   \brief see \ref instantiation for more.
+///   \brief see \ref instantiation_attributes for more.
 ///
 ///   \ingroup attributes
 ///
@@ -299,11 +299,11 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup instantiation Explicit Template Instantiation
+/// \defgroup instantiation_attributes Explicit Template Instantiation
 ///
 ///   \brief attributes that can control explicit template instantiation
 ///
-///   \ingroup linkage
+///   \ingroup linkage_attributes
 ///
 /// \{
 
@@ -468,7 +468,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup thread_safety Thread Safety
+/// \defgroup thread_safety_attributes Thread Safety
 ///
 ///   \ingroup attributes
 ///
@@ -713,7 +713,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup handles Handles
+/// \defgroup handle_attributes Handles
 ///
 ///   \brief Handles are a way to identify resources like files, sockets, and processes.
 ///
@@ -852,7 +852,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup purity Purity
+/// \defgroup purity_attributes Purity
 /// \ingroup attributes
 /// \{
 
@@ -898,7 +898,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup alignment Memory Alignment
+/// \defgroup alignment_attributes Memory Alignment
 /// \ingroup attributes
 ///
 ///   \brief see also #ein_alloc_align
@@ -931,7 +931,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup string_safety String Safety
+/// \defgroup string_safety_attributes String Safety
 /// \ingroup attributes
 /// \{
 
@@ -955,7 +955,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup lifetimes Object Lifetimes
+/// \defgroup lifetime_attributes Object Lifetimes
 /// \ingroup attributes
 /// \{
 

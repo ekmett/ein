@@ -221,7 +221,7 @@ if(ENABLE_TESTS)
 endif(ENABLE_TESTS)
 
 add_subdirectory(src)
-add_subdirectory(dox)
+add_subdirectory(doxygen)
 
 # If CODE_COVERAGE is enabled, add a custom target to generate coverage reports
 if(CODE_COVERAGE)
