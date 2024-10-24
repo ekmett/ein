@@ -38,6 +38,7 @@ var NAVTREE =
         [ "APPENDIX: How to apply the Apache License to your work", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md10", null ]
       ] ]
     ] ],
+    [ "On Precompiled Headers", "d2/d4d/pch.html", "d2/d4d/pch" ],
     [ "Todo List", "dd/da0/todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Modules", "modules.html", [

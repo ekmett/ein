@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['license_0',['License',['../d2/d35/md__l_i_c_e_n_s_e.html',1,'']]],
-  ['list_1',['Todo List',['../dd/da0/todo.html',1,'']]]
+  ['clangd_0',['On cmake vs. clangd',['../df/dff/pch_cmake_vs_clangd.html',1,'pch']]],
+  ['cmake_20vs_20clangd_1',['On cmake vs. clangd',['../df/dff/pch_cmake_vs_clangd.html',1,'pch']]]
 ];
