@@ -110,7 +110,7 @@ digraph "src/types.cppm"
   Node3 -> Node53 [id="edge52_Node000003_Node000053",color="steelblue1",style="solid",tooltip=" "];
   Node53 [id="Node000053",label="spdlog/sinks/stdout\l_color_sinks.h",height=0.2,width=0.4,color="grey60", fillcolor="#E0E0E0", style="filled",tooltip=" "];
   Node2 -> Node54 [id="edge53_Node000002_Node000054",color="steelblue1",style="solid",tooltip=" "];
-  Node54 [id="Node000054",label="attributes.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d6a/attributes_8hpp.html",tooltip="defines used to indicate useful attributes for the compiler"];
+  Node54 [id="Node000054",label="attributes.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$df/d6a/attributes_8hpp.html",tooltip="an opinionated subset of clang/gcc attributes"];
   Node2 -> Node55 [id="edge54_Node000002_Node000055",color="steelblue1",style="solid",tooltip=" "];
   Node55 [id="Node000055",label="assert.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$d2/d54/assert_8hpp.html",tooltip="assert even during release"];
   Node1 -> Node56 [id="edge55_Node000001_Node000056",color="steelblue1",style="solid",tooltip=" "];

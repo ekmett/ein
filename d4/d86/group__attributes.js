@@ -1,0 +1,25 @@
+var group__attributes =
+[
+    [ "attribute detection", "df/db3/group__attribute__detection.html", "df/db3/group__attribute__detection" ],
+    [ "inlining", "d8/d6d/group__inlining.html", "d8/d6d/group__inlining" ],
+    [ "instantiation", "d2/d54/group__instantiation.html", "d2/d54/group__instantiation" ],
+    [ "multiversioning", "dc/da7/group__multiversioning.html", "dc/da7/group__multiversioning" ],
+    [ "calling conventions", "d8/d64/group__calling__conventions.html", "d8/d64/group__calling__conventions" ],
+    [ "linkage", "d7/d68/group__linkage.html", "d7/d68/group__linkage" ],
+    [ "typestate analysis", "d6/d21/group__typestate.html", "d6/d21/group__typestate" ],
+    [ "thread safety", "d5/ddc/group__thread__safety.html", "d5/ddc/group__thread__safety" ],
+    [ "handles", "dd/d8c/group__handles.html", "dd/d8c/group__handles" ],
+    [ "aliasing reduction", "db/dbf/group__aliasing__reduction.html", "db/dbf/group__aliasing__reduction" ],
+    [ "initialization", "d4/d97/group__initialization.html", "d4/d97/group__initialization" ],
+    [ "purity", "db/dba/group__purity.html", "db/dba/group__purity" ],
+    [ "alignment", "d4/d75/group__alignment.html", "d4/d75/group__alignment" ],
+    [ "string safety", "df/d4a/group__string__safety.html", "df/d4a/group__string__safety" ],
+    [ "lifetimes", "db/d36/group__lifetimes.html", "db/d36/group__lifetimes" ],
+    [ "allocation", "df/dbd/group__allocation__attributes.html", "df/dbd/group__allocation__attributes" ],
+    [ "control flow", "dd/dfd/group__control__flow.html", "dd/dfd/group__control__flow" ],
+    [ "null safety", "d5/db4/group__null__safety.html", "d5/db4/group__null__safety" ],
+    [ "cuda", "d1/d1e/group__cuda.html", "d1/d1e/group__cuda" ],
+    [ "pragmas", "d3/d5e/group__pragmas.html", "d3/d5e/group__pragmas" ],
+    [ "loops", "da/d2b/group__loop__attributes.html", "da/d2b/group__loop__attributes" ],
+    [ "attributes.hpp", "df/d6a/attributes_8hpp.html", null ]
+];

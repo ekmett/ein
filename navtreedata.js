@@ -38,6 +38,7 @@ var NAVTREE =
         [ "APPENDIX: How to apply the Apache License to your work", "d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md10", null ]
       ] ]
     ] ],
+    [ "Todo List", "dd/da0/todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Modules", "modules.html", [
       [ "Modules List", "modules.html", "modules_dup" ],
@@ -85,7 +86,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac80bf7e6ae5bc282b3c7878e0f9fcec6"
+"dc/d7b/group__simd.html#ga4ded656b3d1da0d7acd986b7acf789a1"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
