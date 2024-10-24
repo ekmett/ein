@@ -2,7 +2,7 @@ var searchData=
 [
   ['operator_20intrinsic_5ft_20_26_0',['operator intrinsic_t &amp;',['../dc/d7b/group__simd.html#adeebc087fec89d1c8f9e41b98eada346',1,'ein::simd']]],
   ['operator_20intrinsic_5ft_20const_20_26_1',['operator intrinsic_t const &amp;',['../dc/d7b/group__simd.html#a1924d4597b3b547120e74a134c67b6c3',1,'ein::simd']]],
-  ['operator_20size_5ft_2',['operator size_t',['../dc/db9/group__numerics.html#afb3ffad544d48567a335b195795cdab3',1,'ein::imm_t']]],
+  ['operator_20size_5ft_2',['operator size_t',['../dc/db9/group__numerics.html#a68d2cd0dfe5dee368de581c24aea11b6',1,'ein::imm_t']]],
   ['operator_21_3d_3',['operator!=',['../dc/d7b/group__simd.html#a5488c27dd004a5a8cb77173c5b9e5d89',1,'ein::simd::operator!='],['../dc/d7b/group__simd.html#a1ca2fb71bf30d704400627fd70a858c3',1,'ein::simd::operator!=']]],
   ['operator_26_4',['operator&amp;',['../dc/d7b/group__simd.html#a10363a7abe73c27f41d7ebb29bc05210',1,'ein::simd']]],
   ['operator_26_3d_5',['operator&amp;=',['../dc/d7b/group__simd.html#a7b18c683e19992df5b761f4009846570',1,'ein::simd']]],

@@ -58,7 +58,7 @@ var module__ein_8numerics =
     [ "ein::scalef", "da/dbc/module__ein_8numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f", null ],
     [ "ein::scalef", "da/dbc/module__ein_8numerics.html#ga30597d79f07c0ef140788dc10f28e6db", null ],
     [ "ein::scalef", "da/dbc/module__ein_8numerics.html#gafc5e1abfa9151a232a6c694150f3340d", null ],
-    [ "ein::cmpint", "da/dbc/module__ein_8numerics.html#ga772b85a099ed110b7f03db897c27b05b", null ],
+    [ "ein::cmpint", "da/dbc/module__ein_8numerics.html#gac7866b6b237bc7d131d09b53e8f2a5eb", null ],
     [ "ein::cmp", "da/dbc/module__ein_8numerics.html#gadeb9c3d409bcba9ea1bad3b5df34eb8d", null ],
     [ "ein::imm", "da/dbc/module__ein_8numerics.html#ga9f8820229adbc8c614428c448a370015", null ],
     [ "ein::max_fp_comparison_predicate", "da/dbc/module__ein_8numerics.html#ga2b09119ae81703a8158113efe9708d8b", null ]

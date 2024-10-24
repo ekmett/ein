@@ -105,7 +105,7 @@ var namespaceein =
     [ "cmp_unord", "dc/db9/group__numerics.html#gaf181518fc669a0ed8499e48bbd6541cb", null ],
     [ "cmp_unord", "dc/db9/group__numerics.html#ga2e9e352aca0eb99e5bff21db2bcf7029", null ],
     [ "cmp_unord", "dc/db9/group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e", null ],
-    [ "cmpint", "dc/db9/group__numerics.html#ga772b85a099ed110b7f03db897c27b05b", null ],
+    [ "cmpint", "dc/db9/group__numerics.html#gac7866b6b237bc7d131d09b53e8f2a5eb", null ],
     [ "cpuid", "df/d08/group__cpuid.html#ga849cffec87c96e71e01ec367f5bb01ea", null ],
     [ "dup", "d7/ded/group__memory.html#gaea392313e0b52aaba01039483b6d673f", null ],
     [ "lddqu", "dc/d7b/group__simd.html#ga4ded656b3d1da0d7acd986b7acf789a1", null ],

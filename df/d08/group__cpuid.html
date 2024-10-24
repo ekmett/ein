@@ -295,11 +295,14 @@ edx</td>
 </table>
 
 <p class="definition">Definition at line <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html#l00042">42</a> of file <a class="el" href="../../d2/d8a/cpuid_8cppm_source.html">cpuid.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   44</span>                                           {</div>
-<div class="line"><span class="lineno">   45</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>=0,  </div>
-<div class="line"><span class="lineno">   46</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">amd</a>=1,    </div>
+<div class="fragment"><div class="line"><span class="lineno">   42</span>                                           {</div>
+<div class="line"><span class="lineno">   43</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>=0,  </div>
+<div class="line"><span class="lineno">   44</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">amd</a>=1,    </div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_enumvalue" href="#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">unknown</a>=2 </div>
+<div class="line"><span class="lineno">   46</span>};</div>
 <div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">ein::cpu_vendor::intel</a></div><div class="ttdeci">@ intel</div><div class="ttdoc">CPUID reported &quot;GenuineIntel&quot;</div></div>
 <div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">ein::cpu_vendor::amd</a></div><div class="ttdeci">@ amd</div><div class="ttdoc">CPUID reported &quot;AuthenticAMD&quot;</div></div>
+<div class="ttc" id="agroup__cpuid_html_gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">ein::cpu_vendor::unknown</a></div><div class="ttdeci">@ unknown</div><div class="ttdoc">CPUID reported something else</div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -326,7 +329,7 @@ edx</td>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">inline</span><span class="mlabel">pure</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[pure]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

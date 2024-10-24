@@ -4,7 +4,7 @@ var group__numerics =
     [ "ein::one_of", "d9/d5f/conceptein_1_1one__of.html", null ],
     [ "ein::not_one_of", "da/db6/conceptein_1_1not__one__of.html", null ],
     [ "ein::imm_t< N >", "dc/db9/group__numerics.html#d9/d33/structein_1_1imm__t", [
-      [ "operator size_t", "dc/db9/group__numerics.html#afb3ffad544d48567a335b195795cdab3", null ],
+      [ "operator size_t", "dc/db9/group__numerics.html#a68d2cd0dfe5dee368de581c24aea11b6", null ],
       [ "value", "dc/db9/group__numerics.html#afa2b66046ea1aedfd916e12d1bb2289a", null ]
     ] ],
     [ "ein::int_t", "dc/db9/group__numerics.html#ga44878eae47626eacca18302e151e5001", null ],
@@ -60,7 +60,7 @@ var group__numerics =
     [ "ein::cmp_unord", "dc/db9/group__numerics.html#gaf181518fc669a0ed8499e48bbd6541cb", null ],
     [ "ein::cmp_unord", "dc/db9/group__numerics.html#ga2e9e352aca0eb99e5bff21db2bcf7029", null ],
     [ "ein::cmp_unord", "dc/db9/group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e", null ],
-    [ "ein::cmpint", "dc/db9/group__numerics.html#ga772b85a099ed110b7f03db897c27b05b", null ],
+    [ "ein::cmpint", "dc/db9/group__numerics.html#gac7866b6b237bc7d131d09b53e8f2a5eb", null ],
     [ "ein::scalef", "dc/db9/group__numerics.html#gafc5e1abfa9151a232a6c694150f3340d", null ],
     [ "ein::scalef", "dc/db9/group__numerics.html#ga30597d79f07c0ef140788dc10f28e6db", null ],
     [ "ein::scalef", "dc/db9/group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f", null ],
