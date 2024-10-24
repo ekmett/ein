@@ -8,10 +8,7 @@ module;
 /// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 /// \endlicense
 
-#ifndef EIN_PCH
 #include "prelude.hpp"
-#endif
-
 #include <sys/mman.h> // munmap
 #include <cstring> // strdup
 

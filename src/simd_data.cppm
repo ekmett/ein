@@ -8,10 +8,7 @@
 
 module;
 
-#ifndef EIN_PCH
 #include "prelude.hpp"
-#endif
-
 #include <immintrin.h>
 
 using namespace std;

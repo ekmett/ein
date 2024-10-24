@@ -1,18 +1,31 @@
 #pragma once
 
-/*! \file
-    \brief assert even during release
-    \ingroup macros
-    \license
-    SPDX-FileType: Source
-    SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-    SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-    \endlicense
-*/
+/** \file
 
-/// \def ein_assert
-/// \ingroup macros
-/// \hideinitializer \hideinlinesource
+      \brief assert even during release
+
+      \ingroup macros
+
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense
+
+    \def ein_assert
+
+      \brief An `assert` with \c spdlog message formatting and logging. Present even in release mode.
+
+      \details
+
+        Arguments other than the condition are only evaluated if the condition \p cond is `false`.
+
+      \ingroup macros
+
+      \hideinitializer
+
+      \hideinlinesource */
+
 #define ein_assert(cond,...) \
   do { \
     if (!cond) [[unlikely]] { \

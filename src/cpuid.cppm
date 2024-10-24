@@ -7,9 +7,7 @@
 /// \endlicense
 module;
 
-#ifndef EIN_PCH
 #include "prelude.hpp"
-#endif
 #include <cpuid.h>
 
 using namespace std;

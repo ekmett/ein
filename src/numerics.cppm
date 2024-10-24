@@ -8,9 +8,7 @@ module;
 /// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 /// \endlicense
 
-#ifndef EIN_PCH
 #include "prelude.hpp"
-#endif
 
 #ifdef __AVX512F__
 #define IFAVX512(x,y) x

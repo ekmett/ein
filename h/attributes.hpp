@@ -18,7 +18,7 @@
       SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-    \defgroup attributes attributes
+    \defgroup attributes Attributes
 
       \brief macros used to provide useful attributes
 
@@ -33,7 +33,10 @@
     \{ */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup attribute_detection attribute detection
+/// \defgroup attribute_detection Attribute Detection
+///
+///   \brief macros for determining supported attributes
+///
 /// \ingroup macros
 /// \{
 
@@ -74,8 +77,12 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup inlining inlining
-/// \ingroup attributes
+/// \defgroup inlining_attributes Inlining Control
+///
+///   \brief attributes that control inlining behavior
+///
+///   \ingroup attributes
+///
 /// \{
 
 /** \def ein_inline
@@ -154,58 +161,19 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup instantiation instantiation
-/// \ingroup attributes
-/// \{
-
-/** \def ein_visibility
-
-      \brief `[[visibility(x)]]`
-
-      \details
-
-        Primarily used for `visibility("hidden")` to disable inclusion in the library */
-
-#if ein_has_attribute(__visibility__)
-  #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))
-#else
-  #define ein_visibility(...)
-  #warning "[[visibility]] is not supported"
-#endif
-
-/** \def ein_exclude_from_explicit_instantiation
-
-      \brief exclude this member from explicit template instantiation.
-
-      \details
-
-        Usually paired with #ein_visibility`("hidden")`, see #ein_hidden */
-
-#if ein_has_attribute(exclude_from_explicit_instantiation)
-  #define ein_exclude_from_explicit_instantiation __attribute__((exclude_from_explicit_instantiation))
-#else
-  #define ein_exclude_from_explicit_instantiation
-  #warning "[[exclude_from_explicit_instantiation]] is not supported"
-#endif
-
-/** \def ein_hidden
-
-      \brief `[[visibility("hidden")]] [[exclude_from_explicit_instantiations]]`
-
-      \details
-
-        Use to exclude from both having to compute in explicit template instantiations
-        and expecting it to be stored. This means that the resulting member is safely
-        delayed to the usage site, despite the template being explicitly otherwise
-        instantiated. Useful for `#ein_inline` and the general sort of SIMD intrinsic
-        wrappers where there's no point in emitting a function body that will never be
-        called, and will just bloat executable size. */
-
-#define ein_hidden ein_visibility("hidden") ein_exclude_from_explicit_instantiation
-
-/// \}
-///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup multiversioning multiversioning
+/// \defgroup multiversioning Function Multi-Versioning
+///
+///   \brief attributes for function multiversioning
+///
+///   \details
+///
+///     Multi-versioned functions have their symbols resolved at linkage time by a function
+///     that can look at the CPU and make linking decisions. These are theoretically great!
+///
+///     \warning
+///
+///       Unfortunately, they don't support `[[flatten]]` and they don't support function
+///       templates as implemented at this time. When they do they'll become a powerful tool.
 ///
 ///   \ingroup attributes
 ///
@@ -234,7 +202,9 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup calling_conventions calling conventions
+/// \defgroup calling_conventions Calling Conventions
+///
+///   \brief alternative calling conventions
 ///
 ///   \ingroup attributes
 ///
@@ -270,7 +240,9 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup linkage linkage
+/// \defgroup linkage Linkage Control
+///
+///   \brief see \ref instantiation for more.
 ///
 ///   \ingroup attributes
 ///
@@ -327,7 +299,62 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup typestate typestate analysis
+/// \defgroup instantiation Explicit Template Instantiation
+///
+///   \brief attributes that can control explicit template instantiation
+///
+///   \ingroup linkage
+///
+/// \{
+
+/** \def ein_visibility
+
+      \brief `[[visibility(x)]]`
+
+      \details
+
+        Primarily used for `visibility("hidden")` to disable inclusion in the library */
+
+#if ein_has_attribute(__visibility__)
+  #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))
+#else
+  #define ein_visibility(...)
+  #warning "[[visibility]] is not supported"
+#endif
+
+/** \def ein_exclude_from_explicit_instantiation
+
+      \brief exclude this member from explicit template instantiation.
+
+      \details
+
+        Usually paired with #ein_visibility`("hidden")`, see #ein_hidden */
+
+#if ein_has_attribute(exclude_from_explicit_instantiation)
+  #define ein_exclude_from_explicit_instantiation __attribute__((exclude_from_explicit_instantiation))
+#else
+  #define ein_exclude_from_explicit_instantiation
+  #warning "[[exclude_from_explicit_instantiation]] is not supported"
+#endif
+
+/** \def ein_hidden
+
+      \brief `[[visibility("hidden")]] [[exclude_from_explicit_instantiations]]`
+
+      \details
+
+        Use to exclude from both having to compute in explicit template instantiations
+        and expecting it to be stored. This means that the resulting member is safely
+        delayed to the usage site, despite the template being explicitly otherwise
+        instantiated. Useful for `#ein_inline` and the general sort of SIMD intrinsic
+        wrappers where there's no point in emitting a function body that will never be
+        called, and will just bloat executable size. */
+
+#define ein_hidden ein_visibility("hidden") ein_exclude_from_explicit_instantiation
+
+/// \}
+///////////////////////////////////////////////////////////////////////////////////////////////
+/// \defgroup typestate_analysis Typestate Analysis
 ///
 ///   \ingroup attributes
 ///
@@ -441,7 +468,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup thread_safety thread safety
+/// \defgroup thread_safety Thread Safety
 ///
 ///   \ingroup attributes
 ///
@@ -686,7 +713,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup handles handles
+/// \defgroup handles Handles
 ///
 ///   \brief Handles are a way to identify resources like files, sockets, and processes.
 ///
@@ -742,7 +769,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup aliasing_reduction aliasing reduction
+/// \defgroup aliasing_attributes Aliasing Control
 ///
 ///   \brief see also #ein_malloc
 ///
@@ -774,7 +801,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup initialization initialization
+/// \defgroup initialization_attributes Initialization
 /// \ingroup attributes
 /// \{
 
@@ -825,7 +852,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup purity purity
+/// \defgroup purity Purity
 /// \ingroup attributes
 /// \{
 
@@ -871,7 +898,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup alignment alignment
+/// \defgroup alignment Memory Alignment
 /// \ingroup attributes
 ///
 ///   \brief see also #ein_alloc_align
@@ -904,7 +931,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup string_safety string safety
+/// \defgroup string_safety String Safety
 /// \ingroup attributes
 /// \{
 
@@ -928,7 +955,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup lifetimes lifetimes
+/// \defgroup lifetimes Object Lifetimes
 /// \ingroup attributes
 /// \{
 
@@ -987,7 +1014,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup allocation_attributes allocation
+/// \defgroup allocation_attributes Memory Allocation
 /// \ingroup attributes
 /// \{
 
@@ -1039,7 +1066,7 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup control_flow control flow
+/// \defgroup control_flow_attributes Control Flow
 ///
 ///   \ingroup attributes
 ///
@@ -1083,7 +1110,7 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup null_safety null safety
+/// \defgroup null_safety_attributes Null Safety
 /// \ingroup attributes
 /// \{
 
@@ -1155,7 +1182,7 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup cuda cuda
+/// \defgroup cuda_attributes CUDA
 /// \ingroup attributes
 /// \{
 
@@ -1207,8 +1234,8 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup pragmas pragmas
-/// \ingroup attributes
+/// \defgroup pragmas Emitting Pragmas
+/// \ingroup macros
 /// \{
 
 /// \cond local
@@ -1223,7 +1250,7 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \defgroup loop_attributes loops
+/// \defgroup loop_attributes Loops
 /// \ingroup attributes
 /// \{
 
