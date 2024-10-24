@@ -1,13 +1,16 @@
 #pragma once
 
 /** \file
-    \brief defines used to indicate useful attributes for the compiler
-    \ingroup macros
-    \license
-    SPDX-FileType: Source
-    SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-    SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-    \endlicense */
+
+      \brief defines used to indicate useful attributes for the compiler
+
+      \ingroup macros
+
+      \license
+      SPDX-FileType: Source
+      SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+      SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense */
 
 /// \ingroup macros
 /// \{
@@ -17,10 +20,12 @@
 /// \{
 
 /** \def ein_has_attribute(x)
-    \brief `__has_attribute(x)`
 
-    \details
-    Used as the primary means for detecting advanced annotation features */
+      \brief `__has_attribute(x)`
+
+      \details
+
+      Used as the primary means for detecting advanced annotation features */
 
 #ifdef __has_attribute
   #define ein_has_attribute(x) __has_attribute(x)
@@ -29,16 +34,17 @@
 #endif
 
 /** \def ein_has_declspec_attribute(__x)
-    \brief portable `__has_declspec_attribute(__x)`
 
-    \detail
+      \brief portable `__has_declspec_attribute(__x)`
 
-    Defaults to 1 on MSVC, where we can assume `__declspec(x)`
-    is well supported.
+      \details
 
-    Uses the `__has_declspec_attribute(x)` implementation in Clang
+        Defaults to 1 on MSVC, where we can assume `__declspec(x)`
+        is well supported.
 
-    Defaults to 0 otherwise. */
+        Uses the `__has_declspec_attribute(x)` implementation in Clang
+
+        Defaults to 0 otherwise. */
 
 #if defined(_MSC_VER)
   #define ein_has_declspec_attribute(__x) 1
@@ -54,7 +60,8 @@
 /// \{
 
 /** \def ein_inline
-    \brief `inline [[always_inline]]` */
+
+      \brief `inline [[always_inline]]` */
 
 #if ein_has_attribute(always_inline)
   #define ein_inline inline __attribute__((always_inline))
@@ -66,11 +73,12 @@
 
 /** \def ein_flatten
 
-    \brief portable `[[flatten]]`
+      \brief portable `[[flatten]]`
 
-    \details
-    the compiler should inline recursively aggressively under
-    this definition. use with care, good for expression templates */
+      \details
+
+        the compiler should inline recursively aggressively under
+        this definition. use with care, good for expression templates */
 
 #if ein_has_attribute(flatten)
   #define ein_flatten __attribute__((flatten))
@@ -79,10 +87,13 @@
 #endif
 
 /** \def ein_artificial
-    \brief `[[artificial]]`.
-    \details
-    The debugger should not single-step into this function.
-    Treat it as atomic and associate it with the debug information for the use site instead.  */
+
+      \brief `[[artificial]]`.
+
+      \details
+
+        The debugger should not single-step into this function.
+        Treat it as atomic and associate it with the debug information for the use site instead.  */
 
 #if ein_has_attribute(artificial)
   #define ein_artificial __attribute__((artificial))
@@ -93,16 +104,13 @@
   #warning "[[artificial]] is not supported"
 #endif
 
-/// \}
-///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name deoptimization
-/// \{
-
 /** \def ein_noinline
 
-    \brief `[[noinline]]`
+      \brief `[[noinline]]`
 
-    \details Indicates that the inliner should avoid inlining this function at usage sites */
+      \details
+
+        Indicates that the inliner should avoid inlining this function at usage sites */
 
 #if ein_has_attribute(noinline)
   #define ein_noinline __attribute__((noinline))
@@ -112,11 +120,12 @@
 
 /** \def ein_optnone
 
-    \brief `[[optnone]]`
+      \brief `[[optnone]]`
 
-    \details
-    Used to indicate that regardless of optimization level, you shouldn't optimize this one function.
-    Useful for local debugging when you can't disable optimization for the entire build. (e.g. ours!) */
+      \details
+
+        Used to indicate that regardless of optimization level, you shouldn't optimize this one function.
+        Useful for local debugging when you can't disable optimization for the entire build. (e.g. ours!) */
 
 #if ein_has_attribute(optnone)
   #define ein_optnone __attribute__((optnone))
@@ -130,11 +139,12 @@
 /// \{
 
 /** \def ein_visibility
-    \brief `[[visibility(x)]]`
 
-    \details
+      \brief `[[visibility(x)]]`
 
-    Primarily used for `visibility("hidden")` to disable inclusion in the library */
+      \details
+
+        Primarily used for `visibility("hidden")` to disable inclusion in the library */
 
 #if ein_has_attribute(__visibility__)
   #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))
@@ -144,10 +154,12 @@
 #endif
 
 /** \def ein_exclude_from_explicit_instantiation
-    \brief exclude this member from explicit template instantiation.
 
-    \details
-    Usually paired with #ein_visibility`("hidden")`, see #ein_hidden */
+      \brief exclude this member from explicit template instantiation.
+
+      \details
+
+        Usually paired with #ein_visibility`("hidden")`, see #ein_hidden */
 
 #if ein_has_attribute(exclude_from_explicit_instantiation)
   #define ein_exclude_from_explicit_instantiation __attribute__((exclude_from_explicit_instantiation))
@@ -158,16 +170,16 @@
 
 /** \def ein_hidden
 
-    \brief `[[visibility("hidden")]] [[exclude_from_explicit_instantiations]]`
+      \brief `[[visibility("hidden")]] [[exclude_from_explicit_instantiations]]`
 
-    \details
+      \details
 
-    Use to exclude from both having to compute in explicit template instantiations
-    and expecting it to be stored. This means that the resulting member is safely
-    delayed to the usage site, despite the template being explicitly otherwise
-    instantiated. Useful for `#ein_inline` and the general sort of SIMD intrinsic
-    wrappers where there's no point in emitting a function body that will never be
-    called, and will just bloat executable size. */
+        Use to exclude from both having to compute in explicit template instantiations
+        and expecting it to be stored. This means that the resulting member is safely
+        delayed to the usage site, despite the template being explicitly otherwise
+        instantiated. Useful for `#ein_inline` and the general sort of SIMD intrinsic
+        wrappers where there's no point in emitting a function body that will never be
+        called, and will just bloat executable size. */
 
 #define ein_hidden ein_visibility("hidden") ein_exclude_from_explicit_instantiation
 
@@ -178,20 +190,22 @@
 
 /** \def ein_target(x)
 
-    \brief this indicates a required feature set for the current multiversioned function.
+      \brief this indicates a required feature set for the current multiversioned function.
 
-    \details
-    Overloads will be resolved at load time by the linker based on detected cpu capabilities.
-    Unfortunately this cannot be applied to templated functions (or ones that take `auto`) */
+      \details
+
+        Overloads will be resolved at load time by the linker based on detected cpu capabilities.
+        Unfortunately this cannot be applied to templated functions (or ones that take `auto`) */
 
 #define ein_target(x) __attribute__((target(x)))
 
 /** \def ein_target_clones(...)
 
-    \brief this indicates a required feature set for the current multiversioned function.
+      \brief this indicates a required feature set for the current multiversioned function.
 
-    \details
-    Overloads will be resolved at load time. */
+      \details
+
+        Overloads will be resolved at load time. */
 
 #define ein_target_clones(...) __attribute__((target_clones(_VA_ARGS_)))
 
@@ -202,9 +216,11 @@
 
 /** \def ein_hot
 
-    \brief `[[hot]]`
+      \brief `[[hot]]`
 
-    calling convention frequent inner loop calls */
+      \details
+
+        calling convention frequent inner loop calls */
 
 #if ein_has_attribute(hot)
   #define ein_hot __attribute__((hot))
@@ -214,10 +230,11 @@
 
 /** \def ein_cold
 
-    \brief `[[cold]]`
+      \brief `[[cold]]`
 
-    \details
-    calling convention for very infrequent calls (e.g. initializers) */
+      \details
+
+        calling convention for very infrequent calls (e.g. initializers) */
 
 #if ein_has_attribute(cold)
   #define ein_cold __attribute__((cold))
@@ -232,10 +249,11 @@
 
 /** \def ein_weak
 
-    \brief __attribute__((weak))
+      \brief __attribute__((weak))
 
-    \details
-    used to generate a symbol that can be easily overriden by the linker. */
+      \details
+
+        used to generate a symbol that can be easily overriden by the linker. */
 
 #if ein_has_attribute(weak)
   #define ein_weak __attribute__((weak))
@@ -256,12 +274,12 @@
 
 /** \def ein_preferred_name(x)
 
-    \brief portable `[[clang::preferred_name(x)]]` annotations
+      \brief portable `[[clang::preferred_name(x)]]` annotations
 
-    \details
+      \details
 
-    can be applied to a template struct to provide better names
-    for some concrete instantiations */
+        Can be applied to a template struct to provide better names
+        for some concrete instantiations */
 
 #if __has_cpp_attribute(clang::preferred_name)
   #define ein_preferred_name(x) [[clang::preferred_name(__x)]]
@@ -276,14 +294,13 @@
 
 /** \def ein_consumable(x)
 
-    \brief Each class that uses any typestate annotations must first
-    be marked using the consumable attribute.
+      \brief Each class that uses any typestate annotations must first be marked using this attribute.
 
-    \details
+      \details
 
-    Failure to do so will result in a warning.
-    This attribute accepts a single parameter that must be one of the following:
-    "unknown", "consumed", or "unconsumed". */
+        Failure to do so will result in a warning.
+        This attribute accepts a single parameter that must be one of the following:
+        "unknown", "consumed", or "unconsumed". */
 
 #if ein_has_attribute(consumable)
   #define ein_consumable(__x) __attribute__((consumable(__x)))
@@ -293,11 +310,11 @@
 
 /** \def ein_callable_when(...)
 
-    \details
+      \details
 
-    Use to indicate what states a method may be called in. Valid states
-    are `"unconsumed"`, `"consumed"`, or `"unknown"`.
-    Each argument to this attribute must be a quoted string. */
+        Use to indicate what states a method may be called in. Valid states
+        are `"unconsumed"`, `"consumed"`, or `"unknown"`.
+        Each argument to this attribute must be a quoted string. */
 
 #if ein_has_attribute(callable_when)
   #define ein_callable_when(...) __attribute__((callable_when(__VA_ARGS__)))
@@ -307,12 +324,12 @@
 
 /** \def ein_param_typestate(...)
 
-    \details
+      \details
 
-    This attribute specifies expectations about function parameters. Calls to a
-    function with annotated parameters will issue a warning if the corresponding
-    argument isn’t in the expected state. The attribute is also used to set the
-    initial state of the parameter when analyzing the function’s body. */
+        This attribute specifies expectations about function parameters. Calls to a
+        function with annotated parameters will issue a warning if the corresponding
+        argument isn’t in the expected state. The attribute is also used to set the
+        initial state of the parameter when analyzing the function’s body. */
 
 #if ein_has_attribute(param_typestate)
   #define ein_param_typestate(...) __attribute__((param_typestate(__VA_ARGS__)))
@@ -322,18 +339,18 @@
 
 /** \def ein_return_typestate(x)
 
-    \details
+      \details
 
-    The `return_typestate` attribute can be applied to functions or parameters.
+        The `return_typestate` attribute can be applied to functions or parameters.
 
-    When applied to a function the attribute specifies the state of the returned value.
-    The function’s body is checked to ensure that it always returns a value in the
-    specified state. On the caller side, values returned by the annotated function are
-    initialized to the given state.
+        When applied to a function the attribute specifies the state of the returned value.
+        The function’s body is checked to ensure that it always returns a value in the
+        specified state. On the caller side, values returned by the annotated function are
+        initialized to the given state.
 
-    When applied to a function parameter it modifies the state of an argument after a
-    call to the function returns. The function’s body is checked to ensure that the
-    parameter is in the expected state before returning. */
+        When applied to a function parameter it modifies the state of an argument after a
+        call to the function returns. The function’s body is checked to ensure that the
+        parameter is in the expected state before returning. */
 
 #if ein_has_attribute(return_typestate)
   #define ein_return_typestate(...) __attribute__((return_typestate(__VA_ARGS__)))
@@ -342,22 +359,23 @@
 #endif
 
 /** \def ein_moving
-    \brief `[[return_typestate("consumed")]]` `[[param_typestate("unconsumed")]]`
 
-    \details
+      \brief `[[return_typestate("consumed")]]` `[[param_typestate("unconsumed")]]`
 
-    short-hand for indicating that this argument was moved and is now `"consumed"`,
-    assumes it was `"unconsumed"` before.  */
+      \details
+
+        Short-hand for indicating that this argument was moved and is now `"consumed"`.
+        Assumes it was `"unconsumed"` before. */
 
 #define ein_moving ein_return_typestate("consumed") ein_param_typestate("unconsumed")
 
 /** \def ein_set_typestate(x)
 
-    \details
+      \details
 
-    Annotate methods that transition an object into a new state.
+        Annotate methods that transition an object into a new state.
 
-    The new state must be `"unconsumed"`, `"consumed"`, or `"unknown"`. */
+        The new state must be `"unconsumed"`, `"consumed"`, or `"unknown"`. */
 
 #if ein_has_attribute(set_typestate)
   #define ein_set_typestate(...) __attribute__((set_typestate(__VA_ARGS__)))
@@ -367,11 +385,11 @@
 
 /** \def ein_test_typestate(x)
 
-    \details
+      \details
 
-    Use to indicate that a method returns true if the object is in the specified state.
+        Use to indicate that a method returns true if the object is in the specified state.
 
-    The state must be `"unconsumed"`, `"consumed"`, or `"unknown"`. */
+        The state must be `"unconsumed"`, `"consumed"`, or `"unknown"`. */
 
 #if ein_has_attribute(test_typestate)
   #define ein_test_typestate(...) __attribute__((test_typestate(__VA_ARGS__)))
@@ -383,7 +401,9 @@
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \name thread safety analysis
+///
 /// \brief these are supported by `-Wthread-safety`
+///
 /// \{
 
 /** \def ein_no_thread_safety_analysis
@@ -416,12 +436,12 @@
 
 /** \def ein_scoped_lockable
 
-    \details
+      \details
 
-    Use on a class definition to specify that it has a
-    “scoped” lockable type. Objects of this type will acquire the
-    lock upon construction and release it upon going out of scope.
-    This annotation is primarily used to check consistency. */
+        Use on a class definition to specify that it has a
+        “scoped” lockable type. Objects of this type will acquire the
+        lock upon construction and release it upon going out of scope.
+        This annotation is primarily used to check consistency. */
 
 #if ein_has_attribute(scoped_lockable)
   #define ein_scoped_lockable __attribute__((scoped_lockable))
@@ -431,10 +451,10 @@
 
 /** \def ein_guarded_var
 
-    \details
+      \details
 
-    Use on a variable declaration to specify that the variable
-    must be accessed while holding some lock. */
+        Use on a variable declaration to specify that the variable
+        must be accessed while holding some lock. */
 
 #if ein_has_attribute(guarded_var)
   #define ein_guarded_var __attribute__((guarded_var))
@@ -444,10 +464,10 @@
 
 /** \def ein_pt_guarded_var
 
-    \details
+      \details
 
-    Use on a pointer declaration to specify that the
-    pointer must be dereferenced while holding some lock. */
+        Use on a pointer declaration to specify that the
+        pointer must be dereferenced while holding some lock. */
 
 #if ein_has_attribute(pt_guarded_var)
   #define ein_pt_guarded_var __attribute__((pt_guarded_var))
@@ -457,10 +477,10 @@
 
 /** \def ein_guarded_by(l)
 
-    \details
+      \details
 
-    Use on a variable declaration to specify that the
-    variable must be accessed while holding lock \p l. */
+        Use on a variable declaration to specify that the
+        variable must be accessed while holding lock \p l. */
 
 #if ein_has_attribute(guarded_by)
   #define ein_guarded_by(x) __attribute__((guarded_by(x)))
@@ -470,10 +490,10 @@
 
 /** \def ein_pt_guarded_by(l)
 
-    \details
+      \details
 
-    Use on a pointer declaration to specify that the
-    pointer must be dereferenced while holding lock \p l. */
+        Use on a pointer declaration to specify that the
+        pointer must be dereferenced while holding lock \p l. */
 
 #if ein_has_attribute(pt_guarded_by)
   #define ein_pt_guarded_by(x) __attribute__((pt_guarded_by(x)))
@@ -483,12 +503,12 @@
 
 /** \def ein_acquired_before(...)
 
-    \details
+      \details
 
-    Use on a declaration of a lockable variable to
-    specify that the lock must be acquired
-    before all attribute arguments. Arguments must be
-    lockable type, and there must be at least one argument. */
+        Use on a declaration of a lockable variable to
+        specify that the lock must be acquired
+        before all attribute arguments. Arguments must be
+        lockable type, and there must be at least one argument. */
 
 #if ein_has_attribute(acquired_before)
   #define ein_acquired_before(...) __attribute__((acquired_before(__VA_ARGS__)))
@@ -498,12 +518,12 @@
 
 /** \def ein_acquired_after(...)
 
-    \details
+      \details
 
-    Use on a declaration of a lockable variable to specify that
-    the lock must be acquired after all attribute arguments.
-    Arguments must be lockable type, and there must be at
-    least one argument. */
+        Use on a declaration of a lockable variable to specify that
+        the lock must be acquired after all attribute arguments.
+        Arguments must be lockable type, and there must be at
+        least one argument. */
 
 #if ein_has_attribute(acquired_after)
   #define ein_acquired_after(...) __attribute__((acquired_after(__VA_ARGS__)))
@@ -513,14 +533,14 @@
 
 /** \def ein_exclusive_lock_function(...)
 
-    \details
+      \details
 
-    Use on a function declaration to specify that the function
-    acquires all listed locks exclusively. This attribute takes
-    zero or more arguments: either of lockable type or integers
-    indexing into function parameters of lockable type. If no
-    arguments are given, the acquired lock is implicitly that
-    of the enclosing object. */
+        Use on a function declaration to specify that the function
+        acquires all listed locks exclusively. This attribute takes
+        zero or more arguments: either of lockable type or integers
+        indexing into function parameters of lockable type. If no
+        arguments are given, the acquired lock is implicitly that
+        of the enclosing object. */
 
 #if ein_has_attribute(exclusive_lock_function)
   #define ein_exclusive_lock_function(...) __attribute__((exclusive_lock_function(__VA_ARGS__)))
@@ -530,17 +550,17 @@
 
 /** \def ein_shared_trylock_function(...)
 
-    \details
+      \details
 
-    Use on a function declaration to specify that the function will try
-    (without blocking) to acquire all listed locks, although the locks
-    may be shared (e.g. read locks). This attribute takes one or more
-    arguments. The first argument is an integer or boolean value
-    specifying the return value of a successful lock acquisition. The
-    remaining arugments are either of lockable type or integers
-    indexing into function parameters of lockable type. If only one
-    argument is given, the acquired lock is implicitly `this` of the
-    enclosing object. */
+        Use on a function declaration to specify that the function will try
+        (without blocking) to acquire all listed locks, although the locks
+        may be shared (e.g. read locks). This attribute takes one or more
+        arguments. The first argument is an integer or boolean value
+        specifying the return value of a successful lock acquisition. The
+        remaining arugments are either of lockable type or integers
+        indexing into function parameters of lockable type. If only one
+        argument is given, the acquired lock is implicitly `this` of the
+        enclosing object. */
 
 #if ein_has_attribute(shared_trylock_function)
   #define ein_shared_trylock_function(...) __attribute__((shared_trylock_function(__VA_ARGS__)))
@@ -550,13 +570,13 @@
 
 /** \def ein_unlock_function(...)
 
-    \details
+      \details
 
-    Use on a function declaration to specify that the function releases
-    all listed locks. This attribute takes zero or more arguments: either
-    of lockable type or integers indexing into function parameters of
-    lockable type. If no arguments are given, the acquired lock is implicitly
-    `this` of the enclosing object. */
+        Use on a function declaration to specify that the function releases
+        all listed locks. This attribute takes zero or more arguments: either
+        of lockable type or integers indexing into function parameters of
+        lockable type. If no arguments are given, the acquired lock is implicitly
+        `this` of the enclosing object. */
 
 #if ein_has_attribute(unlock_function)
   #define ein_unlock_function(...) __attribute__((unlock_function(__VA_ARGS__)))
@@ -566,12 +586,12 @@
 
 /** \def ein_lock_returned(l)
 
-    \details
+      \details
 
-    Use on a function declaration to
-    specify that the function returns lock \p l (\p l must be of lockable
-    type). This annotation is used to aid in resolving lock
-    expressions. */
+        Use on a function declaration to
+        specify that the function returns lock \p l (\p l must be of lockable
+        type). This annotation is used to aid in resolving lock
+        expressions. */
 
 #if ein_has_attribute(lock_returned)
   #define ein_lock_returned(__x) __attribute__((lock_returned(__x)))
@@ -581,11 +601,11 @@
 
 /** \def ein_locks_excluded(...)
 
-    \details
+      \details
 
-    Use on a function declaration to specify that the function must
-    not be called with the listed locks. Arguments must be lockable type,
-    and there must be at least one argument. */
+        Use on a function declaration to specify that the function must
+        not be called with the listed locks. Arguments must be lockable type,
+        and there must be at least one argument. */
 
 #if ein_has_attribute(locks_excluded)
   #define ein_locks_excluded(...) __attribute__((locks_excluded(__VA_ARGS__)))
@@ -595,11 +615,11 @@
 
 /** \def ein_exclusive_locks_required(...)
 
-    \details
+      \details
 
-    Use on a function declaration to specify that the function must
-    be called while holding the listed exclusive locks. Arguments must
-    be lockable type, and there must be at least one argument. */
+        Use on a function declaration to specify that the function must
+        be called while holding the listed exclusive locks. Arguments must
+        be lockable type, and there must be at least one argument. */
 
 #if ein_has_attribute(exclusive_locks_required)
   #define ein_exclusive_locks_required(...) __attribute__((exclusive_locks_required(__VA_ARGS__)))
@@ -609,11 +629,11 @@
 
 /** \def ein_shared_locks_required(...)
 
-    \details
+      \details
 
-    Use on a function declaration to specify that the function must be
-    called while holding the listed shared locks. Arguments must be lockable type,
-    and there must be at least one argument. */
+        Use on a function declaration to specify that the function must be
+        called while holding the listed shared locks. Arguments must be lockable type,
+        and there must be at least one argument. */
 
 #if ein_has_attribute(shared_locks_required)
   #define ein_shared_locks_required(...) __attribute__((shared_locks_required(__VA_ARGS__)))
@@ -625,25 +645,29 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \name handles
 ///
-/// \details
+///   \brief Handles are a way to identify resources like files, sockets, and processes.
 ///
-/// Handles are a way to identify resources like files, sockets, and processes. They are more
-/// opaque than pointers and widely used in system programming. They have similar risks such
-/// as never releasing a resource associated with a handle, attempting to use a handle that
-/// was already released, or trying to release a handle twice.
+///   \details
 ///
-/// Using the annotations below it is possible to make the ownership of the handles clear:
-/// whose responsibility is to release them. They can also aid static analysis tools to find bugs.
+///     They are more opaque than pointers and widely used in system programming. They have similar
+///     risks such as never releasing a resource associated with a handle, attempting to use a
+///     handle that was already released, or trying to release a handle twice.
+///
+///     Using the annotations below it is possible to make the ownership of the handles clear:
+///     whose responsibility is to release them. They can also aid static analysis tools to find bugs.
 /// \{                                                                                             */
 
 
 /** \def ein_acquire_handle(x)
-    \brief indicates this method returns an acquired resource
 
-    \details
-    names its type with a tag
-    if applied to a method it refers to the function result
-    if applied to an argument it indicates that argument is an out-parameter providing the value */
+      \brief indicates this method returns an acquired resource
+
+      \details
+
+        Names its type with a tag.
+
+        If applied to a method it refers to the function result
+        If applied to an argument it indicates that argument is an out-parameter providing the value */
 
 #if __has_cpp_attribute(acquire_handle)
   #define ein_acquire_handle(__x) [[clang::acquire_handle(__x)]]
@@ -652,7 +676,8 @@
 #endif
 
 /** \def ein_release_handle(x)
-    \brief Indicates this argument is an acquired resource that is being released with a tag */
+
+      \brief Indicates this argument is an acquired resource that is being released with a tag */
 
 #if __has_cpp_attribute(release_handle)
   #define ein_release_handle(__x) [[clang::release_handle(__x)]]
@@ -661,7 +686,8 @@
 #endif
 
 /** \def ein_use_handle(x)
-    \brief indicates this argument is a use of a resource, but does not release it. */
+
+      \brief indicates this argument is a use of a resource, but does not release it. */
 
 #if __has_cpp_attribute(use_handle)
   #define ein_use_handle(__x) [[clang::use_handle(__x)]]
@@ -677,13 +703,15 @@
 ///
 
 /** \def ein_noalias
-    \brief `__declspec(noalias)`
-    \details
 
-    Indicates a function only accesses data through pointer arguments
+      \brief `__declspec(noalias)`
 
-    Requires clang to be running with `-fdeclspec` or `-fms-extensions`
-    but can aid alias analysis. */
+      \details
+
+        Indicates a function only accesses data through pointer arguments
+
+        Requires clang to be running with `-fdeclspec` or `-fms-extensions`
+        but can aid alias analysis. */
 
 #if ein_has_declspec_attribute(noalias)
   #define ein_noalias __declspec(noalias)
@@ -699,10 +727,10 @@
 /** \def ein_constinit
     \brief `constinit`
 
-    \details
+      \details
 
-    `constinit` requires C++20, but `__attribute__((require_constant_initialization))`
-    was available slightly earlier. */
+        `constinit` requires C++20, but `__attribute__((require_constant_initialization))`
+        was available slightly earlier. */
 
 #if __cpp_constinit
   #define ein_constinit constinit
@@ -715,10 +743,10 @@
 /** \def ein_uninitialized
     \brief `[[clang::uninitialized]]`
 
-    \details
+      \details
 
-    ensures a stack variable remains uninitialized regardless of
-    `-ftrivial-auto-var-init=*` settings passed to the compiler */
+        ensures a stack variable remains uninitialized regardless of
+        `-ftrivial-auto-var-init=*` settings passed to the compiler */
 
 #if ein_has_attribute(uninitialized)
   #define ein_uninitialized __attribute__((uninitialized))
@@ -729,11 +757,11 @@
 /** \def ein_reinitializes
     \brief `[[clang::reinitializes]]`
 
-    \details
+      \details
 
-    Indicates to any uninitialised object state sanitizer
-    that this restores an object to a fresh state independent
-    of its previous state. */
+        Indicates to any uninitialised object state sanitizer
+        that this restores an object to a fresh state independent
+        of its previous state. */
 
 #if __has_cpp_attribute(clang::reinitializes)
   #define ein_reinitializes [[clang::reinitializes]]
@@ -751,16 +779,16 @@
 
     \details
 
-    Indicates the result is entirely determined by the arguments
-    and does not access main memory in any way, including accessing
-    members of `this`
+        Indicates the result is entirely determined by the arguments
+        and does not access main memory in any way, including accessing
+        members of `this`
 
-    This allows the compiler to easily elide/duplicate calls, because
-    it doesn't need to consider aliasing at all when moving this
-    function's body around.
+        This allows the compiler to easily elide/duplicate calls, because
+        it doesn't need to consider aliasing at all when moving this
+        function's body around.
 
-    WHEN IN DOUBT USE `ein_pure` which is a much safer way to annotate
-    pure functional code */
+        WHEN IN DOUBT USE `ein_pure`, which is a much safer way to annotate
+        pure functional code */
 
 #if ein_has_attribute(const)
   #define ein_const __attribute__((const))
@@ -770,14 +798,15 @@
 
 /** \def ein_pure
 
-    \brief `[[pure]]`
+      \brief `[[pure]]`
 
-    \details
-    No side-effects other than return value, may inspect globals
+      \details
 
-    Allows the compiler to easily elide/duplicate calls.
-    This can freely commute past other operations that can be shown
-    not to affect the memory locations read. */
+        No side-effects other than return value, may inspect globals
+
+        Allows the compiler to easily elide/duplicate calls.
+        This can freely commute past other operations that can be shown
+        not to affect the memory locations read. */
 
 #if ein_has_attribute(pure)
   #define ein_pure __attribute__((pure))
@@ -788,11 +817,14 @@
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \name alignment
-/// \brief see also #ein_alloc_align
+///
+///   \brief see also #ein_alloc_align
+///
 /// \{
 
 /** \def ein_assume_aligned(x)
-    \brief Indicates a function returns a pointer with alignment at least \p x */
+
+      \brief Indicates a function returns a pointer with alignment at least \p x */
 
 #if ein_has_attribute(assume_aligned)
   #define ein_assume_aligned(x) __attribute__((assume_aligned(x)))
@@ -801,10 +833,12 @@
 #endif
 
 /** \def ein_align_value(x)
-    \brief `[[align_value(x)]]`
 
-    \details
-    the annotated pointer specified has alignment at least \p x */
+      \brief `[[align_value(x)]]`
+
+      \details
+
+        the annotated pointer specified has alignment at least \p x */
 
 #if ein_has_attribute(align_value)
   #define ein_align_value(x) __attribute__((align_value(x)))
@@ -818,15 +852,16 @@
 /// \{
 
 /** \def ein_null_terminated_string_arg(N)
-    \brief The \p N th argumnt is a null terminated string.
 
-    \details
+      \brief The \p N th argumnt is a null terminated string.
 
-    This may be applied to a function that takes a `char *` or `char const *` at referenced argument \p N.
+      \details
 
-    It indicates that the passed argument must be a C-style null-terminated string.
-    Specifically, the presence of the attribute implies that, if the pointer is non-null, the function may
-    scan through the referenced buffer looking for the first zero byte. */
+        This may be applied to a function that takes a `char *` or `char const *` at referenced argument \p N.
+
+        It indicates that the passed argument must be a C-style null-terminated string.
+        Specifically, the presence of the attribute implies that, if the pointer is non-null, the function may
+        scan through the referenced buffer looking for the first zero byte. */
 
 #if ein_has_attribute(null_terminated_string_arg)
   #define ein_null_terminated_string_arg(x) __attribute__((null_terminated_string_arg(x)))
@@ -841,23 +876,23 @@
 
 /** \def ein_lifetimebound
 
-    \brief `[[lifetimebound]]`
+      \brief `[[lifetimebound]]`
 
-    \details
+      \details
 
-    The argument must be kept alive as long as the result of the
-    function is alive. Should be used for functions that return
-    references or views into the target object.
+        The argument must be kept alive as long as the result of the
+        function is alive. Should be used for functions that return
+        references or views into the target object.
 
-    This is a strong hint that this object "owns" the result and
-    is just letting you borrow it.
+        This is a strong hint that this object "owns" the result and
+        is just letting you borrow it.
 
-    _Editorial_:
+        _Editorial_:
 
-    As a rule of thumb all pointer arguments should be analyzed
-    to be either #ein_noescape or #ein_lifetimebound, and
-    #ein_lifetimebound should be applied to all methods that
-    return a self-reference */
+        As a rule of thumb all pointer arguments should be analyzed
+        to be either #ein_noescape or #ein_lifetimebound, and
+        #ein_lifetimebound should be applied to all methods that
+        return a self-reference */
 
 #if ein_has_attribute(lifetimebound)
   #define ein_lifetimebound [[clang::lifetimebound]]
@@ -866,9 +901,12 @@
 #endif
 
 /** \def ein_noescape
-    \brief portable `__attribute__((noescape))`
-    \details
-    argument is not captured by the function (rust-style borrow) */
+
+      \brief portable `__attribute__((noescape))`
+
+      \details
+
+        argument is not captured by the function (rust-style borrow) */
 
 #if ein_has_attribute(noescape)
   #define ein_noescape __attribute__((noescape))
@@ -877,13 +915,15 @@
 #endif
 
 /** \def ein_nodiscard
-    \brief C++17 `[[nodiscard]]`.
 
-    \details
-    The user should explicitly throw away the result rather than let it be silently discarded
+      \brief C++17 `[[nodiscard]]`.
 
-    Note: Despite being already standard, this is used primarily to annotate the definition with
-    a [[nodiscard]] qualifier in DOXYGEN.  */
+      \details
+
+        The user should explicitly throw away the result rather than let it be silently discarded
+
+        Note: Despite being already standard, this is used primarily to annotate the definition with
+        a `[[nodiscard]]` qualifier in DOXYGEN.  */
 
 #define ein_nodiscard [[nodiscard]]
 
@@ -893,11 +933,12 @@
 /// \{
 
 /** \def ein_malloc
-    \brief `[[malloc]]`
 
-    \details
+      \brief `[[malloc]]`
 
-    Indicates the returned memory does not alias with any other pointer */
+      \details
+
+        Indicates the returned memory does not alias with any other pointer */
 
 #if ein_has_attribute(malloc)
   #define ein_malloc __attribute__((malloc))
@@ -906,13 +947,14 @@
 #endif
 
 /** \def ein_alloc_align(N)
-    \brief `[[alloc_align(N)]]`
 
-    \details
+      \brief `[[alloc_align(N)]]`
 
-    Indicates the 1-based argument number of a function that indicates the alignment of the returned result
+      \details
 
-    See #ein_malloc.
+        Indicates the 1-based argument number of a function that indicates the alignment of the returned result
+
+        See #ein_malloc.
 
     */
 
@@ -923,11 +965,12 @@
 #endif
 
 /** \def ein_alloc_size(N)
-    \brief `[[alloc_size(x)]]`
 
-    \details
+      \brief `[[alloc_size(x)]]`
 
-    Arg # (1-based) of the attribute that tells you the size of the result in bytes.  */
+      \details
+
+        Arg # (1-based) of the attribute that tells you the size of the result in bytes.  */
 
 #if ein_has_attribute(alloc_size)
   #define ein_alloc_size(N) __attribute__((alloc_size(N)))
@@ -939,19 +982,20 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \name control flow
 ///
-/// \detail
+///   \details
 ///
-/// `[[assume(x)]]` also moraly belongs among these
+///     `[[assume(x)]]` also moraly belongs among these
 ///
 /// \{
 
 /** \def ein_callback(...)
-    \brief `[[callback(...)]]`
 
-    \details
+      \brief `[[callback(...)]]`
 
-    Indicates the specified argument will be called back with the
-    other named arguments. Complicated, see clang docs.
+      \details
+
+        Indicates the specified argument will be called back with the
+        other named arguments. Complicated, see clang docs.
 Allows better interprocedural analysis */
 
 #if ein_has_attribute(callback)
@@ -962,20 +1006,19 @@ Allows better interprocedural analysis */
 
 /** \def ein_noreturn
 
-    \brief gcc-style `[[noreturn]]`
+      \brief gcc-style `[[noreturn]]`
 
-    \details
+      \details
 
-    Indicates the method does not return to the caller.
+        Indicates the method does not return to the caller.
 
-    <a href="https://www.youtube.com/watch?v=Dh994JcEfkI">A relevant testimonial by the Kingston Trio.</a> */
+        <a href="https://www.youtube.com/watch?v=Dh994JcEfkI">A relevant testimonial by the Kingston Trio.</a> */
 
 #if ein_has_attribute(noreturn)
 #define ein_noreturn __attribute__((noreturn))
 #else
 #define ein_noreturn
 #endif
-
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
@@ -984,11 +1027,11 @@ Allows better interprocedural analysis */
 
 /** \def ein_returns_nonnull
 
-    \brief `[[returns_nonnnull]]`
+      \brief `[[returns_nonnnull]]`
 
-    \details
+      \details
 
-    The result of this function are guaranteed be non-null */
+        The result of this function are guaranteed be non-null */
 
 #if ein_has_attribute(returns_nonnull)
   #define ein_returns_nonnull __attribute__((returns_nonnull))
@@ -997,13 +1040,14 @@ Allows better interprocedural analysis */
 #endif
 
 /** \def ein_nonnull(...)
-    \brief portable `[[nonnnull(...)]]`
 
-    \details
+      \brief portable `[[nonnnull(...)]]`
 
-    Indicates the selected (1-based) indexed arguments to this function
-    must be non-null. Passing a null pointer to such an argument is
-    undefined behavior. GCC-style. */
+      \details
+
+        Indicates the selected (1-based) indexed arguments to this function
+        must be non-null. Passing a null pointer to such an argument is
+        undefined behavior. GCC-style. */
 
 #if ein_has_attribute(nonnull)
   #define ein_nonnull(...) __attribute__((nonnull(__VA_ARGS__)))
@@ -1011,25 +1055,31 @@ Allows better interprocedural analysis */
   #define ein_nonnull(...)
 #endif
 
-/// \}
-
 /** \def ein_Nonnull
-    \brief `_Nonnull`
 
-    \details
-    can be applied to each * in an data type to indicate that argument should never be null.
+      \brief `_Nonnull`
+
+      \details
+
+      can be applied to each * in an data type to indicate that argument should never be null.
+
 
     \def ein_Nullable
-    \brief `_Nullable`
 
-    \details
-    can be applied to each * in an data type to indicate that argument might be null.
+      \brief `_Nullable`
+
+      \details
+
+      can be applied to each * in an data type to indicate that argument might be null.
+
 
     \def ein_Null_unspecified
-    \brief `_Null_unspecified`
 
-    \details
-    applied to each * in an data type to indicate that the nullability of it is unknown or complicated */
+      \brief `_Null_unspecified`
+
+      \details
+
+      applied to each * in an data type to indicate that the nullability of it is unknown or complicated */
 
 #ifdef __clang__
 #define ein_Nonnull _Nonnull
@@ -1047,29 +1097,37 @@ Allows better interprocedural analysis */
 /// \{
 
 /** \def ein_host
+
       \brief portable `__host__` for CUDA
 
       \details
+
       indicates the function should be available on the host
 
     \def ein_device
+
       \brief portable `__device__` for CUDA
 
       \details
+
       indicates the function should be available on the device
 
     \def ein_hd
+
       \brief applies both \ref ein_host and \ref ein_device
 
       \details
+
       most functions in the library should be defined this way
 
       may eventually add similar annotations for sycl and the like
 
     \def ein_global
+
       \brief portable `__global__` for CUDA
 
       \details
+
       indicates the function is a global entry point for a compute kernel */
 
 #ifdef __CUDACC__
@@ -1105,10 +1163,12 @@ Allows better interprocedural analysis */
 /// \{
 
 /** \def ein_unroll
-    \brief hint to unroll the following loop N times. (clang-specific)
+
+      \brief hint to unroll the following loop N times. (clang-specific)
 
     \def ein_unroll_full
-    \brief hint to unroll the following loop fully. (clang-specific) */
+
+      \brief hint to unroll the following loop fully. (clang-specific) */
 
 #ifdef __clang__
   #define ein_unroll(N) ein_pragma(clang loop unroll_count(N))
@@ -1120,3 +1180,6 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
+
+/// \}
+// end ingroup macros
