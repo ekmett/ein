@@ -1,3 +1,5 @@
+module;
+
 /// \file
 /// \ingroup memory
 /// \license
@@ -6,10 +8,9 @@
 /// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 /// \endlicense
 
-module;
-
+#include "prelude.hpp"
 #include <sys/mman.h> // munmap
-#include <string.h> // strdup
+#include <cstring> // strdup
 
 using namespace std;
 
@@ -29,7 +30,7 @@ export struct c_munmap {
   /// \hideinlinesource \inline \artificial
   /// \pre \p p is a memory region mapped by `mmap` \p size bytes long
   /// \post \p p has been `munmap`ped
-  /** \cond */ EIN(inline,artificial) /** \endcond */
+  EIN(inline,artificial)
   void operator()(void * p) const noexcept {
     if (p != nullptr)
       munmap(p, size);
@@ -43,7 +44,8 @@ using mmap_ptr = unique_ptr<void,c_munmap>;
 /// construct a mmap_ptr using a base pointer and its size for munmap
 /// \hideinlinesource \inline \artificial
 /// \pre \p p is non-null
-export /** \cond */ EIN(artificial,nonnull(1),inline) /** \endcond */
+export
+EIN(artificial,nonnull(1),inline)
 mmap_ptr make_mmap_ptr(void * p, size_t size) noexcept {
   return mmap_ptr(p,c_munmap(size));
 }
@@ -52,7 +54,7 @@ mmap_ptr make_mmap_ptr(void * p, size_t size) noexcept {
 export struct c_free {
   /// \hideinlinesource \inline \artificial
   template <trivially_destructible T>
-  /** \cond */ EIN(inline,artificial) /** \endcond */
+  EIN(inline,artificial)
   static void operator()(T * p) noexcept {
     free(const_cast<remove_const_t<T>*>(p));
   }
@@ -67,14 +69,18 @@ static_assert(sizeof(char *)== sizeof(unique_c_ptr<char>),"");
 /// a c string, managed by unique_ptr
 export using unique_str = unique_c_ptr<char const>;
 
-/// duplicate a c string using strdup and manage it as a unique_str
-/// \nodiscard \inline \artificial \pure
+/// duplicate a C string using `strdup` and manage it as a \ref unique_str
+/// \hideinlinesource \nodiscard \inline \artificial \pure
 /// \pre \p string is non-null
 /// \post result is a null-terminated c string to be cleaned up by free
-export /** \cond */ EIN(nodiscard,inline,artificial,pure,nonnull(1),null_terminated_string_arg(1)) /** \endcond */
-unique_str dup(EIN(noescape) char const * string) noexcept {
+export /// \cond
+EIN(nodiscard,inline,artificial,pure,nonnull(1),null_terminated_string_arg(1)) /// \endcond
+unique_str dup(
+  ein_noescape char const * string
+) noexcept {
   return unique_str { strdup(string) };
 }
 
 /// \}
+
 } // ein

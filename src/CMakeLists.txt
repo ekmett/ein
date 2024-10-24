@@ -13,10 +13,11 @@ target_link_libraries(ein PUBLIC
 target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   cpuid.cppm
   memory.cppm
-  types.cppm
   numerics.cppm
   simd.cppm
   simd_data.cppm
+  std.cppm
+  types.cppm
   wait.cppm
 )
 
@@ -49,4 +50,4 @@ endif()
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
-# target_compile_options(ein PRIVATE "$<${CXX_Clang}:-Wno-c++23-extensions>")
+target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")

@@ -34,9 +34,9 @@ namespace ein {
 
 /// \brief simd primitive definition
 /// \nodiscard
-export template <typename T, size_t N>
-requires (has_simd_type<T,N>)
-struct [[nodiscard]] simd {
+export template <typename T, size_t N> requires (has_simd_type<T,N>)
+//[[nodiscard]]
+struct simd {
 private:
   using data_t = simd_data_t<T,N>;
   using mask_t = simd_mask_t<T,N>;
@@ -55,46 +55,49 @@ public:
 
   data_t data;
 
+  /// \name constructors
+  /// \{
+
   /// \brief default initialization
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd() noexcept = default;
 
   /// \brief copy construction
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(simd const &) noexcept = default;
 
   /// \brief move construction
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(simd &&) noexcept = default;
 
   /// \brief array initialization
   /// \details e.g. `simd<float,4>{1.0,2.0,3.0,4.0}`
   /// \inline \artificial \hidden
-  template <std::convertible_to<T> ... Args> /// \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  template <std::convertible_to<T> ... Args>
+  EIN(inline,artificial,hidden)
   constexpr simd(Args && ... args) noexcept
   requires (sizeof...(Args) == N)
   : data(std::forward<Args>(args)...) {}
 
   /// \brief broadcast construction
   /// \details sets every member of the simd structure to the same value
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(T value) noexcept
   : data(__extension__(data_t)(value)) {}
 
   /// \brief copy construction from clang/gcc vector intrinsics
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(data_t const & data) noexcept
   : data(data) {}
 
   /// \brief move construction from clang/gcc vector intrinsics
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(data_t && data) noexcept
   : data(std::move(data)) {}
 
@@ -102,8 +105,8 @@ public:
 
   /// \brief initialize the first \p init `.size` values from an initializer_list
   /// TODO: use a masked unaligned load
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(std::initializer_list<T> init) {
     // NB: initializer_lists are janky af
     std::copy_n(init.begin(),std::min(N,init.size()),begin());
@@ -114,32 +117,37 @@ public:
   //constexpr simd(simd<T,N/2> a, simd<T,N/2> b) : data(__builtin_shufflevector(a,b,...,...) {}
 
   /// \brief copy construct from the corresponding intel intrinsic type (if different than the gcc/clang one)
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(intrinsic_t const & data) noexcept
   requires (!std::is_same_v<data_t, intrinsic_t>)
   : data(reinterpret_cast<data_t>(data)) {}
 
   /// \brief move construct from the corresponding intel intrinsic type (if different than the gcc/clang one)
-  /// \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd(intrinsic_t && data) noexcept
   requires (!std::is_same_v<data_t, intrinsic_t>)
   : data(reinterpret_cast<data_t>(std::move(data))) {}
 
-  /// \reinitializes \inline \artificial \hidden \cond
-  EIN(reinitializes,inline,artificial,hidden) /// \endcond
+  /// \}
+
+  /// \name assignments
+  /// \{
+
+  /// \reinitializes \inline \artificial \hidden
+  EIN(reinitializes,inline,artificial,hidden)
   constexpr simd & operator = (simd &&) noexcept = default;
 
-  /// \reinitializes \inline \artificial \hidden \cond
-  EIN(reinitializes,inline,artificial,hidden) /// \endcond
+  /// \reinitializes \inline \artificial \hidden
+  EIN(reinitializes,inline,artificial,hidden)
   constexpr simd & operator = (simd const &) noexcept = default;
 
   /// automatic conversion for types supported by `__builtin_convertvector`
   /// \reinitializes \inline \artificial
   template <typename U>
-  requires (!std::is_same_v<U,T> && has_builtin_convertvector<U,T,N>) /// \cond
-  EIN(reinitializes,inline,artificial) /// \endcond
+  requires (!std::is_same_v<U,T> && has_builtin_convertvector<U,T,N>)
+  EIN(reinitializes,inline,artificial)
   constexpr simd & operator = (simd_t<U> other) noexcept {
     if consteval {
       for (int i=0;i<N;++i)
@@ -149,107 +157,137 @@ public:
     }
   }
 
+  /// \}
+
+
+  /// \name intel compatibility
+  /// \{
+
   /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> &
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \inline \artificial \const \hidden
+  EIN(inline,artificial,const,hidden)
   constexpr operator intrinsic_t & () noexcept {
     if constexpr (std::is_same_v<intrinsic_t,data_t>) return data;
     else return reinterpret_cast<intrinsic_t &>(data);
   }
 
   /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> const &
-  /// \hideinlinesource \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \const \hidden
+  EIN(inline,artificial,const,hidden)
   constexpr operator intrinsic_t const & () const noexcept {
     if constexpr (std::is_same_v<intrinsic_t,data_t>) return data;
     else return reinterpret_cast<intrinsic_t const &>(data);
   }
 
   /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> &
-  /// \hideinlinesource \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \const \hidden
+  EIN(inline,artificial,const,hidden)
   constexpr intrinsic_t & it() noexcept {
     if constexpr (std::is_same_v<intrinsic_t,data_t>) return data;
     else return reinterpret_cast<intrinsic_t &>(data);
   }
 
   /// provide compatibility with Intel intrinsics by freely using this as \ref simd_intrinsic_t<\p T,\p N> const &
-  /// \hideinlinesource \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \const \hidden
+  EIN(inline,artificial,const,hidden)
   constexpr intrinsic_t const & it() const noexcept {
     if constexpr (std::is_same_v<intrinsic_t,data_t>) return data;
     else return reinterpret_cast<intrinsic_t const &>(data);
   }
 
+  /// \}
+
+  /// \name iterable
+  /// \{
+
   /// access the element in the \p i th lane
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T & operator[](std::size_t i) noexcept { return reinterpret_cast<T *>(&data)[i]; }
 
   /// \brief access the element in the \p i th lane
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T const & operator[](std::size_t i) const noexcept { return reinterpret_cast<T const *>(&data)[i]; }
 
   /// \brief start iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T * begin() noexcept { return reinterpret_cast<T*>(&data); }
 
   /// \brief end iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T * end() noexcept { return begin() + N; }
 
   /// \brief const start iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T const * cbegin() const noexcept { return reinterpret_cast<T const *>(&data); }
 
   /// \brief const end iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T const * cend() const noexcept { return begin() + N; }
 
   /// \brief const start iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T const * begin() const noexcept { return cbegin(); }
 
   /// \brief const end iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr T const * end() const noexcept { return cend(); }
 
   /// \brief reverse start iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr std::reverse_iterator<T*> rbegin() noexcept { return std::reverse_iterator<T*>(end()); }
 
   /// reverse end iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr std::reverse_iterator<T*> rend() noexcept { return std::reverse_iterator<T*>(begin()); }
 
   /// const reverse start iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr std::reverse_iterator<const T*> crbegin() const noexcept { return std::reverse_iterator<const T*>(cend()); }
 
   /// const reverse end iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr std::reverse_iterator<const T*> crend() const noexcept { return std::reverse_iterator<const T*>(cbegin()); }
 
   /// const reverse start iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr std::reverse_iterator<const T*> rbegin() const noexcept { return crbegin(); }
 
   /// const reverse end iterator
-  /// \inline \artificial \const \hidden \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  /// \nodiscard \inline \artificial \const \hidden
+  [[nodiscard]]
+  EIN(inline,artificial,const,hidden)
   constexpr std::reverse_iterator<const T*> rend() const noexcept { return crend(); }
+
+  /// \}
+
+  /// \name destructuring
+  /// \{
 
   /// \brief enables destructuring reference
   /// \details
@@ -257,10 +295,8 @@ public:
   /// auto & [x,y,z,w] = simd<float,4>(1.0,2.0,3.0,4.0);
   /// \endcode
   /// \hideinlinesource \inline \artificial \const \hidden
-  template <size_t I>
-  requires (I < N)
-  friend /// \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  template <size_t I> requires (I < N) friend
+  EIN(inline,artificial,const,hidden)
   constexpr T & get(simd & s) noexcept {
     return s[I];
   }
@@ -271,10 +307,8 @@ public:
   /// auto const & [x,y,z,w] = simd<float,4>(1.0,2.0,3.0,4.0);
   /// \endcode
   /// \hideinlinesource \inline \artificial \const \hidden
-  template <size_t I>
-  requires (I < N)
-  friend /// \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  template <size_t I> requires (I < N) friend
+  EIN(inline,artificial,const,hidden)
   constexpr T const & get(simd const & s) noexcept {
     return s[I];
   }
@@ -285,94 +319,180 @@ public:
   /// auto && [x,y,z,w] = simd<float,4>(1.0,2.0,3.0,4.0);
   /// \endcode
   /// \hideinlinesource \inline \artificial \const \hidden
-  template <size_t I>
-  requires (I < N)
-  friend /// \cond
-  EIN(inline,artificial,const,hidden) /// \endcond
+  template <size_t I> requires (I < N) friend
+  EIN(inline,artificial,const,hidden)
   constexpr T && get(simd && s) noexcept {
-    return std::move(s[I]);  // Return rvalue reference
+    return std::move(s[I]);
   }
 
-/// \cond
-  #define EIN_OP(op) \
-    /** \hideinlinesource \inline \artificial \pure \hidden */ \
-    template <typename U> \
-    requires (sizeof(U) == sizeof(T) && requires (simd_data_t<T,N> a, simd_data_t<U,N> b) { a op b; } ) \
-    friend /** \cond */ \
-    EIN(inline,artificial,pure,hidden) /** \endcond */ \
-    constexpr simd_t<std::remove_cvref_t<decltype(std::declval<T>() op std::declval<U>())>> operator op(simd x, simd_t<U> y) noexcept { \
-      return x.data op y.data; \
-    } \
-    /** \hideinlinesource \inline \artificial \hidden */ \
-    template <typename U> \
-    requires (sizeof(U) == sizeof(T) && requires (simd_data_t<T,N> a, simd_data_t<T,N> b) { a op##= b; }) /** \cond */ \
-    EIN(inline,artificial,hidden) /** \endcond */ \
-    constexpr simd & operator op##=(simd_t<U> other) noexcept { \
-      data op##= other.data; \
-      return *this; \
-    }
-/// \endcond
+  /// \}
 
-  EIN_OP(+)
-  EIN_OP(-)
-  EIN_OP(*)
-  EIN_OP(/)
-  EIN_OP(&)
-  EIN_OP(|)
-  EIN_OP(^)
+  /// \name operators
+  /// \{
 
-  #undef EIN_OP
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator +(simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a + b; } {
+    return x.data + y.data;
+  }
 
-/// \cond
-  #define EIN_UNARY_OP(op) \
-    /** \hideinlinesource \inline \artificial \pure \hidden \cond */ \
-    EIN(inline,artificial,pure,hidden) /** \endcond */ \
-    constexpr simd_t<std::remove_cvref_t<decltype(op std::declval<T>())>> operator op() const noexcept \
-    requires (requires (data_t x) { op x; }) { \
-      return op data; \
-    }
-/// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator +=(simd other) noexcept
+  requires requires (data_t a, data_t b) { a += b; } {
+    data += other.data;
+    return *this;
+  }
 
-  EIN_UNARY_OP(+)
-  EIN_UNARY_OP(-)
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator -(simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a - b; } {
+    return x.data - y.data;
+  }
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator -=(simd other) noexcept
+  requires requires (data_t a, data_t b) { a -= b; } {
+    data -= other.data;
+    return *this;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator *(simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a * b; } {
+    return x.data * y.data;
+  }
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator *=(simd other) noexcept
+  requires requires (data_t a, data_t b) { a *= b; } {
+    data *= other.data;
+    return *this;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator / (simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a / b; } {
+    return x.data / y.data;
+  }
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator /= (simd other) noexcept
+  requires (requires (data_t a, data_t b) { a /= b; }) {
+    data /= other.data;
+    return *this;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  template <typename U> friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator &(simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a & b; } {
+    return x.data & y.data;
+  }
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator &=(simd other) noexcept
+  requires requires (data_t a, data_t b) { a &= b; } {
+    data &= other.data;
+    return *this;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  template <typename U> friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator |(simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a | b; } {
+    return x.data | y.data;
+  }
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator |= (simd other) noexcept
+  requires (requires (data_t a, data_t b) { a |= b; }) {
+    data |= other.data;
+    return *this;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  friend
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator ^(simd x, simd y) noexcept
+  requires requires (data_t a, data_t b) { a ^ b; } {
+    return x.data ^ y.data;
+  }
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator ^= (simd other) noexcept
+  requires requires (data_t a, data_t b) { a ^= b; } {
+    data ^= other.data;
+    return *this;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator + () const noexcept
+  requires requires (data_t x) { + x; } {
+    return + data;
+  }
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
+  constexpr simd operator - () const noexcept
+  requires requires (data_t x) { - x; } {
+    return - data;
+  }
+
   //EIN_UNARY_OP(~)
   //EIN_UNARY_OP(!)
 
-  #undef EIN_UNARY_OP
-
-  /// \brief `\--x`
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \brief `--x`
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd & operator--() noexcept
-  requires (requires (data_t x) { --x; }) {
+  requires requires (data_t x) { --x; } {
     --data;
     return *this;
   }
 
   /// \brief `x--`
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd operator--(int) noexcept
-  requires (requires (data_t x) { x--; }) {
+  requires requires (data_t x) { x--; } {
     simd t = *this;
     data--;
     return t;
   }
 
   /// \brief `++x`
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd & operator++() noexcept
-  requires (requires (data_t x) { ++x; }) {
+  requires requires (data_t x) { ++x; } {
     ++data;
     return *this;
   }
 
   /// \brief `x++`
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd operator++(int) noexcept
-  requires (requires (data_t x) { x++; }) {
+  requires requires (data_t x) { x++; } {
     simd t = *this;
     data++;
     return t;
@@ -381,23 +501,23 @@ public:
   /// \brief shift right by an immediate constant
   /// \hideinlinesource \inline \artificial \pure \hidden
   template <size_t K>
-  requires requires (data_t a) { a >> static_cast<T>(K); } /// \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
-  friend constexpr simd operator >>(simd x, imm_t<K>) noexcept {
+  EIN(inline,artificial,pure,hidden)
+  friend constexpr simd operator >>(simd x, imm_t<K>) noexcept
+  requires requires (data_t a) { a >> static_cast<T>(K); } {
     return x.data >> static_cast<T>(K);
   }
 
   /// \brief shift right by a scalar
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr simd operator >>(simd x, T y) noexcept
   requires requires (data_t a, T y) { a >> y; } {
     return x.data >> y;
   }
 
   /// \brief shift right elementwise
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr simd operator >>(simd x, simd y) noexcept
   requires requires (data_t a, data_t b) { a >> b; } {
     return x.data >> y.data;
@@ -408,23 +528,23 @@ public:
   /// \brief shift left by an immediate constant
   /// \hideinlinesource \inline \artificial \pure \hidden
   template <size_t K>
-  requires requires (data_t a) { a << static_cast<T>(K); } /// \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  requires requires (data_t a) { a << static_cast<T>(K); }
+  EIN(inline,artificial,pure,hidden)
   friend constexpr simd operator <<(simd x, imm_t<K>) noexcept {
     return x.data << static_cast<T>(K);
   }
 
   /// \brief shift left by a scalar
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr simd operator <<(simd x, T y) noexcept
   requires requires (data_t x, T y) { x << y; } {
     return x.data << y;
   }
 
   /// \brief shift left elementwise
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr simd operator <<(simd x, simd y) noexcept
   requires requires (data_t a, data_t b) { a << b; } {
     return x.data << y.data;
@@ -435,16 +555,16 @@ public:
   /// self-shift right by an immediate value
   /// \hideinlinesource \inline \artificial \hidden
   template <size_t K>
-  requires requires (data_t a) { a >>= static_cast<T>(K); } /// \cond
-  EIN(inline,artificial,hidden) /// \endcond
-  constexpr simd & operator >>=(imm_t<K>) noexcept {
+  EIN(inline,artificial,hidden)
+  constexpr simd & operator >>=(imm_t<K>) noexcept
+  requires requires (data_t a) { a >>= static_cast<T>(K); } {
     data >>= static_cast<T>(K);
     return *this;
   }
 
   /// self-shift right by a scalar
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd & operator >>=(T y) noexcept
   requires requires (data_t x, T y) { x >>= y; } {
     data >>= y;
@@ -452,8 +572,8 @@ public:
   }
 
   /// self-shift right elementwise
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd & operator >>=(simd y) noexcept
   requires requires (data_t a) { a >>= a; } {
     data >>= y.data;
@@ -462,8 +582,8 @@ public:
 
   /// self-shift left by an immediate constant
   /// \hideinlinesource \inline \artificial \hidden
-  template <size_t K> /// \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  template <size_t K>
+  EIN(inline,artificial,hidden)
   constexpr simd & operator <<=(imm_t<K>) noexcept
   requires requires (data_t x) { x <<= K; } {
     data <<= K;
@@ -473,8 +593,8 @@ public:
   // <<=
 
   /// self-shift left by a scalar
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd & operator <<=(T y) noexcept
   requires requires (data_t x, T y) { x <<= y; } {
     data <<= y;
@@ -482,21 +602,27 @@ public:
   }
 
   /// self-shift left elementwise
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   constexpr simd & operator <<=(simd y) noexcept
-  requires requires (data_t x) { x >>= x; } {
+  requires (requires (data_t x) { x >>= x; }) {
     data <<= y.data;
     return *this;
   }
 
+  /// \}
+  // end of operators
+
+  /// \name shuffles
+  /// \{
+
   /// shuffle selected elements to produce a new simd register
   /// \inline \artificial
   template <size_t ... is>
+  EIN(inline,artificial)
+  constexpr simd<T,sizeof...(is)> shuffle() noexcept
   requires (((is < N) && ... && has_simd_type<T,sizeof...(is)>) &&
-            requires (data_t x) { simd<T,sizeof...(is)>(__builtin_shufflevector(x, is...)); }) /// \cond
-  EIN(inline,artificial) /// \endcond
-  constexpr simd<T,sizeof...(is)> shuffle() noexcept {
+            requires (data_t x) { simd<T,sizeof...(is)>(__builtin_shufflevector(x, is...)); }) {
     if consteval {
       return { data[is]... };
     } else {
@@ -508,10 +634,10 @@ public:
   /// If an index `i` in \p is is less than \p N, it draw from `this`, otherwise it draws from the `i - N`th position in \p b
   /// \inline \artificial \pure
   template <size_t ... is>
+  EIN(inline,artificial,pure)
+  constexpr simd<T,sizeof...(is)> shuffle(simd<T,N> b) noexcept
   requires (((is < N*2) && ... && has_simd_type<T,sizeof...(is)>) &&
-            requires (data_t x) { simd<T,sizeof...(is)>(__builtin_shufflevector(x, x, is...)); }) /// \cond
-  EIN(inline,artificial,pure) /// \endcond
-  constexpr simd<T,sizeof...(is)> shuffle(simd<T,N> b) noexcept {
+            requires (data_t x) { simd<T,sizeof...(is)>(__builtin_shufflevector(x, x, is...)); }) {
     if consteval {
       return { (is < N ? data[is] : b[is-N])... };
     } else {
@@ -519,45 +645,50 @@ public:
     }
   }
 
-  // handle traditional comparisons
+  /// \}
+  // end of shuffles
 
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+
+  /// \name comparisons
+  /// \{
+
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr mask_t operator < (simd x, simd y) noexcept
   requires (!has_mmask<T,N> && requires (data_t a) { { a < a } -> std::same_as<mask_t>; }) {
     return x.data < y.data;
   }
 
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr mask_t operator > (simd x, simd y) noexcept
   requires (!has_mmask<T,N> && requires (data_t a) { { a > a } -> std::same_as<mask_t>; }) {
     return x.data > y.data;
   }
 
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr mask_t operator <= (simd x, simd y) noexcept
   requires (!has_mmask<T,N> && requires (data_t a) { { a <= a } -> std::same_as<mask_t>; }) {
     return x.data <= y.data;
   }
 
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr mask_t operator >= (simd x, simd y) noexcept
   requires (!has_mmask<T,N> && requires (data_t a) { { a >= a } -> std::same_as<mask_t>; }) {
     return x.data >= y.data;
   }
 
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr mask_t operator == (simd x, simd y) noexcept
   requires (!has_mmask<T,N> && requires (data_t a) { { a == a } -> std::same_as<mask_t>; }) {
     return x.data == y.data;
   }
 
-  /// \hideinlinesource \inline \artificial \pure \hidden \cond
-  EIN(inline,artificial,pure,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \pure \hidden
+  EIN(inline,artificial,pure,hidden)
   friend constexpr mask_t operator != (simd x, simd y) noexcept
   requires (!has_mmask<T,N> && requires (data_t a) { { a != a } -> std::same_as<mask_t>; }) {
     return x.data != y.data;
@@ -581,10 +712,6 @@ public:
    } else
 
 #define EIN_COMPARE_OP(op,opfix) \
-  /** \inline \artificial \pure \cond */ \
-  EIN(inline,artificial,pure) /** \endcond */ \
-  friend constexpr mask_t operator op (simd a, simd b) noexcept \
-  requires has_mmask<T,N> && simd_builtin<T> { \
     if consteval { \
       mask_t result = 0; \
       for (size_t i=0;i<N;++i) \
@@ -603,16 +730,45 @@ public:
       EIN_COMPARE_OP_TY(opfix,uint32_t,epu32) \
       EIN_COMPARE_OP_TY(opfix,uint64_t,epu64) \
            static_assert(false); \
-    } \
-  }
+    }
 /** \endcond */
 
-  EIN_COMPARE_OP(<,lt)
-  EIN_COMPARE_OP(>,gt)
-  EIN_COMPARE_OP(>=,ge)
-  EIN_COMPARE_OP(<=,le)
-  EIN_COMPARE_OP(==,eq)
-  EIN_COMPARE_OP(!=,neq)
+  //// \inline \artificial \pure
+  EIN(inline,artificial,pure)
+  friend constexpr mask_t operator < (simd a, simd b) noexcept
+  requires has_mmask<T,N> && simd_builtin<T> {
+    EIN_COMPARE_OP(<,lt)
+  }
+  //// \inline \artificial \pure
+  EIN(inline,artificial,pure)
+  friend constexpr mask_t operator > (simd a, simd b) noexcept
+  requires has_mmask<T,N> && simd_builtin<T> {
+    EIN_COMPARE_OP(>,gt)
+  }
+  //// \inline \artificial \pure
+  EIN(inline,artificial,pure)
+  friend constexpr mask_t operator <= (simd a, simd b) noexcept
+  requires has_mmask<T,N> && simd_builtin<T> {
+    EIN_COMPARE_OP(<=,le)
+  }
+  //// \inline \artificial \pure
+  EIN(inline,artificial,pure)
+  friend constexpr mask_t operator >= (simd a, simd b) noexcept
+  requires has_mmask<T,N> && simd_builtin<T> {
+    EIN_COMPARE_OP(>=,ge)
+  }
+  //// \inline \artificial \pure
+  EIN(inline,artificial,pure)
+  friend constexpr mask_t operator == (simd a, simd b) noexcept
+  requires has_mmask<T,N> && simd_builtin<T> {
+    EIN_COMPARE_OP(==,eq)
+  }
+  //// \inline \artificial \pure
+  EIN(inline,artificial,pure)
+  friend constexpr mask_t operator != (simd a, simd b) noexcept
+  requires has_mmask<T,N> && simd_builtin<T> {
+    EIN_COMPARE_OP(!=,ne)
+  }
 
 #undef EIN_COMPARE_OP
 #undef EIN_COMPARE_OP_TY
@@ -623,8 +779,9 @@ public:
 
   /// \hideinlinesource \nodiscard \inline \artificial \pure
   template <CMP imm8>
-  requires one_of_t<T,float,double> && (size_t(imm8) < max_fp_comparison_predicate) /// \cond
-  [[nodiscard]] EIN(inline,pure,artificial) /// \endcond
+  requires one_of_t<T,float,double> && (size_t(imm8) < max_fp_comparison_predicate)
+  [[nodiscard]]
+  EIN(inline,pure,artificial)
   friend constexpr
   mask_t cmp(simd a, simd b) noexcept {
     if consteval {
@@ -674,8 +831,9 @@ public:
 
   /// \hideinlinesource \nodiscard \inline \artificial \pure
   template <CMPINT imm8>
-  requires one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz) /// \cond
-  [[nodiscard]] EIN(inline,artificial,pure) /// \endcond
+  requires one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz)
+  [[nodiscard]]
+  EIN(inline,artificial,pure)
   friend constexpr
   mask_t cmpint(simd a, simd b) noexcept {
     if consteval {
@@ -751,10 +909,6 @@ public:
       else static_assert(false); \
     } else
 #define EIN_COMPARE512(op,infix) \
-  /** \hideinlinesource \nodiscard \inline \pure */ \
-  [[nodiscard]] /** \cond */ EIN(inline,pure) /** \endcond */ \
-  friend constexpr mask_t operator op (simd a, simd b) noexcept \
-  requires (has_mmask<T,N> && simd_builtin<T>) { \
     if consteval { \
       mask_t mask; \
       for (size_t i=0;i<N;++i) \
@@ -778,21 +932,64 @@ public:
       EIN_COMPARE512_CASE(int32_t,epi32) \
       EIN_COMPARE512_CASE(int64_t,epi64) \
       static_assert(false); \
-    } \
-  }
+    }
   /// \endcond
 
-  EIN_COMPARE512(==,eq)
-  EIN_COMPARE512(/=,neq)
-  EIN_COMPARE512(<,lt)
-  EIN_COMPARE512(<=,le)
-  EIN_COMPARE512(>,gt)
-  EIN_COMPARE512(>=,ge)
+  /// \hideinlinesource \nodiscard \inline \pure
+  [[nodiscard]]
+  EIN(inline,pure)
+  friend constexpr mask_t operator == (simd a, simd b) noexcept
+  requires (has_mmask<T,N> && simd_builtin<T>) {
+    EIN_COMPARE512(==,eq)
+  }
+
+  /// \hideinlinesource \nodiscard \inline \pure
+  [[nodiscard]]
+  EIN(inline,pure)
+  friend constexpr mask_t operator /= (simd a, simd b) noexcept
+  requires (has_mmask<T,N> && simd_builtin<T>) {
+    EIN_COMPARE512(/=,neq)
+  }
+
+  /// \hideinlinesource \nodiscard \inline \pure
+  [[nodiscard]]
+  EIN(inline,pure)
+  friend constexpr mask_t operator < (simd a, simd b) noexcept
+  requires (has_mmask<T,N> && simd_builtin<T>) {
+    EIN_COMPARE512(<,lt)
+  }
+
+  /// \hideinlinesource \nodiscard \inline \pure
+  [[nodiscard]]
+  EIN(inline,pure)
+  friend constexpr mask_t operator <= (simd a, simd b) noexcept
+  requires (has_mmask<T,N> && simd_builtin<T>) {
+    EIN_COMPARE512(<=,le)
+  }
+
+  /// \hideinlinesource \nodiscard \inline \pure
+  [[nodiscard]]
+  EIN(inline,pure)
+  friend constexpr mask_t operator > (simd a, simd b) noexcept
+  requires (has_mmask<T,N> && simd_builtin<T>) {
+    EIN_COMPARE512(>,gt)
+  }
+
+  /// \hideinlinesource \nodiscard \inline \pure
+  [[nodiscard]]
+  EIN(inline,pure)
+  friend constexpr mask_t operator >= (simd a, simd b) noexcept
+  requires (has_mmask<T,N> && simd_builtin<T>) {
+    EIN_COMPARE512(>=,ge)
+  }
 
   #undef EIN_COMPARE512
 #endif
+  /// \}
+  // end of comparisons
 
-  // loads and stores
+  /// \name loads
+  /// \{
 
 /// \cond
 #ifdef __AVX512F__
@@ -822,8 +1019,8 @@ public:
 /// \endcond
 
   /// \pre \p p is a pointer to memory with alignment >= \p N
-  /// \hideinlinesource \inline \pure \artificial \cond
-  EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial
+  EIN(inline,pure,artificial)
   static constexpr simd load(T const * p) noexcept {
     if consteval {
       simd result;
@@ -839,8 +1036,8 @@ public:
     }
   }
 
-  /// \hideinlinesource \inline \pure \artificial \cond
-  EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial
+  EIN(inline,pure,artificial)
   static constexpr simd loadu(T const * p) noexcept {
     if consteval {
       simd result;
@@ -857,8 +1054,8 @@ public:
   }
 
   /// \details legacy: may outperform loadu when the data crosses a cache boundary
-  /// \hideinlinesource \inline \pure \artificial \cond
-  EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial
+  EIN(inline,pure,artificial)
   static constexpr simd lddqu(T const * p) noexcept {
     if consteval {
       simd result;
@@ -880,8 +1077,8 @@ public:
 /// \endcond
 
   /// \pre \p p is a pointer to memory with alignment >= \p N
-  /// \hideinlinesource \inline \pure \artificial \cond
-  EIN(inline,pure,artificial) /// \endcond
+  /// \hideinlinesource \inline \pure \artificial
+  EIN(inline,pure,artificial)
   static constexpr simd stream_load(T const * p) noexcept {
     if consteval {
       simd result;
@@ -889,7 +1086,7 @@ public:
         result[i] = p[i];
       return result;
     } else {
-/** \cond */
+/// \cond
       #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))
       #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))
       #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))
@@ -908,21 +1105,23 @@ public:
       #undef ein_mm_stream_load_pd
       #undef ein_mm256_stream_load_pd
       #undef ein_mm512_stream_load_pd
-/** \endcond */
+/// \endcond
     }
   }
 
 /// \cond
 #undef EIN_CASE
-
 #define EIN_CASE(f) f(p,x.it());
 /// \endcond
 
-  // stores
-  // ======
+  /// \}
+  // end of loads
 
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \name stores
+  /// \{
+
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   friend constexpr void store(T * p, simd x) noexcept {
     if consteval {
       for (size_t i = 0;i<N;++i)
@@ -936,8 +1135,8 @@ public:
     }
   }
 
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   friend constexpr void storeu(T * p, simd x) noexcept {
     if consteval {
       for (size_t i = 0;i<N;++i)
@@ -951,8 +1150,8 @@ public:
     }
   }
 
-  /// \hideinlinesource \inline \artificial \hidden \cond
-  EIN(inline,artificial,hidden) /// \endcond
+  /// \hideinlinesource \inline \artificial \hidden
+  EIN(inline,artificial,hidden)
   friend constexpr void stream(T * p, simd x) noexcept {
     if consteval {
       for (size_t i = 0;i<N;++i)
@@ -969,8 +1168,14 @@ public:
 #undef EIN_CASE
 #undef EIN_SWITCH
 
-  /// \hideinlinesource \inline \artificial \pure \cond
-  EIN(inline,artificial,pure) /// \endcond
+  /// \}
+  // end of stores
+
+  /// \name scalef
+  /// \{
+
+  /// \hideinlinesource \inline \artificial \pure
+  EIN(inline,artificial,pure)
   friend constexpr simd scalef(simd x, simd y) noexcept
   requires one_of_t<T,float,double> {
     if consteval {
@@ -997,8 +1202,13 @@ public:
     }
   }
 
-  /// \hideinlinesource \inline \artificial \cond
-  EIN(inline,artificial) /// \endcond
+  /// \}
+
+  /// \name data movement
+  /// \{
+
+  /// \hideinlinesource \inline \artificial
+  EIN(inline,artificial)
   friend constexpr void swap(simd & x, simd & y) noexcept {
     if consteval {
       for (int i=0;i<N;++i)
@@ -1007,46 +1217,46 @@ public:
       swap(x.data,y.data);
     }
   }
-};
 
-/// CTAD guides for intel -- these are fairly limited
-#if defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)
-export simd(__m128) -> simd<float,4>;
-export simd(__m128d) -> simd<double,2>;
-export simd(__m256) -> simd<float,8>;
-export simd(__m256d) -> simd<double,4>;
-#ifdef __AVX512F__
-export simd(__m512) -> simd<float,16>;
-export simd(__m512d) -> simd<double,8>;
-#endif
-#endif
+  /// \}
+}; // struct simd
 
-/// CTAD guidance for custom user types
+/// \name argument deduction
+/// \{
+
+/// guidance when loading data from clang/gcc vector extensions
 export template <typename T, size_t N>
 requires (
      has_simd_type<T,N>
   && (N % sizeof(T) == 0)
 #if  defined(__x86_64__) || defined(_M_X64) || defined(__i386) || defined(_M_IX86)
-  && !one_of_t<T, long long, float, double>
+  && !one_of_t<T, long long>
 #endif
 )
 simd(T __attribute ((__vector_size__(N)))) -> simd<T,N/sizeof(T)>;
 
+/// guidance for loading from arguments
 export template <typename ... Args>
 requires has_simd_type<std::common_type<Args...>, sizeof...(Args)>
 simd(Args&&...) -> simd<std::common_type<Args...>,sizeof...(Args)>;
 
 /// default to max simd size for broadcast
+/// \warning this may be removed in the future.
 export template <typename T>
 requires has_simd_type<T,max_simd_size/sizeof(T)>
 simd(T) -> simd<T,has_simd_type<T,max_simd_size/sizeof(T)>>;
 
+/// \}
+// end of ctads
+
+/// \name loads
+/// \{
+
 /// load \p data from aligned memory
 /// \pre \p data has alignment >= \p N
 /// \inline \pure \artificial
-export
-template <std::size_t N> /// \cond
-EIN(inline,pure) /// \endcond
+template <std::size_t N>
+EIN(inline,pure)
 auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1055,8 +1265,8 @@ auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data
 
 /// load \p data from unaligned memory
 /// \inline \pure \artificial
-export template <std::size_t N> /// \cond
-EIN(inline,pure) /// \endcond
+export template <std::size_t N>
+EIN(inline,pure)
 auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1065,8 +1275,8 @@ auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*dat
 
 /// load \p data from unaligned memory, optimized for crossing cachelines (legacy approach)
 /// \inline \pure \artificial
-export template <std::size_t N> /// \cond
-EIN(inline,pure,artificial) /// \endcond
+export template <std::size_t N>
+EIN(inline,pure,artificial)
 auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
@@ -1076,13 +1286,17 @@ auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*dat
 /// stream \p data from memory non-temporally, bypassing cache
 /// \pre \p data has alignment >= \p N
 /// \inline \pure \artificial
-export template <std::size_t N> /// \cond
-EIN(inline,pure,artificial) /// \endcond
+export template <std::size_t N>
+EIN(inline,pure,artificial)
 auto stream_load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
   static_assert(has_simd_type<T,N>);
   return simd<T,N>::stream_load(data);
 }
+
+/// \}
+
+namespace {
 
 /// \cond
 template <typename T>
@@ -1093,25 +1307,35 @@ requires has_simd_type<T,N>
 struct simd_type_impl<simd<T,N>> : std::true_type {};
 /// \endcond
 
+}
+
 /// recognizes any valid simd type
 export template <typename SIMD>
 concept simd_type = simd_type_impl<SIMD>::value;
 
+/// \name shuffles
+/// \{
+
 /// create a new simd register with contents drawn from this one
 /// \inline \artificial \pure
-template <size_t ... is> /// \cond
-EIN(inline,artificial,pure) /// \endcond
+template <size_t ... is>
+EIN(inline,artificial,pure)
 auto shuffle(simd_type auto x) {
   return x.template shuffle<is...>();
 }
 
 /// create a new simd register with contents drawn from these two
 /// \inline \artificial \pure
-template <size_t ... is> /// \cond
-EIN(inline,artificial,pure) /// \endcond
+template <size_t ... is>
+EIN(inline,artificial,pure)
 auto shuffle(simd_type auto x, simd_type auto y) {
   return x.template shuffle<is...>(y);
 }
+
+/// \}
+
+
+/// precompiled template specializations
 
 //export template struct simd<float,4>;
 export template struct simd<float,8>;
@@ -1126,15 +1350,18 @@ export template struct simd<uint32_t,8>;
 namespace std {
 /// \addtogroup simd
 /// \{
-  /// needed to support for std::apply
+  /// \name destructuring
+  /// \{
+  /// needed to `std::apply` a \ref simd and to perform destructuring bind
   export template <typename T, size_t N>
   struct tuple_size<ein::simd<T, N>> : integral_constant<size_t, N> {};
 
-  /// needed to support for std::apply
+  /// needed to support for `std::apply`
   export template <size_t I, typename T, size_t N>
   requires (I < N)
   struct tuple_element<I, ein::simd<T, N>> {
     using type = T;
   };
+  /// \}
 /// \}
 }
