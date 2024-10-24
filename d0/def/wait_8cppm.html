@@ -197,10 +197,10 @@ Classes</h2></td></tr>
 <tr class="memdesc:d7/d59/structein_1_1mwaitx"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> using MONITORX/MWAITX for AMD  <a href="../../df/d2f/group__wait.html#d7/d59/structein_1_1mwaitx">More...</a><br /></td></tr>
 <tr class="separator:d7/d59/structein_1_1mwaitx"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d1/d64/structein_1_1umwait" id="r_d1/d64/structein_1_1umwait"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__wait.html#d1/d64/structein_1_1umwait">ein::umwait</a></td></tr>
-<tr class="memdesc:d1/d64/structein_1_1umwait"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> using UMONITOR/UMWAIT for Intel  <a href="../../df/d2f/group__wait.html#d1/d64/structein_1_1umwait">More...</a><br /></td></tr>
+<tr class="memdesc:d1/d64/structein_1_1umwait"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> using <a href="https://www.felixcloutier.com/x86/umonitor">UMONITOR</a>/<a href="https://www.felixcloutier.com/x86/umwait">UMWAIT</a> for Intel  <a href="../../df/d2f/group__wait.html#d1/d64/structein_1_1umwait">More...</a><br /></td></tr>
 <tr class="separator:d1/d64/structein_1_1umwait"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:d8/d42/structein_1_1spin" id="r_d8/d42/structein_1_1spin"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__wait.html#d8/d42/structein_1_1spin">ein::spin</a></td></tr>
-<tr class="memdesc:d8/d42/structein_1_1spin"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin <a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a>  <a href="../../df/d2f/group__wait.html#d8/d42/structein_1_1spin">More...</a><br /></td></tr>
+<tr class="memdesc:d8/d42/structein_1_1spin"><td class="mdescLeft">&#160;</td><td class="mdescRight">spin <a class="el" href="../../db/dcb/conceptein_1_1waiter.html">waiter</a> using <a href="https://www.felixcloutier.com/x86/pause">PAUSE</a>  <a href="../../df/d2f/group__wait.html#d8/d42/structein_1_1spin">More...</a><br /></td></tr>
 <tr class="separator:d8/d42/structein_1_1spin"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
@@ -216,10 +216,10 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gabf5a7b298fd0bf71181c18be243c0e76" id="r_gabf5a7b298fd0bf71181c18be243c0e76"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
-<tr class="memitem:gabf5a7b298fd0bf71181c18be243c0e76"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__wait.html#gabf5a7b298fd0bf71181c18be243c0e76">ein::wait_until</a> (auto *p, auto f) noexcept</td></tr>
-<tr class="memdesc:gabf5a7b298fd0bf71181c18be243c0e76"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
-<tr class="separator:gabf5a7b298fd0bf71181c18be243c0e76"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4dad9bbe9beb5746a5261d9d818332c5" id="r_ga4dad9bbe9beb5746a5261d9d818332c5"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
+<tr class="memitem:ga4dad9bbe9beb5746a5261d9d818332c5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../df/d6a/attributes_8hpp.html#a6b3e26976553b387008cfe072f52d736">ein_flatten</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__wait.html#ga4dad9bbe9beb5746a5261d9d818332c5">ein::wait_until</a> (auto *p, auto f) noexcept</td></tr>
+<tr class="memdesc:ga4dad9bbe9beb5746a5261d9d818332c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
+<tr class="separator:ga4dad9bbe9beb5746a5261d9d818332c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga15797fd5aad0c604b5951f50d53d3623" id="r_ga15797fd5aad0c604b5951f50d53d3623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../df/d2f/group__wait.html#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a> (auto k) noexcept</td></tr>
 <tr class="memdesc:ga15797fd5aad0c604b5951f50d53d3623"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds an appropriate waiter for the current CPU  <br /></td></tr>
 <tr class="separator:ga15797fd5aad0c604b5951f50d53d3623"><td class="memSeparator" colspan="2">&#160;</td></tr>

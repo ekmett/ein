@@ -174,19 +174,19 @@ $(function(){initNavTree('d2/d54/assert_8hpp_source.html','../../'); initResizab
 <div class="contents">
 <a href="../../d2/d54/assert_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="foldopen" id="foldopen00017" data-start="" data-end="">
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="../../d5/dfd/group__macros.html#ga4af23f138af62df96e8bacc71767bf00">   17</a></span><span class="preprocessor">#define ein_assert(cond,...) \</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">  do { \</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">    if (!cond) [[unlikely]] { \</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">      []&lt;typename ... Args&gt; static (Args &amp;&amp; ... args) noexcept { \</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">        if constexpr (sizeof...(Args) == 0) \</span></div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \</span></div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">        else \</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}: {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,fmt::vformat(std::forward&lt;Args&gt;(args)...)); \</span></div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">        std::abort(); \</span></div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">      }(__VA_ARGS__); \</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">    } \</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span><span class="preprocessor">  } while (0)</span></div>
+<div class="foldopen" id="foldopen00016" data-start="" data-end="">
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno"><a class="line" href="../../d5/dfd/group__macros.html#ga4af23f138af62df96e8bacc71767bf00">   16</a></span><span class="preprocessor">#define ein_assert(cond,...) \</span></div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span><span class="preprocessor">  do { \</span></div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="preprocessor">    if (!cond) [[unlikely]] { \</span></div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="preprocessor">      []&lt;typename ... Args&gt; static (Args &amp;&amp; ... args) noexcept { \</span></div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span><span class="preprocessor">        if constexpr (sizeof...(Args) == 0) \</span></div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__); \</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="preprocessor">        else \</span></div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">          spdlog::error(&quot;{}:{}: assertion failed ({}) in function {}: {}&quot;,__FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,fmt::vformat(std::forward&lt;Args&gt;(args)...)); \</span></div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span><span class="preprocessor">        std::abort(); \</span></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span><span class="preprocessor">      }(__VA_ARGS__); \</span></div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="preprocessor">    } \</span></div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span><span class="preprocessor">  } while (0)</span></div>
 </div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->

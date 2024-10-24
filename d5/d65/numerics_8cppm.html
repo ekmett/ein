@@ -173,6 +173,7 @@ $(function(){initNavTree('d5/d65/numerics_8cppm.html','../../'); initResizable(t
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
+<a href="#define-members">Macros</a> &#124;
 <a href="#typedef-members">Typedefs</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
@@ -210,6 +211,11 @@ Concepts</h2></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><code>N</code> is not one of the <code>candidates</code> <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:af569bd545b347efcbff730e5f47b040e" id="r_af569bd545b347efcbff730e5f47b040e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af569bd545b347efcbff730e5f47b040e">IFAVX512</a>(x,  y)</td></tr>
+<tr class="separator:af569bd545b347efcbff730e5f47b040e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
 <tr class="memitem:ga44878eae47626eacca18302e151e5001" id="r_ga44878eae47626eacca18302e151e5001"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
@@ -225,57 +231,87 @@ Typedefs</h2></td></tr>
 Enumerations</h2></td></tr>
 <tr class="memitem:ga3eb3869fe6f24fc19b5894278c242460" id="r_ga3eb3869fe6f24fc19b5894278c242460"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga3eb3869fe6f24fc19b5894278c242460">ein::CMPINT</a> : size_t { <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47">ein::CMPINT::EQ</a> = 0x0uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b">ein::CMPINT::LT</a> = 0x1uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460acfe6055d2e0503be378bb63449ec7ba6">ein::CMPINT::LE</a> = 0x2uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460a946003f97ccc52d5d3b54ac0ec31bbfc">ein::CMPINT::FALSE</a> = 0x3uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b">ein::CMPINT::LT</a> = 0x1uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460acfe6055d2e0503be378bb63449ec7ba6">ein::CMPINT::LE</a> = 0x2uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460a946003f97ccc52d5d3b54ac0ec31bbfc">ein::CMPINT::FALSE</a> = 0x3uz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460adc33066c3993e0d50896e533fd692ce0">ein::CMPINT::NE</a> = 0x4uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8">ein::CMPINT::NLT</a> = 0x5uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460aacd748f300c5d189c47807e2a9d6ea57">ein::CMPINT::NLE</a> = 0x6uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61">ein::CMPINT::TRUE</a> = 0x7uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8">ein::CMPINT::NLT</a> = 0x5uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460aacd748f300c5d189c47807e2a9d6ea57">ein::CMPINT::NLE</a> = 0x6uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61">ein::CMPINT::TRUE</a> = 0x7uz
 <br />
  }</td></tr>
 <tr class="separator:ga3eb3869fe6f24fc19b5894278c242460"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga462cd88db2679129e8c9b418fe426371" id="r_ga462cd88db2679129e8c9b418fe426371"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga462cd88db2679129e8c9b418fe426371">ein::CMP</a> : size_t { <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a96a3c6b5f8867f54e6090e1d124a4ad7">ein::CMP::EQ_OQ</a> = 0x00uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a44a8abcbdbbb9d5cd4211ccc3036dae0">ein::CMP::LT_OS</a> = 0x01uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a8f6dd857aa6a21af37ee80e2d1501680">ein::CMP::LE_OS</a> = 0x02uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac32999178de1032ff3264f95a571234d">ein::CMP::UNORD_Q</a> = 0x03uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a44a8abcbdbbb9d5cd4211ccc3036dae0">ein::CMP::LT_OS</a> = 0x01uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a8f6dd857aa6a21af37ee80e2d1501680">ein::CMP::LE_OS</a> = 0x02uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac32999178de1032ff3264f95a571234d">ein::CMP::UNORD_Q</a> = 0x03uz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371aa3eb787a945ff2dcbac109c8988f56d2">ein::CMP::NEQ_UQ</a> = 0x04uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371aaf7ab69e1b0d7f3cf77f32a560ef53ac">ein::CMP::NLT_US</a> = 0x05uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a18048c41a881960378239705ffbfaabe">ein::CMP::NLE_US</a> = 0x06uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a3b81c807768a0b8bac541c1049c5d3c6">ein::CMP::ORD_Q</a> = 0x07uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371aaf7ab69e1b0d7f3cf77f32a560ef53ac">ein::CMP::NLT_US</a> = 0x05uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a18048c41a881960378239705ffbfaabe">ein::CMP::NLE_US</a> = 0x06uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a3b81c807768a0b8bac541c1049c5d3c6">ein::CMP::ORD_Q</a> = 0x07uz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371aa7243f470844b93f4220b47a04525f40">ein::CMP::EQ_UQ</a> = 0x08uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ad938a127fa2ac5754e7a6bcd841e54b6">ein::CMP::NGE_US</a> = 0x09uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371acb5f06551270089a64eafb268cda1217">ein::CMP::NGT_US</a> = 0x0Auz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a0df9619ce02917b0b380de8e1d009721">ein::CMP::FALSE_OQ</a> = 0x0Buz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ad938a127fa2ac5754e7a6bcd841e54b6">ein::CMP::NGE_US</a> = 0x09uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371acb5f06551270089a64eafb268cda1217">ein::CMP::NGT_US</a> = 0x0Auz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a0df9619ce02917b0b380de8e1d009721">ein::CMP::FALSE_OQ</a> = 0x0Buz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a3b3856c641cfc49f7382ae38403eeeb4">ein::CMP::NEQ_OQ</a> = 0x0Cuz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a2df34ebe6b29fcc509f9a83d0fa1687f">ein::CMP::GE_OS</a> = 0x0Duz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a62d383b40b3b15edb7ee5d08def0c5ec">ein::CMP::GT_OS</a> = 0x0Euz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a53aba1168d225ae0208df944cb21359c">ein::CMP::TRUE_UQ</a> = 0x0Fuz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a2df34ebe6b29fcc509f9a83d0fa1687f">ein::CMP::GE_OS</a> = 0x0Duz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a62d383b40b3b15edb7ee5d08def0c5ec">ein::CMP::GT_OS</a> = 0x0Euz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a53aba1168d225ae0208df944cb21359c">ein::CMP::TRUE_UQ</a> = 0x0Fuz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a544294813337636070d9dc82a4e376e9">ein::CMP::EQ_OS</a> = 0x10uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac80bf7e6ae5bc282b3c7878e0f9fcec6">ein::CMP::LT_OQ</a> = 0x11uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a0c3b84f1e518911c7e6d1b749e41c8b6">ein::CMP::LE_OQ</a> = 0x12uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a89525ea7b625593b12619c0aac7c3970">ein::CMP::UNORD_S</a> = 0x13uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac80bf7e6ae5bc282b3c7878e0f9fcec6">ein::CMP::LT_OQ</a> = 0x11uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a0c3b84f1e518911c7e6d1b749e41c8b6">ein::CMP::LE_OQ</a> = 0x12uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a89525ea7b625593b12619c0aac7c3970">ein::CMP::UNORD_S</a> = 0x13uz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371afe2a7fb6ece3960d7c63901e2b28f679">ein::CMP::NEQ_US</a> = 0x14uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac9a6f8bcd7ee3a3e9fc7fb07c2243985">ein::CMP::NLT_UQ</a> = 0x15uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a8002c1570898b326534abb67329837f9">ein::CMP::NLE_UQ</a> = 0x16uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a70d733e8deddfedf56bef14be8bac670">ein::CMP::ORD_S</a> = 0x17uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac9a6f8bcd7ee3a3e9fc7fb07c2243985">ein::CMP::NLT_UQ</a> = 0x15uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a8002c1570898b326534abb67329837f9">ein::CMP::NLE_UQ</a> = 0x16uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a70d733e8deddfedf56bef14be8bac670">ein::CMP::ORD_S</a> = 0x17uz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a51ab787d5ad10a108f2f3c1c96146b80">ein::CMP::EQ_US</a> = 0x18uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a2b4d6ad0b200e9eac21c1131f2ab931a">ein::CMP::NGE_UQ</a> = 0x19uz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371afb1157967a8334ca82c0218314283444">ein::CMP::NGT_UQ</a> = 0x1Auz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a5b9f9ee7f9bc12e4a32c5c94531f2a85">ein::CMP::FALSE_OS</a> = 0x1Buz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a2b4d6ad0b200e9eac21c1131f2ab931a">ein::CMP::NGE_UQ</a> = 0x19uz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371afb1157967a8334ca82c0218314283444">ein::CMP::NGT_UQ</a> = 0x1Auz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a5b9f9ee7f9bc12e4a32c5c94531f2a85">ein::CMP::FALSE_OS</a> = 0x1Buz
 , <br />
 &#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a14bdb6a72cde8b0ab776fd77fbf70a25">ein::CMP::NEQ_OS</a> = 0x1Cuz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a492aea6192dfd09eb07a9e1bda49971a">ein::CMP::GE_OQ</a> = 0x1Duz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a887da68ea4e9382c468205162e351ae7">ein::CMP::GT_OQ</a> = 0x1Euz
-, <a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a1c3d12169a208ae1f88560f70e762b9c">ein::CMP::TRUE_US</a> = 0x1Fuz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a492aea6192dfd09eb07a9e1bda49971a">ein::CMP::GE_OQ</a> = 0x1Duz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a887da68ea4e9382c468205162e351ae7">ein::CMP::GT_OQ</a> = 0x1Euz
+, <br />
+&#160;&#160;<a class="el" href="../../dc/db9/group__numerics.html#gga462cd88db2679129e8c9b418fe426371a1c3d12169a208ae1f88560f70e762b9c">ein::CMP::TRUE_US</a> = 0x1Fuz
 <br />
  }</td></tr>
 <tr class="separator:ga462cd88db2679129e8c9b418fe426371"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -285,27 +321,15 @@ Functions</h2></td></tr>
 <tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e" id="r_ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e">ein::cmp_unord</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2e9e352aca0eb99e5bff21db2bcf7029" id="r_ga2e9e352aca0eb99e5bff21db2bcf7029"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga2e9e352aca0eb99e5bff21db2bcf7029">ein::cmp_unord</a> (float, float) noexcept</td></tr>
-<tr class="separator:ga2e9e352aca0eb99e5bff21db2bcf7029"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf181518fc669a0ed8499e48bbd6541cb" id="r_gaf181518fc669a0ed8499e48bbd6541cb"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#gaf181518fc669a0ed8499e48bbd6541cb">ein::cmp_unord</a> (double, double) noexcept</td></tr>
-<tr class="separator:gaf181518fc669a0ed8499e48bbd6541cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f" id="r_ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f">ein::cmp_ord</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4db3bfe82586c57874b7b757b237251a" id="r_ga4db3bfe82586c57874b7b757b237251a"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga4db3bfe82586c57874b7b757b237251a">ein::cmp_ord</a> (float, float) noexcept</td></tr>
-<tr class="separator:ga4db3bfe82586c57874b7b757b237251a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaed6b28145ef6605e8092c5b7bf3cade1" id="r_gaed6b28145ef6605e8092c5b7bf3cade1"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#gaed6b28145ef6605e8092c5b7bf3cade1">ein::cmp_ord</a> (double, double) noexcept</td></tr>
-<tr class="separator:gaed6b28145ef6605e8092c5b7bf3cade1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f" id="r_ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplParams" colspan="2">template&lt;one_of_t&lt; float, double &gt; T&gt; </td></tr>
 <tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f">ein::scalef</a> (T x, T y) noexcept</td></tr>
 <tr class="separator:ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga30597d79f07c0ef140788dc10f28e6db" id="r_ga30597d79f07c0ef140788dc10f28e6db"><td class="memItemLeft" align="right" valign="top">template float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#ga30597d79f07c0ef140788dc10f28e6db">ein::scalef</a> (float, float) noexcept</td></tr>
-<tr class="separator:ga30597d79f07c0ef140788dc10f28e6db"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafc5e1abfa9151a232a6c694150f3340d" id="r_gafc5e1abfa9151a232a6c694150f3340d"><td class="memItemLeft" align="right" valign="top">template double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#gafc5e1abfa9151a232a6c694150f3340d">ein::scalef</a> (double, double) noexcept</td></tr>
-<tr class="separator:gafc5e1abfa9151a232a6c694150f3340d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac7866b6b237bc7d131d09b53e8f2a5eb" id="r_gac7866b6b237bc7d131d09b53e8f2a5eb"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../dc/db9/group__numerics.html#ga3eb3869fe6f24fc19b5894278c242460">CMPINT</a> imm8, typename T &gt; <br />
 requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz))</td></tr>
-<tr class="memitem:gac7866b6b237bc7d131d09b53e8f2a5eb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../d5/dfd/group__macros.html#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">ein_const</a> constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#gac7866b6b237bc7d131d09b53e8f2a5eb">ein::cmpint</a> (T a, T b) noexcept</td></tr>
+<tr class="memitem:gac7866b6b237bc7d131d09b53e8f2a5eb"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="../../df/d6a/attributes_8hpp.html#a0ecafe8bfaa651c77ef7c817c5ea6ae7">ein_const</a> constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../dc/db9/group__numerics.html#gac7866b6b237bc7d131d09b53e8f2a5eb">ein::cmpint</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:gac7866b6b237bc7d131d09b53e8f2a5eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadeb9c3d409bcba9ea1bad3b5df34eb8d" id="r_gadeb9c3d409bcba9ea1bad3b5df34eb8d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="../../dc/db9/group__numerics.html#ga462cd88db2679129e8c9b418fe426371">CMP</a> imm8, typename T &gt; <br />
 requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; 32uz))</td></tr>
@@ -328,7 +352,32 @@ Variables</h2></td></tr>
 <div class="line">SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0</div>
 </div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="af569bd545b347efcbff730e5f47b040e" name="af569bd545b347efcbff730e5f47b040e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af569bd545b347efcbff730e5f47b040e">&#9670;&#160;</a></span>IFAVX512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IFAVX512</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">x</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../d5/d65/numerics_8cppm_source.html#l00016">16</a> of file <a class="el" href="../../d5/d65/numerics_8cppm_source.html">numerics.cppm</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

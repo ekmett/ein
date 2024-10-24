@@ -172,7 +172,8 @@ $(function(){initNavTree('da/d01/simd_8cppm.html','../../'); initResizable(true)
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#namespaces">Namespaces</a> &#124;
-<a href="#concepts">Concepts</a>  </div>
+<a href="#concepts">Concepts</a> &#124;
+<a href="#define-members">Macros</a>  </div>
   <div class="headertitle"><div class="title">simd.cppm File Reference<div class="ingroups"><a class="el" href="../../dc/d7b/group__simd.html">simd</a> &#124; module <a class="el" href="../../d8/da3/module__ein_8simd.html">ein.simd</a></div></div></div>
 </div><!--header-->
 <div class="contents">
@@ -212,6 +213,13 @@ Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d8/d21/conceptein_1_1simd__type.html">ein::simd_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">recognizes any valid simd type <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:a387077f9d15d6ae1a2d99c018c5dca7b" id="r_a387077f9d15d6ae1a2d99c018c5dca7b"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a387077f9d15d6ae1a2d99c018c5dca7b">IF512</a>(x,  y)</td></tr>
+<tr class="separator:a387077f9d15d6ae1a2d99c018c5dca7b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a57e8e83821b2f7ee793874528f00f863" id="r_a57e8e83821b2f7ee793874528f00f863"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a57e8e83821b2f7ee793874528f00f863">ON512</a>(x)</td></tr>
+<tr class="separator:a57e8e83821b2f7ee793874528f00f863"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
@@ -264,7 +272,52 @@ requires has_simd_type&lt;T,<a class="el" href="../../dc/d7b/group__simd.html#ga
 <div class="line">SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0</div>
 </div><!-- fragment --> 
 <p class="definition">Definition in file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a387077f9d15d6ae1a2d99c018c5dca7b" name="a387077f9d15d6ae1a2d99c018c5dca7b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a387077f9d15d6ae1a2d99c018c5dca7b">&#9670;&#160;</a></span>IF512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define IF512</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">x</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00018">18</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+
+</div>
+</div>
+<a id="a57e8e83821b2f7ee793874528f00f863" name="a57e8e83821b2f7ee793874528f00f863"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a57e8e83821b2f7ee793874528f00f863">&#9670;&#160;</a></span>ON512</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ON512</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">x</div>
+</div><!-- fragment -->
+<p class="definition">Definition at line <a class="el" href="../../da/d01/simd_8cppm_source.html#l00019">19</a> of file <a class="el" href="../../da/d01/simd_8cppm_source.html">simd.cppm</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

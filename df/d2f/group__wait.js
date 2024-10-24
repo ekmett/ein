@@ -20,7 +20,7 @@ var group__wait =
       [ "mwait", "df/d2f/group__wait.html#a83985e645823a822d89ca8104485a22f", null ],
       [ "supported", "df/d2f/group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73", null ]
     ] ],
-    [ "ein::wait_until", "df/d2f/group__wait.html#gabf5a7b298fd0bf71181c18be243c0e76", null ],
+    [ "ein::wait_until", "df/d2f/group__wait.html#ga4dad9bbe9beb5746a5261d9d818332c5", null ],
     [ "ein::with_waiter", "df/d2f/group__wait.html#ga15797fd5aad0c604b5951f50d53d3623", null ],
     [ "ein::mwaitx::supported", "df/d2f/group__wait.html#gaaa1c31bb64256e696333d924bb50a90d", null ],
     [ "ein::umwait::supported", "df/d2f/group__wait.html#ga94f77adfbc306130e869173daf6ea96d", null ]

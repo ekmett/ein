@@ -119,6 +119,10 @@ var menudata={children:[
 {text:"File List",url:"files.html"},
 {text:"File Members",url:"globals.html",children:[
 {text:"All",url:"globals.html",children:[
-{text:"e",url:"globals.html#index_e"}]},
+{text:"e",url:"globals.html#index_e"},
+{text:"i",url:"globals.html#index_i"},
+{text:"o",url:"globals.html#index_o"}]},
 {text:"Macros",url:"globals_defs.html",children:[
-{text:"e",url:"globals_defs.html#index_e"}]}]}]}]}
+{text:"e",url:"globals_defs.html#index_e"},
+{text:"i",url:"globals_defs.html#index_i"},
+{text:"o",url:"globals_defs.html#index_o"}]}]}]}]}

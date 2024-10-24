@@ -1,5 +1,6 @@
 var numerics_8cppm =
 [
+    [ "IFAVX512", "d5/d65/numerics_8cppm.html#af569bd545b347efcbff730e5f47b040e", null ],
     [ "int_t", "d5/d65/numerics_8cppm.html#ga44878eae47626eacca18302e151e5001", null ],
     [ "uint_t", "d5/d65/numerics_8cppm.html#gab9bd44183e9aa86139541a3690cf8a2c", null ],
     [ "CMP", "d5/d65/numerics_8cppm.html#ga462cd88db2679129e8c9b418fe426371", [
@@ -47,15 +48,9 @@ var numerics_8cppm =
       [ "TRUE", "d5/d65/numerics_8cppm.html#gga3eb3869fe6f24fc19b5894278c242460ac0d83f0b82a6b30de8811e69e6d95c61", null ]
     ] ],
     [ "cmp", "d5/d65/numerics_8cppm.html#gadeb9c3d409bcba9ea1bad3b5df34eb8d", null ],
-    [ "cmp_ord", "d5/d65/numerics_8cppm.html#gaed6b28145ef6605e8092c5b7bf3cade1", null ],
-    [ "cmp_ord", "d5/d65/numerics_8cppm.html#ga4db3bfe82586c57874b7b757b237251a", null ],
     [ "cmp_ord", "d5/d65/numerics_8cppm.html#ga2b74567fe42c868dbbe6ce8f60a3538f", null ],
-    [ "cmp_unord", "d5/d65/numerics_8cppm.html#gaf181518fc669a0ed8499e48bbd6541cb", null ],
-    [ "cmp_unord", "d5/d65/numerics_8cppm.html#ga2e9e352aca0eb99e5bff21db2bcf7029", null ],
     [ "cmp_unord", "d5/d65/numerics_8cppm.html#ga3997cf126ca7b03242a0bcd636d3b11e", null ],
     [ "cmpint", "d5/d65/numerics_8cppm.html#gac7866b6b237bc7d131d09b53e8f2a5eb", null ],
-    [ "scalef", "d5/d65/numerics_8cppm.html#gafc5e1abfa9151a232a6c694150f3340d", null ],
-    [ "scalef", "d5/d65/numerics_8cppm.html#ga30597d79f07c0ef140788dc10f28e6db", null ],
     [ "scalef", "d5/d65/numerics_8cppm.html#ga5ed703b37d3f23ffe3f9150fc108c44f", null ],
     [ "imm", "d5/d65/numerics_8cppm.html#ga9f8820229adbc8c614428c448a370015", null ],
     [ "max_fp_comparison_predicate", "d5/d65/numerics_8cppm.html#ga2b09119ae81703a8158113efe9708d8b", null ]

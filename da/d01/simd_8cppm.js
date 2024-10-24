@@ -1,5 +1,7 @@
 var simd_8cppm =
 [
+    [ "IF512", "da/d01/simd_8cppm.html#a387077f9d15d6ae1a2d99c018c5dca7b", null ],
+    [ "ON512", "da/d01/simd_8cppm.html#a57e8e83821b2f7ee793874528f00f863", null ],
     [ "lddqu", "da/d01/simd_8cppm.html#ga4ded656b3d1da0d7acd986b7acf789a1", null ],
     [ "load", "da/d01/simd_8cppm.html#gad2e79d4163046939c2ae3473a9069bb6", null ],
     [ "loadu", "da/d01/simd_8cppm.html#gaed90a3dee286dda1af9ca5f28513bc3a", null ],
