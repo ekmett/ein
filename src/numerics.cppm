@@ -1,12 +1,14 @@
-module;
+/** \file
 
-/// \file
-/// \ingroup numerics
-/// \license
-/// SPDX-FileType: Source
-/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-/// \endlicense
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense
+
+      \ingroup numerics */
+
+module;
 
 #include "prelude.hpp"
 
@@ -55,10 +57,13 @@ export template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 
-/// \brief A compile time constant passed as an empty struct
-/// \details Allow passing immediate values to operators without having to give up `x << y`
-/// as a syntactic form. `xs << imm<n>` isn't much of an imposition and ensures the compiler
-/// knows that \p N is a fixed constant known at compile time
+/** \brief A compile time constant passed as an empty struct
+
+    \details
+
+    Allow passing immediate values to operators without having to give up `x << y`
+    as a syntactic form. `xs << imm<n>` isn't much of an imposition and ensures the compiler
+    knows that \p N is a fixed constant known at compile time */
 export template <size_t N>
 struct imm_t {
   static constexpr size_t value = N;

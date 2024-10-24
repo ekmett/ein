@@ -1,3 +1,4 @@
+/**
 \internal
   \license
     SPDX-FileType: Source
@@ -12,9 +13,6 @@
 \defgroup modules Modules
   \brief C++ Modules
 
-\defgroup tests Tests
-  \brief Tests
-
 \defgroup macros Macros
   \defgroup attributes Attributes
     \ingroup macros
@@ -26,7 +24,18 @@
 \dir h
   \brief C++ headers
   \ingroup headers
+*/
+
+\defgroup tests Tests
+  \brief Tests
+
+\defgroup bin Binaries
+  \brief Binaries
 
 \dir t
   \brief Tests
-  \ingroup Tests
+  \ingroup tests
+
+\dir bin
+  \brief Executables
+  \ingroup bin

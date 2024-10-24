@@ -2,8 +2,6 @@
 
 /** \file
 
-      \ingroup headers
-
       \license
         SPDX-FileType: Source
         SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
@@ -12,15 +10,8 @@
 
       \brief third-party libraries
 
-      \hideincludedbygraph
-      \hideincludegraph
+      \ingroup headers */
 
-      \defgroup headers Headers */
-
-// json
-//#include <nlohmann/json.hpp>
-
-// logging/formatting
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ranges.h>
 #include <spdlog/fmt/ostr.h>

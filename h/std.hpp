@@ -2,8 +2,6 @@
 
 /** \file
 
-      \ingroup headers
-
       \license
         SPDX-FileType: Source
         SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
@@ -19,7 +17,10 @@
         Capturing what portions of the `std` library we use for use
         in a precompiled header drastically reduces compile times.
 
-        When `import std` is reliable, we can retire this header. */
+        When `import std` is reliable, we can retire this header.
+
+      \ingroup headers */
+
 
 #include <algorithm>
 #include <array>

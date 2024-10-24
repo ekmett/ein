@@ -37,11 +37,11 @@ This is also in tension with wanting robust documentation.
 /**
 \page pch_cmake_vs_clangd On cmake vs. clangd
 
-  When using CMake (at least as of 3.30.5) it wants to control the 
-  assembly of your precompiled header. 
+  When using CMake (at least as of 3.30.5) it wants to control the
+  assembly of your precompiled header.
 
-  To wit, it makes it awkward when you edit any file from your project 
-  that is included by the precompiled header that isn't named in your 
+  To wit, it makes it awkward when you edit any file from your project
+  that is included by the precompiled header that isn't named in your
   `CMakeLists.txt`, and simply complaints that you should rebuild your
   PCH, rather than incurring any data dependency for the PCH as a
   resource. I'd rather write a C++ header than keep thrashing my CMake
@@ -86,17 +86,17 @@ This is also in tension with wanting robust documentation.
   The code doesn't care about your documentation. So in theory we should
   consider doing out of line documentation for headers (and other modules),
   lest we induce false data dependencies on the documentation, and needlessly
-  recompile. 
+  recompile.
 
   This is especially true for the precompiled header, but partially true
   for the rest of our code as well.
- 
+
   Why? Splitting docs from code gives us the option to detect documentation-only
   patches in CI and skipping compilation, only building documentaiton, creating
   a nice culture of rapid turnaround for documentation improvements.
 
   So we should probably pull out long multi-paragraph writings into the ./pub/
-  folder and use `\ref` tags or `\copydoc` to bring them inline in the 
+  folder and use `\ref` tags or `\copydoc` to bring them inline in the
   documentation where needed.
 
 */

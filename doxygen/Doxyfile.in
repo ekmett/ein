@@ -10,7 +10,9 @@ INPUT  = @CMAKE_SOURCE_DIR@/README.md
 INPUT += @CMAKE_SOURCE_DIR@/LICENSE.md
 INPUT += @CMAKE_SOURCE_DIR@/src
 INPUT += @CMAKE_SOURCE_DIR@/pub
+#INPUT += @CMAKE_SOURCE_DIR@/bin
 INPUT += @CMAKE_SOURCE_DIR@/h
+INPUT += @CMAKE_SOURCE_DIR@/t
 STRIP_FROM_PATH = @CMAKE_SOURCE_DIR@/
 OUTPUT_DIRECTORY = @CMAKE_BINARY_DIR@/docs
 
@@ -28,7 +30,7 @@ EXTRACT_LOCAL_CLASSES = YES
 EXTRACT_ANON_NSPACES = NO
 
 EXTENSION_MAPPING = cppm=C++
-FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox
+FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox *.md
 
 GENERATE_HTML = YES
 GENERATE_LATEX = NO
@@ -45,7 +47,8 @@ PREDEFINED += ein_artificial="/** \qualifier \"[[artificial]]\" */"
 PREDEFINED += ein_inline="/** \qualifier \"[[always_inline]]\" */"
 PREDEFINED += ein_nodiscard="/** \qualifier \"[[nodiscard]]\" */"
 PREDEFINED += ein_pure="/** \qualifier \"[[pure]]\" */"
-PREDEFINED += ein_pure="/** \qualifier \"[[const]]\" */"
+PREDEFINED += ein_const="/** \qualifier \"[[const]]\" */"
+PREDEFINED += ein_hidden="/** \qualifier \"[[hidden]]\" */"
 PREDEFINED += ein_noescape="/** \qualifier \"[[noescape]]\" */"
 PREDEFINED += ein_lifetimebound="/** \qualifier \"[[lifetimebound]]\" */"
 PREDEFINED += ein_message(x)=
@@ -92,8 +95,6 @@ HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-It.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-It.woff2
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-Bold.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-Bold.woff2
-#HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/prefetch.js
-#HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/service-worker.js
 HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/assets/header.html
 HTML_COPY_CLIPBOARD    = NO
 PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/doxygen/assets/images/ein-logo.png
@@ -122,3 +123,5 @@ INLINE_SOURCES = YES
 CALLER_GRAPH = YES
 MULTILINE_CPP_IS_BRIEF = YES
 ENUM_VALUES_PER_LINE = 1
+REFERENCED_BY_RELATION = YES
+REFERENCES_RELATION = YES

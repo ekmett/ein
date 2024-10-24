@@ -1,12 +1,15 @@
-module;
+/** \file
 
-/// \file
-/// \ingroup memory
-/// \license
-/// SPDX-FileType: Source
-/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-/// \endlicense
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense
+
+      \ingroup memory */
+
+
+module;
 
 #include "prelude.hpp"
 #include <sys/mman.h> // munmap
@@ -67,7 +70,7 @@ static_assert(sizeof(char *)== sizeof(unique_c_ptr<char>),"");
 /// a c string, managed by unique_ptr
 export using unique_str = unique_c_ptr<char const>;
 
-/// duplicate a C string using `strdup` and manage it as a \ref unique_str
+/// \brief duplicate a C string using `strdup` and manage it as a \ref unique_str
 /// \pre \p string is non-null
 /// \post result is a null-terminated c string to be cleaned up by free
 /// \hideinlinesource

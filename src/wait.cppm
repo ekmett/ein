@@ -1,11 +1,15 @@
-/// \file
-/// \ingroup wait
-/// \brief waiting strategies
-/// \license
-/// SPDX-FileType: Source
-/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-/// \endlicense
+/** \file
+
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense
+
+      \brief waiting strategies
+
+      \ingroup wait */
+
 module;
 
 #include "prelude.hpp"

@@ -1,14 +1,21 @@
-module;
+/** \file
 
-/// \file
-/// \ingroup std
-/// \license
-/// SPDX-FileType: Source
-/// SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-/// SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-/// \endlicense
-/// \brief polyfill missing standard library functions
-/// \details This file works around limitations of the installed libc++ / stdc++
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense
+
+      \brief polyfill missing standard library functions
+
+      \details
+
+        This file works around limitations of the installed libc++ / stdc++
+
+      \ingroup std */
+
+
+module;
 
 #include "prelude.hpp"
 

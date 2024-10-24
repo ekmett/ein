@@ -2,7 +2,11 @@
 
 /** \file
 
-      \ingroup attributes
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense
 
       \brief an opinionated subset of clang/gcc attributes
 
@@ -12,16 +16,11 @@
         pruning out historical attributes and the like. But the general philosophy is that
         if we might need it, we may as well keep it.
 
-      \license
-        SPDX-FileType: Source
-        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-      \endlicense
+      \ingroup attributes
 
     \defgroup attributes Attributes
 
       \brief macros used to provide useful attributes
-
 
       \details
 

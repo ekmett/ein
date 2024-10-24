@@ -28,11 +28,11 @@ all: build
 
 #docs: gen/docs
 
-gen/ein.png: gen
+png: gen/ein.png
 	@echo "\nDependency diagram available as gen/ein.png"
 
-gen/alderaan.png: gen
-	@dot -Tpng -o gen/alderaan.png gen/alderaan.dot
+gen/ein.png: gen
+	@dot -Tpng -o gen/ein.png gen/ein.dot
 
 build: gen
 	@cmake --build gen -j
