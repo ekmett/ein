@@ -54,22 +54,19 @@ using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 /// \brief A compile time constant passed as an empty struct
 /// \details Allow passing immediate values to operators without having to give up `x << y`
 /// as a syntactic form. `xs << imm<n>` isn't much of an imposition and ensures the compiler
-/// knows that n is a fixed constant known at compile time
+/// knows that \p N is a fixed constant known at compile time
 export template <size_t N>
 struct imm_t {
   static constexpr size_t value = N;
-  /// \nodiscard \inline \const \artificial
-  EIN(nodiscard,inline,const,artificial)
+  ein_nodiscard ein_inline ein_const ein_artificial
   constexpr operator size_t () noexcept { return N; }
 };
 
 export template <size_t N>
 constinit imm_t<N> imm {};
 
-/// \nodiscard \inline \pure
 export template <typename T>
-[[nodiscard]]
-EIN(inline,pure)
+ein_nodiscard ein_inline ein_pure
 constexpr bool cmp_unord(T a, T b) noexcept {
   return isnan(a) || isnan(b);
 }
@@ -77,10 +74,8 @@ constexpr bool cmp_unord(T a, T b) noexcept {
 export template bool cmp_unord(float,float) noexcept;
 export template bool cmp_unord(double,double) noexcept;
 
-/// \nodiscard \inline \pure
 export template <typename T>
-[[nodiscard]]
-EIN(inline,pure)
+ein_nodiscard ein_inline ein_pure
 constexpr bool cmp_ord(T a, T b) noexcept {
   return !isnan(a) && !isnan(b);
 }
@@ -88,10 +83,9 @@ constexpr bool cmp_ord(T a, T b) noexcept {
 export template bool cmp_ord(float,float) noexcept;
 export template bool cmp_ord(double,double) noexcept;
 
-/// \hideinlinesource \nodiscard \inline \pure
+/// \hideinlinesource
 export template <one_of_t<float,double> T>
-[[nodiscard]]
-EIN(inline,pure)
+ein_nodiscard ein_inline ein_pure
 constexpr T scalef(T x, T y) noexcept {
   if consteval {
     // Constexpr path using bit manipulation
@@ -143,7 +137,7 @@ export template float scalef(float, float) noexcept;
 export template double scalef(double, double) noexcept;
 
 /// \hideinlinesource
-export enum class [[nodiscard]] CMPINT : size_t {
+export enum class ein_nodiscard CMPINT : size_t {
   EQ    = 0x0uz ///< `==`
 , LT    = 0x1uz ///< `<`
 , LE    = 0x2uz ///< `<=`
@@ -154,11 +148,9 @@ export enum class [[nodiscard]] CMPINT : size_t {
 , TRUE  = 0x7uz ///< always `true`
 };
 
-/// \nodiscard \inline \const
 export template <CMPINT imm8, typename T>
 requires (one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz))
-[[nodiscard]]
-EIN(inline,const)
+ein_nodiscard ein_inline ein_const
 constexpr bool cmpint(T a, T b) noexcept {
   if      constexpr (imm8 == CMPINT::TRUE)  return -1;
   else if constexpr (imm8 == CMPINT::FALSE) return 0;
@@ -209,7 +201,7 @@ export constexpr size_t max_fp_comparison_predicate
 #endif
 
 /// \hideinlinesource
-export enum class [[nodiscard]] CMP : size_t {
+export enum class ein_nodiscard CMP : size_t {
   EQ_OQ     = 0x00uz  ///< Equal (ordered, nonsignaling)
 , LT_OS     = 0x01uz  ///< Less-than (ordered, signaling)
 , LE_OS     = 0x02uz  ///< Less-than-or-equal (ordered, signaling)
@@ -245,11 +237,9 @@ export enum class [[nodiscard]] CMP : size_t {
 };
 
 /// perform an avx512 style floating point comparison for scalar values.
-/// \nodiscard \pure \inline
 export template <CMP imm8, typename T>
 requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz))
-[[nodiscard]]
-EIN(pure,inline)
+ein_nodiscard ein_inline ein_pure
 constexpr bool cmp(T a, T b) noexcept {
   if      constexpr (imm8 == CMP::EQ_OQ)    return cmp_ord(a, b) && (a == b);
   else if constexpr (imm8 == CMP::LT_OS)    return cmp_ord(a, b) && (a < b);

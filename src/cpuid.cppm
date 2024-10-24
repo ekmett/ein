@@ -30,10 +30,8 @@ export struct [[nodiscard]] cpuid_t {
 /// \brief calls \CPUID and returns all of the registers that it responds with.
 /// \details this can take a 100+ cycles and stalls everything waiting for writes
 /// so please, do this outside of the critical path.
-/// \hideinlinesource \inline \pure
-export
-EIN(inline,pure)
-cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept {
+/// \hideinlinesource
+export ein_inline ein_pure cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept {
   cpuid_t result;
   __cpuid_count(eax, ecx, result.eax, result.ebx, result.ecx, result.edx);
   return result;

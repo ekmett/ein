@@ -30,10 +30,10 @@ concept trivially_destructible = is_trivially_destructible_v<remove_extent_t<T>>
 /// \brief std::unique_ptr Deleter for memory mapped data
 export struct c_munmap {
   size_t size;
-  /// \hideinlinesource \inline \artificial
+  /// \hideinlinesource
   /// \pre \p p is a memory region mapped by `mmap` \p size bytes long
   /// \post \p p has been `munmap`ped
-  EIN(inline,artificial)
+  ein_inline ein_artificial
   void operator()(void * p) const noexcept {
     if (p != nullptr)
       munmap(p, size);
@@ -41,23 +41,21 @@ export struct c_munmap {
 };
 
 /// memory mapped data, managed by std::unique_ptr. calls munmap to free.
-export
-using mmap_ptr = unique_ptr<void,c_munmap>;
+export using mmap_ptr = unique_ptr<void,c_munmap>;
 
 /// construct a mmap_ptr using a base pointer and its size for munmap
-/// \hideinlinesource \inline \artificial
 /// \pre \p p is non-null
-export
-EIN(artificial,nonnull(1),inline)
+/// \hideinlinesource
+export ein_inline ein_artificial ein_nonnull(1)
 mmap_ptr make_mmap_ptr(void * p, size_t size) noexcept {
   return mmap_ptr(p,c_munmap(size));
 }
 
 /// \brief std::unique_ptr Deleter that calls free()
 export struct c_free {
-  /// \hideinlinesource \inline \artificial
+  /// \hideinlinesource
   template <trivially_destructible T>
-  EIN(inline,artificial)
+  ein_inline ein_artificial
   static void operator()(T * p) noexcept {
     free(const_cast<remove_const_t<T>*>(p));
   }
@@ -73,11 +71,11 @@ static_assert(sizeof(char *)== sizeof(unique_c_ptr<char>),"");
 export using unique_str = unique_c_ptr<char const>;
 
 /// duplicate a C string using `strdup` and manage it as a \ref unique_str
-/// \hideinlinesource \nodiscard \inline \artificial \pure
 /// \pre \p string is non-null
 /// \post result is a null-terminated c string to be cleaned up by free
-export /// \cond
-EIN(nodiscard,inline,artificial,pure,nonnull(1),null_terminated_string_arg(1)) /// \endcond
+/// \hideinlinesource
+export ein_nodiscard ein_inline ein_artificial ein_pure
+ein_nonnull(1) ein_null_terminated_string_arg(1)
 unique_str dup(
   ein_noescape char const * string
 ) noexcept {
