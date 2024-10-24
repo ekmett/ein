@@ -2,21 +2,39 @@
 
 /** \file
 
-      \brief defines used to indicate useful attributes for the compiler
+      \ingroup attributes
 
-      \ingroup macros
+      \brief an opinionated subset of clang/gcc attributes
+
+      \details
+        Historically, this header has been maintained across a number of my open source
+        projects, where it has grown organically over time. Now, I'm rather aggressively
+        pruning out historical attributes and the like. But the general philosophy is that
+        if we might need it, we may as well keep it.
 
       \license
       SPDX-FileType: Source
       SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
       SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-      \endlicense */
+      \endlicense
 
-/// \ingroup macros
-/// \{
+    \defgroup attributes attributes
+
+      \brief macros used to provide useful attributes
+
+
+      \details
+
+        There is a large number of attributes that can be applied to methods, functions,
+        variables, structs, modules, etc. across all of the different compilers out there.
+
+      \ingroup macros
+
+    \{ */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name attribute detection
+/// \defgroup attribute_detection attribute detection
+/// \ingroup macros
 /// \{
 
 /** \def ein_has_attribute(x)
@@ -56,7 +74,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name inlining
+/// \defgroup inlining inlining
+/// \ingroup attributes
 /// \{
 
 /** \def ein_inline
@@ -135,7 +154,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name delayed instantiation
+/// \defgroup instantiation instantiation
+/// \ingroup attributes
 /// \{
 
 /** \def ein_visibility
@@ -185,7 +205,10 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name multiversioning
+/// \defgroup multiversioning multiversioning
+///
+///   \ingroup attributes
+///
 /// \{
 
 /** \def ein_target(x)
@@ -211,7 +234,10 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name calling conventions
+/// \defgroup calling_conventions calling conventions
+///
+///   \ingroup attributes
+///
 /// \{
 
 /** \def ein_hot
@@ -244,7 +270,10 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name linkage
+/// \defgroup linkage linkage
+///
+///   \ingroup attributes
+///
 /// \{
 
 /** \def ein_weak
@@ -257,19 +286,28 @@
 
 #if ein_has_attribute(weak)
   #define ein_weak __attribute__((weak))
-#elif defined _WIN32
-#define ein_weak
-#  else
-  #define ein_weak // for doxygen
-#  error "weak symbols not supported"
-#endif // ein_has_attribute(weak)
+#else
+  #define ein_weak
+#endif
+
+/** \def ein_internal_linkage
+
+      \brief `[[internal_linkage]]`
+
+      \details
+
+        Changes the linkage type of the declaration to internal. This is similar to
+        C-style static, but can be used on classes and class methods. When applied
+        to a class definition, this attribute affects all methods and static data
+        members of that class. This can be used to contain the ABI of a C++ library
+        by excluding unwanted class methods from the export tables.
+
+        \warning probably subsumed by ein_visibility("hidden") */
 
 #if ein_has_attribute(internal_linkage)
   #define ein_internal_linkage __attribute__((internal_linkage))
-#elif defined _WIN32
-  #define ein_internal_linkage
 #else
-#error "[[internal_linkage]] is not supported"
+  #define ein_internal_linkage
 #endif
 
 /** \def ein_preferred_name(x)
@@ -289,7 +327,10 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name typestate analysis
+/// \defgroup typestate typestate analysis
+///
+///   \ingroup attributes
+///
 /// \{
 
 /** \def ein_consumable(x)
@@ -400,9 +441,11 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name thread safety analysis
+/// \defgroup thread_safety thread safety
 ///
-/// \brief these are supported by `-Wthread-safety`
+///   \ingroup attributes
+///
+///   \brief these are supported by `-Wthread-safety`
 ///
 /// \{
 
@@ -643,9 +686,11 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name handles
+/// \defgroup handles handles
 ///
 ///   \brief Handles are a way to identify resources like files, sockets, and processes.
+///
+///   \ingroup attributes
 ///
 ///   \details
 ///
@@ -697,8 +742,16 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name aliasing reduction
-/// \brief see also #ein_malloc
+/// \defgroup aliasing_reduction aliasing reduction
+///
+///   \brief see also #ein_malloc
+///
+///   \details
+///
+///     \todo add `__restrict__`
+///
+///   \ingroup attributes
+///
 /// \{
 ///
 
@@ -721,7 +774,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name initialization
+/// \defgroup initialization initialization
+/// \ingroup attributes
 /// \{
 
 /** \def ein_constinit
@@ -771,7 +825,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name purity
+/// \defgroup purity purity
+/// \ingroup attributes
 /// \{
 
 /** \def ein_const
@@ -816,7 +871,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name alignment
+/// \defgroup alignment alignment
+/// \ingroup attributes
 ///
 ///   \brief see also #ein_alloc_align
 ///
@@ -848,7 +904,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name string safety
+/// \defgroup string_safety string safety
+/// \ingroup attributes
 /// \{
 
 /** \def ein_null_terminated_string_arg(N)
@@ -871,7 +928,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name borrow-checking and object lifetimes
+/// \defgroup lifetimes lifetimes
+/// \ingroup attributes
 /// \{
 
 /** \def ein_lifetimebound
@@ -929,7 +987,8 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name allocation
+/// \defgroup allocation_attributes allocation
+/// \ingroup attributes
 /// \{
 
 /** \def ein_malloc
@@ -980,7 +1039,9 @@
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name control flow
+/// \defgroup control_flow control flow
+///
+///   \ingroup attributes
 ///
 ///   \details
 ///
@@ -1022,7 +1083,8 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name null safety
+/// \defgroup null_safety null safety
+/// \ingroup attributes
 /// \{
 
 /** \def ein_returns_nonnull
@@ -1093,7 +1155,8 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name CUDA
+/// \defgroup cuda cuda
+/// \ingroup attributes
 /// \{
 
 /** \def ein_host
@@ -1144,7 +1207,8 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name pragmas
+/// \defgroup pragmas pragmas
+/// \ingroup attributes
 /// \{
 
 /// \cond local
@@ -1159,7 +1223,8 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-/// \name loops
+/// \defgroup loop_attributes loops
+/// \ingroup attributes
 /// \{
 
 /** \def ein_unroll
@@ -1182,4 +1247,4 @@ Allows better interprocedural analysis */
 ///////////////////////////////////////////////////////////////////////////////////////////////
 
 /// \}
-// end ingroup macros
+// end ingroup attributes
