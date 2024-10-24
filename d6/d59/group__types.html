@@ -80,6 +80,7 @@ div.header div.summary { padding-right: 80px; }
 <script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="../../doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="../../prefetch.js"></script>
 <script type="text/javascript">
   DoxygenAwesomeDarkModeToggle.init()
   DoxygenAwesomeFragmentCopyButton.init()
@@ -200,9 +201,9 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga748be94ed243491e09352db7e04a4219" id="r_ga748be94ed243491e09352db7e04a4219"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d9/d3d/group__purity__attributes.html#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">ein_const</a> const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga748be94ed243491e09352db7e04a4219">ein::type_of</a> (auto const &amp;t) noexcept</td></tr>
-<tr class="memdesc:ga748be94ed243491e09352db7e04a4219"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type of the (unused) argument passed to this function  <br /></td></tr>
-<tr class="separator:ga748be94ed243491e09352db7e04a4219"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeff5354fcf4acab5497e2b60433e75b6" id="r_gaeff5354fcf4acab5497e2b60433e75b6"><td class="memItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaeff5354fcf4acab5497e2b60433e75b6">ein::type_of</a> (auto const &amp;t) noexcept</td></tr>
+<tr class="memdesc:gaeff5354fcf4acab5497e2b60433e75b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type of the (unused) argument passed to this function  <br /></td></tr>
+<tr class="separator:gaeff5354fcf4acab5497e2b60433e75b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
@@ -213,8 +214,8 @@ Variables</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ga748be94ed243491e09352db7e04a4219" name="ga748be94ed243491e09352db7e04a4219"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga748be94ed243491e09352db7e04a4219">&#9670;&#160;</a></span>type_of()</h2>
+<a id="gaeff5354fcf4acab5497e2b60433e75b6" name="gaeff5354fcf4acab5497e2b60433e75b6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gaeff5354fcf4acab5497e2b60433e75b6">&#9670;&#160;</a></span>type_of()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -223,7 +224,7 @@ Variables</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="../../d9/d3d/group__purity__attributes.html#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">ein_const</a> const string_view ein::type_of </td>
+          <td class="memname">const string_view ein::type_of </td>
           <td>(</td>
           <td class="paramtype">auto const &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span></td><td>)</td>
           <td></td>
@@ -231,14 +232,16 @@ Variables</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span></span>  </td>
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[const]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>returns the unmangled name of a the type of the (unused) argument passed to this function </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00040">40</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00043">43</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
+
+<p class="reference">References <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00030">ein::type</a>.</p>
 
 </div>
 </div>
@@ -268,7 +271,9 @@ template&lt;typename T &gt; </div>
 <p>returns the unmangled name of a the type <code>T</code> </p>
 <p>Ideally this would be fully <code>constexpr</code>, but I'm not building my own demangler. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00027">27</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00030">30</a> of file <a class="el" href="../../d8/dcb/types_8cppm_source.html">types.cppm</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="../../d8/dcb/types_8cppm_source.html#l00043">ein::type_of()</a>.</p>
 
 </div>
 </div>

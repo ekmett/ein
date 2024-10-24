@@ -80,6 +80,7 @@ div.header div.summary { padding-right: 80px; }
 <script type="text/javascript" src="../../doxygen-awesome-paragraph-link.js"></script>
 <script type="text/javascript" src="../../doxygen-awesome-interactive-toc.js"></script>
 <script type="text/javascript" src="../../doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="../../prefetch.js"></script>
 <script type="text/javascript">
   DoxygenAwesomeDarkModeToggle.init()
   DoxygenAwesomeFragmentCopyButton.init()
@@ -174,428 +175,428 @@ $(function(){initNavTree('df/d6a/attributes_8hpp_source.html','../../'); initRes
 <div class="contents">
 <a href="../../df/d6a/attributes_8hpp.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span> </div>
-<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">#ifdef __has_attribute</span></div>
-<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">  #define ein_has_attribute(x) __has_attribute(x)</span></div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../df/db3/group__attribute__detection.html#gad3739858c2f6f373697b155ce4acac3a">   54</a></span><span class="preprocessor">  #define ein_has_attribute(__x) 0</span></div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span> </div>
-<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">#if defined(_MSC_VER)</span></div>
-<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">  #define ein_has_declspec_attribute(__x) 1</span></div>
-<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">#elif defined(EIN_USE_DECLSPEC) &amp;&amp; defined(__has_declspec_attribute)</span></div>
-<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">  #define ein_has_declspec_attribute(x) __has_declspec_attribute(x)</span></div>
-<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00075" name="l00075"></a><span class="lineno"><a class="line" href="../../df/db3/group__attribute__detection.html#ga634fb93c90b0fefd7994f40126573295">   75</a></span><span class="preprocessor">  #define ein_has_declspec_attribute(__x) 0</span></div>
-<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00077" name="l00077"></a><span class="lineno">   77</span> </div>
-<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span> </div>
-<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">#if ein_has_attribute(always_inline)</span></div>
-<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">  #define ein_inline inline __attribute__((always_inline))</span></div>
-<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">#elif defined _WIN32</span></div>
-<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">  #define ein_inline __forceinline</span></div>
-<div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#gae478383afcbcd2db052f49d41e72763d">   97</a></span><span class="preprocessor">  #define ein_inline inline</span></div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span> </div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">#if ein_has_attribute(flatten)</span></div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">  #define ein_flatten __attribute__((flatten))</span></div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00112" name="l00112"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">  112</a></span><span class="preprocessor">  #define ein_flatten</span></div>
-<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00114" name="l00114"></a><span class="lineno">  114</span> </div>
-<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">#if ein_has_attribute(artificial)</span></div>
-<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">  #define ein_artificial __attribute__((artificial))</span></div>
-<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">#elif ein_has_attribute(__artificial__)</span></div>
-<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">  #define ein_artificial __attribute__((__artificial__))</span></div>
-<div class="line"><a id="l00128" name="l00128"></a><span class="lineno">  128</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00129" name="l00129"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga339fea4b0350c64584a58eb87db76f6b">  129</a></span><span class="preprocessor">  #define ein_artificial</span></div>
-<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">  #warning &quot;[[artificial]] is not supported&quot;</span></div>
-<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00132" name="l00132"></a><span class="lineno">  132</span> </div>
-<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">#if ein_has_attribute(noinline)</span></div>
-<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">  #define ein_noinline __attribute__((noinline))</span></div>
-<div class="line"><a id="l00143" name="l00143"></a><span class="lineno">  143</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00144" name="l00144"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga912f9e7fd37d0754ab1ed64e8545bbd1">  144</a></span><span class="preprocessor">  #define ein_noinline</span></div>
-<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00146" name="l00146"></a><span class="lineno">  146</span> </div>
-<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">#if ein_has_attribute(optnone)</span></div>
-<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">  #define ein_optnone __attribute__((optnone))</span></div>
-<div class="line"><a id="l00158" name="l00158"></a><span class="lineno">  158</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00159" name="l00159"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga10f15c098a2fe5e78e9074f9025aee73">  159</a></span><span class="preprocessor">  #define ein_optnone</span></div>
-<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00161" name="l00161"></a><span class="lineno">  161</span> </div>
-<div class="line"><a id="l00181" name="l00181"></a><span class="lineno">  181</span> </div>
-<div class="line"><a id="l00191" name="l00191"></a><span class="lineno"><a class="line" href="../../d2/db2/group__multiversioning__attributes.html#ga3246ec3ea286643d128185234256d627">  191</a></span><span class="preprocessor">#define ein_target(x) __attribute__((target(x)))</span></div>
-<div class="line"><a id="l00192" name="l00192"></a><span class="lineno">  192</span> </div>
-<div class="line"><a id="l00201" name="l00201"></a><span class="lineno"><a class="line" href="../../d2/db2/group__multiversioning__attributes.html#ga3f032504b976d681e8f72fed67395746">  201</a></span><span class="preprocessor">#define ein_target_clones(...) __attribute__((target_clones(_VA_ARGS_)))</span></div>
-<div class="line"><a id="l00202" name="l00202"></a><span class="lineno">  202</span> </div>
-<div class="line"><a id="l00212" name="l00212"></a><span class="lineno">  212</span> </div>
-<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">#if ein_has_attribute(hot)</span></div>
-<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">  #define ein_hot __attribute__((hot))</span></div>
-<div class="line"><a id="l00223" name="l00223"></a><span class="lineno">  223</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00224" name="l00224"></a><span class="lineno"><a class="line" href="../../d5/dc1/group__calling__convention__attributes.html#ga6bf1d5ecc125d67c5ccce0b79764a603">  224</a></span><span class="preprocessor">  #define ein_hot</span></div>
-<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00226" name="l00226"></a><span class="lineno">  226</span> </div>
-<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">#if ein_has_attribute(cold)</span></div>
-<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">  #define ein_cold __attribute__((cold))</span></div>
-<div class="line"><a id="l00237" name="l00237"></a><span class="lineno">  237</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00238" name="l00238"></a><span class="lineno"><a class="line" href="../../d5/dc1/group__calling__convention__attributes.html#ga027c41ab022e6867200f6bb9886a8586">  238</a></span><span class="preprocessor">  #define ein_cold</span></div>
-<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00240" name="l00240"></a><span class="lineno">  240</span> </div>
-<div class="line"><a id="l00250" name="l00250"></a><span class="lineno">  250</span> </div>
-<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">#if ein_has_attribute(weak)</span></div>
-<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">  #define ein_weak __attribute__((weak))</span></div>
-<div class="line"><a id="l00261" name="l00261"></a><span class="lineno">  261</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00262" name="l00262"></a><span class="lineno"><a class="line" href="../../dd/d43/group__linkage__attributes.html#ga9a1d6e122e659dcfea11d62158ee3625">  262</a></span><span class="preprocessor">  #define ein_weak</span></div>
-<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00264" name="l00264"></a><span class="lineno">  264</span> </div>
-<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">#if ein_has_attribute(internal_linkage)</span></div>
-<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor">  #define ein_internal_linkage __attribute__((internal_linkage))</span></div>
-<div class="line"><a id="l00281" name="l00281"></a><span class="lineno">  281</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00282" name="l00282"></a><span class="lineno"><a class="line" href="../../dd/d43/group__linkage__attributes.html#ga3c3d1b3d8d09c237b7c64cd9f91ea63d">  282</a></span><span class="preprocessor">  #define ein_internal_linkage</span></div>
-<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00284" name="l00284"></a><span class="lineno">  284</span> </div>
-<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">#if __has_cpp_attribute(clang::preferred_name)</span></div>
-<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">  #define ein_preferred_name(x) [[clang::preferred_name(__x)]]</span></div>
-<div class="line"><a id="l00296" name="l00296"></a><span class="lineno">  296</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00297" name="l00297"></a><span class="lineno"><a class="line" href="../../dd/d43/group__linkage__attributes.html#ga1594d8c5a04ac97dfde52250be9378fb">  297</a></span><span class="preprocessor">  #define ein_preferred_name(__x)</span></div>
-<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00299" name="l00299"></a><span class="lineno">  299</span> </div>
-<div class="line"><a id="l00309" name="l00309"></a><span class="lineno">  309</span> </div>
-<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">#if ein_has_attribute(__visibility__)</span></div>
-<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">  #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00320" name="l00320"></a><span class="lineno">  320</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00321" name="l00321"></a><span class="lineno"><a class="line" href="../../d9/d2b/group__instantiation__attributes.html#ga5165837aaf9cdf9743915da8d274f7a6">  321</a></span><span class="preprocessor">  #define ein_visibility(...)</span></div>
-<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">  #warning &quot;[[visibility]] is not supported&quot;</span></div>
-<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00324" name="l00324"></a><span class="lineno">  324</span> </div>
-<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="preprocessor">#if ein_has_attribute(exclude_from_explicit_instantiation)</span></div>
-<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">  #define ein_exclude_from_explicit_instantiation __attribute__((exclude_from_explicit_instantiation))</span></div>
-<div class="line"><a id="l00335" name="l00335"></a><span class="lineno">  335</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00336" name="l00336"></a><span class="lineno"><a class="line" href="../../d9/d2b/group__instantiation__attributes.html#ga24a2cafa9f882b8f2d0772140597277b">  336</a></span><span class="preprocessor">  #define ein_exclude_from_explicit_instantiation</span></div>
-<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="preprocessor">  #warning &quot;[[exclude_from_explicit_instantiation]] is not supported&quot;</span></div>
-<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00339" name="l00339"></a><span class="lineno">  339</span> </div>
-<div class="line"><a id="l00353" name="l00353"></a><span class="lineno"><a class="line" href="../../d9/d2b/group__instantiation__attributes.html#ga12a3fcb0577a0041f5d44071a82f0e8f">  353</a></span><span class="preprocessor">#define ein_hidden ein_visibility(&quot;hidden&quot;) ein_exclude_from_explicit_instantiation</span></div>
-<div class="line"><a id="l00354" name="l00354"></a><span class="lineno">  354</span> </div>
-<div class="line"><a id="l00362" name="l00362"></a><span class="lineno">  362</span> </div>
-<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="preprocessor">#if ein_has_attribute(consumable)</span></div>
-<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="preprocessor">  #define ein_consumable(__x) __attribute__((consumable(__x)))</span></div>
-<div class="line"><a id="l00375" name="l00375"></a><span class="lineno">  375</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00376" name="l00376"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#ga6816203e87326e14923cb87cb116059a">  376</a></span><span class="preprocessor">  #define ein_consumable(__x)</span></div>
-<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00378" name="l00378"></a><span class="lineno">  378</span> </div>
-<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="preprocessor">#if ein_has_attribute(callable_when)</span></div>
-<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="preprocessor">  #define ein_callable_when(...) __attribute__((callable_when(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00389" name="l00389"></a><span class="lineno">  389</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00390" name="l00390"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#ga3ed525e656ee312db463b70cda1f37eb">  390</a></span><span class="preprocessor">  #define ein_callable_when(...)</span></div>
-<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00392" name="l00392"></a><span class="lineno">  392</span> </div>
-<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="preprocessor">#if ein_has_attribute(param_typestate)</span></div>
-<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="preprocessor">  #define ein_param_typestate(...) __attribute__((param_typestate(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00404" name="l00404"></a><span class="lineno">  404</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00405" name="l00405"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gaa8bf1d39883569a1a0dfc129bafbfcbe">  405</a></span><span class="preprocessor">  #define ein_param_typestate(...)</span></div>
-<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00407" name="l00407"></a><span class="lineno">  407</span> </div>
-<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="preprocessor">#if ein_has_attribute(return_typestate)</span></div>
-<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><span class="preprocessor">  #define ein_return_typestate(...) __attribute__((return_typestate(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00425" name="l00425"></a><span class="lineno">  425</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00426" name="l00426"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gaf79c37c326b25ea1a46b05b2a3c9474c">  426</a></span><span class="preprocessor">  #define ein_return_typestate(...)</span></div>
-<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00428" name="l00428"></a><span class="lineno">  428</span> </div>
-<div class="line"><a id="l00438" name="l00438"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#ga803c31f81bce5e57eb8a6fe88f558488">  438</a></span><span class="preprocessor">#define ein_moving ein_return_typestate(&quot;consumed&quot;) ein_param_typestate(&quot;unconsumed&quot;)</span></div>
-<div class="line"><a id="l00439" name="l00439"></a><span class="lineno">  439</span> </div>
-<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="preprocessor">#if ein_has_attribute(set_typestate)</span></div>
-<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span><span class="preprocessor">  #define ein_set_typestate(...) __attribute__((set_typestate(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00450" name="l00450"></a><span class="lineno">  450</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00451" name="l00451"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gaeafae2f2d44edb1f1ee3b659fbb48f82">  451</a></span><span class="preprocessor">  #define ein_set_typestate(...)</span></div>
-<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00453" name="l00453"></a><span class="lineno">  453</span> </div>
-<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span><span class="preprocessor">#if ein_has_attribute(test_typestate)</span></div>
-<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="preprocessor">  #define ein_test_typestate(...) __attribute__((test_typestate(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00464" name="l00464"></a><span class="lineno">  464</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00465" name="l00465"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gabc6a227c8893803b9d294e0270c554fc">  465</a></span><span class="preprocessor">  #define ein_test_typestate</span></div>
-<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span><span class="preprocessor">  #define ein_test_typestate(...)</span></div>
-<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span><span class="preprocessor">#endif </span><span class="comment">// ein_has_attribute(test_typestate)</span></div>
-<div class="line"><a id="l00468" name="l00468"></a><span class="lineno">  468</span> </div>
-<div class="line"><a id="l00478" name="l00478"></a><span class="lineno">  478</span> </div>
-<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="preprocessor">#if ein_has_attribute(no_thread_safety_analysis)</span></div>
-<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span><span class="preprocessor">  #define ein_no_thread_safety_analysis __attribute__((no_thread_safety_analysis))</span></div>
-<div class="line"><a id="l00489" name="l00489"></a><span class="lineno">  489</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00490" name="l00490"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaac01069ede01c32428a5e002f63736c2">  490</a></span><span class="preprocessor">  #define ein_no_thread_safety_analysis</span></div>
-<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00492" name="l00492"></a><span class="lineno">  492</span> </div>
-<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span><span class="preprocessor">#if ein_has_attribute(lockable)</span></div>
-<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span><span class="preprocessor">  #define ein_lockable __attribute__((lockable))</span></div>
-<div class="line"><a id="l00503" name="l00503"></a><span class="lineno">  503</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00504" name="l00504"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaf15e613c18a7be270ef85fff88a59024">  504</a></span><span class="preprocessor">  #define ein_lockable</span></div>
-<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00506" name="l00506"></a><span class="lineno">  506</span> </div>
-<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span><span class="preprocessor">#if ein_has_attribute(scoped_lockable)</span></div>
-<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="preprocessor">  #define ein_scoped_lockable __attribute__((scoped_lockable))</span></div>
-<div class="line"><a id="l00518" name="l00518"></a><span class="lineno">  518</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00519" name="l00519"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gab7cb0527c87347f71f39f6a1f52849c7">  519</a></span><span class="preprocessor">  #define ein_scoped_lockable</span></div>
-<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00521" name="l00521"></a><span class="lineno">  521</span> </div>
-<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><span class="preprocessor">#if ein_has_attribute(guarded_var)</span></div>
-<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span><span class="preprocessor">  #define ein_guarded_var __attribute__((guarded_var))</span></div>
-<div class="line"><a id="l00531" name="l00531"></a><span class="lineno">  531</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00532" name="l00532"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gad7190177010e77e36f790e6b59c02848">  532</a></span><span class="preprocessor">  #define ein_guarded_var</span></div>
-<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00534" name="l00534"></a><span class="lineno">  534</span> </div>
-<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="preprocessor">#if ein_has_attribute(pt_guarded_var)</span></div>
-<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span><span class="preprocessor">  #define ein_pt_guarded_var __attribute__((pt_guarded_var))</span></div>
-<div class="line"><a id="l00544" name="l00544"></a><span class="lineno">  544</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00545" name="l00545"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaace8337cd5e623fc678eda34aae9ba4a">  545</a></span><span class="preprocessor">  #define ein_pt_guarded_var</span></div>
-<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00547" name="l00547"></a><span class="lineno">  547</span> </div>
-<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span><span class="preprocessor">#if ein_has_attribute(guarded_by)</span></div>
-<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span><span class="preprocessor">  #define ein_guarded_by(x) __attribute__((guarded_by(x)))</span></div>
-<div class="line"><a id="l00557" name="l00557"></a><span class="lineno">  557</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00558" name="l00558"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gab8a191f86e9232c194072f5905c44f64">  558</a></span><span class="preprocessor">  #define ein_guarded_by(x)</span></div>
-<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00560" name="l00560"></a><span class="lineno">  560</span> </div>
-<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="preprocessor">#if ein_has_attribute(pt_guarded_by)</span></div>
-<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="preprocessor">  #define ein_pt_guarded_by(x) __attribute__((pt_guarded_by(x)))</span></div>
-<div class="line"><a id="l00570" name="l00570"></a><span class="lineno">  570</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00571" name="l00571"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga50c701b07fd6e6564605f2c0a83960b8">  571</a></span><span class="preprocessor">  #define ein_pt_guarded_by(x)</span></div>
-<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00573" name="l00573"></a><span class="lineno">  573</span> </div>
-<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span><span class="preprocessor">#if ein_has_attribute(acquired_before)</span></div>
-<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="preprocessor">  #define ein_acquired_before(...) __attribute__((acquired_before(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00585" name="l00585"></a><span class="lineno">  585</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00586" name="l00586"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga421858e8fce70bb2eb94570ba522a435">  586</a></span><span class="preprocessor">  #define ein_acquired_before(...)</span></div>
-<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00588" name="l00588"></a><span class="lineno">  588</span> </div>
-<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span><span class="preprocessor">#if ein_has_attribute(acquired_after)</span></div>
-<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span><span class="preprocessor">  #define ein_acquired_after(...) __attribute__((acquired_after(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00600" name="l00600"></a><span class="lineno">  600</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00601" name="l00601"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gabe3f95fa2b7f62691b5b4133b43f877b">  601</a></span><span class="preprocessor">  #define ein_acquired_after(...)</span></div>
-<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00603" name="l00603"></a><span class="lineno">  603</span> </div>
-<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="preprocessor">#if ein_has_attribute(exclusive_lock_function)</span></div>
-<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="preprocessor">  #define ein_exclusive_lock_function(...) __attribute__((exclusive_lock_function(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00617" name="l00617"></a><span class="lineno">  617</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00618" name="l00618"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gac8c4b65cde1558800e117b00d2d65466">  618</a></span><span class="preprocessor">  #define ein_exclusive_lock_function(...)</span></div>
-<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00620" name="l00620"></a><span class="lineno">  620</span> </div>
-<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="preprocessor">#if ein_has_attribute(shared_trylock_function)</span></div>
-<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="preprocessor">  #define ein_shared_trylock_function(...) __attribute__((shared_trylock_function(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00637" name="l00637"></a><span class="lineno">  637</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00638" name="l00638"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaa9bf61cf820ce95d780384f4857978d8">  638</a></span><span class="preprocessor">  #define ein_shared_trylock_function(...)</span></div>
-<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00640" name="l00640"></a><span class="lineno">  640</span> </div>
-<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="preprocessor">#if ein_has_attribute(unlock_function)</span></div>
-<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="preprocessor">  #define ein_unlock_function(...) __attribute__((unlock_function(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00653" name="l00653"></a><span class="lineno">  653</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00654" name="l00654"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gad37ff4fae131feae423d5feea1b8b1cd">  654</a></span><span class="preprocessor">  #define ein_unlock_function(...)</span></div>
-<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00656" name="l00656"></a><span class="lineno">  656</span> </div>
-<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="preprocessor">#if ein_has_attribute(lock_returned)</span></div>
-<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="preprocessor">  #define ein_lock_returned(__x) __attribute__((lock_returned(__x)))</span></div>
-<div class="line"><a id="l00668" name="l00668"></a><span class="lineno">  668</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00669" name="l00669"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b">  669</a></span><span class="preprocessor">  #define ein_lock_returned(__x)</span></div>
-<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00671" name="l00671"></a><span class="lineno">  671</span> </div>
-<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="preprocessor">#if ein_has_attribute(locks_excluded)</span></div>
-<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="preprocessor">  #define ein_locks_excluded(...) __attribute__((locks_excluded(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00682" name="l00682"></a><span class="lineno">  682</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00683" name="l00683"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga5bb9e819a1b0706fa0e644a2583e4519">  683</a></span><span class="preprocessor">  #define ein_locks_excluded(...)</span></div>
-<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00685" name="l00685"></a><span class="lineno">  685</span> </div>
-<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="preprocessor">#if ein_has_attribute(exclusive_locks_required)</span></div>
-<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="preprocessor">  #define ein_exclusive_locks_required(...) __attribute__((exclusive_locks_required(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00696" name="l00696"></a><span class="lineno">  696</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00697" name="l00697"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaaf4bbafcdf5c35392234f136d137ecf9">  697</a></span><span class="preprocessor">  #define ein_exclusive_locks_required(...)</span></div>
-<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00699" name="l00699"></a><span class="lineno">  699</span> </div>
-<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="preprocessor">#if ein_has_attribute(shared_locks_required)</span></div>
-<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span><span class="preprocessor">  #define ein_shared_locks_required(...) __attribute__((shared_locks_required(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l00710" name="l00710"></a><span class="lineno">  710</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00711" name="l00711"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga7468e42fee3b2135260f226e60cb5bfd">  711</a></span><span class="preprocessor">  #define ein_shared_locks_required(...)</span></div>
-<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00713" name="l00713"></a><span class="lineno">  713</span> </div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span> </div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span><span class="preprocessor">#ifdef __has_attribute</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span><span class="preprocessor">  #define ein_has_attribute(x) __has_attribute(x)</span></div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno"><a class="line" href="../../df/db3/group__attribute__detection.html#gad3739858c2f6f373697b155ce4acac3a">   53</a></span><span class="preprocessor">  #define ein_has_attribute(__x) 0</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span> </div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span><span class="preprocessor">#if defined(_MSC_VER)</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span><span class="preprocessor">  #define ein_has_declspec_attribute(__x) 1</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span><span class="preprocessor">#elif defined(EIN_USE_DECLSPEC) &amp;&amp; defined(__has_declspec_attribute)</span></div>
+<div class="line"><a id="l00072" name="l00072"></a><span class="lineno">   72</span><span class="preprocessor">  #define ein_has_declspec_attribute(x) __has_declspec_attribute(x)</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno"><a class="line" href="../../df/db3/group__attribute__detection.html#ga634fb93c90b0fefd7994f40126573295">   74</a></span><span class="preprocessor">  #define ein_has_declspec_attribute(__x) 0</span></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span> </div>
+<div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span> </div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span><span class="preprocessor">#if ein_has_attribute(always_inline)</span></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span><span class="preprocessor">  #define ein_inline inline __attribute__((always_inline))</span></div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span><span class="preprocessor">#elif defined _WIN32</span></div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span><span class="preprocessor">  #define ein_inline __forceinline</span></div>
+<div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00096" name="l00096"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#gae478383afcbcd2db052f49d41e72763d">   96</a></span><span class="preprocessor">  #define ein_inline inline</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span> </div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span><span class="preprocessor">#if ein_has_attribute(flatten)</span></div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span><span class="preprocessor">  #define ein_flatten __attribute__((flatten))</span></div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00111" name="l00111"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">  111</a></span><span class="preprocessor">  #define ein_flatten</span></div>
+<div class="line"><a id="l00112" name="l00112"></a><span class="lineno">  112</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00113" name="l00113"></a><span class="lineno">  113</span> </div>
+<div class="line"><a id="l00123" name="l00123"></a><span class="lineno">  123</span><span class="preprocessor">#if ein_has_attribute(artificial)</span></div>
+<div class="line"><a id="l00124" name="l00124"></a><span class="lineno">  124</span><span class="preprocessor">  #define ein_artificial __attribute__((artificial))</span></div>
+<div class="line"><a id="l00125" name="l00125"></a><span class="lineno">  125</span><span class="preprocessor">#elif ein_has_attribute(__artificial__)</span></div>
+<div class="line"><a id="l00126" name="l00126"></a><span class="lineno">  126</span><span class="preprocessor">  #define ein_artificial __attribute__((__artificial__))</span></div>
+<div class="line"><a id="l00127" name="l00127"></a><span class="lineno">  127</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00128" name="l00128"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga339fea4b0350c64584a58eb87db76f6b">  128</a></span><span class="preprocessor">  #define ein_artificial</span></div>
+<div class="line"><a id="l00129" name="l00129"></a><span class="lineno">  129</span><span class="preprocessor">  #warning &quot;[[artificial]] is not supported&quot;</span></div>
+<div class="line"><a id="l00130" name="l00130"></a><span class="lineno">  130</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00131" name="l00131"></a><span class="lineno">  131</span> </div>
+<div class="line"><a id="l00140" name="l00140"></a><span class="lineno">  140</span><span class="preprocessor">#if ein_has_attribute(noinline)</span></div>
+<div class="line"><a id="l00141" name="l00141"></a><span class="lineno">  141</span><span class="preprocessor">  #define ein_noinline __attribute__((noinline))</span></div>
+<div class="line"><a id="l00142" name="l00142"></a><span class="lineno">  142</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00143" name="l00143"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga912f9e7fd37d0754ab1ed64e8545bbd1">  143</a></span><span class="preprocessor">  #define ein_noinline</span></div>
+<div class="line"><a id="l00144" name="l00144"></a><span class="lineno">  144</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00145" name="l00145"></a><span class="lineno">  145</span> </div>
+<div class="line"><a id="l00155" name="l00155"></a><span class="lineno">  155</span><span class="preprocessor">#if ein_has_attribute(optnone)</span></div>
+<div class="line"><a id="l00156" name="l00156"></a><span class="lineno">  156</span><span class="preprocessor">  #define ein_optnone __attribute__((optnone))</span></div>
+<div class="line"><a id="l00157" name="l00157"></a><span class="lineno">  157</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00158" name="l00158"></a><span class="lineno"><a class="line" href="../../d3/d4e/group__inlining__attributes.html#ga10f15c098a2fe5e78e9074f9025aee73">  158</a></span><span class="preprocessor">  #define ein_optnone</span></div>
+<div class="line"><a id="l00159" name="l00159"></a><span class="lineno">  159</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00160" name="l00160"></a><span class="lineno">  160</span> </div>
+<div class="line"><a id="l00180" name="l00180"></a><span class="lineno">  180</span> </div>
+<div class="line"><a id="l00190" name="l00190"></a><span class="lineno"><a class="line" href="../../d2/db2/group__multiversioning__attributes.html#ga3246ec3ea286643d128185234256d627">  190</a></span><span class="preprocessor">#define ein_target(x) __attribute__((target(x)))</span></div>
+<div class="line"><a id="l00191" name="l00191"></a><span class="lineno">  191</span> </div>
+<div class="line"><a id="l00200" name="l00200"></a><span class="lineno"><a class="line" href="../../d2/db2/group__multiversioning__attributes.html#ga3f032504b976d681e8f72fed67395746">  200</a></span><span class="preprocessor">#define ein_target_clones(...) __attribute__((target_clones(_VA_ARGS_)))</span></div>
+<div class="line"><a id="l00201" name="l00201"></a><span class="lineno">  201</span> </div>
+<div class="line"><a id="l00211" name="l00211"></a><span class="lineno">  211</span> </div>
+<div class="line"><a id="l00220" name="l00220"></a><span class="lineno">  220</span><span class="preprocessor">#if ein_has_attribute(hot)</span></div>
+<div class="line"><a id="l00221" name="l00221"></a><span class="lineno">  221</span><span class="preprocessor">  #define ein_hot __attribute__((hot))</span></div>
+<div class="line"><a id="l00222" name="l00222"></a><span class="lineno">  222</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00223" name="l00223"></a><span class="lineno"><a class="line" href="../../d5/dc1/group__calling__convention__attributes.html#ga6bf1d5ecc125d67c5ccce0b79764a603">  223</a></span><span class="preprocessor">  #define ein_hot</span></div>
+<div class="line"><a id="l00224" name="l00224"></a><span class="lineno">  224</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00225" name="l00225"></a><span class="lineno">  225</span> </div>
+<div class="line"><a id="l00234" name="l00234"></a><span class="lineno">  234</span><span class="preprocessor">#if ein_has_attribute(cold)</span></div>
+<div class="line"><a id="l00235" name="l00235"></a><span class="lineno">  235</span><span class="preprocessor">  #define ein_cold __attribute__((cold))</span></div>
+<div class="line"><a id="l00236" name="l00236"></a><span class="lineno">  236</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00237" name="l00237"></a><span class="lineno"><a class="line" href="../../d5/dc1/group__calling__convention__attributes.html#ga027c41ab022e6867200f6bb9886a8586">  237</a></span><span class="preprocessor">  #define ein_cold</span></div>
+<div class="line"><a id="l00238" name="l00238"></a><span class="lineno">  238</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00239" name="l00239"></a><span class="lineno">  239</span> </div>
+<div class="line"><a id="l00249" name="l00249"></a><span class="lineno">  249</span> </div>
+<div class="line"><a id="l00258" name="l00258"></a><span class="lineno">  258</span><span class="preprocessor">#if ein_has_attribute(weak)</span></div>
+<div class="line"><a id="l00259" name="l00259"></a><span class="lineno">  259</span><span class="preprocessor">  #define ein_weak __attribute__((weak))</span></div>
+<div class="line"><a id="l00260" name="l00260"></a><span class="lineno">  260</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00261" name="l00261"></a><span class="lineno"><a class="line" href="../../dd/d43/group__linkage__attributes.html#ga9a1d6e122e659dcfea11d62158ee3625">  261</a></span><span class="preprocessor">  #define ein_weak</span></div>
+<div class="line"><a id="l00262" name="l00262"></a><span class="lineno">  262</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00263" name="l00263"></a><span class="lineno">  263</span> </div>
+<div class="line"><a id="l00278" name="l00278"></a><span class="lineno">  278</span><span class="preprocessor">#if ein_has_attribute(internal_linkage)</span></div>
+<div class="line"><a id="l00279" name="l00279"></a><span class="lineno">  279</span><span class="preprocessor">  #define ein_internal_linkage __attribute__((internal_linkage))</span></div>
+<div class="line"><a id="l00280" name="l00280"></a><span class="lineno">  280</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00281" name="l00281"></a><span class="lineno"><a class="line" href="../../dd/d43/group__linkage__attributes.html#ga3c3d1b3d8d09c237b7c64cd9f91ea63d">  281</a></span><span class="preprocessor">  #define ein_internal_linkage</span></div>
+<div class="line"><a id="l00282" name="l00282"></a><span class="lineno">  282</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00283" name="l00283"></a><span class="lineno">  283</span> </div>
+<div class="line"><a id="l00293" name="l00293"></a><span class="lineno">  293</span><span class="preprocessor">#if __has_cpp_attribute(clang::preferred_name)</span></div>
+<div class="line"><a id="l00294" name="l00294"></a><span class="lineno">  294</span><span class="preprocessor">  #define ein_preferred_name(x) [[clang::preferred_name(__x)]]</span></div>
+<div class="line"><a id="l00295" name="l00295"></a><span class="lineno">  295</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00296" name="l00296"></a><span class="lineno"><a class="line" href="../../dd/d43/group__linkage__attributes.html#ga1594d8c5a04ac97dfde52250be9378fb">  296</a></span><span class="preprocessor">  #define ein_preferred_name(__x)</span></div>
+<div class="line"><a id="l00297" name="l00297"></a><span class="lineno">  297</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00298" name="l00298"></a><span class="lineno">  298</span> </div>
+<div class="line"><a id="l00308" name="l00308"></a><span class="lineno">  308</span> </div>
+<div class="line"><a id="l00317" name="l00317"></a><span class="lineno">  317</span><span class="preprocessor">#if ein_has_attribute(__visibility__)</span></div>
+<div class="line"><a id="l00318" name="l00318"></a><span class="lineno">  318</span><span class="preprocessor">  #define ein_visibility(...) __attribute__((__visibility__(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00319" name="l00319"></a><span class="lineno">  319</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00320" name="l00320"></a><span class="lineno"><a class="line" href="../../d9/d2b/group__instantiation__attributes.html#ga5165837aaf9cdf9743915da8d274f7a6">  320</a></span><span class="preprocessor">  #define ein_visibility(...)</span></div>
+<div class="line"><a id="l00321" name="l00321"></a><span class="lineno">  321</span><span class="preprocessor">  #warning &quot;[[visibility]] is not supported&quot;</span></div>
+<div class="line"><a id="l00322" name="l00322"></a><span class="lineno">  322</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00323" name="l00323"></a><span class="lineno">  323</span> </div>
+<div class="line"><a id="l00332" name="l00332"></a><span class="lineno">  332</span><span class="preprocessor">#if ein_has_attribute(exclude_from_explicit_instantiation)</span></div>
+<div class="line"><a id="l00333" name="l00333"></a><span class="lineno">  333</span><span class="preprocessor">  #define ein_exclude_from_explicit_instantiation __attribute__((exclude_from_explicit_instantiation))</span></div>
+<div class="line"><a id="l00334" name="l00334"></a><span class="lineno">  334</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00335" name="l00335"></a><span class="lineno"><a class="line" href="../../d9/d2b/group__instantiation__attributes.html#ga24a2cafa9f882b8f2d0772140597277b">  335</a></span><span class="preprocessor">  #define ein_exclude_from_explicit_instantiation</span></div>
+<div class="line"><a id="l00336" name="l00336"></a><span class="lineno">  336</span><span class="preprocessor">  #warning &quot;[[exclude_from_explicit_instantiation]] is not supported&quot;</span></div>
+<div class="line"><a id="l00337" name="l00337"></a><span class="lineno">  337</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00338" name="l00338"></a><span class="lineno">  338</span> </div>
+<div class="line"><a id="l00352" name="l00352"></a><span class="lineno"><a class="line" href="../../d9/d2b/group__instantiation__attributes.html#ga12a3fcb0577a0041f5d44071a82f0e8f">  352</a></span><span class="preprocessor">#define ein_hidden ein_visibility(&quot;hidden&quot;) ein_exclude_from_explicit_instantiation</span></div>
+<div class="line"><a id="l00353" name="l00353"></a><span class="lineno">  353</span> </div>
+<div class="line"><a id="l00361" name="l00361"></a><span class="lineno">  361</span> </div>
+<div class="line"><a id="l00372" name="l00372"></a><span class="lineno">  372</span><span class="preprocessor">#if ein_has_attribute(consumable)</span></div>
+<div class="line"><a id="l00373" name="l00373"></a><span class="lineno">  373</span><span class="preprocessor">  #define ein_consumable(__x) __attribute__((consumable(__x)))</span></div>
+<div class="line"><a id="l00374" name="l00374"></a><span class="lineno">  374</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00375" name="l00375"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#ga6816203e87326e14923cb87cb116059a">  375</a></span><span class="preprocessor">  #define ein_consumable(__x)</span></div>
+<div class="line"><a id="l00376" name="l00376"></a><span class="lineno">  376</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00377" name="l00377"></a><span class="lineno">  377</span> </div>
+<div class="line"><a id="l00386" name="l00386"></a><span class="lineno">  386</span><span class="preprocessor">#if ein_has_attribute(callable_when)</span></div>
+<div class="line"><a id="l00387" name="l00387"></a><span class="lineno">  387</span><span class="preprocessor">  #define ein_callable_when(...) __attribute__((callable_when(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00388" name="l00388"></a><span class="lineno">  388</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00389" name="l00389"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#ga3ed525e656ee312db463b70cda1f37eb">  389</a></span><span class="preprocessor">  #define ein_callable_when(...)</span></div>
+<div class="line"><a id="l00390" name="l00390"></a><span class="lineno">  390</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00391" name="l00391"></a><span class="lineno">  391</span> </div>
+<div class="line"><a id="l00401" name="l00401"></a><span class="lineno">  401</span><span class="preprocessor">#if ein_has_attribute(param_typestate)</span></div>
+<div class="line"><a id="l00402" name="l00402"></a><span class="lineno">  402</span><span class="preprocessor">  #define ein_param_typestate(...) __attribute__((param_typestate(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00403" name="l00403"></a><span class="lineno">  403</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00404" name="l00404"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gaa8bf1d39883569a1a0dfc129bafbfcbe">  404</a></span><span class="preprocessor">  #define ein_param_typestate(...)</span></div>
+<div class="line"><a id="l00405" name="l00405"></a><span class="lineno">  405</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00406" name="l00406"></a><span class="lineno">  406</span> </div>
+<div class="line"><a id="l00422" name="l00422"></a><span class="lineno">  422</span><span class="preprocessor">#if ein_has_attribute(return_typestate)</span></div>
+<div class="line"><a id="l00423" name="l00423"></a><span class="lineno">  423</span><span class="preprocessor">  #define ein_return_typestate(...) __attribute__((return_typestate(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00424" name="l00424"></a><span class="lineno">  424</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00425" name="l00425"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gaf79c37c326b25ea1a46b05b2a3c9474c">  425</a></span><span class="preprocessor">  #define ein_return_typestate(...)</span></div>
+<div class="line"><a id="l00426" name="l00426"></a><span class="lineno">  426</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00427" name="l00427"></a><span class="lineno">  427</span> </div>
+<div class="line"><a id="l00437" name="l00437"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#ga803c31f81bce5e57eb8a6fe88f558488">  437</a></span><span class="preprocessor">#define ein_moving ein_return_typestate(&quot;consumed&quot;) ein_param_typestate(&quot;unconsumed&quot;)</span></div>
+<div class="line"><a id="l00438" name="l00438"></a><span class="lineno">  438</span> </div>
+<div class="line"><a id="l00447" name="l00447"></a><span class="lineno">  447</span><span class="preprocessor">#if ein_has_attribute(set_typestate)</span></div>
+<div class="line"><a id="l00448" name="l00448"></a><span class="lineno">  448</span><span class="preprocessor">  #define ein_set_typestate(...) __attribute__((set_typestate(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00449" name="l00449"></a><span class="lineno">  449</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00450" name="l00450"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gaeafae2f2d44edb1f1ee3b659fbb48f82">  450</a></span><span class="preprocessor">  #define ein_set_typestate(...)</span></div>
+<div class="line"><a id="l00451" name="l00451"></a><span class="lineno">  451</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00452" name="l00452"></a><span class="lineno">  452</span> </div>
+<div class="line"><a id="l00461" name="l00461"></a><span class="lineno">  461</span><span class="preprocessor">#if ein_has_attribute(test_typestate)</span></div>
+<div class="line"><a id="l00462" name="l00462"></a><span class="lineno">  462</span><span class="preprocessor">  #define ein_test_typestate(...) __attribute__((test_typestate(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00463" name="l00463"></a><span class="lineno">  463</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00464" name="l00464"></a><span class="lineno"><a class="line" href="../../d4/dad/group__typestate__analysis.html#gabc6a227c8893803b9d294e0270c554fc">  464</a></span><span class="preprocessor">  #define ein_test_typestate</span></div>
+<div class="line"><a id="l00465" name="l00465"></a><span class="lineno">  465</span><span class="preprocessor">  #define ein_test_typestate(...)</span></div>
+<div class="line"><a id="l00466" name="l00466"></a><span class="lineno">  466</span><span class="preprocessor">#endif </span><span class="comment">// ein_has_attribute(test_typestate)</span></div>
+<div class="line"><a id="l00467" name="l00467"></a><span class="lineno">  467</span> </div>
+<div class="line"><a id="l00477" name="l00477"></a><span class="lineno">  477</span> </div>
+<div class="line"><a id="l00486" name="l00486"></a><span class="lineno">  486</span><span class="preprocessor">#if ein_has_attribute(no_thread_safety_analysis)</span></div>
+<div class="line"><a id="l00487" name="l00487"></a><span class="lineno">  487</span><span class="preprocessor">  #define ein_no_thread_safety_analysis __attribute__((no_thread_safety_analysis))</span></div>
+<div class="line"><a id="l00488" name="l00488"></a><span class="lineno">  488</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00489" name="l00489"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaac01069ede01c32428a5e002f63736c2">  489</a></span><span class="preprocessor">  #define ein_no_thread_safety_analysis</span></div>
+<div class="line"><a id="l00490" name="l00490"></a><span class="lineno">  490</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00491" name="l00491"></a><span class="lineno">  491</span> </div>
+<div class="line"><a id="l00500" name="l00500"></a><span class="lineno">  500</span><span class="preprocessor">#if ein_has_attribute(lockable)</span></div>
+<div class="line"><a id="l00501" name="l00501"></a><span class="lineno">  501</span><span class="preprocessor">  #define ein_lockable __attribute__((lockable))</span></div>
+<div class="line"><a id="l00502" name="l00502"></a><span class="lineno">  502</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00503" name="l00503"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaf15e613c18a7be270ef85fff88a59024">  503</a></span><span class="preprocessor">  #define ein_lockable</span></div>
+<div class="line"><a id="l00504" name="l00504"></a><span class="lineno">  504</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00505" name="l00505"></a><span class="lineno">  505</span> </div>
+<div class="line"><a id="l00515" name="l00515"></a><span class="lineno">  515</span><span class="preprocessor">#if ein_has_attribute(scoped_lockable)</span></div>
+<div class="line"><a id="l00516" name="l00516"></a><span class="lineno">  516</span><span class="preprocessor">  #define ein_scoped_lockable __attribute__((scoped_lockable))</span></div>
+<div class="line"><a id="l00517" name="l00517"></a><span class="lineno">  517</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00518" name="l00518"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gab7cb0527c87347f71f39f6a1f52849c7">  518</a></span><span class="preprocessor">  #define ein_scoped_lockable</span></div>
+<div class="line"><a id="l00519" name="l00519"></a><span class="lineno">  519</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00520" name="l00520"></a><span class="lineno">  520</span> </div>
+<div class="line"><a id="l00528" name="l00528"></a><span class="lineno">  528</span><span class="preprocessor">#if ein_has_attribute(guarded_var)</span></div>
+<div class="line"><a id="l00529" name="l00529"></a><span class="lineno">  529</span><span class="preprocessor">  #define ein_guarded_var __attribute__((guarded_var))</span></div>
+<div class="line"><a id="l00530" name="l00530"></a><span class="lineno">  530</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00531" name="l00531"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gad7190177010e77e36f790e6b59c02848">  531</a></span><span class="preprocessor">  #define ein_guarded_var</span></div>
+<div class="line"><a id="l00532" name="l00532"></a><span class="lineno">  532</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00533" name="l00533"></a><span class="lineno">  533</span> </div>
+<div class="line"><a id="l00541" name="l00541"></a><span class="lineno">  541</span><span class="preprocessor">#if ein_has_attribute(pt_guarded_var)</span></div>
+<div class="line"><a id="l00542" name="l00542"></a><span class="lineno">  542</span><span class="preprocessor">  #define ein_pt_guarded_var __attribute__((pt_guarded_var))</span></div>
+<div class="line"><a id="l00543" name="l00543"></a><span class="lineno">  543</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00544" name="l00544"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaace8337cd5e623fc678eda34aae9ba4a">  544</a></span><span class="preprocessor">  #define ein_pt_guarded_var</span></div>
+<div class="line"><a id="l00545" name="l00545"></a><span class="lineno">  545</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00546" name="l00546"></a><span class="lineno">  546</span> </div>
+<div class="line"><a id="l00554" name="l00554"></a><span class="lineno">  554</span><span class="preprocessor">#if ein_has_attribute(guarded_by)</span></div>
+<div class="line"><a id="l00555" name="l00555"></a><span class="lineno">  555</span><span class="preprocessor">  #define ein_guarded_by(x) __attribute__((guarded_by(x)))</span></div>
+<div class="line"><a id="l00556" name="l00556"></a><span class="lineno">  556</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00557" name="l00557"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gab8a191f86e9232c194072f5905c44f64">  557</a></span><span class="preprocessor">  #define ein_guarded_by(x)</span></div>
+<div class="line"><a id="l00558" name="l00558"></a><span class="lineno">  558</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00559" name="l00559"></a><span class="lineno">  559</span> </div>
+<div class="line"><a id="l00567" name="l00567"></a><span class="lineno">  567</span><span class="preprocessor">#if ein_has_attribute(pt_guarded_by)</span></div>
+<div class="line"><a id="l00568" name="l00568"></a><span class="lineno">  568</span><span class="preprocessor">  #define ein_pt_guarded_by(x) __attribute__((pt_guarded_by(x)))</span></div>
+<div class="line"><a id="l00569" name="l00569"></a><span class="lineno">  569</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00570" name="l00570"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga50c701b07fd6e6564605f2c0a83960b8">  570</a></span><span class="preprocessor">  #define ein_pt_guarded_by(x)</span></div>
+<div class="line"><a id="l00571" name="l00571"></a><span class="lineno">  571</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00572" name="l00572"></a><span class="lineno">  572</span> </div>
+<div class="line"><a id="l00582" name="l00582"></a><span class="lineno">  582</span><span class="preprocessor">#if ein_has_attribute(acquired_before)</span></div>
+<div class="line"><a id="l00583" name="l00583"></a><span class="lineno">  583</span><span class="preprocessor">  #define ein_acquired_before(...) __attribute__((acquired_before(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00584" name="l00584"></a><span class="lineno">  584</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00585" name="l00585"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga421858e8fce70bb2eb94570ba522a435">  585</a></span><span class="preprocessor">  #define ein_acquired_before(...)</span></div>
+<div class="line"><a id="l00586" name="l00586"></a><span class="lineno">  586</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00587" name="l00587"></a><span class="lineno">  587</span> </div>
+<div class="line"><a id="l00597" name="l00597"></a><span class="lineno">  597</span><span class="preprocessor">#if ein_has_attribute(acquired_after)</span></div>
+<div class="line"><a id="l00598" name="l00598"></a><span class="lineno">  598</span><span class="preprocessor">  #define ein_acquired_after(...) __attribute__((acquired_after(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00599" name="l00599"></a><span class="lineno">  599</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00600" name="l00600"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gabe3f95fa2b7f62691b5b4133b43f877b">  600</a></span><span class="preprocessor">  #define ein_acquired_after(...)</span></div>
+<div class="line"><a id="l00601" name="l00601"></a><span class="lineno">  601</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00602" name="l00602"></a><span class="lineno">  602</span> </div>
+<div class="line"><a id="l00614" name="l00614"></a><span class="lineno">  614</span><span class="preprocessor">#if ein_has_attribute(exclusive_lock_function)</span></div>
+<div class="line"><a id="l00615" name="l00615"></a><span class="lineno">  615</span><span class="preprocessor">  #define ein_exclusive_lock_function(...) __attribute__((exclusive_lock_function(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00616" name="l00616"></a><span class="lineno">  616</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00617" name="l00617"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gac8c4b65cde1558800e117b00d2d65466">  617</a></span><span class="preprocessor">  #define ein_exclusive_lock_function(...)</span></div>
+<div class="line"><a id="l00618" name="l00618"></a><span class="lineno">  618</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00619" name="l00619"></a><span class="lineno">  619</span> </div>
+<div class="line"><a id="l00634" name="l00634"></a><span class="lineno">  634</span><span class="preprocessor">#if ein_has_attribute(shared_trylock_function)</span></div>
+<div class="line"><a id="l00635" name="l00635"></a><span class="lineno">  635</span><span class="preprocessor">  #define ein_shared_trylock_function(...) __attribute__((shared_trylock_function(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00636" name="l00636"></a><span class="lineno">  636</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00637" name="l00637"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaa9bf61cf820ce95d780384f4857978d8">  637</a></span><span class="preprocessor">  #define ein_shared_trylock_function(...)</span></div>
+<div class="line"><a id="l00638" name="l00638"></a><span class="lineno">  638</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00639" name="l00639"></a><span class="lineno">  639</span> </div>
+<div class="line"><a id="l00650" name="l00650"></a><span class="lineno">  650</span><span class="preprocessor">#if ein_has_attribute(unlock_function)</span></div>
+<div class="line"><a id="l00651" name="l00651"></a><span class="lineno">  651</span><span class="preprocessor">  #define ein_unlock_function(...) __attribute__((unlock_function(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00652" name="l00652"></a><span class="lineno">  652</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00653" name="l00653"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gad37ff4fae131feae423d5feea1b8b1cd">  653</a></span><span class="preprocessor">  #define ein_unlock_function(...)</span></div>
+<div class="line"><a id="l00654" name="l00654"></a><span class="lineno">  654</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00655" name="l00655"></a><span class="lineno">  655</span> </div>
+<div class="line"><a id="l00665" name="l00665"></a><span class="lineno">  665</span><span class="preprocessor">#if ein_has_attribute(lock_returned)</span></div>
+<div class="line"><a id="l00666" name="l00666"></a><span class="lineno">  666</span><span class="preprocessor">  #define ein_lock_returned(__x) __attribute__((lock_returned(__x)))</span></div>
+<div class="line"><a id="l00667" name="l00667"></a><span class="lineno">  667</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00668" name="l00668"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga5b8a5d0d32c17d6a5ea6977bbe5fbe0b">  668</a></span><span class="preprocessor">  #define ein_lock_returned(__x)</span></div>
+<div class="line"><a id="l00669" name="l00669"></a><span class="lineno">  669</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00670" name="l00670"></a><span class="lineno">  670</span> </div>
+<div class="line"><a id="l00679" name="l00679"></a><span class="lineno">  679</span><span class="preprocessor">#if ein_has_attribute(locks_excluded)</span></div>
+<div class="line"><a id="l00680" name="l00680"></a><span class="lineno">  680</span><span class="preprocessor">  #define ein_locks_excluded(...) __attribute__((locks_excluded(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00681" name="l00681"></a><span class="lineno">  681</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00682" name="l00682"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga5bb9e819a1b0706fa0e644a2583e4519">  682</a></span><span class="preprocessor">  #define ein_locks_excluded(...)</span></div>
+<div class="line"><a id="l00683" name="l00683"></a><span class="lineno">  683</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00684" name="l00684"></a><span class="lineno">  684</span> </div>
+<div class="line"><a id="l00693" name="l00693"></a><span class="lineno">  693</span><span class="preprocessor">#if ein_has_attribute(exclusive_locks_required)</span></div>
+<div class="line"><a id="l00694" name="l00694"></a><span class="lineno">  694</span><span class="preprocessor">  #define ein_exclusive_locks_required(...) __attribute__((exclusive_locks_required(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00695" name="l00695"></a><span class="lineno">  695</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00696" name="l00696"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#gaaf4bbafcdf5c35392234f136d137ecf9">  696</a></span><span class="preprocessor">  #define ein_exclusive_locks_required(...)</span></div>
+<div class="line"><a id="l00697" name="l00697"></a><span class="lineno">  697</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00698" name="l00698"></a><span class="lineno">  698</span> </div>
+<div class="line"><a id="l00707" name="l00707"></a><span class="lineno">  707</span><span class="preprocessor">#if ein_has_attribute(shared_locks_required)</span></div>
+<div class="line"><a id="l00708" name="l00708"></a><span class="lineno">  708</span><span class="preprocessor">  #define ein_shared_locks_required(...) __attribute__((shared_locks_required(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l00709" name="l00709"></a><span class="lineno">  709</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00710" name="l00710"></a><span class="lineno"><a class="line" href="../../d7/d3c/group__thread__safety__attributes.html#ga7468e42fee3b2135260f226e60cb5bfd">  710</a></span><span class="preprocessor">  #define ein_shared_locks_required(...)</span></div>
+<div class="line"><a id="l00711" name="l00711"></a><span class="lineno">  711</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00712" name="l00712"></a><span class="lineno">  712</span> </div>
+<div class="line"><a id="l00730" name="l00730"></a><span class="lineno">  730</span> </div>
 <div class="line"><a id="l00731" name="l00731"></a><span class="lineno">  731</span> </div>
-<div class="line"><a id="l00732" name="l00732"></a><span class="lineno">  732</span> </div>
-<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="preprocessor">#if __has_cpp_attribute(acquire_handle)</span></div>
-<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span><span class="preprocessor">  #define ein_acquire_handle(__x) [[clang::acquire_handle(__x)]]</span></div>
-<div class="line"><a id="l00746" name="l00746"></a><span class="lineno">  746</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00747" name="l00747"></a><span class="lineno"><a class="line" href="../../db/dc0/group__handle__attributes.html#ga5984a15e443d18d17fb5d9568058ee01">  747</a></span><span class="preprocessor">  #define ein_acquire_handle(__x)</span></div>
-<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00749" name="l00749"></a><span class="lineno">  749</span> </div>
-<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="preprocessor">#if __has_cpp_attribute(release_handle)</span></div>
-<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="preprocessor">  #define ein_release_handle(__x) [[clang::release_handle(__x)]]</span></div>
-<div class="line"><a id="l00756" name="l00756"></a><span class="lineno">  756</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00757" name="l00757"></a><span class="lineno"><a class="line" href="../../db/dc0/group__handle__attributes.html#ga361c9cfbfecfa7f44c9cc3a56044f3dd">  757</a></span><span class="preprocessor">  #define ein_release_handle(__x)</span></div>
-<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00759" name="l00759"></a><span class="lineno">  759</span> </div>
-<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="preprocessor">#if __has_cpp_attribute(use_handle)</span></div>
-<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="preprocessor">  #define ein_use_handle(__x) [[clang::use_handle(__x)]]</span></div>
-<div class="line"><a id="l00766" name="l00766"></a><span class="lineno">  766</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00767" name="l00767"></a><span class="lineno"><a class="line" href="../../db/dc0/group__handle__attributes.html#ga11e25e384da6f9c2c1f696a30a58a670">  767</a></span><span class="preprocessor">  #define ein_use_handle(__x)</span></div>
-<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00769" name="l00769"></a><span class="lineno">  769</span> </div>
-<div class="line"><a id="l00784" name="l00784"></a><span class="lineno">  784</span> </div>
-<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="preprocessor">#if ein_has_declspec_attribute(noalias)</span></div>
-<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="preprocessor">  #define ein_noalias __declspec(noalias)</span></div>
-<div class="line"><a id="l00798" name="l00798"></a><span class="lineno">  798</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00799" name="l00799"></a><span class="lineno"><a class="line" href="../../de/d76/group__aliasing__attributes.html#gaeda66ae7036fd89b3bcf6f73b5d402ae">  799</a></span><span class="preprocessor">  #define ein_noalias</span></div>
-<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00801" name="l00801"></a><span class="lineno">  801</span> </div>
-<div class="line"><a id="l00807" name="l00807"></a><span class="lineno">  807</span> </div>
-<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span><span class="preprocessor">#if __cpp_constinit</span></div>
-<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span><span class="preprocessor">  #define ein_constinit constinit</span></div>
-<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="preprocessor">#elif ein_has_attribute(require_constant_initialization)</span></div>
-<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="preprocessor">  #define ein_constinit __attribute__((require_constant_initialization))</span></div>
-<div class="line"><a id="l00820" name="l00820"></a><span class="lineno">  820</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00821" name="l00821"></a><span class="lineno"><a class="line" href="../../da/d99/group__initialization__attributes.html#gaf397348fbe805db999b295b6bdb1f42a">  821</a></span><span class="preprocessor">  #define ein_constinit</span></div>
-<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00823" name="l00823"></a><span class="lineno">  823</span> </div>
-<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="preprocessor">#if ein_has_attribute(uninitialized)</span></div>
-<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="preprocessor">  #define ein_uninitialized __attribute__((uninitialized))</span></div>
-<div class="line"><a id="l00834" name="l00834"></a><span class="lineno">  834</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00835" name="l00835"></a><span class="lineno"><a class="line" href="../../da/d99/group__initialization__attributes.html#gabc749cb20f7bd00a53af2054eb27a88c">  835</a></span><span class="preprocessor">  #define ein_uninitialized</span></div>
-<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00837" name="l00837"></a><span class="lineno">  837</span> </div>
-<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span><span class="preprocessor">#if __has_cpp_attribute(clang::reinitializes)</span></div>
-<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="preprocessor">  #define ein_reinitializes [[clang::reinitializes]]</span></div>
-<div class="line"><a id="l00849" name="l00849"></a><span class="lineno">  849</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00850" name="l00850"></a><span class="lineno"><a class="line" href="../../da/d99/group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">  850</a></span><span class="preprocessor">  #define ein_reinitializes</span></div>
-<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00852" name="l00852"></a><span class="lineno">  852</span> </div>
-<div class="line"><a id="l00858" name="l00858"></a><span class="lineno">  858</span> </div>
-<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span><span class="preprocessor">#if ein_has_attribute(const)</span></div>
-<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="preprocessor">  #define ein_const __attribute__((const))</span></div>
-<div class="line"><a id="l00877" name="l00877"></a><span class="lineno">  877</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00878" name="l00878"></a><span class="lineno"><a class="line" href="../../d9/d3d/group__purity__attributes.html#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">  878</a></span><span class="preprocessor">  #define ein_const</span></div>
-<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00880" name="l00880"></a><span class="lineno">  880</span> </div>
-<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span><span class="preprocessor">#if ein_has_attribute(pure)</span></div>
-<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span><span class="preprocessor">  #define ein_pure __attribute__((pure))</span></div>
-<div class="line"><a id="l00895" name="l00895"></a><span class="lineno">  895</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00896" name="l00896"></a><span class="lineno"><a class="line" href="../../d9/d3d/group__purity__attributes.html#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">  896</a></span><span class="preprocessor">  #define ein_pure</span></div>
-<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00898" name="l00898"></a><span class="lineno">  898</span> </div>
-<div class="line"><a id="l00907" name="l00907"></a><span class="lineno">  907</span> </div>
-<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span><span class="preprocessor">#if ein_has_attribute(assume_aligned)</span></div>
-<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span><span class="preprocessor">  #define ein_assume_aligned(x) __attribute__((assume_aligned(x)))</span></div>
-<div class="line"><a id="l00914" name="l00914"></a><span class="lineno">  914</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00915" name="l00915"></a><span class="lineno"><a class="line" href="../../df/df7/group__alignment__attributes.html#ga6f4b8057008c82a521677147524538c1">  915</a></span><span class="preprocessor">  #define ein_assume_aligned(x)</span></div>
-<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00917" name="l00917"></a><span class="lineno">  917</span> </div>
-<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="preprocessor">#if ein_has_attribute(align_value)</span></div>
-<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span><span class="preprocessor">  #define ein_align_value(x) __attribute__((align_value(x)))</span></div>
-<div class="line"><a id="l00928" name="l00928"></a><span class="lineno">  928</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00929" name="l00929"></a><span class="lineno"><a class="line" href="../../df/df7/group__alignment__attributes.html#ga6750630680f23aa4dfdbc11f41745a3a">  929</a></span><span class="preprocessor">  #define ein_align_value(x)</span></div>
-<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00931" name="l00931"></a><span class="lineno">  931</span> </div>
-<div class="line"><a id="l00937" name="l00937"></a><span class="lineno">  937</span> </div>
-<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span><span class="preprocessor">#if ein_has_attribute(null_terminated_string_arg)</span></div>
-<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span><span class="preprocessor">  #define ein_null_terminated_string_arg(x) __attribute__((null_terminated_string_arg(x)))</span></div>
-<div class="line"><a id="l00952" name="l00952"></a><span class="lineno">  952</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00953" name="l00953"></a><span class="lineno"><a class="line" href="../../d1/d51/group__string__safety__attributes.html#ga7f2bbeb43a4aefac5efbf1aebe0bfac1">  953</a></span><span class="preprocessor">  #define ein_null_terminated_string_arg(x)</span></div>
-<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00955" name="l00955"></a><span class="lineno">  955</span> </div>
-<div class="line"><a id="l00961" name="l00961"></a><span class="lineno">  961</span> </div>
-<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="preprocessor">#if ein_has_attribute(lifetimebound)</span></div>
-<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span><span class="preprocessor">  #define ein_lifetimebound [[clang::lifetimebound]]</span></div>
-<div class="line"><a id="l00984" name="l00984"></a><span class="lineno">  984</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00985" name="l00985"></a><span class="lineno"><a class="line" href="../../dd/de0/group__lifetime__attributes.html#ga4ab4dd1ef8e9e510c050cc09c5eb4302">  985</a></span><span class="preprocessor">  #define ein_lifetimebound</span></div>
-<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00987" name="l00987"></a><span class="lineno">  987</span> </div>
-<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span><span class="preprocessor">#if ein_has_attribute(noescape)</span></div>
-<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span><span class="preprocessor">  #define ein_noescape __attribute__((noescape))</span></div>
-<div class="line"><a id="l00998" name="l00998"></a><span class="lineno">  998</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l00999" name="l00999"></a><span class="lineno"><a class="line" href="../../dd/de0/group__lifetime__attributes.html#gacf7c010fc15ca58dd6f66ec3b8b186ac">  999</a></span><span class="preprocessor">  #define ein_noescape</span></div>
-<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01001" name="l01001"></a><span class="lineno"> 1001</span> </div>
-<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"><a class="line" href="../../dd/de0/group__lifetime__attributes.html#gad58fdb2d0a42845b0f16b84446dff7d4"> 1013</a></span><span class="preprocessor">#define ein_nodiscard [[nodiscard]]</span></div>
-<div class="line"><a id="l01014" name="l01014"></a><span class="lineno"> 1014</span> </div>
-<div class="line"><a id="l01020" name="l01020"></a><span class="lineno"> 1020</span> </div>
-<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span><span class="preprocessor">#if ein_has_attribute(malloc)</span></div>
-<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span><span class="preprocessor">  #define ein_malloc __attribute__((malloc))</span></div>
-<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"> 1031</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"><a class="line" href="../../df/dbd/group__allocation__attributes.html#gaa91386cc9617c1ed6a169b86d3b67920"> 1032</a></span><span class="preprocessor">  #define ein_malloc</span></div>
-<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01034" name="l01034"></a><span class="lineno"> 1034</span> </div>
-<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span><span class="preprocessor">#if ein_has_attribute(alloc_align)</span></div>
-<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span><span class="preprocessor">  #define ein_alloc_align(N) __attribute__((alloc_align(N)))</span></div>
-<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"> 1049</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"><a class="line" href="../../df/dbd/group__allocation__attributes.html#ga04bdc5e77651e25154d83239fcdfa1f5"> 1050</a></span><span class="preprocessor">  #define ein_alloc_align(__N)</span></div>
-<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01052" name="l01052"></a><span class="lineno"> 1052</span> </div>
-<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span><span class="preprocessor">#if ein_has_attribute(alloc_size)</span></div>
-<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span><span class="preprocessor">  #define ein_alloc_size(N) __attribute__((alloc_size(N)))</span></div>
-<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"> 1063</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"><a class="line" href="../../df/dbd/group__allocation__attributes.html#ga73ec191af11671fc27786dc9b452738d"> 1064</a></span><span class="preprocessor">  #define ein_alloc_size(__N)</span></div>
-<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01066" name="l01066"></a><span class="lineno"> 1066</span> </div>
-<div class="line"><a id="l01078" name="l01078"></a><span class="lineno"> 1078</span> </div>
-<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span><span class="preprocessor">#if ein_has_attribute(callback)</span></div>
-<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span><span class="preprocessor">  #define ein_callback(...) __attribute__((callback(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"> 1091</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"><a class="line" href="../../da/d81/group__control__flow__attributes.html#ga7f0591009c487cfe5e40c698c0dab4bd"> 1092</a></span><span class="preprocessor">  #define ein_callback(...)</span></div>
-<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01094" name="l01094"></a><span class="lineno"> 1094</span> </div>
-<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span><span class="preprocessor">#if ein_has_attribute(noreturn)</span></div>
-<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span><span class="preprocessor">#define ein_noreturn __attribute__((noreturn))</span></div>
-<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"> 1107</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"><a class="line" href="../../da/d81/group__control__flow__attributes.html#gae6d077c859dd50d89cd1cef82d9382c1"> 1108</a></span><span class="preprocessor">#define ein_noreturn</span></div>
-<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01110" name="l01110"></a><span class="lineno"> 1110</span> </div>
-<div class="line"><a id="l01116" name="l01116"></a><span class="lineno"> 1116</span> </div>
-<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span><span class="preprocessor">#if ein_has_attribute(returns_nonnull)</span></div>
-<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span><span class="preprocessor">  #define ein_returns_nonnull __attribute__((returns_nonnull))</span></div>
-<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"> 1127</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#ga74fe033a58e1d901c981bbe183b94950"> 1128</a></span><span class="preprocessor">  #define ein_returns_nonnull</span></div>
-<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01130" name="l01130"></a><span class="lineno"> 1130</span> </div>
-<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span><span class="preprocessor">#if ein_has_attribute(nonnull)</span></div>
-<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span><span class="preprocessor">  #define ein_nonnull(...) __attribute__((nonnull(__VA_ARGS__)))</span></div>
-<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"> 1143</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#gaf81d090cd9ae791301fe54b4f00df3e9"> 1144</a></span><span class="preprocessor">  #define ein_nonnull(...)</span></div>
-<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01146" name="l01146"></a><span class="lineno"> 1146</span> </div>
-<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span><span class="preprocessor">#ifdef __clang__</span></div>
-<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span><span class="preprocessor">#define ein_Nonnull _Nonnull</span></div>
-<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span><span class="preprocessor">#define ein_Nullable _Nullable</span></div>
-<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span><span class="preprocessor">#define ein_Null_unspecified _Null_unspecified</span></div>
-<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"> 1177</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#ga37449812b4a259b4ebfbd1871fd38af9"> 1178</a></span><span class="preprocessor">#define ein_Nonnull</span></div>
-<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#gaf5a93200e11a60bb36396f6cd02775e5"> 1179</a></span><span class="preprocessor">#define ein_Nullable</span></div>
-<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#ga77135d06c7a6c988e5d4efb8b3686a7e"> 1180</a></span><span class="preprocessor">#define ein_Null_unspecified</span></div>
-<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01182" name="l01182"></a><span class="lineno"> 1182</span> </div>
-<div class="line"><a id="l01188" name="l01188"></a><span class="lineno"> 1188</span> </div>
-<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span><span class="preprocessor">#ifdef __CUDACC__</span></div>
-<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span><span class="preprocessor">#define ein_host __host__</span></div>
-<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span><span class="preprocessor">#define ein_device __device__</span></div>
-<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span><span class="preprocessor">#define ein_global __global__</span></div>
-<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"> 1227</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga285634c6b28883bfdeed6cbadbcf6fee"> 1228</a></span><span class="preprocessor">#define ein_host</span></div>
-<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga568ecfa2358b6bc209393b8a6dc9fbca"> 1229</a></span><span class="preprocessor">#define ein_device</span></div>
-<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga8147ec32b85ddfb4657c8bd5ad9c0fab"> 1230</a></span><span class="preprocessor">#define ein_global</span></div>
-<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"> 1232</span> </div>
-<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga42f2a4944074f350ddba96f086c308e8"> 1233</a></span><span class="preprocessor">#define ein_hd ein_host ein_device</span></div>
-<div class="line"><a id="l01234" name="l01234"></a><span class="lineno"> 1234</span> </div>
-<div class="line"><a id="l01240" name="l01240"></a><span class="lineno"> 1240</span> </div>
-<div class="line"><a id="l01242" name="l01242"></a><span class="lineno"> 1242</span><span class="preprocessor">#define ein_pragma_(x) _Pragma (#x)</span></div>
-<div class="line"><a id="l01244" name="l01244"></a><span class="lineno"> 1244</span> </div>
-<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"><a class="line" href="../../d3/d5e/group__pragmas.html#ga1cac2f7563012b7a84ab80e388d1b487"> 1249</a></span><span class="preprocessor">#define ein_pragma(x) ein_pragma_(x)</span></div>
-<div class="line"><a id="l01250" name="l01250"></a><span class="lineno"> 1250</span> </div>
-<div class="line"><a id="l01256" name="l01256"></a><span class="lineno"> 1256</span> </div>
-<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span><span class="preprocessor">#ifdef __clang__</span></div>
-<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span><span class="preprocessor">  #define ein_unroll(N) ein_pragma(clang loop unroll_count(N))</span></div>
-<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span><span class="preprocessor">  #define ein_unroll_full ein_pragma(clang loop unroll(full))</span></div>
-<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"> 1268</span><span class="preprocessor">#else</span></div>
-<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"><a class="line" href="../../da/d2b/group__loop__attributes.html#ga8697fca92cf196aa90c8cfcf36cb4bae"> 1269</a></span><span class="preprocessor">  #define ein_unroll(N)</span></div>
-<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"><a class="line" href="../../da/d2b/group__loop__attributes.html#ga9d16124a2225305208af3eeb3124128b"> 1270</a></span><span class="preprocessor">  #define ein_unroll_full</span></div>
-<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l01272" name="l01272"></a><span class="lineno"> 1272</span> </div>
-<div class="line"><a id="l01275" name="l01275"></a><span class="lineno"> 1275</span> </div>
-<div class="line"><a id="l01277" name="l01277"></a><span class="lineno"> 1277</span><span class="comment">// end ingroup attributes</span></div>
+<div class="line"><a id="l00743" name="l00743"></a><span class="lineno">  743</span><span class="preprocessor">#if __has_cpp_attribute(acquire_handle)</span></div>
+<div class="line"><a id="l00744" name="l00744"></a><span class="lineno">  744</span><span class="preprocessor">  #define ein_acquire_handle(__x) [[clang::acquire_handle(__x)]]</span></div>
+<div class="line"><a id="l00745" name="l00745"></a><span class="lineno">  745</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00746" name="l00746"></a><span class="lineno"><a class="line" href="../../db/dc0/group__handle__attributes.html#ga5984a15e443d18d17fb5d9568058ee01">  746</a></span><span class="preprocessor">  #define ein_acquire_handle(__x)</span></div>
+<div class="line"><a id="l00747" name="l00747"></a><span class="lineno">  747</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00748" name="l00748"></a><span class="lineno">  748</span> </div>
+<div class="line"><a id="l00753" name="l00753"></a><span class="lineno">  753</span><span class="preprocessor">#if __has_cpp_attribute(release_handle)</span></div>
+<div class="line"><a id="l00754" name="l00754"></a><span class="lineno">  754</span><span class="preprocessor">  #define ein_release_handle(__x) [[clang::release_handle(__x)]]</span></div>
+<div class="line"><a id="l00755" name="l00755"></a><span class="lineno">  755</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00756" name="l00756"></a><span class="lineno"><a class="line" href="../../db/dc0/group__handle__attributes.html#ga361c9cfbfecfa7f44c9cc3a56044f3dd">  756</a></span><span class="preprocessor">  #define ein_release_handle(__x)</span></div>
+<div class="line"><a id="l00757" name="l00757"></a><span class="lineno">  757</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00758" name="l00758"></a><span class="lineno">  758</span> </div>
+<div class="line"><a id="l00763" name="l00763"></a><span class="lineno">  763</span><span class="preprocessor">#if __has_cpp_attribute(use_handle)</span></div>
+<div class="line"><a id="l00764" name="l00764"></a><span class="lineno">  764</span><span class="preprocessor">  #define ein_use_handle(__x) [[clang::use_handle(__x)]]</span></div>
+<div class="line"><a id="l00765" name="l00765"></a><span class="lineno">  765</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00766" name="l00766"></a><span class="lineno"><a class="line" href="../../db/dc0/group__handle__attributes.html#ga11e25e384da6f9c2c1f696a30a58a670">  766</a></span><span class="preprocessor">  #define ein_use_handle(__x)</span></div>
+<div class="line"><a id="l00767" name="l00767"></a><span class="lineno">  767</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00768" name="l00768"></a><span class="lineno">  768</span> </div>
+<div class="line"><a id="l00783" name="l00783"></a><span class="lineno">  783</span> </div>
+<div class="line"><a id="l00795" name="l00795"></a><span class="lineno">  795</span><span class="preprocessor">#if ein_has_declspec_attribute(noalias)</span></div>
+<div class="line"><a id="l00796" name="l00796"></a><span class="lineno">  796</span><span class="preprocessor">  #define ein_noalias __declspec(noalias)</span></div>
+<div class="line"><a id="l00797" name="l00797"></a><span class="lineno">  797</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00798" name="l00798"></a><span class="lineno"><a class="line" href="../../de/d76/group__aliasing__attributes.html#gaeda66ae7036fd89b3bcf6f73b5d402ae">  798</a></span><span class="preprocessor">  #define ein_noalias</span></div>
+<div class="line"><a id="l00799" name="l00799"></a><span class="lineno">  799</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00800" name="l00800"></a><span class="lineno">  800</span> </div>
+<div class="line"><a id="l00806" name="l00806"></a><span class="lineno">  806</span> </div>
+<div class="line"><a id="l00815" name="l00815"></a><span class="lineno">  815</span><span class="preprocessor">#if __cpp_constinit</span></div>
+<div class="line"><a id="l00816" name="l00816"></a><span class="lineno">  816</span><span class="preprocessor">  #define ein_constinit constinit</span></div>
+<div class="line"><a id="l00817" name="l00817"></a><span class="lineno">  817</span><span class="preprocessor">#elif ein_has_attribute(require_constant_initialization)</span></div>
+<div class="line"><a id="l00818" name="l00818"></a><span class="lineno">  818</span><span class="preprocessor">  #define ein_constinit __attribute__((require_constant_initialization))</span></div>
+<div class="line"><a id="l00819" name="l00819"></a><span class="lineno">  819</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00820" name="l00820"></a><span class="lineno"><a class="line" href="../../da/d99/group__initialization__attributes.html#gaf397348fbe805db999b295b6bdb1f42a">  820</a></span><span class="preprocessor">  #define ein_constinit</span></div>
+<div class="line"><a id="l00821" name="l00821"></a><span class="lineno">  821</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00822" name="l00822"></a><span class="lineno">  822</span> </div>
+<div class="line"><a id="l00831" name="l00831"></a><span class="lineno">  831</span><span class="preprocessor">#if ein_has_attribute(uninitialized)</span></div>
+<div class="line"><a id="l00832" name="l00832"></a><span class="lineno">  832</span><span class="preprocessor">  #define ein_uninitialized __attribute__((uninitialized))</span></div>
+<div class="line"><a id="l00833" name="l00833"></a><span class="lineno">  833</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00834" name="l00834"></a><span class="lineno"><a class="line" href="../../da/d99/group__initialization__attributes.html#gabc749cb20f7bd00a53af2054eb27a88c">  834</a></span><span class="preprocessor">  #define ein_uninitialized</span></div>
+<div class="line"><a id="l00835" name="l00835"></a><span class="lineno">  835</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00836" name="l00836"></a><span class="lineno">  836</span> </div>
+<div class="line"><a id="l00846" name="l00846"></a><span class="lineno">  846</span><span class="preprocessor">#if __has_cpp_attribute(clang::reinitializes)</span></div>
+<div class="line"><a id="l00847" name="l00847"></a><span class="lineno">  847</span><span class="preprocessor">  #define ein_reinitializes [[clang::reinitializes]]</span></div>
+<div class="line"><a id="l00848" name="l00848"></a><span class="lineno">  848</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00849" name="l00849"></a><span class="lineno"><a class="line" href="../../da/d99/group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">  849</a></span><span class="preprocessor">  #define ein_reinitializes</span></div>
+<div class="line"><a id="l00850" name="l00850"></a><span class="lineno">  850</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00851" name="l00851"></a><span class="lineno">  851</span> </div>
+<div class="line"><a id="l00857" name="l00857"></a><span class="lineno">  857</span> </div>
+<div class="line"><a id="l00874" name="l00874"></a><span class="lineno">  874</span><span class="preprocessor">#if ein_has_attribute(const)</span></div>
+<div class="line"><a id="l00875" name="l00875"></a><span class="lineno">  875</span><span class="preprocessor">  #define ein_const __attribute__((const))</span></div>
+<div class="line"><a id="l00876" name="l00876"></a><span class="lineno">  876</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00877" name="l00877"></a><span class="lineno"><a class="line" href="../../d9/d3d/group__purity__attributes.html#ga0ecafe8bfaa651c77ef7c817c5ea6ae7">  877</a></span><span class="preprocessor">  #define ein_const</span></div>
+<div class="line"><a id="l00878" name="l00878"></a><span class="lineno">  878</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00879" name="l00879"></a><span class="lineno">  879</span> </div>
+<div class="line"><a id="l00892" name="l00892"></a><span class="lineno">  892</span><span class="preprocessor">#if ein_has_attribute(pure)</span></div>
+<div class="line"><a id="l00893" name="l00893"></a><span class="lineno">  893</span><span class="preprocessor">  #define ein_pure __attribute__((pure))</span></div>
+<div class="line"><a id="l00894" name="l00894"></a><span class="lineno">  894</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00895" name="l00895"></a><span class="lineno"><a class="line" href="../../d9/d3d/group__purity__attributes.html#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">  895</a></span><span class="preprocessor">  #define ein_pure</span></div>
+<div class="line"><a id="l00896" name="l00896"></a><span class="lineno">  896</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00897" name="l00897"></a><span class="lineno">  897</span> </div>
+<div class="line"><a id="l00906" name="l00906"></a><span class="lineno">  906</span> </div>
+<div class="line"><a id="l00911" name="l00911"></a><span class="lineno">  911</span><span class="preprocessor">#if ein_has_attribute(assume_aligned)</span></div>
+<div class="line"><a id="l00912" name="l00912"></a><span class="lineno">  912</span><span class="preprocessor">  #define ein_assume_aligned(x) __attribute__((assume_aligned(x)))</span></div>
+<div class="line"><a id="l00913" name="l00913"></a><span class="lineno">  913</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00914" name="l00914"></a><span class="lineno"><a class="line" href="../../df/df7/group__alignment__attributes.html#ga6f4b8057008c82a521677147524538c1">  914</a></span><span class="preprocessor">  #define ein_assume_aligned(x)</span></div>
+<div class="line"><a id="l00915" name="l00915"></a><span class="lineno">  915</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00916" name="l00916"></a><span class="lineno">  916</span> </div>
+<div class="line"><a id="l00925" name="l00925"></a><span class="lineno">  925</span><span class="preprocessor">#if ein_has_attribute(align_value)</span></div>
+<div class="line"><a id="l00926" name="l00926"></a><span class="lineno">  926</span><span class="preprocessor">  #define ein_align_value(x) __attribute__((align_value(x)))</span></div>
+<div class="line"><a id="l00927" name="l00927"></a><span class="lineno">  927</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00928" name="l00928"></a><span class="lineno"><a class="line" href="../../df/df7/group__alignment__attributes.html#ga6750630680f23aa4dfdbc11f41745a3a">  928</a></span><span class="preprocessor">  #define ein_align_value(x)</span></div>
+<div class="line"><a id="l00929" name="l00929"></a><span class="lineno">  929</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00930" name="l00930"></a><span class="lineno">  930</span> </div>
+<div class="line"><a id="l00936" name="l00936"></a><span class="lineno">  936</span> </div>
+<div class="line"><a id="l00949" name="l00949"></a><span class="lineno">  949</span><span class="preprocessor">#if ein_has_attribute(null_terminated_string_arg)</span></div>
+<div class="line"><a id="l00950" name="l00950"></a><span class="lineno">  950</span><span class="preprocessor">  #define ein_null_terminated_string_arg(x) __attribute__((null_terminated_string_arg(x)))</span></div>
+<div class="line"><a id="l00951" name="l00951"></a><span class="lineno">  951</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00952" name="l00952"></a><span class="lineno"><a class="line" href="../../d1/d51/group__string__safety__attributes.html#ga7f2bbeb43a4aefac5efbf1aebe0bfac1">  952</a></span><span class="preprocessor">  #define ein_null_terminated_string_arg(x)</span></div>
+<div class="line"><a id="l00953" name="l00953"></a><span class="lineno">  953</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00954" name="l00954"></a><span class="lineno">  954</span> </div>
+<div class="line"><a id="l00960" name="l00960"></a><span class="lineno">  960</span> </div>
+<div class="line"><a id="l00981" name="l00981"></a><span class="lineno">  981</span><span class="preprocessor">#if ein_has_attribute(lifetimebound)</span></div>
+<div class="line"><a id="l00982" name="l00982"></a><span class="lineno">  982</span><span class="preprocessor">  #define ein_lifetimebound [[clang::lifetimebound]]</span></div>
+<div class="line"><a id="l00983" name="l00983"></a><span class="lineno">  983</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00984" name="l00984"></a><span class="lineno"><a class="line" href="../../dd/de0/group__lifetime__attributes.html#ga4ab4dd1ef8e9e510c050cc09c5eb4302">  984</a></span><span class="preprocessor">  #define ein_lifetimebound</span></div>
+<div class="line"><a id="l00985" name="l00985"></a><span class="lineno">  985</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00986" name="l00986"></a><span class="lineno">  986</span> </div>
+<div class="line"><a id="l00995" name="l00995"></a><span class="lineno">  995</span><span class="preprocessor">#if ein_has_attribute(noescape)</span></div>
+<div class="line"><a id="l00996" name="l00996"></a><span class="lineno">  996</span><span class="preprocessor">  #define ein_noescape __attribute__((noescape))</span></div>
+<div class="line"><a id="l00997" name="l00997"></a><span class="lineno">  997</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l00998" name="l00998"></a><span class="lineno"><a class="line" href="../../dd/de0/group__lifetime__attributes.html#gacf7c010fc15ca58dd6f66ec3b8b186ac">  998</a></span><span class="preprocessor">  #define ein_noescape</span></div>
+<div class="line"><a id="l00999" name="l00999"></a><span class="lineno">  999</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01000" name="l01000"></a><span class="lineno"> 1000</span> </div>
+<div class="line"><a id="l01012" name="l01012"></a><span class="lineno"><a class="line" href="../../dd/de0/group__lifetime__attributes.html#gad58fdb2d0a42845b0f16b84446dff7d4"> 1012</a></span><span class="preprocessor">#define ein_nodiscard [[nodiscard]]</span></div>
+<div class="line"><a id="l01013" name="l01013"></a><span class="lineno"> 1013</span> </div>
+<div class="line"><a id="l01019" name="l01019"></a><span class="lineno"> 1019</span> </div>
+<div class="line"><a id="l01028" name="l01028"></a><span class="lineno"> 1028</span><span class="preprocessor">#if ein_has_attribute(malloc)</span></div>
+<div class="line"><a id="l01029" name="l01029"></a><span class="lineno"> 1029</span><span class="preprocessor">  #define ein_malloc __attribute__((malloc))</span></div>
+<div class="line"><a id="l01030" name="l01030"></a><span class="lineno"> 1030</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01031" name="l01031"></a><span class="lineno"><a class="line" href="../../df/dbd/group__allocation__attributes.html#gaa91386cc9617c1ed6a169b86d3b67920"> 1031</a></span><span class="preprocessor">  #define ein_malloc</span></div>
+<div class="line"><a id="l01032" name="l01032"></a><span class="lineno"> 1032</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01033" name="l01033"></a><span class="lineno"> 1033</span> </div>
+<div class="line"><a id="l01046" name="l01046"></a><span class="lineno"> 1046</span><span class="preprocessor">#if ein_has_attribute(alloc_align)</span></div>
+<div class="line"><a id="l01047" name="l01047"></a><span class="lineno"> 1047</span><span class="preprocessor">  #define ein_alloc_align(N) __attribute__((alloc_align(N)))</span></div>
+<div class="line"><a id="l01048" name="l01048"></a><span class="lineno"> 1048</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01049" name="l01049"></a><span class="lineno"><a class="line" href="../../df/dbd/group__allocation__attributes.html#ga04bdc5e77651e25154d83239fcdfa1f5"> 1049</a></span><span class="preprocessor">  #define ein_alloc_align(__N)</span></div>
+<div class="line"><a id="l01050" name="l01050"></a><span class="lineno"> 1050</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01051" name="l01051"></a><span class="lineno"> 1051</span> </div>
+<div class="line"><a id="l01060" name="l01060"></a><span class="lineno"> 1060</span><span class="preprocessor">#if ein_has_attribute(alloc_size)</span></div>
+<div class="line"><a id="l01061" name="l01061"></a><span class="lineno"> 1061</span><span class="preprocessor">  #define ein_alloc_size(N) __attribute__((alloc_size(N)))</span></div>
+<div class="line"><a id="l01062" name="l01062"></a><span class="lineno"> 1062</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01063" name="l01063"></a><span class="lineno"><a class="line" href="../../df/dbd/group__allocation__attributes.html#ga73ec191af11671fc27786dc9b452738d"> 1063</a></span><span class="preprocessor">  #define ein_alloc_size(__N)</span></div>
+<div class="line"><a id="l01064" name="l01064"></a><span class="lineno"> 1064</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01065" name="l01065"></a><span class="lineno"> 1065</span> </div>
+<div class="line"><a id="l01077" name="l01077"></a><span class="lineno"> 1077</span> </div>
+<div class="line"><a id="l01088" name="l01088"></a><span class="lineno"> 1088</span><span class="preprocessor">#if ein_has_attribute(callback)</span></div>
+<div class="line"><a id="l01089" name="l01089"></a><span class="lineno"> 1089</span><span class="preprocessor">  #define ein_callback(...) __attribute__((callback(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l01090" name="l01090"></a><span class="lineno"> 1090</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01091" name="l01091"></a><span class="lineno"><a class="line" href="../../da/d81/group__control__flow__attributes.html#ga7f0591009c487cfe5e40c698c0dab4bd"> 1091</a></span><span class="preprocessor">  #define ein_callback(...)</span></div>
+<div class="line"><a id="l01092" name="l01092"></a><span class="lineno"> 1092</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01093" name="l01093"></a><span class="lineno"> 1093</span> </div>
+<div class="line"><a id="l01104" name="l01104"></a><span class="lineno"> 1104</span><span class="preprocessor">#if ein_has_attribute(noreturn)</span></div>
+<div class="line"><a id="l01105" name="l01105"></a><span class="lineno"> 1105</span><span class="preprocessor">#define ein_noreturn __attribute__((noreturn))</span></div>
+<div class="line"><a id="l01106" name="l01106"></a><span class="lineno"> 1106</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01107" name="l01107"></a><span class="lineno"><a class="line" href="../../da/d81/group__control__flow__attributes.html#gae6d077c859dd50d89cd1cef82d9382c1"> 1107</a></span><span class="preprocessor">#define ein_noreturn</span></div>
+<div class="line"><a id="l01108" name="l01108"></a><span class="lineno"> 1108</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01109" name="l01109"></a><span class="lineno"> 1109</span> </div>
+<div class="line"><a id="l01115" name="l01115"></a><span class="lineno"> 1115</span> </div>
+<div class="line"><a id="l01124" name="l01124"></a><span class="lineno"> 1124</span><span class="preprocessor">#if ein_has_attribute(returns_nonnull)</span></div>
+<div class="line"><a id="l01125" name="l01125"></a><span class="lineno"> 1125</span><span class="preprocessor">  #define ein_returns_nonnull __attribute__((returns_nonnull))</span></div>
+<div class="line"><a id="l01126" name="l01126"></a><span class="lineno"> 1126</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01127" name="l01127"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#ga74fe033a58e1d901c981bbe183b94950"> 1127</a></span><span class="preprocessor">  #define ein_returns_nonnull</span></div>
+<div class="line"><a id="l01128" name="l01128"></a><span class="lineno"> 1128</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01129" name="l01129"></a><span class="lineno"> 1129</span> </div>
+<div class="line"><a id="l01140" name="l01140"></a><span class="lineno"> 1140</span><span class="preprocessor">#if ein_has_attribute(nonnull)</span></div>
+<div class="line"><a id="l01141" name="l01141"></a><span class="lineno"> 1141</span><span class="preprocessor">  #define ein_nonnull(...) __attribute__((nonnull(__VA_ARGS__)))</span></div>
+<div class="line"><a id="l01142" name="l01142"></a><span class="lineno"> 1142</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01143" name="l01143"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#gaf81d090cd9ae791301fe54b4f00df3e9"> 1143</a></span><span class="preprocessor">  #define ein_nonnull(...)</span></div>
+<div class="line"><a id="l01144" name="l01144"></a><span class="lineno"> 1144</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01145" name="l01145"></a><span class="lineno"> 1145</span> </div>
+<div class="line"><a id="l01172" name="l01172"></a><span class="lineno"> 1172</span><span class="preprocessor">#ifdef __clang__</span></div>
+<div class="line"><a id="l01173" name="l01173"></a><span class="lineno"> 1173</span><span class="preprocessor">#define ein_Nonnull _Nonnull</span></div>
+<div class="line"><a id="l01174" name="l01174"></a><span class="lineno"> 1174</span><span class="preprocessor">#define ein_Nullable _Nullable</span></div>
+<div class="line"><a id="l01175" name="l01175"></a><span class="lineno"> 1175</span><span class="preprocessor">#define ein_Null_unspecified _Null_unspecified</span></div>
+<div class="line"><a id="l01176" name="l01176"></a><span class="lineno"> 1176</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01177" name="l01177"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#ga37449812b4a259b4ebfbd1871fd38af9"> 1177</a></span><span class="preprocessor">#define ein_Nonnull</span></div>
+<div class="line"><a id="l01178" name="l01178"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#gaf5a93200e11a60bb36396f6cd02775e5"> 1178</a></span><span class="preprocessor">#define ein_Nullable</span></div>
+<div class="line"><a id="l01179" name="l01179"></a><span class="lineno"><a class="line" href="../../d9/da3/group__null__safety__attributes.html#ga77135d06c7a6c988e5d4efb8b3686a7e"> 1179</a></span><span class="preprocessor">#define ein_Null_unspecified</span></div>
+<div class="line"><a id="l01180" name="l01180"></a><span class="lineno"> 1180</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01181" name="l01181"></a><span class="lineno"> 1181</span> </div>
+<div class="line"><a id="l01187" name="l01187"></a><span class="lineno"> 1187</span> </div>
+<div class="line"><a id="l01222" name="l01222"></a><span class="lineno"> 1222</span><span class="preprocessor">#ifdef __CUDACC__</span></div>
+<div class="line"><a id="l01223" name="l01223"></a><span class="lineno"> 1223</span><span class="preprocessor">#define ein_host __host__</span></div>
+<div class="line"><a id="l01224" name="l01224"></a><span class="lineno"> 1224</span><span class="preprocessor">#define ein_device __device__</span></div>
+<div class="line"><a id="l01225" name="l01225"></a><span class="lineno"> 1225</span><span class="preprocessor">#define ein_global __global__</span></div>
+<div class="line"><a id="l01226" name="l01226"></a><span class="lineno"> 1226</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01227" name="l01227"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga285634c6b28883bfdeed6cbadbcf6fee"> 1227</a></span><span class="preprocessor">#define ein_host</span></div>
+<div class="line"><a id="l01228" name="l01228"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga568ecfa2358b6bc209393b8a6dc9fbca"> 1228</a></span><span class="preprocessor">#define ein_device</span></div>
+<div class="line"><a id="l01229" name="l01229"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga8147ec32b85ddfb4657c8bd5ad9c0fab"> 1229</a></span><span class="preprocessor">#define ein_global</span></div>
+<div class="line"><a id="l01230" name="l01230"></a><span class="lineno"> 1230</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01231" name="l01231"></a><span class="lineno"> 1231</span> </div>
+<div class="line"><a id="l01232" name="l01232"></a><span class="lineno"><a class="line" href="../../d5/dd9/group__cuda__attributes.html#ga42f2a4944074f350ddba96f086c308e8"> 1232</a></span><span class="preprocessor">#define ein_hd ein_host ein_device</span></div>
+<div class="line"><a id="l01233" name="l01233"></a><span class="lineno"> 1233</span> </div>
+<div class="line"><a id="l01239" name="l01239"></a><span class="lineno"> 1239</span> </div>
+<div class="line"><a id="l01241" name="l01241"></a><span class="lineno"> 1241</span><span class="preprocessor">#define ein_pragma_(x) _Pragma (#x)</span></div>
+<div class="line"><a id="l01243" name="l01243"></a><span class="lineno"> 1243</span> </div>
+<div class="line"><a id="l01248" name="l01248"></a><span class="lineno"><a class="line" href="../../d3/d5e/group__pragmas.html#ga1cac2f7563012b7a84ab80e388d1b487"> 1248</a></span><span class="preprocessor">#define ein_pragma(x) ein_pragma_(x)</span></div>
+<div class="line"><a id="l01249" name="l01249"></a><span class="lineno"> 1249</span> </div>
+<div class="line"><a id="l01255" name="l01255"></a><span class="lineno"> 1255</span> </div>
+<div class="line"><a id="l01264" name="l01264"></a><span class="lineno"> 1264</span><span class="preprocessor">#ifdef __clang__</span></div>
+<div class="line"><a id="l01265" name="l01265"></a><span class="lineno"> 1265</span><span class="preprocessor">  #define ein_unroll(N) ein_pragma(clang loop unroll_count(N))</span></div>
+<div class="line"><a id="l01266" name="l01266"></a><span class="lineno"> 1266</span><span class="preprocessor">  #define ein_unroll_full ein_pragma(clang loop unroll(full))</span></div>
+<div class="line"><a id="l01267" name="l01267"></a><span class="lineno"> 1267</span><span class="preprocessor">#else</span></div>
+<div class="line"><a id="l01268" name="l01268"></a><span class="lineno"><a class="line" href="../../da/d2b/group__loop__attributes.html#ga8697fca92cf196aa90c8cfcf36cb4bae"> 1268</a></span><span class="preprocessor">  #define ein_unroll(N)</span></div>
+<div class="line"><a id="l01269" name="l01269"></a><span class="lineno"><a class="line" href="../../da/d2b/group__loop__attributes.html#ga9d16124a2225305208af3eeb3124128b"> 1269</a></span><span class="preprocessor">  #define ein_unroll_full</span></div>
+<div class="line"><a id="l01270" name="l01270"></a><span class="lineno"> 1270</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l01271" name="l01271"></a><span class="lineno"> 1271</span> </div>
+<div class="line"><a id="l01274" name="l01274"></a><span class="lineno"> 1274</span> </div>
+<div class="line"><a id="l01276" name="l01276"></a><span class="lineno"> 1276</span><span class="comment">// end ingroup attributes</span></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->

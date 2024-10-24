@@ -8,5 +8,6 @@ var topics =
     [ "types", "d6/d59/group__types.html", "d6/d59/group__types" ],
     [ "wait", "df/d2f/group__wait.html", "df/d2f/group__wait" ],
     [ "Headers", "d6/df4/group__headers.html", "d6/df4/group__headers" ],
+    [ "Modules", "dc/dd2/group__modules.html", "dc/dd2/group__modules" ],
     [ "Macros", "d5/dfd/group__macros.html", "d5/dfd/group__macros" ]
 ];

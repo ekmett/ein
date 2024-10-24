@@ -50,7 +50,7 @@ var numerics_8cppm =
     [ "cmp", "d5/d65/numerics_8cppm.html#gadeb9c3d409bcba9ea1bad3b5df34eb8d", null ],
     [ "cmp_ord", "d5/d65/numerics_8cppm.html#ga2b74567fe42c868dbbe6ce8f60a3538f", null ],
     [ "cmp_unord", "d5/d65/numerics_8cppm.html#ga3997cf126ca7b03242a0bcd636d3b11e", null ],
-    [ "cmpint", "d5/d65/numerics_8cppm.html#gac7866b6b237bc7d131d09b53e8f2a5eb", null ],
+    [ "cmpint", "d5/d65/numerics_8cppm.html#ga772b85a099ed110b7f03db897c27b05b", null ],
     [ "scalef", "d5/d65/numerics_8cppm.html#ga5ed703b37d3f23ffe3f9150fc108c44f", null ],
     [ "imm", "d5/d65/numerics_8cppm.html#ga9f8820229adbc8c614428c448a370015", null ],
     [ "max_fp_comparison_predicate", "d5/d65/numerics_8cppm.html#ga2b09119ae81703a8158113efe9708d8b", null ]

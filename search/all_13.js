@@ -15,7 +15,7 @@ var searchData=
   ['tuple_5felement_3c_20i_2c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_12',['tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;',['../dc/d7b/group__simd.html#dc/d2d/structstd_1_1tuple__element_3_01_i_00_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
   ['tuple_5fsize_3c_20ein_3a_3asimd_3c_20t_2c_20n_20_3e_20_3e_13',['tuple_size&lt; ein::simd&lt; T, N &gt; &gt;',['../dc/d7b/group__simd.html#d8/d7b/structstd_1_1tuple__size_3_01ein_1_1simd_3_01_t_00_01_n_01_4_01_4',1,'std']]],
   ['type_14',['type',['../dc/d7b/group__simd.html#a19c2978201d48d6253eb5be0da2d359d',1,'std::tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;::type'],['../d6/d59/group__types.html#gafe3cd68979730cc4ce2fd0800e31d494',1,'ein::type']]],
-  ['type_5fof_15',['type_of',['../d6/d59/group__types.html#ga748be94ed243491e09352db7e04a4219',1,'ein']]],
+  ['type_5fof_15',['type_of',['../d6/d59/group__types.html#gaeff5354fcf4acab5497e2b60433e75b6',1,'ein']]],
   ['types_16',['types',['../d6/d59/group__types.html',1,'']]],
   ['types_2ecppm_17',['types.cppm',['../d8/dcb/types_8cppm.html',1,'']]],
   ['typestate_20analysis_18',['Typestate Analysis',['../d4/dad/group__typestate__analysis.html',1,'']]]
