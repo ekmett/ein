@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ein: instantiation</title>
+<title>ein: Explicit Template Instantiation</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
 <!--alternate icons-->
 <link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
@@ -171,11 +171,11 @@ $(function(){initNavTree('d2/d54/group__instantiation.html','../../'); initResiz
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">instantiation<div class="ingroups"><a class="el" href="../../d6/df4/group__headers.html">headers</a> &raquo; <a class="el" href="../../d5/dfd/group__macros.html">macros</a> &raquo; <a class="el" href="../../d4/d86/group__attributes.html">attributes</a></div></div></div>
+  <div class="headertitle"><div class="title">Explicit Template Instantiation<div class="ingroups"><a class="el" href="../../d5/dfd/group__macros.html">Macros</a> &raquo; <a class="el" href="../../d4/d86/group__attributes.html">Attributes</a> &#124; <a class="el" href="../../d5/dfd/group__macros.html">Macros</a> &raquo; <a class="el" href="../../d4/d86/group__attributes.html">Attributes</a> &raquo; <a class="el" href="../../d7/d68/group__linkage.html">Linkage Control</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for instantiation:</div>
+Collaboration diagram for Explicit Template Instantiation:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 0 --></div>
 </div>
@@ -193,6 +193,7 @@ Macros</h2></td></tr>
 <tr class="separator:ga12a3fcb0577a0041f5d44071a82f0e8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>attributes that can control explicit template instantiation </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga24a2cafa9f882b8f2d0772140597277b" name="ga24a2cafa9f882b8f2d0772140597277b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga24a2cafa9f882b8f2d0772140597277b">&#9670;&#160;</a></span>ein_exclude_from_explicit_instantiation</h2>
@@ -209,7 +210,7 @@ Macros</h2></td></tr>
 <p>exclude this member from explicit template instantiation. </p>
 <p>Usually paired with <a class="el" href="#ga5165837aaf9cdf9743915da8d274f7a6" title="[[visibility(x)]]">ein_visibility</a><code>("hidden")</code>, see <a class="el" href="#ga12a3fcb0577a0041f5d44071a82f0e8f" title="[[visibility(&quot;hidden&quot;)]] [[exclude_from_explicit_instantiations]]">ein_hidden</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00187">187</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00336">336</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -228,7 +229,7 @@ Macros</h2></td></tr>
 <p><code>[[visibility("hidden")]] [[exclude_from_explicit_instantiations]]</code> </p>
 <p>Use to exclude from both having to compute in explicit template instantiations and expecting it to be stored. This means that the resulting member is safely delayed to the usage site, despite the template being explicitly otherwise instantiated. Useful for <code>#ein_inline</code> and the general sort of SIMD intrinsic wrappers where there's no point in emitting a function body that will never be called, and will just bloat executable size. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00204">204</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00353">353</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -250,7 +251,7 @@ Macros</h2></td></tr>
 <p><code>[[visibility(x)]]</code> </p>
 <p>Primarily used for <code>visibility("hidden")</code> to disable inclusion in the library </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00172">172</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00321">321</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>

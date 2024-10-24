@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ein: linkage</title>
+<title>ein: Linkage Control</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
 <!--alternate icons-->
 <link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
@@ -170,16 +170,23 @@ $(function(){initNavTree('d7/d68/group__linkage.html','../../'); initResizable(t
 
 <div class="header">
   <div class="summary">
+<a href="#groups">Topics</a> &#124;
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">linkage<div class="ingroups"><a class="el" href="../../d6/df4/group__headers.html">headers</a> &raquo; <a class="el" href="../../d5/dfd/group__macros.html">macros</a> &raquo; <a class="el" href="../../d4/d86/group__attributes.html">attributes</a></div></div></div>
+  <div class="headertitle"><div class="title">Linkage Control<div class="ingroups"><a class="el" href="../../d5/dfd/group__macros.html">Macros</a> &raquo; <a class="el" href="../../d4/d86/group__attributes.html">Attributes</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <div class="dynheader">
-Collaboration diagram for linkage:</div>
+Collaboration diagram for Linkage Control:</div>
 <div class="dyncontent">
 <div class="center"><!-- SVG 0 --></div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="groups" name="groups"></a>
+Topics</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d2/d54/group__instantiation.html">Explicit Template Instantiation</a></td></tr>
+<tr class="memdesc:d2/d54/group__instantiation"><td class="mdescLeft">&#160;</td><td class="mdescRight"><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:ga9a1d6e122e659dcfea11d62158ee3625" id="r_ga9a1d6e122e659dcfea11d62158ee3625"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga9a1d6e122e659dcfea11d62158ee3625">ein_weak</a></td></tr>
@@ -193,6 +200,7 @@ Macros</h2></td></tr>
 <tr class="separator:ga1594d8c5a04ac97dfde52250be9378fb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<p>see <a class="el" href="../../d2/d54/group__instantiation.html">Explicit Template Instantiation</a> for more. </p>
 <h2 class="groupheader">Macro Definition Documentation</h2>
 <a id="ga3c3d1b3d8d09c237b7c64cd9f91ea63d" name="ga3c3d1b3d8d09c237b7c64cd9f91ea63d"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ga3c3d1b3d8d09c237b7c64cd9f91ea63d">&#9670;&#160;</a></span>ein_internal_linkage</h2>
@@ -210,7 +218,7 @@ Macros</h2></td></tr>
 <p>Changes the linkage type of the declaration to internal. This is similar to C-style static, but can be used on classes and class methods. When applied to a class definition, this attribute affects all methods and static data members of that class. This can be used to contain the ABI of a C++ library by excluding unwanted class methods from the export tables.</p>
 <dl class="section warning"><dt>Warning</dt><dd>probably subsumed by ein_visibility("hidden") </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00310">310</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00282">282</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -232,7 +240,7 @@ Macros</h2></td></tr>
 <p>portable <code>[[clang::preferred_name(x)]]</code> annotations </p>
 <p>Can be applied to a template struct to provide better names for some concrete instantiations </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00325">325</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00297">297</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>
@@ -251,7 +259,7 @@ Macros</h2></td></tr>
 <p><b>attribute</b>((weak)) </p>
 <p>used to generate a symbol that can be easily overriden by the linker. </p>
 
-<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00290">290</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
+<p class="definition">Definition at line <a class="el" href="../../df/d6a/attributes_8hpp_source.html#l00262">262</a> of file <a class="el" href="../../df/d6a/attributes_8hpp_source.html">attributes.hpp</a>.</p>
 
 </div>
 </div>

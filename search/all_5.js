@@ -2,7 +2,7 @@ var searchData=
 [
   ['c_5ffree_0',['c_free',['../d7/ded/group__memory.html#d1/d85/structein_1_1c__free',1,'ein']]],
   ['c_5fmunmap_1',['c_munmap',['../d7/ded/group__memory.html#df/dde/structein_1_1c__munmap',1,'ein']]],
-  ['calling_20conventions_2',['calling conventions',['../d8/d64/group__calling__conventions.html',1,'']]],
+  ['calling_20conventions_2',['Calling Conventions',['../d8/d64/group__calling__conventions.html',1,'']]],
   ['cast_5fpd_3',['cast_pd',['../dc/d7b/group__simd.html#gaf0c09989d6916f4030b2d0a2f4f422f9',1,'ein::cast_pd(__m128i a) noexcept'],['../dc/d7b/group__simd.html#gaf514bb71e2aab723818ace70aaf9c85b',1,'ein::cast_pd(__m128d a) noexcept'],['../dc/d7b/group__simd.html#ga8b7086589c63986a3e5991e739bad9df',1,'ein::cast_pd(__m256i a) noexcept'],['../dc/d7b/group__simd.html#gadb7666be57d524e2b22c68b4a9da230e',1,'ein::cast_pd(__m256d a) noexcept'],['../dc/d7b/group__simd.html#ga15454c4fb375e3f60722f590b4c782ef',1,'ein::cast_pd(__m512i a) noexcept'],['../dc/d7b/group__simd.html#gadec9878ce04a509118bad9c1df527748',1,'ein::cast_pd(__m512d a) noexcept']]],
   ['cast_5fps_4',['cast_ps',['../dc/d7b/group__simd.html#gafe719b809398079317e7b7e83a8b19a1',1,'ein::cast_ps(__m128i a) noexcept'],['../dc/d7b/group__simd.html#gaa57b889052595f820f26fe8341f63c52',1,'ein::cast_ps(__m128 a) noexcept'],['../dc/d7b/group__simd.html#ga18293c1a436742ec85d084a248054371',1,'ein::cast_ps(__m256i a) noexcept'],['../dc/d7b/group__simd.html#ga81e4e49d80a5f3292ba6c417616c01a0',1,'ein::cast_ps(__m256 a) noexcept'],['../dc/d7b/group__simd.html#gaaaccb4f5a62e6858cc28257fa2b77073',1,'ein::cast_ps(__m512i a) noexcept'],['../dc/d7b/group__simd.html#ga7367402848a6f3cf934d7852d9f3aa01',1,'ein::cast_ps(__m512 a) noexcept']]],
   ['cast_5fsi_5',['cast_si',['../dc/d7b/group__simd.html#gafcab26834b8d43468ccd29d0dc569f20',1,'ein::cast_si(__m128 a) noexcept'],['../dc/d7b/group__simd.html#ga9be0d251173b64bb900e35b95baa59a3',1,'ein::cast_si(__m128d a) noexcept'],['../dc/d7b/group__simd.html#ga18e62e0cea6ac6ddc8e3ebea626ba184',1,'ein::cast_si(__m128i a) noexcept'],['../dc/d7b/group__simd.html#ga1fd2325f7905a325601677c5b135f251',1,'ein::cast_si(__m256 a) noexcept'],['../dc/d7b/group__simd.html#ga8f189d039fa49970dc38ec696023478d',1,'ein::cast_si(__m256d a) noexcept'],['../dc/d7b/group__simd.html#gab659fea9da1a4e0fc1681589b0b24fb0',1,'ein::cast_si(__m256i a) noexcept'],['../dc/d7b/group__simd.html#ga95b15f5fb6a0d3134abd59f31c50a72b',1,'ein::cast_si(__m512 a) noexcept'],['../dc/d7b/group__simd.html#ga9c633a913219fb1eeef039fb5a9748d2',1,'ein::cast_si(__m512d a) noexcept'],['../dc/d7b/group__simd.html#ga54d0d39528531972051b74e6e42d7c3d',1,'ein::cast_si(__m512i a) noexcept']]],
@@ -19,13 +19,14 @@ var searchData=
   ['cmpint_16',['cmpint',['../dc/d7b/group__simd.html#af590ef029b533f3dfcda0f10d8e69941',1,'ein::simd::cmpint'],['../dc/db9/group__numerics.html#gac7866b6b237bc7d131d09b53e8f2a5eb',1,'ein::cmpint()']]],
   ['conditions_20for_20use_20reproduction_20and_20distribution_17',['Terms and Conditions for use, reproduction, and distribution',['../d2/d35/md__l_i_c_e_n_s_e.html#autotoc_md9',1,'']]],
   ['contact_20information_18',['Contact Information',['../index.html#autotoc_md5',1,'']]],
-  ['control_20flow_19',['control flow',['../dd/dfd/group__control__flow.html',1,'']]],
-  ['conventions_20',['calling conventions',['../d8/d64/group__calling__conventions.html',1,'']]],
-  ['cpu_5fvendor_21',['cpu_vendor',['../df/d08/group__cpuid.html#ga7f13ea202e71639d6c875e4e301f3ca4',1,'ein::cpu_vendor'],['../df/d08/group__cpuid.html#ga4639c74c35d500365670dd87c558c0c5',1,'ein::cpu_vendor']]],
-  ['cpuid_22',['cpuid',['../df/d08/group__cpuid.html#ga849cffec87c96e71e01ec367f5bb01ea',1,'ein::cpuid()'],['../df/d08/group__cpuid.html',1,'cpuid']]],
-  ['cpuid_2ecppm_23',['cpuid.cppm',['../d2/d8a/cpuid_8cppm.html',1,'']]],
-  ['cpuid_5ft_24',['cpuid_t',['../df/d08/group__cpuid.html#d4/d6b/structein_1_1cpuid__t',1,'ein']]],
-  ['crbegin_25',['crbegin',['../dc/d7b/group__simd.html#a895309899b5dcbab75f37d5e01f5b94e',1,'ein::simd']]],
-  ['crend_26',['crend',['../dc/d7b/group__simd.html#a03c58679cbf871f6cd1531f6f2543562',1,'ein::simd']]],
-  ['cuda_27',['cuda',['../d1/d1e/group__cuda.html',1,'']]]
+  ['control_19',['Control',['../de/d76/group__aliasing__attributes.html',1,'Aliasing Control'],['../d3/d4e/group__inlining__attributes.html',1,'Inlining Control'],['../d7/d68/group__linkage.html',1,'Linkage Control']]],
+  ['control_20flow_20',['Control Flow',['../da/d81/group__control__flow__attributes.html',1,'']]],
+  ['conventions_21',['Calling Conventions',['../d8/d64/group__calling__conventions.html',1,'']]],
+  ['cpu_5fvendor_22',['cpu_vendor',['../df/d08/group__cpuid.html#ga7f13ea202e71639d6c875e4e301f3ca4',1,'ein::cpu_vendor'],['../df/d08/group__cpuid.html#ga4639c74c35d500365670dd87c558c0c5',1,'ein::cpu_vendor']]],
+  ['cpuid_23',['cpuid',['../df/d08/group__cpuid.html#ga849cffec87c96e71e01ec367f5bb01ea',1,'ein::cpuid()'],['../df/d08/group__cpuid.html',1,'cpuid']]],
+  ['cpuid_2ecppm_24',['cpuid.cppm',['../d2/d8a/cpuid_8cppm.html',1,'']]],
+  ['cpuid_5ft_25',['cpuid_t',['../df/d08/group__cpuid.html#d4/d6b/structein_1_1cpuid__t',1,'ein']]],
+  ['crbegin_26',['crbegin',['../dc/d7b/group__simd.html#a895309899b5dcbab75f37d5e01f5b94e',1,'ein::simd']]],
+  ['crend_27',['crend',['../dc/d7b/group__simd.html#a03c58679cbf871f6cd1531f6f2543562',1,'ein::simd']]],
+  ['cuda_28',['CUDA',['../d5/dd9/group__cuda__attributes.html',1,'']]]
 ];

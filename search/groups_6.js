@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['lifetimes_0',['lifetimes',['../db/d36/group__lifetimes.html',1,'']]],
-  ['linkage_1',['linkage',['../d7/d68/group__linkage.html',1,'']]],
-  ['loops_2',['loops',['../da/d2b/group__loop__attributes.html',1,'']]]
+  ['initialization_0',['Initialization',['../da/d99/group__initialization__attributes.html',1,'']]],
+  ['inlining_20control_1',['Inlining Control',['../d3/d4e/group__inlining__attributes.html',1,'']]],
+  ['instantiation_2',['Explicit Template Instantiation',['../d2/d54/group__instantiation.html',1,'']]]
 ];

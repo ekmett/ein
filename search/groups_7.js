@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['macros_0',['macros',['../d5/dfd/group__macros.html',1,'']]],
-  ['memory_1',['memory',['../d7/ded/group__memory.html',1,'']]],
-  ['multiversioning_2',['multiversioning',['../dc/da7/group__multiversioning.html',1,'']]]
+  ['lifetimes_0',['Object Lifetimes',['../db/d36/group__lifetimes.html',1,'']]],
+  ['linkage_20control_1',['Linkage Control',['../d7/d68/group__linkage.html',1,'']]],
+  ['loops_2',['Loops',['../da/d2b/group__loop__attributes.html',1,'']]]
 ];

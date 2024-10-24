@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['simd_2ecppm_0',['simd.cppm',['../da/d01/simd_8cppm.html',1,'']]],
-  ['simd_5fdata_2ecppm_1',['simd_data.cppm',['../df/d88/simd__data_8cppm.html',1,'']]],
-  ['std_2ecppm_2',['std.cppm',['../d8/d08/std_8cppm.html',1,'']]]
+  ['readme_2emd_0',['README.md',['../d9/dd6/_r_e_a_d_m_e_8md.html',1,'']]]
 ];

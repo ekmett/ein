@@ -175,39 +175,37 @@ $(function(){initNavTree('d8/d08/std_8cppm_source.html','../../'); initResizable
 <a href="../../d8/d08/std_8cppm.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="keyword">module</span>;</div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span> </div>
 <div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#ifndef EIN_PCH</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/d13/prelude_8hpp.html">prelude.hpp</a>&quot;</span></div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span> </div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span><span class="keyword">export</span> <span class="keyword">module</span> <a class="code" href="../../dc/d4c/module__ein_8std.html">ein.std</a>;</div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span> </div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a> {</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="preprocessor">#ifndef __cpp_lib_forward_like</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>  <span class="keyword">namespace </span>{</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">using </span>override_ref_t = conditional_t&lt;is_rvalue_reference_v&lt;T&gt;, remove_reference_t&lt;U&gt; &amp;&amp;, U &amp;&gt;;</div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span> </div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">using </span>copy_const_t = conditional_t&lt;is_const_v&lt;remove_reference_t&lt;T&gt;&gt;, U <span class="keyword">const</span>, U&gt;;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span> </div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">using </span>forward_like_t = override_ref_t&lt;T &amp;&amp;, copy_const_t&lt;T, remove_reference_t&lt;U&gt;&gt;&gt;;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>  }</div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    [[nodiscard]] <span class="keyword">constexpr</span></div>
-<div class="foldopen" id="foldopen00056" data-start="{" data-end="}">
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno"><a class="line" href="../../dd/d0c/group__std.html#gac4e848e26cfe1051d18bb913060767b0">   56</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d0c/group__std.html#gac4e848e26cfe1051d18bb913060767b0">forward_like</a>(<span class="keyword">auto</span>&amp;&amp; x) <span class="keyword">noexcept</span> -&gt; forward_like_t&lt;T, <span class="keyword">decltype</span>(x)&gt; {</div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>forward_like_t&lt;T, decltype(x)<span class="keyword">&gt;</span>&gt;(x);</div>
-<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>  }</div>
+<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span><span class="preprocessor">#include &quot;<a class="code" href="../../de/d13/prelude_8hpp.html">prelude.hpp</a>&quot;</span></div>
+<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">export</span> <span class="keyword">module</span> <a class="code" href="../../dc/d4c/module__ein_8std.html">ein.std</a>;</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span> </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span><span class="keyword">namespace </span><a class="code hl_namespace" href="../../d8/dcc/namespacestd.html">std</a> {</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span> </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span><span class="preprocessor">#ifndef __cpp_lib_forward_like</span></div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>  <span class="keyword">namespace </span>{</div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keyword">using </span>override_ref_t = conditional_t&lt;is_rvalue_reference_v&lt;T&gt;, remove_reference_t&lt;U&gt; &amp;&amp;, U &amp;&gt;;</div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keyword">using </span>copy_const_t = conditional_t&lt;is_const_v&lt;remove_reference_t&lt;T&gt;&gt;, U <span class="keyword">const</span>, U&gt;;</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span> </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T, <span class="keyword">typename</span> U&gt;</div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keyword">using </span>forward_like_t = override_ref_t&lt;T &amp;&amp;, copy_const_t&lt;T, remove_reference_t&lt;U&gt;&gt;&gt;;</div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>  }</div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  <span class="keyword">export</span> <span class="keyword">template</span> &lt;<span class="keyword">typename</span> T&gt;</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    [[nodiscard]] <span class="keyword">constexpr</span></div>
+<div class="foldopen" id="foldopen00054" data-start="{" data-end="}">
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno"><a class="line" href="../../dd/d0c/group__std.html#gac4e848e26cfe1051d18bb913060767b0">   54</a></span>    <span class="keyword">auto</span> <a class="code hl_function" href="../../dd/d0c/group__std.html#gac4e848e26cfe1051d18bb913060767b0">forward_like</a>(<span class="keyword">auto</span>&amp;&amp; x) <span class="keyword">noexcept</span> -&gt; forward_like_t&lt;T, <span class="keyword">decltype</span>(x)&gt; {</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="keywordflow">return</span> <span class="keyword">static_cast&lt;</span>forward_like_t&lt;T, decltype(x)<span class="keyword">&gt;</span>&gt;(x);</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  }</div>
 </div>
-<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span><span class="preprocessor">#endif</span></div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>}</div>
-<div class="ttc" id="agroup__std_html_gac4e848e26cfe1051d18bb913060767b0"><div class="ttname"><a href="../../dd/d0c/group__std.html#gac4e848e26cfe1051d18bb913060767b0">std::forward_like</a></div><div class="ttdeci">constexpr auto forward_like(auto &amp;&amp;x) noexcept -&gt; forward_like_t&lt; T, decltype(x)&gt;</div><div class="ttdoc">Returns a reference to x which has similar properties to T&amp;&amp;.</div><div class="ttdef"><b>Definition</b> <a href="#l00056">std.cppm:56</a></div></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>}</div>
+<div class="ttc" id="agroup__std_html_gac4e848e26cfe1051d18bb913060767b0"><div class="ttname"><a href="../../dd/d0c/group__std.html#gac4e848e26cfe1051d18bb913060767b0">std::forward_like</a></div><div class="ttdeci">constexpr auto forward_like(auto &amp;&amp;x) noexcept -&gt; forward_like_t&lt; T, decltype(x)&gt;</div><div class="ttdoc">Returns a reference to x which has similar properties to T&amp;&amp;.</div><div class="ttdef"><b>Definition</b> <a href="#l00054">std.cppm:54</a></div></div>
 <div class="ttc" id="amodule__ein_8std_html"><div class="ttname"><a href="../../dc/d4c/module__ein_8std.html">ein.std</a></div></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l01269">simd.cppm:1269</a></div></div>
-<div class="ttc" id="aprelude_8hpp_html"><div class="ttname"><a href="../../de/d13/prelude_8hpp.html">prelude.hpp</a></div><div class="ttdoc">precompiled header</div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="../../d8/dcc/namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="../../da/d01/simd_8cppm_source.html#l01266">simd.cppm:1266</a></div></div>
+<div class="ttc" id="aprelude_8hpp_html"><div class="ttname"><a href="../../de/d13/prelude_8hpp.html">prelude.hpp</a></div><div class="ttdoc">All c++ headers.</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
