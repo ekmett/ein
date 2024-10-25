@@ -355,6 +355,9 @@
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup typestate_analysis Typestate Analysis
 ///
+///
+/// \brief Enabled in `clang` by passing `-fsanitize=consumed`
+///
 ///   \ingroup attributes
 ///
 /// \{
