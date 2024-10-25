@@ -12,6 +12,7 @@
 X template float scalef(float, float) noexcept;
 X template double scalef(double, double) noexcept;
 
+#if 0
 #define EIN_CMPINT_IMPL(Z,Y) \
 X template bool cmpint<CMPINT::Z,Y>(Y,Y) noexcept;
 #define EIN_CMPINT(Z) \
@@ -75,5 +76,6 @@ EIN_CMP(TRUE_US)
 
 #undef EIN_CMP
 #undef EIN_CMP_IMPL
+#endif
 
 ///endcond 
