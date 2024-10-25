@@ -2,7 +2,7 @@
 
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
-[![Build Trace](https://img.shields.io/badge/build-trace-blue)](https://ui.perfetto.dev/#/viewer?url=https://ekmett.github.io/trace.json)
+[![Build Trace](https://img.shields.io/badge/build-trace-blue)](https://ekmett.github.io/trace.json)
 
 This is a playground for wide SIMD evaluation.
 
