@@ -1,6 +1,3 @@
-SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-
 `header.html` was produced using
 
 ```bash
@@ -12,5 +9,35 @@ using `doxygen` v1.12.0
 then adding a custom inline style sheet and patching
 according to the `doxygen-awesome-css` instructions.
 
+While doxygen itself is under GPL v2, the documentation
+it produces is not considered subject to this license.
+
+/******************************************************************************
+ *
+ *
+ *
+ * Copyright (C) 1997-2015 by Dimitri van Heesch.
+ *
+ * Permission to use, copy, modify, and distribute this software and its
+ * documentation under the terms of the GNU General Public License is hereby
+ * granted. No representations are made about the suitability of this software
+ * for any purpose. It is provided "as is" without express or implied warranty.
+ * See the GNU General Public License for more details.
+ *
+ * Documents produced by Doxygen are derivative works derived from the
+ * input used in their production; they are not affected by this license.
+ *
+ */
+
+This attestation can be found in
+
+https://github.com/doxygen/doxygen/blame/ea75ea298a3141d5fc02ba2d0007efdc1a490fd1/doc/doxygen_usage.dox#L14
+
+and per git blame, it was last modified in April of 2000 to clarify intent.
+
 A custom `trace.js` was then added to permit opening
-pefetto traces.
+pefetto traces. It was implemented and provided under
+
+Filename: trace.js
+SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0

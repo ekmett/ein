@@ -1,6 +1,6 @@
 /**
 \page notes_page Notes
-  
+
   \internal
     \license
       SPDX-FileType: Source
@@ -8,7 +8,7 @@
       SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
     \endlicense
   \endinternal
-  
+
   \tableofcontents
 
 
@@ -20,27 +20,27 @@
 
 
 \section pch On Precompiled Headers
-  
+
   We build a precompiled header to accelerate the build at present.
-  
+
   We need at least some headers because C++ modules don't handle
   macros, and properly attaching attributes to something without
   macros is hell.
-  
+
   The macros are large and represent a lot of state as do our
   third-party library dependencies that are also header-based.
-  
+
   It'd be nice to cache the startup of the compiler right after
   it has parsed all of that information. This is precisely what
   a precompiled header does.
-  
+
   This leads to some conflicts between `cmake` and `clangd`.
-  
+
   We also want to minimize the amount of time we spend editing
   files that are included in the pch to optimize build time.
-  
+
   This is also in tension with wanting robust documentation.
-  
+
 
 
 \section pch_cmake_vs_clangd On cmake vs. clangd
