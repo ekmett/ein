@@ -44,6 +44,12 @@ jobs:
           ${{ steps.strings.outputs.build-output-dir }}/CMakeCache.txt
           ${{ steps.strings.outputs.build-output-dir }}/CMakeFiles/
           ${{ steps.strings.outputs.build-output-dir }}/**/CTestTestfile.cmake
+    - name: accelerate gh_pages refresh by noting there are no jekyll templates
+      run: |
+        touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
+    - name: add trace.json to documentation website
+      run: |
+        cp ${{ steps.strings.output.build-output-dir}}/trace.json ${{ steps.strings.output.build-output-dir}}/docs/html/
     - name: upload docs
       uses: actions/upload-artifact@v4.4.3
       with:
@@ -96,9 +102,6 @@ jobs:
       with:
         name: docs
         path: ${{ steps.strings.outputs.build-output-dir }}/docs/html/
-    - name: accelerate gh_pages refresh by noting there are no jekyll templates
-      run: |
-        touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
     - name: publish docs
       uses: peaceiris/actions-gh-pages@v4
       with:
