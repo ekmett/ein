@@ -111,6 +111,7 @@ ALIASES += "MONITOR=<a href='https://www.felixcloutier.com/x86/monitor'>MONITOR<
 ALIASES += "UMWAIT=<a href='https://www.felixcloutier.com/x86/umwait'>UMWAIT</a>"
 ALIASES += "UMONITOR=<a href='https://www.felixcloutier.com/x86/umonitor'>UMONITOR</a>"
 ALIASES += "PAUSE=<a href='https://www.felixcloutier.com/x86/pause'>PAUSE</a>"
+ALIASES += GIT_HASH=@GIT_HASH@
 HAVE_DOT = YES
 DOT_IMAGE_FORMAT = svg
 DOT_GRAPH_MAX_NODES = 100
