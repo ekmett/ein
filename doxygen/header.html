@@ -97,11 +97,13 @@ div.header div.summary { padding-right: 80px; }
  <tbody>
  <tr id="projectrow">
   <!--BEGIN PROJECT_LOGO-->
-  <td id="projectlogo"><img alt="Logo" src="$relpath^$projectlogo"$logosize/></td>
+  <td id="projectlogo"><a href="$relpath^index.html"><img alt="Logo" src="$relpath^$projectlogo"$logosize/></a></td>
   <!--END PROJECT_LOGO-->
   <!--BEGIN PROJECT_NAME-->
   <td id="projectalign">
-   <div id="projectname">$projectname<!--BEGIN PROJECT_NUMBER--><span id="projectnumber">&#160;$projectnumber</span><!--END PROJECT_NUMBER-->
+
+   <div id="projectname"><a href="$relpath^index.html">$projectname<!--BEGIN PROJECT_NUMBER--><span id="projectnumber">&#160;$projectnumber</span><!--END PROJECT_NUMBER--></a>
+   </div>
    </div>
    <!--BEGIN PROJECT_BRIEF--><div id="projectbrief">$projectbrief</div><!--END PROJECT_BRIEF-->
   </td>
