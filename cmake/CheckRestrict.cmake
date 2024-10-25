@@ -25,29 +25,23 @@ check_quiet_cxx_source_compiles("
   }
 " HAS_RESTRICT)
 
-# Check for "__restrict"
-check_quiet_cxx_source_compiles("
-  int main() {
-    int * __restrict p;
-    return 0;
-  }
-" HAS___RESTRICT)
-
-# Check for "__restrict__"
-check_quiet_cxx_source_compiles("
-  int main() {
-    int * __restrict__ p;
-    return 0;
-  }
-" HAS___RESTRICT__)
-
-# Set the result in a CMake variable
 if (HAS_RESTRICT)
   set(RESTRICT_KEYWORD "restrict")
-elseif (HAS___RESTRICT)
-  set(RESTRICT_KEYWORD "__restrict")
-elseif (HAS___RESTRICT__)
-  set(RESTRICT_KEYWORD "__restrict__")
+  set(RESTRICT_AVAILABLE,ON)
 else()
-  set(RESTRICT_KEYWORD "")
+  # Check for "__restrict"
+  check_quiet_cxx_source_compiles(" int main() { int * __restrict p; return 0; } " HAS___RESTRICT)
+  if (HAS___RESTRICT)
+    set(RESTRICT_KEYWORD "__restrict")
+    set(RESTRICT_AVAILABLE,ON)
+  else()
+    # Check for "__restrict__"
+    check_quiet_cxx_source_compiles(" int main() { int * __restrict__ p; return 0; } " HAS___RESTRICT__)
+    if (HAS___RESTRICT__)
+      set(RESTRICT_KEYWORD "__restrict__")
+      set(RESTRICT_AVAILABLE,ON)
+    else()
+      set(RESTRICT_AVAILABLE,OFF)
+    endif()
+  endif()
 endif()
