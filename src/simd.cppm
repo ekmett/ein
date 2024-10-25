@@ -1255,6 +1255,10 @@ auto shuffle(simd_type auto x, simd_type auto y) {
 
 /// precompiled template specializations
 
+export template struct simd<int8_t,16>;
+export template struct simd<int8_t,32>;
+export template struct simd<uint8_t,16>;
+export template struct simd<uint8_t,32>;
 export template struct simd<int16_t,8>;
 export template struct simd<int16_t,16>;
 export template struct simd<uint16_t,8>;
@@ -1280,6 +1284,8 @@ export template struct simd<float,16>;
 export template struct simd<int64_t,8>;
 export template struct simd<uint64_t,8>;
 export template struct simd<double,8>;
+export template struct simd<int8_t,64>;
+export template struct simd<uint8_t,64>;
 #endif
 
 /// \}
