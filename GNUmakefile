@@ -36,7 +36,7 @@ gen/ein.png: gen
 
 build: gen
 	@cmake --build gen -j
-	@bin/ninjatracing gen/.ninja_log | tee gen/docs/html/trace.json > gen/trace.json
+	@bin/ninjatracing gen/.ninja_log | tee gen/docs/html/ein-build.trace > gen/trace.json
 
 #gen/docs: gen $(SOURCES) $(HEADERS)
 #	@clang-doc-19 --executor=all-TUs compile_commands.json --output=gen/doc --format=md --repository=$(REPO) --project-name=$(PROJECT) -p gen

@@ -3,7 +3,7 @@
 
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
-[![Built Trace](https://img.shields.io/badge/build-trace-orange.svg)](trace.json)
+[![Build Trace](https://img.shields.io/badge/build-trace-orange.svg)](ein-build.trace)
 
 \tableofcontents
 
