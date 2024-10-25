@@ -20,10 +20,7 @@
       },
       "environment": {
         "CCACHE_DIR": "${sourceDir}/.ccache"
-      },
-      "cmakeArgs": [
-        "--graphviz=${sourceDir}/gen/ein.dot"
-      ]
+      }
     }
   ],
   "buildPresets": [

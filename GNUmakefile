@@ -45,7 +45,7 @@ run: $(RUN)
 
 gen: $(CMAKELISTS)
 	@mkdir -p gen
-	@cmake --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE)
+	@cmake --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/ein.dot
 	@touch gen
 
 lint:
