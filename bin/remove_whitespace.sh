@@ -13,8 +13,8 @@ DIR=${1:-.}
 
 pushd $DIR > /dev/null
 
-# Skip listing files of excluded directories.
-git grep -I --name-only -e . | grep -vE '^gen/|^lib/|^.ccache/|^doxygen/assets/' | while IFS= read -r file; do
+# All text files not in excluded dirs.
+git grep -I --name-only -e . | grep -vE '^lib/|^doxygen/assets/' | while IFS= read -r file; do
     echo "Processing: $file"
 
     # Remove trailing whitespace in place
