@@ -184,7 +184,76 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
   </li>
 </ul>
 </div>
-<div class="textblock"><p><a href="https://github.com/ekmett/ein/actions/workflows/cmake.yml"><img src="https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg" alt="CMake" style="pointer-events: none;" class="inline"/></a> <a href="https://ekmett.github.io/ein/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Doxygen" style="pointer-events: none;" class="inline"/></a></p>
+<div class="textblock"><p><a href="https://github.com/ekmett/ein/actions/workflows/cmake.yml"><img src="https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg" alt="CMake" style="pointer-events: none;" class="inline"/></a> <a href="https://ekmett.github.io/ein/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Doxygen" style="pointer-events: none;" class="inline"/></a>  
+<img src="https://img.shields.io/badge/build-trace-orange" id="fetch_badge" style="cursor: none;" onclick="fetchAndOpen('/trace.json')" alt="Build Trace" class="inline">
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  const fetchBadge = document.querySelector('img[alt="Build Trace"]');
+  if (!fetchBadge) {
+    console.log("unable to find build trace badge");
+    return;
+  }
+  fetchBadge.style.cursor = "pointer";
+  fetchBadge.onclick = () => fetchAndOpen('/trace.json');
+});
+
+async function fetchAndOpen(traceUrl) {
+  try {
+    console.log("Fetching trace from:", traceUrl);
+    const resp = await fetch(traceUrl);
+    if (!resp.ok) {
+      console.log("Failed to fetch trace.json. Status:", resp.status);
+      return;
+    }
+    const blob = await resp.blob();
+    const arrayBuffer = await blob.arrayBuffer();
+    console.log("Fetched and converted trace to array buffer.");
+    openTrace(arrayBuffer, traceUrl);
+  } catch (error) {
+    console.log("Error during fetchAndOpen:", error);
+  }
+}
+
+function openTrace(arrayBuffer, traceUrl) {
+  const ORIGIN = 'https://ui.perfetto.dev';
+  const win = window.open(ORIGIN);
+  if (!win) {
+    console.log("Failed to open new window to origin:", ORIGIN);
+    return;
+  }
+  console.log("Window opened to origin:", ORIGIN);
+  const timer = setInterval(() => {
+    console.log("Sending 'PING' message to origin.");
+    win.postMessage('PING', ORIGIN);
+  }, 50);
+  const onMessageHandler = (evt) => {
+    if (evt.data !== 'PONG') {
+      console.log("Received unexpected message:", evt.data);
+      return;
+    }
+    console.log("Received 'PONG' from origin.");
+    window.clearInterval(timer);
+    window.removeEventListener('message', onMessageHandler);
+    const reopenUrl = new URL(location.href);
+    reopenUrl.hash = `#reopen=${traceUrl}`;
+    console.log("Posting trace data to opened window.");
+    win.postMessage({
+      perfetto: {
+        buffer: arrayBuffer,
+        title: 'The Trace Title',
+        url: reopenUrl.toString(),
+      }
+    }, ORIGIN);
+  };
+  window.addEventListener('message', onMessageHandler);
+}
+if (location.hash.startsWith('#reopen=')) {
+  const traceUrl = location.hash.substr(8);
+  console.log("Reopening trace from URL hash:", traceUrl);
+  fetchAndOpen(traceUrl);
+}
+</script>
+</p>
 <p>This is a playground for wide SIMD evaluation.</p>
 <h2><a class="anchor" id="autotoc_md5"></a>
 Contact Information</h2>
