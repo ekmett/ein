@@ -1,4 +1,7 @@
 var searchData=
 [
-  ['your_20work_0',['APPENDIX: How to apply the Apache License to your work',['../da/d19/md_LICENSE.html#autotoc_md4',1,'']]]
+  ['value_0',['value',['../group__numerics.html#afa2b66046ea1aedfd916e12d1bb2289a',1,'ein::imm_t']]],
+  ['value_5ftype_1',['value_type',['../group__simd.html#a35f55b75d393fe01bc91b609738a771e',1,'ein::simd']]],
+  ['versioning_2',['Function Multi-Versioning',['../group__multiversioning__attributes.html',1,'']]],
+  ['vs_20clangd_3',['On cmake vs. clangd',['../notes_page.html#pch_cmake_vs_clangd',1,'']]]
 ];

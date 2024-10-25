@@ -1,13 +1,13 @@
 var topics =
 [
-    [ "CPU Detection", "df/d08/group__cpuid.html", "df/d08/group__cpuid" ],
-    [ "Memory Management", "d7/ded/group__memory.html", "d7/ded/group__memory" ],
-    [ "Numerics", "dc/db9/group__numerics.html", "dc/db9/group__numerics" ],
-    [ "SIMD", "dc/d7b/group__simd.html", "dc/d7b/group__simd" ],
-    [ "C++ Standard Library", "dd/d0c/group__std.html", "dd/d0c/group__std" ],
-    [ "Types", "d6/d59/group__types.html", "d6/d59/group__types" ],
-    [ "Waiting", "df/d2f/group__wait.html", "df/d2f/group__wait" ],
-    [ "Headers", "d6/df4/group__headers.html", "d6/df4/group__headers" ],
-    [ "Modules", "dc/dd2/group__modules.html", "dc/dd2/group__modules" ],
-    [ "Macros", "d5/dfd/group__macros.html", "d5/dfd/group__macros" ]
+    [ "CPU Detection", "group__cpuid.html", "group__cpuid" ],
+    [ "Memory Management", "group__memory.html", "group__memory" ],
+    [ "Numerics", "group__numerics.html", "group__numerics" ],
+    [ "SIMD", "group__simd.html", "group__simd" ],
+    [ "C++ Standard Library", "group__std.html", "group__std" ],
+    [ "Types", "group__types.html", "group__types" ],
+    [ "Waiting", "group__wait.html", "group__wait" ],
+    [ "Headers", "group__headers.html", "group__headers" ],
+    [ "Modules", "group__modules.html", "group__modules" ],
+    [ "Macros", "group__macros.html", "group__macros" ]
 ];

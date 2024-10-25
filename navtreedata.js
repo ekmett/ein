@@ -25,20 +25,26 @@
 var NAVTREE =
 [
   [ "ein", "index.html", [
-    [ "License", "da/d19/md_LICENSE.html", [
-      [ "Contact Information", "index.html#autotoc_md5", null ],
-      [ "BSD 2-Clause License", "da/d19/md_LICENSE.html#autotoc_md1", null ],
-      [ "Apache License", "da/d19/md_LICENSE.html#autotoc_md2", [
-        [ "Terms and Conditions for use, reproduction, and distribution", "da/d19/md_LICENSE.html#autotoc_md3", null ],
-        [ "APPENDIX: How to apply the Apache License to your work", "da/d19/md_LICENSE.html#autotoc_md4", null ]
+    [ "License", "license_page.html", [
+      [ "Contact Information", "index.html#autotoc_md4", null ],
+      [ "BSD 2-Clause License", "license_page.html#autotoc_md0", null ],
+      [ "Apache License", "license_page.html#autotoc_md1", [
+        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md2", null ],
+        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md3", null ]
       ] ]
     ] ],
-    [ "Installation", "d9/d87/install.html", [
-      [ "Ninja 1.12.1", "d9/d87/install.html#install_ninja", null ],
-      [ "Clang++-19", "d9/d87/install.html#install_clang", null ],
-      [ "Doxygen 1.12.0", "d9/d87/install.html#install_doxygen", null ]
+    [ "Installation", "installation_page.html", [
+      [ "Ninja 1.12.1", "installation_page.html#install_ninja", null ],
+      [ "Clang++-19", "installation_page.html#install_clang", null ],
+      [ "Doxygen 1.12.0", "installation_page.html#install_doxygen", null ],
+      [ "CMake 3.30.5", "installation_page.html#install_cmake", null ],
+      [ "CCache", "installation_page.html#install_ccache", null ]
     ] ],
-    [ "On Precompiled Headers", "d2/d4d/pch.html", "d2/d4d/pch" ],
+    [ "Notes", "notes_page.html", [
+      [ "On Precompiled Headers", "notes_page.html#pch", null ],
+      [ "On cmake vs. clangd", "notes_page.html#pch_cmake_vs_clangd", null ],
+      [ "On documentation in headers and precompilation", "notes_page.html#pch_big_docs", null ]
+    ] ],
     [ "Topics", "topics.html", "topics" ],
     [ "Modules", "modules.html", [
       [ "Modules List", "modules.html", "modules_dup" ],
@@ -86,7 +92,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"dc/d7b/group__simd.html#af34fa79e65d1522f29b99af1a45f8dd7"
+"group__simd.html#a8a8a3060b90a09941b22df9a13de9fae"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

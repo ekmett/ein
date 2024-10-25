@@ -1,10 +1,24 @@
 var searchData=
 [
-  ['pch_2edox_0',['pch.dox',['../d2/d15/pch_8dox.html',1,'']]],
-  ['performance_20constraints_1',['Performance Constraints',['../d9/dad/group__performance__constraint__attributes.html',1,'']]],
-  ['pragmas_2',['Emitting Pragmas',['../d3/d5e/group__pragmas.html',1,'']]],
-  ['precompilation_3',['On documentation in headers and precompilation',['../d8/d7f/pch_big_docs.html',1,'pch']]],
-  ['precompiled_20headers_4',['On Precompiled Headers',['../d2/d4d/pch.html',1,'']]],
-  ['prelude_2ehpp_5',['prelude.hpp',['../de/d13/prelude_8hpp.html',1,'']]],
-  ['purity_6',['Purity',['../d9/d3d/group__purity__attributes.html',1,'']]]
+  ['ne_0',['NE',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460adc33066c3993e0d50896e533fd692ce0',1,'ein']]],
+  ['neq_5foq_1',['NEQ_OQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a3b3856c641cfc49f7382ae38403eeeb4',1,'ein']]],
+  ['neq_5fos_2',['NEQ_OS',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a14bdb6a72cde8b0ab776fd77fbf70a25',1,'ein']]],
+  ['neq_5fuq_3',['NEQ_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371aa3eb787a945ff2dcbac109c8988f56d2',1,'ein']]],
+  ['neq_5fus_4',['NEQ_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371afe2a7fb6ece3960d7c63901e2b28f679',1,'ein']]],
+  ['nge_5fuq_5',['NGE_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a2b4d6ad0b200e9eac21c1131f2ab931a',1,'ein']]],
+  ['nge_5fus_6',['NGE_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371ad938a127fa2ac5754e7a6bcd841e54b6',1,'ein']]],
+  ['ngt_5fuq_7',['NGT_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371afb1157967a8334ca82c0218314283444',1,'ein']]],
+  ['ngt_5fus_8',['NGT_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371acb5f06551270089a64eafb268cda1217',1,'ein']]],
+  ['ninja_201_2012_201_9',['Ninja 1.12.1',['../installation_page.html#install_ninja',1,'']]],
+  ['nle_10',['NLE',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460aacd748f300c5d189c47807e2a9d6ea57',1,'ein']]],
+  ['nle_5fuq_11',['NLE_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a8002c1570898b326534abb67329837f9',1,'ein']]],
+  ['nle_5fus_12',['NLE_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a18048c41a881960378239705ffbfaabe',1,'ein']]],
+  ['nlt_13',['NLT',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8',1,'ein']]],
+  ['nlt_5fuq_14',['NLT_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac9a6f8bcd7ee3a3e9fc7fb07c2243985',1,'ein']]],
+  ['nlt_5fus_15',['NLT_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371aaf7ab69e1b0d7f3cf77f32a560ef53ac',1,'ein']]],
+  ['notes_16',['Notes',['../notes_page.html',1,'']]],
+  ['notes_2edox_17',['notes.dox',['../notes_8dox.html',1,'']]],
+  ['null_20safety_18',['Null Safety',['../group__null__safety__attributes.html',1,'']]],
+  ['numerics_19',['Numerics',['../group__numerics.html',1,'']]],
+  ['numerics_2ecppm_20',['numerics.cppm',['../numerics_8cppm.html',1,'']]]
 ];

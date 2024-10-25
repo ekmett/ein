@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['object_20lifetimes_0',['Object Lifetimes',['../dd/de0/group__lifetime__attributes.html',1,'']]]
+  ['object_20lifetimes_0',['Object Lifetimes',['../group__lifetime__attributes.html',1,'']]]
 ];

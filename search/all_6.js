@@ -1,10 +1,6 @@
 var searchData=
 [
-  ['data_0',['data',['../dc/d7b/group__simd.html#a626d7155163f7ba2d66ea2cbc918b17d',1,'ein::simd']]],
-  ['data_5ft_1',['data_t',['../dc/d7b/group__simd.html#a6b9e2f8e14605b5ed5af1115d3f80648',1,'ein::simd']]],
-  ['detection_2',['Detection',['../df/db3/group__attribute__detection.html',1,'Attribute Detection'],['../df/d08/group__cpuid.html',1,'CPU Detection']]],
-  ['distribution_3',['Terms and Conditions for use, reproduction, and distribution',['../da/d19/md_LICENSE.html#autotoc_md3',1,'']]],
-  ['documentation_20in_20headers_20and_20precompilation_4',['On documentation in headers and precompilation',['../d8/d7f/pch_big_docs.html',1,'pch']]],
-  ['doxygen_201_2012_200_5',['Doxygen 1.12.0',['../d9/d87/install.html#install_doxygen',1,'']]],
-  ['dup_6',['dup',['../d7/ded/group__memory.html#gaea392313e0b52aaba01039483b6d673f',1,'ein']]]
+  ['begin_0',['begin',['../group__simd.html#ad3060907ab6bf5d9364fd0403bac506e',1,'ein::simd::begin() noexcept'],['../group__simd.html#a13b00a131976b1dfd9ccf4946c005ea2',1,'ein::simd::begin() const noexcept']]],
+  ['bsd_202_20clause_20license_1',['BSD 2-Clause License',['../license_page.html#autotoc_md0',1,'']]],
+  ['bytesize_2',['bytesize',['../group__simd.html#af34fa79e65d1522f29b99af1a45f8dd7',1,'ein::simd']]]
 ];
