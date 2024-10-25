@@ -49,7 +49,7 @@ jobs:
         touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
     - name: add trace.json to documentation website
       run: |
-        cp ${{ steps.strings.output.build-output-dir}}/trace.json ${{ steps.strings.output.build-output-dir}}/docs/html/
+        cp ${{ steps.strings.outputs.build-output-dir }}/trace.json ${{ steps.strings.outputs.build-output-dir}}/docs/html/
     - name: upload docs
       uses: actions/upload-artifact@v4.4.3
       with:
@@ -59,7 +59,7 @@ jobs:
     - name: upload trace.json
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: docs
+        name: trace.json
         path: ${{ steps.strings.outputs.build-output-dir }}/trace.json
 
   test:
