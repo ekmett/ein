@@ -22,5 +22,6 @@ var group__attributes =
     [ "Emitting Pragmas", "d3/d5e/group__pragmas.html", "d3/d5e/group__pragmas" ],
     [ "Loops", "da/d2b/group__loop__attributes.html", "da/d2b/group__loop__attributes" ],
     [ "Performance Constraints", "d9/dad/group__performance__constraint__attributes.html", "d9/dad/group__performance__constraint__attributes" ],
-    [ "attributes.hpp", "df/d6a/attributes_8hpp.html", null ]
+    [ "attributes.hpp", "df/d6a/attributes_8hpp.html", null ],
+    [ "config.hpp", "d8/dfd/config_8hpp.html", null ]
 ];

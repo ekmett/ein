@@ -89,6 +89,7 @@ var NAVTREEINDEX0 =
 "d8/da3/module__ein_8simd.html":[4,0,3],
 "d8/dcb/types_8cppm.html":[3,5,0],
 "d8/dcc/namespacestd.html":[5,0,1],
+"d8/dfd/config_8hpp.html":[3,9,0,23],
 "d9/d2b/group__instantiation__attributes.html":[3,9,0,5],
 "d9/d2b/group__instantiation__attributes.html":[3,9,0,4,0],
 "d9/d2b/group__instantiation__attributes.html#ga12a3fcb0577a0041f5d44071a82f0e8f":[3,9,0,4,0,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX0 =
 "dc/d7b/group__simd.html#ae7cb2315d3a935d17e130cbfcbfa0ab6":[3,3,7,80],
 "dc/d7b/group__simd.html#aeb8fc05596759d9065ffbea8095d3b75":[3,3,7,43],
 "dc/d7b/group__simd.html#af08a5da9c45a7ef484c7dafd678e49c1":[3,3,7,60],
-"dc/d7b/group__simd.html#af1d7ff1e2564a09161d40a59994e2433":[3,3,7,56],
-"dc/d7b/group__simd.html#af34fa79e65d1522f29b99af1a45f8dd7":[3,3,7,103]
+"dc/d7b/group__simd.html#af1d7ff1e2564a09161d40a59994e2433":[3,3,7,56]
 };

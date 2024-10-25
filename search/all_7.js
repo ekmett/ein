@@ -87,7 +87,7 @@ var searchData=
   ['ein_5fpure_84',['ein_pure',['../d9/d3d/group__purity__attributes.html#ga9e124f20ef90b8f2f68c0e1a1f7d00cf',1,'attributes.hpp']]],
   ['ein_5freinitializes_85',['ein_reinitializes',['../da/d99/group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4',1,'attributes.hpp']]],
   ['ein_5frelease_5fhandle_86',['ein_release_handle',['../db/dc0/group__handle__attributes.html#ga361c9cfbfecfa7f44c9cc3a56044f3dd',1,'attributes.hpp']]],
-  ['ein_5frestrict_87',['ein_restrict',['../de/d76/group__aliasing__attributes.html#ga9d43208f3378900ff8d3c2bd66b5672e',1,'attributes.hpp']]],
+  ['ein_5frestrict_87',['ein_restrict',['../de/d76/group__aliasing__attributes.html#ga9d43208f3378900ff8d3c2bd66b5672e',1,'config.hpp']]],
   ['ein_5freturn_5ftypestate_88',['ein_return_typestate',['../d4/dad/group__typestate__analysis.html#gaf79c37c326b25ea1a46b05b2a3c9474c',1,'attributes.hpp']]],
   ['ein_5freturns_5fnonnull_89',['ein_returns_nonnull',['../d9/da3/group__null__safety__attributes.html#ga74fe033a58e1d901c981bbe183b94950',1,'attributes.hpp']]],
   ['ein_5fscoped_5flockable_90',['ein_scoped_lockable',['../d7/d3c/group__thread__safety__attributes.html#gab7cb0527c87347f71f39f6a1f52849c7',1,'attributes.hpp']]],

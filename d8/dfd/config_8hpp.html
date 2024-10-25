@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ein: memory.cppm File Reference</title>
+<title>ein: config.hpp File Reference</title>
 <link rel="icon" href="../../favicon.ico" type="image/x-icon" />
 <!--alternate icons-->
 <link rel="icon" sizes="16x16" type="image/png" href="../../favicon-16x16.png"/>
@@ -144,7 +144,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('d8/d4c/memory_8cppm.html','../../'); initResizable(true); });
+$(function(){initNavTree('d8/dfd/config_8hpp.html','../../'); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -171,79 +171,35 @@ $(function(){initNavTree('d8/d4c/memory_8cppm.html','../../'); initResizable(tru
 
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
-<a href="#namespaces">Namespaces</a> &#124;
-<a href="#concepts">Concepts</a> &#124;
-<a href="#typedef-members">Typedefs</a> &#124;
-<a href="#func-members">Functions</a>  </div>
-  <div class="headertitle"><div class="title">memory.cppm File Reference<div class="ingroups"><a class="el" href="../../d7/ded/group__memory.html">Memory Management</a> &#124; module <a class="el" href="../../de/d47/module__ein_8memory.html">ein.memory</a></div></div></div>
+<a href="#define-members">Macros</a>  </div>
+  <div class="headertitle"><div class="title">config.hpp File Reference<div class="ingroups"><a class="el" href="../../d5/dfd/group__macros.html">Macros</a> &raquo; <a class="el" href="../../d4/d86/group__attributes.html">Attributes</a></div></div></div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><code>#include &quot;<a class="el" href="../../de/d13/prelude_8hpp_source.html">prelude.hpp</a>&quot;</code><br />
-<code>#include &lt;sys/mman.h&gt;</code><br />
-<code>#include &lt;cstring&gt;</code><br />
-</div><div class="textblock"><div class="dynheader">
-Include dependency graph for memory.cppm:</div>
-<div class="dyncontent">
-<div class="center"><!-- SVG 0 --></div>
-</div>
-</div>
-<p><a href="../../d8/d4c/memory_8cppm_source.html">Go to the source code of this file.</a></p>
+
+<p>attributes we have to detect with the build system  
+<a href="#details">More...</a></p>
+
+<p><a href="../../d8/dfd/config_8hpp_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:df/dde/structein_1_1c__munmap" id="r_df/dde/structein_1_1c__munmap"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#df/dde/structein_1_1c__munmap">ein::c_munmap</a></td></tr>
-<tr class="memdesc:df/dde/structein_1_1c__munmap"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter for memory mapped data  <a href="../../d7/ded/group__memory.html#df/dde/structein_1_1c__munmap">More...</a><br /></td></tr>
-<tr class="separator:df/dde/structein_1_1c__munmap"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:d1/d85/structein_1_1c__free" id="r_d1/d85/structein_1_1c__free"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#d1/d85/structein_1_1c__free">ein::c_free</a></td></tr>
-<tr class="memdesc:d1/d85/structein_1_1c__free"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter that calls free()  <a href="../../d7/ded/group__memory.html#d1/d85/structein_1_1c__free">More...</a><br /></td></tr>
-<tr class="separator:d1/d85/structein_1_1c__free"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
-Namespaces</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/dc1/namespaceein.html">ein</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
-Concepts</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/d73/conceptein_1_1trivially__destructible.html">ein::trivially_destructible</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">a type where the destructor does no work, and therefore it is safe to simply discard. <br /></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
-Typedefs</h2></td></tr>
-<tr class="memitem:gabac483c5eb9fb59c662014d36ce22a49" id="r_gabac483c5eb9fb59c662014d36ce22a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#gabac483c5eb9fb59c662014d36ce22a49">ein::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="../../d7/ded/group__memory.html#df/dde/structein_1_1c__munmap">c_munmap</a>&gt;</td></tr>
-<tr class="memdesc:gabac483c5eb9fb59c662014d36ce22a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
-<tr class="separator:gabac483c5eb9fb59c662014d36ce22a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga940b2f94c046f7d63a5c5be98ab42f02" id="r_ga940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
-<tr class="memitem:ga940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#ga940b2f94c046f7d63a5c5be98ab42f02">ein::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="../../d7/ded/group__memory.html#d1/d85/structein_1_1c__free">c_free</a>&gt;</td></tr>
-<tr class="memdesc:ga940b2f94c046f7d63a5c5be98ab42f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
-<tr class="separator:ga940b2f94c046f7d63a5c5be98ab42f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad20e043c6e8f44fc20d90e797dc0bf4b" id="r_gad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="../../d7/ded/group__memory.html#ga940b2f94c046f7d63a5c5be98ab42f02">unique_c_ptr</a>&lt;char const&gt;</td></tr>
-<tr class="memdesc:gad20e043c6e8f44fc20d90e797dc0bf4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">a c string, managed by unique_ptr  <br /></td></tr>
-<tr class="separator:gad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
-Functions</h2></td></tr>
-<tr class="memitem:gac2663d41f31490e13670ae3e6ce98f83" id="r_gac2663d41f31490e13670ae3e6ce98f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/ded/group__memory.html#gabac483c5eb9fb59c662014d36ce22a49">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#gac2663d41f31490e13670ae3e6ce98f83">ein::make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
-<tr class="memdesc:gac2663d41f31490e13670ae3e6ce98f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
-<tr class="separator:gac2663d41f31490e13670ae3e6ce98f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea392313e0b52aaba01039483b6d673f" id="r_gaea392313e0b52aaba01039483b6d673f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/ded/group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d7/ded/group__memory.html#gaea392313e0b52aaba01039483b6d673f">ein::dup</a> (char const *string) noexcept</td></tr>
-<tr class="memdesc:gaea392313e0b52aaba01039483b6d673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="../../d7/ded/group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>  <br /></td></tr>
-<tr class="separator:gaea392313e0b52aaba01039483b6d673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
+Macros</h2></td></tr>
+<tr class="memitem:ga9d43208f3378900ff8d3c2bd66b5672e" id="r_ga9d43208f3378900ff8d3c2bd66b5672e"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../de/d76/group__aliasing__attributes.html#ga9d43208f3378900ff8d3c2bd66b5672e">ein_restrict</a>&#160;&#160;&#160;__restrict</td></tr>
+<tr class="memdesc:ga9d43208f3378900ff8d3c2bd66b5672e"><td class="mdescLeft">&#160;</td><td class="mdescRight">portable <code>restrict</code>, <code>__restrict</code> or <code>__restrict__</code>  <br /></td></tr>
+<tr class="separator:ga9d43208f3378900ff8d3c2bd66b5672e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><div class="fragment"><div class="line">SPDX-FileType: Source</div>
+<div class="textblock"><p>attributes we have to detect with the build system </p>
+<div class="fragment"><div class="line">SPDX-FileType: Source</div>
 <div class="line">SPDX-FileCopyrightText: 2024 Edward Kmett &lt;ekmett@gmail.com&gt;</div>
 <div class="line">SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0</div>
-</div><!-- fragment --> 
-<p class="definition">Definition in file <a class="el" href="../../d8/d4c/memory_8cppm_source.html">memory.cppm</a>.</p>
+</div><!-- fragment -->
+<p class="definition">Definition in file <a class="el" href="../../d8/dfd/config_8hpp_source.html">config.hpp</a>.</p>
 </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="../../dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="../../d8/d4c/memory_8cppm.html">memory.cppm</a></li>
+    <li class="navelem"><a class="el" href="../../dir_16883824a3a04b1a87f846f11415f5e2.html">h</a></li><li class="navelem"><a class="el" href="../../d8/dfd/config_8hpp.html">config.hpp</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="../../doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
   </ul>
 </div>
