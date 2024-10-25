@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   document.querySelectorAll('a[href$=".trace"], a[href$=".json"]').forEach(anchor => {
     const trace_url = anchor.getAttribute("href");
     anchor.removeAttribute("href");
+    anchor.style.cursor = "pointer";
     anchor.addEventListener("click", (event) => { event.preventDefault(); perfetto(trace_url); });
   });
 });
