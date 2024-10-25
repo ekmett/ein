@@ -7,7 +7,10 @@ SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 doxygen -w header.html delete_me.css delete_me.html
 ```
 
-using doxygen v1.12.0
+using `doxygen` v1.12.0
 
-then adding a custom inline style sheet and patching according to the `doxygen-awesome-css`
-instructions.
+then adding a custom inline style sheet and patching
+according to the `doxygen-awesome-css` instructions.
+
+A custom `trace.js` was then added to permit opening
+pefetto traces.
