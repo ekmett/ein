@@ -1,9 +1,5 @@
 var numerics_8cpp =
 [
-    [ "EIN_CMP", "numerics_8cpp.html#a39b866a6711d0e59369a3eef5487defd", null ],
-    [ "EIN_CMP_IMPL", "numerics_8cpp.html#ad942c0e453cbdf3afcf53ba2f2dfd00e", null ],
-    [ "EIN_CMPINT", "numerics_8cpp.html#ac6d41af8c6dbb11f72795cbef53ab256", null ],
-    [ "EIN_CMPINT_IMPL", "numerics_8cpp.html#a5f5a8ec09d5e464dd2a3ee25a08d094a", null ],
     [ "X", "numerics_8cpp.html#a207fd5507206d307cd63f95374fcd00d", null ],
     [ "cmp_ord", "numerics_8cpp.html#aed6b28145ef6605e8092c5b7bf3cade1", null ],
     [ "cmp_ord", "numerics_8cpp.html#a4db3bfe82586c57874b7b757b237251a", null ],

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['if512_0',['IF512',['../simd_8cppm.html#a387077f9d15d6ae1a2d99c018c5dca7b',1,'simd.cppm']]],
-  ['ifavx512_1',['IFAVX512',['../numerics_8cppm.html#af569bd545b347efcbff730e5f47b040e',1,'numerics.cppm']]]
+  ['on512_0',['ON512',['../simd_8cppm.html#a57e8e83821b2f7ee793874528f00f863',1,'simd.cppm']]]
 ];
