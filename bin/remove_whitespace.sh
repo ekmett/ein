@@ -13,10 +13,8 @@ DIR=${1:-.}
 
 pushd $DIR > /dev/null
 
-# Skip searching directories in the search root directory named 'gen'
-# or 'lib'.
-
-git grep -I --name-only -e . | grep -v -e '^gen/' -e '^lib/' -e '^.ccache/' | while IFS= read -r file; do
+# Skip listing files of excluded directories.
+git grep -I --name-only -e . | grep -vE '^gen/|^lib/|^.ccache/|^doxygen/assets/' | while IFS= read -r file; do
     echo "Processing: $file"
 
     # Remove trailing whitespace in place
