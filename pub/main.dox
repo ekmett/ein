@@ -4,7 +4,7 @@
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
 \htmlonly
-<img src="https://img.shields.io/badge/build-trace-orange" id="fetch_badge" style="cursor: none;" onclick="fetchAndOpen('/trace.json')" alt="Build Trace" class="inline">
+<img src="https://img.shields.io/badge/build-trace-orange" id="fetch_badge" style="cursor: none;" onclick="fetchAndOpen('trace.json')" alt="Build Trace" class="inline">
 <script>
 document.addEventListener("DOMContentLoaded", function() {
   const fetchBadge = document.querySelector('img[alt="Build Trace"]');
