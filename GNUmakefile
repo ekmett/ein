@@ -49,9 +49,9 @@ gen: $(CMAKELISTS)
 	@touch gen
 
 lint:
-	@git --no-pager diff --check origin/main HEAD \
+	@git --no-pager diff --check origin/main HEAD -- ':!doxygen/assets/**' \
 		|| { echo "Trailing whitespace detected. Please run 'make format'."; exit 1; }
-	@for file in $(shell git diff --name-only origin/main HEAD); do \
+	@for file in $(shell git diff --name-only origin/main HEAD | grep -v -e '^doxygen/assets/'); do \
 		if [ -f "$$file" ] && [ -n "$$(tail -c 1 "$$file")" ]; then \
 			echo "Missing newline at end of file: $$file. Please run 'make format'"; \
 			exit 1; \
