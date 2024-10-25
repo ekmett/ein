@@ -1,5 +1,5 @@
 /**
-\mainpage
+\mainpage ein
 
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
@@ -63,5 +63,12 @@ Please feel free to contact me through [GitHub](https://github.com/ekmett) or on
 I can also be reached through Twitter/X as \@kmett.
 
 -Edward Kmett
+
+<div class="section_buttons">
+<table class="markdownTable">
+<tr class="markdownTableHead"><th class="markdownTableHeadLeft">Previous</th><th class="markdownTableHeadRight">Next</th></tr>
+<tr class="markdownTableRowOdd"><td class="markdownTableBodyLeft"></td><td class="markdownTableBodyRight">\ref license_page</td></tr>
+</table>
+</div>
 
 */

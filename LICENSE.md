@@ -1,4 +1,4 @@
-# License
+# License {#license_page}
 
 [TOC]
 
@@ -229,3 +229,11 @@ third-party archives.
     WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
     See the License for the specific language governing permissions and
     limitations under the License.
+
+<div class="section_buttons">
+
+| Previous          |                              Next |
+|:------------------|----------------------------------:|
+| [Home](index.html) | [Installation](@ref installation_page) |
+
+</div>

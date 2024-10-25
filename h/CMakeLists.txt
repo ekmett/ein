@@ -5,7 +5,7 @@ configure_file(
   "${CMAKE_CURRENT_BINARY_DIR}/config.hpp"
 )
 
-list(APPEND SOURCE_HEADER_FILES 
+list(APPEND SOURCE_HEADER_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/assert.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/attributes.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/intrinsics.hpp"

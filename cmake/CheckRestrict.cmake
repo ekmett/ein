@@ -52,4 +52,3 @@ elseif (HAS___RESTRICT__)
 else()
   set(RESTRICT_KEYWORD "")
 endif()
-

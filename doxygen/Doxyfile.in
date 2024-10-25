@@ -99,7 +99,7 @@ HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/assets/header.html
 HTML_COPY_CLIPBOARD    = NO
 PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/doxygen/assets/images/ein-logo.png
 PROJECT_ICON           = @CMAKE_SOURCE_DIR@/doxygen/assets/icons/favicon.ico
-CREATE_SUBDIRS         = YES
+CREATE_SUBDIRS         = NO
 MARKDOWN_SUPPORT       = YES
 TOC_INCLUDE_HEADINGS   = 3
 ALIASES  = "license=@code{.spdx}"
@@ -126,5 +126,3 @@ ENUM_VALUES_PER_LINE = 1
 REFERENCED_BY_RELATION = YES
 REFERENCES_RELATION = YES
 INTERACTIVE_SVG = YES
-
-

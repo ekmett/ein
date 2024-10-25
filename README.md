@@ -2,75 +2,10 @@
 
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
-[![Build Trace](https://img.shields.io/badge/build-trace-blue)](https://ekmett.github.io/trace.json)
 
 This is a playground for wide SIMD evaluation.
 
-## Install requirements
-
-You'll need a fairly bleeding edge compiler for this.
-
-Currently the intention is to target AVX-512, and any support for something other than that (e.g. Apple Silicon, AVX-2)
-will be nominal at best, so make sure your CPU is up to snuff. Build instructions below are for Linux. I'll very likely
-take patches that broaden coverage, though.
-
-There's a lot more to come.
-
-### ninja 1.12.1
-
-You'll want to upgrade Ninja to a version that supports scanning for C++ modules.
-
-```bash
-wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
-sudo apt-get install -y unzip
-sudo unzip ninja-linux.zip -d /usr/local/bin/
-sudo chmod +x /usr/local/bin/ninja
-```
-
-### clang++-19
-
-Next you'll need a version of clang (and clang-tools) that supports c++23 pretty well. Currently this is clang++-19
-
-```bash
-wget https://apt.llvm.org/llvm.sh
-chmod +x llvm.sh
-sudo ./llvm.sh 19
-sudo apt install clang-19 clang-tools-19 clangd-19 lldb-19 lld-19
-```
-
-### doxygen 1.12.0
-
-Documentation requires doxygen 1.12.0.
-
-```bash
-sudo apt-get uninstall doxygen
-wget https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz
-tar xvfpz doxygen-1.12.0.linux.bin.tar.gz
-cd doxygen-1.12.0/
-sudo make install
-doxygen --version
-```
-
-### cmake 3.30.5
-
-We need a fairly modern `cmake` in order to get C++ modules support.
-
-```bash
-sudo apt-get remove cmake
-wget https://cmake.org/files/v3.30/cmake-3.30.5-linux-x86_64.sh -O cmake-3.30.5.sh
-chmod +x cmake-3.30.5.sh
-sudo ./cmake-3.30.5.sh --prefix=/usr/local --exclude-subdir
-cmake --version # you may need to restart your shell
-```
-
-### ccache
-
-This makes development a lot faster and is use by the default cmake preset. Not strictly necessary.
-
-```bash
-sudo apt-get install -y ccache
-```
-
+[Documentation](https://ekmett.github.io/ein/) is available, and should evolve as this grows.
 
 ## Contact Information
 

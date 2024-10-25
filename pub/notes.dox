@@ -1,43 +1,49 @@
 /**
-\page pch On Precompiled Headers
+\page notes_page Notes
+  
+  \internal
+    \license
+      SPDX-FileType: Source
+      SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+      SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+    \endlicense
+  \endinternal
+  
+  \tableofcontents
 
-\internal
-  \license
-    SPDX-FileType: Source
-    SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
-    SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-  \endlicense
-\endinternal
 
-\tableofcontents
 
-We build a precompiled header to accelerate the build at present.
+  This is mostly a set of disconnected ramblings.
 
-We need at least some headers because C++ modules don't handle
-macros, and properly attaching attributes to something without
-macros is hell.
 
-The macros are large and represent a lot of state as do our
-third-party library dependencies that are also header-based.
 
-It'd be nice to cache the startup of the compiler right after
-it has parsed all of that information. This is precisely what
-a precompiled header does.
 
-This leads to some conflicts between `cmake` and `clangd`.
 
-We also want to minimize the amount of time we spend editing
-files that are included in the pch to optimize build time.
+\section pch On Precompiled Headers
+  
+  We build a precompiled header to accelerate the build at present.
+  
+  We need at least some headers because C++ modules don't handle
+  macros, and properly attaching attributes to something without
+  macros is hell.
+  
+  The macros are large and represent a lot of state as do our
+  third-party library dependencies that are also header-based.
+  
+  It'd be nice to cache the startup of the compiler right after
+  it has parsed all of that information. This is precisely what
+  a precompiled header does.
+  
+  This leads to some conflicts between `cmake` and `clangd`.
+  
+  We also want to minimize the amount of time we spend editing
+  files that are included in the pch to optimize build time.
+  
+  This is also in tension with wanting robust documentation.
+  
 
-This is also in tension with wanting robust documentation.
 
-- \subpage pch_cmake_vs_clangd
-- \subpage pch_big_docs
-
-*/
-
-/**
-\page pch_cmake_vs_clangd On cmake vs. clangd
+\section pch_cmake_vs_clangd On cmake vs. clangd
 
   When using CMake (at least as of 3.30.5) it wants to control the
   assembly of your precompiled header.
@@ -80,10 +86,11 @@ This is also in tension with wanting robust documentation.
 
   I prefer the clarity of the code with no headers cluttering the top of each
   file.
-*/
 
-/**
-\page pch_big_docs On documentation in headers and precompilation
+
+
+
+\section pch_big_docs On documentation in headers and precompilation
 
   The code doesn't care about your documentation. So in theory we should
   consider doing out of line documentation for headers (and other modules),
@@ -100,5 +107,12 @@ This is also in tension with wanting robust documentation.
   So we should probably pull out long multi-paragraph writings into the ./pub/
   folder and use `\ref` tags or `\copydoc` to bring them inline in the
   documentation where needed.
+
+<div class="section_buttons">
+<table class="markdownTable">
+<tr class="markdownTableHead"><th class="markdownTableHeadLeft">Previous</th><th class="markdownTableHeadRight">Next</th></tr>
+<tr class="markdownTableRowOdd"><td class="markdownTableBodyLeft">\ref installation_page</td><td class="markdownTableBodyRight"></td></tr>
+</table>
+</div>
 
 */

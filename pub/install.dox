@@ -1,6 +1,6 @@
 /**
 
-\page install Installation
+\page installation_page Installation
 
 \internal
   \license
@@ -16,18 +16,20 @@ You'll need a fairly bleeding edge compiler and build system for this.
 
 \section install_ninja Ninja 1.12.1
 
-You'll want to upgrade Ninja to a version that supports scanning for C++ modules.
+You'll want to upgrade <a href="https://ninja-build.org/">Ninja</a> to a version that supports scanning for C++ modules.
 
 \code{.bash}
 wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
 sudo apt-get install -y unzip
-unzip ninja-linux.zip -d /usr/local/bin/
+sudo unzip ninja-linux.zip -d /usr/local/bin/
 sudo chmod +x /usr/local/bin/ninja
 \endcode
 
 \section install_clang Clang++-19
 
-Next you'll need a version of clang (and clang-tools) that supports c++23 pretty well. Currently this is clang++-19
+Next you'll need a version of <a href="https://clang.llvm.org/">Clang++</a> (and clang-tools) that supports c++23 pretty well. Currently I use `clang++-19`.
+
+`clang-tools-19` is required because we need `clang-scan-deps-19` to be installed for C++ modules support out of `CMake`.
 
 \code{.bash}
 wget https://apt.llvm.org/llvm.sh
@@ -38,7 +40,7 @@ sudo apt install clang-19 clang-tools-19 clangd-19 lldb-19 lld-19
 
 \section install_doxygen Doxygen 1.12.0
 
-Documentation requires doxygen 1.12.0 or later.
+Documentation requires <a href="https://www.doxygen.nl/">Doxygen</a> 1.12.0 or later.
 
 \code{.bash}
 sudo apt-get uninstall doxygen
@@ -48,4 +50,35 @@ cd doxygen-1.12.0/
 sudo make install
 doxygen --version
 \endcode
+
+\section install_cmake CMake 3.30.5
+
+We need a fairly modern <a href="https://cmake.org/">CMake</a> in order to get C++ modules support.
+
+```bash
+sudo apt-get remove cmake
+wget https://cmake.org/files/v3.30/cmake-3.30.5-linux-x86_64.sh -O cmake-3.30.5.sh
+chmod +x cmake-3.30.5.sh
+sudo ./cmake-3.30.5.sh --prefix=/usr/local --exclude-subdir
+cmake --version # you may need to restart your shell
+```
+
+\section install_ccache CCache
+
+<a href="https://ccache.dev/">CCache</a> makes development a lot faster and is use by the default `CMakePreset.json` preset.
+Not strictly necessary, but it is an easy win.
+
+```bash
+sudo apt-get install -y ccache
+```
+
+<div class="section_buttons">
+<table class="markdownTable">
+<tr class="markdownTableHead"><th class="markdownTableHeadLeft">Previous</th><th class="markdownTableHeadRight">Next</th></tr>
+<tr class="markdownTableRowOdd"><td class="markdownTableBodyLeft">\ref license_page</td><td class="markdownTableBodyRight">\ref notes_page</td></tr>
+</table>
+</div>
+
+
+
 */
