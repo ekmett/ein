@@ -112,19 +112,19 @@ using simd_intrinsic_t = typename simd_intrinsic<T,N>::type;
 export template <typename T, size_t N>
 concept has_mmask
 #if __AVX512F__
-      = has_simd_type<T,N> && N >= 8;
+      = ((has_simd_type<T,N>) && (N >= 8));
 #else
       = false;
 #endif
 
 #ifdef __AVX512F__
-/// \cond
+namespace {
 template <size_t N> struct mmask {};
 template <> struct mmask<8>  { using type = __mmask8; };
 template <> struct mmask<16> { using type = __mmask16; };
 template <> struct mmask<32> { using type = __mmask32; };
 template <> struct mmask<64> { using type = __mmask64; };
-/// \endcond
+}
 
 /// If AVX512 is enabled returns the type of an n-bit mmask.
 /// \hideinitializer
@@ -140,7 +140,7 @@ export template <typename T, size_t N>
 requires has_simd_type<T,N>
 using simd_mask_t =
 #ifdef __AVX512F__
-  std::conditional_t<one_of<N,8,16,32,64>, mmask_t<N>, simd_intrinsic_t<T,N>>;
+  std::conditional_t<has_mmask<T,N>, mmask<N>, simd_intrinsic_t<T,N>>;
 #else
   simd_intrinsic_t<T,N>;
 #endif
