@@ -47,9 +47,6 @@ jobs:
     - name: accelerate gh_pages refresh by noting there are no jekyll templates
       run: |
         touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
-    - name: add trace.json to documentation website
-      run: |
-        cp ${{ steps.strings.outputs.build-output-dir }}/trace.json ${{ steps.strings.outputs.build-output-dir}}/docs/html/
     - name: upload docs
       uses: actions/upload-artifact@v4.4.3
       with:
