@@ -6,8 +6,20 @@
 
 include(CheckCXXSourceCompiles)
 
+function(check_quiet_cxx_source_compiles source result_var)
+    # Create a temporary file to hold the source code
+    file(WRITE "${CMAKE_BINARY_DIR}/check_quiet_compile.cpp" "${source}")
+
+    # Now use try_compile with the temporary source file
+    try_compile(${result_var} ${CMAKE_BINARY_DIR}
+        SOURCES "${CMAKE_BINARY_DIR}/check_quiet_compile.cpp"
+        OUTPUT_VARIABLE QUIET_COMPILE_OUTPUT
+        COPY_FILE ON
+    )
+endfunction()
+
 # Check for "restrict"
-check_cxx_source_compiles("
+check_quiet_cxx_source_compiles("
   int main() {
     int * restrict p;
     return 0;
@@ -15,7 +27,7 @@ check_cxx_source_compiles("
 " HAS_RESTRICT)
 
 # Check for "__restrict"
-check_cxx_source_compiles("
+check_quiet_cxx_source_compiles("
   int main() {
     int * __restrict p;
     return 0;
@@ -23,7 +35,7 @@ check_cxx_source_compiles("
 " HAS___RESTRICT)
 
 # Check for "__restrict__"
-check_cxx_source_compiles("
+check_quiet_cxx_source_compiles("
   int main() {
     int * __restrict__ p;
     return 0;
