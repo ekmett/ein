@@ -41,7 +41,7 @@ concept waiter = requires (void * p, uint32_t t) {
 ///
 /// \post f(p)
 export template <waiter W> ein_flatten
-void wait_until(auto * p, auto f) noexcept {
+void wait_until(auto * p, auto f) noexcept ein_blocking {
   assume(W::supported);
   while (!f(p)) {
     W::monitor(p);
@@ -54,7 +54,7 @@ void wait_until(auto * p, auto f) noexcept {
 export struct mwaitx {
   using timer_t = uint64_t;
   ein_inline ein_artificial static void monitor(void * p) noexcept { _mm_monitorx(p,0,0); }
-  ein_inline ein_artificial static void mwait(uint32_t timer = 0) noexcept { _mm_mwaitx(0,0,timer); }
+  ein_inline ein_artificial static void mwait(uint32_t timer = 0) noexcept ein_blocking { _mm_mwaitx(0,0,timer); }
   /// \hideinlinesource
   static const bool supported;
 };
@@ -70,7 +70,7 @@ const bool mwaitx::supported = [] static noexcept {
 export struct umwait {
   using timer_t = uint64_t;
   ein_inline ein_artificial static void monitor(void * p) noexcept { return _umonitor(p); }
-  ein_inline ein_artificial static uint8_t mwait(uint32_t timer = 0) noexcept { return _umwait(1,timer); }
+  ein_inline ein_artificial static uint8_t mwait(uint32_t timer = 0) noexcept ein_blocking { return _umwait(1,timer); }
   /// \hideinlinesource
   static const bool supported;
 };
@@ -85,7 +85,7 @@ const bool umwait::supported = [] static noexcept {
 export struct spin {
   using timer_t = uint64_t;
   ein_inline ein_artificial static void monitor(void *) noexcept {}
-  ein_inline ein_artificial static void mwait(uint32_t = 0) noexcept { _mm_pause(); }
+  ein_inline ein_artificial static void mwait(uint32_t = 0) noexcept ein_blocking { _mm_pause(); }
   /// \hideinlinesource
   inline static constinit bool supported = true;
 };
