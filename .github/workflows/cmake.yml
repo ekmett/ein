@@ -49,6 +49,12 @@ jobs:
       with:
         name: docs
         path: ${{ steps.strings.outputs.build-output-dir }}/docs/html/
+    # can be fed to ui.perfetto.dev or chrome://tracing to debug builds
+    - name: upload trace.json
+      uses: actions/upload-artifact@v4.4.3
+      with:
+        name: docs
+        path: ${{ steps.strings.outputs.build-output-dir }}/trace.json
 
   test:
     runs-on: ubuntu-latest
