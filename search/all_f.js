@@ -16,6 +16,6 @@ var searchData=
   ['modules_13',['Modules',['../group__modules.html',1,'']]],
   ['monitor_14',['monitor',['../group__wait.html#a3993acfadc722397212f4d983986bf21',1,'ein::mwaitx::monitor()'],['../group__wait.html#a376bf3e1e66eb57013fea08af54c7906',1,'ein::umwait::monitor()'],['../group__wait.html#a89f5d0f22dc2c948835409712a458895',1,'ein::spin::monitor()']]],
   ['multi_20versioning_15',['Function Multi-Versioning',['../group__multiversioning__attributes.html',1,'']]],
-  ['mwait_16',['mwait',['../group__wait.html#a9971c090707423cab25a15f40dc749dc',1,'ein::mwaitx::mwait()'],['../group__wait.html#aad483eaa0919765ec050f3e9eb42d083',1,'ein::umwait::mwait()'],['../group__wait.html#a83985e645823a822d89ca8104485a22f',1,'ein::spin::mwait()']]],
+  ['mwait_16',['mwait',['../group__wait.html#ae9200d7e42df08e5721d28dd59ef3af8',1,'ein::mwaitx::mwait()'],['../group__wait.html#a65af2d44aac545bf2288c7fb2f59e387',1,'ein::umwait::mwait()'],['../group__wait.html#a10681c905b236e014773ae1793565dac',1,'ein::spin::mwait()']]],
   ['mwaitx_17',['mwaitx',['../group__wait.html#structein_1_1mwaitx',1,'ein']]]
 ];

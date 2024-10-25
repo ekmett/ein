@@ -122,7 +122,7 @@ var namespaceein =
     [ "simd", "group__simd.html#ga6def18561a39ff4a1188bc619f86d862", null ],
     [ "stream_load", "group__simd.html#gaf84aa0909d95f9faf66f5ee344285677", null ],
     [ "type_of", "group__types.html#gaeff5354fcf4acab5497e2b60433e75b6", null ],
-    [ "wait_until", "group__wait.html#ga4dad9bbe9beb5746a5261d9d818332c5", null ],
+    [ "wait_until", "group__wait.html#gabe061cf9e5e42c3c3587a332483635d5", null ],
     [ "with_waiter", "group__wait.html#ga15797fd5aad0c604b5951f50d53d3623", null ],
     [ "cpu_vendor", "group__cpuid.html#ga4639c74c35d500365670dd87c558c0c5", null ],
     [ "imm", "group__numerics.html#ga9f8820229adbc8c614428c448a370015", null ],
