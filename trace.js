@@ -4,13 +4,40 @@
 
 // change all .trace and .json links to launch perfetto on load
 window.addEventListener("DOMContentLoaded", () => {
+  const statusBar = document.createElement("div");
+  Object.assign(statusBar.style, {
+    position: "fixed", bottom: "25px", left: "25px", padding: "5px 10px",
+    backgroundColor: "#f1f1f1", color: "#000", fontSize: "12px",
+    fontFamily: "sans-serif", borderRadius: "4px",
+    border: "1px solid #ddd", boxShadow: "0 0 5px rgba(0,0,0,0.1)",
+    display: "none", opacity: "0.9", maxWidth: "calc(100% - 20px)", zIndex: 1000
+  });
+  document.body.appendChild(statusBar);
+
   document.querySelectorAll('a[href$=".trace"], a[href$=".json"]').forEach(anchor => {
     const trace_url = anchor.getAttribute("href");
+    anchor.style.cursor = "pointer";
     anchor.removeAttribute("href");
-    anchor.addEventListener("click", (event) => { event.preventDefault(); perfetto(trace_url); });
+
+    anchor.addEventListener("mouseover", () => {
+      statusBar.textContent = "Launch Perfetto UI with " + trace_url;
+      statusBar.style.display = "block";
+    });
+    anchor.addEventListener("mouseout", () => statusBar.style.display = "none");
+    anchor.addEventListener("click", (e) => { e.preventDefault(); perfetto(trace_url); });
   });
 });
 
+/*
+window.addEventListener("DOMContentLoaded", () => {
+  document.querySelectorAll('a[href$=".trace"], a[href$=".json"]').forEach(anchor => {
+    const trace_url = anchor.getAttribute("href");
+    anchor.removeAttribute("href");
+    anchor.style.cursor = "pointer";
+    anchor.addEventListener("click", (event) => { event.preventDefault(); perfetto(trace_url); });
+  });
+});
+*/
 // launch perfetto for a given trace url
 async function perfetto(trace_url) {
   const title = trace_url.split('/').pop().replace(/\.(trace|json)$/, "");
