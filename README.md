@@ -23,7 +23,7 @@ You'll want to upgrade Ninja to a version that supports scanning for C++ modules
 ```bash
 wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
 sudo apt-get install -y unzip
-unzip ninja-linux.zip -d /usr/local/bin/
+sudo unzip ninja-linux.zip -d /usr/local/bin/
 sudo chmod +x /usr/local/bin/ninja
 ```
 
@@ -50,6 +50,27 @@ cd doxygen-1.12.0/
 sudo make install
 doxygen --version
 ```
+
+### cmake 3.30.5
+
+We need a fairly modern `cmake` in order to get C++ modules support.
+
+```bash
+sudo apt-get remove cmake
+wget https://cmake.org/files/v3.30/cmake-3.30.5-linux-x86_64.sh -O cmake-3.30.5.sh
+chmod +x cmake-3.30.5.sh
+sudo ./cmake-3.30.5.sh --prefix=/usr/local --exclude-subdir
+cmake --version # you may need to restart your shell
+```
+
+### ccache
+
+This makes development a lot faster and is use by the default cmake preset. Not strictly necessary.
+
+```bash
+sudo apt-get install -y ccache
+```
+
 
 ## Contact Information
 
