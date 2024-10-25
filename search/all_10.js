@@ -20,5 +20,7 @@ var searchData=
   ['notes_2edox_17',['notes.dox',['../notes_8dox.html',1,'']]],
   ['null_20safety_18',['Null Safety',['../group__null__safety__attributes.html',1,'']]],
   ['numerics_19',['Numerics',['../group__numerics.html',1,'']]],
-  ['numerics_2ecppm_20',['numerics.cppm',['../numerics_8cppm.html',1,'']]]
+  ['numerics_2ecpp_20',['numerics.cpp',['../numerics_8cpp.html',1,'']]],
+  ['numerics_2ecppm_21',['numerics.cppm',['../numerics_8cppm.html',1,'']]],
+  ['numerics_2ex_22',['numerics.x',['../numerics_8x.html',1,'']]]
 ];

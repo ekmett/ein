@@ -1,5 +1,7 @@
 var group__numerics =
 [
+    [ "numerics.cpp", "numerics_8cpp.html", null ],
+    [ "numerics.x", "numerics_8x.html", null ],
     [ "numerics.cppm", "numerics_8cppm.html", null ],
     [ "ein::one_of", "conceptein_1_1one__of.html", null ],
     [ "ein::not_one_of", "conceptein_1_1not__one__of.html", null ],
