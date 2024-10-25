@@ -16,7 +16,7 @@
 
       \brief portable `restrict`, `__restrict` or `__restrict__`
 
-      \detail
+      \details
 
         Indicates this target can only be reached through this pointer.
 

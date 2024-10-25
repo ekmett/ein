@@ -778,7 +778,7 @@
 /// \{
 ///
 
-#define ein_restrict __restrict__
+// NB: ein_restrict is also in this group, but is in config.hpp
 
 /** \def ein_noalias
 

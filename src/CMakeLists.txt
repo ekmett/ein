@@ -5,10 +5,9 @@
 add_library(ein STATIC)
 
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
+add_dependencies(ein ein_headers)
 
-target_link_libraries(ein PUBLIC
-  spdlog::spdlog
-)
+target_link_libraries(ein PUBLIC spdlog::spdlog)
 
 target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   cpuid.cppm
@@ -25,12 +24,9 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
 #  nlohmann_json::nlohmann_json
 #  Threads::Threads
 
-target_link_libraries(ein PUBLIC
-  ${COMPILER_RT_BUILTINS}
-)
+target_link_libraries(ein PUBLIC ${COMPILER_RT_BUILTINS})
 
 target_include_directories(ein PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_SOURCE_DIR}/h>
   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/h>
   $<INSTALL_INTERFACE:include/ein>)
 
@@ -40,24 +36,15 @@ install(TARGETS ein
   PUBLIC_HEADER DESTINATION include/ein
   INCLUDES DESTINATION include/ein)
 
-set_target_properties(ein PROPERTIES PUBLIC_HEADER "assert.hpp;attributes.hpp;config.hpp;intrinsics.hpp;prelude.hpp;std.hpp;third-party.hpp")
+list(JOIN OUTPUT_HEADER_FILES ";" joined_headers)
+set_target_properties(ein PROPERTIES PUBLIC_HEADER "${joined_headers}")
 
 lto(ein)
 
 if(PRECOMPILE_HEADERS)
-  target_precompile_headers(ein PRIVATE
-    ${CMAKE_SOURCE_DIR}/h/std.hpp
-    ${CMAKE_SOURCE_DIR}/h/intrinsics.hpp
-    ${CMAKE_SOURCE_DIR}/h/third-party.hpp
-    ${CMAKE_BINARY_DIR}/h/config.hpp
-    ${CMAKE_SOURCE_DIR}/h/attributes.hpp
-    ${CMAKE_SOURCE_DIR}/h/assert.hpp
-    ${CMAKE_SOURCE_DIR}/h/prelude.hpp
-  )
+  target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
   target_compile_definitions(ein PUBLIC EIN_PCH=1)
 endif()
-
-target_compile_definitions(ein PUBLIC EIN_RESTRICT=${RESTRICT_KEYWORD})
 
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")

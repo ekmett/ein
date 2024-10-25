@@ -72,6 +72,7 @@ if(DOXYGEN_FOUND)
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Generating API documentation with Doxygen ${DOXYGEN_EXECUTABLE}"
     VERBATIM
+    DEPENDS "${CMAKE_BINARY_DIR}/h/config.hpp"
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it
