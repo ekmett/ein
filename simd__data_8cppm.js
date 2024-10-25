@@ -3,7 +3,7 @@ var simd__data_8cppm =
     [ "mmask_t", "simd__data_8cppm.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],
     [ "simd_data_t", "simd__data_8cppm.html#ga2fe08d2d97e186bfa4d9e484443df6e8", null ],
     [ "simd_intrinsic_t", "simd__data_8cppm.html#gac990fb6f5dcea45fb2adb40514b836d3", null ],
-    [ "simd_mask_t", "simd__data_8cppm.html#ga423156b83124d4f090aad2b1e75447b1", null ],
+    [ "simd_mask_t", "simd__data_8cppm.html#gae78d444e236a38a2192b04c2bfd58433", null ],
     [ "cast_pd", "simd__data_8cppm.html#gaff6a2d3a89000de76efe691b7ef51f8e", null ],
     [ "cast_pd", "simd__data_8cppm.html#ga1e769c6c0bfd9b16bfafd49a63b547b1", null ],
     [ "cast_pd", "simd__data_8cppm.html#ga0f67aba576f075e5a395db942d1f626b", null ],

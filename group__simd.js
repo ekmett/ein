@@ -122,7 +122,7 @@ var group__simd =
     [ "ein::mmask_t", "group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],
     [ "ein::simd_data_t", "group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8", null ],
     [ "ein::simd_intrinsic_t", "group__simd.html#gac990fb6f5dcea45fb2adb40514b836d3", null ],
-    [ "ein::simd_mask_t", "group__simd.html#ga423156b83124d4f090aad2b1e75447b1", null ],
+    [ "ein::simd_mask_t", "group__simd.html#gae78d444e236a38a2192b04c2bfd58433", null ],
     [ "ein::cast_pd", "group__simd.html#gaff6a2d3a89000de76efe691b7ef51f8e", null ],
     [ "ein::cast_pd", "group__simd.html#ga1e769c6c0bfd9b16bfafd49a63b547b1", null ],
     [ "ein::cast_pd", "group__simd.html#ga0f67aba576f075e5a395db942d1f626b", null ],

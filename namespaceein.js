@@ -24,7 +24,7 @@ var namespaceein =
     [ "mmask_t", "group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],
     [ "simd_data_t", "group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8", null ],
     [ "simd_intrinsic_t", "group__simd.html#gac990fb6f5dcea45fb2adb40514b836d3", null ],
-    [ "simd_mask_t", "group__simd.html#ga423156b83124d4f090aad2b1e75447b1", null ],
+    [ "simd_mask_t", "group__simd.html#gae78d444e236a38a2192b04c2bfd58433", null ],
     [ "uint_t", "group__numerics.html#gab9bd44183e9aa86139541a3690cf8a2c", null ],
     [ "unique_c_ptr", "group__memory.html#ga940b2f94c046f7d63a5c5be98ab42f02", null ],
     [ "unique_str", "group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b", null ],

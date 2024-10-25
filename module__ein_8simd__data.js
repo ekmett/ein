@@ -7,7 +7,7 @@ var module__ein_8simd__data =
     [ "ein::simd_data_t", "module__ein_8simd__data.html#ga2fe08d2d97e186bfa4d9e484443df6e8", null ],
     [ "ein::simd_intrinsic_t", "module__ein_8simd__data.html#gac990fb6f5dcea45fb2adb40514b836d3", null ],
     [ "ein::mmask_t", "module__ein_8simd__data.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],
-    [ "ein::simd_mask_t", "module__ein_8simd__data.html#ga423156b83124d4f090aad2b1e75447b1", null ],
+    [ "ein::simd_mask_t", "module__ein_8simd__data.html#gae78d444e236a38a2192b04c2bfd58433", null ],
     [ "ein::cast_ps", "module__ein_8simd__data.html#ga48e448cefd9b722a4c66bf734601dee6", null ],
     [ "ein::cast_ps", "module__ein_8simd__data.html#gaa8e64744d683dfa56429a68a3e224b7c", null ],
     [ "ein::cast_ps", "module__ein_8simd__data.html#gafcfa13f6c410411518e6f68950dfd5e3", null ],
