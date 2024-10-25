@@ -81,8 +81,8 @@ constexpr bool cmp_unord(T a, T b) noexcept {
 }
 
 /// \cond precompile
-export template bool cmp_unord(float,float) noexcept;
-export template bool cmp_unord(double,double) noexcept;
+export extern template bool cmp_unord(float,float) noexcept;
+export extern template bool cmp_unord(double,double) noexcept;
 /// \endcond
 
 export template <typename T>
@@ -92,8 +92,8 @@ constexpr bool cmp_ord(T a, T b) noexcept {
 }
 
 /// \cond precompile
-export template bool cmp_ord(float,float) noexcept;
-export template bool cmp_ord(double,double) noexcept;
+export extern template bool cmp_ord(float,float) noexcept;
+export extern template bool cmp_ord(double,double) noexcept;
 /// \endcond
 
 /// \hideinlinesource
@@ -145,11 +145,6 @@ constexpr T scalef(T x, T y) noexcept {
   }
 }
 
-/// \cond precompile
-export template float scalef(float, float) noexcept;
-export template double scalef(double, double) noexcept;
-/// \endcond
-
 /// \hideinlinesource
 export enum class ein_nodiscard CMPINT : size_t {
   EQ    = 0x0uz ///< `==`
@@ -176,30 +171,6 @@ constexpr bool cmpint(T a, T b) noexcept {
   else if constexpr (imm8 == CMPINT::NE)    return a != b;
   else static_assert(false);
 }
-
-/// \cond precompile
-#define EIN_CMPINT_IMPL(X,Y) \
-  export template bool cmpint<CMPINT::X,Y>(Y,Y) noexcept;
-#define EIN_CMPINT(X) \
-  EIN_CMPINT_IMPL(X,uint8_t) \
-  EIN_CMPINT_IMPL(X,uint16_t) \
-  EIN_CMPINT_IMPL(X,uint32_t) \
-  EIN_CMPINT_IMPL(X,uint64_t) \
-  EIN_CMPINT_IMPL(X,int8_t) \
-  EIN_CMPINT_IMPL(X,int16_t) \
-  EIN_CMPINT_IMPL(X,int32_t) \
-  EIN_CMPINT_IMPL(X,int64_t)
-EIN_CMPINT(TRUE)
-EIN_CMPINT(FALSE)
-EIN_CMPINT(LT)
-EIN_CMPINT(NLT)
-EIN_CMPINT(LE)
-EIN_CMPINT(NLE)
-EIN_CMPINT(EQ)
-EIN_CMPINT(NE)
-#undef EIN_CMPINT_IMPL
-#undef EIN_CMPINT
-/// \endcond
 
 /// AVX512 added many more floating point comparison types. Do we have them?
 /// \hideinitializer
@@ -281,49 +252,11 @@ constexpr bool cmp(T a, T b) noexcept {
   else static_assert(false);
 }
 
-/// \cond
-#define EIN_CMP_IMPL(X,Y) \
-  export template bool cmp<CMP::X,Y>(Y,Y) noexcept;
-#define EIN_CMP(X) \
-  EIN_CMP_IMPL(X,float) \
-  EIN_CMP_IMPL(X,double)
+/// \cond precompile
+#define X export extern
+#include "numerics.x"
+#undef X
 /// \endcond
-
-EIN_CMP(EQ_OQ)
-EIN_CMP(LT_OS)
-EIN_CMP(LE_OS)
-EIN_CMP(UNORD_Q)
-EIN_CMP(NEQ_UQ)
-EIN_CMP(NLT_US)
-EIN_CMP(NLE_US)
-EIN_CMP(ORD_Q)
-EIN_CMP(EQ_UQ)
-EIN_CMP(NGE_US)
-EIN_CMP(NGT_US)
-EIN_CMP(FALSE_OQ)
-EIN_CMP(NEQ_OQ)
-EIN_CMP(GE_OS)
-EIN_CMP(GT_OS)
-EIN_CMP(TRUE_UQ)
-EIN_CMP(EQ_OS)
-EIN_CMP(LT_OQ)
-EIN_CMP(LE_OQ)
-EIN_CMP(UNORD_S)
-EIN_CMP(NEQ_US)
-EIN_CMP(NLT_UQ)
-EIN_CMP(NLE_UQ)
-EIN_CMP(ORD_S)
-EIN_CMP(EQ_US)
-EIN_CMP(NGE_UQ)
-EIN_CMP(NGT_UQ)
-EIN_CMP(FALSE_OS)
-EIN_CMP(NEQ_OS)
-EIN_CMP(GE_OQ)
-EIN_CMP(GT_OQ)
-EIN_CMP(TRUE_US)
-
-#undef EIN_CMP
-#undef EIN_CMP_IMPL
 
 /// \}
 }

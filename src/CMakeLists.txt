@@ -2,7 +2,9 @@
 # SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 # SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 
-add_library(ein STATIC)
+add_library(ein STATIC
+  numerics.cpp
+)
 
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 add_dependencies(ein ein_headers)

@@ -29,7 +29,7 @@ EXTRACT_LOCAL_CLASSES = YES
 EXTRACT_ANON_NSPACES = NO
 
 EXTENSION_MAPPING = cppm=C++
-FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox *.md
+FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox *.md *.x=cpp
 
 GENERATE_HTML = YES
 GENERATE_LATEX = NO
