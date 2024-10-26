@@ -6,7 +6,9 @@ SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 -->
 
+<!-- GITHUB
 [TOC]
+GITHUB -->
 
 All code committed to this repository should be compatible with the current `BSD-2-Clause OR Apache 2.0` license
 seen in [LICENSE.md](LICENSE.md).
@@ -77,3 +79,15 @@ are very welcome.
 Please feel free to contact me if you have any questions or concerns about the current policies.
 
 -Edward Kmett (Oct, 2024)
+
+
+<!-- GITHUB
+<div class="section_buttons">
+
+| Previous                                     |                                              Next |
+|:---------------------------------------------|--------------------------------------------------:|
+| [Code of Conduct](@ref code_of_conduct_page) |      [Security Policy](@ref security_policy_page) |
+
+</div>
+GITHUB -->
+

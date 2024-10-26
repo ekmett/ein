@@ -10,7 +10,10 @@ fi
 input="${1:-/dev/stdin}"
 
 # Perform replacements for GitHub-flavored markdown
+# also look for <!-- GITHUB -->
 sed -E \
+  -e 's/<!-- GITHUB//g' \
+  -e 's/GITHUB -->//g' \
   -e 's/:white_check_mark:/✓/g' \
   -e 's/:x:/✗/g' \
   -e 's/:warning:/⚠️/g' \

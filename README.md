@@ -6,7 +6,9 @@ SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 -->
 
+<!-- GITHUB
 [TOC]
+GITHUB -->
 
 [![CI](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)

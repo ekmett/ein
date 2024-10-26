@@ -111,7 +111,7 @@
 <div class="section_buttons">
 <table class="markdownTable">
 <tr class="markdownTableHead"><th class="markdownTableHeadLeft">Previous</th><th class="markdownTableHeadRight">Next</th></tr>
-<tr class="markdownTableRowOdd"><td class="markdownTableBodyLeft">\ref installation_page</td><td class="markdownTableBodyRight"></td></tr>
+<tr class="markdownTableRowOdd"><td class="markdownTableBodyLeft">\ref installation_page</td><td class="markdownTableBodyRight"><a href="/topics.html">Topics</a></td></tr>
 </table>
 </div>
 

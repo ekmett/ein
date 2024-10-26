@@ -6,7 +6,9 @@ SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 -->
 
+<!-- GITHUB
 [TOC]
+GITHUB -->
 
 Code in this repository is licensed under either of
  * Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
@@ -239,13 +241,13 @@ third-party archives.
     See the License for the specific language governing permissions and
     limitations under the License.
 
-
+<!-- GITHUB
 <div class="section_buttons">
 
-| Previous          |                              Next |
-|:------------------|----------------------------------:|
-| [Home](index.html) | [Installation](@ref installation_page) |
+| Previous           |                                         Next |
+|:-------------------|---------------------------------------------:|
+| [Home](index.html) | [Code of Conduct](@ref code_of_conduct_page) |
 
 </div>
-
+GITHUB -->
 
