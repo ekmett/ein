@@ -198,39 +198,48 @@ $(function(){initNavTree('installation_page.html',''); initResizable(true); });
 <h1><a class="anchor" id="install_ninja"></a>
 Ninja 1.12.1</h1>
 <p>You'll want to upgrade <a href="https://ninja-build.org/">Ninja</a> to a version that supports scanning for C++ modules.</p>
-<div class="fragment"><div class="line">wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip</div>
+<p>ubuntu: </p><div class="fragment"><div class="line">wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip</div>
 <div class="line">sudo apt-get install -y unzip</div>
 <div class="line">sudo unzip ninja-linux.zip -d /usr/local/bin/</div>
 <div class="line">sudo chmod +x /usr/local/bin/ninja</div>
+</div><!-- fragment --><p>macOS: </p><div class="fragment"><div class="line">brew install ninja</div>
 </div><!-- fragment --><h1><a class="anchor" id="install_clang"></a>
 Clang++-19</h1>
 <p>Next you'll need a version of <a href="https://clang.llvm.org/">Clang++</a> (and clang-tools) that supports c++23 pretty well. Currently I use <code>clang++-19</code>.</p>
 <p><code>clang-tools-19</code> is required because we need <code>clang-scan-deps-19</code> to be installed for C++ modules support out of <code>CMake</code>.</p>
-<div class="fragment"><div class="line">wget https://apt.llvm.org/llvm.sh</div>
+<p>ubuntu: </p><div class="fragment"><div class="line">wget https://apt.llvm.org/llvm.sh</div>
 <div class="line">chmod +x llvm.sh</div>
 <div class="line">sudo ./llvm.sh 19</div>
 <div class="line">sudo apt install clang-19 clang-tools-19 clangd-19 lldb-19 lld-19</div>
+</div><!-- fragment --><p>macOS: </p><div class="fragment"><div class="line">brew install llvm@19</div>
+<div class="line">export PATH=&quot;/usr/local/opt/llvm@19/bin:$PATH&quot;</div>
+<div class="line">ln -s /usr/local/opt/llvm@19/bin/clang++ /usr/local/opt/llvm@19/bin/clang++-19</div>
 </div><!-- fragment --><h1><a class="anchor" id="install_doxygen"></a>
 Doxygen 1.12.0</h1>
 <p>Documentation requires <a href="https://www.doxygen.nl/">Doxygen</a> 1.12.0 or later.</p>
-<div class="fragment"><div class="line">sudo apt-get uninstall doxygen</div>
+<p>ubuntu: </p><div class="fragment"><div class="line">sudo apt-get uninstall doxygen</div>
 <div class="line">wget https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz</div>
 <div class="line">tar xvfpz doxygen-1.12.0.linux.bin.tar.gz</div>
 <div class="line">cd doxygen-1.12.0/</div>
 <div class="line">sudo make install</div>
 <div class="line">doxygen --version</div>
+</div><!-- fragment --><p>macOS: </p><div class="fragment"><div class="line">wget --no-verbose https://www.doxygen.nl/files/Doxygen-1.12.0.dmg</div>
+<div class="line">hdiutil attach Doxygen-1.12.0.dmg</div>
+<div class="line">sudo ln -s /Applications/Doxygen.app/Contents/Resources/doxygen /usr/local/bin/doxygen</div>
 </div><!-- fragment --><h1><a class="anchor" id="install_cmake"></a>
 CMake 3.30.5</h1>
 <p>We need a fairly modern <a href="https://cmake.org/">CMake</a> in order to get C++ modules support.</p>
-<div class="fragment"><div class="line">sudo apt-get remove cmake</div>
+<p>ubuntu: </p><div class="fragment"><div class="line">sudo apt-get remove cmake</div>
 <div class="line">wget https://cmake.org/files/v3.30/cmake-3.30.5-linux-x86_64.sh -O cmake-3.30.5.sh</div>
 <div class="line">chmod +x cmake-3.30.5.sh</div>
 <div class="line">sudo ./cmake-3.30.5.sh --prefix=/usr/local --exclude-subdir</div>
 <div class="line">cmake --version # you may need to restart your shell</div>
+</div><!-- fragment --><p>macOS: </p><div class="fragment"><div class="line">brew install cmake</div>
 </div><!-- fragment --><h1><a class="anchor" id="install_ccache"></a>
 CCache</h1>
 <p><a href="https://ccache.dev/">CCache</a> makes development a lot faster and is use by the default <code>CMakePreset.json</code> preset. Not strictly necessary, but it is an easy win.</p>
-<div class="fragment"><div class="line">sudo apt-get install -y ccache</div>
+<p>ubuntu: </p><div class="fragment"><div class="line">sudo apt-get install -y ccache</div>
+</div><!-- fragment --><p>macOS: </p><div class="fragment"><div class="line">brew install ccache</div>
 </div><!-- fragment --><div class="section_buttons"> <table class="markdownTable">
 <tr class="markdownTableHead">
 <th class="markdownTableHeadLeft">Previous</th><th class="markdownTableHeadRight">Next </th></tr>
