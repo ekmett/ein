@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['notes_0',['Notes',['../notes_page.html',1,'']]]
+  ['installation_0',['Installation',['../installation_page.html',1,'']]]
 ];

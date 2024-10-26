@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['installation_0',['Installation',['../installation_page.html',1,'']]]
+  ['ein_0',['ein',['../index.html',1,'']]]
 ];

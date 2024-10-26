@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['5_0',['CMake 3.30.5',['../installation_page.html#install_cmake',1,'']]]
+  ['4_20permanent_20ban_0',['4. Permanent Ban',['../code_of_conduct_page.html#autotoc_md13',1,'']]]
 ];

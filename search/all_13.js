@@ -1,6 +1,13 @@
 var searchData=
 [
-  ['rbegin_0',['rbegin',['../group__simd.html#af1d7ff1e2564a09161d40a59994e2433',1,'ein::simd::rbegin() noexcept'],['../group__simd.html#a1cd2dbcd44276c6ee62858a900f754a4',1,'ein::simd::rbegin() const noexcept']]],
-  ['rend_1',['rend',['../group__simd.html#a5018ddf2ac105f8189d8a72a66871545',1,'ein::simd::rend() noexcept'],['../group__simd.html#a193a4e4fc431d56648eb45bc364ece3e',1,'ein::simd::rend() const noexcept']]],
-  ['reproduction_20and_20distribution_2',['Terms and Conditions for use, reproduction, and distribution',['../license_page.html#autotoc_md2',1,'']]]
+  ['performance_20constraints_0',['Performance Constraints',['../group__performance__constraint__attributes.html',1,'']]],
+  ['permanent_20ban_1',['4. Permanent Ban',['../code_of_conduct_page.html#autotoc_md13',1,'']]],
+  ['pledge_2',['Our Pledge',['../code_of_conduct_page.html#autotoc_md4',1,'']]],
+  ['policy_3',['Security Policy',['../md_SECURITY.html',1,'']]],
+  ['policy_20questions_4',['Policy Questions',['../md_CONTRIBUTING.html#autotoc_md19',1,'']]],
+  ['pragmas_5',['Emitting Pragmas',['../group__pragmas.html',1,'']]],
+  ['precompilation_6',['On documentation in headers and precompilation',['../notes_page.html#pch_big_docs',1,'']]],
+  ['precompiled_20headers_7',['On Precompiled Headers',['../notes_page.html#pch',1,'']]],
+  ['prelude_2ehpp_8',['prelude.hpp',['../prelude_8hpp.html',1,'']]],
+  ['purity_9',['Purity',['../group__purity__attributes.html',1,'']]]
 ];

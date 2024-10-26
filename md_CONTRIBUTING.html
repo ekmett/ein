@@ -6,7 +6,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.12.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>ein: ein</title>
+<title>ein: Contribution Guidelines</title>
 <link rel="icon" href="favicon.ico" type="image/x-icon" />
 <!--alternate icons-->
 <link rel="icon" sizes="16x16" type="image/png" href="favicon-16x16.png"/>
@@ -146,7 +146,7 @@ $(function() {
 </div>
 <script type="text/javascript">
 /* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
-$(function(){initNavTree('index.html',''); initResizable(true); });
+$(function(){initNavTree('md_CONTRIBUTING.html',''); initResizable(true); });
 /* @license-end */
 </script>
 <div id="doc-content">
@@ -172,37 +172,67 @@ $(function(){initNavTree('index.html',''); initResizable(true); });
 </div>
 
 <div><div class="header">
-  <div class="headertitle"><div class="title">ein </div></div>
+  <div class="headertitle"><div class="title">Contribution Guidelines</div></div>
 </div><!--header-->
 <div class="contents">
 <div class="toc"><h3>Table of Contents</h3>
 <ul>
-  <li class="level1 empty">
-    <ul>
-      <li class="level2">
-        <a href="#autotoc_md23">Contact Information</a>
-      </li>
-    </ul>
+  <li class="level1">
+    <a href="#autotoc_md16">Exceptions</a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md17">SPDX Documentation</a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md18">Software Bill of Materials</a>
+  </li>
+  <li class="level1">
+    <a href="#autotoc_md19">Policy Questions</a>
   </li>
 </ul>
 </div>
-<div class="textblock"><p><a href="https://github.com/ekmett/ein/actions/workflows/cmake.yml"><img src="https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg" alt="CMake" style="pointer-events: none;" class="inline"/></a> <a href="https://ekmett.github.io/ein/"><img src="https://img.shields.io/badge/docs-doxygen-blue.svg" alt="Doxygen" style="pointer-events: none;" class="inline"/></a> <a href="https://github.com/EthicalSource/contributor_covenant"><img src="https://img.shields.io/badge/code_of_conduct-contributor_covenant-14cc21" alt="Code of Conduct: Contributor Covenant" class="inline"/></a> <a href="ein-build.trace"><img src="https://img.shields.io/badge/build-trace-orange.svg" alt="Build Trace" style="pointer-events: none;" class="inline"/></a></p>
-<p>This is a playground for wide SIMD evaluation.</p>
-<h2><a class="anchor" id="autotoc_md23"></a>
-Contact Information</h2>
-<p>Contributions and bug reports are welcome!</p>
-<p>Please feel free to contact me through <a href="https://github.com/ekmett">GitHub</a> or on the <a href="https://web.libera.chat/#haskell-lens">#haskell-lens</a> or <a href="https://web.libera.chat/#haskell">#haskell</a> IRC channel on Libera Chat.</p>
-<p>I can also be reached through Twitter/X as @kmett.</p>
-<p>-Edward Kmett</p>
-<div class="section_buttons"> <table class="markdownTable">
-<tr class="markdownTableHead">
-<th class="markdownTableHeadLeft">Previous</th><th class="markdownTableHeadRight">Next </th></tr>
-<tr class="markdownTableRowOdd">
-<td class="markdownTableBodyLeft"></td><td class="markdownTableBodyRight"><a class="el" href="license_page.html">License</a> </td></tr>
-</table>
-</div> </div></div><!-- PageDoc -->
-<a href="doxygen_crawl.html"></a>
-</div><!-- contents -->
+<div class="textblock"><p><a class="anchor" id="autotoc_md15"></a></p>
+<p>All code committed to this repository should be compatible with the current <code>BSD-2-Clause OR Apache 2.0</code> license seen in <a class="el" href="license_page.html#md_LICENSE">LICENSE.md</a>.</p>
+<h1><a class="anchor" id="autotoc_md16"></a>
+Exceptions</h1>
+<p>Exceptions can be granted in exceptional circumstances, but explicit consent of the primary author, Edward Kmett, is required for any pull-request or patch supplied to the primary repository at <a href="https://github.com/ekmett/ein.git">https://github.com/ekmett/ein.git</a> that restricts these licensing terms.</p>
+<p>In particular limitations may make sense for concrete assets that form part of the distribution, but not the final library form.</p>
+<p>You are of course free to do whatever you like to your own copies of this code, subject to the limitations of the license mentioned above, with whatever exceptions are tracked near the assets in question.</p>
+<p>Note: <code>Doxygen</code> itself is GPL v2, but the assets it produces are unencumbered. Therefore this is currently not an exception.</p>
+<p>For example, the current exceptions are:</p>
+<ul>
+<li>The <code>HaskLig</code> web font used in the documentation is licensed under SIL Open Font License 1.1.</li>
+</ul>
+<p>Several library dependencies are not offered under these terms:</p>
+<ul>
+<li><code>Catch2</code> is licensed under the Boost Software License 1.0</li>
+<li><code>doxygen-awesome-css</code> is MIT licensed.</li>
+<li><code>spdlog</code> is MIT licensed.</li>
+<li><code>mathjax</code> is licensed via Apache 2.0</li>
+</ul>
+<h1><a class="anchor" id="autotoc_md17"></a>
+SPDX Documentation</h1>
+<p>All files should contain <a href="https://spdx.dev/learn/handling-license-info/">SPDX identifiers</a> specifying the license and tracking authorship and provenance of assets where possible.</p>
+<p>An example short-form identifier in local style:</p>
+<div class="fragment"><div class="line"># SPDX-FileType: Source</div>
+<div class="line"># SPDX-FileCopyrightText: 2024 Edward Kmett &lt;ekmett@gmail.com&gt;</div>
+<div class="line"># SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0</div>
+</div><!-- fragment --><p>If you edit a source file, please feel free to add yourself in a line of</p>
+<div class="fragment"><div class="line">SPDX-FileCopyrightText: [year] [author] &lt;contact email&gt;</div>
+</div><!-- fragment --><p>as this is the clearest attribution that we have that you consent to your code being used under the current licensing.</p>
+<p>If you feel it is warranted, then please add yourself in the <a class="el" href="LICENSE_8md.html">LICENSE.md</a> file explicitly as well</p>
+<p>SPDX license slugs should be placed either near the very top of the file or the very bottom of the file.</p>
+<p>If it is not possible to place the license in the source of the asset then that should be tracked in the nearest location that a <code>LICENSE.spdx</code> file can be placed.</p>
+<h1><a class="anchor" id="autotoc_md18"></a>
+Software Bill of Materials</h1>
+<p>When adding assets, where possible the SHA256 of the asset or the git hash of the repository should be tracked in a nearby LICENSE.spdx file, so we can find it later.</p>
+<p>Eventually this will be used to feed some sort of automated Software Bill of Materials. Contributions to help enable that are very welcome.</p>
+<h1><a class="anchor" id="autotoc_md19"></a>
+Policy Questions</h1>
+<p>Please feel free to contact me if you have any questions or concerns about the current policies.</p>
+<p>-Edward Kmett (Oct, 2024) </p>
+</div></div><!-- contents -->
+</div><!-- PageDoc -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

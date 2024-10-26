@@ -26,12 +26,36 @@ var NAVTREE =
 [
   [ "ein", "index.html", [
     [ "License", "license_page.html", [
-      [ "Contact Information", "index.html#autotoc_md4", null ],
+      [ "Contact Information", "index.html#autotoc_md23", null ],
       [ "BSD 2-Clause License", "license_page.html#autotoc_md0", null ],
       [ "Apache License", "license_page.html#autotoc_md1", [
         [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md2", null ],
         [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md3", null ]
       ] ]
+    ] ],
+    [ "Code of Conduct", "code_of_conduct_page.html", [
+      [ "Our Pledge", "code_of_conduct_page.html#autotoc_md4", null ],
+      [ "Our Standards", "code_of_conduct_page.html#autotoc_md5", null ],
+      [ "Enforcement Responsibilities", "code_of_conduct_page.html#autotoc_md6", null ],
+      [ "Scope", "code_of_conduct_page.html#autotoc_md7", null ],
+      [ "Enforcement", "code_of_conduct_page.html#autotoc_md8", null ],
+      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md9", [
+        [ "Correction", "code_of_conduct_page.html#autotoc_md10", null ],
+        [ "Warning", "code_of_conduct_page.html#autotoc_md11", null ],
+        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md12", null ],
+        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md13", null ]
+      ] ],
+      [ "Attribution", "code_of_conduct_page.html#autotoc_md14", null ]
+    ] ],
+    [ "Contribution Guidelines", "md_CONTRIBUTING.html", [
+      [ "Exceptions", "md_CONTRIBUTING.html#autotoc_md16", null ],
+      [ "SPDX Documentation", "md_CONTRIBUTING.html#autotoc_md17", null ],
+      [ "Software Bill of Materials", "md_CONTRIBUTING.html#autotoc_md18", null ],
+      [ "Policy Questions", "md_CONTRIBUTING.html#autotoc_md19", null ]
+    ] ],
+    [ "Security Policy", "md_SECURITY.html", [
+      [ "Supported Versions", "md_SECURITY.html#autotoc_md21", null ],
+      [ "Reporting a Vulnerability", "md_SECURITY.html#autotoc_md22", null ]
     ] ],
     [ "Installation", "installation_page.html", [
       [ "Ninja 1.12.1", "installation_page.html#install_ninja", null ],
@@ -92,7 +116,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__simd.html#a8a8a3060b90a09941b22df9a13de9fae"
+"group__simd.html#a702d0930b328ad8146e2760e8ae81bbb"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
