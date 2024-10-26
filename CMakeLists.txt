@@ -161,12 +161,14 @@ find_package(Doxygen)
 
 find_library(COMPILER_RT_BUILTINS
   NAMES clang_rt.builtins-x86_64
+        clang_rt.osx
   PATHS /usr/lib/llvm-19/lib/clang/19/lib/linux
+        /usr/local/opt/llvm@19/lib/clang/19/lib/darwin
   NO_DEFAULT_PATH
 )
 
 if(NOT COMPILER_RT_BUILTINS)
-  message(FATAL_ERROR "clang_rt.builtins-x86_64 library not found")
+  message(FATAL_ERROR "clang_rt library not found")
 endif()
 
 add_library(compiler_rt_builtins INTERFACE)
