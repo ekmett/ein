@@ -5,5 +5,5 @@ var searchData=
   ['get_2',['get',['../group__simd.html#a5e59cbdb4a5b6841a2c08cad38ed9be8',1,'ein::simd::get'],['../group__simd.html#a08ab0c5f2341986213589fccc6a13fb7',1,'ein::simd::get'],['../group__simd.html#a0e9cd01e79c4a86219f953f666e9a196',1,'ein::simd::get']]],
   ['gt_5foq_3',['GT_OQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a887da68ea4e9382c468205162e351ae7',1,'ein']]],
   ['gt_5fos_4',['GT_OS',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a62d383b40b3b15edb7ee5d08def0c5ec',1,'ein']]],
-  ['guidelines_5',['Guidelines',['../md_CONTRIBUTING.html',1,'Contribution Guidelines'],['../code_of_conduct_page.html#autotoc_md9',1,'Enforcement Guidelines']]]
+  ['guidelines_5',['Guidelines',['../contributing_page.html',1,'Contribution Guidelines'],['../code_of_conduct_page.html#autotoc_md9',1,'Enforcement Guidelines']]]
 ];

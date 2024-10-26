@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['policy_0',['Security Policy',['../md_SECURITY.html',1,'']]]
+  ['policy_0',['Security Policy',['../security_policy_page.html',1,'index']]]
 ];

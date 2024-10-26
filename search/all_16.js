@@ -3,7 +3,7 @@ var searchData=
   ['safety_0',['Safety',['../group__null__safety__attributes.html',1,'Null Safety'],['../group__string__safety__attributes.html',1,'String Safety'],['../group__thread__safety__attributes.html',1,'Thread Safety']]],
   ['scalef_1',['scalef',['../group__simd.html#ab38049d4edbb98ef7eee0bf68d08f322',1,'ein::simd::scalef'],['../namespaceein.html#a6984f13cd906f1521dfcb7e95b8f8b84',1,'ein::scalef(float, float) noexcept'],['../namespaceein.html#a4fe125d6f78c0a639415b3a59ff61c68',1,'ein::scalef(double, double) noexcept'],['../group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f',1,'ein::scalef(T x, T y) noexcept']]],
   ['scope_2',['Scope',['../code_of_conduct_page.html#autotoc_md7',1,'']]],
-  ['security_20policy_3',['Security Policy',['../md_SECURITY.html',1,'']]],
+  ['security_20policy_3',['Security Policy',['../security_policy_page.html',1,'index']]],
   ['security_2emd_4',['SECURITY.md',['../SECURITY_8md.html',1,'']]],
   ['shuffle_5',['shuffle',['../group__simd.html#a9db6ce886e40f067782bfdd8a2384446',1,'ein::simd::shuffle() noexcept'],['../group__simd.html#af08a5da9c45a7ef484c7dafd678e49c1',1,'ein::simd::shuffle(simd&lt; T, N &gt; b) noexcept'],['../group__simd.html#gac2c105a2927f9ca9e44820eb74633c12',1,'ein::shuffle(simd_type auto x)'],['../group__simd.html#ga186940519ca17135b07b6816ae6402cd',1,'ein::shuffle(simd_type auto x, simd_type auto y)']]],
   ['simd_6',['SIMD',['../group__simd.html',1,'']]],
@@ -15,8 +15,8 @@ var searchData=
   ['simd_5fmask_5ft_12',['simd_mask_t',['../group__simd.html#gae78d444e236a38a2192b04c2bfd58433',1,'ein']]],
   ['simd_5ft_13',['simd_t',['../group__simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]],
   ['size_14',['size',['../group__memory.html#ab2b8b1c7eb7749c161999be99e91870f',1,'ein::c_munmap::size'],['../group__simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]],
-  ['software_20bill_20of_20materials_15',['Software Bill of Materials',['../md_CONTRIBUTING.html#autotoc_md18',1,'']]],
-  ['spdx_20documentation_16',['SPDX Documentation',['../md_CONTRIBUTING.html#autotoc_md17',1,'']]],
+  ['software_20bill_20of_20materials_15',['Software Bill of Materials',['../contributing_page.html#autotoc_md17',1,'']]],
+  ['spdx_20documentation_16',['SPDX Documentation',['../contributing_page.html#autotoc_md16',1,'']]],
   ['spin_17',['spin',['../group__wait.html#structein_1_1spin',1,'ein']]],
   ['standard_20library_18',['C++ Standard Library',['../group__std.html',1,'']]],
   ['standards_19',['Our Standards',['../code_of_conduct_page.html#autotoc_md5',1,'']]],
@@ -29,6 +29,6 @@ var searchData=
   ['stream_5fload_26',['stream_load',['../group__simd.html#a46c1b89940d707f5c9013599bac488ba',1,'ein::simd::stream_load()'],['../group__simd.html#gaf84aa0909d95f9faf66f5ee344285677',1,'ein::stream_load()']]],
   ['string_20safety_27',['String Safety',['../group__string__safety__attributes.html',1,'']]],
   ['supported_28',['supported',['../group__wait.html#gaaa1c31bb64256e696333d924bb50a90d',1,'ein::mwaitx::supported'],['../group__wait.html#ga94f77adfbc306130e869173daf6ea96d',1,'ein::umwait::supported'],['../group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73',1,'ein::spin::supported']]],
-  ['supported_20versions_29',['Supported Versions',['../md_SECURITY.html#autotoc_md21',1,'']]],
+  ['supported_20versions_29',['Supported Versions',['../security_policy_page.html#autotoc_md19',1,'']]],
   ['swap_30',['swap',['../group__simd.html#ae0c6eef701036b515f4a4f6fc18b9974',1,'ein::simd']]]
 ];

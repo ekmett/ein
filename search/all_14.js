@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['questions_0',['Policy Questions',['../md_CONTRIBUTING.html#autotoc_md19',1,'']]]
+  ['questions_0',['Policy Questions',['../contributing_page.html#autotoc_md18',1,'']]]
 ];

@@ -16,7 +16,7 @@ var searchData=
   ['nlt_13',['NLT',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ad7d6a13c7b311ec8a3c9fcfb1919a2f8',1,'ein']]],
   ['nlt_5fuq_14',['NLT_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac9a6f8bcd7ee3a3e9fc7fb07c2243985',1,'ein']]],
   ['nlt_5fus_15',['NLT_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371aaf7ab69e1b0d7f3cf77f32a560ef53ac',1,'ein']]],
-  ['notes_16',['Notes',['../notes_page.html',1,'']]],
+  ['notes_16',['Notes',['../notes_page.html',1,'index']]],
   ['notes_2edox_17',['notes.dox',['../notes_8dox.html',1,'']]],
   ['null_20safety_18',['Null Safety',['../group__null__safety__attributes.html',1,'']]],
   ['numerics_19',['Numerics',['../group__numerics.html',1,'']]],

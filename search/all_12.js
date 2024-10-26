@@ -1,8 +1,8 @@
 var searchData=
 [
   ['object_20lifetimes_0',['Object Lifetimes',['../group__lifetime__attributes.html',1,'']]],
-  ['of_20conduct_1',['Code of Conduct',['../code_of_conduct_page.html',1,'']]],
-  ['of_20materials_2',['Software Bill of Materials',['../md_CONTRIBUTING.html#autotoc_md18',1,'']]],
+  ['of_20conduct_1',['Code of Conduct',['../code_of_conduct_page.html',1,'index']]],
+  ['of_20materials_2',['Software Bill of Materials',['../contributing_page.html#autotoc_md17',1,'']]],
   ['on_20cmake_20vs_20clangd_3',['On cmake vs. clangd',['../notes_page.html#pch_cmake_vs_clangd',1,'']]],
   ['on_20documentation_20in_20headers_20and_20precompilation_4',['On documentation in headers and precompilation',['../notes_page.html#pch_big_docs',1,'']]],
   ['on_20precompiled_20headers_5',['On Precompiled Headers',['../notes_page.html#pch',1,'']]],

@@ -26,7 +26,7 @@ var NAVTREE =
 [
   [ "ein", "index.html", [
     [ "License", "license_page.html", [
-      [ "Contact Information", "index.html#autotoc_md23", null ],
+      [ "Contact Information", "index.html#autotoc_md21", null ],
       [ "BSD 2-Clause License", "license_page.html#autotoc_md0", null ],
       [ "Apache License", "license_page.html#autotoc_md1", [
         [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md2", null ],
@@ -47,15 +47,15 @@ var NAVTREE =
       ] ],
       [ "Attribution", "code_of_conduct_page.html#autotoc_md14", null ]
     ] ],
-    [ "Contribution Guidelines", "md_CONTRIBUTING.html", [
-      [ "Exceptions", "md_CONTRIBUTING.html#autotoc_md16", null ],
-      [ "SPDX Documentation", "md_CONTRIBUTING.html#autotoc_md17", null ],
-      [ "Software Bill of Materials", "md_CONTRIBUTING.html#autotoc_md18", null ],
-      [ "Policy Questions", "md_CONTRIBUTING.html#autotoc_md19", null ]
+    [ "Contribution Guidelines", "contributing_page.html", [
+      [ "Exceptions", "contributing_page.html#autotoc_md15", null ],
+      [ "SPDX Documentation", "contributing_page.html#autotoc_md16", null ],
+      [ "Software Bill of Materials", "contributing_page.html#autotoc_md17", null ],
+      [ "Policy Questions", "contributing_page.html#autotoc_md18", null ]
     ] ],
-    [ "Security Policy", "md_SECURITY.html", [
-      [ "Supported Versions", "md_SECURITY.html#autotoc_md21", null ],
-      [ "Reporting a Vulnerability", "md_SECURITY.html#autotoc_md22", null ]
+    [ "Security Policy", "security_policy_page.html", [
+      [ "Supported Versions", "security_policy_page.html#autotoc_md19", null ],
+      [ "Reporting a Vulnerability", "security_policy_page.html#autotoc_md20", null ]
     ] ],
     [ "Installation", "installation_page.html", [
       [ "Ninja 1.12.1", "installation_page.html#install_ninja", null ],
@@ -116,7 +116,7 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"group__simd.html#a702d0930b328ad8146e2760e8ae81bbb"
+"group__simd.html#a68193277cf8274dc80986a35b6ef1a67"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';
