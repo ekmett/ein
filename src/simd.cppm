@@ -786,6 +786,7 @@ public:
   ein_nodiscard ein_inline ein_artificial ein_pure
   friend constexpr
   mask_t cmpint(simd a, simd b) noexcept {
+    using enum CMPINT;
     if consteval {
       // compile time polyfill
 #ifdef __AVX512F__
@@ -830,20 +831,20 @@ public:
 #undef EIN_HANDLE
 #else
       // AVX-2 polyfill
-             if constexpr (imm8 == CMPINT::FALSE) {
+             if constexpr (imm8 == FALSE) {
              if constexpr (bytesize==16) return _mm_setzero_si128();
         else if constexpr (bytesize==32) return _mm256_setzero_si256();
         else static_assert(false);
-      } else if constexpr (imm8 == CMPINT::TRUE) {
+      } else if constexpr (imm8 == TRUE) {
              if constexpr (bytesize==16) return _mm_set1_epi32(-1);
         else if constexpr (bytesize==32) return _mm256_set1_epi32(-1);
         else static_assert(false);
-      } else if constexpr (imm8 == CMPINT::EQ)  return a == b;
-      else if constexpr (imm8 == CMPINT::NE)  return a != b;
-      else if constexpr (imm8 == CMPINT::LT)  return a < b;
-      else if constexpr (imm8 == CMPINT::NLE) return a > b;
-      else if constexpr (imm8 == CMPINT::LE)  return a <= b;
-      else if constexpr (imm8 == CMPINT::NLT) return a >= b;
+      } else if constexpr (imm8 == EQ)  return a == b;
+      else if constexpr (imm8 == NE)  return a != b;
+      else if constexpr (imm8 == LT)  return a < b;
+      else if constexpr (imm8 == NLE) return a > b;
+      else if constexpr (imm8 == LE)  return a <= b;
+      else if constexpr (imm8 == NLT) return a >= b;
       else static_assert(false);
 #endif
     }

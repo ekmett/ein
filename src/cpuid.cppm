@@ -50,9 +50,10 @@ export const enum cpu_vendor cpu_vendor = [] static noexcept {
   auto result = cpuid(0, 0);
   array<int32_t, 3> data = { result.ebx, result.edx, result.ecx };
   string_view vendor {reinterpret_cast<char const *>(begin(data)), 12};
-  if      (vendor == "GenuineIntel") return cpu_vendor::intel;
-  else if (vendor == "AuthenticAMD") return cpu_vendor::amd;
-  else                               return cpu_vendor::unknown;
+  using enum cpu_vendor;
+  if      (vendor == "GenuineIntel") return intel;
+  else if (vendor == "AuthenticAMD") return amd;
+  else                               return unknown;
 }();
 
 

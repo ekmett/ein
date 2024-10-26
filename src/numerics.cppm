@@ -161,14 +161,15 @@ export template <CMPINT imm8, typename T>
 requires (one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz))
 ein_nodiscard ein_inline ein_const
 constexpr bool cmpint(T a, T b) noexcept {
-  if      constexpr (imm8 == CMPINT::TRUE)  return -1;
-  else if constexpr (imm8 == CMPINT::FALSE) return 0;
-  else if constexpr (imm8 == CMPINT::LT)    return a < b;
-  else if constexpr (imm8 == CMPINT::NLT)   return a >= b;
-  else if constexpr (imm8 == CMPINT::LE)    return a <= b;
-  else if constexpr (imm8 == CMPINT::NLE)   return a > b;
-  else if constexpr (imm8 == CMPINT::EQ)    return a == b;
-  else if constexpr (imm8 == CMPINT::NE)    return a != b;
+  using enum CMPINT;
+  if      constexpr (imm8 == TRUE)  return -1;
+  else if constexpr (imm8 == FALSE) return 0;
+  else if constexpr (imm8 == LT)    return a < b;
+  else if constexpr (imm8 == NLT)   return a >= b;
+  else if constexpr (imm8 == LE)    return a <= b;
+  else if constexpr (imm8 == NLE)   return a > b;
+  else if constexpr (imm8 == EQ)    return a == b;
+  else if constexpr (imm8 == NE)    return a != b;
   else static_assert(false);
 }
 
@@ -217,38 +218,39 @@ export template <CMP imm8, typename T>
 requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz))
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp(T a, T b) noexcept {
-  if      constexpr (imm8 == CMP::EQ_OQ)    return cmp_ord(a, b) && (a == b);
-  else if constexpr (imm8 == CMP::LT_OS)    return cmp_ord(a, b) && (a < b);
-  else if constexpr (imm8 == CMP::LE_OS)    return cmp_ord(a, b) && (a <= b);
-  else if constexpr (imm8 == CMP::UNORD_Q)  return cmp_unord(a, b);
-  else if constexpr (imm8 == CMP::NEQ_UQ)   return cmp_unord(a, b) || (a != b);
-  else if constexpr (imm8 == CMP::NLT_US)   return cmp_unord(a, b) || !(a < b);
-  else if constexpr (imm8 == CMP::NLE_US)   return cmp_unord(a, b) || !(a <= b);
-  else if constexpr (imm8 == CMP::ORD_Q)    return cmp_ord(a, b);
-  else if constexpr (imm8 == CMP::EQ_UQ)    return cmp_unord(a, b) || (a == b);
-  else if constexpr (imm8 == CMP::NGE_US)   return cmp_unord(a, b) || !(a >= b);
-  else if constexpr (imm8 == CMP::NGT_US)   return cmp_unord(a, b) || !(a > b);
-  else if constexpr (imm8 == CMP::FALSE_OQ) return 0;
-  else if constexpr (imm8 == CMP::NEQ_OQ)   return cmp_ord(a, b) && (a != b);
-  else if constexpr (imm8 == CMP::GE_OS)    return cmp_ord(a, b) && (a >= b);
-  else if constexpr (imm8 == CMP::GT_OS)    return cmp_ord(a, b) && (a > b);
-  else if constexpr (imm8 == CMP::TRUE_UQ)  return -1;
-  else if constexpr (imm8 == CMP::EQ_OS)    return cmp_ord(a, b) && (a == b);
-  else if constexpr (imm8 == CMP::LT_OQ)    return cmp_ord(a, b) && (a < b);
-  else if constexpr (imm8 == CMP::LE_OQ)    return cmp_ord(a, b) && (a <= b);
-  else if constexpr (imm8 == CMP::UNORD_S)  return cmp_unord(a, b);
-  else if constexpr (imm8 == CMP::NEQ_US)   return cmp_unord(a, b) || (a != b);
-  else if constexpr (imm8 == CMP::NLT_UQ)   return cmp_unord(a, b) || !(a < b);
-  else if constexpr (imm8 == CMP::NLE_UQ)   return cmp_unord(a, b) || !(a <= b);
-  else if constexpr (imm8 == CMP::ORD_S)    return cmp_ord(a, b);
-  else if constexpr (imm8 == CMP::EQ_US)    return cmp_unord(a, b) || (a == b);
-  else if constexpr (imm8 == CMP::NGE_UQ)   return cmp_unord(a, b) || !(a >= b);
-  else if constexpr (imm8 == CMP::NGT_UQ)   return cmp_unord(a, b) || !(a > b);
-  else if constexpr (imm8 == CMP::FALSE_OS) return 0;
-  else if constexpr (imm8 == CMP::NEQ_OS)   return cmp_ord(a, b) && (a != b);
-  else if constexpr (imm8 == CMP::GE_OQ)    return cmp_ord(a, b) && (a >= b);
-  else if constexpr (imm8 == CMP::GT_OQ)    return cmp_ord(a, b) && (a > b);
-  else if constexpr (imm8 == CMP::TRUE_US)  return -1;
+  using enum CMP;
+  if      constexpr (imm8 == EQ_OQ)    return cmp_ord(a, b) && (a == b);
+  else if constexpr (imm8 == LT_OS)    return cmp_ord(a, b) && (a < b);
+  else if constexpr (imm8 == LE_OS)    return cmp_ord(a, b) && (a <= b);
+  else if constexpr (imm8 == UNORD_Q)  return cmp_unord(a, b);
+  else if constexpr (imm8 == NEQ_UQ)   return cmp_unord(a, b) || (a != b);
+  else if constexpr (imm8 == NLT_US)   return cmp_unord(a, b) || !(a < b);
+  else if constexpr (imm8 == NLE_US)   return cmp_unord(a, b) || !(a <= b);
+  else if constexpr (imm8 == ORD_Q)    return cmp_ord(a, b);
+  else if constexpr (imm8 == EQ_UQ)    return cmp_unord(a, b) || (a == b);
+  else if constexpr (imm8 == NGE_US)   return cmp_unord(a, b) || !(a >= b);
+  else if constexpr (imm8 == NGT_US)   return cmp_unord(a, b) || !(a > b);
+  else if constexpr (imm8 == FALSE_OQ) return 0;
+  else if constexpr (imm8 == NEQ_OQ)   return cmp_ord(a, b) && (a != b);
+  else if constexpr (imm8 == GE_OS)    return cmp_ord(a, b) && (a >= b);
+  else if constexpr (imm8 == GT_OS)    return cmp_ord(a, b) && (a > b);
+  else if constexpr (imm8 == TRUE_UQ)  return -1;
+  else if constexpr (imm8 == EQ_OS)    return cmp_ord(a, b) && (a == b);
+  else if constexpr (imm8 == LT_OQ)    return cmp_ord(a, b) && (a < b);
+  else if constexpr (imm8 == LE_OQ)    return cmp_ord(a, b) && (a <= b);
+  else if constexpr (imm8 == UNORD_S)  return cmp_unord(a, b);
+  else if constexpr (imm8 == NEQ_US)   return cmp_unord(a, b) || (a != b);
+  else if constexpr (imm8 == NLT_UQ)   return cmp_unord(a, b) || !(a < b);
+  else if constexpr (imm8 == NLE_UQ)   return cmp_unord(a, b) || !(a <= b);
+  else if constexpr (imm8 == ORD_S)    return cmp_ord(a, b);
+  else if constexpr (imm8 == EQ_US)    return cmp_unord(a, b) || (a == b);
+  else if constexpr (imm8 == NGE_UQ)   return cmp_unord(a, b) || !(a >= b);
+  else if constexpr (imm8 == NGT_UQ)   return cmp_unord(a, b) || !(a > b);
+  else if constexpr (imm8 == FALSE_OS) return 0;
+  else if constexpr (imm8 == NEQ_OS)   return cmp_ord(a, b) && (a != b);
+  else if constexpr (imm8 == GE_OQ)    return cmp_ord(a, b) && (a >= b);
+  else if constexpr (imm8 == GT_OQ)    return cmp_ord(a, b) && (a > b);
+  else if constexpr (imm8 == TRUE_US)  return -1;
   else static_assert(false);
 }
 
