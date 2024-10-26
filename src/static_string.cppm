@@ -44,7 +44,7 @@ public:
   using pointer = CharT *;
   using const_pointer = CharT const *;
   using reference = CharT &;
-  using const_reference = const CharT &;
+  using const_reference = CharT const &;
   using const_iterator = CharT const *;
   using iterator = const_iterator;
   using const_reverse_iterator = std::reverse_iterator<const_iterator>;
@@ -256,6 +256,23 @@ consteval static_string operator"" _ss() noexcept {
 export class static_c_string {
   const char * p;
 public:
+
+  using traits_type = std::char_traits<char>;
+  using value_type = char;
+  using pointer = char *;
+  using const_pointer = char const *;
+  using reference = char &;
+  using const_reference = char const &;
+  using const_iterator = char const *;
+  using iterator = const_iterator;
+  using const_reverse_iterator = std::reverse_iterator<const_iterator>;
+  using reverse_iterator = const_reverse_iterator;
+  using size_type = std::size_t;
+  using difference_type = std::ptrdiff_t;
+
+  /// \name constructors
+  /// \{
+
   ein_inline constexpr
   static_c_string() noexcept = default;
 
@@ -268,8 +285,19 @@ public:
   ein_inline constexpr
   static_c_string(static_string x) noexcept : p(x.data()) {}
 
+  /// \}
+  /// \name assignment
+  /// \{
+
   ein_reinitializes ein_inline constexpr
   static_c_string & operator = (static_c_string const &) noexcept = default;
+
+  ein_reinitializes ein_inline constexpr
+  static_c_string & operator = (static_c_string &&) noexcept = default;
+
+  /// \}
+  /// \name conversion
+  /// \{
 
   ein_nodiscard ein_inline ein_pure ein_artificial constexpr
   operator const char * () const noexcept { return p; }
@@ -280,17 +308,17 @@ public:
   ein_nodiscard ein_inline ein_pure ein_artificial constexpr
   const char * data() const noexcept { return p; }
 
+  /// \}
+  /// \name comparison
+  /// \{
+
   ein_nodiscard ein_inline ein_pure ein_artificial constexpr friend
   bool operator == (static_c_string x, static_c_string y) noexcept { return x.p == y.p; }
 
-  ein_nodiscard ein_inline ein_pure ein_artificial constexpr friend 
+  ein_nodiscard ein_inline ein_pure ein_artificial constexpr friend
   bool operator != (static_c_string x, static_c_string y) noexcept { return x.p != y.p; }
 
-  ein_inline friend 
-  void swap(static_c_string & x, static_c_string & y) noexcept {
-    using std::swap;
-    swap(x.p,y.p);
-  }
+  /// \}
   /// \name iterators
   /// \{
 
@@ -321,12 +349,17 @@ public:
   ein_nodiscard ein_inline ein_pure constexpr
   auto crbegin() const noexcept { return std::reverse_iterator<const char *>(end()); }
 
-  /// O(1) 
+  /// O(1)
   ein_nodiscard ein_inline ein_pure constexpr
   auto crend() const noexcept { return std::reverse_iterator<const char *>(begin()); }
 
   /// \}
 
+  ein_inline friend
+  void swap(static_c_string & x, static_c_string & y) noexcept {
+    using std::swap;
+    swap(x.p,y.p);
+  }
 };
 
 
