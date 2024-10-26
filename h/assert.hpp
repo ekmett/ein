@@ -10,8 +10,6 @@
 
       \brief assert even during release
 
-      \ingroup macros
-
     \def ein_assert
 
       \brief An `assert` with \c spdlog message formatting and logging.
@@ -21,8 +19,6 @@
         Arguments other than the condition are only evaluated if the condition \p cond is `false`.
 
         \note Present even in release mode.
-
-      \ingroup macros
 
       \hideinitializer
 

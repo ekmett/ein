@@ -8,9 +8,7 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-      \brief third-party libraries
-
-      \ingroup headers */
+      \brief third-party libraries */
 
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ranges.h>

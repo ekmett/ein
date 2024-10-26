@@ -40,7 +40,7 @@ Several library dependencies are not offered under these terms:
 
 ## SPDX Documentation
 
-All files should contain [SPDX identifiers](https://spdx.dev/learn/handling-license-info/) specifying the license and 
+All files should contain [SPDX identifiers](https://spdx.dev/learn/handling-license-info/) specifying the license and
 tracking authorship and provenance of assets where possible.
 
 An example short-form identifier in local style:
@@ -51,7 +51,7 @@ An example short-form identifier in local style:
 # SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 ```
 
-If you edit a source file, please feel free to add yourself in a line of 
+If you edit a source file, please feel free to add yourself in a line of
 
 ```
 SPDX-FileCopyrightText: [year] [author] <contact email>
@@ -90,4 +90,3 @@ Please feel free to contact me if you have any questions or concerns about the c
 
 </div>
 GITHUB -->
-

@@ -146,4 +146,3 @@ https://www.contributor-covenant.org/translations.
 
 </div>
 GITHUB -->
-

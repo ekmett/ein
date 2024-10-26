@@ -25,18 +25,14 @@
       \details
 
         There is a large number of attributes that can be applied to methods, functions,
-        variables, structs, modules, etc. across all of the different compilers out there.
-
-      \ingroup macros
-
-    \{ */
+        variables, structs, modules, etc. across all of the different compilers out there. */
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup attribute_detection Attribute Detection
 ///
 ///   \brief macros for determining supported attributes
 ///
-/// \ingroup macros
+/// \ingroup attributes
 /// \{
 
 /** \def ein_has_attribute(x)
@@ -1254,9 +1250,8 @@ Allows better interprocedural analysis */
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup pragmas Emitting Pragmas
 ///
-///   \ingroup macros
-///
 /// \{
+// note: not ingroup attributes
 
 /// \cond local
 #define ein_pragma_(x) _Pragma (#x)
@@ -1373,6 +1368,3 @@ Allows better interprocedural analysis */
 
 /// \}
 ///////////////////////////////////////////////////////////////////////////////////////////////
-
-/// \}
-// end ingroup attributes

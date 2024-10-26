@@ -78,4 +78,4 @@ EIN_CMP(TRUE_US)
 #undef EIN_CMP_IMPL
 #endif
 
-///endcond 
+///endcond
