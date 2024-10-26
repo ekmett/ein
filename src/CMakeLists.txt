@@ -22,7 +22,6 @@ add_library(ein STATIC
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 add_dependencies(ein ein_headers)
 
-
 target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_json spdlog::spdlog Threads::Threads)
 
 target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
@@ -38,7 +37,6 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   wait.cppm
 )
 
-
 target_include_directories(ein PUBLIC
   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/h>
   $<INSTALL_INTERFACE:include/ein>)
@@ -49,8 +47,7 @@ install(TARGETS ein
   PUBLIC_HEADER DESTINATION include/ein
   INCLUDES DESTINATION include/ein)
 
-list(JOIN OUTPUT_HEADER_FILES ";" joined_headers)
-set_target_properties(ein PROPERTIES PUBLIC_HEADER "${joined_headers}")
+set_target_properties(ein PROPERTIES PUBLIC_HEADER "${OUTPUT_HEADER_FILES}")
 
 lto(ein)
 
@@ -61,14 +58,12 @@ lto(ein)
 
 if(PRECOMPILE_HEADERS)
   target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
-  message(WARNING "OUTPUT_HEADER_FILES: ${OUTPUT_HEADER_FILES}")
-  message(WARNING "joined_headers: ${joined_headers}")
   target_compile_definitions(ein PUBLIC EIN_PCH=1)
 else()
   # uncomment to test this mode
+  # target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
 endif()
 
-# target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")

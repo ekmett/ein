@@ -262,9 +262,6 @@ add_custom_command(
 )
 
 list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp)
-message(WARNING "OUTPUT_HEADER_FILES (in h): ${OUTPUT_HEADER_FILES}")
-
-# Custom target with dependency
 add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)
