@@ -1,4 +1,14 @@
-# Contributor Covenant Code of Conduct
+# Code of Conduct {#code_of_conduct_page}
+
+<!--
+SPDX-FileType: TEXT
+SPDX-FileCopyrightText: 2024 Contributor Covenant
+SPDX-License-Identifier: CC-BY-4.0
+-->
+
+[Contributor Covenant Code of Conduct](https://www.contributor-covenant.org/)
+
+[TOC]
 
 ## Our Pledge
 

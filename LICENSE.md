@@ -1,11 +1,20 @@
 # License {#license_page}
 
+<!--
+SPDX-FileType: TEXT
+SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+-->
+
 [TOC]
 
-Licensed under either of
+Code in this repository is licensed under either of
  * Apache License, Version 2.0 (http://www.apache.org/licenses/LICENSE-2.0)
  * BSD 2-Clause license (https://opensource.org/licenses/BSD-2-Clause)
 at your option.
+
+The [Contributor Covenant Code of Conduct](CODE_OF_CONDUCT.md) is licensed under
+ * Creative Commons Attribution 4.0 International Public License (https://creativecommons.org/licenses/by/4.0/)
 
 ## BSD 2-Clause License
 
@@ -230,6 +239,7 @@ third-party archives.
     See the License for the specific language governing permissions and
     limitations under the License.
 
+
 <div class="section_buttons">
 
 | Previous          |                              Next |
@@ -237,3 +247,5 @@ third-party archives.
 | [Home](index.html) | [Installation](@ref installation_page) |
 
 </div>
+
+

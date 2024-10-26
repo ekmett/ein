@@ -3,6 +3,7 @@
 
 [![CMake](https://github.com/ekmett/ein/actions/workflows/cmake.yml/badge.svg)](https://github.com/ekmett/ein/actions/workflows/cmake.yml)
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
+[![Code of Conduct: Contributor Covenant](https://img.shields.io/badge/code_of_conduct-contributor_covenant-14cc21)](https://github.com/EthicalSource/contributor_covenant)
 [![Build Trace](https://img.shields.io/badge/build-trace-orange.svg)](ein-build.trace)
 
 \tableofcontents
