@@ -1,4 +1,5 @@
 /**
+
 \internal
   \license
     SPDX-FileType: Source
@@ -7,38 +8,13 @@
   \endlicense
 \endinternal
 
-\defgroup headers Headers
-  \brief Traditional C++ Headers
-  \{
-
-    \dir h
-      \brief C++ headers
-
-  \}
+\dir h
+  \brief C++ headers
 
 \dir src
   \brief C++ source files
 
-\defgroup macros Macros
+\defgroup attributes Attributes
   \details
-  \{
-
-    Even in the lofty world of C++23 we need support for macros.
-
-    \defgroup attributes Attributes
-
-      \details 
-
-        Attributes can be applied to structs, functions, types, pointers, and methods to change or document their behavior.
-
-  \}
+    Attributes can be applied to structs, functions, types, pointers, and methods to change or document their behavior.
 */
-
-\defgroup tests Tests
-  \brief Tests
-  \{
-
-    \dir t
-      \brief Tests
-
-  \}

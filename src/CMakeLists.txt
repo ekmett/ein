@@ -2,6 +2,19 @@
 # SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 # SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 
+find_package(Threads REQUIRED)
+
+# nlohmann's json library provides a solid c++ API for working with json
+fetchcontent_declare(
+  json
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG        v3.11.3
+  GIT_SHALLOW TRUE
+  GIT_PROGRESS TRUE
+)
+fetchcontent_makeavailable(json)
+
+
 add_library(ein STATIC
   numerics.cpp
 )
@@ -9,7 +22,8 @@ add_library(ein STATIC
 set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 add_dependencies(ein ein_headers)
 
-target_link_libraries(ein PUBLIC spdlog::spdlog)
+
+target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_json spdlog::spdlog Threads::Threads)
 
 target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   cpuid.cppm
@@ -17,16 +31,12 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   numerics.cppm
   simd.cppm
   simd_data.cppm
+  static_string.cppm
   std.cppm
   types.cppm
   wait.cppm
 )
 
-# find_package(Threads REQUIRED)
-#  nlohmann_json::nlohmann_json
-#  Threads::Threads
-
-target_link_libraries(ein PUBLIC compiler_rt_builtins)
 
 target_include_directories(ein PUBLIC
   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/h>

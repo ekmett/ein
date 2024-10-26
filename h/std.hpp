@@ -17,9 +17,7 @@
         Capturing what portions of the `std` library we use for use
         in a precompiled header drastically reduces compile times.
 
-        When `import std` is reliable, we can retire this header.
-
-      \ingroup headers */
+        When `import std` is reliable, we can retire this header. */
 
 
 #include <algorithm>

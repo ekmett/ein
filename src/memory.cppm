@@ -6,7 +6,7 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-      \ingroup memory */
+      */
 
 
 module;
@@ -20,8 +20,6 @@ using namespace std;
 export module ein.memory;
 
 namespace ein {
-/// \defgroup memory Memory Management
-/// \{
 
 /// \brief a type where the destructor does no work, and therefore it is safe to simply discard.
 export template<typename T>
@@ -81,7 +79,5 @@ unique_str dup(
 ) noexcept {
   return unique_str { strdup(string) };
 }
-
-/// \}
 
 } // ein

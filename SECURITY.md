@@ -16,7 +16,7 @@ SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 
 ## Reporting a Vulnerability
 
-To report a vulnerability, please create a github issue. 
+To report a vulnerability, please create a github issue.
 
 If the issue is of sensitive nature please <a href="mailto:ekmett@gmail.com">contact the author</a> directly.
 
@@ -30,4 +30,3 @@ If the issue is of sensitive nature please <a href="mailto:ekmett@gmail.com">con
 
 </div>
 GITHUB -->
-

@@ -8,10 +8,6 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-      \ingroup headers
-
-      \brief All c++ headers.
-
       \details See \ref pch_cmake_vs_clangd */
 
 #include "std.hpp"         // c++ standard library

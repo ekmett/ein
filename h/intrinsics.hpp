@@ -8,9 +8,7 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-      \brief Imports all of our platform-specific intrinsics once as part of the PCH.
-
-      \ingroup headers */
+      \brief Imports all of our platform-specific intrinsics once as part of the PCH. */
 
 #include "x86intrin.h"
 #include "immintrin.h"
