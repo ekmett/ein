@@ -1,0 +1,876 @@
+<!-- HTML header for doxygen 1.12.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ein: ein::static_c_string Class Reference</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="apple-touch-icon.png"/>
+<link rel="manifest" href="site.web-manifest">
+<!--alternate icons-->
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="mathjax/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<style>
+div.header div.summary { padding-right: 80px; }
+:root {
+  --font-family-monospace: 'Hasklig', monospace;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-Regular.woff2') format('woff2'), url('Hasklig-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-It.woff2') format('woff2'), url('Hasklig-It.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-Bold.woff2') format('woff2'), url('Hasklig-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+<!-- extra scripts -->
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="trace.js"></script>
+<script type="text/javascript">
+  DoxygenAwesomeDarkModeToggle.init()
+  DoxygenAwesomeFragmentCopyButton.init()
+  DoxygenAwesomeParagraphLink.init()
+  DoxygenAwesomeInteractiveToc.init()
+  DoxygenAwesomeTabs.init()
+</script>
+<!-- end of extra scripts -->
+</head>
+<body>
+<!-- github corners -->
+<!-- end github corner -->
+<a href="https://github.com/ekmett/ein" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 9999;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="index.html"><img alt="Logo" src="ein-logo.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname"><a href="index.html">ein<span id="projectnumber">&#160;0.0.1</span></a>
+   </div>
+   </div>
+   <div id="projectbrief">SIMD Tools</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('classein_1_1static__c__string.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pri-attribs">Private Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="classein_1_1static__c__string-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ein::static_c_string Class Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups">module <a class="el" href="module__ein_8static__string.html">ein.static_string</a></div></div></div>
+</div><!--header-->
+<div class="contents">
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:ad815e594eae67ca54fe91dd20bb68fde" id="r_ad815e594eae67ca54fe91dd20bb68fde"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad815e594eae67ca54fe91dd20bb68fde">static_c_string</a> () noexcept=default</td></tr>
+<tr class="separator:ad815e594eae67ca54fe91dd20bb68fde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefa94e0060288e2b869f1caacb9bffcd" id="r_aefa94e0060288e2b869f1caacb9bffcd"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefa94e0060288e2b869f1caacb9bffcd">static_c_string</a> (<a class="el" href="classein_1_1static__c__string.html">static_c_string</a> const &amp;) noexcept=default</td></tr>
+<tr class="separator:aefa94e0060288e2b869f1caacb9bffcd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a55e5bfa66a25cc2b360e4e6c9a8bdd37" id="r_a55e5bfa66a25cc2b360e4e6c9a8bdd37"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a55e5bfa66a25cc2b360e4e6c9a8bdd37">static_c_string</a> (<a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:a55e5bfa66a25cc2b360e4e6c9a8bdd37"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9eb47f37ab53c9798e9cd8dbf0e79f16" id="r_a9eb47f37ab53c9798e9cd8dbf0e79f16"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9eb47f37ab53c9798e9cd8dbf0e79f16">static_c_string</a> (<a class="el" href="namespaceein.html#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a> x) noexcept</td></tr>
+<tr class="separator:a9eb47f37ab53c9798e9cd8dbf0e79f16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a56da32e4692fec505626f8e56a03a3d7" id="r_a56da32e4692fec505626f8e56a03a3d7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a> constexpr <a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56da32e4692fec505626f8e56a03a3d7">operator=</a> (<a class="el" href="classein_1_1static__c__string.html">static_c_string</a> const &amp;) noexcept=default</td></tr>
+<tr class="separator:a56da32e4692fec505626f8e56a03a3d7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac1e8d3f3883a31859e6442c57d69ad16" id="r_ac1e8d3f3883a31859e6442c57d69ad16"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1e8d3f3883a31859e6442c57d69ad16">operator const char *</a> () const noexcept</td></tr>
+<tr class="separator:ac1e8d3f3883a31859e6442c57d69ad16"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a01b87ee4bb2b1c5215371546eedc04d3" id="r_a01b87ee4bb2b1c5215371546eedc04d3"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a01b87ee4bb2b1c5215371546eedc04d3">operator static_string</a> () const noexcept</td></tr>
+<tr class="separator:a01b87ee4bb2b1c5215371546eedc04d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd3b6965ace9168812ecb2f8c35c7a1d" id="r_acd3b6965ace9168812ecb2f8c35c7a1d"><td class="memItemLeft" align="right" valign="top">constexpr const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acd3b6965ace9168812ecb2f8c35c7a1d">data</a> () const noexcept</td></tr>
+<tr class="separator:acd3b6965ace9168812ecb2f8c35c7a1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr><td colspan="2"><div class="groupHeader">iterators</div></td></tr>
+<tr class="memitem:a75f47cf49c773e17083ad66b3c58fc07" id="r_a75f47cf49c773e17083ad66b3c58fc07"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75f47cf49c773e17083ad66b3c58fc07">begin</a> () const noexcept</td></tr>
+<tr class="memdesc:a75f47cf49c773e17083ad66b3c58fc07"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(1)  <br /></td></tr>
+<tr class="separator:a75f47cf49c773e17083ad66b3c58fc07"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a111c2f082333e572769c702344d64007" id="r_a111c2f082333e572769c702344d64007"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a111c2f082333e572769c702344d64007">end</a> () const noexcept</td></tr>
+<tr class="separator:a111c2f082333e572769c702344d64007"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcfc412a82f43bb4f4b32dfff16f663a" id="r_adcfc412a82f43bb4f4b32dfff16f663a"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#adcfc412a82f43bb4f4b32dfff16f663a">cbegin</a> () const noexcept</td></tr>
+<tr class="memdesc:adcfc412a82f43bb4f4b32dfff16f663a"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(1)  <br /></td></tr>
+<tr class="separator:adcfc412a82f43bb4f4b32dfff16f663a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b02ebae51a2136cbe51b9dc587ee976" id="r_a8b02ebae51a2136cbe51b9dc587ee976"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8b02ebae51a2136cbe51b9dc587ee976">cend</a> () const noexcept</td></tr>
+<tr class="memdesc:a8b02ebae51a2136cbe51b9dc587ee976"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(1)  <br /></td></tr>
+<tr class="separator:a8b02ebae51a2136cbe51b9dc587ee976"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d24709a7064506e41567cee4235c73e" id="r_a1d24709a7064506e41567cee4235c73e"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1d24709a7064506e41567cee4235c73e">rbegin</a> () const noexcept</td></tr>
+<tr class="memdesc:a1d24709a7064506e41567cee4235c73e"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(n)  <br /></td></tr>
+<tr class="separator:a1d24709a7064506e41567cee4235c73e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6c32ca8def63c5176034db5f7a8d7de" id="r_ad6c32ca8def63c5176034db5f7a8d7de"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad6c32ca8def63c5176034db5f7a8d7de">rend</a> () const noexcept</td></tr>
+<tr class="memdesc:ad6c32ca8def63c5176034db5f7a8d7de"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(1)  <br /></td></tr>
+<tr class="separator:ad6c32ca8def63c5176034db5f7a8d7de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a06413bfe7c5554f36c07da0f37bd0e13" id="r_a06413bfe7c5554f36c07da0f37bd0e13"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a06413bfe7c5554f36c07da0f37bd0e13">crbegin</a> () const noexcept</td></tr>
+<tr class="memdesc:a06413bfe7c5554f36c07da0f37bd0e13"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(n)  <br /></td></tr>
+<tr class="separator:a06413bfe7c5554f36c07da0f37bd0e13"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a23f0e2a3449246984a10a238b46a9274" id="r_a23f0e2a3449246984a10a238b46a9274"><td class="memItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a23f0e2a3449246984a10a238b46a9274">crend</a> () const noexcept</td></tr>
+<tr class="memdesc:a23f0e2a3449246984a10a238b46a9274"><td class="mdescLeft">&#160;</td><td class="mdescRight">O(1)  <br /></td></tr>
+<tr class="separator:a23f0e2a3449246984a10a238b46a9274"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pri-attribs" name="pri-attribs"></a>
+Private Attributes</h2></td></tr>
+<tr class="memitem:a93cbbdcd26ffdfb3dc4040c465438074" id="r_a93cbbdcd26ffdfb3dc4040c465438074"><td class="memItemLeft" align="right" valign="top">const char *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a></td></tr>
+<tr class="separator:a93cbbdcd26ffdfb3dc4040c465438074"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aadf4a7c6327c5f360384bdaa55650a08" id="r_aadf4a7c6327c5f360384bdaa55650a08"><td class="memItemLeft" align="right" valign="top">constexpr friend bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aadf4a7c6327c5f360384bdaa55650a08">operator==</a> (<a class="el" href="classein_1_1static__c__string.html">static_c_string</a> x, <a class="el" href="classein_1_1static__c__string.html">static_c_string</a> y) noexcept</td></tr>
+<tr class="separator:aadf4a7c6327c5f360384bdaa55650a08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0b45787595a203f81ac57ac0f2322a6d" id="r_a0b45787595a203f81ac57ac0f2322a6d"><td class="memItemLeft" align="right" valign="top">constexpr friend bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0b45787595a203f81ac57ac0f2322a6d">operator!=</a> (<a class="el" href="classein_1_1static__c__string.html">static_c_string</a> x, <a class="el" href="classein_1_1static__c__string.html">static_c_string</a> y) noexcept</td></tr>
+<tr class="separator:a0b45787595a203f81ac57ac0f2322a6d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a11767a3a637e777b79d53f7ea887352c" id="r_a11767a3a637e777b79d53f7ea887352c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a11767a3a637e777b79d53f7ea887352c">swap</a> (<a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;x, <a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;y) noexcept</td></tr>
+<tr class="separator:a11767a3a637e777b79d53f7ea887352c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00256">256</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad815e594eae67ca54fe91dd20bb68fde" name="ad815e594eae67ca54fe91dd20bb68fde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad815e594eae67ca54fe91dd20bb68fde">&#9670;&#160;</a></span>static_c_string() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::static_c_string::static_c_string </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aefa94e0060288e2b869f1caacb9bffcd" name="aefa94e0060288e2b869f1caacb9bffcd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefa94e0060288e2b869f1caacb9bffcd">&#9670;&#160;</a></span>static_c_string() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::static_c_string::static_c_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a55e5bfa66a25cc2b360e4e6c9a8bdd37" name="a55e5bfa66a25cc2b360e4e6c9a8bdd37"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a55e5bfa66a25cc2b360e4e6c9a8bdd37">&#9670;&#160;</a></span>static_c_string() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::static_c_string::static_c_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9eb47f37ab53c9798e9cd8dbf0e79f16" name="a9eb47f37ab53c9798e9cd8dbf0e79f16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9eb47f37ab53c9798e9cd8dbf0e79f16">&#9670;&#160;</a></span>static_c_string() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::static_c_string::static_c_string </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="namespaceein.html#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00269">269</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  269</span>: <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>(x.data()) {}</div>
+<div class="ttc" id="aclassein_1_1static__c__string_html_a93cbbdcd26ffdfb3dc4040c465438074"><div class="ttname"><a href="#a93cbbdcd26ffdfb3dc4040c465438074">ein::static_c_string::p</a></div><div class="ttdeci">const char * p</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00257">static_string.cppm:257</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a75f47cf49c773e17083ad66b3c58fc07" name="a75f47cf49c773e17083ad66b3c58fc07"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75f47cf49c773e17083ad66b3c58fc07">&#9670;&#160;</a></span>begin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::begin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[const]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(1) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00299">299</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  299</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00326">crend()</a>, and <a class="el" href="static__string_8cppm_source.html#l00318">rend()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 0 --></div>
+</div>
+
+</div>
+</div>
+<a id="adcfc412a82f43bb4f4b32dfff16f663a" name="adcfc412a82f43bb4f4b32dfff16f663a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcfc412a82f43bb4f4b32dfff16f663a">&#9670;&#160;</a></span>cbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::cbegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[const]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(1) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00306">306</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  306</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+</div>
+</div>
+<a id="a8b02ebae51a2136cbe51b9dc587ee976" name="a8b02ebae51a2136cbe51b9dc587ee976"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b02ebae51a2136cbe51b9dc587ee976">&#9670;&#160;</a></span>cend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::cend </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(1) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00310">310</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  310</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a> + strlen(<a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+</div>
+</div>
+<a id="a06413bfe7c5554f36c07da0f37bd0e13" name="a06413bfe7c5554f36c07da0f37bd0e13"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a06413bfe7c5554f36c07da0f37bd0e13">&#9670;&#160;</a></span>crbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::crbegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(n) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00322">322</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  322</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const char *&gt;(<a class="code hl_function" href="#a111c2f082333e572769c702344d64007">end</a>()); }</div>
+<div class="ttc" id="aclassein_1_1static__c__string_html_a111c2f082333e572769c702344d64007"><div class="ttname"><a href="#a111c2f082333e572769c702344d64007">ein::static_c_string::end</a></div><div class="ttdeci">constexpr auto end() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00302">static_string.cppm:302</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00302">end()</a>.</p>
+
+</div>
+</div>
+<a id="a23f0e2a3449246984a10a238b46a9274" name="a23f0e2a3449246984a10a238b46a9274"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a23f0e2a3449246984a10a238b46a9274">&#9670;&#160;</a></span>crend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::crend </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(1) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00326">326</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  326</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const char *&gt;(<a class="code hl_function" href="#a75f47cf49c773e17083ad66b3c58fc07">begin</a>()); }</div>
+<div class="ttc" id="aclassein_1_1static__c__string_html_a75f47cf49c773e17083ad66b3c58fc07"><div class="ttname"><a href="#a75f47cf49c773e17083ad66b3c58fc07">ein::static_c_string::begin</a></div><div class="ttdeci">constexpr auto begin() const noexcept</div><div class="ttdoc">O(1)</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00299">static_string.cppm:299</a></div></div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00299">begin()</a>.</p>
+
+</div>
+</div>
+<a id="acd3b6965ace9168812ecb2f8c35c7a1d" name="acd3b6965ace9168812ecb2f8c35c7a1d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd3b6965ace9168812ecb2f8c35c7a1d">&#9670;&#160;</a></span>data()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char * ein::static_c_string::data </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00281">281</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  281</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+</div>
+</div>
+<a id="a111c2f082333e572769c702344d64007" name="a111c2f082333e572769c702344d64007"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a111c2f082333e572769c702344d64007">&#9670;&#160;</a></span>end()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::end </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00302">302</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  302</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a> + strlen(<a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00322">crbegin()</a>, and <a class="el" href="static__string_8cppm_source.html#l00314">rbegin()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><!-- SVG 1 --></div>
+</div>
+
+</div>
+</div>
+<a id="ac1e8d3f3883a31859e6442c57d69ad16" name="ac1e8d3f3883a31859e6442c57d69ad16"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1e8d3f3883a31859e6442c57d69ad16">&#9670;&#160;</a></span>operator const char *()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::static_c_string::operator const char * </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00275">275</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  275</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>; }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+</div>
+</div>
+<a id="a01b87ee4bb2b1c5215371546eedc04d3" name="a01b87ee4bb2b1c5215371546eedc04d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01b87ee4bb2b1c5215371546eedc04d3">&#9670;&#160;</a></span>operator static_string()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::static_c_string::operator <a class="el" href="namespaceein.html#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a> </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00278">278</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  278</span>{ <span class="keywordflow">return</span> string_view(<a class="code hl_variable" href="#a93cbbdcd26ffdfb3dc4040c465438074">p</a>); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00257">p</a>.</p>
+
+</div>
+</div>
+<a id="a56da32e4692fec505626f8e56a03a3d7" name="a56da32e4692fec505626f8e56a03a3d7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a56da32e4692fec505626f8e56a03a3d7">&#9670;&#160;</a></span>operator=()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a> constexpr <a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp; ein::static_c_string::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1d24709a7064506e41567cee4235c73e" name="a1d24709a7064506e41567cee4235c73e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d24709a7064506e41567cee4235c73e">&#9670;&#160;</a></span>rbegin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::rbegin </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(n) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00314">314</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  314</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const char *&gt;(<a class="code hl_function" href="#a111c2f082333e572769c702344d64007">end</a>()); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00302">end()</a>.</p>
+
+</div>
+</div>
+<a id="ad6c32ca8def63c5176034db5f7a8d7de" name="ad6c32ca8def63c5176034db5f7a8d7de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6c32ca8def63c5176034db5f7a8d7de">&#9670;&#160;</a></span>rend()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">auto ein::static_c_string::rend </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>O(1) </p>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00318">318</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  318</span>{ <span class="keywordflow">return</span> std::reverse_iterator&lt;const char *&gt;(<a class="code hl_function" href="#a75f47cf49c773e17083ad66b3c58fc07">begin</a>()); }</div>
+</div><!-- fragment -->
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00299">begin()</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="a0b45787595a203f81ac57ac0f2322a6d" name="a0b45787595a203f81ac57ac0f2322a6d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0b45787595a203f81ac57ac0f2322a6d">&#9670;&#160;</a></span>operator!=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00287">287</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  287</span>{ <span class="keywordflow">return</span> x.p != y.p; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aadf4a7c6327c5f360384bdaa55650a08" name="aadf4a7c6327c5f360384bdaa55650a08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aadf4a7c6327c5f360384bdaa55650a08">&#9670;&#160;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">friend bool operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00284">284</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  284</span>{ <span class="keywordflow">return</span> x.p == y.p; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a11767a3a637e777b79d53f7ea887352c" name="a11767a3a637e777b79d53f7ea887352c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a11767a3a637e777b79d53f7ea887352c">&#9670;&#160;</a></span>swap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00290">290</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  290</span>                                                               {</div>
+<div class="line"><span class="lineno">  291</span>    <span class="keyword">using </span>std::swap;</div>
+<div class="line"><span class="lineno">  292</span>    <a class="code hl_friend" href="#a11767a3a637e777b79d53f7ea887352c">swap</a>(x.p,y.p);</div>
+<div class="line"><span class="lineno">  293</span>  }</div>
+<div class="ttc" id="aclassein_1_1static__c__string_html_a11767a3a637e777b79d53f7ea887352c"><div class="ttname"><a href="#a11767a3a637e777b79d53f7ea887352c">ein::static_c_string::swap</a></div><div class="ttdeci">friend void swap(static_c_string &amp;x, static_c_string &amp;y) noexcept</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00290">static_string.cppm:290</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a93cbbdcd26ffdfb3dc4040c465438074" name="a93cbbdcd26ffdfb3dc4040c465438074"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93cbbdcd26ffdfb3dc4040c465438074">&#9670;&#160;</a></span>p</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const char* ein::static_c_string::p</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00257">257</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00299">begin()</a>, <a class="el" href="static__string_8cppm_source.html#l00306">cbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00310">cend()</a>, <a class="el" href="static__string_8cppm_source.html#l00281">data()</a>, <a class="el" href="static__string_8cppm_source.html#l00302">end()</a>, <a class="el" href="static__string_8cppm_source.html#l00275">operator const char *()</a>, and <a class="el" href="static__string_8cppm_source.html#l00278">operator static_string()</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this class was generated from the following file:<ul>
+<li><a class="el" href="static__string_8cppm_source.html">static_string.cppm</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="namespaceein.html">ein</a></li><li class="navelem"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a></li>
+    <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>
+  </ul>
+</div>
+</body>
+</html>

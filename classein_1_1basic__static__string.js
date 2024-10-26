@@ -12,6 +12,7 @@ var classein_1_1basic__static__string =
     [ "size_type", "classein_1_1basic__static__string.html#a94827ff8dd5bef2078b11f039eb4930f", null ],
     [ "traits_type", "classein_1_1basic__static__string.html#ac8a73fdd4806a2edfb0813d299dc2496", null ],
     [ "value_type", "classein_1_1basic__static__string.html#a334ac1e06546c8edfa94710c5a757f3b", null ],
+    [ "basic_static_string", "classein_1_1basic__static__string.html#ab0ace16f505939acdd422533aa0fd91e", null ],
     [ "basic_static_string", "classein_1_1basic__static__string.html#aad54656347db2087cc520c6d82736b55", null ],
     [ "basic_static_string", "classein_1_1basic__static__string.html#a9f46dbc43e3dee783626403c045a1ccc", null ],
     [ "basic_static_string", "classein_1_1basic__static__string.html#a4bf56601bb0248d3949764a63b01b76c", null ],
@@ -42,6 +43,7 @@ var classein_1_1basic__static__string =
     [ "operator!=", "classein_1_1basic__static__string.html#afda42ff892b26756d77d6d83f7441505", null ],
     [ "operator<<", "classein_1_1basic__static__string.html#adb37fa19e5464eb20cab1f929ee2c4e1", null ],
     [ "operator==", "classein_1_1basic__static__string.html#a66b1bb967f392af4e42fc38b44fa9e5c", null ],
+    [ "static_c_string", "classein_1_1basic__static__string.html#a05ef823f385904d5852c4b3b2276be12", null ],
     [ "swap", "classein_1_1basic__static__string.html#a1ba9ae7f3aead7e048516bff55de05f5", null ],
     [ "npos", "classein_1_1basic__static__string.html#ae0ef656d0d775bec16ce6ddd53e020d8", null ],
     [ "view", "classein_1_1basic__static__string.html#aa7839b69ea6531136495a91f96741125", null ]

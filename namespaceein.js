@@ -9,6 +9,7 @@ var namespaceein =
     [ "reify", "structein_1_1reify.html", "structein_1_1reify" ],
     [ "simd", "group__simd.html#structein_1_1simd", "group__simd_structein_1_1simd" ],
     [ "spin", "group__wait.html#structein_1_1spin", "group__wait_structein_1_1spin" ],
+    [ "static_c_string", "classein_1_1static__c__string.html", "classein_1_1static__c__string" ],
     [ "umwait", "group__wait.html#structein_1_1umwait", "group__wait_structein_1_1umwait" ],
     [ "trivially_destructible", "conceptein_1_1trivially__destructible.html", null ],
     [ "one_of", "conceptein_1_1one__of.html", null ],
