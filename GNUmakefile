@@ -52,7 +52,7 @@ gen: $(CMAKELISTS)
 lint:
     # Changed (text) files not in excluded dirs.
 	@git --no-pager diff --check origin/main HEAD \
-         -- ':!lib/**' -- ':!doxygen/assets/**' \
+         -- ':!lib/**' ':!doxygen/assets/**' \
 		|| { echo "Trailing whitespace detected. Please run 'make format'."; exit 1; }
 
 format:
