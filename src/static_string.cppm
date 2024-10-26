@@ -15,6 +15,9 @@ struct reify {
   static constexpr const T value[sizeof...(xs)+1] = {xs..., T() };
 };
 
+// forward declaration
+export class static_c_string;
+
 // statically known interned strings
 // these have O(1) comparison for equality
 
@@ -30,6 +33,11 @@ export template <
 class basic_static_string {
   basic_string_view<CharT,Traits> view;
 
+  ein_inline constexpr
+  basic_static_string(basic_string_view<CharT,Traits> view)
+  : view(view) {}
+
+  friend class static_c_string;
 public:
   using traits_type = Traits;
   using value_type = CharT;
@@ -54,9 +62,11 @@ public:
   ein_inline constexpr
   basic_static_string() noexcept = default;
 
-  ein_inline constexpr basic_static_string(basic_static_string const &) noexcept = default;
+  ein_inline constexpr
+  basic_static_string(basic_static_string const &) noexcept = default;
 
-  ein_inline constexpr basic_static_string(basic_static_string const &&) noexcept = default;
+  ein_inline constexpr
+  basic_static_string(basic_static_string const &&) noexcept = default;
 
   /// \}
   /// \name assignments
@@ -239,11 +249,87 @@ consteval static_string operator"" _ss() noexcept {
   return basic_static_string(std::integer_sequence<T,xs...>{});
 }
 
-
-
 #ifdef __GNUC__
 #  pragma GCC diagnostic pop
 #endif
+
+export class static_c_string {
+  const char * p;
+public:
+  ein_inline constexpr
+  static_c_string() noexcept = default;
+
+  ein_inline constexpr
+  static_c_string(static_c_string const &) noexcept = default;
+
+  ein_inline constexpr
+  static_c_string(static_c_string &&) noexcept = default;
+
+  ein_inline constexpr
+  static_c_string(static_string x) noexcept : p(x.data()) {}
+
+  ein_reinitializes ein_inline constexpr
+  static_c_string & operator = (static_c_string const &) noexcept = default;
+
+  ein_nodiscard ein_inline ein_pure ein_artificial constexpr
+  operator const char * () const noexcept { return p; }
+
+  ein_nodiscard ein_inline ein_pure ein_artificial constexpr
+  operator static_string () const noexcept { return string_view(p); }
+
+  ein_nodiscard ein_inline ein_pure ein_artificial constexpr
+  const char * data() const noexcept { return p; }
+
+  ein_nodiscard ein_inline ein_pure ein_artificial constexpr friend
+  bool operator == (static_c_string x, static_c_string y) noexcept { return x.p == y.p; }
+
+  ein_nodiscard ein_inline ein_pure ein_artificial constexpr friend 
+  bool operator != (static_c_string x, static_c_string y) noexcept { return x.p != y.p; }
+
+  ein_inline friend 
+  void swap(static_c_string & x, static_c_string & y) noexcept {
+    using std::swap;
+    swap(x.p,y.p);
+  }
+  /// \name iterators
+  /// \{
+
+  /// O(1)
+  ein_nodiscard ein_inline ein_const ein_artificial constexpr
+  auto begin() const noexcept { return p; }
+
+  ein_nodiscard ein_inline ein_pure constexpr
+  auto end() const noexcept { return p + strlen(p); }
+
+  /// O(1)
+  ein_nodiscard ein_inline ein_const ein_artificial constexpr
+  auto cbegin() const noexcept { return p; }
+
+  /// O(1)
+  ein_nodiscard ein_inline ein_pure constexpr
+  auto cend() const noexcept { return p + strlen(p); }
+
+  /// O(n)
+  ein_nodiscard ein_inline ein_pure constexpr
+  auto rbegin() const noexcept { return std::reverse_iterator<const char *>(end()); }
+
+  /// O(1)
+  ein_nodiscard ein_inline ein_pure constexpr
+  auto rend() const noexcept { return std::reverse_iterator<const char *>(begin()); }
+
+  /// O(n)
+  ein_nodiscard ein_inline ein_pure constexpr
+  auto crbegin() const noexcept { return std::reverse_iterator<const char *>(end()); }
+
+  /// O(1) 
+  ein_nodiscard ein_inline ein_pure constexpr
+  auto crend() const noexcept { return std::reverse_iterator<const char *>(begin()); }
+
+  /// \}
+
+};
+
+
 
 #if 0
 namespace {
@@ -268,7 +354,13 @@ namespace std {
   export template <typename CharT, typename Traits>
   struct hash<::ein::basic_static_string<CharT,Traits>> {
     constexpr size_t operator()(::ein::basic_static_string<CharT,Traits> const & s) const noexcept {
-      return reinterpret_cast<size_t>(s.begin());
+      return reinterpret_cast<size_t>(s.data());
+    }
+  };
+  export template <>
+  struct hash<::ein::static_c_string> {
+    constexpr size_t operator()(::ein::static_c_string s) const noexcept {
+      return reinterpret_cast<size_t>(s.data());
     }
   };
   namespace ranges {
@@ -279,6 +371,12 @@ namespace std {
 
     export template< class CharT, class Traits >
     constexpr bool enable_view<::ein::basic_static_string<CharT, Traits>> = true;
+
+    export template <>
+    constexpr bool enable_borrowed_range<::ein::static_c_string> = true;
+
+    export template <>
+    constexpr bool enable_view<::ein::static_c_string> = true;
     /// \endcond
 
   }
