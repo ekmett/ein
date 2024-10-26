@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['end_0',['end',['../group__simd.html#ad02d0923f7774642fa5a6a6027aa1818',1,'ein::simd::end() noexcept'],['../group__simd.html#abda7f4523729262d8447b237fa939904',1,'ein::simd::end() const noexcept']]]
+  ['data_0',['data',['../classein_1_1basic__static__string.html#a7d0ca2440fbf9d4df909547b0086f765',1,'ein::basic_static_string']]],
+  ['dup_1',['dup',['../namespaceein.html#aea392313e0b52aaba01039483b6d673f',1,'ein']]]
 ];

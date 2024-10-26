@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['begin_0',['begin',['../group__simd.html#ad3060907ab6bf5d9364fd0403bac506e',1,'ein::simd::begin() noexcept'],['../group__simd.html#a13b00a131976b1dfd9ccf4946c005ea2',1,'ein::simd::begin() const noexcept']]]
+  ['at_0',['at',['../classein_1_1basic__static__string.html#a8db94d99ec2a82c7cd0250f8f4f53c27',1,'ein::basic_static_string']]]
 ];

@@ -15,5 +15,6 @@ var searchData=
   ['intel_12',['intel',['../group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a',1,'ein']]],
   ['intrinsic_5ft_13',['intrinsic_t',['../group__simd.html#a5593cabdeea2ee6a7c573fe7445cf165',1,'ein::simd']]],
   ['intrinsics_2ehpp_14',['intrinsics.hpp',['../intrinsics_8hpp.html',1,'']]],
-  ['it_15',['it',['../group__simd.html#a1387d80d8c6f881ba38278ff1ee2b466',1,'ein::simd::it() noexcept'],['../group__simd.html#ad3e25bed1ef0e0cd23791f2e621aae7d',1,'ein::simd::it() const noexcept']]]
+  ['it_15',['it',['../group__simd.html#a1387d80d8c6f881ba38278ff1ee2b466',1,'ein::simd::it() noexcept'],['../group__simd.html#ad3e25bed1ef0e0cd23791f2e621aae7d',1,'ein::simd::it() const noexcept']]],
+  ['iterator_16',['iterator',['../classein_1_1basic__static__string.html#a0bdc20a7e7744712ca18c0a163e4b586',1,'ein::basic_static_string']]]
 ];

@@ -7,5 +7,6 @@ var searchData=
   ['flow_4',['Control Flow',['../group__control__flow__attributes.html',1,'']]],
   ['for_20use_20reproduction_20and_20distribution_5',['Terms and Conditions for use, reproduction, and distribution',['../license_page.html#autotoc_md2',1,'']]],
   ['forward_5flike_6',['forward_like',['../group__std.html#gac4e848e26cfe1051d18bb913060767b0',1,'std']]],
-  ['function_20multi_20versioning_7',['Function Multi-Versioning',['../group__multiversioning__attributes.html',1,'']]]
+  ['front_7',['front',['../classein_1_1basic__static__string.html#ab5f229764f9c2681669526fe0613013d',1,'ein::basic_static_string']]],
+  ['function_20multi_20versioning_8',['Function Multi-Versioning',['../group__multiversioning__attributes.html',1,'']]]
 ];

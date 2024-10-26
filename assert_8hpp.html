@@ -174,7 +174,7 @@ $(function(){initNavTree('assert_8hpp.html',''); initResizable(true); });
 <div class="header">
   <div class="summary">
 <a href="#define-members">Macros</a>  </div>
-  <div class="headertitle"><div class="title">assert.hpp File Reference<div class="ingroups"><a class="el" href="group__macros.html">Macros</a></div></div></div>
+  <div class="headertitle"><div class="title">assert.hpp File Reference</div></div>
 </div><!--header-->
 <div class="contents">
 
@@ -190,9 +190,9 @@ This graph shows which files directly or indirectly include this file:</div>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ga4af23f138af62df96e8bacc71767bf00" id="r_ga4af23f138af62df96e8bacc71767bf00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__macros.html#ga4af23f138af62df96e8bacc71767bf00">ein_assert</a>(cond, ...)</td></tr>
-<tr class="memdesc:ga4af23f138af62df96e8bacc71767bf00"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <code>assert</code> with <code>spdlog</code> message formatting and logging.  <br /></td></tr>
-<tr class="separator:ga4af23f138af62df96e8bacc71767bf00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4af23f138af62df96e8bacc71767bf00" id="r_a4af23f138af62df96e8bacc71767bf00"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4af23f138af62df96e8bacc71767bf00">ein_assert</a>(cond, ...)</td></tr>
+<tr class="memdesc:a4af23f138af62df96e8bacc71767bf00"><td class="mdescLeft">&#160;</td><td class="mdescRight">An <code>assert</code> with <code>spdlog</code> message formatting and logging.  <br /></td></tr>
+<tr class="separator:a4af23f138af62df96e8bacc71767bf00"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>assert even during release </p>
@@ -201,7 +201,35 @@ Macros</h2></td></tr>
 <div class="line">SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0</div>
 </div><!-- fragment -->
 <p class="definition">Definition in file <a class="el" href="assert_8hpp_source.html">assert.hpp</a>.</p>
-</div></div><!-- contents -->
+</div><h2 class="groupheader">Macro Definition Documentation</h2>
+<a id="a4af23f138af62df96e8bacc71767bf00" name="a4af23f138af62df96e8bacc71767bf00"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4af23f138af62df96e8bacc71767bf00">&#9670;&#160;</a></span>ein_assert</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ein_assert</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>cond</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em></em></span>...&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>An <code>assert</code> with <code>spdlog</code> message formatting and logging. </p>
+<p>Arguments other than the condition are only evaluated if the condition <code>cond</code> is <code>false</code>.</p>
+<dl class="section note"><dt>Note</dt><dd>Present even in release mode. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="assert_8hpp_source.html#l00027">27</a> of file <a class="el" href="assert_8hpp_source.html">assert.hpp</a>.</p>
+
+</div>
+</div>
+</div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->

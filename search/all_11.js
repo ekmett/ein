@@ -18,9 +18,10 @@ var searchData=
   ['nlt_5fus_15',['NLT_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371aaf7ab69e1b0d7f3cf77f32a560ef53ac',1,'ein']]],
   ['notes_16',['Notes',['../notes_page.html',1,'index']]],
   ['notes_2edox_17',['notes.dox',['../notes_8dox.html',1,'']]],
-  ['null_20safety_18',['Null Safety',['../group__null__safety__attributes.html',1,'']]],
-  ['numerics_19',['Numerics',['../group__numerics.html',1,'']]],
-  ['numerics_2ecpp_20',['numerics.cpp',['../numerics_8cpp.html',1,'']]],
-  ['numerics_2ecppm_21',['numerics.cppm',['../numerics_8cppm.html',1,'']]],
-  ['numerics_2ex_22',['numerics.x',['../numerics_8x.html',1,'']]]
+  ['npos_18',['npos',['../classein_1_1basic__static__string.html#ae0ef656d0d775bec16ce6ddd53e020d8',1,'ein::basic_static_string']]],
+  ['null_20safety_19',['Null Safety',['../group__null__safety__attributes.html',1,'']]],
+  ['numerics_20',['Numerics',['../group__numerics.html',1,'']]],
+  ['numerics_2ecpp_21',['numerics.cpp',['../numerics_8cpp.html',1,'']]],
+  ['numerics_2ecppm_22',['numerics.cppm',['../numerics_8cppm.html',1,'']]],
+  ['numerics_2ex_23',['numerics.x',['../numerics_8x.html',1,'']]]
 ];

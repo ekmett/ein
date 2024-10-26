@@ -7,7 +7,7 @@ digraph "intrinsics.hpp"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="intrinsics.hpp",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip="Imports all of our platform-specific intrinsics once as part of the PCH."];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$prelude_8hpp.html",tooltip="All c++ headers."];
+  Node2 [id="Node000002",label="prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$prelude_8hpp.html",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="cpuid.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$cpuid_8cppm.html",tooltip=" "];
   Node2 -> Node4 [id="edge3_Node000002_Node000004",dir="back",color="steelblue1",style="solid",tooltip=" "];
@@ -21,9 +21,11 @@ digraph "intrinsics.hpp"
   Node2 -> Node8 [id="edge7_Node000002_Node000008",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node8 [id="Node000008",label="simd_data.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$simd__data_8cppm.html",tooltip=" "];
   Node2 -> Node9 [id="edge8_Node000002_Node000009",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node9 [id="Node000009",label="std.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$std_8cppm.html",tooltip="polyfill missing standard library functions"];
+  Node9 [id="Node000009",label="static_string.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$static__string_8cppm.html",tooltip=" "];
   Node2 -> Node10 [id="edge9_Node000002_Node000010",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node10 [id="Node000010",label="types.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$types_8cppm.html",tooltip=" "];
+  Node10 [id="Node000010",label="std.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$std_8cppm.html",tooltip="polyfill missing standard library functions"];
   Node2 -> Node11 [id="edge10_Node000002_Node000011",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node11 [id="Node000011",label="wait.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wait_8cppm.html",tooltip="waiting strategies"];
+  Node11 [id="Node000011",label="types.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$types_8cppm.html",tooltip=" "];
+  Node2 -> Node12 [id="edge11_Node000002_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node12 [id="Node000012",label="wait.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wait_8cppm.html",tooltip="waiting strategies"];
 }

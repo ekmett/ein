@@ -185,12 +185,14 @@ $(function(){initNavTree('namespaceein.html',''); initResizable(true); });
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="nested-classes" name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:structein_1_1c__free" id="r_structein_1_1c__free"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__memory.html#structein_1_1c__free">c_free</a></td></tr>
-<tr class="memdesc:structein_1_1c__free"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter that calls free()  <a href="group__memory.html#structein_1_1c__free">More...</a><br /></td></tr>
-<tr class="separator:structein_1_1c__free"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structein_1_1c__munmap" id="r_structein_1_1c__munmap"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__memory.html#structein_1_1c__munmap">c_munmap</a></td></tr>
-<tr class="memdesc:structein_1_1c__munmap"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter for memory mapped data  <a href="group__memory.html#structein_1_1c__munmap">More...</a><br /></td></tr>
-<tr class="separator:structein_1_1c__munmap"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1c__free.html">c_free</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter that calls free()  <a href="structein_1_1c__free.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1c__munmap.html">c_munmap</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter for memory mapped data  <a href="structein_1_1c__munmap.html#details">More...</a><br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structein_1_1cpuid__t" id="r_structein_1_1cpuid__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpuid.html#structein_1_1cpuid__t">cpuid_t</a></td></tr>
 <tr class="memdesc:structein_1_1cpuid__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">result from calling the <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> instruction  <a href="group__cpuid.html#structein_1_1cpuid__t">More...</a><br /></td></tr>
 <tr class="separator:structein_1_1cpuid__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,6 +202,8 @@ Classes</h2></td></tr>
 <tr class="memitem:structein_1_1mwaitx" id="r_structein_1_1mwaitx"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wait.html#structein_1_1mwaitx">mwaitx</a></td></tr>
 <tr class="memdesc:structein_1_1mwaitx"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="conceptein_1_1waiter.html">waiter</a> using MONITORX/MWAITX for AMD  <a href="group__wait.html#structein_1_1mwaitx">More...</a><br /></td></tr>
 <tr class="separator:structein_1_1mwaitx"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1reify.html">reify</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structein_1_1simd" id="r_structein_1_1simd"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#structein_1_1simd">simd</a></td></tr>
 <tr class="memdesc:structein_1_1simd"><td class="mdescLeft">&#160;</td><td class="mdescRight">simd primitive definition  <a href="group__simd.html#structein_1_1simd">More...</a><br /></td></tr>
 <tr class="separator:structein_1_1simd"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -248,16 +252,16 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:gabac483c5eb9fb59c662014d36ce22a49" id="r_gabac483c5eb9fb59c662014d36ce22a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__memory.html#gabac483c5eb9fb59c662014d36ce22a49">ein::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="group__memory.html#structein_1_1c__munmap">c_munmap</a>&gt;</td></tr>
-<tr class="memdesc:gabac483c5eb9fb59c662014d36ce22a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
-<tr class="separator:gabac483c5eb9fb59c662014d36ce22a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga940b2f94c046f7d63a5c5be98ab42f02" id="r_ga940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
-<tr class="memitem:ga940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__memory.html#ga940b2f94c046f7d63a5c5be98ab42f02">ein::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="group__memory.html#structein_1_1c__free">c_free</a>&gt;</td></tr>
-<tr class="memdesc:ga940b2f94c046f7d63a5c5be98ab42f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
-<tr class="separator:ga940b2f94c046f7d63a5c5be98ab42f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad20e043c6e8f44fc20d90e797dc0bf4b" id="r_gad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="group__memory.html#ga940b2f94c046f7d63a5c5be98ab42f02">unique_c_ptr</a>&lt;char const&gt;</td></tr>
-<tr class="memdesc:gad20e043c6e8f44fc20d90e797dc0bf4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">a c string, managed by unique_ptr  <br /></td></tr>
-<tr class="separator:gad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abac483c5eb9fb59c662014d36ce22a49" id="r_abac483c5eb9fb59c662014d36ce22a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">ein::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="structein_1_1c__munmap.html">c_munmap</a>&gt;</td></tr>
+<tr class="memdesc:abac483c5eb9fb59c662014d36ce22a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
+<tr class="separator:abac483c5eb9fb59c662014d36ce22a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a940b2f94c046f7d63a5c5be98ab42f02" id="r_a940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
+<tr class="memitem:a940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">ein::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="structein_1_1c__free.html">c_free</a>&gt;</td></tr>
+<tr class="memdesc:a940b2f94c046f7d63a5c5be98ab42f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
+<tr class="separator:a940b2f94c046f7d63a5c5be98ab42f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20e043c6e8f44fc20d90e797dc0bf4b" id="r_ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">unique_c_ptr</a>&lt;char const&gt;</td></tr>
+<tr class="memdesc:ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">a c string, managed by unique_ptr  <br /></td></tr>
+<tr class="separator:ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44878eae47626eacca18302e151e5001" id="r_ga44878eae47626eacca18302e151e5001"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga44878eae47626eacca18302e151e5001"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga44878eae47626eacca18302e151e5001">ein::int_t</a></td></tr>
 <tr class="memdesc:ga44878eae47626eacca18302e151e5001"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a signed integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code>  <br /></td></tr>
@@ -281,6 +285,16 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gae78d444e236a38a2192b04c2bfd58433"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gae78d444e236a38a2192b04c2bfd58433">ein::simd_mask_t</a></td></tr>
 <tr class="memdesc:gae78d444e236a38a2192b04c2bfd58433"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of mask should I use?  <br /></td></tr>
 <tr class="separator:gae78d444e236a38a2192b04c2bfd58433"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2e3ce2c3dbe8116664d83ad7e4b9b17f" id="r_a2e3ce2c3dbe8116664d83ad7e4b9b17f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char&gt;</td></tr>
+<tr class="separator:a2e3ce2c3dbe8116664d83ad7e4b9b17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3804a7dd159e1d50e1666f8861759188" id="r_a3804a7dd159e1d50e1666f8861759188"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3804a7dd159e1d50e1666f8861759188">static_wstring</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;wchar_t&gt;</td></tr>
+<tr class="separator:a3804a7dd159e1d50e1666f8861759188"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad02f9214dc72c769f5fa2102372e4ce3" id="r_ad02f9214dc72c769f5fa2102372e4ce3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad02f9214dc72c769f5fa2102372e4ce3">static_u8string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char8_t&gt;</td></tr>
+<tr class="separator:ad02f9214dc72c769f5fa2102372e4ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f1cfcb009a7263c06ab3df4b5d8005b" id="r_a3f1cfcb009a7263c06ab3df4b5d8005b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f1cfcb009a7263c06ab3df4b5d8005b">static_u16string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char16_t&gt;</td></tr>
+<tr class="separator:a3f1cfcb009a7263c06ab3df4b5d8005b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa4c83e6ece039ee7858edb27a3d6ffba" id="r_aa4c83e6ece039ee7858edb27a3d6ffba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c83e6ece039ee7858edb27a3d6ffba">static_u32string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char32_t&gt;</td></tr>
+<tr class="separator:aa4c83e6ece039ee7858edb27a3d6ffba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
@@ -386,12 +400,12 @@ Functions</h2></td></tr>
 <tr class="memitem:ga849cffec87c96e71e01ec367f5bb01ea" id="r_ga849cffec87c96e71e01ec367f5bb01ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpuid.html#structein_1_1cpuid__t">cpuid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpuid.html#ga849cffec87c96e71e01ec367f5bb01ea">ein::cpuid</a> (int32_t eax, int32_t ecx) noexcept</td></tr>
 <tr class="memdesc:ga849cffec87c96e71e01ec367f5bb01ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> and returns all of the registers that it responds with.  <br /></td></tr>
 <tr class="separator:ga849cffec87c96e71e01ec367f5bb01ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac2663d41f31490e13670ae3e6ce98f83" id="r_gac2663d41f31490e13670ae3e6ce98f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__memory.html#gabac483c5eb9fb59c662014d36ce22a49">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__memory.html#gac2663d41f31490e13670ae3e6ce98f83">ein::make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
-<tr class="memdesc:gac2663d41f31490e13670ae3e6ce98f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
-<tr class="separator:gac2663d41f31490e13670ae3e6ce98f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaea392313e0b52aaba01039483b6d673f" id="r_gaea392313e0b52aaba01039483b6d673f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__memory.html#gaea392313e0b52aaba01039483b6d673f">ein::dup</a> (char const *string) noexcept</td></tr>
-<tr class="memdesc:gaea392313e0b52aaba01039483b6d673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="group__memory.html#gad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>  <br /></td></tr>
-<tr class="separator:gaea392313e0b52aaba01039483b6d673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2663d41f31490e13670ae3e6ce98f83" id="r_ac2663d41f31490e13670ae3e6ce98f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2663d41f31490e13670ae3e6ce98f83">ein::make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
+<tr class="memdesc:ac2663d41f31490e13670ae3e6ce98f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
+<tr class="separator:ac2663d41f31490e13670ae3e6ce98f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aea392313e0b52aaba01039483b6d673f" id="r_aea392313e0b52aaba01039483b6d673f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea392313e0b52aaba01039483b6d673f">ein::dup</a> (char const *string) noexcept</td></tr>
+<tr class="memdesc:aea392313e0b52aaba01039483b6d673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>  <br /></td></tr>
+<tr class="separator:aea392313e0b52aaba01039483b6d673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9e352aca0eb99e5bff21db2bcf7029" id="r_a2e9e352aca0eb99e5bff21db2bcf7029"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e9e352aca0eb99e5bff21db2bcf7029">cmp_unord</a> (float, float) noexcept</td></tr>
 <tr class="separator:a2e9e352aca0eb99e5bff21db2bcf7029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af181518fc669a0ed8499e48bbd6541cb" id="r_af181518fc669a0ed8499e48bbd6541cb"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af181518fc669a0ed8499e48bbd6541cb">cmp_unord</a> (double, double) noexcept</td></tr>
@@ -465,6 +479,9 @@ requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; 32uz))</t
 <tr class="separator:ga88363bb5eaba546cfb6c6c7e6c29ffdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab11385ef90487a80bff66f69735ae7e9" id="r_gab11385ef90487a80bff66f69735ae7e9"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gab11385ef90487a80bff66f69735ae7e9">ein::cast_si</a> (__m512i a) noexcept</td></tr>
 <tr class="separator:gab11385ef90487a80bff66f69735ae7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9edbd2934746b159a130f397bd7d1904" id="r_a9edbd2934746b159a130f397bd7d1904"><td class="memTemplParams" colspan="2">template&lt;class T , T ... xs&gt; </td></tr>
+<tr class="memitem:a9edbd2934746b159a130f397bd7d1904"><td class="memTemplItemLeft" align="right" valign="top">consteval <a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9edbd2934746b159a130f397bd7d1904">operator&quot;&quot;_ss</a> () noexcept</td></tr>
+<tr class="separator:a9edbd2934746b159a130f397bd7d1904"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaeff5354fcf4acab5497e2b60433e75b6" id="r_gaeff5354fcf4acab5497e2b60433e75b6"><td class="memItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaeff5354fcf4acab5497e2b60433e75b6">ein::type_of</a> (auto const &amp;t) noexcept</td></tr>
 <tr class="memdesc:gaeff5354fcf4acab5497e2b60433e75b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type of the (unused) argument passed to this function  <br /></td></tr>
 <tr class="separator:gaeff5354fcf4acab5497e2b60433e75b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -537,6 +554,167 @@ Variables</h2></td></tr>
 <tr class="memdesc:gafe3cd68979730cc4ce2fd0800e31d494"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type <code>T</code>  <br /></td></tr>
 <tr class="separator:gafe3cd68979730cc4ce2fd0800e31d494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="abac483c5eb9fb59c662014d36ce22a49" name="abac483c5eb9fb59c662014d36ce22a49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abac483c5eb9fb59c662014d36ce22a49">&#9670;&#160;</a></span>mmap_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">ein::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="structein_1_1c__munmap.html">c_munmap</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>memory mapped data, managed by std::unique_ptr. calls munmap to free. </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00042">42</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+
+</div>
+</div>
+<a id="a2e3ce2c3dbe8116664d83ad7e4b9b17f" name="a2e3ce2c3dbe8116664d83ad7e4b9b17f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">&#9670;&#160;</a></span>static_string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">ein::static_string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00219">219</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+
+</div>
+</div>
+<a id="a3f1cfcb009a7263c06ab3df4b5d8005b" name="a3f1cfcb009a7263c06ab3df4b5d8005b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f1cfcb009a7263c06ab3df4b5d8005b">&#9670;&#160;</a></span>static_u16string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a3f1cfcb009a7263c06ab3df4b5d8005b">ein::static_u16string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char16_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00222">222</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+
+</div>
+</div>
+<a id="aa4c83e6ece039ee7858edb27a3d6ffba" name="aa4c83e6ece039ee7858edb27a3d6ffba"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa4c83e6ece039ee7858edb27a3d6ffba">&#9670;&#160;</a></span>static_u32string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aa4c83e6ece039ee7858edb27a3d6ffba">ein::static_u32string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char32_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00223">223</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+
+</div>
+</div>
+<a id="ad02f9214dc72c769f5fa2102372e4ce3" name="ad02f9214dc72c769f5fa2102372e4ce3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad02f9214dc72c769f5fa2102372e4ce3">&#9670;&#160;</a></span>static_u8string</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ad02f9214dc72c769f5fa2102372e4ce3">ein::static_u8string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char8_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00221">221</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+
+</div>
+</div>
+<a id="a3804a7dd159e1d50e1666f8861759188" name="a3804a7dd159e1d50e1666f8861759188"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3804a7dd159e1d50e1666f8861759188">&#9670;&#160;</a></span>static_wstring</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a3804a7dd159e1d50e1666f8861759188">ein::static_wstring</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;wchar_t&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00220">220</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+
+</div>
+</div>
+<a id="a940b2f94c046f7d63a5c5be98ab42f02" name="a940b2f94c046f7d63a5c5be98ab42f02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a940b2f94c046f7d63a5c5be98ab42f02">&#9670;&#160;</a></span>unique_c_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;trivially_destructible T&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">ein::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="structein_1_1c__free.html">c_free</a>&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a unique_ptr managed c pointer, deleted by free() </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00064">64</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+
+</div>
+</div>
+<a id="ad20e043c6e8f44fc20d90e797dc0bf4b" name="ad20e043c6e8f44fc20d90e797dc0bf4b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad20e043c6e8f44fc20d90e797dc0bf4b">&#9670;&#160;</a></span>unique_str</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">unique_c_ptr</a>&lt;char const&gt;</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>a c string, managed by unique_ptr </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00069">69</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
 <a id="aed6b28145ef6605e8092c5b7bf3cade1" name="aed6b28145ef6605e8092c5b7bf3cade1"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aed6b28145ef6605e8092c5b7bf3cade1">&#9670;&#160;</a></span>cmp_ord() <span class="overload">[1/2]</span></h2>
@@ -666,6 +844,104 @@ Here is the caller graph for this function:</div>
 <div class="center"><!-- SVG 1 --></div>
 </div>
 
+</div>
+</div>
+<a id="aea392313e0b52aaba01039483b6d673f" name="aea392313e0b52aaba01039483b6d673f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aea392313e0b52aaba01039483b6d673f">&#9670;&#160;</a></span>dup()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a> ein::dup </td>
+          <td>(</td>
+          <td class="paramtype">char const *</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[nonnull( 1 )]]</span><span class="mlabel">[[noescape]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a> </p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>string</code> is non-null </dd></dl>
+<dl class="section post"><dt>Postcondition</dt><dd>result is a null-terminated c string to be cleaned up by free </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00077">77</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+
+</div>
+</div>
+<a id="ac2663d41f31490e13670ae3e6ce98f83" name="ac2663d41f31490e13670ae3e6ce98f83"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2663d41f31490e13670ae3e6ce98f83">&#9670;&#160;</a></span>make_mmap_ptr()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">mmap_ptr</a> ein::make_mmap_ptr </td>
+          <td>(</td>
+          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">size_t</td>          <td class="paramname"><span class="paramname"><em>size</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[nonnull( 1 )]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>construct a mmap_ptr using a base pointer and its size for munmap </p>
+<dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is non-null </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00048">48</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+
+</div>
+</div>
+<a id="a9edbd2934746b159a130f397bd7d1904" name="a9edbd2934746b159a130f397bd7d1904"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edbd2934746b159a130f397bd7d1904">&#9670;&#160;</a></span>operator&quot;&quot;_ss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , T ... xs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a> ein::operator&quot;&quot;_ss </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">consteval</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00238">238</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  238</span>                                                  {</div>
+<div class="line"><span class="lineno">  239</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classein_1_1basic__static__string.html">basic_static_string</a>(std::integer_sequence&lt;T,xs...&gt;{});</div>
+<div class="line"><span class="lineno">  240</span>}</div>
+<div class="ttc" id="aclassein_1_1basic__static__string_html"><div class="ttname"><a href="classein_1_1basic__static__string.html">ein::basic_static_string</a></div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00030">static_string.cppm:30</a></div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="a4fe125d6f78c0a639415b3a59ff61c68" name="a4fe125d6f78c0a639415b3a59ff61c68"></a>

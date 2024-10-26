@@ -7,7 +7,7 @@ digraph "numerics.cppm"
   node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
   Node1 [id="Node000001",label="numerics.cppm",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$prelude_8hpp.html",tooltip="All c++ headers."];
+  Node2 [id="Node000002",label="prelude.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$prelude_8hpp.html",tooltip=" "];
   Node2 -> Node3 [id="edge2_Node000002_Node000003",color="steelblue1",style="solid",tooltip=" "];
   Node3 [id="Node000003",label="std.hpp",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$std_8hpp.html",tooltip="The C++ std library."];
   Node3 -> Node4 [id="edge3_Node000003_Node000004",color="steelblue1",style="solid",tooltip=" "];
