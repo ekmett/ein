@@ -2,9 +2,12 @@
 # SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 # SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 
-PROJECT_NAME = @PROJECT_NAME@
+PROJECT_NAME   = @PROJECT_NAME@
 PROJECT_NUMBER = @PROJECT_VERSION@
-PROJECT_BRIEF = @PROJECT_BRIEF@
+PROJECT_BRIEF  = @PROJECT_BRIEF@
+PROJECT_LOGO   = @CMAKE_SOURCE_DIR@/doxygen/assets/images/ein-logo.png
+PROJECT_ICON   = @CMAKE_SOURCE_DIR@/doxygen/assets/icons/favicon.ico
+IMAGE_PATH     = @CMAKE_SOURCE_DIR@/doxygen/assets
 
 # inputs
 INPUT += @CMAKE_SOURCE_DIR@/LICENSE.md
@@ -15,32 +18,13 @@ INPUT += @CMAKE_SOURCE_DIR@/src
 INPUT += @CMAKE_SOURCE_DIR@/pub
 INPUT += @CMAKE_BINARY_DIR@/h
 INPUT += @CMAKE_SOURCE_DIR@/t
-STRIP_FROM_PATH = @CMAKE_BINARY_DIR@/ @CMAKE_SOURCE_DIR@/
-OUTPUT_DIRECTORY = @CMAKE_BINARY_DIR@/docs
-FULL_PATH_NAMES = NO
-
-# macros
-ENABLE_PREPROCESSING = YES
-EXPAND_ONLY_PREDEF = YES
-MACRO_EXPANSION = YES
-SKIP_FUNCTION_MACROS = YES
-
-EXTRACT_ALL = YES
-EXTRACT_PRIVATE = YES
-EXTRACT_STATIC = YES
-EXTRACT_LOCAL_METHODS = YES
-EXTRACT_LOCAL_CLASSES = YES
-EXTRACT_ANON_NSPACES = NO
 
 EXTENSION_MAPPING = cppm=C++
 FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox *.md *.x=cpp
 FILTER_PATTERNS = *.md=@CMAKE_SOURCE_DIR@/bin/gfm_preprocessor.sh
-
-
-GENERATE_HTML = YES
-GENERATE_LATEX = NO
-
-GROUP_NESTED_COMPOUNDS = YES
+STRIP_FROM_PATH = @CMAKE_BINARY_DIR@/ @CMAKE_SOURCE_DIR@/
+OUTPUT_DIRECTORY = @CMAKE_BINARY_DIR@/docs
+FULL_PATH_NAMES = NO
 
 PREDEFINED = DOXYGEN=1
 PREDEFINED += __cpp_modules=201907L
@@ -61,10 +45,25 @@ PREDEFINED += ein_restrict=restrict
 PREDEFINED += ein_nonnull(x)="/** \qualifier \"[[nonnull(x)]]\" */"
 PREDEFINED += ein_null_terminated_string_arg(x)=
 
-
-PROJECT_NUMBER = "@PROJECT_VERSION@"
 QUIET = YES
 RECURSIVE = YES
+
+ENABLE_PREPROCESSING = YES
+EXPAND_ONLY_PREDEF = YES
+MACRO_EXPANSION = YES
+SKIP_FUNCTION_MACROS = YES
+
+EXTRACT_ALL = YES
+EXTRACT_PRIVATE = YES
+EXTRACT_STATIC = YES
+EXTRACT_LOCAL_METHODS = YES
+EXTRACT_LOCAL_CLASSES = YES
+EXTRACT_ANON_NSPACES = NO
+
+GENERATE_HTML = YES
+GENERATE_LATEX = NO
+GROUP_NESTED_COMPOUNDS = YES
+
 WARN_IF_DOC_ERROR = YES
 WARN_IF_UNDOCUMENTED = YES
 #USE_MDFILE_AS_MAINPAGE = @CMAKE_SOURCE_DIR@/README.md
@@ -79,6 +78,8 @@ GENERATE_TREEVIEW      = YES
 DISABLE_INDEX          = NO
 FULL_SIDEBAR           = NO
 HTML_COLORSTYLE        = LIGHT
+HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/header.html
+LATEX_EMOJI_DIRECTORY  = @FETCHCONTENT_BASE_DIR@/github_emojis-src/
 HTML_EXTRA_STYLESHEET  = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only-darkmode-toggle.css
@@ -87,6 +88,7 @@ HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-paragraph-link.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-interactive-toc.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-tabs.js
+
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/images/ein-logo.png
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/icons/favicon.ico
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/icons/favicon-16x16.png
@@ -101,11 +103,9 @@ HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-It.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-It.woff2
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-Bold.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/assets/fonts/Hasklig-Bold.woff2
-HTML_HEADER            = @CMAKE_SOURCE_DIR@/doxygen/header.html
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doxygen/trace.js
+
 HTML_COPY_CLIPBOARD    = NO
-PROJECT_LOGO           = @CMAKE_SOURCE_DIR@/doxygen/assets/images/ein-logo.png
-PROJECT_ICON           = @CMAKE_SOURCE_DIR@/doxygen/assets/icons/favicon.ico
 CREATE_SUBDIRS         = NO
 MARKDOWN_SUPPORT       = YES
 TOC_INCLUDE_HEADINGS   = 3

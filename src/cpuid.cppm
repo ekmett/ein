@@ -19,7 +19,7 @@ using namespace std;
 export module ein.cpuid;
 
 namespace ein {
-/// \defgroup cpuid CPU Detection
+/// \addtogroup cpuid
 /// \{
 
 /// result from calling the \CPUID instruction

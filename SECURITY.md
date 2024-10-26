@@ -1,4 +1,4 @@
-# Security Policy
+# Security Policy {#security_policy_page}
 
 <!--
 SPDX-FileType: DOCUMENTATION

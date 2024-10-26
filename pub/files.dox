@@ -9,33 +9,36 @@
 
 \defgroup headers Headers
   \brief Traditional C++ Headers
+  \{
 
-\defgroup modules Modules
-  \brief C++ Modules
+    \dir h
+      \brief C++ headers
 
-\defgroup macros Macros
-  \defgroup attributes Attributes
-    \ingroup macros
+  \}
 
 \dir src
-  \brief C++ modules
-  \ingroup modules
+  \brief C++ source files
 
-\dir h
-  \brief C++ headers
-  \ingroup headers
+\defgroup macros Macros
+  \details
+  \{
+
+    Even in the lofty world of C++23 we need support for macros.
+
+    \defgroup attributes Attributes
+
+      \details 
+
+        Attributes can be applied to structs, functions, types, pointers, and methods to change or document their behavior.
+
+  \}
 */
 
 \defgroup tests Tests
   \brief Tests
+  \{
 
-\defgroup bin Binaries
-  \brief Binaries
+    \dir t
+      \brief Tests
 
-\dir t
-  \brief Tests
-  \ingroup tests
-
-\dir bin
-  \brief Executables
-  \ingroup bin
+  \}

@@ -48,7 +48,41 @@ if(DOXYGEN_FOUND)
     URL https://github.com/mathjax/MathJax/archive/refs/tags/3.2.2.zip
     URL_HASH SHA256=95a32928f18ec9170e7f16cab77709cc58a43a8633486288cbbd599cdf625a35
   )
-  fetchContent_makeavailable(mathjax)
+  fetchcontent_makeavailable(mathjax)
+
+  # https://www.doxygen.nl/manual/emojisup.html
+  # Set the URL, destination, and hash for the download
+  set(GITHUB_EMOJIS_URL "https://www.doxygen.nl/dl/github_emojis.zip")
+  set(GITHUB_EMOJIS_ZIP "${CMAKE_SOURCE_DIR}/lib/github_emojis.zip")
+  set(GITHUB_EMOJIS_DIR "${CMAKE_SOURCE_DIR}/lib/github_emojis-src")
+  set(GITHUB_EMOJIS_HASH "0dc6f2f19abd5303bf4653a275c0aad734c985e0f81bc39b26a6f27306916423")
+
+  # Download the file only if it doesn't already exist
+  if(NOT EXISTS "${GITHUB_EMOJIS_ZIP}")
+      message(STATUS "Downloading GitHub emojis...")
+      file(DOWNLOAD "${GITHUB_EMOJIS_URL}" "${GITHUB_EMOJIS_ZIP}" EXPECTED_HASH SHA256=${GITHUB_EMOJIS_HASH})
+  endif()
+
+  # Verify and unzip the file to the specified directory
+  if(EXISTS "${GITHUB_EMOJIS_ZIP}")
+      # Create the target directory if it doesn't exist
+      file(MAKE_DIRECTORY "${GITHUB_EMOJIS_DIR}")
+
+      # Unzip only if the directory is empty
+      file(GLOB EMOJI_FILES "${GITHUB_EMOJIS_DIR}/*")
+      if(NOT EMOJI_FILES)
+          message(STATUS "Extracting GitHub emojis to ${GITHUB_EMOJIS_DIR}...")
+          execute_process(
+            COMMAND unzip -q -o "${GITHUB_EMOJIS_ZIP}" -d "${GITHUB_EMOJIS_DIR}"
+            WORKING_DIRECTORY "${GITHUB_EMOJIS_DIR}"
+          )
+      else()
+          message(STATUS "GitHub emojis already extracted.")
+      endif()
+  else()
+      message(FATAL_ERROR "Failed to download or verify github_emojis.zip.")
+  endif()
+
 
   # Set source and destination paths
   set(MATHJAX_SRC "${FETCHCONTENT_BASE_DIR}/mathjax-src")
