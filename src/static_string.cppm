@@ -1,3 +1,11 @@
+/** \file
+
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense */
+
 module;
 
 #include "prelude.hpp"
@@ -18,13 +26,13 @@ struct reify {
 // forward declaration
 export class static_c_string;
 
-// statically known interned strings
-// these have O(1) comparison for equality
-
-// \invariant all such strings point to the start of the static member inside
-//            operator""_ss for some string and their \p len is unmodified.
-//            this ensures that they have O(1) comparison, because reference
-//            and pointer equality coincide.
+/// statically known interned strings
+/// these have O(1) comparison for equality
+///
+/// \invariant all such strings point to the start of the static member inside
+///            operator""_ss for some string and their \p len is unmodified.
+///            this ensures that they have O(1) comparison, because reference
+///            and pointer equality coincide.
 
 export template <
   typename CharT,
@@ -226,32 +234,11 @@ public:
 //export template basic_static_string<char16_t,std::char_traits<char16_t>>;
 //export template basic_static_string<char32_t,std::char_traits<char32_t>>;
 
-using static_string = basic_static_string<char>;
-using static_wstring = basic_static_string<wchar_t>;
-using static_u8string = basic_static_string<char8_t>;
-using static_u16string = basic_static_string<char16_t>;
-using static_u32string = basic_static_string<char32_t>;
-
-#ifdef __GNUC__
-#  pragma GCC diagnostic push
-#  pragma GCC diagnostic ignored "-Wpedantic"
-
-#  ifdef __clang__
-#    pragma GCC diagnostic ignored "-Wgnu-string-literal-operator-template"
-#  endif
-#endif
-
-// this is the only method by which these are initially constructed
-// all other methods just trade them around
-
-template <class T, T ...xs>
-consteval static_string operator"" _ss() noexcept {
-  return basic_static_string(std::integer_sequence<T,xs...>{});
-}
-
-#ifdef __GNUC__
-#  pragma GCC diagnostic pop
-#endif
+export using static_string = basic_static_string<char>;
+export using static_wstring = basic_static_string<wchar_t>;
+export using static_u8string = basic_static_string<char8_t>;
+export using static_u16string = basic_static_string<char16_t>;
+export using static_u32string = basic_static_string<char32_t>;
 
 export class static_c_string {
   const char * p;
@@ -362,7 +349,31 @@ public:
   }
 };
 
+#ifdef __GNUC__
+#  pragma GCC diagnostic push
+#  pragma GCC diagnostic ignored "-Wpedantic"
 
+#  ifdef __clang__
+#    pragma GCC diagnostic ignored "-Wgnu-string-literal-operator-template"
+#  endif
+#endif
+
+// this is the only method by which these are initially constructed
+// all other methods just trade them around
+
+export template <class T, T ...xs>
+consteval static_string operator"" _ss() noexcept {
+  return basic_static_string(std::integer_sequence<T,xs...>{});
+}
+
+export template <one_of_t<char> T, T ...xs>
+consteval static_c_string operator"" _ss() noexcept {
+  return static_c_string(basic_static_string<T>(std::integer_sequence<char,xs...>{}));
+}
+
+#ifdef __GNUC__
+#  pragma GCC diagnostic pop
+#endif
 
 #if 0
 namespace {
