@@ -10,8 +10,17 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <concepts>
+#include <cstdint>
+#include <initializer_list>
+#include <type_traits>
+#include <algorithm>
 #include <immintrin.h>
+#include "attributes.hpp"
+#endif
 
 #ifdef __AVX512F__
 #define IF512(x,y) x

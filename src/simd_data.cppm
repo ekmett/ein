@@ -11,8 +11,14 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <cstdint>
+#include <type_traits>
 #include <immintrin.h>
+#include "attributes.hpp"
+#endif
 
 using namespace std;
 

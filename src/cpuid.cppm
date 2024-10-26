@@ -10,7 +10,14 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <array>
+#include <cstdint>
+#include <string_view>
+#include "attributes.hpp"
+#endif
 #include <cpuid.h>
 
 using namespace std;

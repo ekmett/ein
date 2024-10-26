@@ -54,11 +54,21 @@ set_target_properties(ein PROPERTIES PUBLIC_HEADER "${joined_headers}")
 
 lto(ein)
 
+# PRECOMPILE_HEADERS (EIN_PCH=1) is the fastest
+# accurate headers is a near second
+# PRE
+# EIN_PUBLIC=1 is far slower
+
 if(PRECOMPILE_HEADERS)
   target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
+  message(WARNING "OUTPUT_HEADER_FILES: ${OUTPUT_HEADER_FILES}")
+  message(WARNING "joined_headers: ${joined_headers}")
   target_compile_definitions(ein PUBLIC EIN_PCH=1)
+else()
+  # uncomment to test this mode
 endif()
 
+# target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")

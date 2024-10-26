@@ -10,6 +10,7 @@
 
       \brief third-party libraries */
 
+#include <nlohmann/json.hpp>
 #include <spdlog/spdlog.h>
 #include <spdlog/fmt/ranges.h>
 #include <spdlog/fmt/ostr.h>

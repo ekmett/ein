@@ -10,8 +10,12 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
-
+#elifndef EIN_PCH
+#include <string_view>
+#include "attributes.hpp"
+#endif
 #include <cxxabi.h>
 
 using namespace std;

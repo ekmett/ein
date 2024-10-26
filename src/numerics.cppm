@@ -10,7 +10,15 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <bit>
+#include <cmath>
+#include <cstdint>
+#include <type_traits>
+#include "attributes.hpp"
+#endif
 
 #ifdef __AVX512F__
 #define IFAVX512(x,y) x

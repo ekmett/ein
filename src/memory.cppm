@@ -11,9 +11,15 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
-#include <sys/mman.h> // munmap
+#elifndef EIN_PCH
+#include <type_traits>
 #include <cstring> // strdup
+#include "attributes.hpp"
+#endif
+#include <sys/mman.h> // munmap
+#include <memory>
 
 using namespace std;
 

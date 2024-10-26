@@ -228,7 +228,45 @@ if(ENABLE_TESTS)
   add_subdirectory(t)
 endif(ENABLE_TESTS)
 
-add_subdirectory(h)
+# header jiujutsu
+# ===============
+
+include(CheckRestrict)
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/config.hpp.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp"
+)
+
+list(APPEND SOURCE_HEADER_FILES
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/assert.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/attributes.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/intrinsics.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/prelude.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/std.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/third-party.hpp"
+)
+
+# Replace SOURCE_DIR with BINARY_DIR for each header
+set(OUTPUT_HEADER_FILES "")
+foreach(header ${SOURCE_HEADER_FILES})
+    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}" replaced_header "${header}")
+    list(APPEND OUTPUT_HEADER_FILES "${replaced_header}")
+endforeach()
+
+# Custom command to copy header files
+add_custom_command(
+  OUTPUT ${OUTPUT_HEADER_FILES}
+  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_BINARY_DIR}/h"
+  DEPENDS ${SOURCE_HEADER_FILES}
+)
+
+list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp)
+message(WARNING "OUTPUT_HEADER_FILES (in h): ${OUTPUT_HEADER_FILES}")
+
+# Custom target with dependency
+add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
+
 add_subdirectory(src)
 add_subdirectory(doxygen)
 

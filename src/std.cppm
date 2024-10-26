@@ -17,7 +17,11 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <type_traits>
+#endif
 
 /// \defgroup std C++ Standard Library
 export module ein.std;

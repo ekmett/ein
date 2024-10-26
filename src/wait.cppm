@@ -12,8 +12,13 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <cstdint>
 #include <x86intrin.h>
+#include "attributes.hpp"
+#endif
 
 using namespace std;
 

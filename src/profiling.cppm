@@ -8,11 +8,15 @@
 
 module;
 
+#ifdef EIN_PRELUDE
+#include "prelude.hpp"
+#elifndef EIN_PCH
 #include <unistd.h>
 #include <sys/types.h>
 #include <spdlog/spdlog.h>
-#include "nlohmann/json.hpp"
+#include <nlohmann/json.hpp>
 #include "attributes.hpp"
+#endif
 
 using namespace std;
 using namespace nlohmann;

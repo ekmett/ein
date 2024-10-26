@@ -13,10 +13,6 @@
 
 module;
 
-#include "prelude.hpp"
-
-using namespace std;
-
 module ein.numerics;
 
 namespace ein {

@@ -8,7 +8,14 @@
 
 module;
 
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
+#elifndef EIN_PCH
+#include <string_view>
+#include <cstring>
+#include <fstream>
+#include "attributes.hpp"
+#endif
 
 using namespace std;
 
