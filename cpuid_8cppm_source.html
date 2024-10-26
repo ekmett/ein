@@ -215,16 +215,17 @@ $(function(){initNavTree('cpuid_8cppm_source.html',''); initResizable(true); });
 <div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>  <span class="keyword">auto</span> result = <a class="code hl_function" href="group__cpuid.html#ga849cffec87c96e71e01ec367f5bb01ea">cpuid</a>(0, 0);</div>
 <div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>  array&lt;int32_t, 3&gt; data = { result.ebx, result.edx, result.ecx };</div>
 <div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span>  string_view vendor {<span class="keyword">reinterpret_cast&lt;</span><span class="keywordtype">char</span> <span class="keyword">const </span>*<span class="keyword">&gt;</span>(begin(data)), 12};</div>
-<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keywordflow">if</span>      (vendor == <span class="stringliteral">&quot;GenuineIntel&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">cpu_vendor::intel</a>;</div>
-<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vendor == <span class="stringliteral">&quot;AuthenticAMD&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">cpu_vendor::amd</a>;</div>
-<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">else</span>                               <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">cpu_vendor::unknown</a>;</div>
-<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>}();</div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>  <span class="keyword">using </span>enum <a class="code hl_enumeration" href="group__cpuid.html#ga7f13ea202e71639d6c875e4e301f3ca4">cpu_vendor</a>;</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>  <span class="keywordflow">if</span>      (vendor == <span class="stringliteral">&quot;GenuineIntel&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (vendor == <span class="stringliteral">&quot;AuthenticAMD&quot;</span>) <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">amd</a>;</div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span>  <span class="keywordflow">else</span>                               <span class="keywordflow">return</span> <a class="code hl_enumvalue" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">unknown</a>;</div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>}();</div>
 </div>
-<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span> </div>
 <div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span> </div>
-<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span><span class="comment">// end defgroup cpuid</span></div>
-<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span> </div>
-<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span>} <span class="comment">// end namespace ein</span></div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span> </div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span><span class="comment">// end defgroup cpuid</span></div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span> </div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>} <span class="comment">// end namespace ein</span></div>
 </div>
 <div class="ttc" id="agroup__cpuid_html_a4b471e63df57f6e0be35a890f21b6b2f"><div class="ttname"><a href="group__cpuid.html#a4b471e63df57f6e0be35a890f21b6b2f">ein::cpuid_t::ebx</a></div><div class="ttdeci">int32_t ebx</div><div class="ttdef"><b>Definition</b> <a href="#l00027">cpuid.cppm:27</a></div></div>
 <div class="ttc" id="agroup__cpuid_html_a4da45903069e9dc69e148ad3e6851060"><div class="ttname"><a href="group__cpuid.html#a4da45903069e9dc69e148ad3e6851060">ein::cpuid_t::eax</a></div><div class="ttdeci">int32_t eax</div><div class="ttdef"><b>Definition</b> <a href="#l00027">cpuid.cppm:27</a></div></div>
@@ -241,7 +242,7 @@ $(function(){initNavTree('cpuid_8cppm_source.html',''); initResizable(true); });
 <div class="ttc" id="agroup__purity__attributes_html_ga9e124f20ef90b8f2f68c0e1a1f7d00cf"><div class="ttname"><a href="group__purity__attributes.html#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">ein_pure</a></div><div class="ttdeci">#define ein_pure</div><div class="ttdoc">[[pure]]</div><div class="ttdef"><b>Definition</b> <a href="attributes_8hpp_source.html#l00897">attributes.hpp:897</a></div></div>
 <div class="ttc" id="amodule__ein_8cpuid_html"><div class="ttname"><a href="module__ein_8cpuid.html">ein.cpuid</a></div></div>
 <div class="ttc" id="anamespaceein_html"><div class="ttname"><a href="namespaceein.html">ein</a></div><div class="ttdef"><b>Definition</b> <a href="#l00021">cpuid.cppm:21</a></div></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="simd_8cppm_source.html#l01294">simd.cppm:1294</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="simd_8cppm_source.html#l01295">simd.cppm:1295</a></div></div>
 <div class="ttc" id="aprelude_8hpp_html"><div class="ttname"><a href="prelude_8hpp.html">prelude.hpp</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
