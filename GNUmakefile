@@ -32,7 +32,7 @@ png: gen/ein.png
 	@echo "\nDependency diagram available as gen/ein.png"
 
 gen/ein.png: gen
-	@dot -Tpng -o gen/ein.png gen/ein.dot
+	@dot -Tpng -o gen/ein.png gen/dotfiles/ein.dot
 
 build: gen
 	@cmake --build gen -j
@@ -45,7 +45,8 @@ run: $(RUN)
 
 gen: $(CMAKELISTS)
 	@mkdir -p gen
-	@cmake --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/ein.dot
+	@mkdir -p gen/dotfiles
+	@cmake --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
 	@touch gen
 
 lint:

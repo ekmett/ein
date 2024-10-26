@@ -26,7 +26,7 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
 #  nlohmann_json::nlohmann_json
 #  Threads::Threads
 
-target_link_libraries(ein PUBLIC ${COMPILER_RT_BUILTINS})
+target_link_libraries(ein PUBLIC compiler_rt_builtins)
 
 target_include_directories(ein PUBLIC
   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/h>

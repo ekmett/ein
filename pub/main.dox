@@ -20,6 +20,8 @@ This is a playground for wide SIMD evaluation.
 - \subpage installation_page
 - \subpage notes_page
 
+\dotfile ein.dot.ein "Dependencies"
+
 ## Contact Information
 
 Contributions and bug reports are welcome!

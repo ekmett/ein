@@ -7,9 +7,9 @@ cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 
 set(PROJECT_BRIEF "SIMD Tools")
 
-#set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
-set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
+# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
 # set(CMAKE_CXX_MODULE_STD TRUE)
+set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
 
 project(ein VERSION 0.0.1 LANGUAGES CXX)
 
@@ -27,7 +27,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/cmake")
 include(CheckIPOSupported)
 include(CheckRestrict)
 include(FetchContent)
-# include(ExternalProject)
 
 # options
 # =======
@@ -169,6 +168,9 @@ find_library(COMPILER_RT_BUILTINS
 if(NOT COMPILER_RT_BUILTINS)
   message(FATAL_ERROR "clang_rt.builtins-x86_64 library not found")
 endif()
+
+add_library(compiler_rt_builtins INTERFACE)
+target_link_libraries(compiler_rt_builtins INTERFACE ${COMPILER_RT_BUILTINS})
 
 # spdlog is being used as our standard logging framework
 fetchcontent_declare(

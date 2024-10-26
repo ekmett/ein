@@ -8,6 +8,7 @@ PROJECT_BRIEF  = @PROJECT_BRIEF@
 PROJECT_LOGO   = @CMAKE_SOURCE_DIR@/doxygen/assets/images/ein-logo.png
 PROJECT_ICON   = @CMAKE_SOURCE_DIR@/doxygen/assets/icons/favicon.ico
 IMAGE_PATH     = @CMAKE_SOURCE_DIR@/doxygen/assets
+DOTFILE_DIRS   = @CMAKE_BINARY_DIR@/dotfiles
 
 # inputs
 INPUT += @CMAKE_SOURCE_DIR@/LICENSE.md
