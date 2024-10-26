@@ -1,5 +1,6 @@
 var namespaceein =
 [
+    [ "profiling", "namespaceein_1_1profiling.html", "namespaceein_1_1profiling" ],
     [ "basic_static_string", "classein_1_1basic__static__string.html", "classein_1_1basic__static__string" ],
     [ "c_free", "structein_1_1c__free.html", "structein_1_1c__free" ],
     [ "c_munmap", "structein_1_1c__munmap.html", "structein_1_1c__munmap" ],
@@ -121,6 +122,7 @@ var namespaceein =
     [ "loadu", "group__simd.html#gaed90a3dee286dda1af9ca5f28513bc3a", null ],
     [ "make_mmap_ptr", "namespaceein.html#ac2663d41f31490e13670ae3e6ce98f83", null ],
     [ "operator\"\"_ss", "namespaceein.html#a9edbd2934746b159a130f397bd7d1904", null ],
+    [ "operator\"\"_ss", "namespaceein.html#a9da8d44f7082bb65aa909b4478211ab3", null ],
     [ "scalef", "namespaceein.html#a4fe125d6f78c0a639415b3a59ff61c68", null ],
     [ "scalef", "namespaceein.html#a6984f13cd906f1521dfcb7e95b8f8b84", null ],
     [ "scalef", "group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f", null ],

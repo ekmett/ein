@@ -28,4 +28,6 @@ digraph "attributes.hpp"
   Node11 [id="Node000011",label="types.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$types_8cppm.html",tooltip=" "];
   Node2 -> Node12 [id="edge11_Node000002_Node000012",dir="back",color="steelblue1",style="solid",tooltip=" "];
   Node12 [id="Node000012",label="wait.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$wait_8cppm.html",tooltip="waiting strategies"];
+  Node1 -> Node13 [id="edge12_Node000001_Node000013",dir="back",color="steelblue1",style="solid",tooltip=" "];
+  Node13 [id="Node000013",label="profiling.cppm",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$profiling_8cppm.html",tooltip=" "];
 }

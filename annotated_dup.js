@@ -1,6 +1,13 @@
 var annotated_dup =
 [
     [ "ein", "namespaceein.html", [
+      [ "profiling", "namespaceein_1_1profiling.html", [
+        [ "duration_event", "structein_1_1profiling_1_1duration__event.html", "structein_1_1profiling_1_1duration__event" ],
+        [ "profile", "structein_1_1profiling_1_1profile.html", "structein_1_1profiling_1_1profile" ],
+        [ "profile_event", "namespaceein_1_1profiling.html#structein_1_1profiling_1_1profile__event", "namespaceein_1_1profiling_structein_1_1profiling_1_1profile__event_dup" ],
+        [ "profile_scope", "structein_1_1profiling_1_1profile__scope.html", "structein_1_1profiling_1_1profile__scope" ],
+        [ "scope_event", "structein_1_1profiling_1_1scope__event.html", "structein_1_1profiling_1_1scope__event" ]
+      ] ],
       [ "basic_static_string", "classein_1_1basic__static__string.html", "classein_1_1basic__static__string" ],
       [ "c_free", "structein_1_1c__free.html", "structein_1_1c__free" ],
       [ "c_munmap", "structein_1_1c__munmap.html", "structein_1_1c__munmap" ],

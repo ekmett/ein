@@ -10,5 +10,6 @@ var static__string_8cppm =
     [ "static_u32string", "static__string_8cppm.html#aa4c83e6ece039ee7858edb27a3d6ffba", null ],
     [ "static_u8string", "static__string_8cppm.html#ad02f9214dc72c769f5fa2102372e4ce3", null ],
     [ "static_wstring", "static__string_8cppm.html#a3804a7dd159e1d50e1666f8861759188", null ],
-    [ "operator\"\"_ss", "static__string_8cppm.html#a9edbd2934746b159a130f397bd7d1904", null ]
+    [ "operator\"\"_ss", "static__string_8cppm.html#a9edbd2934746b159a130f397bd7d1904", null ],
+    [ "operator\"\"_ss", "static__string_8cppm.html#a9da8d44f7082bb65aa909b4478211ab3", null ]
 ];

@@ -8,5 +8,5 @@ digraph "ein::basic_static_string::data"
   rankdir="RL";
   Node1 [id="Node000001",label="ein::basic_static_string\l::data",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
   Node1 -> Node2 [id="edge1_Node000001_Node000002",dir="back",color="steelblue1",style="solid",tooltip=" "];
-  Node2 [id="Node000002",label="ein::basic_static_string\l::operator CharT const *",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classein_1_1basic__static__string.html#abff06f399f5a4397ed802296d5a51037",tooltip=" "];
+  Node2 [id="Node000002",label="ein::basic_static_string\l\< char \>::operator char\l const *",height=0.2,width=0.4,color="grey40", fillcolor="white", style="filled",URL="$classein_1_1basic__static__string.html#abff06f399f5a4397ed802296d5a51037",tooltip=" "];
 }

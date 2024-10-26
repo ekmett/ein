@@ -5,6 +5,7 @@ var dir_68267d1309a1af8e8297ef4c3efbcdba =
     [ "numerics.cpp", "numerics_8cpp.html", "numerics_8cpp" ],
     [ "numerics.cppm", "numerics_8cppm.html", "numerics_8cppm" ],
     [ "numerics.x", "numerics_8x.html", null ],
+    [ "profiling.cppm", "profiling_8cppm.html", "profiling_8cppm" ],
     [ "simd.cppm", "simd_8cppm.html", "simd_8cppm" ],
     [ "simd_data.cppm", "simd__data_8cppm.html", "simd__data_8cppm" ],
     [ "static_string.cppm", "static__string_8cppm.html", "static__string_8cppm" ],

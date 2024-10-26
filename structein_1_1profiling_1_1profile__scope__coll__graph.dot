@@ -1,0 +1,12 @@
+digraph "ein::profiling::profile_scope&lt; Mutex, Duration, Clock &gt;"
+{
+ // INTERACTIVE_SVG=YES
+ // LATEX_PDF_SIZE
+  bgcolor="transparent";
+  edge [fontname=Helvetica,fontsize=10,labelfontname=Helvetica,labelfontsize=10];
+  node [fontname=Helvetica,fontsize=10,shape=box,height=0.2,width=0.4];
+  rankdir="LR";
+  Node1 [id="Node000001",label="ein::profiling::profile\l_scope\< Mutex, Duration,\l Clock \>",height=0.2,width=0.4,color="gray40", fillcolor="grey60", style="filled", fontcolor="black",tooltip=" "];
+  Node2 -> Node1 [id="edge1_Node000001_Node000002",dir="back",color="darkorchid3",style="dashed",tooltip=" ",label=" p",fontcolor="grey" ];
+  Node2 [id="Node000002",label="ein::profiling::profile\l\< std::mutex, std::chrono\l::nanoseconds, std::chrono\l::high_resolution_clock \>",height=0.2,width=0.4,color="gray40", fillcolor="white", style="filled",URL="$structein_1_1profiling_1_1profile.html",tooltip=" "];
+}

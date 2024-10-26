@@ -69,6 +69,7 @@ var NAVTREE =
       [ "On cmake vs. clangd", "notes_page.html#pch_cmake_vs_clangd", null ],
       [ "On documentation in headers and precompilation", "notes_page.html#pch_big_docs", null ]
     ] ],
+    [ "Todo List", "todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
     [ "Modules", "modules.html", [
       [ "Modules List", "modules.html", "modules_dup" ],
@@ -87,7 +88,8 @@ var NAVTREE =
         [ "Functions", "namespacemembers_func.html", null ],
         [ "Variables", "namespacemembers_vars.html", null ],
         [ "Typedefs", "namespacemembers_type.html", null ],
-        [ "Enumerations", "namespacemembers_enum.html", null ]
+        [ "Enumerations", "namespacemembers_enum.html", null ],
+        [ "Enumerator", "namespacemembers_eval.html", null ]
       ] ]
     ] ],
     [ "Concepts", "concepts.html", "concepts" ],
@@ -96,7 +98,7 @@ var NAVTREE =
       [ "Class Index", "classes.html", null ],
       [ "Class Hierarchy", "hierarchy.html", "hierarchy" ],
       [ "Class Members", "functions.html", [
-        [ "All", "functions.html", null ],
+        [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
         [ "Typedefs", "functions_type.html", null ],
@@ -116,8 +118,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"functions.html",
-"group__simd.html#aeb8fc05596759d9065ffbea8095d3b75"
+"classein_1_1static__c__string.html#aefa94e0060288e2b869f1caacb9bffcd",
+"group__simd.html#a68193277cf8274dc80986a35b6ef1a67",
+"namespaceein.html#aea392313e0b52aaba01039483b6d673f",
+"structein_1_1profiling_1_1profile__scope.html#a2b797a639c5c5219d9f68a53835024af"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

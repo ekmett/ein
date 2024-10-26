@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['value_5ftype_0',['value_type',['../group__simd.html#a35f55b75d393fe01bc91b609738a771e',1,'ein::simd::value_type'],['../classein_1_1basic__static__string.html#a334ac1e06546c8edfa94710c5a757f3b',1,'ein::basic_static_string::value_type']]]
+  ['uint_5ft_0',['uint_t',['../group__numerics.html#gab9bd44183e9aa86139541a3690cf8a2c',1,'ein']]],
+  ['unique_5fc_5fptr_1',['unique_c_ptr',['../namespaceein.html#a940b2f94c046f7d63a5c5be98ab42f02',1,'ein']]],
+  ['unique_5fstr_2',['unique_str',['../namespaceein.html#ad20e043c6e8f44fc20d90e797dc0bf4b',1,'ein']]]
 ];

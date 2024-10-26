@@ -1,8 +1,8 @@
 var searchData=
 [
-  ['eq_0',['EQ',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47',1,'ein']]],
-  ['eq_5foq_1',['EQ_OQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a96a3c6b5f8867f54e6090e1d124a4ad7',1,'ein']]],
-  ['eq_5fos_2',['EQ_OS',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a544294813337636070d9dc82a4e376e9',1,'ein']]],
-  ['eq_5fuq_3',['EQ_UQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371aa7243f470844b93f4220b47a04525f40',1,'ein']]],
-  ['eq_5fus_4',['EQ_US',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a51ab787d5ad10a108f2f3c1c96146b80',1,'ein']]]
+  ['clock_5fsync_0',['clock_sync',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f',1,'ein::profiling']]],
+  ['complete_1',['complete',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52',1,'ein::profiling']]],
+  ['context_5fenter_2',['context_enter',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba',1,'ein::profiling']]],
+  ['context_5fleave_3',['context_leave',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa',1,'ein::profiling']]],
+  ['counter_4',['counter',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0',1,'ein::profiling']]]
 ];

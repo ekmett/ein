@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['int_5ft_0',['int_t',['../group__numerics.html#ga44878eae47626eacca18302e151e5001',1,'ein']]],
-  ['intrinsic_5ft_1',['intrinsic_t',['../group__simd.html#a5593cabdeea2ee6a7c573fe7445cf165',1,'ein::simd']]],
-  ['iterator_2',['iterator',['../classein_1_1basic__static__string.html#a0bdc20a7e7744712ca18c0a163e4b586',1,'ein::basic_static_string']]]
+  ['event_0',['event',['../structein_1_1profiling_1_1profile.html#a1328cf32b8cc23aa6ad80815dcd38a68',1,'ein::profiling::profile::event'],['../structein_1_1profiling_1_1scope__event.html#ad9b8f0a8598ee171d4d1aa3283fa32bc',1,'ein::profiling::scope_event::event'],['../structein_1_1profiling_1_1duration__event.html#ad8f8c37fef17a8ae1c3750bb81fc34e4',1,'ein::profiling::duration_event::event'],['../structein_1_1profiling_1_1profile__scope.html#a17efca42043b71b71b6a4caac529c432',1,'ein::profiling::profile_scope::event']]]
 ];

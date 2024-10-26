@@ -182,6 +182,9 @@ $(function(){initNavTree('classein_1_1basic__static__string.html',''); initResiz
   <div class="headertitle"><div class="title">ein::basic_static_string&lt; CharT, Traits &gt; Class Template Reference<span class="mlabels"><span class="mlabel">export</span></span><div class="ingroups">module <a class="el" href="module__ein_8static__string.html">ein.static_string</a></div></div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>statically known interned strings these have O(1) comparison for equality  
+ <a href="#details">More...</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -195,8 +198,8 @@ Public Types</h2></td></tr>
 <tr class="separator:ad420bf79f02a7768f4a461d811da465b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a56104c0e0bd5b06b04182eb291323f44" id="r_a56104c0e0bd5b06b04182eb291323f44"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a56104c0e0bd5b06b04182eb291323f44">reference</a> = CharT &amp;</td></tr>
 <tr class="separator:a56104c0e0bd5b06b04182eb291323f44"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a164594151912711f7714bd433bfc60b1" id="r_a164594151912711f7714bd433bfc60b1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a164594151912711f7714bd433bfc60b1">const_reference</a> = const CharT &amp;</td></tr>
-<tr class="separator:a164594151912711f7714bd433bfc60b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28e890cd677e20fc5b95410fc1b9f641" id="r_a28e890cd677e20fc5b95410fc1b9f641"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a28e890cd677e20fc5b95410fc1b9f641">const_reference</a> = CharT const &amp;</td></tr>
+<tr class="separator:a28e890cd677e20fc5b95410fc1b9f641"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af19baee0cb11035643aaa0e71bf30f33" id="r_af19baee0cb11035643aaa0e71bf30f33"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af19baee0cb11035643aaa0e71bf30f33">const_iterator</a> = CharT const *</td></tr>
 <tr class="separator:af19baee0cb11035643aaa0e71bf30f33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bdc20a7e7744712ca18c0a163e4b586" id="r_a0bdc20a7e7744712ca18c0a163e4b586"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0bdc20a7e7744712ca18c0a163e4b586">iterator</a> = <a class="el" href="#af19baee0cb11035643aaa0e71bf30f33">const_iterator</a></td></tr>
@@ -241,10 +244,10 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a8db94d99ec2a82c7cd0250f8f4f53c27" id="r_a8db94d99ec2a82c7cd0250f8f4f53c27"><td class="memItemLeft" align="right" valign="top">constexpr CharT const &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8db94d99ec2a82c7cd0250f8f4f53c27">at</a> (<a class="el" href="#a94827ff8dd5bef2078b11f039eb4930f">size_type</a> i) const noexcept</td></tr>
 <tr class="memdesc:a8db94d99ec2a82c7cd0250f8f4f53c27"><td class="mdescLeft">&#160;</td><td class="mdescRight">access the specified character with bounds checking  <br /></td></tr>
 <tr class="separator:a8db94d99ec2a82c7cd0250f8f4f53c27"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab5f229764f9c2681669526fe0613013d" id="r_ab5f229764f9c2681669526fe0613013d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a164594151912711f7714bd433bfc60b1">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5f229764f9c2681669526fe0613013d">front</a> () const noexcept</td></tr>
+<tr class="memitem:ab5f229764f9c2681669526fe0613013d" id="r_ab5f229764f9c2681669526fe0613013d"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a28e890cd677e20fc5b95410fc1b9f641">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab5f229764f9c2681669526fe0613013d">front</a> () const noexcept</td></tr>
 <tr class="memdesc:ab5f229764f9c2681669526fe0613013d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns reference to the first character in the static_string.  <br /></td></tr>
 <tr class="separator:ab5f229764f9c2681669526fe0613013d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2537a8fb97af9b73b538fb82d533d80" id="r_ac2537a8fb97af9b73b538fb82d533d80"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a164594151912711f7714bd433bfc60b1">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2537a8fb97af9b73b538fb82d533d80">back</a> () const noexcept</td></tr>
+<tr class="memitem:ac2537a8fb97af9b73b538fb82d533d80" id="r_ac2537a8fb97af9b73b538fb82d533d80"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#a28e890cd677e20fc5b95410fc1b9f641">const_reference</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2537a8fb97af9b73b538fb82d533d80">back</a> () const noexcept</td></tr>
 <tr class="separator:ac2537a8fb97af9b73b538fb82d533d80"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7d0ca2440fbf9d4df909547b0086f765" id="r_a7d0ca2440fbf9d4df909547b0086f765"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="#ad420bf79f02a7768f4a461d811da465b">const_pointer</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7d0ca2440fbf9d4df909547b0086f765">data</a> () const noexcept</td></tr>
 <tr class="separator:a7d0ca2440fbf9d4df909547b0086f765"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -312,8 +315,10 @@ Friends</h2></td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename CharT, typename Traits = std::char_traits&lt;CharT&gt;&gt;<br />
-class ein::basic_static_string&lt; CharT, Traits &gt;</div>
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00033">33</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+class ein::basic_static_string&lt; CharT, Traits &gt;</div><p>statically known interned strings these have O(1) comparison for equality </p>
+<dl class="section invariant"><dt>Invariant</dt><dd>all such strings point to the start of the static member inside operator""_ss for some string and their <code>len</code> is unmodified. this ensures that they have O(1) comparison, because reference and pointer equality coincide. </dd></dl>
+
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00041">41</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 </div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="af19baee0cb11035643aaa0e71bf30f33" name="af19baee0cb11035643aaa0e71bf30f33"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af19baee0cb11035643aaa0e71bf30f33">&#9670;&#160;</a></span>const_iterator</h2>
@@ -329,7 +334,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00048">48</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00056">56</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -347,12 +352,12 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00045">45</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00053">53</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
-<a id="a164594151912711f7714bd433bfc60b1" name="a164594151912711f7714bd433bfc60b1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a164594151912711f7714bd433bfc60b1">&#9670;&#160;</a></span>const_reference</h2>
+<a id="a28e890cd677e20fc5b95410fc1b9f641" name="a28e890cd677e20fc5b95410fc1b9f641"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28e890cd677e20fc5b95410fc1b9f641">&#9670;&#160;</a></span>const_reference</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -360,12 +365,12 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="classein_1_1basic__static__string.html">ein::basic_static_string</a>&lt; CharT, Traits &gt;::const_reference = const CharT &amp;</td>
+          <td class="memname">using <a class="el" href="classein_1_1basic__static__string.html">ein::basic_static_string</a>&lt; CharT, Traits &gt;::const_reference = CharT const &amp;</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00047">47</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00055">55</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -383,7 +388,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00050">50</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00058">58</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -401,7 +406,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00053">53</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00061">61</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -419,7 +424,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00049">49</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00057">57</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -437,7 +442,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00044">44</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00052">52</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -455,7 +460,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00046">46</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00054">54</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -473,7 +478,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00051">51</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00059">59</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -491,7 +496,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00052">52</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00060">60</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -509,7 +514,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00042">42</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00050">50</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -527,7 +532,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00043">43</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00051">51</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -557,9 +562,9 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00037">37</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   38</span>  : <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>(<a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>) {}</div>
-<div class="ttc" id="aclassein_1_1basic__static__string_html_aa7839b69ea6531136495a91f96741125"><div class="ttname"><a href="#aa7839b69ea6531136495a91f96741125">ein::basic_static_string::view</a></div><div class="ttdeci">basic_string_view&lt; CharT, Traits &gt; view</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00034">static_string.cppm:34</a></div></div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00045">45</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   46</span>  : <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>(<a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>) {}</div>
+<div class="ttc" id="aclassein_1_1basic__static__string_html_aa7839b69ea6531136495a91f96741125"><div class="ttname"><a href="#aa7839b69ea6531136495a91f96741125">ein::basic_static_string::view</a></div><div class="ttdeci">basic_string_view&lt; CharT, Traits &gt; view</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00042">static_string.cppm:42</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -590,9 +595,9 @@ template&lt;char... xs&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00059">59</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   60</span>  : <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>(<a class="code hl_variable" href="structein_1_1reify.html#a28da98723f1207493952c3aa083a106b">reify&lt;CharT,xs...&gt;::value</a>,<span class="keyword">sizeof</span>...(xs)) {}</div>
-<div class="ttc" id="astructein_1_1reify_html_a28da98723f1207493952c3aa083a106b"><div class="ttname"><a href="structein_1_1reify.html#a28da98723f1207493952c3aa083a106b">ein::reify::value</a></div><div class="ttdeci">static constexpr const T value[sizeof...(xs)+1]</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00015">static_string.cppm:15</a></div></div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00067">67</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   68</span>  : <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>(<a class="code hl_variable" href="structein_1_1reify.html#a28da98723f1207493952c3aa083a106b">reify&lt;CharT,xs...&gt;::value</a>,<span class="keyword">sizeof</span>...(xs)) {}</div>
+<div class="ttc" id="astructein_1_1reify_html_a28da98723f1207493952c3aa083a106b"><div class="ttname"><a href="structein_1_1reify.html#a28da98723f1207493952c3aa083a106b">ein::reify::value</a></div><div class="ttdeci">static constexpr const T value[sizeof...(xs)+1]</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00023">static_string.cppm:23</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -705,10 +710,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 
 <p>access the specified character with bounds checking </p>
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00111">111</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  111</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.at(i); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00119">119</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  119</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.at(i); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -724,7 +729,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a164594151912711f7714bd433bfc60b1">const_reference</a> <a class="el" href="classein_1_1basic__static__string.html">ein::basic_static_string</a>&lt; CharT, Traits &gt;::back </td>
+          <td class="memname"><a class="el" href="#a28e890cd677e20fc5b95410fc1b9f641">const_reference</a> <a class="el" href="classein_1_1basic__static__string.html">ein::basic_static_string</a>&lt; CharT, Traits &gt;::back </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -738,10 +743,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </div><div class="memdoc">
 <dl class="section pre"><dt>Precondition</dt><dd>!empty() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00125">125</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  125</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.back(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00133">133</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  133</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.back(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -770,10 +775,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00189">189</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  189</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.begin(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00197">197</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  197</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.begin(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -802,10 +807,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00195">195</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  195</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.cbegin(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00203">203</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  203</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.cbegin(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -834,10 +839,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00198">198</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  198</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.cend(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00206">206</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  206</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.cend(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -866,10 +871,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00207">207</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  207</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.crbegin(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00215">215</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  215</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.crbegin(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -898,10 +903,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00210">210</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  210</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.crend(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00218">218</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  218</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.crend(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -930,12 +935,12 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00128">128</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  128</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.data(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00136">136</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  136</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.data(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00087">ein::basic_static_string&lt; CharT, Traits &gt;::operator CharT const *()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00095">ein::basic_static_string&lt; char &gt;::operator char const *()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -969,10 +974,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00144">144</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  144</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.empty(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00152">152</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  152</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.empty(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1001,10 +1006,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00192">192</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  192</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.end(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00200">200</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  200</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.end(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1020,7 +1025,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a164594151912711f7714bd433bfc60b1">const_reference</a> <a class="el" href="classein_1_1basic__static__string.html">ein::basic_static_string</a>&lt; CharT, Traits &gt;::front </td>
+          <td class="memname"><a class="el" href="#a28e890cd677e20fc5b95410fc1b9f641">const_reference</a> <a class="el" href="classein_1_1basic__static__string.html">ein::basic_static_string</a>&lt; CharT, Traits &gt;::front </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td> const</td>
@@ -1037,10 +1042,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 <dl class="section note"><dt>Note</dt><dd>while the corresponding string_view operation is undefined if <code><a class="el" href="#aa2d44a5a57c31442a400d448d566d619">empty()</a></code>, this offers the slight weakening that it'll return <code>CharT(0)</code>.</dd></dl>
 <dl class="section pre"><dt>Precondition</dt><dd>!empty() </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00121">121</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  121</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.front(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00129">129</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  129</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.front(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1069,10 +1074,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00138">138</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  138</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.length(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00146">146</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  146</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.length(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1101,10 +1106,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00141">141</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  141</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.max_size(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00149">149</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  149</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.max_size(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1133,10 +1138,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00147">147</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  147</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>; }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00155">155</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  155</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1165,13 +1170,11 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00087">87</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   87</span>                                           {</div>
-<div class="line"><span class="lineno">   88</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.data; <span class="comment">// an extra invariant that its null terminated is maintained</span></div>
-<div class="line"><span class="lineno">   89</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00095">95</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   95</span>                                           {</div>
+<div class="line"><span class="lineno">   96</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.data; <span class="comment">// an extra invariant that its null terminated is maintained</span></div>
+<div class="line"><span class="lineno">   97</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00128">ein::basic_static_string&lt; CharT, Traits &gt;::data()</a>, and <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
-
 </div>
 </div>
 <a id="abc67f56f34595ac81098b42f4e1fae08" name="abc67f56f34595ac81098b42f4e1fae08"></a>
@@ -1199,13 +1202,11 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00097">97</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   97</span>                                                          {</div>
-<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>;</div>
-<div class="line"><span class="lineno">   99</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00105">105</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  105</span>                                                          {</div>
+<div class="line"><span class="lineno">  106</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>;</div>
+<div class="line"><span class="lineno">  107</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
-
 </div>
 </div>
 <a id="a3fbc9e07e98398fa707d0b606d93a637" name="a3fbc9e07e98398fa707d0b606d93a637"></a>
@@ -1233,13 +1234,11 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00092">92</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>                                                               {</div>
-<div class="line"><span class="lineno">   93</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>;</div>
-<div class="line"><span class="lineno">   94</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00100">100</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                                               {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>;</div>
+<div class="line"><span class="lineno">  102</span>  }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
-
 </div>
 </div>
 <a id="a639c41a17c9925358448e990d32aa1bb" name="a639c41a17c9925358448e990d32aa1bb"></a>
@@ -1323,10 +1322,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 
 <p>access the specified character </p>
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00107">107</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  107</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>[i]; }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00115">115</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  115</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>[i]; }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1355,10 +1354,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00201">201</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  201</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.rbegin(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00209">209</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.rbegin(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1387,10 +1386,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00204">204</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  204</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.rend(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00212">212</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  212</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.rend(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1419,10 +1418,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00135">135</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  135</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.size(); }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00143">143</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  143</span>{ <span class="keywordflow">return</span> <a class="code hl_variable" href="#aa7839b69ea6531136495a91f96741125">view</a>.size(); }</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00034">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
+<p class="reference">References <a class="el" href="static__string_8cppm_source.html#l00042">ein::basic_static_string&lt; CharT, Traits &gt;::view</a>.</p>
 
 </div>
 </div>
@@ -1457,14 +1456,14 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </div><div class="memdoc">
 <dl class="section pre"><dt>Precondition</dt><dd><code>Traits::eq</code> is assumed reflexive </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00164">164</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  164</span>                                                                                 {</div>
-<div class="line"><span class="lineno">  165</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;Traits,std::char_traits&lt;CharT&gt;&gt; &amp;&amp; one_of_t&lt;CharT,char,wchar_t,char8_t,char16_t,char32_t&gt;) {</div>
-<div class="line"><span class="lineno">  166</span>      <span class="keywordflow">return</span> self.view.data != that.view.data;</div>
-<div class="line"><span class="lineno">  167</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  168</span>      <span class="keywordflow">return</span> (self.view.data != that.view.data) &amp;&amp; (self.view != that.view);</div>
-<div class="line"><span class="lineno">  169</span>    }</div>
-<div class="line"><span class="lineno">  170</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00172">172</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  172</span>                                                                                 {</div>
+<div class="line"><span class="lineno">  173</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;Traits,std::char_traits&lt;CharT&gt;&gt; &amp;&amp; one_of_t&lt;CharT,char,wchar_t,char8_t,char16_t,char32_t&gt;) {</div>
+<div class="line"><span class="lineno">  174</span>      <span class="keywordflow">return</span> self.view.data != that.view.data;</div>
+<div class="line"><span class="lineno">  175</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  176</span>      <span class="keywordflow">return</span> (self.view.data != that.view.data) &amp;&amp; (self.view != that.view);</div>
+<div class="line"><span class="lineno">  177</span>    }</div>
+<div class="line"><span class="lineno">  178</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1500,10 +1499,10 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 <p>input/output </p>
 <p>may throw std::ios_base:failure if an exception is thrown during output. </p>
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00178">178</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  179</span>                                                                                                                    {</div>
-<div class="line"><span class="lineno">  180</span>    <span class="keywordflow">return</span> os &lt;&lt; v.view;</div>
-<div class="line"><span class="lineno">  181</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00186">186</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  187</span>                                                                                                                    {</div>
+<div class="line"><span class="lineno">  188</span>    <span class="keywordflow">return</span> os &lt;&lt; v.view;</div>
+<div class="line"><span class="lineno">  189</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1536,14 +1535,14 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00154">154</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  154</span>                                                                                 {</div>
-<div class="line"><span class="lineno">  155</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;Traits,std::char_traits&lt;CharT&gt;&gt; &amp;&amp; one_of_t&lt;CharT,char,wchar_t,char8_t,char16_t,char32_t&gt;) {</div>
-<div class="line"><span class="lineno">  156</span>      <span class="keywordflow">return</span> self.view.data() == that.view.data();</div>
-<div class="line"><span class="lineno">  157</span>    } <span class="keywordflow">else</span> {</div>
-<div class="line"><span class="lineno">  158</span>      <span class="keywordflow">return</span> (self.view.data() == that.view.data()) || (self.view == that.view); <span class="comment">// fallback required</span></div>
-<div class="line"><span class="lineno">  159</span>    }</div>
-<div class="line"><span class="lineno">  160</span>  }</div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00162">162</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  162</span>                                                                                 {</div>
+<div class="line"><span class="lineno">  163</span>    <span class="keywordflow">if</span> <span class="keyword">constexpr</span> (std::is_same_v&lt;Traits,std::char_traits&lt;CharT&gt;&gt; &amp;&amp; one_of_t&lt;CharT,char,wchar_t,char8_t,char16_t,char32_t&gt;) {</div>
+<div class="line"><span class="lineno">  164</span>      <span class="keywordflow">return</span> self.view.data() == that.view.data();</div>
+<div class="line"><span class="lineno">  165</span>    } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  166</span>      <span class="keywordflow">return</span> (self.view.data() == that.view.data()) || (self.view == that.view); <span class="comment">// fallback required</span></div>
+<div class="line"><span class="lineno">  167</span>    }</div>
+<div class="line"><span class="lineno">  168</span>  }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1569,7 +1568,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00040">40</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00048">48</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -1602,12 +1601,12 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00215">215</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  215</span>                                                                       {</div>
-<div class="line"><span class="lineno">  216</span>    <span class="keyword">using </span>std::swap;</div>
-<div class="line"><span class="lineno">  217</span>    <a class="code hl_friend" href="#a1ba9ae7f3aead7e048516bff55de05f5">swap</a>(x.view,y.view);</div>
-<div class="line"><span class="lineno">  218</span>  }</div>
-<div class="ttc" id="aclassein_1_1basic__static__string_html_a1ba9ae7f3aead7e048516bff55de05f5"><div class="ttname"><a href="#a1ba9ae7f3aead7e048516bff55de05f5">ein::basic_static_string::swap</a></div><div class="ttdeci">constexpr friend void swap(basic_static_string &amp;x, basic_static_string &amp;y) noexcept</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00215">static_string.cppm:215</a></div></div>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00223">223</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  223</span>                                                                       {</div>
+<div class="line"><span class="lineno">  224</span>    <span class="keyword">using </span>std::swap;</div>
+<div class="line"><span class="lineno">  225</span>    <a class="code hl_friend" href="#a1ba9ae7f3aead7e048516bff55de05f5">swap</a>(x.view,y.view);</div>
+<div class="line"><span class="lineno">  226</span>  }</div>
+<div class="ttc" id="aclassein_1_1basic__static__string_html_a1ba9ae7f3aead7e048516bff55de05f5"><div class="ttname"><a href="#a1ba9ae7f3aead7e048516bff55de05f5">ein::basic_static_string::swap</a></div><div class="ttdeci">constexpr friend void swap(basic_static_string &amp;x, basic_static_string &amp;y) noexcept</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00223">static_string.cppm:223</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1634,7 +1633,7 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00220">220</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00228">228</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
 </div>
 </div>
@@ -1660,9 +1659,9 @@ template&lt;typename CharT , typename Traits  = std::char_traits&lt;CharT&gt;&gt
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00034">34</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00042">42</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00111">ein::basic_static_string&lt; CharT, Traits &gt;::at()</a>, <a class="el" href="static__string_8cppm_source.html#l00125">ein::basic_static_string&lt; CharT, Traits &gt;::back()</a>, <a class="el" href="static__string_8cppm_source.html#l00189">ein::basic_static_string&lt; CharT, Traits &gt;::begin()</a>, <a class="el" href="static__string_8cppm_source.html#l00195">ein::basic_static_string&lt; CharT, Traits &gt;::cbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00198">ein::basic_static_string&lt; CharT, Traits &gt;::cend()</a>, <a class="el" href="static__string_8cppm_source.html#l00207">ein::basic_static_string&lt; CharT, Traits &gt;::crbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00210">ein::basic_static_string&lt; CharT, Traits &gt;::crend()</a>, <a class="el" href="static__string_8cppm_source.html#l00128">ein::basic_static_string&lt; CharT, Traits &gt;::data()</a>, <a class="el" href="static__string_8cppm_source.html#l00144">ein::basic_static_string&lt; CharT, Traits &gt;::empty()</a>, <a class="el" href="static__string_8cppm_source.html#l00192">ein::basic_static_string&lt; CharT, Traits &gt;::end()</a>, <a class="el" href="static__string_8cppm_source.html#l00121">ein::basic_static_string&lt; CharT, Traits &gt;::front()</a>, <a class="el" href="static__string_8cppm_source.html#l00138">ein::basic_static_string&lt; CharT, Traits &gt;::length()</a>, <a class="el" href="static__string_8cppm_source.html#l00141">ein::basic_static_string&lt; CharT, Traits &gt;::max_size()</a>, <a class="el" href="static__string_8cppm_source.html#l00147">ein::basic_static_string&lt; CharT, Traits &gt;::operator bool()</a>, <a class="el" href="static__string_8cppm_source.html#l00087">ein::basic_static_string&lt; CharT, Traits &gt;::operator CharT const *()</a>, <a class="el" href="static__string_8cppm_source.html#l00097">ein::basic_static_string&lt; CharT, Traits &gt;::operator std::basic_string&lt; CharT, Traits &gt;()</a>, <a class="el" href="static__string_8cppm_source.html#l00092">ein::basic_static_string&lt; CharT, Traits &gt;::operator std::basic_string_view&lt; CharT, Traits &gt;()</a>, <a class="el" href="static__string_8cppm_source.html#l00107">ein::basic_static_string&lt; CharT, Traits &gt;::operator[]()</a>, <a class="el" href="static__string_8cppm_source.html#l00201">ein::basic_static_string&lt; CharT, Traits &gt;::rbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00204">ein::basic_static_string&lt; CharT, Traits &gt;::rend()</a>, and <a class="el" href="static__string_8cppm_source.html#l00135">ein::basic_static_string&lt; CharT, Traits &gt;::size()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="static__string_8cppm_source.html#l00119">ein::basic_static_string&lt; CharT, Traits &gt;::at()</a>, <a class="el" href="static__string_8cppm_source.html#l00133">ein::basic_static_string&lt; CharT, Traits &gt;::back()</a>, <a class="el" href="static__string_8cppm_source.html#l00197">ein::basic_static_string&lt; CharT, Traits &gt;::begin()</a>, <a class="el" href="static__string_8cppm_source.html#l00203">ein::basic_static_string&lt; CharT, Traits &gt;::cbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00206">ein::basic_static_string&lt; CharT, Traits &gt;::cend()</a>, <a class="el" href="static__string_8cppm_source.html#l00215">ein::basic_static_string&lt; CharT, Traits &gt;::crbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00218">ein::basic_static_string&lt; CharT, Traits &gt;::crend()</a>, <a class="el" href="static__string_8cppm_source.html#l00136">ein::basic_static_string&lt; CharT, Traits &gt;::data()</a>, <a class="el" href="static__string_8cppm_source.html#l00152">ein::basic_static_string&lt; CharT, Traits &gt;::empty()</a>, <a class="el" href="static__string_8cppm_source.html#l00200">ein::basic_static_string&lt; CharT, Traits &gt;::end()</a>, <a class="el" href="static__string_8cppm_source.html#l00129">ein::basic_static_string&lt; CharT, Traits &gt;::front()</a>, <a class="el" href="static__string_8cppm_source.html#l00146">ein::basic_static_string&lt; CharT, Traits &gt;::length()</a>, <a class="el" href="static__string_8cppm_source.html#l00149">ein::basic_static_string&lt; CharT, Traits &gt;::max_size()</a>, <a class="el" href="static__string_8cppm_source.html#l00155">ein::basic_static_string&lt; CharT, Traits &gt;::operator bool()</a>, <a class="el" href="static__string_8cppm_source.html#l00095">ein::basic_static_string&lt; char &gt;::operator char const *()</a>, <a class="el" href="static__string_8cppm_source.html#l00105">ein::basic_static_string&lt; char &gt;::operator std::basic_string&lt; char, std::char_traits&lt; char &gt; &gt;()</a>, <a class="el" href="static__string_8cppm_source.html#l00100">ein::basic_static_string&lt; char &gt;::operator std::basic_string_view&lt; char, std::char_traits&lt; char &gt; &gt;()</a>, <a class="el" href="static__string_8cppm_source.html#l00115">ein::basic_static_string&lt; CharT, Traits &gt;::operator[]()</a>, <a class="el" href="static__string_8cppm_source.html#l00209">ein::basic_static_string&lt; CharT, Traits &gt;::rbegin()</a>, <a class="el" href="static__string_8cppm_source.html#l00212">ein::basic_static_string&lt; CharT, Traits &gt;::rend()</a>, and <a class="el" href="static__string_8cppm_source.html#l00143">ein::basic_static_string&lt; CharT, Traits &gt;::size()</a>.</p>
 
 </div>
 </div>
