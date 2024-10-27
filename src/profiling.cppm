@@ -42,7 +42,7 @@ export enum class scope : char {
 NLOHMANN_JSON_SERIALIZE_ENUM( scope, {
   { scope::global, "g" },
   { scope::process, "p" },
-  { scope::thread, "t" } 
+  { scope::thread, "t" }
   // none is not a scope
 })
 /// \endcond
