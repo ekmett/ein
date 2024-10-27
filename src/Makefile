@@ -1,1 +1,1 @@
-../dev/subdir.mk
+../etc/subdir.mk

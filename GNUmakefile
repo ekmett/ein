@@ -1,4 +1,5 @@
-# for muscle memory if nothing else
+# This is named GNUmakefile to prevent it from being clobbered in case you do an in-directory
+# build by accident. Not that I would ever do such a thing. Nope.
 
 HEADERS := $(shell find src -name '*.hpp' -print)
 SOURCES := $(shell find t src -name '*.cpp' -o -name '*.cppm' -print)
