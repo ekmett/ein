@@ -27,12 +27,19 @@ if [[ " $* " == *" --bind "* ]]; then
   docker exec -it "$CONTAINER_ID" /bin/bash
 
   # Once done, wait for act to complete, then stop and remove the container
+  echo -n Waiting for act $ACT_PID to finish...
   wait $ACT_PID
+  echo
+
+  echo -n Stopping container...
   docker stop "$CONTAINER_ID"
+  echo
+
+  echo -n Removing container...
   docker rm "$CONTAINER_ID"
+  echo
 
 else
   # If --bind is not among the arguments, delegate to act directly
   exec act $@
 fi
-

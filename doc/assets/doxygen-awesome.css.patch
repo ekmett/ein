@@ -5,10 +5,10 @@ index c2f4114..fb448a7 100644
 @@ -170,7 +170,6 @@ html {
      --webkit-scrollbar-padding: 4px;
      --webkit-scrollbar-color: var(--separator-color);
- 
+
 -    --animation-duration: .12s
  }
- 
+
  @media screen and (max-width: 767px) {
 @@ -1883,7 +1882,6 @@ div.dynheader img[src="closed.png"] {
      display: block;
@@ -16,7 +16,7 @@ index c2f4114..fb448a7 100644
      margin-left: -10px;
 -    transition: transform var(--animation-duration) ease-out;
  }
- 
+
  table.memberdecls img {
 @@ -1962,7 +1960,6 @@ div.dynheader img[src="closed.png"] {
          display: block !important;
@@ -24,15 +24,15 @@ index c2f4114..fb448a7 100644
          width: calc(100vw - 2 * var(--spacing-large));
 -        animation: fade .5s;
      }
- 
+
      @keyframes fade {
 @@ -2363,7 +2360,6 @@ doxygen-awesome-dark-mode-toggle {
  }
- 
+
  doxygen-awesome-dark-mode-toggle > svg {
 -    transition: transform var(--animation-duration) ease-in-out;
  }
- 
+
  doxygen-awesome-dark-mode-toggle:active > svg {
 @@ -2448,7 +2444,6 @@ a.anchorlink {
      text-decoration: none;
@@ -40,7 +40,7 @@ index c2f4114..fb448a7 100644
      display: none;
 -    transition: opacity var(--animation-duration) ease-in-out, color var(--animation-duration) ease-in-out;
  }
- 
+
  a.anchorlink svg {
 @@ -2537,7 +2532,6 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
      font-weight: normal;
@@ -48,7 +48,7 @@ index c2f4114..fb448a7 100644
      border-radius: var(--border-radius-medium);
 -    transition: background-color var(--animation-duration) ease-in-out, font-weight var(--animation-duration) ease-in-out;
  }
- 
+
  .tabs-overview button.tab-button:not(:last-child) .tab-title {
 @@ -2565,7 +2559,6 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
      margin: 0 auto;
@@ -56,7 +56,7 @@ index c2f4114..fb448a7 100644
      background-color: var(--primary-color);
 -    transition: width var(--animation-duration) ease-in-out, height var(--animation-duration) ease-in-out;
  }
- 
+
  .tabs-overview button.tab-button.active::after {
 @@ -2619,7 +2612,6 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
      border-radius: var(--border-radius-medium);
@@ -64,5 +64,5 @@ index c2f4114..fb448a7 100644
      text-decoration: none;
 -    transition: color var(--animation-duration) ease-in-out, background-color var(--animation-duration) ease-in-out;
  }
- 
+
  .section_buttons a:hover {
