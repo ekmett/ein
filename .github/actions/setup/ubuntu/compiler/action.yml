@@ -6,10 +6,12 @@ runs:
     - name: set tool path # for doxygen
       run: |
         echo "/usr/local/bin" >> $GITHUB_PATH
+        mkdir -p lib/install
       shell: bash
     - name: install clang 19
       run: |
-        wget --no-verbose https://apt.llvm.org/llvm.sh
+        cd lib/install
+        [ -f llvm.sh ] || wget --no-verbose https://apt.llvm.org/llvm.sh
         chmod +x llvm.sh
         sudo ./llvm.sh 19
         sudo apt-get install -y clang-tools-19 lld-19
@@ -24,8 +26,9 @@ runs:
       shell: bash
     - name: install doxygen 1.12.0
       run: |
+        cd lib/install
         sudo apt-get remove --purge -y doxygen
-        wget --no-verbose https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz
+        [ -f doygen-1.12.0.linux.bin.tar.gz ] || wget --no-verbose https://www.doxygen.nl/files/doxygen-1.12.0.linux.bin.tar.gz
         tar xfpz doxygen-1.12.0.linux.bin.tar.gz
         cd doxygen-1.12.0/
         sudo make install
