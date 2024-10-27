@@ -12,3 +12,4 @@ Testing
 .ccache/*
 !.ccache/ccache.conf
 .ipynb_checkpoints/
+tags
