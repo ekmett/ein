@@ -81,8 +81,10 @@ DISABLE_INDEX          = NO
 FULL_SIDEBAR           = NO
 HTML_COLORSTYLE        = LIGHT
 HTML_HEADER            = @CMAKE_SOURCE_DIR@/doc/assets/header.html
+HTML_FOOTER            = @CMAKE_SOURCE_DIR@/doc/assets/footer.html
 LATEX_EMOJI_DIRECTORY  = @FETCHCONTENT_BASE_DIR@/github_emojis-src/
-HTML_EXTRA_STYLESHEET  = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome.css
+#HTML_EXTRA_STYLESHEET  = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET  = @CMAKE_BINARY_DIR@/doc/doxygen-awesome.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only-darkmode-toggle.css
 HTML_EXTRA_FILES       = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-darkmode-toggle.js
@@ -92,6 +94,8 @@ HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-tabs.js
 
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/images/ein-logo.png
+
+# favicon support
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon.ico
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon-16x16.png
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon-32x32.png
@@ -99,13 +103,20 @@ HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/android-chrome-192x
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/android-chrome-512x512.png
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/apple-touch-icon.png
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/site.web-manifest
+
+# custom fonts
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Regular.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Regular.woff2
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-It.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-It.woff2
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Bold.woff
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Bold.woff2
+
+# support perfetto traces
 HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/trace.js
+
+# ensure the navbar is never empty
+HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/go-home.js
 
 HTML_COPY_CLIPBOARD    = NO
 CREATE_SUBDIRS         = NO

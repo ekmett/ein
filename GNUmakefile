@@ -37,11 +37,11 @@ serve: build
 	@python3 -m http.server $(PORT) -d gen/doc/html
 
 server-start: build
-	echo Running http doc server in the background on port $(PORT)
-	nohup python3 -m http.server $(PORT) -d gen/doc/html &
+	@echo Running http doc server in the background on port $(PORT)
+	@nohup python3 -m http.server $(PORT) -d gen/doc/html &
 
-server-stop: build
-	pkill -f "python3 -m http.server $(PORT) -d gen/doc/html"
+server-stop:
+	@pkill -f "python3 -m http.server $(PORT) -d gen/doc/html"
 
 gen/ein.png: gen gen/patched-dotfiles
 	@dot -Tpng -o gen/ein.png gen/patched-dotfiles/ein.dot
@@ -68,7 +68,7 @@ format:
 	bin/remove_whitespace.sh
 
 clean:
-	@rm -rf gen tags
+	@rm -rf gen tags nohup.out
 
 distclean: clean
 	@rm -rf lib/cache

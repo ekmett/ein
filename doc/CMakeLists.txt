@@ -43,6 +43,22 @@ if(DOXYGEN_FOUND)
     GIT_PROGRESS TRUE
   )
 
+  # patch out the transitions they fire on every page refresh / nav event!
+  # Path to the original CSS and patch file
+  set(DA_CSS_FILE "${FETCHCONTENT_BASE_DIR}/doxygen-awesome-css-src/doxygen-awesome.css")
+  set(DA_PATCH_FILE "${CMAKE_CURRENT_SOURCE_DIR}/assets/doxygen-awesome.css.patch")
+  set(DA_OUTPUT_FILE "${CMAKE_CURRENT_BINARY_DIR}/doxygen-awesome.css")
+
+  # Apply the patch
+  add_custom_command(
+    OUTPUT "${DA_OUTPUT_FILE}"
+    COMMAND patch "${DA_CSS_FILE}" -R "${DA_PATCH_FILE}" -o "${DA_OUTPUT_FILE}"    # Apply patch and specify output file
+    DEPENDS "${DA_CSS_FILE}" "${DA_PATCH_FILE}"
+    COMMENT "Applying doxygen-awesome.css.patch to doxygen-awesome.css and outputting to gen directory"
+  )
+
+  add_custom_target(apply_doxygen_awesome_patch ALL DEPENDS "${DA_OUTPUT_FILE}")
+
   # get mathjax
   fetchcontentcached(
     NAME mathjax
@@ -117,10 +133,10 @@ if(DOXYGEN_FOUND)
     docs
     ALL
     COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
-    WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-   # COMMENT "Generating API documentation with Doxygen ${DOXYGEN_EXECUTABLE}"
+    #WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
+    COMMENT "Generating documentation"
     VERBATIM
-    DEPENDS "${CMAKE_BINARY_DIR}/h/config.hpp"
+    DEPENDS "${CMAKE_BINARY_DIR}/h/config.hpp" apply_doxygen_awesome_patch
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it
