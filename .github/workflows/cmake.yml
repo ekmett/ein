@@ -44,14 +44,11 @@ jobs:
           ${{ steps.strings.outputs.build-output-dir }}/CMakeCache.txt
           ${{ steps.strings.outputs.build-output-dir }}/CMakeFiles/
           ${{ steps.strings.outputs.build-output-dir }}/**/CTestTestfile.cmake
-    - name: accelerate gh_pages refresh by noting there are no jekyll templates
-      run: |
-        touch ${{ steps.strings.outputs.build-output-dir }}/docs/html/.nojekyll
     - name: upload docs
       uses: actions/upload-artifact@v4.4.3
       with:
         name: docs
-        path: ${{ steps.strings.outputs.build-output-dir }}/docs/html/
+        path: ${{ steps.strings.outputs.build-output-dir }}/doc/html/
     # can be fed to ui.perfetto.dev or chrome://tracing to debug builds
     - name: upload trace.json
       uses: actions/upload-artifact@v4.4.3
@@ -98,9 +95,9 @@ jobs:
       uses: actions/download-artifact@v4.1.8
       with:
         name: docs
-        path: ${{ steps.strings.outputs.build-output-dir }}/docs/html/
+        path: ${{ steps.strings.outputs.build-output-dir }}/doc/html/
     - name: publish docs
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}
-        publish_dir: ${{ steps.strings.outputs.build-output-dir}}/docs/html/
+        publish_dir: ${{ steps.strings.outputs.build-output-dir}}/doc/html/
