@@ -20,7 +20,7 @@ runs:
       shell: bash
     - name: install ninja 1.12.1
       run: |
-        mkdir lib/install
+        cd lib/install
         [ -f ninja-linux.zip ] || wget https://github.com/ninja-build/ninja/releases/download/v1.12.1/ninja-linux.zip
         sudo apt-get install -y unzip
         sudo unzip ninja-linux.zip -d /usr/local/bin/

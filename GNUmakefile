@@ -46,7 +46,7 @@ server-stop:
 gen/ein.png: gen gen/patched-dotfiles
 	@dot -Tpng -o gen/ein.png gen/patched-dotfiles/ein.dot
 
-gen/patched-dotfiles: gen/dotfiles
+gen/patched-dotfiles: gen
 	@bin/adjust_dotfiles.sh gen/dotfiles gen/patched-dotfiles
 
 build: gen gen/patched-dotfiles

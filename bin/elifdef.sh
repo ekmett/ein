@@ -9,7 +9,7 @@ fi
 # Use file input if given, otherwise read from stdin
 input="${1:-/dev/stdin}"
 
-sed -E \
+exec sed -E \
   -e 's/#( *)elifdef (.*)/#\1elif defined\(\2\)/' \
   -e 's/#( *)elifndef (.*)/#\1elif !defined\(\2\)/' \
   < "$input"

@@ -11,7 +11,7 @@ input="${1:-/dev/stdin}"
 
 # Perform replacements for GitHub-flavored markdown
 # also look for <!-- GITHUB -->
-sed -E \
+exec sed -E \
   -e 's/<!-- GITHUB//g' \
   -e 's/GITHUB -->//g' \
   -e 's/:white_check_mark:/✓/g' \
