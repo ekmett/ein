@@ -29,6 +29,17 @@ include(CheckRestrict)
 #include(FetchContent)
 include(FetchContentCached)
 
+set(FETCHCONTENT_QUIET ON)  # Suppresses FetchContent output
+
+fetchcontentcached(
+  NAME ccache
+  URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
+  URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
+)
+
+set(CMAKE_CXX_COMPILER_LAUNCHER "${CMAKE_SOURCE_DIR}/bin/ccache.sh")
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_COLOR_DIAGNOSTICS ON)
 set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 
 # options

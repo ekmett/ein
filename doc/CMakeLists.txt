@@ -35,22 +35,20 @@ if(DOXYGEN_FOUND)
   message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
 
   # get doxygen-awesome-css
-  fetchcontent_declare(
-    doxygen-awesome-css
+  fetchcontentcached(
+    NAME doxygen-awesome-css
     GIT_REPOSITORY https://github.com/jothepro/doxygen-awesome-css.git
     GIT_TAG        v2.3.4
     GIT_SHALLOW TRUE
     GIT_PROGRESS TRUE
   )
-  fetchcontent_makeavailable(doxygen-awesome-css)
 
   # get mathjax
-  fetchcontent_declare(
-    mathjax
+  fetchcontentcached(
+    NAME mathjax
     URL https://github.com/mathjax/MathJax/archive/refs/tags/3.2.2.zip
     URL_HASH SHA256=95a32928f18ec9170e7f16cab77709cc58a43a8633486288cbbd599cdf625a35
   )
-  fetchcontent_makeavailable(mathjax)
 
   # https://www.doxygen.nl/manual/emojisup.html
   # Set the URL, destination, and hash for the download

@@ -11,6 +11,7 @@ CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMa
 TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
+LOGLEVEL := --log-level=WARNING
 PROJECT := ein
 EXES :=
 
@@ -41,7 +42,7 @@ run: $(RUN)
 gen: $(CMAKELISTS)
 	@mkdir -p gen
 	@mkdir -p gen/dotfiles
-	@cmake --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
+	@cmake $(LOGLEVEL) --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
 	@touch gen
 
 lint:
