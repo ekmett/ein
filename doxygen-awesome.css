@@ -170,7 +170,6 @@ html {
     --webkit-scrollbar-padding: 4px;
     --webkit-scrollbar-color: var(--separator-color);
 
-    --animation-duration: .12s
 }
 
 @media screen and (max-width: 767px) {
@@ -1883,7 +1882,6 @@ div.dynheader img[src="closed.png"] {
     display: block;
     float: left;
     margin-left: -10px;
-    transition: transform var(--animation-duration) ease-out;
 }
 
 table.memberdecls img {
@@ -1962,7 +1960,6 @@ div.dynheader img[src="closed.png"] {
         display: block !important;
         visibility: visible;
         width: calc(100vw - 2 * var(--spacing-large));
-        animation: fade .5s;
     }
 
     @keyframes fade {
@@ -2363,7 +2360,6 @@ doxygen-awesome-dark-mode-toggle {
 }
 
 doxygen-awesome-dark-mode-toggle > svg {
-    transition: transform var(--animation-duration) ease-in-out;
 }
 
 doxygen-awesome-dark-mode-toggle:active > svg {
@@ -2448,7 +2444,6 @@ a.anchorlink {
     text-decoration: none;
     opacity: .15;
     display: none;
-    transition: opacity var(--animation-duration) ease-in-out, color var(--animation-duration) ease-in-out;
 }
 
 a.anchorlink svg {
@@ -2537,7 +2532,6 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     font-weight: normal;
     padding: calc(var(--spacing-large) / 2) var(--spacing-large);
     border-radius: var(--border-radius-medium);
-    transition: background-color var(--animation-duration) ease-in-out, font-weight var(--animation-duration) ease-in-out;
 }
 
 .tabs-overview button.tab-button:not(:last-child) .tab-title {
@@ -2565,7 +2559,6 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     margin: 0 auto;
     border-radius: var(--border-radius-small) var(--border-radius-small) 0 0;
     background-color: var(--primary-color);
-    transition: width var(--animation-duration) ease-in-out, height var(--animation-duration) ease-in-out;
 }
 
 .tabs-overview button.tab-button.active::after {
@@ -2619,7 +2612,6 @@ h2:hover a.anchorlink, h1:hover a.anchorlink, h3:hover a.anchorlink, h4:hover a.
     border-radius: var(--border-radius-medium);
     color: var(--page-secondary-foreground-color) !important;
     text-decoration: none;
-    transition: color var(--animation-duration) ease-in-out, background-color var(--animation-duration) ease-in-out;
 }
 
 .section_buttons a:hover {
