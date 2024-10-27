@@ -15,6 +15,7 @@ LOGLEVEL :=
 #LOGLEVEL := --log-level=WARNING
 PROJECT := ein
 EXES :=
+PORT := 8000
 
 # run `make DEBUG=1` to see these
 ifdef DEBUG
@@ -30,6 +31,17 @@ all: build
 
 png: gen/ein.png
 	@echo "\nDependency diagram available as gen/ein.png"
+
+serve: build
+	@echo Running http doc server in the foreground on port $(PORT)
+	@python3 -m http.server $(PORT) -d gen/doc/html
+
+server-start: build
+	echo Running http doc server in the background on port $(PORT)
+	nohup python3 -m http.server $(PORT) -d gen/doc/html &
+
+server-stop: build
+	pkill -f "python3 -m http.server $(PORT) -d gen/doc/html"
 
 gen/ein.png: gen gen/patched-dotfiles
 	@dot -Tpng -o gen/ein.png gen/patched-dotfiles/ein.dot
