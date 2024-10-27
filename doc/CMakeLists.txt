@@ -128,7 +128,7 @@ if(DOXYGEN_FOUND)
 #    add_dependencies(docs DoxygenProject)
 #  endif()
 
-  # make sure we put mathjax in the target folder and 
+  # make sure we put mathjax in the target folder and
   # make sure there's an empty .nojekyll file in the root of our html
   # to speed up gh_pages load
   add_dependencies(docs copy_mathjax touch_nojekyll)

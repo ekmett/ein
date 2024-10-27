@@ -21,4 +21,3 @@ fi
 
 # Run the selected ccache with all arguments passed to the script
 exec "$CCACHE_BIN" "$@"
-

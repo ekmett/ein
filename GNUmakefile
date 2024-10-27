@@ -11,7 +11,8 @@ CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMa
 TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
-LOGLEVEL := --log-level=WARNING
+LOGLEVEL :=
+#LOGLEVEL := --log-level=WARNING
 PROJECT := ein
 EXES :=
 
@@ -30,10 +31,13 @@ all: build
 png: gen/ein.png
 	@echo "\nDependency diagram available as gen/ein.png"
 
-gen/ein.png: gen
-	@dot -Tpng -o gen/ein.png gen/dotfiles/ein.dot
+gen/ein.png: gen gen/patched-dotfiles
+	@dot -Tpng -o gen/ein.png gen/patched-dotfiles/ein.dot
 
-build: gen
+gen/patched-dotfiles: gen/dotfiles
+	@bin/adjust_dotfiles.sh gen/dotfiles gen/patched-dotfiles
+
+build: gen gen/patched-dotfiles
 	@cmake --build gen -j
 	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json
 
