@@ -1,6 +1,5 @@
 # for muscle memory if nothing else
 
-# read requires_sudo.txt files for lists of programs that need sudo
 HEADERS := $(shell find src -name '*.hpp' -print)
 SOURCES := $(shell find t src -name '*.cpp' -o -name '*.cppm' -print)
 BUILD_TYPE := RelWithDebInfo  # for release
@@ -10,7 +9,7 @@ MAKEFLAGS += --no-print-directory -j
 CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
 TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build clean run test tags
-REPO := https://github.com/ekmett/ein/
+REPO := https://github.com/ekmett/ein
 PROJECT := ein
 EXES :=
 
@@ -38,9 +37,6 @@ build: gen
 	@cmake --build gen -j
 	@bin/ninjatracing gen/.ninja_log | tee gen/docs/html/ein-build.trace > gen/trace.json
 
-#gen/docs: gen $(SOURCES) $(HEADERS)
-#	@clang-doc-19 --executor=all-TUs compile_commands.json --output=gen/doc --format=md --repository=$(REPO) --project-name=$(PROJECT) -p gen
-
 run: $(RUN)
 
 gen: $(CMAKELISTS)
@@ -50,10 +46,7 @@ gen: $(CMAKELISTS)
 	@touch gen
 
 lint:
-    # Changed (text) files not in excluded dirs.
-	@git --no-pager diff --check origin/main HEAD \
-         -- ':!lib/**' ':!doxygen/assets/**' \
-		|| { echo "Trailing whitespace detected. Please run 'make format'."; exit 1; }
+	bin/check_whitespace.sh
 
 format:
 	bin/remove_whitespace.sh
