@@ -120,7 +120,7 @@ if(DOXYGEN_FOUND)
     ALL
     COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYFILE_OUT}
     WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
-    COMMENT "Generating API documentation with Doxygen ${DOXYGEN_EXECUTABLE}"
+   # COMMENT "Generating API documentation with Doxygen ${DOXYGEN_EXECUTABLE}"
     VERBATIM
     DEPENDS "${CMAKE_BINARY_DIR}/h/config.hpp"
   )

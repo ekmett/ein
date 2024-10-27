@@ -14,12 +14,9 @@
       "cacheVariables": {
         "CMAKE_CXX_COMPILER": "clang++-19",
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
-        "CMAKE_CXX_COMPILER_LAUNCHER": "ccache",
+        "CMAKE_CXX_COMPILER_LAUNCHER": "${sourceDir}/bin/ccache.sh",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
         "CMAKE_COLOR_DIAGNOSTICS": "ON"
-      },
-      "environment": {
-        "CCACHE_DIR": "${sourceDir}/.ccache"
       }
     }
   ],

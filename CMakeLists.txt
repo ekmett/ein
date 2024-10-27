@@ -16,7 +16,7 @@ project(ein VERSION 0.0.1 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
 
-set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/lib")
+set(FETCHCONTENT_BASE_DIR "${CMAKE_SOURCE_DIR}/lib/cache")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
@@ -26,7 +26,10 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/etc/cmake")
 
 include(CheckIPOSupported)
 include(CheckRestrict)
-include(FetchContent)
+#include(FetchContent)
+include(FetchContentCached)
+
+set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 
 # options
 # =======
@@ -174,15 +177,14 @@ endif()
 add_library(compiler_rt_builtins INTERFACE)
 target_link_libraries(compiler_rt_builtins INTERFACE ${COMPILER_RT_BUILTINS})
 
-# spdlog is being used as our standard logging framework
-fetchcontent_declare(
-  spdlog
+fetchcontentcached(
+  NAME spdlog
   GIT_REPOSITORY https://github.com/gabime/spdlog.git
   GIT_TAG        v1.13.0
   GIT_SHALLOW TRUE
   GIT_PROGRESS TRUE
 )
-fetchcontent_makeavailable(spdlog)
+
 # silence a third-party warning on clang++-18+
 target_compile_options(spdlog PRIVATE
   $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>

@@ -5,14 +5,13 @@
 find_package(Threads REQUIRED)
 
 # nlohmann's json library provides a solid c++ API for working with json
-fetchcontent_declare(
-  json
+fetchcontentcached(
+  NAME json
   GIT_REPOSITORY https://github.com/nlohmann/json.git
   GIT_TAG        v3.11.3
   GIT_SHALLOW TRUE
   GIT_PROGRESS TRUE
 )
-fetchcontent_makeavailable(json)
 
 
 add_library(ein STATIC

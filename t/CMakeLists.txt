@@ -6,27 +6,22 @@ include(FetchContent)
 
 set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
 
-if(NOT EXISTS "${FETCHCONTENT_BASE_DIR}/catch2-src")
-  fetchcontent_declare(
-    Catch2
-    GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-    GIT_TAG        v3.7.1 # or a later release
-  )
-  fetchcontent_makeavailable(Catch2)
-  # silence a third-party warning on clang++-18+
-  target_compile_options(Catch2 PRIVATE
-    $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
-  )
-else()
-    set(catch2_SOURCE_DIR "${FETCHCONTENT_BASE_DIR}/catch2-src")
-endif()
+fetchcontentcached(
+  NAME Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.7.1 # or a later release
+)
+# silence a third-party warning on clang++-18+
+target_compile_options(Catch2 PRIVATE
+  $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
+)
 
-exclude(Catch2::Catch2 Catch2::Catch2WithMain)
+#exclude(Catch2::Catch2 Catch2::Catch2WithMain)
 
-list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
+#list(APPEND CMAKE_MODULE_PATH ${catch2_SOURCE_DIR}/extras)
 
-include(CTest)
-include(Catch)
-include(CatchShardTests)
+#include(CTest)
+#include(Catch)
+#include(CatchShardTests)
 
 # install(TARGETS t_simd RUNTIME DESTINATION bin)

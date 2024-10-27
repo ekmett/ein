@@ -9,7 +9,7 @@ PRESET := native
 MAKEFLAGS += --no-print-directory -j
 CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
 TESTS := $(notdir $(wildcard t/t_*.cpp))
-PHONY := all build clean run test tags
+PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
 PROJECT := ein
 EXES :=
@@ -52,6 +52,9 @@ format:
 
 clean:
 	@rm -rf gen tags
+
+distclean: clean
+	@rm -rf lib/cache
 
 tags:
 	@find . -name '*.[ch]pp' -o -name '*.cppm' -type f -not -path './gen/*' -exec ctags {} +
