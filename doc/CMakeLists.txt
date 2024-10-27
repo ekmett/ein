@@ -124,9 +124,9 @@ if(DOXYGEN_FOUND)
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it
-#  if(TARGET DoxygenProject)
-#    add_dependencies(docs DoxygenProject)
-#  endif()
+  if(TARGET DoxygenProject)
+    add_dependencies(docs DoxygenProject)
+  endif()
 
   # make sure we put mathjax in the target folder and
   # make sure there's an empty .nojekyll file in the root of our html
