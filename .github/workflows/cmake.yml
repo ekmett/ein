@@ -44,12 +44,12 @@ jobs:
           ${{ steps.strings.outputs.build-output-dir }}/CMakeCache.txt
           ${{ steps.strings.outputs.build-output-dir }}/CMakeFiles/
           ${{ steps.strings.outputs.build-output-dir }}/**/CTestTestfile.cmake
-    - name: upload docs
+    - name: upload doc
       uses: actions/upload-artifact@v4.4.3
       with:
-        name: docs
+        name: doc
         path: ${{ steps.strings.outputs.build-output-dir }}/doc/html/
-    # can be fed to ui.perfetto.dev or chrome://tracing to debug builds
+    # can be fed to ui.perfetto.dev or chrome://tracing to benchmark builds
     - name: upload trace.json
       uses: actions/upload-artifact@v4.4.3
       with:
@@ -94,9 +94,9 @@ jobs:
     - name: download build artifacts
       uses: actions/download-artifact@v4.1.8
       with:
-        name: docs
+        name: doc
         path: ${{ steps.strings.outputs.build-output-dir }}/doc/html/
-    - name: publish docs
+    - name: publish doc
       uses: peaceiris/actions-gh-pages@v4
       with:
         github_token: ${{ secrets.GITHUB_TOKEN }}

@@ -12,7 +12,7 @@ TESTS := $(notdir $(wildcard t/t_*.cpp))
 PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
 LOGLEVEL :=
-#LOGLEVEL := --log-level=WARNING
+LOGLEVEL := --log-level=TRACE
 PROJECT := ein
 EXES :=
 PORT := 8000

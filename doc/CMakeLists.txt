@@ -45,16 +45,17 @@ if(DOXYGEN_FOUND)
 
   # patch out the transitions they fire on every page refresh / nav event!
   # Path to the original CSS and patch file
-  set(DA_CSS_FILE "${FETCHCONTENT_BASE_DIR}/doxygen-awesome-css-src/doxygen-awesome.css")
+  set(DA_SRC "${FETCHCONTENT_BASE_DIR}/doxygen-awesome-css-src")
+  set(DA_CSS_FILE "${DA_SRC}/doxygen-awesome.css")
   set(DA_PATCH_FILE "${CMAKE_CURRENT_SOURCE_DIR}/assets/doxygen-awesome.css.patch")
   set(DA_OUTPUT_FILE "${CMAKE_CURRENT_BINARY_DIR}/doxygen-awesome.css")
 
   # Apply the patch
   add_custom_command(
     OUTPUT "${DA_OUTPUT_FILE}"
-    COMMAND patch "${DA_CSS_FILE}" -R "${DA_PATCH_FILE}" -o "${DA_OUTPUT_FILE}"    # Apply patch and specify output file
+    COMMAND patch --forward -s -f "${DA_CSS_FILE}" -i "${DA_PATCH_FILE}" -o "${DA_OUTPUT_FILE}"
     DEPENDS "${DA_CSS_FILE}" "${DA_PATCH_FILE}"
-    COMMENT "Applying doxygen-awesome.css.patch to doxygen-awesome.css and outputting to gen directory"
+    COMMENT "Patch doxygen-awesome.css"
   )
 
   add_custom_target(apply_doxygen_awesome_patch ALL DEPENDS "${DA_OUTPUT_FILE}")
@@ -136,19 +137,11 @@ if(DOXYGEN_FOUND)
     #WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Generating documentation"
     VERBATIM
-    DEPENDS "${CMAKE_BINARY_DIR}/h/config.hpp" apply_doxygen_awesome_patch
+    DEPENDS "${CMAKE_BINARY_DIR}/h/config.hpp" apply_doxygen_awesome_patch copy_mathjax touch_nojekyll
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it
   if(TARGET DoxygenProject)
     add_dependencies(docs DoxygenProject)
   endif()
-
-  # make sure we put mathjax in the target folder and
-  # make sure there's an empty .nojekyll file in the root of our html
-  # to speed up gh_pages load
-  add_dependencies(docs copy_mathjax touch_nojekyll)
-
-  # Note: we can't copy the trace.json in right now, because we're busy actually
-  # doing the thing being traced! So it is copied by the GNUmakefile outside of cmake.
 endif()
