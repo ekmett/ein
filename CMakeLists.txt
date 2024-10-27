@@ -267,7 +267,7 @@ list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp)
 add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)
-add_subdirectory(dox)
+add_subdirectory(doc)
 
 # If CODE_COVERAGE is enabled, add a custom target to generate coverage reports
 if(CODE_COVERAGE)

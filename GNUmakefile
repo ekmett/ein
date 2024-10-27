@@ -25,8 +25,6 @@ endif
 
 all: build
 
-#docs: gen/docs
-
 png: gen/ein.png
 	@echo "\nDependency diagram available as gen/ein.png"
 
@@ -35,7 +33,7 @@ gen/ein.png: gen
 
 build: gen
 	@cmake --build gen -j
-	@bin/ninjatracing gen/.ninja_log | tee gen/docs/html/ein-build.trace > gen/trace.json
+	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json
 
 run: $(RUN)
 

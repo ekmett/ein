@@ -29,6 +29,8 @@ endfunction()
 # Check if the required Doxygen version is available
 check_doxygen_version()
 
+# TODO: just download it ourselves if not
+
 if(DOXYGEN_FOUND)
   message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
 
@@ -86,7 +88,7 @@ if(DOXYGEN_FOUND)
 
   # Set source and destination paths
   set(MATHJAX_SRC "${FETCHCONTENT_BASE_DIR}/mathjax-src")
-  set(MATHJAX_DST "${CMAKE_BINARY_DIR}/docs/html/mathjax")
+  set(MATHJAX_DST "${CMAKE_CURRENT_BINARY_DIR}/html/mathjax")
 
   # arrange to copy mathjax into the html folder
   add_custom_target(copy_mathjax ALL
@@ -97,10 +99,10 @@ if(DOXYGEN_FOUND)
   )
 
   # Ensure docs directory exists before copy
-  file(MAKE_DIRECTORY "${CMAKE_BINARY_DIR}/docs/html")
+  file(MAKE_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}/html")
 
   # Define path for .nojekyll file
-  set(NOJEKYLL_FILE "${CMAKE_BINARY_DIR}/docs/html/.nojekyll")
+  set(NOJEKYLL_FILE "${CMAKE_CURRENT_BINARY_DIR}/html/.nojekyll")
 
   # Add a custom target to touch .nojekyll
   add_custom_target(touch_nojekyll ALL
@@ -124,17 +126,15 @@ if(DOXYGEN_FOUND)
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it
-  if(TARGET DoxygenProject)
-    add_dependencies(docs DoxygenProject)
-  endif()
+#  if(TARGET DoxygenProject)
+#    add_dependencies(docs DoxygenProject)
+#  endif()
 
-  # make sure we put mathjax in the target folder
-  add_dependencies(docs copy_mathjax)
-
-  # Make sure there's an empty .nojekyll file in the root of our html
+  # make sure we put mathjax in the target folder and 
+  # make sure there's an empty .nojekyll file in the root of our html
   # to speed up gh_pages load
-  add_dependencies(docs touch_nojekyll)
+  add_dependencies(docs copy_mathjax touch_nojekyll)
 
   # Note: we can't copy the trace.json in right now, because we're busy actually
-  # doing the thing being traced!
+  # doing the thing being traced! So it is copied by the GNUmakefile outside of cmake.
 endif()
