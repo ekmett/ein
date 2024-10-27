@@ -4,7 +4,6 @@
 
 # this file is looked for by cmake if you have --graphviz set
 
-
 # in our particular case the libclang path is really long.
 # a virtual target provides an indirection, and the exact
 # path isn't required info per se.

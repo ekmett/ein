@@ -29,6 +29,10 @@ include(CheckRestrict)
 #include(FetchContent)
 include(FetchContentCached)
 
+
+# ccache
+# ====================================================================
+
 set(FETCHCONTENT_QUIET ON)  # Suppresses FetchContent output
 
 fetchcontentcached(
@@ -43,7 +47,8 @@ set(CMAKE_COLOR_DIAGNOSTICS ON)
 set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 
 # options
-# =======
+# ====================================================================
+
 option(CODE_COVERAGE "Enable code coverage instrumentation" OFF)
 option(ENABLE_TESTS "Enable tests" ON)
 option(PRECOMPILE_HEADERS "Use precompiled headers" ON)
@@ -107,7 +112,7 @@ if (BUILD_NATIVE)
 endif()
 
 # sanitizers
-# ==========
+# ====================================================================
 
 if(ASAN)
   add_compile_options("$<${CXX_GccOrClang}:-fsanitize=address>")
@@ -130,7 +135,7 @@ if(UBSAN)
 endif(UBSAN)
 
 # macros
-# ======
+# ====================================================================
 
 macro(cover)
   foreach(name IN LISTS ARGN)
@@ -167,7 +172,7 @@ macro(gc_sections)
 endmacro()
 
 # third-party
-# ===========
+# ====================================================================
 
 set(THREADS_PREFER_PTHREAD_FLAG ON)
 find_package(Threads)
@@ -202,7 +207,7 @@ target_compile_options(spdlog PRIVATE
 )
 
 # compile options
-# ===============
+# ====================================================================
 
 # Overwrite the options we set for sentencepiece with our own.  Rationales:
 # - -Wno-deprecated-declarations because it triggers on std::get_temporary_buffer<size_t>
@@ -235,7 +240,7 @@ add_compile_options(
 add_link_options("$<${Link_Clang}:--rtlib=compiler-rt>")
 
 # tests
-# =====
+# ====================================================================
 
 if(ENABLE_TESTS)
   include(CTest)
@@ -244,7 +249,7 @@ if(ENABLE_TESTS)
 endif(ENABLE_TESTS)
 
 # header jiujutsu
-# ===============
+# ====================================================================
 
 include(CheckRestrict)
 
@@ -281,6 +286,9 @@ add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)
 add_subdirectory(doc)
+
+# Code Coverage
+# ====================================================================
 
 # If CODE_COVERAGE is enabled, add a custom target to generate coverage reports
 if(CODE_COVERAGE)
