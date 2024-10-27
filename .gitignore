@@ -13,3 +13,4 @@ Testing
 !.ccache/ccache.conf
 .ipynb_checkpoints/
 tags
+nohup.out
