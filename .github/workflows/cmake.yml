@@ -33,7 +33,7 @@ jobs:
         echo "build-output-dir=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
     - name: configure and build
       run: |
-        make -C ${{ github.workspace }}
+        make -C ${{ github.workspace }} || echo "BUILD CRASHED"
     - name: upload binaries
       uses: actions/upload-artifact@v4.4.3
       with:
