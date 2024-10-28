@@ -29,26 +29,34 @@ export struct bf16 {
 
   __bf16 content;
 
-  ein_inline ein_artificial
-  constexpr bf16() noexcept = default;
+  ein_inline ein_artificial constexpr
+  bf16() noexcept = default;
 
-  ein_inline ein_artificial
-  constexpr bf16(float f) noexcept : content(f) {}
+  ein_inline ein_artificial constexpr
+  bf16(float f) noexcept : content(f) {}
 
-  ein_inline ein_artificial
-  constexpr bf16(ein_noescape bf16 const &) noexcept = default;
+  ein_inline ein_artificial constexpr
+  bf16(__bf16 f) noexcept : content(f) {}
 
-  ein_inline ein_artificial
-  constexpr bf16(ein_noescape bf16 &&) noexcept = default;
+  ein_inline ein_artificial constexpr
+  bf16(ein_noescape bf16 const &) noexcept = default;
 
-  ein_nodiscard ein_inline ein_artificial ein_const
-  constexpr operator float (this bf16 self) noexcept { return self.content; }
+  ein_inline ein_artificial constexpr
+  bf16(ein_noescape bf16 &&) noexcept = default;
 
-  ein_reinitializes ein_inline ein_artificial
-  constexpr bf16 & operator = (ein_noescape bf16 const &) noexcept = default;
+  ein_nodiscard ein_inline ein_artificial ein_const constexpr
+  operator __bf16 (this bf16 self) noexcept { return self.content; }
 
-  ein_reinitializes ein_inline ein_artificial
-  constexpr bf16 & operator = (ein_noescape bf16 &&) noexcept = default;
+  ein_nodiscard ein_inline ein_artificial ein_const constexpr
+  operator float (this bf16 self) noexcept { return self.content; }
+
+  ein_reinitializes ein_inline ein_artificial constexpr
+  bf16 & operator = (ein_noescape bf16 const &) noexcept 
+  ein_lifetimebound = default;
+
+  ein_reinitializes ein_inline ein_artificial constexpr
+  bf16 & operator = (ein_noescape bf16 &&) noexcept 
+  ein_lifetimebound = default;
 
   ein_nodiscard ein_inline ein_artificial ein_const
   friend constexpr bool operator == (bf16 x, bf16 y) noexcept {
@@ -86,7 +94,10 @@ export struct bf16 {
   }
 
   ein_inline ein_artificial
-  friend void swap(bf16 & x, bf16 & y) noexcept {
+  friend constexpr void swap(
+    ein_noescape bf16 & x,
+    ein_noescape bf16 & y
+  ) noexcept {
     using std::swap;
     swap(x.content,y.content);
   }
@@ -109,7 +120,11 @@ constexpr bf16 operator"" _bf16(long double v) noexcept {
 
 export ein_nodiscard ein_inline ein_artificial ein_const
 constexpr bf16 fast_to_bf16(float f) noexcept {
-  return std::bit_cast<bf16>(static_cast<uint16_t>(std::bit_cast<uint32_t>(f)>>16));
+  if consteval {
+    return f;
+  } else {
+    return std::bit_cast<bf16>(static_cast<uint16_t>(std::bit_cast<uint32_t>(f)>>16));
+  }
 }
 
 export ein_nodiscard ein_inline ein_artificial ein_const
@@ -125,15 +140,15 @@ namespace std {
     static constexpr bool is_specialized = true;
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 min() noexcept {
-        return ein::bf16::from_bits(0x007F);
+      return ein::bf16::from_bits(0x007F);
     }
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 max() noexcept {
-        return ein::bf16::from_bits(0x7F7F);
+      return ein::bf16::from_bits(0x7F7F);
     }
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 lowest() noexcept {
-        return ein::bf16::from_bits(0xFF7F);
+      return ein::bf16::from_bits(0xFF7F);
     }
     static constexpr int digits = 7;
     static constexpr int digits10 = 2;
@@ -143,11 +158,11 @@ namespace std {
     static constexpr int radix = 2;
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 epsilon() noexcept {
-        return ein::bf16::from_bits(0x3C00);
+      return ein::bf16::from_bits(0x3C00);
     }
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 round_error() noexcept {
-        return ein::bf16::from_bits(0x3F00);
+      return ein::bf16::from_bits(0x3F00);
     }
     static constexpr int min_exponent = -125;
     static constexpr int min_exponent10 = -37;
@@ -160,19 +175,19 @@ namespace std {
     static constexpr bool has_denorm_loss = false;
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 infinity() noexcept {
-        return ein::bf16::from_bits(0x7F80);
+      return ein::bf16::from_bits(0x7F80);
     }
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 quiet_NaN() noexcept {
-        return ein::bf16::from_bits(0x7FC0);
+      return ein::bf16::from_bits(0x7FC0);
     }
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 signaling_NaN() noexcept {
-        return ein::bf16::from_bits(0x7FC0);
+      return ein::bf16::from_bits(0x7FC0);
     }
     ein_nodiscard ein_inline ein_artificial ein_const
     static constexpr ein::bf16 denorm_min() noexcept {
-        return ein::bf16{};
+      return ein::bf16{};
     }
     static constexpr bool is_iec559 = false;
     static constexpr bool is_bounded = false;

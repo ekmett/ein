@@ -41,8 +41,14 @@ export struct fp16 {
   ein_inline ein_artificial
   constexpr fp16(float content) noexcept : content(content) {}
 
+  ein_inline ein_artificial
+  constexpr fp16(_Float16 content) noexcept : content(content) {}
+
   ein_nodiscard ein_inline ein_artificial
   constexpr operator float (this fp16 self) noexcept { return self.content; }
+
+  ein_nodiscard ein_inline ein_artificial
+  constexpr operator _Float16 (this fp16 self) noexcept { return self.content; }
 
   ein_reinitializes ein_inline ein_artificial
   constexpr fp16 & operator = (ein_noescape fp16 const &) noexcept
@@ -87,7 +93,10 @@ export struct fp16 {
   }
 
   ein_inline ein_artificial
-  friend constexpr void swap(fp16 & x, fp16 & y) noexcept {
+  friend constexpr void swap(
+    ein_noescape fp16 & x,
+    ein_noescape fp16 & y
+  ) noexcept {
     using std::swap;
     swap(x.content,y.content);
   }
