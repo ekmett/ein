@@ -11,7 +11,7 @@ if ! docker manifest inspect "$image" &> /dev/null; then
   docker build --build-arg HOST_UID="$uid" -t "$image" -f Dockerfile --progress=plain .
   docker push "$image"
 else
-  echo "Image $image already exists."
+  echo "Image $image exists."
 fi
 
 uid=$(id -u)
@@ -23,5 +23,5 @@ if ! docker manifest inspect "$image" &> /dev/null; then
   docker build --build-arg HASH=$hash --build-arg HOST_UID="$uid" -t "$image" -f Dockerfile.local .
   docker push "$image"
 else
-  echo "Image $image already exists."
+  echo "Image $image exists."
 fi
