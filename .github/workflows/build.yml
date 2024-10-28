@@ -46,6 +46,12 @@ jobs:
       - name: set paths
         id: paths
         run: echo "gen=/__w/ein/ein/gen" >> "$GITHUB_OUTPUT"
+      - name: cache lib/cache
+        id: libcache
+        uses: actions/cache@v4
+        with:
+          path: /__w/ein/ein/lib/cache
+          key: '${{ runner.os }}-cache'
       - name: make
         run: make -C /__w/ein/ein || echo FAILED
       - name: setup tmate session
@@ -79,7 +85,7 @@ jobs:
           github_token: '${{ secrets.GITHUB_TOKEN }}'  # Use single quotes here
           publish_dir: ${{ steps.paths.outputs.gen }}/doc/html/
       - name: test
-        working-directory: ${{ steps.paths.outputs.gen }}
+        working-directory: '${{ steps.paths.outputs.gen }}'
         run: ctest -V
 
   traditional-build:
@@ -93,6 +99,12 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           key: ubuntu-latest-ccache
+      - name: cache lib/cache
+        id: libcache
+        uses: actions/cache@v4
+        with:
+          path: '${{ github.workspace }}/lib/cache'
+          key: '${{ runner.os }}-cache'
       - name: set reusable strings
         id: paths
         run: echo "gen=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
