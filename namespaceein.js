@@ -5,6 +5,7 @@ var namespaceein =
     [ "c_free", "structein_1_1c__free.html", "structein_1_1c__free" ],
     [ "c_munmap", "structein_1_1c__munmap.html", "structein_1_1c__munmap" ],
     [ "cpuid_t", "group__cpuid.html#structein_1_1cpuid__t", "group__cpuid_structein_1_1cpuid__t" ],
+    [ "fp16", "structein_1_1fp16.html", "structein_1_1fp16" ],
     [ "imm_t", "group__numerics.html#structein_1_1imm__t", "group__numerics_structein_1_1imm__t" ],
     [ "mwaitx", "group__wait.html#structein_1_1mwaitx", "group__wait_structein_1_1mwaitx" ],
     [ "reify", "structein_1_1reify.html", "structein_1_1reify" ],

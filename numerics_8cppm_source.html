@@ -239,7 +239,7 @@ $(function(){initNavTree('numerics_8cppm_source.html',''); initResizable(true); 
 <div class="line"><a id="l00086" name="l00086"></a><span class="lineno">   86</span><a class="code hl_define" href="group__lifetime__attributes.html#gad58fdb2d0a42845b0f16b84446dff7d4">ein_nodiscard</a> <a class="code hl_define" href="group__inlining__attributes.html#gae478383afcbcd2db052f49d41e72763d">ein_inline</a> <a class="code hl_define" href="group__purity__attributes.html#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">ein_pure</a></div>
 <div class="foldopen" id="foldopen00087" data-start="{" data-end="}">
 <div class="line"><a id="l00087" name="l00087"></a><span class="lineno"><a class="line" href="group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e">   87</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceein.html#a2e9e352aca0eb99e5bff21db2bcf7029">cmp_unord</a>(T a, T b) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">return</span> isnan(a) || isnan(b);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span>  <span class="keywordflow">return</span> <a class="code hl_function" href="namespacestd.html#ac1126db43b4d7eb6aea755e703e19286">isnan</a>(a) || <a class="code hl_function" href="namespacestd.html#ac1126db43b4d7eb6aea755e703e19286">isnan</a>(b);</div>
 <div class="line"><a id="l00089" name="l00089"></a><span class="lineno">   89</span>}</div>
 </div>
 <div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span> </div>
@@ -250,7 +250,7 @@ $(function(){initNavTree('numerics_8cppm_source.html',''); initResizable(true); 
 <div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span><a class="code hl_define" href="group__lifetime__attributes.html#gad58fdb2d0a42845b0f16b84446dff7d4">ein_nodiscard</a> <a class="code hl_define" href="group__inlining__attributes.html#gae478383afcbcd2db052f49d41e72763d">ein_inline</a> <a class="code hl_define" href="group__purity__attributes.html#ga9e124f20ef90b8f2f68c0e1a1f7d00cf">ein_pure</a></div>
 <div class="foldopen" id="foldopen00098" data-start="{" data-end="}">
 <div class="line"><a id="l00098" name="l00098"></a><span class="lineno"><a class="line" href="group__numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f">   98</a></span><span class="keyword">constexpr</span> <span class="keywordtype">bool</span> <a class="code hl_function" href="namespaceein.html#a4db3bfe82586c57874b7b757b237251a">cmp_ord</a>(T a, T b) <span class="keyword">noexcept</span> {</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">return</span> !isnan(a) &amp;&amp; !isnan(b);</div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  <span class="keywordflow">return</span> !<a class="code hl_function" href="namespacestd.html#ac1126db43b4d7eb6aea755e703e19286">isnan</a>(a) &amp;&amp; !<a class="code hl_function" href="namespacestd.html#ac1126db43b4d7eb6aea755e703e19286">isnan</a>(b);</div>
 <div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>}</div>
 </div>
 <div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
@@ -269,7 +269,7 @@ $(function(){initNavTree('numerics_8cppm_source.html',''); initResizable(true); 
 <div class="line"><a id="l00116" name="l00116"></a><span class="lineno">  116</span>    <span class="keyword">constexpr</span> uint_type exponent_mask = std::is_same_v&lt;T, float&gt; ? uint_type(0x7F800000) : uint_type(0x7FF0000000000000ull);</div>
 <div class="line"><a id="l00117" name="l00117"></a><span class="lineno">  117</span>    <span class="keyword">constexpr</span> uint_type mantissa_mask = std::is_same_v&lt;T, float&gt; ? uint_type(0x007FFFFF) : uint_type(0x000FFFFFFFFFFFFFull);</div>
 <div class="line"><a id="l00118" name="l00118"></a><span class="lineno">  118</span> </div>
-<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">if</span> (x == 0.0 || isnan(x) || std::isinf(x))</div>
+<div class="line"><a id="l00119" name="l00119"></a><span class="lineno">  119</span>    <span class="keywordflow">if</span> (x == 0.0 || <a class="code hl_function" href="namespacestd.html#ac1126db43b4d7eb6aea755e703e19286">isnan</a>(x) || std::isinf(x))</div>
 <div class="line"><a id="l00120" name="l00120"></a><span class="lineno">  120</span>      <span class="keywordflow">return</span> x; <span class="comment">// Handle special cases</span></div>
 <div class="line"><a id="l00121" name="l00121"></a><span class="lineno">  121</span> </div>
 <div class="line"><a id="l00122" name="l00122"></a><span class="lineno">  122</span>    <span class="comment">// Get the raw bits of the floating-point number</span></div>
@@ -488,7 +488,8 @@ $(function(){initNavTree('numerics_8cppm_source.html',''); initResizable(true); 
 <div class="ttc" id="anamespaceein_html_a2e9e352aca0eb99e5bff21db2bcf7029"><div class="ttname"><a href="namespaceein.html#a2e9e352aca0eb99e5bff21db2bcf7029">ein::cmp_unord</a></div><div class="ttdeci">template bool cmp_unord(float, float) noexcept</div></div>
 <div class="ttc" id="anamespaceein_html_a4db3bfe82586c57874b7b757b237251a"><div class="ttname"><a href="namespaceein.html#a4db3bfe82586c57874b7b757b237251a">ein::cmp_ord</a></div><div class="ttdeci">template bool cmp_ord(float, float) noexcept</div></div>
 <div class="ttc" id="anamespaceein_html_a6984f13cd906f1521dfcb7e95b8f8b84"><div class="ttname"><a href="namespaceein.html#a6984f13cd906f1521dfcb7e95b8f8b84">ein::scalef</a></div><div class="ttdeci">X template float scalef(float, float) noexcept</div><div class="ttdoc">cond xmacro</div></div>
-<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="simd_8cppm_source.html#l01304">simd.cppm:1304</a></div></div>
+<div class="ttc" id="anamespacestd_html"><div class="ttname"><a href="namespacestd.html">std</a></div><div class="ttdef"><b>Definition</b> <a href="fp16_8hpp_source.html#l00098">fp16.hpp:98</a></div></div>
+<div class="ttc" id="anamespacestd_html_ac1126db43b4d7eb6aea755e703e19286"><div class="ttname"><a href="namespacestd.html#ac1126db43b4d7eb6aea755e703e19286">std::isnan</a></div><div class="ttdeci">constexpr bool isnan(ein::fp16 x) noexcept</div><div class="ttdef"><b>Definition</b> <a href="fp16_8hpp_source.html#l00100">fp16.hpp:100</a></div></div>
 <div class="ttc" id="anumerics_8cppm_html_af569bd545b347efcbff730e5f47b040e"><div class="ttname"><a href="numerics_8cppm.html#af569bd545b347efcbff730e5f47b040e">IFAVX512</a></div><div class="ttdeci">#define IFAVX512(x, y)</div><div class="ttdef"><b>Definition</b> <a href="#l00024">numerics.cppm:24</a></div></div>
 <div class="ttc" id="anumerics_8x_html"><div class="ttname"><a href="numerics_8x.html">numerics.x</a></div></div>
 <div class="ttc" id="aprelude_8hpp_html"><div class="ttname"><a href="prelude_8hpp.html">prelude.hpp</a></div></div>

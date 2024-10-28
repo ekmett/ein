@@ -11,6 +11,9 @@ var searchData=
   ['flow_5fstep_8',['flow_step',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b',1,'ein::profiling']]],
   ['for_20use_20reproduction_20and_20distribution_9',['Terms and Conditions for use, reproduction, and distribution',['../license_page.html#autotoc_md2',1,'']]],
   ['forward_5flike_10',['forward_like',['../group__std.html#gac4e848e26cfe1051d18bb913060767b0',1,'std']]],
-  ['front_11',['front',['../classein_1_1basic__static__string.html#ab5f229764f9c2681669526fe0613013d',1,'ein::basic_static_string']]],
-  ['function_20multi_20versioning_12',['Function Multi-Versioning',['../group__multiversioning__attributes.html',1,'']]]
+  ['fp16_11',['fp16',['../structein_1_1fp16.html',1,'ein::fp16'],['../structein_1_1fp16.html#afc6bbbc5dd7592663a44e9760da077b5',1,'ein::fp16::fp16() noexcept=default'],['../structein_1_1fp16.html#a03592dd43053748e2a433a57a3fd6f99',1,'ein::fp16::fp16(float content) noexcept']]],
+  ['fp16_2ehpp_12',['fp16.hpp',['../fp16_8hpp.html',1,'']]],
+  ['from_5fbits_13',['from_bits',['../structein_1_1fp16.html#a71a01bfcf14d9880a425145e21610c49',1,'ein::fp16']]],
+  ['front_14',['front',['../classein_1_1basic__static__string.html#ab5f229764f9c2681669526fe0613013d',1,'ein::basic_static_string']]],
+  ['function_20multi_20versioning_15',['Function Multi-Versioning',['../group__multiversioning__attributes.html',1,'']]]
 ];

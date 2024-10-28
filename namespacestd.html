@@ -192,6 +192,8 @@ Classes</h2></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structstd_1_1hash_3_1_1ein_1_1static__c__string_01_4.html">hash&lt;::ein::static_c_string &gt;</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html">numeric_limits&lt; ein::fp16 &gt;</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4" id="r_structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4">tuple_element&lt; I, ein::simd&lt; T, N &gt; &gt;</a></td></tr>
 <tr class="memdesc:structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4"><td class="mdescLeft">&#160;</td><td class="mdescRight">needed to support for <code>std::apply</code>  <a href="group__simd.html#structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4">More...</a><br /></td></tr>
 <tr class="separator:structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -200,11 +202,53 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ac1126db43b4d7eb6aea755e703e19286" id="r_ac1126db43b4d7eb6aea755e703e19286"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac1126db43b4d7eb6aea755e703e19286">std::isnan</a> (<a class="el" href="structein_1_1fp16.html">ein::fp16</a> x) noexcept</td></tr>
+<tr class="separator:ac1126db43b4d7eb6aea755e703e19286"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gac4e848e26cfe1051d18bb913060767b0" id="r_gac4e848e26cfe1051d18bb913060767b0"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:gac4e848e26cfe1051d18bb913060767b0"><td class="memTemplItemLeft" align="right" valign="top">constexpr auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__std.html#gac4e848e26cfe1051d18bb913060767b0">std::forward_like</a> (auto &amp;&amp;x) noexcept -&gt; forward_like_t&lt; T, decltype(x)&gt;</td></tr>
 <tr class="memdesc:gac4e848e26cfe1051d18bb913060767b0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns a reference to x which has similar properties to T&amp;&amp;.  <br /></td></tr>
 <tr class="separator:gac4e848e26cfe1051d18bb913060767b0"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Function Documentation</h2>
+<a id="ac1126db43b4d7eb6aea755e703e19286" name="ac1126db43b4d7eb6aea755e703e19286"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac1126db43b4d7eb6aea755e703e19286">&#9670;&#160;</a></span>isnan()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool std::isnan </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">ein::fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00100">100</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  100</span>                                           {</div>
+<div class="line"><span class="lineno">  101</span>    <span class="comment">// Sign doesn&#39;t matter, frac not zero (infinity)</span></div>
+<div class="line"><span class="lineno">  102</span>    <span class="keywordflow">return</span> (x.<a class="code hl_function" href="structein_1_1fp16.html#a9d65c8f4d05af56cf5d9adc88cc2607b">to_bits</a>() &amp; 0x7FFF) &gt; 0x7c00;</div>
+<div class="line"><span class="lineno">  103</span>  }</div>
+<div class="ttc" id="astructein_1_1fp16_html_a9d65c8f4d05af56cf5d9adc88cc2607b"><div class="ttname"><a href="structein_1_1fp16.html#a9d65c8f4d05af56cf5d9adc88cc2607b">ein::fp16::to_bits</a></div><div class="ttdeci">constexpr uint16_t to_bits() const noexcept</div><div class="ttdef"><b>Definition</b> <a href="fp16_8hpp_source.html#l00085">fp16.hpp:85</a></div></div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="numerics_8cppm_source.html#l00098">ein::cmp_ord()</a>, <a class="el" href="numerics_8cppm_source.html#l00087">ein::cmp_unord()</a>, and <a class="el" href="numerics_8cppm_source.html#l00110">ein::scalef()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespacestd_ac1126db43b4d7eb6aea755e703e19286_icgraph.svg" width="267" height="135"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- HTML footer for doxygen 1.12.0-->

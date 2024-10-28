@@ -1,0 +1,9 @@
+<map id="std::isnan" name="std::isnan">
+<area shape="rect" id="Node000001" title=" " alt="" coords="176,55,261,80"/>
+<area shape="rect" id="Node000002" href="$group__numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f" title=" " alt="" coords="13,5,120,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="165,53,106,33,108,28,167,48"/>
+<area shape="rect" id="Node000003" href="$group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e" title=" " alt="" coords="5,55,128,80"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="162,70,128,70,128,65,162,65"/>
+<area shape="rect" id="Node000004" href="$group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f" title=" " alt="" coords="22,104,111,129"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="167,87,108,106,106,101,165,82"/>
+</map>

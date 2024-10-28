@@ -6,6 +6,7 @@ var hierarchy =
     [ "ein::c_munmap", "structein_1_1c__munmap.html", null ],
     [ "ein::cpuid_t", "group__cpuid.html#structein_1_1cpuid__t", null ],
     [ "ein::profiling::duration_event< Profile >", "structein_1_1profiling_1_1duration__event.html", null ],
+    [ "ein::fp16", "structein_1_1fp16.html", null ],
     [ "std::hash<::ein::basic_static_string< CharT, Traits > >", "structstd_1_1hash_3_1_1ein_1_1basic__static__string_3_01CharT_00_01Traits_01_4_01_4.html", null ],
     [ "std::hash<::ein::static_c_string >", "structstd_1_1hash_3_1_1ein_1_1static__c__string_01_4.html", null ],
     [ "ein::imm_t< N >", "group__numerics.html#structein_1_1imm__t", null ],
@@ -13,6 +14,7 @@ var hierarchy =
       [ "std::tuple_size< ein::simd< T, N > >", "group__simd.html#structstd_1_1tuple__size_3_01ein_1_1simd_3_01T_00_01N_01_4_01_4", null ]
     ] ],
     [ "ein::mwaitx", "group__wait.html#structein_1_1mwaitx", null ],
+    [ "std::numeric_limits< ein::fp16 >", "classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html", null ],
     [ "ein::profiling::profile< Mutex, Duration, Clock >", "structein_1_1profiling_1_1profile.html", null ],
     [ "ein::profiling::profile< std::mutex, std::chrono::nanoseconds, std::chrono::high_resolution_clock >", "structein_1_1profiling_1_1profile.html", null ],
     [ "ein::profiling::profile_event< Duration, Clock >", "namespaceein_1_1profiling.html#structein_1_1profiling_1_1profile__event", null ],

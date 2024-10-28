@@ -1,6 +1,7 @@
 var modules_dup =
 [
     [ "ein.cpuid", "module__ein_8cpuid.html", "module__ein_8cpuid" ],
+    [ "ein.fp16", "module__ein_8fp16.html", "module__ein_8fp16" ],
     [ "ein.memory", "module__ein_8memory.html", "module__ein_8memory" ],
     [ "ein.numerics", "module__ein_8numerics.html", "module__ein_8numerics" ],
     [ "ein.profiling", "module__ein_8profiling.html", "module__ein_8profiling" ],

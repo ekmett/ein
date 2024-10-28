@@ -1,7 +1,7 @@
 var searchData=
 [
-  ['scope_5fevent_0',['scope_event',['../structein_1_1profiling_1_1scope__event.html',1,'ein::profiling']]],
-  ['simd_1',['simd',['../group__simd.html#structein_1_1simd',1,'ein']]],
-  ['spin_2',['spin',['../group__wait.html#structein_1_1spin',1,'ein']]],
-  ['static_5fc_5fstring_3',['static_c_string',['../classein_1_1static__c__string.html',1,'ein']]]
+  ['profile_0',['profile',['../structein_1_1profiling_1_1profile.html',1,'ein::profiling']]],
+  ['profile_3c_20std_3a_3amutex_2c_20std_3a_3achrono_3a_3ananoseconds_2c_20std_3a_3achrono_3a_3ahigh_5fresolution_5fclock_20_3e_1',['profile&lt; std::mutex, std::chrono::nanoseconds, std::chrono::high_resolution_clock &gt;',['../structein_1_1profiling_1_1profile.html',1,'ein::profiling']]],
+  ['profile_5fevent_2',['profile_event',['../namespaceein_1_1profiling.html#structein_1_1profiling_1_1profile__event',1,'ein::profiling']]],
+  ['profile_5fscope_3',['profile_scope',['../structein_1_1profiling_1_1profile__scope.html',1,'ein::profiling']]]
 ];

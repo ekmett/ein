@@ -16,7 +16,8 @@ var searchData=
   ['loadu_13',['loadu',['../group__simd.html#a51d72e83b553d4faabb189cb4259ad71',1,'ein::simd::loadu()'],['../group__simd.html#gaed90a3dee286dda1af9ca5f28513bc3a',1,'ein::loadu()']]],
   ['log_14',['log',['../structein_1_1profiling_1_1profile.html#abeab7e9e745351afd514217628d5d775',1,'ein::profiling::profile']]],
   ['loops_15',['Loops',['../group__loop__attributes.html',1,'']]],
-  ['lt_16',['LT',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b',1,'ein']]],
-  ['lt_5foq_17',['LT_OQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac80bf7e6ae5bc282b3c7878e0f9fcec6',1,'ein']]],
-  ['lt_5fos_18',['LT_OS',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a44a8abcbdbbb9d5cd4211ccc3036dae0',1,'ein']]]
+  ['lowest_16',['lowest',['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a765aa7bbd651e2c72c7ab3ebe9605cae',1,'std::numeric_limits&lt; ein::fp16 &gt;']]],
+  ['lt_17',['LT',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b',1,'ein']]],
+  ['lt_5foq_18',['LT_OQ',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371ac80bf7e6ae5bc282b3c7878e0f9fcec6',1,'ein']]],
+  ['lt_5fos_19',['LT_OS',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a44a8abcbdbbb9d5cd4211ccc3036dae0',1,'ein']]]
 ];
