@@ -27,6 +27,7 @@ target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
   cpuid.cppm
   memory.cppm
   numerics.cppm
+ # fp16.cppm
   profiling.cppm
   simd.cppm
   simd_data.cppm
