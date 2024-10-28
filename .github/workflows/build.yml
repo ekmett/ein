@@ -88,8 +88,8 @@ jobs:
         working-directory: '${{ steps.paths.outputs.gen }}'
         run: ctest -V
 
-  traditional-build:
-    name: Build without Docker
+  traditional-build-linux:
+    name: Build without Docker (linux)
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -99,6 +99,36 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2
         with:
           key: ubuntu-latest-ccache
+      - name: cache lib/cache
+        id: libcache
+        uses: actions/cache@v4
+        with:
+          path: '${{ github.workspace }}/lib/cache'
+          key: '${{ runner.os }}-cache'
+      - name: set reusable strings
+        id: paths
+        run: echo "gen=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
+      - name: configure and build
+        run: make -C '${{ github.workspace }}'
+      - name: test
+        working-directory: ${{ steps.paths.outputs.gen }}
+        run: ctest -V
+      - name: setup tmate session
+        uses: mxschmitt/action-tmate@v3
+        if: false # ${{ failure() }}
+        timeout-minutes: 10
+
+  traditional-build-macos:
+    name: Build without Docker (macos)
+    runs-on: macos-13
+    steps:
+      - uses: actions/checkout@v4
+      - uses: ./.github/actions/setup/macos/compiler
+      - uses: ./.github/actions/setup/macos/build-tools
+      - name: ccache
+        uses: hendrikmuhs/ccache-action@v1.2
+        with:
+          key: macos-13-ccache
       - name: cache lib/cache
         id: libcache
         uses: actions/cache@v4
