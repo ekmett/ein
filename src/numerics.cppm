@@ -29,11 +29,12 @@ module;
 using namespace std;
 
 import ein.types;
-import ein.bf16;
-//import ein.fp16;
 
 /// \ingroup numerics
 export module ein.numerics;
+
+export import ein.numerics.bf16;
+export import ein.numerics.fp16;
 
 namespace ein {
 /// \defgroup numerics Numerics

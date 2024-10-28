@@ -8,7 +8,7 @@
 
 module;
 
-#if EIN_PRELUDE
+#ifdef EIN_PRELUDE
 #include "prelude.hpp"
 #elifndef EIN_PCH
 #include <bit>
@@ -20,7 +20,7 @@ module;
 
 using namespace std;
 
-export module ein.fp16;
+export module ein.numerics.fp16;
 
 namespace ein {
 
