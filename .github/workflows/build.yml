@@ -42,11 +42,19 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
+      - name: whereami
+        run: ls -al '${{github.workspace}}'
+      - name: whoami
+        run: |
+	  whoami
+          id -u
       - name: download workspace
         uses: actions/upload-artifact@v4.4.3
         with:
           name: debug-pass
           path: '${{ github.workspace }}'
+      - name: Setup tmate session
+        uses: mxschmitt/action-tmate@v3
       - name: retain ccache
         uses: hendrikmuhs/ccache-action@v1.2
       - name: set paths
