@@ -1,7 +1,8 @@
 # syntax=docker/dockerfile:1.3
 
 # Base Stage: Common dependencies
-FROM ubuntu:22.04 AS base
+FROM ubuntu:24.10 AS base
+#FROM ubuntu:22.04 AS base
 WORKDIR /tmp/install
 SHELL ["/bin/bash", "-c"]
 
@@ -104,4 +105,4 @@ RUN apt-get clean \
       /usr/share/man /usr/share/info /usr/share/lintian /usr/share/linda \
       /usr/share/locale /usr/share/locales /usr/lib/locale
 
-LABEL org.opencontainers.image.description build container for https://github.com/ekmett/ein.git
+LABEL org.opencontainers.image.description build container for https://github.com/ekmett/ein.git (ubuntu 24.10)
