@@ -39,13 +39,13 @@ if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
     NAME ccache
     URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
     URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
-)
+  )
 elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
   fetchcontentcached(
     NAME ccache
     URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-darwin.tar.gz
     URL_HASH SHA256=d90514fff15943a8607e84e3f42d45f823915a92f99984f3fc88202f6295d1e8
-)
+  )
 endif()
 
 set(CMAKE_CXX_COMPILER_LAUNCHER "${CMAKE_SOURCE_DIR}/bin/ccache.sh")
@@ -58,7 +58,7 @@ set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 
 option(CODE_COVERAGE "Enable code coverage instrumentation" OFF)
 option(ENABLE_TESTS "Enable tests" ON)
-option(PRECOMPILE_HEADERS "Use precompiled headers" ON)
+option(PRECOMPILE_HEADERS "Use precompiled headers" OFF)
 option(BUILD_NATIVE "Build for current host only" ON)
 option(ASAN "address sanitization" OFF)
 option(TSAN "thread sanitization" OFF)
