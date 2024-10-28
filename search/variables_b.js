@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['radix_0',['radix',['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a88cb0108269895bd37b1a8ecad4d8049',1,'std::numeric_limits&lt; ein::fp16 &gt;']]],
-  ['round_5fstyle_1',['round_style',['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a362e22310bd1b29669657c2c8436d8c9',1,'std::numeric_limits&lt; ein::fp16 &gt;']]]
+  ['tid_0',['tid',['../namespaceein_1_1profiling.html#a250bcb745c9a040bd33567ccbf55bc14',1,'ein::profiling::profile_event']]],
+  ['ts_1',['ts',['../namespaceein_1_1profiling.html#a2a73f355469077426f709b67dadb8e22',1,'ein::profiling::profile_event']]],
+  ['type_2',['type',['../group__types.html#gafe3cd68979730cc4ce2fd0800e31d494',1,'ein']]]
 ];
