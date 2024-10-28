@@ -5,27 +5,27 @@
 PROJECT_NAME   = @PROJECT_NAME@
 PROJECT_NUMBER = @PROJECT_VERSION@
 PROJECT_BRIEF  = @PROJECT_BRIEF@
-PROJECT_LOGO   = @CMAKE_SOURCE_DIR@/doc/assets/images/ein-logo.png
-PROJECT_ICON   = @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon.ico
-IMAGE_PATH     = @CMAKE_SOURCE_DIR@/doc/assets
+PROJECT_LOGO   = @CMAKE_CURRENT_SOURCE_DIR@/assets/images/ein-logo.png
+PROJECT_ICON   = @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/favicon.ico
+IMAGE_PATH     = @CMAKE_CURRENT_SOURCE_DIR@/assets
 DOTFILE_DIRS   = @CMAKE_BINARY_DIR@/patched-dotfiles
 
 # inputs
-INPUT += @CMAKE_SOURCE_DIR@/LICENSE.md
-INPUT += @CMAKE_SOURCE_DIR@/CODE_OF_CONDUCT.md
-INPUT += @CMAKE_SOURCE_DIR@/CONTRIBUTING.md
-INPUT += @CMAKE_SOURCE_DIR@/SECURITY.md
-INPUT += @CMAKE_SOURCE_DIR@/src
-INPUT += @CMAKE_SOURCE_DIR@/doc
+INPUT += @CMAKE_CURRENT_SOURCE_DIR@/../LICENSE.md
+INPUT += @CMAKE_CURRENT_SOURCE_DIR@/../CODE_OF_CONDUCT.md
+INPUT += @CMAKE_CURRENT_SOURCE_DIR@/../CONTRIBUTING.md
+INPUT += @CMAKE_CURRENT_SOURCE_DIR@/../SECURITY.md
+INPUT += @CMAKE_CURRENT_SOURCE_DIR@/../src
+INPUT += @CMAKE_CURRENT_SOURCE_DIR@
 INPUT += @CMAKE_BINARY_DIR@/h
 INPUT += @CMAKE_SOURCE_DIR@/t
 
 EXTENSION_MAPPING = cppm=C++
 FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox *.md *.x=cpp
-FILTER_PATTERNS  = *.md=@CMAKE_SOURCE_DIR@/bin/gfm_preprocessor.sh
-FILTER_PATTERNS += *.cppm=@CMAKE_SOURCE_DIR@/bin/elifdef.sh
-FILTER_PATTERNS += *.cpp=@CMAKE_SOURCE_DIR@/bin/elifdef.sh
-FILTER_PATTERNS += *.hpp=@CMAKE_SOURCE_DIR@/bin/elifdef.sh
+FILTER_PATTERNS  = *.md=@CMAKE_CURRENT_SOURCE_DIR@/../bin/gfm_preprocessor.sh
+FILTER_PATTERNS += *.cppm=@CMAKE_CURRENT_SOURCE_DIR@/../bin/elifdef.sh
+FILTER_PATTERNS += *.cpp=@CMAKE_CURRENT_SOURCE_DIR@/../bin/elifdef.sh
+FILTER_PATTERNS += *.hpp=@CMAKE_CURRENT_SOURCE_DIR@/../bin/elifdef.sh
 STRIP_FROM_PATH = @CMAKE_BINARY_DIR@/ @CMAKE_SOURCE_DIR@/
 OUTPUT_DIRECTORY = @CMAKE_BINARY_DIR@/doc
 FULL_PATH_NAMES = NO
@@ -80,11 +80,11 @@ GENERATE_TREEVIEW      = YES
 DISABLE_INDEX          = NO
 FULL_SIDEBAR           = NO
 HTML_COLORSTYLE        = LIGHT
-HTML_HEADER            = @CMAKE_SOURCE_DIR@/doc/assets/header.html
-HTML_FOOTER            = @CMAKE_SOURCE_DIR@/doc/assets/footer.html
+HTML_HEADER            = @CMAKE_CURRENT_SOURCE_DIR@/assets/header.html
+HTML_FOOTER            = @CMAKE_CURRENT_SOURCE_DIR@/assets/footer.html
 LATEX_EMOJI_DIRECTORY  = @FETCHCONTENT_BASE_DIR@/github_emojis-src/
 #HTML_EXTRA_STYLESHEET  = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome.css
-HTML_EXTRA_STYLESHEET  = @CMAKE_BINARY_DIR@/doc/doxygen-awesome.css
+HTML_EXTRA_STYLESHEET  = @CMAKE_CURRENT_BINARY_DIR@/doxygen-awesome.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only.css
 HTML_EXTRA_STYLESHEET += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-sidebar-only-darkmode-toggle.css
 HTML_EXTRA_FILES       = @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-darkmode-toggle.js
@@ -93,30 +93,30 @@ HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-interactive-toc.js
 HTML_EXTRA_FILES      += @FETCHCONTENT_BASE_DIR@/doxygen-awesome-css-src/doxygen-awesome-tabs.js
 
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/images/ein-logo.png
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/images/ein-logo.png
 
 # favicon support
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon.ico
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon-16x16.png
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/favicon-32x32.png
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/android-chrome-192x192.png
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/android-chrome-512x512.png
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/icons/apple-touch-icon.png
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/site.web-manifest
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/favicon.ico
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/favicon-16x16.png
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/favicon-32x32.png
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/android-chrome-192x192.png
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/android-chrome-512x512.png
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/icons/apple-touch-icon.png
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/site.web-manifest
 
 # custom fonts
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Regular.woff
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Regular.woff2
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-It.woff
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-It.woff2
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Bold.woff
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/fonts/Hasklig-Bold.woff2
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/fonts/Hasklig-Regular.woff
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/fonts/Hasklig-Regular.woff2
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/fonts/Hasklig-It.woff
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/fonts/Hasklig-It.woff2
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/fonts/Hasklig-Bold.woff
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/fonts/Hasklig-Bold.woff2
 
 # support perfetto traces
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/trace.js
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/trace.js
 
 # ensure the navbar is never empty
-HTML_EXTRA_FILES      += @CMAKE_SOURCE_DIR@/doc/assets/go-home.js
+HTML_EXTRA_FILES      += @CMAKE_CURRENT_SOURCE_DIR@/assets/go-home.js
 
 HTML_COPY_CLIPBOARD    = NO
 CREATE_SUBDIRS         = NO
