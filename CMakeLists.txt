@@ -26,7 +26,6 @@ list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/etc/cmake")
 
 include(CheckIPOSupported)
 include(CheckRestrict)
-#include(FetchContent)
 include(FetchContentCached)
 
 

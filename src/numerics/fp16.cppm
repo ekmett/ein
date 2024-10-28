@@ -20,28 +20,44 @@ module;
 
 using namespace std;
 
-export module ein.fp16;
+export module ein.numerics.fp16;
 
 namespace ein {
 
 export struct fp16 {
+  using underlying_type = _Float16;
+
   _Float16 content;
 
   ein_inline ein_artificial
   constexpr fp16() noexcept = default;
 
   ein_inline ein_artificial
+  constexpr fp16(ein_noescape fp16 const &) noexcept = default;
+
+  ein_inline ein_artificial
+  constexpr fp16(ein_noescape fp16 &&) noexcept = default;
+
+  ein_inline ein_artificial
   constexpr fp16(float content) noexcept : content(content) {}
 
   ein_nodiscard ein_inline ein_artificial
-  constexpr operator float () const noexcept { return float(content); }
+  constexpr operator float (this fp16 self) noexcept { return self.content; }
+
+  ein_reinitializes ein_inline ein_artificial
+  constexpr fp16 & operator = (ein_noescape fp16 const &) noexcept
+  ein_lifetimebound = default;
+
+  ein_reinitializes ein_inline ein_artificial
+  constexpr fp16 & operator = (ein_noescape fp16 &&) noexcept
+  ein_lifetimebound = default;
 
   ein_nodiscard ein_inline ein_artificial ein_const
   friend constexpr bool operator == (fp16 x, fp16 y) noexcept {
     return x.content == y.content;
   }
 
-  ein_nodiscard ein_inline ein_artificialein_const
+  ein_nodiscard ein_inline ein_artificial ein_const
   friend constexpr bool operator != (fp16 x, fp16 y) noexcept {
     return x.content != y.content;
   }
@@ -82,16 +98,16 @@ export struct fp16 {
   }
 
   ein_nodiscard ein_inline ein_const
-  constexpr uint16_t to_bits() const noexcept {
-    return std::bit_cast<uint16_t>(content);
+  constexpr uint16_t to_bits(this fp16 self) noexcept {
+    return std::bit_cast<uint16_t>(self.content);
   }
 
-  ein_nodicard ein_inline ein_artificial ein_const
-  friend constexpr fp16 operator"" _fp16(long double v) noexcept {
-    return fp16(static_cast<float>(v));
-  }
 };
 
+export ein_nodiscard ein_inline ein_artificial ein_const
+constexpr fp16 operator"" _fp16(long double v) noexcept {
+  return fp16(static_cast<float>(v));
+}
 
 } // namespace ein
 
