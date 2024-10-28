@@ -71,12 +71,12 @@ RUN LLVM_INSTALLER=llvm.sh \
  && apt-get install -y --no-install-recommends clang-tools-${LLVM_VERSION} lld-${LLVM_VERSION} \
  && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${LLVM_VERSION} 200 \
  && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-${LLVM_VERSION} 200 \
- && update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-${LLVM_VERSION} 200 \
- && tar cfpPJ /tmp/llvm.tar.xz \
-        /usr/bin/clang* \
-        /usr/lib/llvm-${LLVM_VERSION} \
-        /usr/lib/clang \
-        /usr/share/bash-completion/completions/clang*
+ && update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-${LLVM_VERSION} 200
+# && tar cfpPJ /tmp/llvm.tar.xz \
+#        /usr/bin/clang* \
+#        /usr/lib/llvm-${LLVM_VERSION} \
+#        /usr/lib/clang \
+#        /usr/share/bash-completion/completions/clang*
 
 # Node Stage
 #FROM base AS node
