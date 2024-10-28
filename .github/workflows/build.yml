@@ -42,17 +42,6 @@ jobs:
     steps:
       - name: checkout
         uses: actions/checkout@v4
-      - name: whereami
-        run: ls -al '/__w/ein/ein' || echo FAILED
-      - name: whoami
-        run: |
-          whoami || echo FAILED
-          id -u || echo FIALED
-      - name: download workspace
-        uses: actions/upload-artifact@v4.4.3
-        with:
-          name: debug-pass
-          path: '${{ github.workspace }}'
       - name: Setup tmate session
         uses: mxschmitt/action-tmate@v3
         if: ${{ failure() }}
@@ -61,11 +50,9 @@ jobs:
         uses: hendrikmuhs/ccache-action@v1.2
       - name: set paths
         id: paths
-        run: echo "gen=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
-      - name: browse
-        run: find '${{ github.workspace }}' -print || echo FAILED
+        run: echo "gen=/__w/ein/ein/gen" >> "$GITHUB_OUTPUT"
       - name: make
-        run: make -C '${{ github.workspace }}' || echo FAILED
+        run: make -C /__w/ein/ein || echo FAILED
       - name: upload binaries
         uses: actions/upload-artifact@v4.4.3
         with:
@@ -92,28 +79,6 @@ jobs:
         with:
           github_token: '${{ secrets.GITHUB_TOKEN }}'  # Use single quotes here
           publish_dir: ${{ steps.paths.outputs.gen }}/doc/html/
-
-  test:
-    name: Test
-    runs-on: ubuntu-latest
-    container:
-      image: '${{ needs.docker.outputs.image }}'  # Use single quotes here
-    needs:
-      - docker
-      - build
-    steps:
-      - name: checkout
-        uses: actions/checkout@v4
-      - name: set paths
-        id: paths
-        run: echo "gen=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
-      - name: download binaries
-        uses: actions/download-artifact@v4.1.8
-        with:
-          name: bin
-          path: ${{ steps.paths.outputs.gen }}
-      - name: chmod
-        run: chmod -f +x ${{ steps.paths.outputs.gen }}/bin/* 2>/dev/null || true
       - name: test
         working-directory: ${{ steps.paths.outputs.gen }}
         run: ctest -V
