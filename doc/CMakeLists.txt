@@ -32,7 +32,7 @@ check_doxygen_version()
 # TODO: just download it ourselves if not
 
 if(DOXYGEN_FOUND)
-  message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
+  #message(STATUS "Found Doxygen ${DOXYGEN_VERSION}: ${DOXYGEN_EXECUTABLE}")
 
   # get doxygen-awesome-css
   fetchcontentcached(
