@@ -15,3 +15,4 @@
 #include "third-party.hpp" // third-party libraries we need
 #include "attributes.hpp"  // our custom attribute wrappers
 #include "assert.hpp"      // assertions
+#include "posix.hpp"       // posix functions e.g. `get_pid`
