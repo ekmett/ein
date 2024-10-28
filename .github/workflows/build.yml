@@ -47,6 +47,8 @@ jobs:
       - name: set paths
         id: paths
         run: echo "gen=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
+      - name: browse
+        run: find '${{ github.workspace }}' -print
       - name: make
         run: make -C '${{ github.workspace }}'
       - name: upload binaries
