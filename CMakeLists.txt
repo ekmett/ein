@@ -35,11 +35,19 @@ include(FetchContentCached)
 
 set(FETCHCONTENT_QUIET ON)  # Suppresses FetchContent output
 
-fetchcontentcached(
-  NAME ccache
-  URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
-  URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
+if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+  fetchcontentcached(
+    NAME ccache
+    URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
+    URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
 )
+elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+  fetchcontentcached(
+    NAME ccache
+    URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-darwin.tar.gz
+    URL_HASH SHA256=d90514fff15943a8607e84e3f42d45f823915a92f99984f3fc88202f6295d1e8
+)
+endif()
 
 set(CMAKE_CXX_COMPILER_LAUNCHER "${CMAKE_SOURCE_DIR}/bin/ccache.sh")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -265,6 +273,7 @@ list(APPEND SOURCE_HEADER_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/h/prelude.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/std.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/third-party.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/posix.hpp"
 )
 
 # Replace SOURCE_DIR with BINARY_DIR for each header
