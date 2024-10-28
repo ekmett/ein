@@ -58,7 +58,7 @@ set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 
 option(CODE_COVERAGE "Enable code coverage instrumentation" OFF)
 option(ENABLE_TESTS "Enable tests" ON)
-option(PRECOMPILE_HEADERS "Use precompiled headers" ON)
+option(PRECOMPILE_HEADERS "Use precompiled headers" OFF)
 option(BUILD_NATIVE "Build for current host only" ON)
 option(ASAN "address sanitization" OFF)
 option(TSAN "thread sanitization" OFF)
@@ -285,7 +285,7 @@ endforeach()
 # Custom command to copy header files
 add_custom_command(
   OUTPUT ${OUTPUT_HEADER_FILES}
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_BINARY_DIR}/h"
+  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_CURRENT_BINARY_DIR}/h"
   DEPENDS ${SOURCE_HEADER_FILES}
 )
 
