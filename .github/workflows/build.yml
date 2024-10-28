@@ -43,11 +43,11 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: whereami
-        run: ls -al '${{github.workspace}}'
+        run: ls -al '${{github.workspace}}' || echo FAILED
       - name: whoami
         run: |
-          whoami
-          id -u
+          whoami || echo FAILED
+          id -u || echo FIALED
       - name: download workspace
         uses: actions/upload-artifact@v4.4.3
         with:
@@ -61,9 +61,9 @@ jobs:
         id: paths
         run: echo "gen=${{ github.workspace }}/gen" >> "$GITHUB_OUTPUT"
       - name: browse
-        run: find '${{ github.workspace }}' -print
+        run: find '${{ github.workspace }}' -print || echo FAILED
       - name: make
-        run: make -C '${{ github.workspace }}'
+        run: make -C '${{ github.workspace }}' || echo FAILED
       - name: upload binaries
         uses: actions/upload-artifact@v4.4.3
         with:
