@@ -51,7 +51,6 @@ gen/patched-dotfiles: gen
 
 build: gen gen/patched-dotfiles
 	@cmake --build gen -j
-	@echo Tracing Build
 	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json || @echo TRACE FAILED
 
 run: $(RUN)
