@@ -47,7 +47,7 @@ PREDEFINED += ein_restrict=restrict
 PREDEFINED += ein_nonnull(x)="/** \qualifier \"[[nonnull(x)]]\" */"
 PREDEFINED += ein_null_terminated_string_arg(x)=
 
-QUIET = NO
+QUIET = YES
 RECURSIVE = NO
 
 ENABLE_PREPROCESSING = YES
