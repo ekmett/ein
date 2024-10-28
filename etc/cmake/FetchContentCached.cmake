@@ -32,25 +32,25 @@ function(FetchContentCached)
 
   # Check if the main target already exists (to avoid redefinition errors)
   if(TARGET ${FCD_NAME})
-     message(NOTICE "Target '${FCD_NAME}' already exists. Skipping download and configuration.")
+#     message(NOTICE "Target '${FCD_NAME}' already exists. Skipping download and configuration.")
     return()
   endif()
 
   # Check if the target directory exists
   if(EXISTS "${TARGET_DIR}")
-    message(NOTICE "Found target directory for '${FCD_NAME}' at ${TARGET_DIR}.")
+#    message(NOTICE "Found target directory for '${FCD_NAME}' at ${TARGET_DIR}.")
 
     # Check if the directory contains a CMakeLists.txt file
     if(EXISTS "${TARGET_DIR}/CMakeLists.txt")
-      message(NOTICE "Using cached dependency '${FCD_NAME}' from ${TARGET_DIR}.")
+#      message(NOTICE "Using cached dependency '${FCD_NAME}' from ${TARGET_DIR}.")
       add_subdirectory("${TARGET_DIR}" "${FCD_NAME}-build")
     else()
-      message(NOTICE "Target directory exists but no CMakeLists.txt found in '${TARGET_DIR}'.")
-      message(NOTICE "Dependency '${FCD_NAME}' might be non-CMake or requires manual setup.")
+#      message(NOTICE "Target directory exists but no CMakeLists.txt found in '${TARGET_DIR}'.")
+#      message(NOTICE "Dependency '${FCD_NAME}' might be non-CMake or requires manual setup.")
     endif()
   else()
     # If the directory does not exist, use FetchContent to download the dependency
-    message(NOTICE "Downloading and configuring dependency '${FCD_NAME}'...")
+#    message(NOTICE "Downloading and configuring dependency '${FCD_NAME}'...")
 
     # Declare the dependency with the full original arguments
     FetchContent_Declare(${FCD_NAME} SOURCE_DIR "${TARGET_DIR}" ${original_ARGS})
