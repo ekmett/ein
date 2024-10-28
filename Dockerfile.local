@@ -12,4 +12,3 @@ USER runner
 WORKDIR /home/runner
 ENV HOME=/home/runner
 LABEL org.opencontainers.image.description local build container for https://github.com/ekmett/ein.git
-

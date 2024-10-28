@@ -6,12 +6,12 @@ WORKDIR /tmp/install
 SHELL ["/bin/bash", "-c"]
 
 RUN apt-get update \
- && apt-get install -y lsb-release software-properties-common wget unzip gnupg make sudo graphviz \
+ && apt-get install -y lsb-release software-properties-common wget unzip gnupg make sudo graphviz git \
  && rm -rf /usr/share/doc /usr/share/man
 
 # CMake
-#FROM base AS cmake
-#WORKDIR /tmp/install
+FROM base AS cmake
+WORKDIR /tmp/install
 ENV CMAKE_VERSION=3.30.5
 RUN set -x \
  && CMAKE_INSTALLER=cmake-${CMAKE_VERSION}-linux-x86_64.sh \
@@ -23,34 +23,14 @@ RUN tar cfpPJ /tmp/cmake.tar.xz \
       /usr/bin/cmake /usr/bin/cpack /usr/bin/ctest \
       /usr/share/bash-completion/completions/cmake \
       /usr/share/bash-completion/completions/cpack \
-      /usr/share/bash-completion/completions/ctest
+      /usr/share/bash-completion/completions/ctest \
+      /usr/share/cmake*
 
 RUN rm -rf /tmp/install
 
-# LLVM
-#FROM base AS llvm
-#WORKDIR /tmp/install
-ENV LLVM_VERSION=19
-RUN LLVM_INSTALLER=llvm.sh \
- && wget -q "https://apt.llvm.org/${LLVM_INSTALLER}" \
- && sha256sum -c <(echo "3080a6f961db6559698ea7692f0d5efa5ad9fde9ac6cf0758cfab134509b5bd6  ${LLVM_INSTALLER}") \
- && bash ${LLVM_INSTALLER} 19 \
- && apt-get install -y --no-install-recommends clang-tools-${LLVM_VERSION} lld-${LLVM_VERSION} \
- && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${LLVM_VERSION} 200 \
- && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-${LLVM_VERSION} 200 \
- && update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-${LLVM_VERSION} 200 \
- && tar cfpPJ /tmp/llvm.tar.xz \
-        /usr/bin/clang* \
-        /usr/lib/llvm-${LLVM_VERSION} \
-        /usr/lib/clang \
-        /usr/share/bash-completion/completions/clang*
-
-#RUN apt-get clean \
-# && rm -rf /var/lib/apt/lists/* /tmp/install
-
 # Misc.
-#FROM base AS misc
-#WORKDIR /tmp/install
+FROM base AS misc
+WORKDIR /tmp/install
 ENV DOXYGEN_VERSION=1.12.0 \
     CCACHE_VERSION=4.10.2 \
     NINJA_VERSION=1.12.1
@@ -78,7 +58,28 @@ RUN tar xfJ ${CCACHE_ARCHIVE} -O ccache-${CCACHE_VERSION}-linux-x86_64/ccache > 
  && chmod +x /usr/local/bin/ccache
 
 RUN tar cfpPJ /tmp/misc.tar.xz /usr/local/bin/doxygen /usr/local/bin/ccache /usr/local/bin/ninja
-#RUN rm -rf /var/lib/apt/lists/* /tmp/install
+RUN rm -rf /var/lib/apt/lists/* /tmp/install
+
+# LLVM
+FROM base AS llvm
+WORKDIR /tmp/install
+ENV LLVM_VERSION=19
+RUN LLVM_INSTALLER=llvm.sh \
+ && wget -q "https://apt.llvm.org/${LLVM_INSTALLER}" \
+ && sha256sum -c <(echo "3080a6f961db6559698ea7692f0d5efa5ad9fde9ac6cf0758cfab134509b5bd6  ${LLVM_INSTALLER}") \
+ && bash ${LLVM_INSTALLER} 19 \
+ && apt-get install -y --no-install-recommends clang-tools-${LLVM_VERSION} lld-${LLVM_VERSION} \
+ && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${LLVM_VERSION} 200 \
+ && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-${LLVM_VERSION} 200 \
+ && update-alternatives --install /usr/bin/ld ld /usr/bin/ld.lld-${LLVM_VERSION} 200 \
+ && tar cfpPJ /tmp/llvm.tar.xz \
+        /usr/bin/clang* \
+        /usr/lib/llvm-${LLVM_VERSION} \
+        /usr/lib/clang \
+        /usr/share/bash-completion/completions/clang*
+
+#RUN apt-get clean \
+# && rm -rf /var/lib/apt/lists/* /tmp/install
 
 # Node Stage
 #FROM base AS node
@@ -89,30 +90,20 @@ RUN NODE_INSTALLER=setup_${NODE_VERSION}.x \
  && sha256sum -c <(echo "dd3bc508520fcdfdc8c4360902eac90cba411a7e59189a80fb61fcbea8f4199c  ${NODE_INSTALLER}") \
  && bash ${NODE_INSTALLER} \
  && apt-get install -y nodejs
-# libnode-dev
-# && tar cfpPJ /tmp/node.tar.xz /usr/bin/node
-#RUN (dpkg -L nodejs libnode-dev | grep -vE "/usr/share/(man|doc)" | sort -u | while read -r file; do \
-#       [ -f "$file" ] && tar -rvfPJ /tmp/node.tar.xz "$file"; \
-#    done)
 
-# RUN tar cfpPJ /tmp/node.tar.xz /usr/bin/node* /usr/lib/node* /usr/share/node* \
-
-# RUN apt-get clean && rm -rf /var/lib/apt/lists/* /tmp/install
-
-# Final Stage: Assemble only the necessary parts
 #FROM base AS gather
-#COPY --from=cmake /tmp/cmake.tar.xz /tmp/
+COPY --from=cmake /tmp/cmake.tar.xz /tmp/
 #COPY --from=llvm  /tmp/llvm.tar.xz /tmp/
 #COPY --from=node  /tmp/node.tar.xz /tmp/
-#COPY --from=misc  /tmp/misc.tar.xz /tmp/
+COPY --from=misc  /tmp/misc.tar.xz /tmp/
 
 #FROM base AS final
-#WORKDIR /tmp
+WORKDIR /tmp
 #COPY --from=gather /tmp/*.tar.xz /tmp/
 RUN ls *.tar.xz | xargs -I {} tar xfpJ {} -C / && rm -rf *.tar.xz
-RUN apt-get install -y git
-RUN rm -rf /var/lib/apt/lists/* /usr/share/doc /usr/share/doc-base \
-      /usr/share/man /usr/share/info /usr/share/lintian /usr/share/linda \
-      /usr/share/locale /usr/share/locales /usr/lib/locale
+RUN rm -rf /var/lib/apt/lists/*
+#RUN rm -rf /usr/share/doc /usr/share/doc-base \
+#      /usr/share/man /usr/share/info /usr/share/lintian /usr/share/linda \
+#      /usr/share/locale /usr/share/locales /usr/lib/locale
 
 LABEL org.opencontainers.image.description build container for https://github.com/ekmett/ein.git
