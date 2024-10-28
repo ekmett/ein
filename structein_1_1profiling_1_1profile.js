@@ -16,7 +16,7 @@ var structein_1_1profiling_1_1profile =
     [ "operator=", "structein_1_1profiling_1_1profile.html#a829b69f6937e4623912b0867924d16d5", null ],
     [ "operator=", "structein_1_1profiling_1_1profile.html#aae2273801e961c7cb63dc5ea1423fc28", null ],
     [ "save", "structein_1_1profiling_1_1profile.html#aefda25e963a2e0c27546f2c961ca8b91", null ],
-    [ "set_process_name", "structein_1_1profiling_1_1profile.html#ab1007e7a7b45e0c10c24929a9cc2de65", null ],
+    [ "set_process_name", "structein_1_1profiling_1_1profile.html#a5e11bd6b4cc050b5ec2fccae625d4aba", null ],
     [ "set_thread_name", "structein_1_1profiling_1_1profile.html#a9827fdecb65fa747db45bb7eea5be407", null ],
     [ "operator<<", "structein_1_1profiling_1_1profile.html#a14b309ef5044bf8d48196583fec61ae4", null ],
     [ "events", "structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d", null ],

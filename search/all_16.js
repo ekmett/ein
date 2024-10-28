@@ -11,7 +11,7 @@ var searchData=
   ['scope_5fevent_8',['scope_event',['../structein_1_1profiling_1_1scope__event.html',1,'ein::profiling::scope_event&lt; Profile &gt;'],['../structein_1_1profiling_1_1scope__event.html#a96e678d9a4066375ee19c87b08f6ebd4',1,'ein::profiling::scope_event::scope_event()']]],
   ['security_20policy_9',['Security Policy',['../security_policy_page.html',1,'index']]],
   ['security_2emd_10',['SECURITY.md',['../SECURITY_8md.html',1,'']]],
-  ['set_5fprocess_5fname_11',['set_process_name',['../structein_1_1profiling_1_1profile.html#ab1007e7a7b45e0c10c24929a9cc2de65',1,'ein::profiling::profile']]],
+  ['set_5fprocess_5fname_11',['set_process_name',['../structein_1_1profiling_1_1profile.html#a5e11bd6b4cc050b5ec2fccae625d4aba',1,'ein::profiling::profile']]],
   ['set_5fthread_5fname_12',['set_thread_name',['../structein_1_1profiling_1_1profile.html#a9827fdecb65fa747db45bb7eea5be407',1,'ein::profiling::profile']]],
   ['shuffle_13',['shuffle',['../group__simd.html#a9db6ce886e40f067782bfdd8a2384446',1,'ein::simd::shuffle() noexcept'],['../group__simd.html#af08a5da9c45a7ef484c7dafd678e49c1',1,'ein::simd::shuffle(simd&lt; T, N &gt; b) noexcept'],['../group__simd.html#gac2c105a2927f9ca9e44820eb74633c12',1,'ein::shuffle(simd_type auto x)'],['../group__simd.html#ga186940519ca17135b07b6816ae6402cd',1,'ein::shuffle(simd_type auto x, simd_type auto y)']]],
   ['simd_14',['SIMD',['../group__simd.html',1,'']]],
