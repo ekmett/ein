@@ -20,7 +20,7 @@ jobs:
         id: hash
         run: |
           hash=$(sha256sum "${GITHUB_WORKSPACE}/Dockerfile" | awk '{print substr($1, 1, 12)}')
-          image="ghcr.io/${GITHUB_REPOSITORY}:${hash}" #-local-1001"
+          image="ghcr.io/${GITHUB_REPOSITORY}:${hash}-local-1001"
           echo "docker image: $image"
           echo "image=${image}" >> "$GITHUB_OUTPUT"
 
