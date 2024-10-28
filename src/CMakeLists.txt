@@ -55,12 +55,12 @@ lto(ein)
 # PRE
 # EIN_PUBLIC=1 is far slower
 
+
 if(PRECOMPILE_HEADERS)
   target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
   target_compile_definitions(ein PUBLIC EIN_PCH=1)
 else()
-  # uncomment to test this mode
-  # target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
+  target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
 endif()
 
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!

@@ -157,7 +157,16 @@ struct profile {
   }
 
   ein_inline
-  void set_process_name(std::string name = program_invocation_short_name) noexcept {
+  void set_process_name(std::string name = "") noexcept {
+#if defined(__APPLE__)
+    if (name.empty()) {
+        name = getprogname();
+    }
+#elif defined(__linux__)
+    if (name.empty()) {
+        name = program_invocation_short_name;
+    }
+#endif
     log({.name = "process_name"_ss, .ph = event_type::metadata, .args = { {"name",name}}});
   }
 
