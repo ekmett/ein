@@ -20,7 +20,7 @@ module;
 
 using namespace std;
 
-export module ein.numerics.bf16;
+export module ein.bf16;
 
 namespace ein {
 

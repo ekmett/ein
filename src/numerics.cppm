@@ -29,8 +29,8 @@ module;
 using namespace std;
 
 import ein.types;
-import ein.numerics.bf16;
-import ein.numerics.fp16;
+import ein.bf16;
+//import ein.fp16;
 
 /// \ingroup numerics
 export module ein.numerics;
