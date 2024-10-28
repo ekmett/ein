@@ -1,25 +1,20 @@
 #!/bin/bash
 
 # Define the custom image name
-IMAGE_NAME="ubuntu-nonroot"
+# IMAGE_NAME="ekmett/ein:ubuntu22-04"
+IMAGE_NAME="catthehacker/ubuntu:act-latest"
 
 # Check if the custom Docker image exists
 if ! docker images --format "{{.Repository}}" | grep -q "^${IMAGE_NAME}$"; then
   echo "Image ${IMAGE_NAME} not found. Building it now..."
 
+
+
   # let me be sloppy with host vs. device
   export HOST_HOME=${HOME}
   export HOST_UID=$(id -u)
-  # Build the Docker image with the non-root user, host's HOME as WORKDIR, and UID
-  docker build -t "${IMAGE_NAME}" --build-arg HOST_HOME="${HOST_HOME}" --build-arg HOST_UID="${HOST_UID}" -<<EOF
-    FROM ubuntu:latest
-    ARG HOST_UID
-    ARG HOST_HOME
-    RUN apt-get update && apt-get install -y sudo make wget curl git
-    RUN useradd -m -u \${HOST_UID} -s /bin/bash -d \${HOST_HOME} runner
-    ENV PATH=\${HOST_HOME}/bin:/usr/local/bin:/usr/bin:/bin
-    USER runner
-    WORKDIR \${HOST_HOME}
+
+  cat Dockerfile | docker build --build-arg HOST_UID=$(id -u) -t "${IMAGE}" -f - -
 EOF
 
   echo "Image ${IMAGE_NAME} built successfully."
