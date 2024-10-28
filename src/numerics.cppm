@@ -225,7 +225,7 @@ export enum class ein_nodiscard CMP : size_t {
 
 /// perform an avx512 style floating point comparison for scalar values.
 export template <CMP imm8, typename T>
-requires (one_of_t<T,float,double,bf16,fp16> && (size_t(imm8) < 32uz))
+requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz))
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp(T a, T b) noexcept {
   using enum CMP;
