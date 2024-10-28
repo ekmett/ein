@@ -28,16 +28,6 @@ window.addEventListener("DOMContentLoaded", () => {
   });
 });
 
-/*
-window.addEventListener("DOMContentLoaded", () => {
-  document.querySelectorAll('a[href$=".trace"], a[href$=".json"]').forEach(anchor => {
-    const trace_url = anchor.getAttribute("href");
-    anchor.removeAttribute("href");
-    anchor.style.cursor = "pointer";
-    anchor.addEventListener("click", (event) => { event.preventDefault(); perfetto(trace_url); });
-  });
-});
-*/
 // launch perfetto for a given trace url
 async function perfetto(trace_url) {
   const title = trace_url.split('/').pop().replace(/\.(trace|json)$/, "");
