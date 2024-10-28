@@ -43,7 +43,7 @@ jobs:
       - name: checkout
         uses: actions/checkout@v4
       - name: whereami
-        run: ls -al '${{github.workspace}}' || echo FAILED
+        run: ls -al '/__w/ein/ein' || echo FAILED
       - name: whoami
         run: |
           whoami || echo FAILED
