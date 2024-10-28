@@ -102,8 +102,8 @@ WORKDIR /tmp
 #COPY --from=gather /tmp/*.tar.xz /tmp/
 RUN ls *.tar.xz | xargs -I {} tar xfpJ {} -C / && rm -rf *.tar.xz
 RUN rm -rf /var/lib/apt/lists/*
-#RUN rm -rf /usr/share/doc /usr/share/doc-base \
-#      /usr/share/man /usr/share/info /usr/share/lintian /usr/share/linda \
+RUN rm -rf /usr/share/doc /usr/share/doc-base \
+      /usr/share/man /usr/share/info /usr/share/lintian /usr/share/linda
 #      /usr/share/locale /usr/share/locales /usr/lib/locale
 
 LABEL org.opencontainers.image.description build container for https://github.com/ekmett/ein.git
