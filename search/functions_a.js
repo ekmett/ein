@@ -1,5 +1,0 @@
-var searchData=
-[
-  ['profile_0',['profile',['../structein_1_1profiling_1_1profile.html#a0df2cfa8ae4635d58eacfc96139f8c12',1,'ein::profiling::profile::profile(profile const &amp;)=delete'],['../structein_1_1profiling_1_1profile.html#ac305eed35d4bb433dadbd6286649fa55',1,'ein::profiling::profile::profile(profile &amp;&amp;)=delete'],['../structein_1_1profiling_1_1profile.html#a6ef61ae42c24d11458c42666f0e1c53c',1,'ein::profiling::profile::profile() noexcept']]],
-  ['profile_5fscope_1',['profile_scope',['../structein_1_1profiling_1_1profile__scope.html#a2b797a639c5c5219d9f68a53835024af',1,'ein::profiling::profile_scope::profile_scope()=delete'],['../structein_1_1profiling_1_1profile__scope.html#a3180bdc563944455af0b5418f06d908c',1,'ein::profiling::profile_scope::profile_scope(profile_scope const &amp;)=delete'],['../structein_1_1profiling_1_1profile__scope.html#af3c4920e5e947eaaffb9ab0a8ddf7048',1,'ein::profiling::profile_scope::profile_scope(profile_scope &amp;&amp;)=delete'],['../structein_1_1profiling_1_1profile__scope.html#a747ed3e9cf5da98c7fc739786473e43e',1,'ein::profiling::profile_scope::profile_scope(std::filesystem::path filename) noexcept']]]
-];

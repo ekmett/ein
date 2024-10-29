@@ -1,6 +1,0 @@
-<map id="ein::shuffle" name="ein::shuffle">
-<area shape="rect" id="Node000001" title="create a new simd register with contents drawn from this one" alt="" coords="148,29,243,55"/>
-<area shape="poly" id="edge1_Node000001_Node000001" title=" " alt="" coords="220,18,212,11,195,8,181,10,173,15,172,20,176,28,171,30,166,21,169,11,179,5,195,3,215,6,223,15"/>
-<area shape="rect" id="Node000002" href="$group__simd.html#ga186940519ca17135b07b6816ae6402cd" title="create a new simd register with contents drawn from these two" alt="" coords="5,29,100,55"/>
-<area shape="poly" id="edge2_Node000001_Node000002" title=" " alt="" coords="134,45,100,45,100,39,134,39"/>
-</map>
