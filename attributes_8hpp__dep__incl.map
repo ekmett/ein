@@ -1,0 +1,23 @@
+<map id="attributes.hpp" name="attributes.hpp">
+<area shape="rect" id="Node000001" title="an opinionated subset of clang/gcc attributes" alt="" coords="600,5,713,31"/>
+<area shape="rect" id="Node000002" href="$cpuid_8cppm.html" title=" " alt="" coords="5,79,103,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="587,28,376,49,116,81,103,83,102,78,115,76,375,44,586,23"/>
+<area shape="rect" id="Node000003" href="$memory_8cppm.html" title=" " alt="" coords="127,79,242,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="587,32,254,81,243,83,242,78,254,76,586,27"/>
+<area shape="rect" id="Node000004" href="$numerics_8cppm.html" title=" " alt="" coords="266,79,389,104"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="591,36,381,81,380,76,590,31"/>
+<area shape="rect" id="Node000005" href="$prelude_8hpp.html" title=" " alt="" coords="413,79,511,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="614,38,495,81,493,76,612,33"/>
+<area shape="rect" id="Node000006" href="$profiling_8cppm.html" title=" " alt="" coords="535,79,650,104"/>
+<area shape="poly" id="edge5_Node000001_Node000006" title=" " alt="" coords="639,43,605,80,601,77,635,39"/>
+<area shape="rect" id="Node000007" href="$simd_8cppm.html" title=" " alt="" coords="675,79,769,104"/>
+<area shape="poly" id="edge6_Node000001_Node000007" title=" " alt="" coords="679,39,713,77,709,80,675,43"/>
+<area shape="rect" id="Node000008" href="$simd__data_8cppm.html" title=" " alt="" coords="794,79,925,104"/>
+<area shape="poly" id="edge7_Node000001_Node000008" title=" " alt="" coords="703,33,827,76,826,81,701,38"/>
+<area shape="rect" id="Node000009" href="$static__string_8cppm.html" title=" " alt="" coords="949,79,1092,104"/>
+<area shape="poly" id="edge8_Node000001_Node000009" title=" " alt="" coords="727,30,962,76,961,81,726,36"/>
+<area shape="rect" id="Node000010" href="$types_8cppm.html" title=" " alt="" coords="1117,79,1215,104"/>
+<area shape="poly" id="edge9_Node000001_Node000010" title=" " alt="" coords="727,25,899,46,1105,76,1117,78,1116,83,1104,81,899,52,727,30"/>
+<area shape="rect" id="Node000011" href="$wait_8cppm.html" title="waiting strategies" alt="" coords="1239,79,1330,104"/>
+<area shape="poly" id="edge10_Node000001_Node000011" title=" " alt="" coords="728,22,951,42,1228,76,1239,78,1239,83,1227,81,951,47,727,27"/>
+</map>

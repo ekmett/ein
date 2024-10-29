@@ -1,0 +1,5 @@
+<map id="ein::simd::load" name="ein::simd::load">
+<area shape="rect" id="Node000001" title=" " alt="" coords="132,5,251,31"/>
+<area shape="rect" id="Node000002" href="$group__simd.html#gad2e79d4163046939c2ae3473a9069bb6" title="load data from aligned memory" alt="" coords="5,5,84,31"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="119,21,84,21,84,15,119,15"/>
+</map>

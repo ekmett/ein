@@ -1,0 +1,19 @@
+<map id="wait.cppm" name="wait.cppm">
+<area shape="rect" id="Node000001" title="waiting strategies" alt="" coords="147,5,237,31"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,152,72,177"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="181,33,63,144,59,141,178,29"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="297,79,389,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="217,28,307,70,304,75,215,33"/>
+<area shape="rect" id="Node000004" href="$attributes_8hpp.html" title="an opinionated subset of clang/gcc attributes" alt="" coords="97,152,210,177"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="191,32,163,139,157,138,186,30"/>
+<area shape="rect" id="Node000005" href="$cpuid_8cppm.html" title=" " alt="" coords="191,79,273,104"/>
+<area shape="poly" id="edge4_Node000001_Node000005" title=" " alt="" coords="201,30,221,65,216,68,196,32"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="202,107,84,150,82,145,200,102"/>
+<area shape="poly" id="edge8_Node000005_Node000004" title=" " alt="" coords="221,106,178,145,174,141,218,102"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="235,152,291,177"/>
+<area shape="poly" id="edge5_Node000005_Node000006" title=" " alt="" coords="240,103,255,139,250,141,235,105"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="315,152,413,177"/>
+<area shape="poly" id="edge7_Node000005_Node000007" title=" " alt="" coords="254,102,332,143,329,148,252,106"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="437,152,507,177"/>
+<area shape="poly" id="edge9_Node000005_Node000008" title=" " alt="" coords="271,101,425,147,423,152,270,107"/>
+</map>
