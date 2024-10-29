@@ -41,6 +41,7 @@ var menudata={children:[
 {text:"s",url:"modulemembers.html#index_s"},
 {text:"t",url:"modulemembers.html#index_t"},
 {text:"u",url:"modulemembers.html#index_u"},
+{text:"v",url:"modulemembers.html#index_v"},
 {text:"w",url:"modulemembers.html#index_w"}]},
 {text:"Functions",url:"modulemembers_func.html",children:[
 {text:"c",url:"modulemembers_func.html#index_c"},

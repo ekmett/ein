@@ -49,11 +49,13 @@ var module__ein_8numerics =
     ] ],
     [ "ein::int_t", "module__ein_8numerics.html#ga44878eae47626eacca18302e151e5001", null ],
     [ "ein::uint_t", "module__ein_8numerics.html#gab9bd44183e9aa86139541a3690cf8a2c", null ],
+    [ "ein::imm_t::operator size_t", "module__ein_8numerics.html#afb3ffad544d48567a335b195795cdab3", null ],
     [ "ein::cmp_unord", "module__ein_8numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e", null ],
     [ "ein::cmp_ord", "module__ein_8numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f", null ],
     [ "ein::scalef", "module__ein_8numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f", null ],
     [ "ein::cmpint", "module__ein_8numerics.html#ga772b85a099ed110b7f03db897c27b05b", null ],
     [ "ein::cmp", "module__ein_8numerics.html#gadeb9c3d409bcba9ea1bad3b5df34eb8d", null ],
+    [ "ein::imm_t::value", "module__ein_8numerics.html#afa2b66046ea1aedfd916e12d1bb2289a", null ],
     [ "ein::imm", "module__ein_8numerics.html#ga9f8820229adbc8c614428c448a370015", null ],
     [ "ein::max_fp_comparison_predicate", "module__ein_8numerics.html#ga2b09119ae81703a8158113efe9708d8b", null ]
 ];
