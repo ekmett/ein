@@ -29,9 +29,6 @@ endif
 
 all: build
 
-png: gen/ein.png
-	@echo "\nDependency diagram available as gen/ein.png"
-
 serve: build
 	@echo Running http doc server in the foreground on port $(PORT)
 	@python3 -m http.server $(PORT) -d gen/doc/html
@@ -43,16 +40,6 @@ server-start: build
 server-stop:
 	@pkill -f "python3 -m http.server $(PORT) -d gen/doc/html"
 
-gen/ein.png: gen gen/doc/patched-dotfiles
-	@dot -Tpng -o gen/ein.png gen/doc/patched-dotfiles/ein.dot
-
-gen/doc/patched-dotfiles: gen
-	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
-
-build: gen gen/patched-dotfiles
-	@cmake --build gen -j
-	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json || @echo TRACE FAILED
-
 run: $(RUN)
 
 gen: $(CMAKELISTS)
@@ -60,6 +47,19 @@ gen: $(CMAKELISTS)
 	@mkdir -p gen/dotfiles
 	@cmake $(LOGLEVEL) --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
 	@touch gen
+
+gen/doc/patched-dotfiles: gen
+	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
+
+gen/ein.png: gen gen/doc/patched-dotfiles
+	@dot -Tpng -o gen/ein.png gen/doc/patched-dotfiles/ein.dot
+
+png: gen/ein.png
+	@echo "\nDependency diagram available as gen/ein.png"
+
+build: gen gen/doc/patched-dotfiles
+	@cmake --build gen -j
+	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json || @echo TRACE FAILED
 
 lint:
 	bin/check_whitespace.sh
