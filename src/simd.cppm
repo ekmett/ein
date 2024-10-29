@@ -18,7 +18,8 @@ module;
 #include <initializer_list>
 #include <type_traits>
 #include <algorithm>
-#include <immintrin.h>
+//#include <immintrin.h>
+#include <xmmintrin.h>
 #include "attributes.hpp"
 #endif
 
@@ -49,8 +50,15 @@ import ein.types;
 import ein.simd_data;
 
 namespace ein {
+
 /// \defgroup simd SIMD
 /// \{
+
+export template <typename T, size_t N> requires (has_simd_type<T,N>)
+struct ein_nodiscard simd;
+
+export template <typename T, size_t N> requires (has_simd_type<T,N>)
+constexpr void store(T * p, simd<T, N> x) noexcept;
 
 /// \brief simd primitive definition
 export template <typename T, size_t N> requires (has_simd_type<T,N>)
@@ -1060,47 +1068,72 @@ public:
   /// \name stores
   /// \{
 
-  ein_inline ein_artificial ein_hidden
-  friend constexpr void store(T * p, simd x) noexcept {
+  friend constexpr void ein::store<T, N>(T * p, simd<T, N> x) noexcept;
+  static constexpr void store(T* p, simd<T, N> x) noexcept {
+    // case compile time
     if consteval {
-      for (size_t i = 0;i<N;++i)
-        p[i] = x.data[i];
-    } else {
-      EIN_SWITCH(
-        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
-        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
-        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
-      )
-    }
-  }
+        for (size_t i = 0;i<N;++i)
+          p[i] = x.data[i];
+      }
+     else {
 
-  ein_inline ein_artificial ein_hidden
-  friend constexpr void storeu(T * p, simd x) noexcept {
-    if consteval {
-      for (size_t i = 0;i<N;++i)
-        p[i] = x.data[i];
-    } else {
-      EIN_SWITCH(
-        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
-        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
-        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
-      )
-    }
-  }
+       // empirically i find that if you change this you need to empty
+       // your .ccache
+#if 0
+      // simd.cppm:1083:8: error: no matching function for call to
+      // '_mm_store_ps'
+       EIN_SWITCH(
+       _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
+       _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
+       _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
+       )
+#else
+       // case T ~ float, N = 4
+       if constexpr (std::is_same_v<T,float> && N == 4) {
+         // work around for error: no matching function for call to
+         //   '_mm_store_ps' somehow getting the function then
+         //   invoking avoids the failure
+         void(*mm_store_ps)(float*, __m128)=_mm_store_ps;
+         mm_store_ps(p, x.data);
+       }
 
-  ein_inline ein_artificial ein_hidden
-  friend constexpr void stream(T * p, simd x) noexcept {
-    if consteval {
-      for (size_t i = 0;i<N;++i)
-        p[i] = x.data[i];
-    } else {
-      EIN_SWITCH(
-        _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,
-        _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,
-        _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512
-      )
-    }
-  }
+       // fallback
+       else {
+         for (size_t i = 0;i<N;++i)
+           p[i] = x.data[i];
+       }
+#endif
+     }
+
+   }
+
+  // ein_inline ein_artificial ein_hidden
+  // friend constexpr void storeu(T * p, simd x) noexcept {
+  //   if consteval {
+  //     for (size_t i = 0;i<N;++i)
+  //       p[i] = x.data[i];
+  //   } else {
+  //     EIN_SWITCH(
+  //       _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
+  //       _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
+  //       _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
+  //     )
+  //   }
+  // }
+
+  // ein_inline ein_artificial ein_hidden
+  // friend constexpr void stream(T * p, simd x) noexcept {
+  //   if consteval {
+  //     for (size_t i = 0;i<N;++i)
+  //       p[i] = x.data[i];
+  //   } else {
+  //     EIN_SWITCH(
+  //       _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,
+  //       _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,
+  //       _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512
+  //     )
+  //   }
+  // }
 
 #undef EIN_CASE
 #undef EIN_SWITCH
@@ -1185,12 +1218,24 @@ simd(T) -> simd<T,has_simd_type<T,max_simd_size/sizeof(T)>>;
 /// \}
 // end of ctads
 
+/// \name stores
+/// \{
+
+export template <typename T, size_t N> requires (has_simd_type<T,N>)
+ein_inline ein_artificial
+constexpr void store(T * p, simd<T, N> x) noexcept {
+  simd<T, N>::store(p, x);
+}
+
+/// \}
+
 /// \name loads
 /// \{
 
+
 /// load \p data from aligned memory
 /// \pre \p data has alignment >= \p N
-template <std::size_t N>
+export template <std::size_t N>
 ein_inline ein_pure ein_artificial
 auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
@@ -1265,38 +1310,38 @@ auto shuffle(simd_type auto x, simd_type auto y) {
 
 /// precompiled template specializations
 
-export template struct simd<int8_t,16>;
-export template struct simd<int8_t,32>;
-export template struct simd<uint8_t,16>;
-export template struct simd<uint8_t,32>;
-export template struct simd<int16_t,8>;
-export template struct simd<int16_t,16>;
-export template struct simd<uint16_t,8>;
-export template struct simd<uint16_t,16>;
-export template struct simd<int32_t,4>;
-export template struct simd<int32_t,8>;
-export template struct simd<uint32_t,4>;
-export template struct simd<uint32_t,8>;
-export template struct simd<float,4>;
-export template struct simd<float,8>;
-export template struct simd<int64_t,2>;
-export template struct simd<int64_t,4>;
-export template struct simd<uint64_t,2>;
-export template struct simd<uint64_t,4>;
-export template struct simd<double,2>;
-export template struct simd<double,4>;
-#ifdef __AVX512F__
-export template struct simd<int16_t,32>;
-export template struct simd<uint16_t,32>;
-export template struct simd<int32_t,16>;
-export template struct simd<uint32_t,16>;
-export template struct simd<float,16>;
-export template struct simd<int64_t,8>;
-export template struct simd<uint64_t,8>;
-export template struct simd<double,8>;
-export template struct simd<int8_t,64>;
-export template struct simd<uint8_t,64>;
-#endif
+// export template struct simd<int8_t,16>;
+// export template struct simd<int8_t,32>;
+// export template struct simd<uint8_t,16>;
+// export template struct simd<uint8_t,32>;
+// export template struct simd<int16_t,8>;
+// export template struct simd<int16_t,16>;
+// export template struct simd<uint16_t,8>;
+// export template struct simd<uint16_t,16>;
+// export template struct simd<int32_t,4>;
+// export template struct simd<int32_t,8>;
+// export template struct simd<uint32_t,4>;
+// export template struct simd<uint32_t,8>;
+// export template struct simd<float,4>;
+// export template struct simd<float,8>;
+// export template struct simd<int64_t,2>;
+// export template struct simd<int64_t,4>;
+// export template struct simd<uint64_t,2>;
+// export template struct simd<uint64_t,4>;
+// export template struct simd<double,2>;
+// export template struct simd<double,4>;
+// #ifdef __AVX512F__
+// export template struct simd<int16_t,32>;
+// export template struct simd<uint16_t,32>;
+// export template struct simd<int32_t,16>;
+// export template struct simd<uint32_t,16>;
+// export template struct simd<float,16>;
+// export template struct simd<int64_t,8>;
+// export template struct simd<uint64_t,8>;
+// export template struct simd<double,8>;
+// export template struct simd<int8_t,64>;
+// export template struct simd<uint8_t,64>;
+// #endif
 
 /// \}
 } // namespace ein

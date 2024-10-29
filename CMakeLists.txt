@@ -274,7 +274,6 @@ list(APPEND SOURCE_HEADER_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/h/third-party.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/posix.hpp"
 )
-
 # Replace SOURCE_DIR with BINARY_DIR for each header
 set(OUTPUT_HEADER_FILES "")
 foreach(header ${SOURCE_HEADER_FILES})

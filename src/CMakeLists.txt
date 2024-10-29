@@ -68,3 +68,12 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
+
+set(CMAKE_CXX_SCAN_FOR_MODULES ON)
+
+add_executable(ein_getting_started_2 ${CMAKE_CURRENT_SOURCE_DIR}/../ein_getting_started_2.cpp)
+target_include_directories(ein_getting_started_2 PUBLIC $<TARGET_PROPERTY:ein,INTERFACE_INCLUDE_DIRECTORIES>)
+target_compile_options(ein_getting_started_2 PUBLIC "$<${CXX_GccOrClang}:-std=c++23>")
+target_compile_options(ein_getting_started_2 PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
+target_link_libraries(ein_getting_started_2 PRIVATE ein)
+add_dependencies(ein_getting_started_2 ein)
