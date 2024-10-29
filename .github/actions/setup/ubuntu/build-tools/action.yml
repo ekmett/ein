@@ -9,6 +9,9 @@ runs:
         echo "/usr/local/bin" >> $GITHUB_PATH
         mkdir -p lib/install
       shell: bash
+    - name: install dot
+      run: sudo apt install graphviz
+      shell: bash
     - name: install cmake 3.30.5
       run: |
         cd lib/install
