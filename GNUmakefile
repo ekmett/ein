@@ -43,11 +43,11 @@ server-start: build
 server-stop:
 	@pkill -f "python3 -m http.server $(PORT) -d gen/doc/html"
 
-gen/ein.png: gen gen/patched-dotfiles
-	@dot -Tpng -o gen/ein.png gen/patched-dotfiles/ein.dot
+gen/ein.png: gen gen/doc/patched-dotfiles
+	@dot -Tpng -o gen/ein.png gen/doc/patched-dotfiles/ein.dot
 
-gen/patched-dotfiles: gen
-	@bin/adjust_dotfiles.sh gen/dotfiles gen/patched-dotfiles
+gen/doc/patched-dotfiles: gen
+	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
 
 build: gen gen/patched-dotfiles
 	@cmake --build gen -j
