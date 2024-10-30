@@ -51,11 +51,11 @@ export struct bf16 {
   operator float (this bf16 self) noexcept { return self.content; }
 
   ein_reinitializes ein_inline ein_artificial constexpr
-  bf16 & operator = (ein_noescape bf16 const &) noexcept 
+  bf16 & operator = (ein_noescape bf16 const &) noexcept
   ein_lifetimebound = default;
 
   ein_reinitializes ein_inline ein_artificial constexpr
-  bf16 & operator = (ein_noescape bf16 &&) noexcept 
+  bf16 & operator = (ein_noescape bf16 &&) noexcept
   ein_lifetimebound = default;
 
   ein_nodiscard ein_inline ein_artificial ein_const

@@ -268,6 +268,7 @@ configure_file(
 list(APPEND SOURCE_HEADER_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/h/assert.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/attributes.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/concepts.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/intrinsics.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/prelude.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/std.hpp"
