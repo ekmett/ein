@@ -51,9 +51,6 @@ import ein.simd_data;
 
 namespace ein {
 
-/// \defgroup simd SIMD
-/// \{
-
 export template <typename T, size_t N> requires (has_simd_type<T,N>)
 struct ein_nodiscard simd;
 
@@ -950,197 +947,6 @@ public:
   /// \}
   // end of comparisons
 
-  /// \name loads
-  /// \{
-
-/// \cond
-  #define EIN_SWITCH(on_m128,on_m128d,on_m128i,on_m256,on_m256d,on_m256i,on_m512,on_m512d,on_m512i) \
-               if constexpr (std::is_same_v<intrinsic_t,__m128>) { EIN_CASE(on_m128) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m128d>) { EIN_CASE(on_m128d) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m128i>) { EIN_CASE(on_m128i) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m256>) { EIN_CASE(on_m256) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m256d>) { EIN_CASE(on_m256d) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m256i>) { EIN_CASE(on_m256i) } \
-    ON512(else if constexpr (std::is_same_v<intrinsic_t,__m512>) { EIN_CASE(on_m512) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m512d>) { EIN_CASE(on_m512d) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m512i>) { EIN_CASE(on_m512i) }) \
-          else static_assert(false);
-
-#define EIN_CASE(f) return f(reinterpret_cast<arg1_t<decltype(f)>>(p));
-/// \endcond
-
-  /// \pre \p p is a pointer to memory with alignment >= \p N
-  ein_inline ein_pure ein_artificial
-  static constexpr simd load(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-      EIN_SWITCH(
-        _mm_load_ps,    _mm_load_pd,    _mm_load_epi32,
-        _mm256_load_ps, _mm256_load_pd, _mm256_load_epi32,
-        _mm512_load_ps, _mm512_load_pd, _mm512_load_epi32
-      )
-    }
-  }
-
-  ein_inline ein_pure ein_artificial
-  static constexpr simd loadu(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-      EIN_SWITCH(
-        _mm_loadu_ps,    _mm_loadu_pd,    _mm_loadu_epi32,
-        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_loadu_epi32,
-        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_epi32
-      )
-    }
-  }
-
-  /// \details legacy: may outperform \ref loadu when the data crosses a cache boundary
-  ein_inline ein_pure ein_artificial
-  static constexpr simd lddqu(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-      EIN_SWITCH(
-        _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,
-        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256,
-        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si512
-      )
-    }
-  }
-
-/// \cond
-#undef EIN_CASE
-#define EIN_CASE(f) return f(p);
-/// \endcond
-
-  /// \pre \p p is a pointer to memory with alignment >= \p N
-  /// \hideinlinesource
-  ein_inline ein_pure ein_artificial
-  static constexpr simd stream_load(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-/// \cond
-      #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))
-      #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))
-      #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))
-      #define ein_mm_stream_load_pd(x)    cast_pd(_mm_stream_load_si128(x))
-      #define ein_mm256_stream_load_pd(x) cast_pd(_mm256_stream_load_si256(x))
-      #define ein_mm512_stream_load_pd(x) cast_pd(_mm512_stream_load_si512(x))
-      EIN_SWITCH(
-        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
-        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
-        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
-      )
-
-      #undef ein_mm_stream_load_ps
-      #undef ein_mm256_stream_load_ps
-      #undef ein_mm512_stream_load_ps
-      #undef ein_mm_stream_load_pd
-      #undef ein_mm256_stream_load_pd
-      #undef ein_mm512_stream_load_pd
-/// \endcond
-    }
-  }
-
-/// \cond
-#undef EIN_CASE
-#define EIN_CASE(f) f(p,x.it());
-/// \endcond
-
-  /// \}
-  // end of loads
-
-  /// \name stores
-  /// \{
-
-  friend constexpr void ein::store<T, N>(T * p, simd<T, N> x) noexcept;
-  static constexpr void store(T* p, simd<T, N> x) noexcept {
-    // case compile time
-    if consteval {
-        for (size_t i = 0;i<N;++i)
-          p[i] = x.data[i];
-      }
-     else {
-
-       // empirically i find that if you change this you need to empty
-       // your .ccache
-#if 0
-      // simd.cppm:1083:8: error: no matching function for call to
-      // '_mm_store_ps'
-       EIN_SWITCH(
-       _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
-       _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
-       _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
-       )
-#else
-       // case T ~ float, N = 4
-       if constexpr (std::is_same_v<T,float> && N == 4) {
-         // work around for error: no matching function for call to
-         //   '_mm_store_ps' somehow getting the function then
-         //   invoking avoids the failure
-         void(*mm_store_ps)(float*, __m128)=_mm_store_ps;
-         mm_store_ps(p, x.data);
-       }
-
-       // fallback
-       else {
-         for (size_t i = 0;i<N;++i)
-           p[i] = x.data[i];
-       }
-#endif
-     }
-
-   }
-
-  // ein_inline ein_artificial ein_hidden
-  // friend constexpr void storeu(T * p, simd x) noexcept {
-  //   if consteval {
-  //     for (size_t i = 0;i<N;++i)
-  //       p[i] = x.data[i];
-  //   } else {
-  //     EIN_SWITCH(
-  //       _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
-  //       _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
-  //       _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
-  //     )
-  //   }
-  // }
-
-  // ein_inline ein_artificial ein_hidden
-  // friend constexpr void stream(T * p, simd x) noexcept {
-  //   if consteval {
-  //     for (size_t i = 0;i<N;++i)
-  //       p[i] = x.data[i];
-  //   } else {
-  //     EIN_SWITCH(
-  //       _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,
-  //       _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,
-  //       _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512
-  //     )
-  //   }
-  // }
-
-#undef EIN_CASE
-#undef EIN_SWITCH
-
-  /// \}
-  // end of stores
-
   /// \name scalef
   /// \{
 
@@ -1218,60 +1024,220 @@ simd(T) -> simd<T,has_simd_type<T,max_simd_size/sizeof(T)>>;
 /// \}
 // end of ctads
 
-/// \name stores
-/// \{
-
-export template <typename T, size_t N> requires (has_simd_type<T,N>)
-ein_inline ein_artificial
-constexpr void store(T * p, simd<T, N> x) noexcept {
-  simd<T, N>::store(p, x);
-}
-
-/// \}
-
 /// \name loads
 /// \{
 
+/// \cond
+#define EIN_SWITCH(on_m128,on_m128d,on_m128i,on_m256,on_m256d,on_m256i,on_m512,on_m512d,on_m512i) \
+             if constexpr (std::is_same_v<intrinsic_t,__m128>) { EIN_CASE(on_m128) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m128d>) { EIN_CASE(on_m128d) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m128i>) { EIN_CASE(on_m128i) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m256>) { EIN_CASE(on_m256) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m256d>) { EIN_CASE(on_m256d) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m256i>) { EIN_CASE(on_m256i) } \
+  ON512(else if constexpr (std::is_same_v<intrinsic_t,__m512>) { EIN_CASE(on_m512) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m512d>) { EIN_CASE(on_m512d) } \
+        else if constexpr (std::is_same_v<intrinsic_t,__m512i>) { EIN_CASE(on_m512i) }) \
+        else static_assert(false);
+
+#define EIN_CASE(f) return f(reinterpret_cast<arg1_t<decltype(f)>>(p));
+/// \endcond
 
 /// load \p data from aligned memory
 /// \pre \p data has alignment >= \p N
-export template <std::size_t N>
+/// \hideinlinesource
+template <size_t N, typename T>
+requires has_simd_type<T,N>
 ein_inline ein_pure ein_artificial
-auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::load(data);
+constexpr simd<T,N> load(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i = 0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_load_ps,    _mm_load_pd,    _mm_load_epi32,
+      _mm256_load_ps, _mm256_load_pd, _mm256_load_epi32,
+      _mm512_load_ps, _mm512_load_pd, _mm512_load_epi32
+    )
+  }
 }
 
-/// load \p data from unaligned memory
-export template <std::size_t N>
+/// load \p data from memory, possibly unaligned
+/// \hideinlinesource
+template <size_t N, typename T>
+requires has_simd_type<T,N>
 ein_inline ein_pure ein_artificial
-auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::loadu(data);
+constexpr simd<T,N> loadu(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i=0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_loadu_ps,    _mm_loadu_pd,    _mm_loadu_epi32,
+      _mm256_loadu_ps, _mm256_loadu_pd, _mm256_loadu_epi32,
+      _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_epi32
+    )
+  }
 }
 
-/// load \p data from unaligned memory, optimized for crossing cachelines (legacy approach)
-export template <std::size_t N>
+/// \details legacy: may outperform \ref loadu when the data crosses a cache boundary
+/// \hideinlinesource
+template <size_t N, typename T>
+requires has_simd_type<T,N>
 ein_inline ein_pure ein_artificial
-auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::lddqu(data);
+constexpr simd<T,N> lddqu(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i=0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,
+      _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256,
+      _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si512
+    )
+  }
 }
+
+/// \cond
+#undef EIN_CASE
+#define EIN_CASE(f) return f(p);
+/// \endcond
 
 /// stream \p data from memory non-temporally, bypassing cache
 /// \pre \p data has alignment >= \p N
-export template <std::size_t N>
-ein_inline ein_pure ein_artificial
-auto stream_load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::stream_load(data);
+/// \hideinlinesource
+template <size_t N, typename T>
+requires has_simd_type<T,N>
+ein_inline ein_pure ein_artificial constexpr
+simd<T,N> stream_load(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i=0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+/// \cond
+    #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))
+    #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))
+    #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))
+    #define ein_mm_stream_load_pd(x)    cast_pd(_mm_stream_load_si128(x))
+    #define ein_mm256_stream_load_pd(x) cast_pd(_mm256_stream_load_si256(x))
+    #define ein_mm512_stream_load_pd(x) cast_pd(_mm512_stream_load_si512(x))
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
+      ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
+      ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
+    )
+
+    #undef ein_mm_stream_load_ps
+    #undef ein_mm256_stream_load_ps
+    #undef ein_mm512_stream_load_ps
+    #undef ein_mm_stream_load_pd
+    #undef ein_mm256_stream_load_pd
+    #undef ein_mm512_stream_load_pd
+/// \endcond
+  }
 }
 
+/// \cond
+#undef EIN_CASE
+#define EIN_CASE(f) f(p,x.it());
+/// \endcond
+
 /// \}
+// end of loads
+
+/// \name stores
+/// \{
+
+export template <typename T, size_t N> constexpr
+ein_inline // ein_artificial ein_hidden
+void store(T* p, simd<T, N> x) noexcept {
+  // case compile time
+  if consteval {
+      for (size_t i = 0;i<N;++i)
+        p[i] = x.data[i];
+    }
+   else {
+
+     // empirically i find that if you change this you need to empty
+     // your .ccache
+#if 0
+    // simd.cppm:1083:8: error: no matching function for call to
+    // '_mm_store_ps'
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+     EIN_SWITCH(
+     _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
+     _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
+     _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
+     )
+#else
+     // case T ~ float, N = 4
+     if constexpr (std::is_same_v<T,float> && N == 4) {
+       // work around for error: no matching function for call to
+       //   '_mm_store_ps' somehow getting the function then
+       //   invoking avoids the failure
+       void(*mm_store_ps)(float*, __m128)=_mm_store_ps;
+       mm_store_ps(p, x.data);
+     }
+
+     // fallback
+     else {
+       for (size_t i = 0;i<N;++i)
+         p[i] = x.data[i];
+     }
+#endif
+   }
+
+ }
+
+export template <typename T, size_t N> constexpr
+ein_inline ein_artificial ein_hidden
+void storeu(T * p, simd<T,N> x) noexcept {
+  if consteval {
+    for (size_t i = 0;i<N;++i)
+      p[i] = x.data[i];
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
+      _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
+      _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
+    )
+  }
+}
+
+export template <typename T, size_t N> constexpr
+ein_inline ein_artificial ein_hidden
+void stream(T * p, simd<T,N> x) noexcept {
+  if consteval {
+    for (size_t i = 0;i<N;++i)
+      p[i] = x.data[i];
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,
+      _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,
+      _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512
+    )
+  }
+}
+
+#undef EIN_CASE
+#undef EIN_SWITCH
+
+/// \}
+// end of stores
 
 namespace {
 
@@ -1285,6 +1251,7 @@ struct simd_type_impl<simd<T,N>> : std::true_type {};
 }
 
 /// recognizes any valid simd type
+/// \hideinitializer
 export template <typename SIMD>
 concept simd_type = simd_type_impl<SIMD>::value;
 
@@ -1292,21 +1259,20 @@ concept simd_type = simd_type_impl<SIMD>::value;
 /// \{
 
 /// create a new simd register with contents drawn from this one
-template <size_t ... is>
+export template <size_t ... is>
 ein_inline ein_artificial ein_pure
 auto shuffle(simd_type auto x) {
   return x.template shuffle<is...>();
 }
 
 /// create a new simd register with contents drawn from these two
-template <size_t ... is>
+export template <size_t ... is>
 ein_inline ein_artificial ein_pure
 auto shuffle(simd_type auto x, simd_type auto y) {
   return x.template shuffle<is...>(y);
 }
 
 /// \}
-
 
 /// precompiled template specializations
 
@@ -1343,12 +1309,9 @@ auto shuffle(simd_type auto x, simd_type auto y) {
 // export template struct simd<uint8_t,64>;
 // #endif
 
-/// \}
 } // namespace ein
 
 namespace std {
-/// \addtogroup simd
-/// \{
   /// \name destructuring
   /// \{
   /// needed to `std::apply` a \ref simd and to perform destructuring bind
@@ -1362,5 +1325,4 @@ namespace std {
     using type = T;
   };
   /// \}
-/// \}
 }
