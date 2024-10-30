@@ -306,9 +306,6 @@ void newline_t::pp(ein_noescape printer & ein_restrict p) noexcept { p.newline()
 
 void spaces::pp(ein_noescape printer & ein_restrict p) { p.spaces(n); }
 
-#define ein_ensures(concept, x) \
-  ([]<typename T> static constexpr noexcept { static_assert(concept<T>, #concept " not satisfied"); }.template operator()<decltype(x)>(), (x))
-
 /// represents a hard carriage return/line feed. (moves to start of next line, regardless of nesting level)
 export constexpr struct hardline_t {
   /// \note unlike most other pp definitions this one does not throw
@@ -446,7 +443,7 @@ autodoc oxford(piece conjunction, Args && ... args) {
         auto sep = []<size_t i> constexpr static (printer & p, piece & conjunction) {
           if (i == N-1) return;
           p.text(",")
-          if (i == N-2) gluttered(conjunction).pp(p);
+          if (i == N-2) guttered(conjunction).pp(p);
           else if (p.is_flat) p.space(s)
           else p.newline();
         };
