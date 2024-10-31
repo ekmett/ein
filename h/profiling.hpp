@@ -17,7 +17,7 @@
 // see https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview#heading=h.nb4ul0l9tsgk
 
 /// \todo parameterize all of this on a couple of types that can serialize to json
-/// for flow id and for the contents of the message, rather than use \ref nlohmann::json directly
+/// for flow id and for the contents of the message, rather than use \c nlohmann::json directly
 namespace ein::profiling {
 
 enum class scope : char {

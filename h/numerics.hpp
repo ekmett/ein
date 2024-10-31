@@ -8,17 +8,11 @@
 
       \ingroup numerics */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <bit>
 #include <cmath>
 #include <cstdint>
 #include <type_traits>
 #include "attributes.hpp"
-#endif
 
 #ifdef __AVX512F__
 #define IFAVX512(x,y) x
@@ -26,30 +20,26 @@ module;
 #define IFAVX512(x,y) y
 #endif
 
-using namespace std;
+#include "types.hpp"
 
-import ein.types;
-
-/// \ingroup numerics
-export module ein.numerics;
-
-export import ein.numerics.bf16;
-export import ein.numerics.fp16;
+#include "numerics.hpp"
+#include "numerics/bf16.hpp"
+#include "numerics/fp16.hpp"
 
 namespace ein {
 /// \defgroup numerics Numerics
 /// \{
 
 /// \brief \p N is one of the \p candidates
-export template <auto N, auto ... candidates>
+template <auto N, auto ... candidates>
 concept one_of = ((N==candidates) || ... || false);
 
 /// \brief \p N is not one of the \p candidates
-export template <auto N, auto ... candidates>
+template <auto N, auto ... candidates>
 concept not_one_of = (!one_of<N,candidates...>);
 
 /// \cond
-export template <size_t N> struct integer_traits {};
+template <size_t N> struct integer_traits {};
 template <> struct integer_traits<8>  { using signed_t = int8_t;  using unsigned_t = uint8_t; };
 template <> struct integer_traits<16> { using signed_t = int16_t; using unsigned_t = uint16_t; };
 template <> struct integer_traits<32> { using signed_t = int32_t; using unsigned_t = uint32_t; };
@@ -58,13 +48,13 @@ template <> struct integer_traits<64> { using signed_t = int64_t; using unsigned
 
 /// returns a signed integer type of the same size as \p T suitable for `std::bitcast`
 /// \hideinitializer \hideinlinesource
-export template <typename T>
+template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using int_t = typename integer_traits<sizeof(T)*8>::signed_t;
 
 /// returns an unsigned integer type of the same size as \p T suitable for `std::bitcast`
 /// \hideinitializer \hideinlinesource
-export template <typename T>
+template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 
@@ -75,40 +65,40 @@ using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
     Allow passing immediate values to operators without having to give up `x << y`
     as a syntactic form. `xs << imm<n>` isn't much of an imposition and ensures the compiler
     knows that \p N is a fixed constant known at compile time */
-export template <size_t N>
+template <size_t N>
 struct imm_t {
   static constexpr size_t value = N;
   ein_nodiscard ein_inline ein_const ein_artificial
   constexpr operator size_t () noexcept { return N; }
 };
 
-export template <size_t N>
+template <size_t N>
 constinit imm_t<N> imm {};
 
-export template <typename T>
+template <typename T>
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp_unord(T a, T b) noexcept {
   return isnan(a) || isnan(b);
 }
 
 /// \cond precompile
-export extern template bool cmp_unord(float,float) noexcept;
-export extern template bool cmp_unord(double,double) noexcept;
+extern template bool cmp_unord(float,float) noexcept;
+extern template bool cmp_unord(double,double) noexcept;
 /// \endcond
 
-export template <typename T>
+template <typename T>
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp_ord(T a, T b) noexcept {
   return !isnan(a) && !isnan(b);
 }
 
 /// \cond precompile
-export extern template bool cmp_ord(float,float) noexcept;
-export extern template bool cmp_ord(double,double) noexcept;
+extern template bool cmp_ord(float,float) noexcept;
+extern template bool cmp_ord(double,double) noexcept;
 /// \endcond
 
 /// \hideinlinesource
-export template <one_of_t<float,double> T>
+template <one_of_t<float,double> T>
 ein_nodiscard ein_inline ein_pure
 constexpr T scalef(T x, T y) noexcept {
   if consteval {
@@ -157,7 +147,7 @@ constexpr T scalef(T x, T y) noexcept {
 }
 
 /// \hideinlinesource
-export enum class ein_nodiscard CMPINT : size_t {
+enum class ein_nodiscard CMPINT : size_t {
   EQ    = 0x0uz ///< `==`
 , LT    = 0x1uz ///< `<`
 , LE    = 0x2uz ///< `<=`
@@ -168,7 +158,7 @@ export enum class ein_nodiscard CMPINT : size_t {
 , TRUE  = 0x7uz ///< always `true`
 };
 
-export template <CMPINT imm8, typename T>
+template <CMPINT imm8, typename T>
 requires (one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz))
 ein_nodiscard ein_inline ein_const
 constexpr bool cmpint(T a, T b) noexcept {
@@ -186,10 +176,10 @@ constexpr bool cmpint(T a, T b) noexcept {
 
 /// AVX512 added many more floating point comparison types. Do we have them?
 /// \hideinitializer
-export constexpr size_t max_fp_comparison_predicate = IFAVX512(32,8);
+constexpr size_t max_fp_comparison_predicate = IFAVX512(32,8);
 
 /// \hideinlinesource
-export enum class ein_nodiscard CMP : size_t {
+enum class ein_nodiscard CMP : size_t {
   EQ_OQ     = 0x00uz  ///< Equal (ordered, nonsignaling)
 , LT_OS     = 0x01uz  ///< Less-than (ordered, signaling)
 , LE_OS     = 0x02uz  ///< Less-than-or-equal (ordered, signaling)
@@ -225,7 +215,7 @@ export enum class ein_nodiscard CMP : size_t {
 };
 
 /// perform an avx512 style floating point comparison for scalar values.
-export template <CMP imm8, typename T>
+template <CMP imm8, typename T>
 requires (one_of_t<T,float,double> && (size_t(imm8) < 32uz))
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp(T a, T b) noexcept {
@@ -266,7 +256,7 @@ constexpr bool cmp(T a, T b) noexcept {
 }
 
 /// \cond precompile
-#define X export extern
+#define X extern
 #include "numerics.x"
 #undef X
 /// \endcond

@@ -43,22 +43,19 @@ server-start: build
 server-stop:
 	@pkill -f "python3 -m http.server $(PORT) -d gen/doc/html"
 
-gen/ein.png: gen gen/doc/patched-dotfiles
+gen/ein.png: gen
 	@dot -Tpng -o gen/ein.png gen/doc/patched-dotfiles/ein.dot
 
-gen/doc/patched-dotfiles: gen
-	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
-
-build: gen gen/patched-dotfiles
+build: gen
 	@cmake --build gen -j
 	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json || @echo TRACE FAILED
 
 run: $(RUN)
 
 gen: $(CMAKELISTS)
-	@mkdir -p gen
 	@mkdir -p gen/dotfiles
 	@cmake $(LOGLEVEL) --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
+	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
 	@touch gen
 
 lint:

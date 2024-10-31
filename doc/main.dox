@@ -20,7 +20,9 @@ This is a playground for wide SIMD evaluation.
 - \subpage installation_page
 - \subpage notes_page
 
+\cond
 \dotfile ein.dot.ein "Dependencies"
+\endcond
 
 ## Contact Information
 

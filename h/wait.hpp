@@ -50,12 +50,9 @@ struct mwaitx {
   using timer_t = uint64_t;
   ein_inline ein_artificial static void monitor(void * p) noexcept { _mm_monitorx(p,0,0); }
   ein_inline ein_artificial static void mwait(uint32_t timer = 0) noexcept ein_blocking { _mm_mwaitx(0,0,timer); }
-  /// \hideinlinesource
+  /// \hideinitializer \hideinlinesource
   static const bool supported;
 };
-
-/// \hideinitializer \hideinlinesource
-extern const bool mwaitx::supported; 
 
 
 /// \ref waiter using \UMONITOR/\UMWAIT for Intel
@@ -66,8 +63,6 @@ struct umwait {
   /// \hideinlinesource
   static const bool supported;
 };
-
-extern const bool umwait::supported;
 
 /// spin \ref waiter using \PAUSE
 struct spin {

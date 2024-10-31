@@ -1,5 +1,7 @@
 #include "wait.hpp"
 
+namespace ein {
+
 /// \hideinitializer \hideinlinesource
 const bool mwaitx::supported = [] static noexcept {
   return (cpu_vendor == cpu_vendor::amd)
@@ -11,3 +13,5 @@ const bool umwait::supported = [] static noexcept {
   return (cpu_vendor == cpu_vendor::intel)
       && ((cpuid(0x7,0).ecx & (1 << 5)) != 0);
 }();
+
+}

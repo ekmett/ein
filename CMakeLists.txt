@@ -28,6 +28,8 @@ include(CheckIPOSupported)
 include(CheckRestrict)
 include(FetchContentCached)
 
+# hack. remove
+include_directories(h)
 
 # ccache
 # ====================================================================
@@ -269,11 +271,19 @@ list(APPEND SOURCE_HEADER_FILES
   "${CMAKE_CURRENT_SOURCE_DIR}/h/assert.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/attributes.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/concepts.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/cpuid.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/intrinsics.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/numerics.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/numerics/fp16.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/numerics/bf16.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/prelude.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/profiling.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/simd.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/simd_data.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/static_string.hpp"
   "${CMAKE_CURRENT_SOURCE_DIR}/h/std.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/third-party.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/posix.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/types.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/wait.hpp"
 )
 
 # Replace SOURCE_DIR with BINARY_DIR for each header
@@ -284,11 +294,24 @@ foreach(header ${SOURCE_HEADER_FILES})
 endforeach()
 
 # Custom command to copy header files
-add_custom_command(
-  OUTPUT ${OUTPUT_HEADER_FILES}
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_CURRENT_BINARY_DIR}/h"
-  DEPENDS ${SOURCE_HEADER_FILES}
-)
+#add_custom_command(
+#  OUTPUT ${OUTPUT_HEADER_FILES}
+#  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_CURRENT_BINARY_DIR}/h"
+#  DEPENDS ${SOURCE_HEADER_FILES}
+#)
+
+foreach(header_file IN LISTS SOURCE_HEADER_FILES)
+  file(RELATIVE_PATH relative_path "${CMAKE_CURRENT_SOURCE_DIR}/h" "${header_file}")
+  set(target_path "${CMAKE_CURRENT_BINARY_DIR}/h/${relative_path}")
+  get_filename_component(target_dir "${target_path}" DIRECTORY)
+  file(MAKE_DIRECTORY "${target_dir}")
+  add_custom_command(
+    OUTPUT "${target_path}"
+    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header_file}" "${target_path}"
+    DEPENDS "${header_file}"
+  )
+  list(APPEND OUTPUT_HEADER_FILES "${target_path}")
+endforeach()
 
 list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp)
 add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})

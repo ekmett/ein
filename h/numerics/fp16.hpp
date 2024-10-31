@@ -1,3 +1,5 @@
+#pragma once
+
 /** \file
 
       \license
@@ -6,25 +8,15 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <bit>
 #include <compare>
 #include <cstdint>
 #include <limits>
 #include "attributes.hpp"
-#endif
-
-using namespace std;
-
-export module ein.numerics.fp16;
 
 namespace ein {
 
-export struct fp16 {
+struct fp16 {
   using underlying_type = _Float16;
 
   _Float16 content;
@@ -113,21 +105,21 @@ export struct fp16 {
 
 };
 
-export ein_nodiscard ein_inline ein_artificial ein_const
-constexpr fp16 operator"" _fp16(long double v) noexcept {
+ein_nodiscard ein_inline ein_artificial ein_const
+constexpr fp16 operator""_fp16(long double v) noexcept {
   return fp16(static_cast<float>(v));
 }
 
 } // namespace ein
 
 namespace std {
-  export ein_nodiscard ein_artificial ein_inline ein_const
+  ein_nodiscard ein_artificial ein_inline ein_const
   constexpr bool isnan(ein::fp16 x) noexcept {
     // Sign doesn't matter, frac not zero (infinity)
     return (x.to_bits() & 0x7FFF) > 0x7c00;
   }
 
-  export template <>
+  template <>
   class numeric_limits<ein::fp16> {
   public:
     static constexpr bool is_specialized = true;

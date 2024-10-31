@@ -12,13 +12,11 @@
 #include <cstdint>
 #include <string_view>
 #include "attributes.hpp"
-#include <cpuid.h>
 
 using namespace std;
 
-export module ein.cpuid;
-
 namespace ein {
+
 /// result from calling the \CPUID instruction
 struct ein_nodiscard cpuid_t {
   int32_t eax, ebx, ecx, edx;
@@ -35,7 +33,7 @@ struct ein_nodiscard cpuid_t {
 extern cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept;
 
 /// \brief CPU vendor id
-export enum class ein_nodiscard cpu_vendor {
+enum class ein_nodiscard cpu_vendor : uint8_t {
   intel=0,  ///< \CPUID reported \c "GenuineIntel"
   amd=1,    ///< \CPUID reported \c "AuthenticAMD"
   unknown=2 ///< \CPUID reported something else

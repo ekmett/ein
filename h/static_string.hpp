@@ -223,11 +223,13 @@ public:
   static constexpr size_type npos = basic_string_view<CharT,Traits>::npos;
 };
 
-extern template basic_static_string<char,std::char_traits<char>>;
-extern template basic_static_string<wchar_t,std::char_traits<wchar_t>>;
-extern template basic_static_string<char8_t,std::char_traits<char8_t>>;
-extern template basic_static_string<char16_t,std::char_traits<char16_t>>;
-extern template basic_static_string<char32_t,std::char_traits<char32_t>>;
+/// \cond
+extern template class basic_static_string<char,std::char_traits<char>>;
+extern template class basic_static_string<wchar_t,std::char_traits<wchar_t>>;
+extern template class basic_static_string<char8_t,std::char_traits<char8_t>>;
+extern template class basic_static_string<char16_t,std::char_traits<char16_t>>;
+extern template class basic_static_string<char32_t,std::char_traits<char32_t>>;
+/// \endcond
 
 using static_string = basic_static_string<char>;
 using static_wstring = basic_static_string<wchar_t>;

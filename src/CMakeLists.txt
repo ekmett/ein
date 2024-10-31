@@ -14,28 +14,19 @@ fetchcontentcached(
 )
 
 add_library(ein STATIC
-  numerics.cpp
+   static_string.cpp
 )
+   
+#  numerics.cpp
+#  cpuid.cpp
+#  pretty.cpp
+#  wait.cpp
 
-set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
+
+# set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 add_dependencies(ein ein_headers)
 
 target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_json spdlog::spdlog Threads::Threads)
-
-target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
-  cpuid.cppm
-  memory.cppm
-  numerics.cppm
-  numerics/fp16.cppm
-  numerics/bf16.cppm
-  profiling.cppm
-  simd.cppm
-  simd_data.cppm
-  static_string.cppm
-  std.cppm
-  types.cppm
-  wait.cppm
-)
 
 target_include_directories(ein PUBLIC
   $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/h>
@@ -56,13 +47,12 @@ lto(ein)
 # PRE
 # EIN_PUBLIC=1 is far slower
 
-
-if(PRECOMPILE_HEADERS)
-  target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
-  target_compile_definitions(ein PUBLIC EIN_PCH=1)
-else()
-  target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
-endif()
+#if(PRECOMPILE_HEADERS)
+#  target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
+#  target_compile_definitions(ein PUBLIC EIN_PCH=1)
+#else()
+#  target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
+#endif()
 
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")

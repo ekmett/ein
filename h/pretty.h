@@ -14,23 +14,12 @@
 #include "concepts.hpp"
 #include "config.hpp"
 
-module ein.pretty;
-
 /// use exceptions as control flow. do as i say, not as i do.
 namespace ein::pretty {
 
 /// this represents a witdth if n characters at present
 /// \note in the future it may represent pixels or em or some other unit
 using width_t = uint32_t;
-
-#if 0
-// pretty::colors
-struct colors {
-  // todo: color, italic, bold
-  // constexpr colors () noexcept = default, comes by default while we are empty
-  cosntexpr colors operator +(ein_noescape colors const & other) {}
-};
-#endif
 
 /// carries the state of our pretty printer
 struct printer;

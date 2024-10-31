@@ -13,6 +13,7 @@
 #include <string_view>
 #include "attributes.hpp"
 #include "cpuid.h"
+#include <cpuid.h>
 
 namespace ein {
 

@@ -1,3 +1,5 @@
+#pragma once
+
 /** \file
 
       \license
@@ -6,25 +8,15 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <bit>
 #include <compare>
 #include <cstdint>
 #include <limits>
-#include "ein/attributes.hpp"
-#endif
-
-using namespace std;
-
-export module ein.numerics.bf16;
+#include "attributes.hpp"
 
 namespace ein {
 
-export struct bf16 {
+struct bf16 {
   using underlying_type = __bf16;
 
   __bf16 content;
@@ -113,12 +105,12 @@ export struct bf16 {
   }
 };
 
-export ein_nodiscard ein_inline ein_artificial
-constexpr bf16 operator"" _bf16(long double v) noexcept {
+ein_nodiscard ein_inline ein_artificial
+constexpr bf16 operator""_bf16(long double v) noexcept {
   return bf16(static_cast<float>(v));
 }
 
-export ein_nodiscard ein_inline ein_artificial ein_const
+ein_nodiscard ein_inline ein_artificial ein_const
 constexpr bf16 fast_to_bf16(float f) noexcept {
   if consteval {
     return f;
@@ -127,7 +119,7 @@ constexpr bf16 fast_to_bf16(float f) noexcept {
   }
 }
 
-export ein_nodiscard ein_inline ein_artificial ein_const
+ein_nodiscard ein_inline ein_artificial ein_const
 constexpr bf16 fast_to_bf16(bf16 f) noexcept {
   return f;
 }
@@ -135,7 +127,13 @@ constexpr bf16 fast_to_bf16(bf16 f) noexcept {
 } // namespace ein
 
 namespace std {
-  export template <> class numeric_limits<ein::bf16> {
+  ein_nodiscard ein_artificial ein_inline ein_const
+  constexpr bool isnan(ein::bf16 x) noexcept {
+    // Exponent maxed out and fraction non-zero indicates NaN
+    return (x.to_bits() & 0x7FFF) > 0x7F80;
+  }
+
+  template <> class numeric_limits<ein::bf16> {
   public:
     static constexpr bool is_specialized = true;
     ein_nodiscard ein_inline ein_artificial ein_const
