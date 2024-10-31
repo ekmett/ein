@@ -1,3 +1,5 @@
+#pragma once
+
 /** \file
 
       \license
@@ -8,11 +10,6 @@
 
       \ingroup simd */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <concepts>
 #include <cstdint>
 #include <initializer_list>
@@ -20,7 +17,9 @@ module;
 #include <algorithm>
 #include <immintrin.h>
 #include "attributes.hpp"
-#endif
+#include "numerics.hpp"
+#include "types.hpp"
+#include "simd_data.hpp"
 
 #ifdef __AVX512F__
 #define IF512(x,y) x
@@ -32,28 +31,20 @@ module;
 
 using namespace std;
 
+namespace ein {
+
 namespace {
-/// \cond local
 template<typename T> struct arg1 {};
 template<typename Ret, typename Arg, typename ... Args> struct arg1<Ret(Arg, Args...)> { using type = Arg; };
 template<typename Ret, typename Arg, typename ... Args> struct arg1<Ret(*)(Arg, Args...)> : arg1<Ret(Arg,Args...)> {};
 template <typename F> using arg1_t = arg1<F>::type;
-/// \endcond
 };
 
-/// \ingroup simd
-export module ein.simd;
-
-import ein.numerics;
-import ein.types;
-import ein.simd_data;
-
-namespace ein {
 /// \defgroup simd SIMD
 /// \{
 
 /// \brief simd primitive definition
-export template <typename T, size_t N> requires (has_simd_type<T,N>)
+template <typename T, size_t N> requires (has_simd_type<T,N>)
 struct ein_nodiscard simd {
 private:
   using data_t = simd_data_t<T,N>;
@@ -115,7 +106,7 @@ public:
   // constexpr simd(const T (&list)[N]) :data(list) {}
 
   /// \brief initialize the first \p init `.size` values from an initializer_list
-  /// TODO: use a masked unaligned load
+  /// \todo use a masked unaligned load
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd(std::initializer_list<T> init) {
@@ -123,7 +114,7 @@ public:
     std::copy_n(init.begin(),std::min(N,init.size()),begin());
   }
 
-  // TODO: append
+  // \todo append
   // concat
   //constexpr simd(simd<T,N/2> a, simd<T,N/2> b) : data(__builtin_shufflevector(a,b,...,...) {}
 
@@ -164,8 +155,6 @@ public:
   }
 
   /// \}
-
-
   /// \name intel compatibility
   /// \{
 
@@ -201,7 +190,6 @@ public:
   }
 
   /// \}
-
   /// \name iterable
   /// \{
 
@@ -262,7 +250,6 @@ public:
   constexpr std::reverse_iterator<const T*> rend() const noexcept { return crend(); }
 
   /// \}
-
   /// \name destructuring
   /// \{
 
@@ -303,7 +290,6 @@ public:
   }
 
   /// \}
-
   /// \name operators
   /// \{
 
@@ -321,7 +307,6 @@ public:
     data += other.data;
     return *this;
   }
-
 
   /// \hideinlinesource
   friend ein_inline ein_artificial ein_pure ein_hidden
@@ -585,7 +570,6 @@ public:
 
   /// \}
   // end of operators
-
   /// \name shuffles
   /// \{
 
@@ -618,8 +602,6 @@ public:
 
   /// \}
   // end of shuffles
-
-
   /// \name comparisons
   /// \{
 
@@ -1056,7 +1038,6 @@ public:
 
   /// \}
   // end of loads
-
   /// \name stores
   /// \{
 
@@ -1107,7 +1088,6 @@ public:
 
   /// \}
   // end of stores
-
   /// \name scalef
   /// \{
 
@@ -1140,7 +1120,6 @@ public:
   }
 
   /// \}
-
   /// \name data movement
   /// \{
 
@@ -1161,7 +1140,7 @@ public:
 /// \{
 
 /// guidance when loading data from clang/gcc vector extensions
-export template <typename T, size_t N>
+template <typename T, size_t N>
 requires (
      has_simd_type<T,N>
   && (N % sizeof(T) == 0)
@@ -1172,19 +1151,18 @@ requires (
 simd(T __attribute ((__vector_size__(N)))) -> simd<T,N/sizeof(T)>;
 
 /// guidance for loading from arguments
-export template <typename ... Args>
+template <typename ... Args>
 requires has_simd_type<std::common_type<Args...>, sizeof...(Args)>
 simd(Args&&...) -> simd<std::common_type<Args...>,sizeof...(Args)>;
 
 /// default to max simd size for broadcast
 /// \warning this may be removed in the future.
-export template <typename T>
+template <typename T>
 requires has_simd_type<T,max_simd_size/sizeof(T)>
 simd(T) -> simd<T,has_simd_type<T,max_simd_size/sizeof(T)>>;
 
 /// \}
 // end of ctads
-
 /// \name loads
 /// \{
 
@@ -1199,7 +1177,7 @@ auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data
 }
 
 /// load \p data from unaligned memory
-export template <std::size_t N>
+template <std::size_t N>
 ein_inline ein_pure ein_artificial
 auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
@@ -1208,7 +1186,7 @@ auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*dat
 }
 
 /// load \p data from unaligned memory, optimized for crossing cachelines (legacy approach)
-export template <std::size_t N>
+template <std::size_t N>
 ein_inline ein_pure ein_artificial
 auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
@@ -1218,7 +1196,7 @@ auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*dat
 
 /// stream \p data from memory non-temporally, bypassing cache
 /// \pre \p data has alignment >= \p N
-export template <std::size_t N>
+template <std::size_t N>
 ein_inline ein_pure ein_artificial
 auto stream_load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
   using T = std::remove_cvref_t<decltype(*data)>;
@@ -1240,7 +1218,7 @@ struct simd_type_impl<simd<T,N>> : std::true_type {};
 }
 
 /// recognizes any valid simd type
-export template <typename SIMD>
+template <typename SIMD>
 concept simd_type = simd_type_impl<SIMD>::value;
 
 /// \name shuffles
@@ -1262,40 +1240,38 @@ auto shuffle(simd_type auto x, simd_type auto y) {
 
 /// \}
 
-
 /// precompiled template specializations
-
-export template struct simd<int8_t,16>;
-export template struct simd<int8_t,32>;
-export template struct simd<uint8_t,16>;
-export template struct simd<uint8_t,32>;
-export template struct simd<int16_t,8>;
-export template struct simd<int16_t,16>;
-export template struct simd<uint16_t,8>;
-export template struct simd<uint16_t,16>;
-export template struct simd<int32_t,4>;
-export template struct simd<int32_t,8>;
-export template struct simd<uint32_t,4>;
-export template struct simd<uint32_t,8>;
-export template struct simd<float,4>;
-export template struct simd<float,8>;
-export template struct simd<int64_t,2>;
-export template struct simd<int64_t,4>;
-export template struct simd<uint64_t,2>;
-export template struct simd<uint64_t,4>;
-export template struct simd<double,2>;
-export template struct simd<double,4>;
+extern template struct simd<int8_t,16>;
+extern template struct simd<int8_t,32>;
+extern template struct simd<uint8_t,16>;
+extern template struct simd<uint8_t,32>;
+extern template struct simd<int16_t,8>;
+extern template struct simd<int16_t,16>;
+extern template struct simd<uint16_t,8>;
+extern template struct simd<uint16_t,16>;
+extern template struct simd<int32_t,4>;
+extern template struct simd<int32_t,8>;
+extern template struct simd<uint32_t,4>;
+extern template struct simd<uint32_t,8>;
+extern template struct simd<float,4>;
+extern template struct simd<float,8>;
+extern template struct simd<int64_t,2>;
+extern template struct simd<int64_t,4>;
+extern template struct simd<uint64_t,2>;
+extern template struct simd<uint64_t,4>;
+extern template struct simd<double,2>;
+extern template struct simd<double,4>;
 #ifdef __AVX512F__
-export template struct simd<int16_t,32>;
-export template struct simd<uint16_t,32>;
-export template struct simd<int32_t,16>;
-export template struct simd<uint32_t,16>;
-export template struct simd<float,16>;
-export template struct simd<int64_t,8>;
-export template struct simd<uint64_t,8>;
-export template struct simd<double,8>;
-export template struct simd<int8_t,64>;
-export template struct simd<uint8_t,64>;
+extern template struct simd<int16_t,32>;
+extern template struct simd<uint16_t,32>;
+extern template struct simd<int32_t,16>;
+extern template struct simd<uint32_t,16>;
+extern template struct simd<float,16>;
+extern template struct simd<int64_t,8>;
+extern template struct simd<uint64_t,8>;
+extern template struct simd<double,8>;
+extern template struct simd<int8_t,64>;
+extern template struct simd<uint8_t,64>;
 #endif
 
 /// \}
@@ -1307,11 +1283,11 @@ namespace std {
   /// \name destructuring
   /// \{
   /// needed to `std::apply` a \ref simd and to perform destructuring bind
-  export template <typename T, size_t N>
+  template <typename T, size_t N>
   struct tuple_size<ein::simd<T, N>> : integral_constant<size_t, N> {};
 
   /// needed to support for `std::apply`
-  export template <size_t I, typename T, size_t N>
+  template <size_t I, typename T, size_t N>
   requires (I < N)
   struct tuple_element<I, ein::simd<T, N>> {
     using type = T;

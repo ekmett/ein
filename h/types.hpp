@@ -1,3 +1,5 @@
+#pragma once
+
 /** \file
 
       \license
@@ -8,22 +10,15 @@
 
       \ingroup types */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <string_view>
 #include "attributes.hpp"
-#endif
 #include <cxxabi.h>
 
 using namespace std;
 
 /// \ingroup types
-export module ein.types;
 
-export namespace ein {
+namespace ein {
 /// \defgroup types Types
 /// \{
 

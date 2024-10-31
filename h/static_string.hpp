@@ -6,22 +6,11 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <string_view>
 #include <cstring>
 #include <fstream>
 #include "attributes.hpp"
-#endif
-
-using namespace std;
-
-export module ein.static_string;
-
-import ein.types;
+#include "types.hpp"
 
 namespace ein {
 
@@ -31,7 +20,7 @@ struct reify {
 };
 
 // forward declaration
-export class static_c_string;
+class static_c_string;
 
 /// statically known interned strings
 /// these have O(1) comparison for equality
@@ -41,7 +30,7 @@ export class static_c_string;
 ///            this ensures that they have O(1) comparison, because reference
 ///            and pointer equality coincide.
 
-export template <
+template <
   typename CharT,
   typename Traits = std::char_traits<CharT>
 >
@@ -185,11 +174,10 @@ public:
   }
 
   /// \}
-
   /// input/output
   /// \{
 
-  /// may throw std::ios_base:failure if an exception is thrown during output.
+  /// \throws std::ios_base:failure if an exception is thrown during output.
   friend constexpr
   basic_ostream<CharT, Traits> & operator<<(basic_ostream<CharT, Traits>& os, basic_static_string<CharT, Traits> v) {
     return os << v.view;
@@ -235,19 +223,19 @@ public:
   static constexpr size_type npos = basic_string_view<CharT,Traits>::npos;
 };
 
-//export template basic_static_string<char,std::char_traits<char>>;
-//export template basic_static_string<wchar_t,std::char_traits<wchar_t>>;
-//export template basic_static_string<char8_t,std::char_traits<char8_t>>;
-//export template basic_static_string<char16_t,std::char_traits<char16_t>>;
-//export template basic_static_string<char32_t,std::char_traits<char32_t>>;
+extern template basic_static_string<char,std::char_traits<char>>;
+extern template basic_static_string<wchar_t,std::char_traits<wchar_t>>;
+extern template basic_static_string<char8_t,std::char_traits<char8_t>>;
+extern template basic_static_string<char16_t,std::char_traits<char16_t>>;
+extern template basic_static_string<char32_t,std::char_traits<char32_t>>;
 
-export using static_string = basic_static_string<char>;
-export using static_wstring = basic_static_string<wchar_t>;
-export using static_u8string = basic_static_string<char8_t>;
-export using static_u16string = basic_static_string<char16_t>;
-export using static_u32string = basic_static_string<char32_t>;
+using static_string = basic_static_string<char>;
+using static_wstring = basic_static_string<wchar_t>;
+using static_u8string = basic_static_string<char8_t>;
+using static_u16string = basic_static_string<char16_t>;
+using static_u32string = basic_static_string<char32_t>;
 
-export class static_c_string {
+class static_c_string {
   const char * p;
 public:
 
@@ -368,12 +356,12 @@ public:
 // this is the only method by which these are initially constructed
 // all other methods just trade them around
 
-export template <class T, T ...xs>
+template <class T, T ...xs>
 consteval static_string operator"" _ss() noexcept {
   return basic_static_string(std::integer_sequence<T,xs...>{});
 }
 
-export template <one_of_t<char> T, T ...xs>
+template <one_of_t<char> T, T ...xs>
 consteval static_c_string operator"" _ss() noexcept {
   return static_c_string(basic_static_string<T>(std::integer_sequence<char,xs...>{}));
 }
@@ -382,33 +370,16 @@ consteval static_c_string operator"" _ss() noexcept {
 #  pragma GCC diagnostic pop
 #endif
 
-#if 0
-namespace {
-([] consteval static {
-constinit static_string x = "x"_ss;
-static_assert(x == x);
-constinit static_string y = "y"_ss;
-static_assert(y == y);
-static_assert(x != y);
-constinit static_atring x2 = "x"_ss;
-static_assert(x2 == x2);
-static_assert(x == x2);
-static_assert(y != x2);
-})();
-};
-#endif
-
-
 } // namespace ein
 
 namespace std {
-  export template <typename CharT, typename Traits>
+  template <typename CharT, typename Traits>
   struct hash<::ein::basic_static_string<CharT,Traits>> {
     constexpr size_t operator()(::ein::basic_static_string<CharT,Traits> const & s) const noexcept {
       return reinterpret_cast<size_t>(s.data());
     }
   };
-  export template <>
+  template <>
   struct hash<::ein::static_c_string> {
     constexpr size_t operator()(::ein::static_c_string s) const noexcept {
       return reinterpret_cast<size_t>(s.data());
@@ -417,18 +388,17 @@ namespace std {
   namespace ranges {
 
     /// \cond external specializations
-    export template< class CharT, class Traits >
+    template< class CharT, class Traits >
     constexpr bool enable_borrowed_range<::ein::basic_static_string<CharT, Traits>> = true;
 
-    export template< class CharT, class Traits >
+    template< class CharT, class Traits >
     constexpr bool enable_view<::ein::basic_static_string<CharT, Traits>> = true;
 
-    export template <>
+    template <>
     constexpr bool enable_borrowed_range<::ein::static_c_string> = true;
 
-    export template <>
+    template <>
     constexpr bool enable_view<::ein::static_c_string> = true;
     /// \endcond
-
   }
 }  // namespace std

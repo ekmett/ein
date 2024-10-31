@@ -6,32 +6,21 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-module;
-
-#ifdef EIN_PRELUDE
-#include "prelude.hpp"
-#elifndef EIN_PCH
 #include <unistd.h>
 #include <sys/types.h>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
 #include "attributes.hpp"
-#endif
-
-using namespace std;
-using namespace nlohmann;
-
-export module ein.profiling;
-import ein.static_string;
+#include "static_string.hpp"
 
 // tools for producing chrome:://tracing compatible trace files
 // see https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview#heading=h.nb4ul0l9tsgk
 
 /// \todo parameterize all of this on a couple of types that can serialize to json
-/// for flow id and for the contents of the message, rather than use json directly
+/// for flow id and for the contents of the message, rather than use \ref nlohmann::json directly
 namespace ein::profiling {
 
-export enum class scope : char {
+enum class scope : char {
   global = 'g',
   process = 'p',
   thread = 't',
@@ -47,7 +36,7 @@ NLOHMANN_JSON_SERIALIZE_ENUM( scope, {
 })
 /// \endcond
 
-export enum event_type : char {
+enum event_type : char {
   duration_begin = 'B', duration_end = 'E', complete = 'X', instant = 'i',
   counter = 'C', async_start = 'b', async_instant = 'n', async_end = 'e',
   flow_start = 's', flow_step = 't', flow_end = 'f', sample = 'P',
@@ -70,20 +59,22 @@ NLOHMANN_JSON_SERIALIZE_ENUM( event_type, {
   { event_type::mark, "R"},               { event_type::clock_sync, "c"},
   { event_type::context_enter, "("},      { event_type::context_leave, ")"}
 })
-/// \endcond
-
-namespace {
-  template <typename T> struct duration_suffix;
-  template <> struct duration_suffix<std::chrono::milliseconds> {
-    static constexpr const char * operator ()() noexcept { return "ms"; }
+namespace detail {
+  template <typename T> struct duration_suffix_impl;
+  template <> struct duration_suffix_impl<std::chrono::milliseconds> {
+    static constexpr char const * value = "ms";
   };
-  template <> struct duration_suffix<std::chrono::nanoseconds> {
-    static constexpr const char * operator ()() noexcept { return "ns"; }
+  template <> struct duration_suffix_impl<std::chrono::nanoseconds> {
+    static constexpr char const * value = "ns";
   };
 }
+/// \endcond
+/// \hideinitializer \hideinlinesource
+template <typename T>
+static constexpr char const * duration_suffix = duration_suffix_impl<T>::value;
 
 // can adjust granularity as required
-export template <typename Duration = std::chrono::nanoseconds, typename Clock = std::chrono::high_resolution_clock>
+template <typename Duration = std::chrono::nanoseconds, typename Clock = std::chrono::high_resolution_clock>
 struct profile_event {
   using duration = Duration;
   using clock = Clock;
@@ -96,10 +87,10 @@ struct profile_event {
   scope s;
   std::optional<string> id{}; // null // an actual real string
   static_c_string bp{}; // null
-  json args{}; // empty object
+  nlohmann::json args{}; // empty object
 };
 
-export template <typename Duration, typename Clock>
+template <typename Duration, typename Clock>
 void to_json(json& j, const profile_event<Duration, Clock> & t) {
   if (not t.name) j["name"] = t.name;
   if (not t.cat) j["cat"] = t.cat;
@@ -113,7 +104,7 @@ void to_json(json& j, const profile_event<Duration, Clock> & t) {
   if (not t.args.is_null()) j["args"] = t.args;
 }
 
-export template <
+template <
   typename Mutex = std::mutex, // for globally accessible profilers
   typename Duration = std::chrono::nanoseconds,
   typename Clock = std::chrono::high_resolution_clock
@@ -126,7 +117,7 @@ struct profile {
 
   Mutex events_mutex;
   std::vector<event> events;
-  json metadata;
+  nlohmann::json metadata;
   bool saved;
 
   profile(profile const &) = delete;
@@ -159,13 +150,11 @@ struct profile {
   ein_inline
   void set_process_name(std::string name = "") noexcept {
 #if defined(__APPLE__)
-    if (name.empty()) {
+    if (name.empty())
         name = getprogname();
-    }
 #elif defined(__linux__)
-    if (name.empty()) {
+    if (name.empty())
         name = program_invocation_short_name;
-    }
 #endif
     log({.name = "process_name"_ss, .ph = event_type::metadata, .args = { {"name",name}}});
   }
@@ -181,7 +170,7 @@ struct profile {
   }
 
   ein_inline
-  void counter(static_string name, json args) noexcept {
+  void counter(static_string name, nlohmann::json args) noexcept {
     log({.name = name, .ph = event_type::counter, .args = std::move(args) });
   }
 
@@ -213,19 +202,19 @@ struct profile {
 };
 
 // for tdnr
-export template <typename Mutex, typename Duration, typename Clock>
+template <typename Mutex, typename Duration, typename Clock>
 ein_inline
-void to_json(json & j, profile<Mutex,Duration,Clock> const & p) noexcept {
+void to_json(nlohmann::json & j, profile<Mutex,Duration,Clock> const & p) noexcept {
   j = {
     {"traceEvents", p.events},
-    {"displayTimeUnit", static_cast<const char *>(duration_suffix<Duration>()) }
+    {"displayTimeUnit", static_cast<const char *>(duration_suffix<Duration>) }
   };
   if (p.metadata.is_object())
     for (const auto &e : p.metadata.template get<json::object_t>())
       j[e.first] = e.second;
 };
 
-export template <typename Profile>
+template <typename Profile>
 struct scope_event {
   using duration = typename Profile::duration;
   using clock = typename Profile::clock;
@@ -251,7 +240,7 @@ struct scope_event {
 };
 
 // for manual toggling
-export template <typename Profile>
+template <typename Profile>
 struct duration_event {
   using event = typename Profile::event;
   Profile & profile;
@@ -285,7 +274,7 @@ struct duration_event {
 
 // creates a profile that automatically saves to disk when it goes out of scope
 
-export template <
+template <
   typename Mutex = std::mutex, // for globally accessible profilers
   typename Duration = std::chrono::nanoseconds,
   typename Clock = std::chrono::high_resolution_clock
@@ -325,10 +314,10 @@ export template <
   }
 };
 
-void make_args(json &) noexcept {}
+inline void make_args(nlohmann::json &) noexcept {}
 
 template <typename K, typename V, typename ... Args>
-void make_args(json & j, K && k, V && v, Args && ... args) {
+inline void make_args(nlohmann::json & j, K && k, V && v, Args && ... args) {
   j[std::forward(k)] = std::forward(v);
   make_args(j,std::forward<Args>(args)...);
 }
