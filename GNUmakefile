@@ -78,7 +78,7 @@ gen/bin/t_%: gen $(HEADERS) $(SOURCES)
 	@cmake --build gen --target $(notdir $@) -j
 
 t_%: gen/bin/t_%
-	@gen/$@
+	@gen/bin/$@
 
 define EXE_TEMPLATE
 gen/bin/$(1): gen $(HEADERS) $(SOURCES)

@@ -4,13 +4,13 @@
 
 using namespace ein;
 
-TEST_CASE("default constructors and conversion", "[bf16]") {
+TEST_CASE("bf16 default constructors and conversion", "[bf16]") {
   REQUIRE(bf16(0.5f).content == Catch::Approx(0.5f));
   REQUIRE(0.25_bf16 .content == Catch::Approx(0.25f));
   REQUIRE(static_cast<float>(1.0_bf16) == Catch::Approx(1.0f));
 }
 
-TEST_CASE("comparison operators", "[bf16]") {
+TEST_CASE("bf16 comparison operators", "[bf16]") {
   REQUIRE(0.5_bf16 == 0.5_bf16);
   REQUIRE(0.1_bf16 < 0.2_bf16);
   REQUIRE(0.3_bf16 > 0.2_bf16);
@@ -25,25 +25,25 @@ TEST_CASE("comparison operators", "[bf16]") {
   REQUIRE_FALSE(0.1_bf16 >= 0.2_bf16);
 }
 
-TEST_CASE("swap function", "[bf16]") {
+TEST_CASE("bf16 swap function", "[bf16]") {
   bf16 x(1.0_bf16), y(2.0_bf16);
   swap(x, y);
   REQUIRE(x == 2.0_bf16);
   REQUIRE(y == 1.0_bf16);
 }
 
-TEST_CASE("bit operations", "[bf16]") {
+TEST_CASE("bf16 bit operations", "[bf16]") {
   bf16 val = bf16::from_bits(0x3F00);
   REQUIRE(val.to_bits() == 0x3F00);
   REQUIRE(bf16::from_bits(0x7F80) == std::numeric_limits<bf16>::infinity());
 }
 
-TEST_CASE("isnan function", "[bf16]") {
+TEST_CASE("bf16 isnan function", "[bf16]") {
   REQUIRE(std::isnan(bf16::from_bits(0x7FC0)));
   REQUIRE_FALSE(std::isnan(1.0_bf16));
 }
 
-TEST_CASE("numeric_limits", "[bf16]") {
+TEST_CASE("bf16 numeric_limits", "[bf16]") {
   using nl = std::numeric_limits<bf16>;
 
   REQUIRE(nl::is_specialized);

@@ -4,12 +4,12 @@
 
 set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
 
-FetchContent_Declare(
-  Catch2
+FetchContentCached(
+  NAME Catch2
   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
   GIT_TAG        v3.7.1 # or a later release
 )
-FetchContent_MakeAvailable(Catch2)
+#FetchContent_MakeAvailable(Catch2)
 
 # silence a third-party warning on clang++-18+
 target_compile_options(Catch2 PRIVATE
