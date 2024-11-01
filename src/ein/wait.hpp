@@ -24,7 +24,7 @@ namespace ein {
 /// \brief some way to wait for a value to change
 /// \tparam T type to check
 template <typename T>
-concept waiter = requires (void * p, uint32_t t) {
+concept waiter = requires (volatile void * p, uint32_t t) {
   bool(T::supported);
   T::monitor(p);
   T::mwait(t);
@@ -36,8 +36,8 @@ concept waiter = requires (void * p, uint32_t t) {
 ///
 /// \post f(p)
 template <waiter W> ein_flatten
-void wait_until(auto * p, auto f) noexcept ein_blocking {
-  assume(W::supported);
+void wait_until(volatile auto * p, auto f) noexcept ein_blocking {
+  [[assume(W::supported)]];
   while (!f(p)) {
     W::monitor(p);
     if (!f(p))
@@ -48,7 +48,7 @@ void wait_until(auto * p, auto f) noexcept ein_blocking {
 /// \ref waiter using MONITORX/MWAITX for AMD
 struct mwaitx {
   using timer_t = uint64_t;
-  ein_inline ein_artificial static void monitor(void * p) noexcept { _mm_monitorx(p,0,0); }
+  ein_inline ein_artificial static void monitor(volatile void * p) noexcept { _mm_monitorx(const_cast<void*>(p),0,0); }
   ein_inline ein_artificial static void mwait(uint32_t timer = 0) noexcept ein_blocking { _mm_mwaitx(0,0,timer); }
   /// \hideinitializer \hideinlinesource
   static const bool supported;
@@ -58,7 +58,7 @@ struct mwaitx {
 /// \ref waiter using \UMONITOR/\UMWAIT for Intel
 struct umwait {
   using timer_t = uint64_t;
-  ein_inline ein_artificial static void monitor(void * p) noexcept { return _umonitor(p); }
+  ein_inline ein_artificial static void monitor(volatile void * p) noexcept { return _umonitor(const_cast<void*>(p)); }
   ein_inline ein_artificial static uint8_t mwait(uint32_t timer = 0) noexcept ein_blocking { return _umwait(1,timer); }
   /// \hideinlinesource
   static const bool supported;
@@ -67,7 +67,7 @@ struct umwait {
 /// spin \ref waiter using \PAUSE
 struct spin {
   using timer_t = uint64_t;
-  ein_inline ein_artificial static void monitor(void *) noexcept {}
+  ein_inline ein_artificial static void monitor(volatile void *) noexcept {}
   ein_inline ein_artificial static void mwait(uint32_t = 0) noexcept ein_blocking { _mm_pause(); }
   /// \hideinlinesource
   inline static constinit bool supported = true;

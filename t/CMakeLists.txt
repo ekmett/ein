@@ -31,4 +31,4 @@ macro(add_test_executables)
     endforeach()
 endmacro()
 
-add_test_executables(fp16 bf16 static_string memory profiling cpuid wait concepts)
+add_test_executables(fp16 bf16 static_string memory profiling cpuid wait concepts types)

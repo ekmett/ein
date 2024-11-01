@@ -18,7 +18,7 @@ fetchcontentcached(
 
 configure_file(
   "${CMAKE_CURRENT_SOURCE_DIR}/ein/config.hpp.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/include/ein/config.hpp"
+  "${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp"
 )
 
 file(GLOB_RECURSE SOURCE_HEADER_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
@@ -42,11 +42,11 @@ file(GLOB_RECURSE SOURCE_HEADER_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_
 #)
 
 # Replace SOURCE_DIR with BINARY_DIR for each header
-set(OUTPUT_HEADER_FILES "")
-foreach(header ${SOURCE_HEADER_FILES})
-    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/include" replaced_header "${header}")
-    list(APPEND OUTPUT_HEADER_FILES "${replaced_header}")
-endforeach()
+# set(OUTPUT_HEADER_FILES "")
+# foreach(header ${SOURCE_HEADER_FILES})
+#     string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/include" replaced_header "${header}")
+#     list(APPEND OUTPUT_HEADER_FILES "${replaced_header}")
+# endforeach()
 
 # Custom command to copy header files
 #add_custom_command(
@@ -55,21 +55,21 @@ endforeach()
 #  DEPENDS ${SOURCE_HEADER_FILES}
 #)
 
-foreach(header_file IN LISTS SOURCE_HEADER_FILES)
-  file(RELATIVE_PATH relative_path "${CMAKE_CURRENT_SOURCE_DIR}" "${header_file}")
-  set(target_path "${CMAKE_CURRENT_BINARY_DIR}/include/${relative_path}")
-  get_filename_component(target_dir "${target_path}" DIRECTORY)
-  file(MAKE_DIRECTORY "${target_dir}")
-  add_custom_command(
-    OUTPUT "${target_path}"
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header_file}" "${target_path}"
-    DEPENDS "${header_file}"
-  )
-  list(APPEND OUTPUT_HEADER_FILES "${target_path}")
-endforeach()
+# foreach(header_file IN LISTS SOURCE_HEADER_FILES)
+#   file(RELATIVE_PATH relative_path "${CMAKE_CURRENT_SOURCE_DIR}" "${header_file}")
+#   set(target_path "${CMAKE_CURRENT_BINARY_DIR}/include/${relative_path}")
+#   get_filename_component(target_dir "${target_path}" DIRECTORY)
+#   file(MAKE_DIRECTORY "${target_dir}")
+#   add_custom_command(
+#     OUTPUT "${target_path}"
+#     COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header_file}" "${target_path}"
+#     DEPENDS "${header_file}"
+#   )
+#   list(APPEND OUTPUT_HEADER_FILES "${target_path}")
+# endforeach()
 
-list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/include/ein/config.hpp)
-add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
+#list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp)
+add_custom_target(ein_headers ALL DEPENDS ${SOURCE_HEADER_FILES} ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp)
 
 add_library(ein STATIC
    ein/static_string.cpp
@@ -88,6 +88,7 @@ target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_js
 
 target_include_directories(ein PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<INSTALL_INTERFACE:include/ein>)
 
 install(TARGETS ein

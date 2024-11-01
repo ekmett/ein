@@ -22,17 +22,25 @@ namespace ein {
 /// \defgroup types Types
 /// \{
 
+namespace detail {
+inline std::string as_string(std::string_view v) {
+  return {v.data(), v.size()};
+}
+}
+
+
 /// \brief returns the unmangled name of a the type \p T
 /// \details Ideally this would be fully `constexpr`, but I'm not building my own demangler.
 /// \hideinitializer \hideinlinesource
 template <typename T>
-const string_view type = [] ein_nodiscard ein_const static noexcept -> string_view {
-  static const string_view body = [] ein_nodiscard ein_const static noexcept -> string_view {
+const string type = [] ein_nodiscard ein_const static noexcept -> string {
+  // nb: copying into string is necessary because the demangled name is ephemeral
+  static const string body = detail::as_string([] ein_nodiscard ein_const static noexcept -> string_view {
     int status;
     size_t len = 0uz;
     const char * str = abi::__cxa_demangle(typeid(T).name(), nullptr, &len, &status);
     return {str, len};
-  }();
+  }());
   return body;
 }();
 
@@ -40,7 +48,7 @@ const string_view type = [] ein_nodiscard ein_const static noexcept -> string_vi
 /// \hideinlinesource
 ein_nodiscard ein_const
 const string_view type_of(auto const & t) noexcept {
-  return type<remove_cvref_t<decltype(t)>>();
+  return type<remove_cvref_t<decltype(t)>>;
 }
 
 /// \brief type \p T is one of the \p candidates

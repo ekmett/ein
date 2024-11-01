@@ -71,7 +71,7 @@ namespace detail {
 /// \endcond
 /// \hideinitializer \hideinlinesource
 template <typename T>
-static constexpr char const * duration_suffix = duration_suffix_impl<T>::value;
+static constexpr char const * duration_suffix = detail::duration_suffix_impl<T>::value;
 
 // can adjust granularity as required
 template <typename Duration = std::chrono::nanoseconds, typename Clock = std::chrono::high_resolution_clock>
@@ -91,7 +91,7 @@ struct profile_event {
 };
 
 template <typename Duration, typename Clock>
-void to_json(json& j, const profile_event<Duration, Clock> & t) {
+void to_json(nlohmann::json& j, const profile_event<Duration, Clock> & t) {
   if (not t.name) j["name"] = t.name;
   if (not t.cat) j["cat"] = t.cat;
   j["ph"] = t.ph;
@@ -99,7 +99,7 @@ void to_json(json& j, const profile_event<Duration, Clock> & t) {
   j["pid"] = t.pid;
   j["tid"] = t.tid;
   if (t.s != scope::none) j["s"] = t.s;
-  if (t.id.has_value()) j["id"] = t.id;
+  if (t.id.has_value()) j["id"] = *t.id;
   if (t.bp) j["bp"] = t.bp;
   if (not t.args.is_null()) j["args"] = t.args;
 }
@@ -127,7 +127,7 @@ struct profile {
   profile() noexcept
   : events_mutex()
   , events()
-  , metadata(json{})
+  , metadata(nlohmann::json{})
   , saved(true) {
   }
 
@@ -195,7 +195,7 @@ struct profile {
   ein_inline
   friend
   OStream & operator << (OStream & o, profile & p) {
-    o << std::setw(2) << json(p) << std::endl;
+    o << std::setw(2) << nlohmann::json(p) << std::endl;
     p.saved = true;
     return o;
   }
@@ -210,7 +210,7 @@ void to_json(nlohmann::json & j, profile<Mutex,Duration,Clock> const & p) noexce
     {"displayTimeUnit", static_cast<const char *>(duration_suffix<Duration>) }
   };
   if (p.metadata.is_object())
-    for (const auto &e : p.metadata.template get<json::object_t>())
+    for (const auto &e : p.metadata.template get<nlohmann::json::object_t>())
       j[e.first] = e.second;
 };
 
@@ -281,7 +281,7 @@ template <
 > struct profile_scope {
   using duration = Duration;
   using clock = Clock;
-  using event = typename profile_event<Duration,Clock>::event;
+  using event = profile_event<Duration,Clock>;
   using profile = ein::profiling::profile<Mutex,Duration,Clock>;
 
   std::filesystem::path filename;
