@@ -1,4 +1,4 @@
-# ein
+# ein <!-- GITHUB {#readme} GITHUB -->
 
 <!--
 SPDX-FileType: DOCUMENTATION

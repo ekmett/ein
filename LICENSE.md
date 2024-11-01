@@ -1,4 +1,4 @@
-# License {#license_page}
+# License <!-- GITHUB {#license_page} GITHUB -->
 
 <!--
 SPDX-FileType: TEXT
