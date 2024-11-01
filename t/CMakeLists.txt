@@ -23,11 +23,6 @@ list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
 
 include(Catch)
 
-# add_executable(t_bf16 bf16.cpp)
-# target_link_libraries(t_bf16 PRIVATE Catch2::Catch2WithMain ein)
-# catch_discover_tests(t_bf16)
-
-
 macro(add_test_executables)
     foreach(target_name IN ITEMS ${ARGN})
         add_executable(t_${target_name} ${target_name}.cpp)
@@ -36,4 +31,4 @@ macro(add_test_executables)
     endforeach()
 endmacro()
 
-add_test_executables(fp16 bf16 static_string memory profiling cpuid wait)
+add_test_executables(fp16 bf16 static_string memory profiling cpuid wait concepts)
