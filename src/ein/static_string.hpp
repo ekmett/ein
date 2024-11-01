@@ -9,6 +9,7 @@
 #include <string_view>
 #include <cstring>
 #include <fstream>
+#include <nlohmann/json.hpp>
 #include "ein/attributes.hpp"
 #include "ein/types.hpp"
 
@@ -226,6 +227,11 @@ public:
   static constexpr size_type npos = std::basic_string_view<CharT,Traits>::npos;
 };
 
+template <typename CharT, typename Traits>
+void to_json(nlohmann::json& j, const basic_static_string<CharT,Traits>& s) {
+  j = std::string(s);
+}
+
 /// \cond
 template <typename CharT, CharT...xs>
 basic_static_string(std::integer_sequence<CharT,xs...>) -> basic_static_string<CharT,std::char_traits<CharT>>;
@@ -377,6 +383,11 @@ consteval static_c_string operator"" _scs() noexcept {
 #ifdef __GNUC__
 #  pragma GCC diagnostic pop
 #endif
+
+void to_json(nlohmann::json& j, static_c_string const & s) {
+  j = std::string(s);
+}
+
 
 } // namespace ein
 
