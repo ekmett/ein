@@ -12,7 +12,7 @@
 #include <compare>
 #include <cstdint>
 #include <limits>
-#include "ein/attributes.hpp"
+#include "../attributes/common.hpp"
 
 namespace ein {
 

@@ -14,3 +14,4 @@
 #include "lifetimes.hpp"
 #include "inlining.hpp"
 #include "linkage.hpp"
+#include "initialization.hpp"

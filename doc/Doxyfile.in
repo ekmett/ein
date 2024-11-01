@@ -20,6 +20,9 @@ INPUT += @CMAKE_CURRENT_BINARY_DIR@/../include
 INPUT += @CMAKE_CURRENT_SOURCE_DIR@/../t
 INPUT += @CMAKE_CURRENT_SOURCE_DIR@
 
+HTML_INDEX_NUM_ENTRIES = 40
+
+
 EXTENSION_MAPPING = cppm=C++
 FILE_PATTERNS = *.h *.hpp *.c *.cpp *.cppm *.dox *.md *.x=cpp
 FILTER_PATTERNS  = *.md=@CMAKE_CURRENT_SOURCE_DIR@/../bin/gfm_preprocessor.sh
