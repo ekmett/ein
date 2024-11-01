@@ -2,7 +2,7 @@
 #include <catch2/catch_all.hpp>
 #include <cstring> // for strcmp
 #include <sys/mman.h> // for mmap, PROT_READ, MAP_PRIVATE, MAP_ANONYMOUS
-#include "memory.hpp"
+#include "ein/memory.hpp"
 
 TEST_CASE("unique_str manages strdup-allocated strings") {
     const char* original = "Hello, World!";

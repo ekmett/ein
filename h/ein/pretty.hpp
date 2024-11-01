@@ -10,9 +10,9 @@
 
 #include <cstdint>
 #include <ranges>
-#include "attribues.hpp"
-#include "concepts.hpp"
-#include "config.hpp"
+#include "ein/attributes.hpp"
+#include "ein/concepts.hpp"
+#include "ein/config.hpp"
 
 /// use exceptions as control flow. do as i say, not as i do.
 namespace ein::pretty {
@@ -34,7 +34,7 @@ constexpr struct newline_t {
   OStream & operator << (ein_lifetimebound OStream & ein_restrict os) const noexcept {
     return os << std::endl;
   }
-} 
+}
 
 extern template constexpr void newline_t::pp<false>(this newline_t, ein_noescape printer & ein_restrict) noexcept(true);
 extern template constexpr void newline_t::pp<true>(this newline_t, ein_noescape printer & ein_restrict) noexcept(false);
@@ -327,7 +327,7 @@ struct fun {
 template <documented... Args> constexpr ein_inline ein_visibility("hidden")
 auto sequence(Args && ... args) noexcept {
   return fun(
-    [... args=std::forward<Args>(args)] 
+    [... args=std::forward<Args>(args)]
     <bool flat> constexpr ein_inline ein_visibility("hidden") (
       ein_noescape printer & ein_restrict p
     ) noescape(not flat) {
@@ -447,10 +447,10 @@ autodoc intersperse(documented auto && delim, documented_range auto && docs) noe
 
 // returns doc auto
 ein_inline ein_visibility("hidden")
-constexpr autodoc intersperse(documented auto&& delim, documented auto&&... docs) noexcept 
+constexpr autodoc intersperse(documented auto&& delim, documented auto&&... docs) noexcept
 requires (sizeof...(docs) > 1) {
   return fun(
-    [delim = std::forward<decltype(delim)>(delim), ...docs = std::forward<decltype(docs)>(docs)] 
+    [delim = std::forward<decltype(delim)>(delim), ...docs = std::forward<decltype(docs)>(docs)]
     <bool flat>
     constexpr ein_inline ein_visibility("hidden") (
       ein_noescape printer& ein_restrict p
@@ -470,7 +470,7 @@ requires (sizeof...(docs) > 1) {
 
 /// \returns doc auto
 constexpr ein_inline ein_visibility("hidden")
-autodoc hsep(documented auto && ... args) noexcept 
+autodoc hsep(documented auto && ... args) noexcept
 requires (sizeof...(args) > 1) {
   return intersperse(space,std::forward<decltype(args)>(args)...);
 }
@@ -496,9 +496,9 @@ autodoc vsep(documented_range auto && range) noexcept {
 struct hv_t {
   static constexpr void pp<bool flat>(ein_noescape printer & ein_restrict p) noexcept (not flat) {
     if constexpr (flat) {
-      p.space<flat>() 
-    } else  
-      p.newline(); 
+      p.space<flat>()
+    } else
+      p.newline();
     }
   }
 }
@@ -508,7 +508,7 @@ extern template constexpr void hv_t::pp<false>(ein_noescape printer & ein_restri
 extern constexpr hv_t hv;
 
 /// \returns doc auto
-constexpr autodoc hvsep(documented auto && ... args) noexcept 
+constexpr autodoc hvsep(documented auto && ... args) noexcept
 requires (sizeof...(args) > 1) {
   return intersperse(hv, std::forward<decltype(args)>(args)...);
 }
@@ -530,7 +530,7 @@ extern constexpr h_tight_t h_tight;
 
 /// \returns doc auto
 constexpr ein_inline ein_visibility("hidden")
-autodoc hsep_tight(documented auto && ... args) noexcept 
+autodoc hsep_tight(documented auto && ... args) noexcept
 requires (sizeof...(args) > 1) {
   return intersperse(h_tight, std::forward<decltype(args)>(args)...);
 }
@@ -545,7 +545,7 @@ struct hv_tight_t {
   static constexpr void pp<bool flat>(ein_noescape printer & ein_restrict p) noexcept (not flat) {
     if constexpr (not flat) { p.newline(); }
   }
-}; 
+};
 
 extern template constexpr void hv_tight_t::pp<true>(ein_noescape printer & ein_restrict) noexcept(false);
 extern template constexpr void hv_tight_t::pp<false>(ein_noescape printer & ein_restrict) noexcept(true);
@@ -553,7 +553,7 @@ extern constexpr hv_tight_t hv_tight;
 
 /// \returns doc auto
 constexpr ein_inline ein_visibility("hidden")
-autodoc hvsep_tight(documented auto && ... args) noexcept 
+autodoc hvsep_tight(documented auto && ... args) noexcept
 requires (size...(args) > 1) {
   return intersperse(hv_tight, std::forward<decltype(args)>(args)...);
 }
@@ -574,7 +574,7 @@ autodoc guttered(one_piece auto && pie) noexcept {
       ein_noescape printer & ein_restrict p
     ) noexcept(not flat) -> void {
       static constexpr width_t s = 1; // width of a space
-      if constexpr (flat) { 
+      if constexpr (flat) {
         p.spaces<flat>(s);
       } else {
         p.hardline();
@@ -593,12 +593,12 @@ constexpr ein_inline ein_visibility("hidden")
 autodoc grouped(D && body) {
   return fun(
     [body=std::forward<D>(body)]
-    <bool flat> 
+    <bool flat>
     constexpr ein_inline ein_visibility("hidden") (
       ein_noescape printer & ein_restrict p
     ) noexcept(not flat) -> void {
       if constexpr (not flat) {
-        try { 
+        try {
           return pp<true>(p,body); // not flat=false, flat=true, is flat just not not flat
         } catch(bad&) {}
       }
@@ -688,7 +688,7 @@ auto oxford_range(piece conjunction, document_range auto && range) {
       } else {
         return grouped(align(fun(
           [N, conjunction, begin, end]
-          <bool flat> 
+          <bool flat>
           constexpr ein_inline ein_visibility("hidden") (
             ein_noescape printer & ein_restrict p
           ) noexcept(not flat) {

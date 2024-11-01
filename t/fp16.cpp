@@ -1,6 +1,6 @@
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch_all.hpp>
-#include "numerics/fp16.hpp"
+#include "ein/numerics/fp16.hpp"
 
 using namespace ein;
 
@@ -53,4 +53,3 @@ TEST_CASE("fp16 numeric_limits","[fp16]") {
   REQUIRE(std::isnan(nl::signaling_NaN()));
   REQUIRE(nl::denorm_min() == fp16::from_bits(0));
 }
-

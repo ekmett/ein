@@ -15,10 +15,10 @@ fetchcontentcached(
 
 add_library(ein STATIC
    static_string.cpp
+   cpuid.cpp
 )
-   
+
 #  numerics.cpp
-#  cpuid.cpp
 #  pretty.cpp
 #  wait.cpp
 

@@ -1,7 +1,7 @@
 
 #define CATCH_CONFIG_MAIN
 #include <catch2/catch_all.hpp>
-#include "static_string.hpp" // Update to the correct path
+#include "ein/static_string.hpp" // Update to the correct path
 
 using namespace ein;
 

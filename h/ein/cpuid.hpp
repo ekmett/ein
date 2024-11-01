@@ -11,7 +11,7 @@
 #include <array>
 #include <cstdint>
 #include <string_view>
-#include "attributes.hpp"
+#include "ein/attributes.hpp"
 
 using namespace std;
 
@@ -24,13 +24,13 @@ struct ein_nodiscard cpuid_t {
 
 /** \brief calls \CPUID and returns all of the registers that it responds with.
 
-    \details 
+    \details
       this can take a 100+ cycles and stalls everything waiting for writes,
       so please, do this outside of the critical path.
 
     \hideinlinesource */
 
-extern cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept;
+ein_pure extern cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept;
 
 /// \brief CPU vendor id
 enum class ein_nodiscard cpu_vendor : uint8_t {

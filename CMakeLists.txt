@@ -254,27 +254,25 @@ add_link_options("$<${Link_Clang}:--rtlib=compiler-rt>")
 include(CheckRestrict)
 
 configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/config.hpp.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/config.hpp.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/h/ein/config.hpp"
 )
 
 list(APPEND SOURCE_HEADER_FILES
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/assert.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/attributes.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/concepts.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/cpuid.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/intrinsics.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/numerics.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/numerics/fp16.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/numerics/bf16.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/prelude.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/profiling.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/simd.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/simd_data.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/static_string.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/std.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/types.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/wait.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/assert.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/attributes.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/concepts.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/cpuid.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/numerics.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/numerics/fp16.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/numerics/bf16.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/profiling.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/simd.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/simd_data.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/static_string.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/std/forward_like.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/types.hpp"
+  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/wait.hpp"
 )
 
 # Replace SOURCE_DIR with BINARY_DIR for each header
@@ -304,7 +302,7 @@ foreach(header_file IN LISTS SOURCE_HEADER_FILES)
   list(APPEND OUTPUT_HEADER_FILES "${target_path}")
 endforeach()
 
-list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp)
+list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/ein/config.hpp)
 add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)

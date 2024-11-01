@@ -12,7 +12,7 @@
 #include <cstring> // strdup
 #include <memory>
 #include <sys/mman.h> // munmap
-#include "attributes.hpp"
+#include "ein/attributes.hpp"
 
 namespace ein {
 

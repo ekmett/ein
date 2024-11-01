@@ -11,14 +11,14 @@
 #include <array>
 #include <cstdint>
 #include <string_view>
-#include "attributes.hpp"
-#include "cpuid.h"
+#include "ein/attributes.hpp"
+#include "ein/cpuid.hpp"
 #include <cpuid.h>
 
 namespace ein {
 
 /// \hideinlinesource
-ein_inline ein_pure cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept {
+ein_pure cpuid_t cpuid(int32_t eax, int32_t ecx) noexcept {
   cpuid_t result;
   __cpuid_count(eax, ecx, result.eax, result.ebx, result.ecx, result.edx);
   return result;

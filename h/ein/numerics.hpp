@@ -12,7 +12,7 @@
 #include <cmath>
 #include <cstdint>
 #include <type_traits>
-#include "attributes.hpp"
+#include "ein/attributes.hpp"
 
 #ifdef __AVX512F__
 #define IFAVX512(x,y) x
@@ -20,11 +20,11 @@
 #define IFAVX512(x,y) y
 #endif
 
-#include "types.hpp"
+#include "ein/types.hpp"
 
-#include "numerics.hpp"
-#include "numerics/bf16.hpp"
-#include "numerics/fp16.hpp"
+#include "ein/numerics.hpp"
+#include "ein/numerics/bf16.hpp"
+#include "ein/numerics/fp16.hpp"
 
 namespace ein {
 /// \defgroup numerics Numerics

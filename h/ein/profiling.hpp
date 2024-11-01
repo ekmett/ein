@@ -10,8 +10,8 @@
 #include <sys/types.h>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
-#include "attributes.hpp"
-#include "static_string.hpp"
+#include "ein/attributes.hpp"
+#include "ein/static_string.hpp"
 
 // tools for producing chrome:://tracing compatible trace files
 // see https://docs.google.com/document/d/1CvAClvFfyA5R-PhYUmn5OOQtYMH4h6I0nSsKchNAySU/preview#heading=h.nb4ul0l9tsgk

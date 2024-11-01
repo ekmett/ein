@@ -9,8 +9,8 @@
 #include <string_view>
 #include <cstring>
 #include <fstream>
-#include "attributes.hpp"
-#include "types.hpp"
+#include "ein/attributes.hpp"
+#include "ein/types.hpp"
 
 namespace ein {
 

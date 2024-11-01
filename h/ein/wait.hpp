@@ -14,8 +14,8 @@
 
 #include <cstdint>
 #include <x86intrin.h>
-#include "attributes.hpp"
-#include "cpuid.hpp"
+#include "ein/attributes.hpp"
+#include "ein/cpuid.hpp"
 
 namespace ein {
 /// \defgroup wait Waiting
