@@ -248,62 +248,8 @@ add_compile_options(
   # "$<${CXX_GccOrClang}:-Wthread-safety>"
 add_link_options("$<${Link_Clang}:--rtlib=compiler-rt>")
 
-# header jiujutsu
-# ====================================================================
-
 include(CheckRestrict)
 
-configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/config.hpp.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/h/ein/config.hpp"
-)
-
-list(APPEND SOURCE_HEADER_FILES
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/assert.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/attributes.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/concepts.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/cpuid.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/numerics.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/numerics/fp16.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/numerics/bf16.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/profiling.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/simd.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/simd_data.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/static_string.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/std/forward_like.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/types.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/ein/wait.hpp"
-)
-
-# Replace SOURCE_DIR with BINARY_DIR for each header
-set(OUTPUT_HEADER_FILES "")
-foreach(header ${SOURCE_HEADER_FILES})
-    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}" replaced_header "${header}")
-    list(APPEND OUTPUT_HEADER_FILES "${replaced_header}")
-endforeach()
-
-# Custom command to copy header files
-#add_custom_command(
-#  OUTPUT ${OUTPUT_HEADER_FILES}
-#  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_CURRENT_BINARY_DIR}/h"
-#  DEPENDS ${SOURCE_HEADER_FILES}
-#)
-
-foreach(header_file IN LISTS SOURCE_HEADER_FILES)
-  file(RELATIVE_PATH relative_path "${CMAKE_CURRENT_SOURCE_DIR}/h" "${header_file}")
-  set(target_path "${CMAKE_CURRENT_BINARY_DIR}/h/${relative_path}")
-  get_filename_component(target_dir "${target_path}" DIRECTORY)
-  file(MAKE_DIRECTORY "${target_dir}")
-  add_custom_command(
-    OUTPUT "${target_path}"
-    COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header_file}" "${target_path}"
-    DEPENDS "${header_file}"
-  )
-  list(APPEND OUTPUT_HEADER_FILES "${target_path}")
-endforeach()
-
-list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/ein/config.hpp)
-add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)
 add_subdirectory(doc)
