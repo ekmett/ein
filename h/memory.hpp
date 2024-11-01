@@ -61,7 +61,7 @@ using unique_c_ptr = std::unique_ptr<T, c_free>;
 static_assert(sizeof(char *)== sizeof(unique_c_ptr<char>),"");
 
 /// a c string, managed by unique_ptr
-using unique_str = std::unique_c_ptr<char const>;
+using unique_str = unique_c_ptr<char const>;
 
 /// \brief duplicate a C string using `strdup` and manage it as a \ref unique_str
 /// \pre \p string is non-null
@@ -69,10 +69,10 @@ using unique_str = std::unique_c_ptr<char const>;
 /// \hideinlinesource
 ein_nodiscard ein_inline ein_artificial ein_pure
 ein_nonnull(1) ein_null_terminated_string_arg(1)
-std::unique_str dup(
-  ein_noescape char const * string
+unique_str dup(
+  ein_noescape char const * str
 ) noexcept {
-  return std::unique_str { strdup(string) };
+  return unique_str { strdup(str) };
 }
 
 } // ein

@@ -35,14 +35,14 @@ template <
   typename Traits = std::char_traits<CharT>
 >
 class basic_static_string {
-  basic_string_view<CharT,Traits> view;
+  std::basic_string_view<CharT,Traits> view;
 
+public:
   ein_inline constexpr
-  basic_static_string(basic_string_view<CharT,Traits> view)
+  basic_static_string(std::basic_string_view<CharT,Traits> view)
   : view(view) {}
 
   friend class static_c_string;
-public:
   using traits_type = Traits;
   using value_type = CharT;
   using pointer = CharT *;
@@ -59,8 +59,8 @@ public:
   /// \name constructors
   /// \{
 
-  template <char...xs>
-  consteval explicit basic_static_string(std::integer_sequence<char,xs...>)
+  template <CharT...xs>
+  consteval explicit basic_static_string(std::integer_sequence<CharT,xs...>)
   : view(reify<CharT,xs...>::value,sizeof...(xs)) {}
 
   ein_inline constexpr
@@ -112,7 +112,10 @@ public:
 
   /// access the specified character with bounds checking
   ein_nodiscard ein_inline ein_pure constexpr
-  CharT const & at(size_type i) const noexcept { return view.at(i); }
+  CharT const & at(size_type i) const {
+    if (i >= view.size()) throw std::out_of_range("basic_static_string::at");
+    return view.at(i);
+  }
 
   /// \brief Returns reference to the first character in the static_string.
   ///
@@ -167,9 +170,9 @@ public:
   ein_nodiscard ein_inline ein_pure ein_artificial friend constexpr
   bool operator != (basic_static_string self, basic_static_string that) noexcept {
     if constexpr (std::is_same_v<Traits,std::char_traits<CharT>> && one_of_t<CharT,char,wchar_t,char8_t,char16_t,char32_t>) {
-      return self.view.data != that.view.data;
+      return self.view.data() != that.view.data();
     } else {
-      return (self.view.data != that.view.data) && (self.view != that.view);
+      return (self.view.data() != that.view.data()) && (self.view != that.view);
     }
   }
 
@@ -220,10 +223,12 @@ public:
     swap(x.view,y.view);
   }
 
-  static constexpr size_type npos = basic_string_view<CharT,Traits>::npos;
+  static constexpr size_type npos = std::basic_string_view<CharT,Traits>::npos;
 };
 
 /// \cond
+template <typename CharT, CharT...xs>
+basic_static_string(std::integer_sequence<CharT,xs...>) -> basic_static_string<CharT,std::char_traits<CharT>>;
 extern template class basic_static_string<char,std::char_traits<char>>;
 extern template class basic_static_string<wchar_t,std::char_traits<wchar_t>>;
 extern template class basic_static_string<char8_t,std::char_traits<char8_t>>;
@@ -344,6 +349,7 @@ public:
     using std::swap;
     swap(x.p,y.p);
   }
+  // Standard C++23 string literal operator
 };
 
 #ifdef __GNUC__
@@ -359,13 +365,13 @@ public:
 // all other methods just trade them around
 
 template <class T, T ...xs>
-consteval static_string operator"" _ss() noexcept {
-  return basic_static_string(std::integer_sequence<T,xs...>{});
+consteval basic_static_string<T,std::char_traits<T>> operator"" _ss() noexcept {
+  return basic_static_string<T,std::char_traits<T>>(std::integer_sequence<T,xs...>{});
 }
 
 template <one_of_t<char> T, T ...xs>
-consteval static_c_string operator"" _ss() noexcept {
-  return static_c_string(basic_static_string<T>(std::integer_sequence<char,xs...>{}));
+consteval static_c_string operator"" _scs() noexcept {
+  return static_c_string(basic_static_string<T,std::char_traits<T>>(std::integer_sequence<T,xs...>{}));
 }
 
 #ifdef __GNUC__

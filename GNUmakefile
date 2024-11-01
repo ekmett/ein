@@ -8,7 +8,8 @@ PRESET := native
 # BUILD_TYPE := Debug  # for debugging
 MAKEFLAGS += --no-print-directory -j
 CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
-TESTS := $(notdir $(wildcard t/t_*.cpp))
+TESTS := $(patsubst %.cpp,%,$(notdir $(wildcard t/*.cpp)))
+TEST_EXES := $(patsubst %,t_%,$(TESTS))
 PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
 LOGLEVEL :=
@@ -22,6 +23,7 @@ ifdef DEBUG
 $(info BUILD_TYPE := $(BUILD_TYPE))
 $(info MAKEFLAGS := $(MAKEFLAGS))
 $(info TESTS = $(TESTS))
+$(info TEST_EXES = $(TEST_EXES))
 $(info PHONY = $(PHONY))
 $(info RUN = $(RUN))
 $(info CMAKE_DEFINES = $(CMAKE_DEFINES))
@@ -74,11 +76,9 @@ tags:
 	@find . -name '*.[ch]pp' -o -name '*.cppm' -type f -not -path './gen/*' -exec ctags {} +
 	@echo tags updated
 
-gen/bin/t_%: gen $(HEADERS) $(SOURCES)
-	@cmake --build gen --target $(notdir $@) -j
 
-t_%: gen/bin/t_%
-	@gen/bin/$@
+#t_%: gen/bin/t_%
+#	@gen/bin/$@
 
 define EXE_TEMPLATE
 gen/bin/$(1): gen $(HEADERS) $(SOURCES)
@@ -87,8 +87,18 @@ gen/bin/$(1): gen $(HEADERS) $(SOURCES)
 $(1): gen/bin/$(1)
 	@gen/bin/$(1)
 endef
-
 $(foreach exe,$(EXES),$(eval $(call EXE_TEMPLATE,$(exe))))
+
+define TEST_EXE_TEMPLATE
+
+gen/bin/t_$(1): gen $(HEADERS) $(SOURCES) t/$(1).cpp
+	@cmake --build gen --target $(notdir $@) -j
+
+t_$(1): gen/bin/t_$(1)
+	@gen/bin/t_$(1)
+endef
+
+$(foreach test,$(TESTS),$(eval $(call TEST_EXE_TEMPLATE,$(test))))
 
 test: all
 	@ctest --test-dir gen --output-on-failure -j

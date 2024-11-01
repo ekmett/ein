@@ -2,6 +2,9 @@
 # SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
 # SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
 
+include(CTest)
+enable_testing()
+
 set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
 
 FetchContentCached(
@@ -18,13 +21,19 @@ target_compile_options(Catch2 PRIVATE
 
 list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
 
-add_executable(t_fp16 t_fp16.cpp)
-target_link_libraries(t_fp16 PRIVATE Catch2::Catch2WithMain ein)
-
-add_executable(t_bf16 t_bf16.cpp)
-target_link_libraries(t_bf16 PRIVATE Catch2::Catch2WithMain ein)
-
-# Discover Catch2 tests
 include(Catch)
-catch_discover_tests(t_fp16)
-catch_discover_tests(t_bf16)
+
+# add_executable(t_bf16 bf16.cpp)
+# target_link_libraries(t_bf16 PRIVATE Catch2::Catch2WithMain ein)
+# catch_discover_tests(t_bf16)
+
+
+macro(add_test_executables)
+    foreach(target_name IN ITEMS ${ARGN})
+        add_executable(t_${target_name} ${target_name}.cpp)
+        target_link_libraries(t_${target_name} PRIVATE Catch2::Catch2WithMain ein)
+        catch_discover_tests(t_${target_name})
+    endforeach()
+endmacro()
+
+add_test_executables(fp16 bf16 static_string memory)

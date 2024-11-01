@@ -9,7 +9,7 @@ set(PROJECT_BRIEF "SIMD Tools")
 
 # set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
 # set(CMAKE_CXX_MODULE_STD TRUE)
-set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
+# set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
 
 project(ein VERSION 0.0.1 LANGUAGES CXX)
 
@@ -70,9 +70,9 @@ option(AVX512 "Enable AVX512" ON)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 
 set(CXX_Clang "$<COMPILE_LANG_AND_ID:CXX,AppleClang,Clang>")
 set(CXX_Gcc "$<COMPILE_LANG_AND_ID:CXX,GNU>")
@@ -248,15 +248,6 @@ add_compile_options(
   # "$<${CXX_GccOrClang}:-Wthread-safety>"
 add_link_options("$<${Link_Clang}:--rtlib=compiler-rt>")
 
-# tests
-# ====================================================================
-
-if(ENABLE_TESTS)
-  include(CTest)
-  enable_testing()
-  add_subdirectory(t)
-endif(ENABLE_TESTS)
-
 # header jiujutsu
 # ====================================================================
 
@@ -318,6 +309,14 @@ add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)
 add_subdirectory(doc)
+add_subdirectory(t)
+
+# tests
+# ====================================================================
+
+#if(ENABLE_TESTS)
+#endif(ENABLE_TESTS)
+
 
 # Code Coverage
 # ====================================================================
