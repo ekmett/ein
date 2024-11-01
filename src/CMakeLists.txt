@@ -21,23 +21,25 @@ configure_file(
   "${CMAKE_CURRENT_BINARY_DIR}/include/ein/config.hpp"
 )
 
-list(APPEND SOURCE_HEADER_FILES
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/assert.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/attributes.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/concepts.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/cpuid.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics/fp16.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics/bf16.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/memory.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/profiling.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/simd.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/simd_data.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/static_string.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/std/forward_like.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/types.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/wait.hpp"
-)
+file(GLOB_RECURSE SOURCE_HEADER_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
+
+# list(APPEND SOURCE_HEADER_FILES
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/assert.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/attributes.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/concepts.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/cpuid.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics/fp16.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics/bf16.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/memory.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/profiling.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/simd.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/simd_data.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/static_string.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/std/forward_like.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/types.hpp"
+#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/wait.hpp"
+#)
 
 # Replace SOURCE_DIR with BINARY_DIR for each header
 set(OUTPUT_HEADER_FILES "")
@@ -72,6 +74,7 @@ add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 add_library(ein STATIC
    ein/static_string.cpp
    ein/cpuid.cpp
+   ein/wait.cpp
 )
 
 #  numerics.cpp
@@ -97,6 +100,6 @@ install(TARGETS ein
 set_target_properties(ein PROPERTIES PUBLIC_HEADER "${OUTPUT_HEADER_FILES}")
 
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
-target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
+target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops;-mwaitpkg;-mmwaitx>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")

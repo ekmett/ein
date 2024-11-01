@@ -12,9 +12,7 @@
 
       \details
 
-        This file works around limitations of the installed libc++ / stdc++
-
-      \ingroup std */
+        This file works around limitations of the installed libc++ / stdc++ */
 
 #include <type_traits>
 
@@ -33,24 +31,23 @@ namespace std {
   }
 
   /** \brief Returns a reference to x which has similar properties to T&&.
-     
+
       The return type is determined as below:
-     
+
       If `std::remove_reference_t<T>` is a `const`-qualified type, then the referenced type of the
       return type is `const std::remove_reference_t<U>`. Otherwise, the referenced type is `std::remove_reference_t<U>`.
-     
+
       If `T&&` is an lvalue reference type, then the return type is also an lvalue reference type.
-     
+
       Otherwise, the return type is an rvalue reference type.
-     
+
       If T is not a referenceable type, the program is ill-formed.
-     
+
       \tparam T the type to copy qualifications from
       \param x a value needs to be forwarded like type `T`
       \returns a reference to x of the type determined as above.
-     
-      \since 2022-07L `__cpp_lib_forward_like`
-      \ingroup std */
+
+      \since 2022-07L `__cpp_lib_forward_like` */
   template <typename T>
     [[nodiscard]] constexpr
     auto forward_like(auto&& x) noexcept -> detail::forward_like_t<T, decltype(x)> {

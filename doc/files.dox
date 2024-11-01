@@ -8,11 +8,6 @@
   \endlicense
 \endinternal
 
-\dir h
-  \brief C++ headers
-
-\dir src
-  \brief C++ source files
 
 \defgroup attributes Attributes
   \details
