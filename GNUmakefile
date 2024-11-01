@@ -101,6 +101,6 @@ endef
 $(foreach test,$(TESTS),$(eval $(call TEST_EXE_TEMPLATE,$(test))))
 
 test: all
-	@ctest --test-dir gen --output-on-failure -j
+	@ctest --test-dir gen/t --output-on-failure -j
 
 .PHONY: $(PHONY)
