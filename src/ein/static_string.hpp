@@ -12,8 +12,8 @@
 #include <cstring>
 #include <fstream>
 #include <nlohmann/json.hpp>
-#include "ein/attributes.hpp"
-#include "ein/types.hpp"
+#include "attributes/common.hpp"
+#include "types.hpp"
 
 namespace ein {
 

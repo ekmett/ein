@@ -1,3 +1,5 @@
+#pragma once
+
 /** \file
 
       \license
@@ -12,7 +14,7 @@
 #include <cmath>
 #include <cstdint>
 #include <type_traits>
-#include "ein/attributes.hpp"
+#include "attributes.hpp"
 
 #ifdef __AVX512F__
 #define IFAVX512(x,y) x
@@ -20,11 +22,9 @@
 #define IFAVX512(x,y) y
 #endif
 
-#include "ein/types.hpp"
-
-#include "ein/numerics.hpp"
-#include "ein/numerics/bf16.hpp"
-#include "ein/numerics/fp16.hpp"
+#include "types.hpp"
+#include "numerics/bf16.hpp"
+#include "numerics/fp16.hpp"
 
 namespace ein {
 /// \defgroup numerics Numerics

@@ -11,9 +11,9 @@
 #include <array>
 #include <cstdint>
 #include <string_view>
-#include "ein/attributes.hpp"
-#include "ein/cpuid.hpp"
 #include <cpuid.h>
+#include "attributes/purity.hpp"
+#include "cpuid.hpp"
 
 namespace ein {
 

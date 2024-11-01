@@ -11,7 +11,8 @@
 #include <array>
 #include <cstdint>
 #include <string_view>
-#include "ein/attributes.hpp"
+#include "attributes/purity.hpp"
+#include "attributes/lifetimes.hpp"
 
 using namespace std;
 

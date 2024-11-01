@@ -253,14 +253,15 @@ include(CheckRestrict)
 
 add_subdirectory(src)
 add_subdirectory(doc)
-add_subdirectory(t)
 
 # tests
 # ====================================================================
 
-#if(ENABLE_TESTS)
-#endif(ENABLE_TESTS)
-
+if(ENABLE_TESTS)
+  include(CTest)
+  enable_testing()
+  add_subdirectory(t)
+endif()
 
 # Code Coverage
 # ====================================================================
@@ -270,7 +271,7 @@ if(CODE_COVERAGE)
   message(STATUS "Code coverage instrumentation enabled")
   add_custom_target(coverage
     COMMAND llvm-profdata merge -sparse default.profraw -o coverage.profdata
-    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o" -o -name "*.cppm.o") > coverage.info
+    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o") > coverage.info
     COMMAND genhtml coverage.info --output-directory coverage-report
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Generating code coverage report"

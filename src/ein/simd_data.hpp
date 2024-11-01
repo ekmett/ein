@@ -13,9 +13,9 @@
 #include <cstdint>
 #include <type_traits>
 #include <immintrin.h>
-#include "ein/attributes.hpp"
-#include "ein/numerics.hpp"
-#include "ein/types.hpp"
+#include "attributes.hpp"
+#include "numerics.hpp"
+#include "types.hpp"
 
 namespace ein {
 /// \addtogroup simd

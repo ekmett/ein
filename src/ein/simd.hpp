@@ -16,10 +16,10 @@
 #include <type_traits>
 #include <algorithm>
 #include <immintrin.h>
-#include "ein/attributes.hpp"
-#include "ein/numerics.hpp"
-#include "ein/types.hpp"
-#include "ein/simd_data.hpp"
+#include "attributes/common.hpp"
+#include "numerics.hpp"
+#include "types.hpp"
+#include "simd_data.hpp"
 
 #ifdef __AVX512F__
 #define IF512(x,y) x

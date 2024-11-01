@@ -1,4 +1,4 @@
-#include "ein/static_string.hpp"
+#include "static_string.hpp"
 
 namespace ein {
 
