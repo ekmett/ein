@@ -69,7 +69,7 @@ template <size_t N>
 struct imm_t {
   static constexpr size_t value = N;
   ein_nodiscard ein_inline ein_const ein_artificial
-  constexpr operator size_t () noexcept { return N; }
+  consteval operator size_t () const noexcept { return N; }
 };
 
 template <size_t N>

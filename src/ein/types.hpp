@@ -28,7 +28,6 @@ inline std::string as_string(std::string_view v) {
 }
 }
 
-
 /// \brief returns the unmangled name of a the type \p T
 /// \details Ideally this would be fully `constexpr`, but I'm not building my own demangler.
 /// \hideinitializer \hideinlinesource
@@ -39,7 +38,7 @@ const string type = [] ein_nodiscard ein_const static noexcept -> string {
     int status;
     size_t len = 0uz;
     const char * str = abi::__cxa_demangle(typeid(T).name(), nullptr, &len, &status);
-    return {str, len};
+    return str ? string_view{str} : string_view{};
   }());
   return body;
 }();
