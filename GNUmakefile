@@ -2,14 +2,12 @@
 # build by accident. Not that I would ever do such a thing. Nope.
 
 HEADERS := $(shell find src -name '*.hpp' -print)
-SOURCES := $(shell find t src -name '*.cpp' -print)
+SOURCES := $(shell find src -name '*.cpp' -print)
 BUILD_TYPE := RelWithDebInfo  # for release
 PRESET := native
 # BUILD_TYPE := Debug  # for debugging
 MAKEFLAGS += --no-print-directory -j
 CMAKELISTS := CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
-#TESTS := $(patsubst %.cpp,%,$(notdir $(wildcard t/*.cpp)))
-#TEST_EXES := $(patsubst %,t_%,$(TESTS))
 PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
 LOGLEVEL :=
@@ -22,8 +20,6 @@ PORT := 8000
 ifdef DEBUG
 $(info BUILD_TYPE := $(BUILD_TYPE))
 $(info MAKEFLAGS := $(MAKEFLAGS))
-#$(info TESTS = $(TESTS))
-#$(info TEST_EXES = $(TEST_EXES))
 $(info PHONY = $(PHONY))
 $(info RUN = $(RUN))
 $(info CMAKE_DEFINES = $(CMAKE_DEFINES))
@@ -77,9 +73,6 @@ tags:
 	@echo tags updated
 
 
-#t_%: gen/bin/t_%
-#	@gen/bin/$@
-
 define EXE_TEMPLATE
 gen/bin/$(1): gen $(HEADERS) $(SOURCES)
 	@cmake --build gen --target $(1) -j
@@ -88,16 +81,6 @@ $(1): gen/bin/$(1)
 	@gen/bin/$(1)
 endef
 $(foreach exe,$(EXES),$(eval $(call EXE_TEMPLATE,$(exe))))
-
-#define TEST_EXE_TEMPLATE
-#gen/bin/t_$(1): gen $(HEADERS) $(SOURCES) t/$(1).cpp
-#	@cmake --build gen --target $(notdir $@) -j
-#
-#t_$(1): gen/bin/t_$(1)
-#	@gen/bin/t_$(1)
-#endef
-
-#$(foreach test,$(TESTS),$(eval $(call TEST_EXE_TEMPLATE,$(test))))
 
 test: all
 	@ctest --test-dir gen --output-on-failure -j
