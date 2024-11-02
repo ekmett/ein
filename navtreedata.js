@@ -26,35 +26,35 @@ var NAVTREE =
 [
   [ "ein", "index.html", [
     [ "License", "license_page.html", [
-      [ "BSD 2-Clause License", "license_page.html#autotoc_md17", null ],
-      [ "Apache License", "license_page.html#autotoc_md18", [
-        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md19", null ],
-        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md20", null ]
+      [ "BSD 2-Clause License", "license_page.html#autotoc_md11", null ],
+      [ "Apache License", "license_page.html#autotoc_md12", [
+        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md13", null ],
+        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md14", null ]
       ] ]
     ] ],
     [ "Code of Conduct", "code_of_conduct_page.html", [
       [ "Our Pledge", "code_of_conduct_page.html#autotoc_md0", null ],
       [ "Our Standards", "code_of_conduct_page.html#autotoc_md1", null ],
       [ "Enforcement Responsibilities", "code_of_conduct_page.html#autotoc_md2", null ],
-      [ "Scope", "code_of_conduct_page.html#autotoc_md4", null ],
-      [ "Enforcement", "code_of_conduct_page.html#autotoc_md5", null ],
-      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md7", [
-        [ "Correction", "code_of_conduct_page.html#autotoc_md8", null ],
-        [ "Warning", "code_of_conduct_page.html#autotoc_md9", null ],
-        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md11", null ],
-        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md14", null ]
+      [ "Scope", "code_of_conduct_page.html#autotoc_md3", null ],
+      [ "Enforcement", "code_of_conduct_page.html#autotoc_md4", null ],
+      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md5", [
+        [ "Correction", "code_of_conduct_page.html#autotoc_md6", null ],
+        [ "Warning", "code_of_conduct_page.html#autotoc_md7", null ],
+        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md8", null ],
+        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md9", null ]
       ] ],
-      [ "Attribution", "code_of_conduct_page.html#autotoc_md15", null ]
+      [ "Attribution", "code_of_conduct_page.html#autotoc_md10", null ]
     ] ],
     [ "Contribution Guidelines", "contributing_page.html", [
-      [ "Exceptions", "contributing_page.html#autotoc_md3", null ],
-      [ "SPDX Documentation", "contributing_page.html#autotoc_md6", null ],
-      [ "Software Bill of Materials", "contributing_page.html#autotoc_md10", null ],
-      [ "Policy Questions", "contributing_page.html#autotoc_md13", null ]
+      [ "Exceptions", "contributing_page.html#autotoc_md15", null ],
+      [ "SPDX Documentation", "contributing_page.html#autotoc_md16", null ],
+      [ "Software Bill of Materials", "contributing_page.html#autotoc_md17", null ],
+      [ "Policy Questions", "contributing_page.html#autotoc_md18", null ]
     ] ],
     [ "Security Policy", "security_policy_page.html", [
-      [ "Supported Versions", "security_policy_page.html#autotoc_md12", null ],
-      [ "Reporting a Vulnerability", "security_policy_page.html#autotoc_md16", null ]
+      [ "Supported Versions", "security_policy_page.html#autotoc_md19", null ],
+      [ "Reporting a Vulnerability", "security_policy_page.html#autotoc_md20", null ]
     ] ],
     [ "Installation", "installation_page.html", [
       [ "Ninja 1.12.1", "installation_page.html#install_ninja", null ],
