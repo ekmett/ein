@@ -1,8 +1,17 @@
+/** \file
+
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense */
+
 #include <catch2/catch_test_macros.hpp>
 #include <catch2/catch_template_test_macros.hpp>
 #include <catch2/catch_approx.hpp>
 
-#define EIN_TESTING
+/// collect inline tests from all headers here
+#define EIN_TESTING 1
 // add headers below to include them in the test suite
 #include "cpuid.hpp"
 #include "concepts.hpp"

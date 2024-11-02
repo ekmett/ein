@@ -6,9 +6,7 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-      \brief numerics external template instantiations
-
-      \ingroup numerics */
+      \brief numerics external template instantiations */
 
 #include "numerics.hpp"
 

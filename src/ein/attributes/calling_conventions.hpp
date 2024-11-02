@@ -11,7 +11,7 @@
       \ingroup attributes */
 
 
-#include "detection.hpp"
+#include "common.hpp"
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup calling_convention_attributes Calling Conventions
 ///

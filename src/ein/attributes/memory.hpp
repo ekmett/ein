@@ -27,7 +27,7 @@
         There is a large number of attributes that can be applied to methods, functions,
         variables, structs, modules, etc. across all of the different compilers out there. */
 
-#include "detection.hpp"
+#include "common.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup alignment_attributes Memory Alignment

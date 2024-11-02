@@ -66,7 +66,7 @@ clean:
 	@rm -rf gen tags nohup.out
 
 distclean: clean
-	@rm -rf lib/cache
+	@rm -rf lib/cache .ccache/?
 
 tags:
 	@find . -name '*.[ch]pp' -o -name '*.cppm' -type f -not -path './gen/*' -exec ctags {} +

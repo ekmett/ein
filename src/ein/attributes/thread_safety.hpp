@@ -11,7 +11,7 @@
       \ingroup attributes */
 
 
-#include "detection.hpp"
+#include "common.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup thread_safety_attributes Thread Safety

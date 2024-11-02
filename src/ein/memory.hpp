@@ -79,8 +79,7 @@ unique_str dup(
 
 } // ein
 
-#ifdef EIN_TESTING
-
+#if defined(EIN_TESTING) || defined(EIN_TESTING_MEMORY)
 TEST_CASE("memory","[memory]") {
   using namespace ein;
 

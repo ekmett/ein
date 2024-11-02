@@ -199,7 +199,7 @@ namespace std {
 
 } // namespace std
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_BF16)
 TEST_CASE("bf16","[bf16]") {
   using namespace ein;
 

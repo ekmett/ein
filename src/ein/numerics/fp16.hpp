@@ -186,7 +186,7 @@ namespace std {
 
 } // namespace std
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_FP16)
 TEST_CASE("fp16","[fp16]") {
   using namespace ein;
   using Catch::Approx;

@@ -6,15 +6,13 @@
         SPDX-FileType: Source
         SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-      \endlicense
-
-      \ingroup numerics */
+      \endlicense */
 
 #include <bit>
 #include <cmath>
 #include <cstdint>
 #include <type_traits>
-#include "attributes.hpp"
+#include "attributes/common.hpp"
 
 #ifdef __AVX512F__
 #define IFAVX512(x,y) x
@@ -264,7 +262,7 @@ constexpr bool cmp(T a, T b) noexcept {
 /// \}
 }
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_NUMERICS)
 TEST_CASE("numerics","[numerics]") {
   using namespace ein;
   using Catch::Approx;

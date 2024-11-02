@@ -9,8 +9,7 @@
       \endlicense */
 
 #include <cstdint>
-#include "attributes/purity.hpp"
-#include "attributes/lifetimes.hpp"
+#include "attributes/common.hpp"
 
 using namespace std;
 
@@ -43,7 +42,7 @@ extern const enum cpu_vendor cpu_vendor;
 
 } // end namespace ein
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_CPUID)
 TEST_CASE("cpuid","[cpuid]") {
   using namespace ein;
 

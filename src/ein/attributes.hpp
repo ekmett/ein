@@ -14,9 +14,7 @@
         Historically, this header has been maintained across a number of my open source
         projects, where it has grown organically over time. Now, I'm rather aggressively
         pruning out historical attributes and the like. But the general philosophy is that
-        if we might need it, we may as well keep it.
-
-      \ingroup attributes */
+        if we might need it, we may as well keep it. */
 
 /** \defgroup attributes Attributes
 

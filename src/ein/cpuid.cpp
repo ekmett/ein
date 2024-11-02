@@ -4,15 +4,13 @@
         SPDX-FileType: Source
         SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-      \endlicense
-
-      \ingroup cpuid */
+      \endlicense */
 
 #include <array>
 #include <cstdint>
 #include <string_view>
 #include <cpuid.h>
-#include "attributes/purity.hpp"
+#include "attributes/common.hpp"
 #include "cpuid.hpp"
 
 namespace ein {

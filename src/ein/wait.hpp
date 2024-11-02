@@ -14,7 +14,8 @@
 
 #include <cstdint>
 #include <x86intrin.h>
-#include "attributes.hpp"
+#include "attributes/common.hpp"
+#include "attributes/performance_constraints.hpp"
 #include "cpuid.hpp"
 
 namespace ein {
@@ -89,7 +90,7 @@ auto with_waiter(auto k) noexcept {
 /// \}
 }
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_WAIT)
 #include <atomic>
 #include <thread>
 #include <chrono>

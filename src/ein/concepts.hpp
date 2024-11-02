@@ -36,7 +36,7 @@
     (x) \
   )
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_CONCEPTS)
 #include <string>
 
 // Sample functions using ein_ensures for test cases

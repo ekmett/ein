@@ -10,7 +10,7 @@
 
       \ingroup attributes */
 
-#include "detection.hpp"
+#include "common.hpp"
 
 ///////////////////////////////////////////////////////////////////////////////////////////////
 /// \defgroup control_flow_attributes Control Flow

@@ -12,7 +12,7 @@
 #include <sys/types.h>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
-#include "attributes.hpp"
+#include "attributes/common.hpp"
 #include "static_string.hpp"
 
 // tools for producing chrome:://tracing compatible trace files
@@ -350,7 +350,7 @@ inline void make_args(nlohmann::json & j, K && k, V && v, Args && ... args) {
 
 } // ein;
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_PROFILING)
 TEST_CASE("profiling","[profiling]") {
   using namespace nlohmann;
   using namespace ein;

@@ -6,14 +6,12 @@
         SPDX-FileType: Source
         SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
-      \endlicense
-
-      \ingroup simd */
+      \endlicense */
 
 #include <cstdint>
 #include <type_traits>
 #include <immintrin.h>
-#include "attributes.hpp"
+#include "attributes/common.hpp"
 #include "numerics.hpp"
 #include "types.hpp"
 

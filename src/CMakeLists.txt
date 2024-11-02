@@ -36,16 +36,10 @@ set(EIN_SOURCE_HEADER_FILES
   ein/attributes/common.hpp
   ein/attributes/control_flow.hpp
   ein/attributes/cuda.hpp
-  ein/attributes/detection.hpp
   ein/attributes/handles.hpp
-  ein/attributes/initialization.hpp
-  ein/attributes/inlining.hpp
-  ein/attributes/lifetimes.hpp
-  ein/attributes/linkage.hpp
   ein/attributes/memory.hpp
   ein/attributes/null_safety.hpp
   ein/attributes/performance_constraints.hpp
-  ein/attributes/purity.hpp
   ein/attributes/strings.hpp
   ein/attributes/targets.hpp
   ein/attributes/thread_safety.hpp
@@ -109,6 +103,7 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast
 
 add_executable(ein_tests ein/tests.cpp)
 target_link_libraries(ein_tests PRIVATE ein Catch2::Catch2WithMain)
+lto(ein_tests)
 
 include(Catch)
 catch_discover_tests(ein_tests)

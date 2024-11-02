@@ -13,7 +13,7 @@
 #include <string>
 #include <string_view>
 #include <cxxabi.h>
-#include "attributes.hpp"
+#include "attributes/common.hpp"
 
 using namespace std;
 
@@ -53,7 +53,7 @@ concept not_one_of_t = (!one_of_t<T,candidates...>);
 /// \}
 }
 
-#ifdef EIN_TESTING
+#if defined(EIN_TESTING) || defined(EIN_TESTING_TYPES)
 #include <string_view>
 #include "types.hpp"
 

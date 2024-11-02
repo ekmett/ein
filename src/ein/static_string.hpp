@@ -386,7 +386,7 @@ consteval static_c_string operator"" _scs() noexcept {
 #  pragma GCC diagnostic pop
 #endif
 
-void to_json(nlohmann::json& j, static_c_string const & s) {
+inline void to_json(nlohmann::json& j, static_c_string const & s) {
   j = std::string(s);
 }
 
@@ -410,16 +410,16 @@ namespace std {
 
     /// \cond external specializations
     template< class CharT, class Traits >
-    constexpr bool enable_borrowed_range<::ein::basic_static_string<CharT, Traits>> = true;
+    inline constexpr bool enable_borrowed_range<::ein::basic_static_string<CharT, Traits>> = true;
 
     template< class CharT, class Traits >
-    constexpr bool enable_view<::ein::basic_static_string<CharT, Traits>> = true;
+    inline constexpr bool enable_view<::ein::basic_static_string<CharT, Traits>> = true;
 
     template <>
-    constexpr bool enable_borrowed_range<::ein::static_c_string> = true;
+    inline constexpr bool enable_borrowed_range<::ein::static_c_string> = true;
 
     template <>
-    constexpr bool enable_view<::ein::static_c_string> = true;
+    inline constexpr bool enable_view<::ein::static_c_string> = true;
     /// \endcond
   }
 }  // namespace std
