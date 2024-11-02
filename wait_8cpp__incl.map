@@ -1,0 +1,18 @@
+<map id="wait.cpp" name="wait.cpp">
+<area shape="rect" id="Node000001" title=" " alt="" coords="146,5,223,31"/>
+<area shape="rect" id="Node000002" href="$wait_8hpp.html" title="waiting strategies" alt="" coords="145,79,224,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="187,31,187,65,182,65,182,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="20,240,87,265"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="145,96,112,101,75,111,41,128,14,153,8,171,12,191,21,210,34,227,30,231,17,213,7,192,3,171,10,151,38,123,73,106,111,96,144,91"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="25,159,117,185"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="169,106,100,154,97,149,166,102"/>
+<area shape="rect" id="Node000005" href="$common_8hpp.html" title=" " alt="" coords="177,240,352,265"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="200,102,221,123,241,151,256,189,264,226,259,227,251,191,236,153,217,127,197,106"/>
+<area shape="rect" id="Node000006" href="$performance__constraints_8hpp.html" title=" " alt="" coords="302,152,474,192"/>
+<area shape="poly" id="edge5_Node000002_Node000006" title=" " alt="" coords="215,102,327,145,325,150,213,106"/>
+<area shape="rect" id="Node000007" href="$cpuid_8hpp.html" title=" " alt="" coords="142,159,227,185"/>
+<area shape="poly" id="edge7_Node000002_Node000007" title=" " alt="" coords="187,104,187,145,182,145,182,104"/>
+<area shape="poly" id="edge6_Node000006_Node000005" title=" " alt="" coords="360,194,296,235,293,230,357,190"/>
+<area shape="poly" id="edge8_Node000007_Node000003" title=" " alt="" coords="166,187,86,235,83,230,164,183"/>
+<area shape="poly" id="edge9_Node000007_Node000005" title=" " alt="" coords="198,183,244,228,240,232,194,187"/>
+</map>

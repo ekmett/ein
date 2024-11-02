@@ -1,12 +1,9 @@
 var group__numerics =
 [
-    [ "numerics.cpp", "numerics_8cpp.html", null ],
-    [ "numerics.x", "numerics_8x.html", null ],
-    [ "numerics.cppm", "numerics_8cppm.html", null ],
     [ "ein::one_of", "conceptein_1_1one__of.html", null ],
     [ "ein::not_one_of", "conceptein_1_1not__one__of.html", null ],
     [ "ein::imm_t< N >", "group__numerics.html#structein_1_1imm__t", [
-      [ "operator size_t", "group__numerics.html#afb3ffad544d48567a335b195795cdab3", null ],
+      [ "operator size_t", "group__numerics.html#a6d291cd6035036d0586fa9122c830ce0", null ],
       [ "value", "group__numerics.html#afa2b66046ea1aedfd916e12d1bb2289a", null ]
     ] ],
     [ "ein::int_t", "group__numerics.html#ga44878eae47626eacca18302e151e5001", null ],

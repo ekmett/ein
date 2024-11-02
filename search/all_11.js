@@ -22,8 +22,11 @@ var searchData=
   ['notes_2edox_19',['notes.dox',['../notes_8dox.html',1,'']]],
   ['npos_20',['npos',['../classein_1_1basic__static__string.html#ae0ef656d0d775bec16ce6ddd53e020d8',1,'ein::basic_static_string']]],
   ['null_20safety_21',['Null Safety',['../group__null__safety__attributes.html',1,'']]],
-  ['numerics_22',['Numerics',['../group__numerics.html',1,'']]],
-  ['numerics_2ecpp_23',['numerics.cpp',['../numerics_8cpp.html',1,'']]],
-  ['numerics_2ecppm_24',['numerics.cppm',['../numerics_8cppm.html',1,'']]],
-  ['numerics_2ex_25',['numerics.x',['../numerics_8x.html',1,'']]]
+  ['null_5fsafety_2ehpp_22',['null_safety.hpp',['../null__safety_8hpp.html',1,'']]],
+  ['numeric_5flimits_3c_20ein_3a_3abf16_20_3e_23',['numeric_limits&lt; ein::bf16 &gt;',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html',1,'std']]],
+  ['numeric_5flimits_3c_20ein_3a_3afp16_20_3e_24',['numeric_limits&lt; ein::fp16 &gt;',['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html',1,'std']]],
+  ['numerics_25',['Numerics',['../group__numerics.html',1,'']]],
+  ['numerics_2ecpp_26',['numerics.cpp',['../numerics_8cpp.html',1,'']]],
+  ['numerics_2ehpp_27',['numerics.hpp',['../numerics_8hpp.html',1,'']]],
+  ['numerics_2ex_28',['numerics.x',['../numerics_8x.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['args_0',['args',['../namespaceein_1_1profiling.html#a6e0bc4784e272a4c30188ee9c70b8ff1',1,'ein::profiling::profile_event']]]
+  ['args_0',['args',['../namespaceein_1_1profiling.html#a33458f158ca872b87c40ac0c79468b11',1,'ein::profiling::profile_event']]]
 ];

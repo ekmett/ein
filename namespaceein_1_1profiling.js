@@ -35,8 +35,9 @@ var namespaceein_1_1profiling =
       [ "thread", "namespaceein_1_1profiling.html#a3efa8e6d3fba738fbc9cd540b7ab1273adc127f5d2483352fd20eaddb38feb6d2", null ],
       [ "none", "namespaceein_1_1profiling.html#a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8", null ]
     ] ],
-    [ "make_args", "namespaceein_1_1profiling.html#ac00dd714c5bb19f740eea781bd703be6", null ],
-    [ "make_args", "namespaceein_1_1profiling.html#a252c59ab2b0a0cd112449556385996e8", null ],
-    [ "to_json", "namespaceein_1_1profiling.html#a2d47fd7b5ea463deffefc7685b5a7dc1", null ],
-    [ "to_json", "namespaceein_1_1profiling.html#af8081ae410d0f593229cac494a7ddba8", null ]
+    [ "make_args", "namespaceein_1_1profiling.html#a1b79129ddb236b5d5a97f7f9bc6974a9", null ],
+    [ "make_args", "namespaceein_1_1profiling.html#aa2a28602a6163434b92f694ebb3ff775", null ],
+    [ "to_json", "namespaceein_1_1profiling.html#a1d416aad762eb40be722cb4e4c8f5e88", null ],
+    [ "to_json", "namespaceein_1_1profiling.html#ad39b469ba8135c97d9b99484ecdd78f3", null ],
+    [ "duration_suffix", "namespaceein_1_1profiling.html#a7ecc4236ce07bcdcd0d33c491aa5f538", null ]
 ];

@@ -1,20 +1,19 @@
 var indexSectionsWithContent =
 {
   0: "012345abcdefghilmnopqrstuvwxy~",
-  1: "bcdhimprstu",
+  1: "bcdfhimnprstu",
   2: "es",
-  3: "acfilmnpstw",
-  4: "abcdefilmoprstw~",
-  5: "abcdefimnpstv",
-  6: "cdeimprstuv",
+  3: "abcfhilmnpstw",
+  4: "abcdefilmopqrstw~",
+  5: "abcdefhimnprstv",
+  6: "cdefimoprstuv",
   7: "ces",
   8: "acdefgilmnopstu",
   9: "cgos",
   10: "eiox",
   11: "acdefhilmnopstvw",
   12: "cegilnopst",
-  13: "e",
-  14: "e"
+  13: "e"
 };
 
 var indexSectionNames =
@@ -32,8 +31,7 @@ var indexSectionNames =
   10: "defines",
   11: "groups",
   12: "pages",
-  13: "concepts",
-  14: "modules"
+  13: "concepts"
 };
 
 var indexSectionLabels =
@@ -51,7 +49,6 @@ var indexSectionLabels =
   10: "Macros",
   11: "Modules",
   12: "Pages",
-  13: "Concepts",
-  14: "Modules"
+  13: "Concepts"
 };
 

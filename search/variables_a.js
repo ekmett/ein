@@ -1,8 +1,7 @@
 var searchData=
 [
-  ['s_0',['s',['../namespaceein_1_1profiling.html#a89e379e9da6a59c2161cfa6b3ac15668',1,'ein::profiling::profile_event']]],
-  ['saved_1',['saved',['../structein_1_1profiling_1_1profile.html#a0c6455715a1435916944dd0b73d521ee',1,'ein::profiling::profile']]],
-  ['size_2',['size',['../structein_1_1c__munmap.html#ab2b8b1c7eb7749c161999be99e91870f',1,'ein::c_munmap::size'],['../group__simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size']]],
-  ['started_3',['started',['../structein_1_1profiling_1_1duration__event.html#a5311fbe5b69e6bd52c9c1519c07033fa',1,'ein::profiling::duration_event']]],
-  ['supported_4',['supported',['../group__wait.html#gaaa1c31bb64256e696333d924bb50a90d',1,'ein::mwaitx::supported'],['../group__wait.html#ga94f77adfbc306130e869173daf6ea96d',1,'ein::umwait::supported'],['../group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73',1,'ein::spin::supported']]]
+  ['p_0',['p',['../structein_1_1profiling_1_1profile__scope.html#a4f7345c0f47da4a0bdf4bcdf398c2cb4',1,'ein::profiling::profile_scope::p'],['../classein_1_1static__c__string.html#a93cbbdcd26ffdfb3dc4040c465438074',1,'ein::static_c_string::p']]],
+  ['ph_1',['ph',['../namespaceein_1_1profiling.html#af698329c7339a6761938d36ec06cd26b',1,'ein::profiling::profile_event']]],
+  ['pid_2',['pid',['../namespaceein_1_1profiling.html#aeeb7ade298b7d330c75f0d0caede67ff',1,'ein::profiling::profile_event']]],
+  ['profile_3',['profile',['../structein_1_1profiling_1_1scope__event.html#a4ad08652d9055d287da273ee63140849',1,'ein::profiling::scope_event::profile'],['../structein_1_1profiling_1_1duration__event.html#afc032bf41ab4028d9cb1b24c622fb253',1,'ein::profiling::duration_event::profile']]]
 ];

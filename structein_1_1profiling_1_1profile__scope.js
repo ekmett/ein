@@ -2,7 +2,7 @@ var structein_1_1profiling_1_1profile__scope =
 [
     [ "clock", "structein_1_1profiling_1_1profile__scope.html#a052dcb1e3490689509cb383252424a11", null ],
     [ "duration", "structein_1_1profiling_1_1profile__scope.html#a512c68e77b9af9813be0fae1f142539d", null ],
-    [ "event", "structein_1_1profiling_1_1profile__scope.html#a17efca42043b71b71b6a4caac529c432", null ],
+    [ "event", "structein_1_1profiling_1_1profile__scope.html#a58540e0ce81e47cee48b93e7807718af", null ],
     [ "profile", "structein_1_1profiling_1_1profile__scope.html#a2aea0e556473314b9ddad0af7b35d2aa", null ],
     [ "profile_scope", "structein_1_1profiling_1_1profile__scope.html#a2b797a639c5c5219d9f68a53835024af", null ],
     [ "profile_scope", "structein_1_1profiling_1_1profile__scope.html#a3180bdc563944455af0b5418f06d908c", null ],

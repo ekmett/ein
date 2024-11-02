@@ -174,23 +174,28 @@ $(function(){initNavTree('group__types.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#modules">Modules</a> &#124;
 <a href="#files">Files</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">Types</div></div>
 </div><!--header-->
 <div class="contents">
+<div class="dynheader">
+Collaboration diagram for Types:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="group__types.svg" width="195" height="39"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="modules" name="modules"></a>
-Modules</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">module &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__ein_8types.html">ein.types</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8cppm.html">types.cppm</a></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="types_8hpp.html">types.hpp</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceein.html">ein</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
@@ -235,16 +240,16 @@ Variables</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[const]]</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[const]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>returns the unmangled name of a the type of the (unused) argument passed to this function </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8cppm_source.html#l00047">47</a> of file <a class="el" href="types_8cppm_source.html">types.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00042">42</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
-<p class="reference">References <a class="el" href="types_8cppm_source.html#l00034">ein::type</a>.</p>
+<p class="reference">References <a class="el" href="types_8hpp_source.html#l00030">ein::type</a>.</p>
 
 </div>
 </div>
@@ -256,27 +261,19 @@ Variables</h2></td></tr>
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename T &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">const string_view ein::type</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>returns the unmangled name of a the type <code>T</code> </p>
 <p>Ideally this would be fully <code>constexpr</code>, but I'm not building my own demangler. </p>
 
-<p class="definition">Definition at line <a class="el" href="types_8cppm_source.html#l00034">34</a> of file <a class="el" href="types_8cppm_source.html">types.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="types_8hpp_source.html#l00030">30</a> of file <a class="el" href="types_8hpp_source.html">types.hpp</a>.</p>
 
-<p class="reference">Referenced by <a class="el" href="types_8cppm_source.html#l00047">ein::type_of()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="types_8hpp_source.html#l00042">ein::type_of()</a>.</p>
 
 </div>
 </div>

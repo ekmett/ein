@@ -26,7 +26,6 @@ var NAVTREE =
 [
   [ "ein", "index.html", [
     [ "License", "license_page.html", [
-      [ "Contact Information", "index.html#autotoc_md21", null ],
       [ "BSD 2-Clause License", "license_page.html#autotoc_md0", null ],
       [ "Apache License", "license_page.html#autotoc_md1", [
         [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md2", null ],
@@ -34,24 +33,24 @@ var NAVTREE =
       ] ]
     ] ],
     [ "Code of Conduct", "code_of_conduct_page.html", [
-      [ "Our Pledge", "code_of_conduct_page.html#autotoc_md4", null ],
-      [ "Our Standards", "code_of_conduct_page.html#autotoc_md5", null ],
-      [ "Enforcement Responsibilities", "code_of_conduct_page.html#autotoc_md6", null ],
-      [ "Scope", "code_of_conduct_page.html#autotoc_md7", null ],
-      [ "Enforcement", "code_of_conduct_page.html#autotoc_md8", null ],
-      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md9", [
-        [ "Correction", "code_of_conduct_page.html#autotoc_md10", null ],
-        [ "Warning", "code_of_conduct_page.html#autotoc_md11", null ],
-        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md12", null ],
-        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md13", null ]
+      [ "Our Pledge", "code_of_conduct_page.html#autotoc_md8", null ],
+      [ "Our Standards", "code_of_conduct_page.html#autotoc_md9", null ],
+      [ "Enforcement Responsibilities", "code_of_conduct_page.html#autotoc_md10", null ],
+      [ "Scope", "code_of_conduct_page.html#autotoc_md11", null ],
+      [ "Enforcement", "code_of_conduct_page.html#autotoc_md12", null ],
+      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md13", [
+        [ "Correction", "code_of_conduct_page.html#autotoc_md14", null ],
+        [ "Warning", "code_of_conduct_page.html#autotoc_md15", null ],
+        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md16", null ],
+        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md17", null ]
       ] ],
-      [ "Attribution", "code_of_conduct_page.html#autotoc_md14", null ]
+      [ "Attribution", "code_of_conduct_page.html#autotoc_md18", null ]
     ] ],
     [ "Contribution Guidelines", "contributing_page.html", [
-      [ "Exceptions", "contributing_page.html#autotoc_md15", null ],
-      [ "SPDX Documentation", "contributing_page.html#autotoc_md16", null ],
-      [ "Software Bill of Materials", "contributing_page.html#autotoc_md17", null ],
-      [ "Policy Questions", "contributing_page.html#autotoc_md18", null ]
+      [ "Exceptions", "contributing_page.html#autotoc_md4", null ],
+      [ "SPDX Documentation", "contributing_page.html#autotoc_md5", null ],
+      [ "Software Bill of Materials", "contributing_page.html#autotoc_md6", null ],
+      [ "Policy Questions", "contributing_page.html#autotoc_md7", null ]
     ] ],
     [ "Security Policy", "security_policy_page.html", [
       [ "Supported Versions", "security_policy_page.html#autotoc_md19", null ],
@@ -71,16 +70,6 @@ var NAVTREE =
     ] ],
     [ "Todo List", "todo.html", null ],
     [ "Topics", "topics.html", "topics" ],
-    [ "Modules", "modules.html", [
-      [ "Modules List", "modules.html", "modules_dup" ],
-      [ "Module Members", "modulemembers.html", [
-        [ "All", "modulemembers.html", null ],
-        [ "Functions", "modulemembers_func.html", null ],
-        [ "Variables", "modulemembers_vars.html", null ],
-        [ "Typedefs", "modulemembers_type.html", null ],
-        [ "Enumerations", "modulemembers_enum.html", null ]
-      ] ]
-    ] ],
     [ "Namespaces", "namespaces.html", [
       [ "Namespace List", "namespaces.html", "namespaces_dup" ],
       [ "Namespace Members", "namespacemembers.html", [
@@ -118,10 +107,10 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "annotated.html",
-"classein_1_1static__c__string.html#aefa94e0060288e2b869f1caacb9bffcd",
-"group__simd.html#a687354c737e3104927eeb646bf3249dc",
-"namespaceein.html#ad20e043c6e8f44fc20d90e797dc0bf4b",
-"structein_1_1profiling_1_1profile__scope.html#a2aea0e556473314b9ddad0af7b35d2aa"
+"classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a1156b00e37a0acf52282f93b235859c2",
+"group__numerics.html#gga462cd88db2679129e8c9b418fe426371a887da68ea4e9382c468205162e351ae7",
+"installation_page.html",
+"structein_1_1c__munmap.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

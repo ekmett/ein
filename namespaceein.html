@@ -181,12 +181,14 @@ $(function(){initNavTree('namespaceein.html',''); initResizable(true); });
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">ein Namespace Reference</div></div>
+  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__simd.html">SIMD</a> &#124; <a class="el" href="group__types.html">Types</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="namespaces" name="namespaces"></a>
 Namespaces</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceein_1_1detail.html">detail</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">namespace &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespaceein_1_1profiling.html">profiling</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -195,15 +197,19 @@ Classes</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">statically known interned strings these have O(1) comparison for equality  <a href="classein_1_1basic__static__string.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1bf16.html">bf16</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1c__free.html">c_free</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter that calls free()  <a href="structein_1_1c__free.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1c__munmap.html">c_munmap</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">std::unique_ptr Deleter for memory mapped data  <a href="structein_1_1c__munmap.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:structein_1_1cpuid__t" id="r_structein_1_1cpuid__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpuid.html#structein_1_1cpuid__t">cpuid_t</a></td></tr>
-<tr class="memdesc:structein_1_1cpuid__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">result from calling the <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> instruction  <a href="group__cpuid.html#structein_1_1cpuid__t">More...</a><br /></td></tr>
+<tr class="memitem:structein_1_1cpuid__t" id="r_structein_1_1cpuid__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#structein_1_1cpuid__t">cpuid_t</a></td></tr>
+<tr class="memdesc:structein_1_1cpuid__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">result from calling the <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> instruction  <a href="#structein_1_1cpuid__t">More...</a><br /></td></tr>
 <tr class="separator:structein_1_1cpuid__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structein_1_1fp16.html">fp16</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:structein_1_1imm__t" id="r_structein_1_1imm__t"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#structein_1_1imm__t">imm_t</a></td></tr>
 <tr class="memdesc:structein_1_1imm__t"><td class="mdescLeft">&#160;</td><td class="mdescRight">A compile time constant passed as an empty struct.  <a href="group__numerics.html#structein_1_1imm__t">More...</a><br /></td></tr>
 <tr class="separator:structein_1_1imm__t"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -262,63 +268,63 @@ Concepts</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="typedef-members" name="typedef-members"></a>
 Typedefs</h2></td></tr>
-<tr class="memitem:abac483c5eb9fb59c662014d36ce22a49" id="r_abac483c5eb9fb59c662014d36ce22a49"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">ein::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="structein_1_1c__munmap.html">c_munmap</a>&gt;</td></tr>
-<tr class="memdesc:abac483c5eb9fb59c662014d36ce22a49"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
-<tr class="separator:abac483c5eb9fb59c662014d36ce22a49"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a940b2f94c046f7d63a5c5be98ab42f02" id="r_a940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
-<tr class="memitem:a940b2f94c046f7d63a5c5be98ab42f02"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">ein::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="structein_1_1c__free.html">c_free</a>&gt;</td></tr>
-<tr class="memdesc:a940b2f94c046f7d63a5c5be98ab42f02"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
-<tr class="separator:a940b2f94c046f7d63a5c5be98ab42f02"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad20e043c6e8f44fc20d90e797dc0bf4b" id="r_ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">unique_c_ptr</a>&lt;char const&gt;</td></tr>
+<tr class="memitem:aecbdca42b0cabce28da9ead5599d4f9f" id="r_aecbdca42b0cabce28da9ead5599d4f9f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecbdca42b0cabce28da9ead5599d4f9f">mmap_ptr</a> = std::unique_ptr&lt;void,<a class="el" href="structein_1_1c__munmap.html">c_munmap</a>&gt;</td></tr>
+<tr class="memdesc:aecbdca42b0cabce28da9ead5599d4f9f"><td class="mdescLeft">&#160;</td><td class="mdescRight">memory mapped data, managed by std::unique_ptr. calls munmap to free.  <br /></td></tr>
+<tr class="separator:aecbdca42b0cabce28da9ead5599d4f9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a69a7967394bea6ed79d57ef4be46f985" id="r_a69a7967394bea6ed79d57ef4be46f985"><td class="memTemplParams" colspan="2">template&lt;trivially_destructible T&gt; </td></tr>
+<tr class="memitem:a69a7967394bea6ed79d57ef4be46f985"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a69a7967394bea6ed79d57ef4be46f985">unique_c_ptr</a> = std::unique_ptr&lt;T, <a class="el" href="structein_1_1c__free.html">c_free</a>&gt;</td></tr>
+<tr class="memdesc:a69a7967394bea6ed79d57ef4be46f985"><td class="mdescLeft">&#160;</td><td class="mdescRight">a unique_ptr managed c pointer, deleted by free()  <br /></td></tr>
+<tr class="separator:a69a7967394bea6ed79d57ef4be46f985"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad20e043c6e8f44fc20d90e797dc0bf4b" id="r_ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a> = <a class="el" href="#a69a7967394bea6ed79d57ef4be46f985">unique_c_ptr</a>&lt;char const&gt;</td></tr>
 <tr class="memdesc:ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="mdescLeft">&#160;</td><td class="mdescRight">a c string, managed by unique_ptr  <br /></td></tr>
 <tr class="separator:ad20e043c6e8f44fc20d90e797dc0bf4b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga44878eae47626eacca18302e151e5001" id="r_ga44878eae47626eacca18302e151e5001"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga44878eae47626eacca18302e151e5001"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga44878eae47626eacca18302e151e5001">ein::int_t</a></td></tr>
+<tr class="memitem:ga44878eae47626eacca18302e151e5001"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga44878eae47626eacca18302e151e5001">int_t</a></td></tr>
 <tr class="memdesc:ga44878eae47626eacca18302e151e5001"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns a signed integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code>  <br /></td></tr>
 <tr class="separator:ga44878eae47626eacca18302e151e5001"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gab9bd44183e9aa86139541a3690cf8a2c" id="r_gab9bd44183e9aa86139541a3690cf8a2c"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:gab9bd44183e9aa86139541a3690cf8a2c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#gab9bd44183e9aa86139541a3690cf8a2c">ein::uint_t</a></td></tr>
+<tr class="memitem:gab9bd44183e9aa86139541a3690cf8a2c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#gab9bd44183e9aa86139541a3690cf8a2c">uint_t</a></td></tr>
 <tr class="memdesc:gab9bd44183e9aa86139541a3690cf8a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an unsigned integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code>  <br /></td></tr>
 <tr class="separator:gab9bd44183e9aa86139541a3690cf8a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2fe08d2d97e186bfa4d9e484443df6e8" id="r_ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a> = T __attribute__((__vector_size__(N*sizeof(T)),__aligned__(N*sizeof(T))))</td></tr>
+<tr class="memitem:ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8">simd_data_t</a> = T __attribute__((__vector_size__(N*sizeof(T)),__aligned__(N*sizeof(T))))</td></tr>
 <tr class="separator:ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac990fb6f5dcea45fb2adb40514b836d3" id="r_gac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:gac990fb6f5dcea45fb2adb40514b836d3"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gac990fb6f5dcea45fb2adb40514b836d3">ein::simd_intrinsic_t</a></td></tr>
-<tr class="memdesc:gac990fb6f5dcea45fb2adb40514b836d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Intel intrinsic type associated with a simd register full of <code>N</code> values of type <code>T</code>.  <br /></td></tr>
-<tr class="separator:gac990fb6f5dcea45fb2adb40514b836d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga4b50fb78953def6f3c7fcd3da5e3f66a" id="r_ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga4b50fb78953def6f3c7fcd3da5e3f66a">simd_intrinsic_t</a></td></tr>
+<tr class="memdesc:ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Intel intrinsic type associated with a simd register full of <code>N</code> values of type <code>T</code>.  <br /></td></tr>
+<tr class="separator:ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga239b5fd784078f2e10a6d6c43f5525dd" id="r_ga239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:ga239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd">ein::mmask_t</a></td></tr>
+<tr class="memitem:ga239b5fd784078f2e10a6d6c43f5525dd"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd">mmask_t</a></td></tr>
 <tr class="memdesc:ga239b5fd784078f2e10a6d6c43f5525dd"><td class="mdescLeft">&#160;</td><td class="mdescRight">If AVX512 is enabled returns the type of an n-bit mmask.  <br /></td></tr>
 <tr class="separator:ga239b5fd784078f2e10a6d6c43f5525dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gae78d444e236a38a2192b04c2bfd58433" id="r_gae78d444e236a38a2192b04c2bfd58433"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:gae78d444e236a38a2192b04c2bfd58433"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gae78d444e236a38a2192b04c2bfd58433">ein::simd_mask_t</a></td></tr>
+<tr class="memitem:gae78d444e236a38a2192b04c2bfd58433"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gae78d444e236a38a2192b04c2bfd58433">simd_mask_t</a></td></tr>
 <tr class="memdesc:gae78d444e236a38a2192b04c2bfd58433"><td class="mdescLeft">&#160;</td><td class="mdescRight">What type of mask should I use?  <br /></td></tr>
 <tr class="separator:gae78d444e236a38a2192b04c2bfd58433"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2e3ce2c3dbe8116664d83ad7e4b9b17f" id="r_a2e3ce2c3dbe8116664d83ad7e4b9b17f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">ein::static_string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char&gt;</td></tr>
+<tr class="memitem:a2e3ce2c3dbe8116664d83ad7e4b9b17f" id="r_a2e3ce2c3dbe8116664d83ad7e4b9b17f"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char&gt;</td></tr>
 <tr class="separator:a2e3ce2c3dbe8116664d83ad7e4b9b17f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3804a7dd159e1d50e1666f8861759188" id="r_a3804a7dd159e1d50e1666f8861759188"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3804a7dd159e1d50e1666f8861759188">ein::static_wstring</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;wchar_t&gt;</td></tr>
+<tr class="memitem:a3804a7dd159e1d50e1666f8861759188" id="r_a3804a7dd159e1d50e1666f8861759188"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3804a7dd159e1d50e1666f8861759188">static_wstring</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;wchar_t&gt;</td></tr>
 <tr class="separator:a3804a7dd159e1d50e1666f8861759188"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad02f9214dc72c769f5fa2102372e4ce3" id="r_ad02f9214dc72c769f5fa2102372e4ce3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad02f9214dc72c769f5fa2102372e4ce3">ein::static_u8string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char8_t&gt;</td></tr>
+<tr class="memitem:ad02f9214dc72c769f5fa2102372e4ce3" id="r_ad02f9214dc72c769f5fa2102372e4ce3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad02f9214dc72c769f5fa2102372e4ce3">static_u8string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char8_t&gt;</td></tr>
 <tr class="separator:ad02f9214dc72c769f5fa2102372e4ce3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3f1cfcb009a7263c06ab3df4b5d8005b" id="r_a3f1cfcb009a7263c06ab3df4b5d8005b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f1cfcb009a7263c06ab3df4b5d8005b">ein::static_u16string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char16_t&gt;</td></tr>
+<tr class="memitem:a3f1cfcb009a7263c06ab3df4b5d8005b" id="r_a3f1cfcb009a7263c06ab3df4b5d8005b"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3f1cfcb009a7263c06ab3df4b5d8005b">static_u16string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char16_t&gt;</td></tr>
 <tr class="separator:a3f1cfcb009a7263c06ab3df4b5d8005b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa4c83e6ece039ee7858edb27a3d6ffba" id="r_aa4c83e6ece039ee7858edb27a3d6ffba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c83e6ece039ee7858edb27a3d6ffba">ein::static_u32string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char32_t&gt;</td></tr>
+<tr class="memitem:aa4c83e6ece039ee7858edb27a3d6ffba" id="r_aa4c83e6ece039ee7858edb27a3d6ffba"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa4c83e6ece039ee7858edb27a3d6ffba">static_u32string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char32_t&gt;</td></tr>
 <tr class="separator:aa4c83e6ece039ee7858edb27a3d6ffba"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:ga7f13ea202e71639d6c875e4e301f3ca4" id="r_ga7f13ea202e71639d6c875e4e301f3ca4"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpuid.html#ga7f13ea202e71639d6c875e4e301f3ca4">ein::cpu_vendor</a> { <br />
-&#160;&#160;<a class="el" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a4e5bbaeafc82ab7aa1385bea8ef5d30a">cpu_vendor::intel</a> =0
+<tr class="memitem:a4639c74c35d500365670dd87c558c0c5" id="r_a4639c74c35d500365670dd87c558c0c5"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4639c74c35d500365670dd87c558c0c5">cpu_vendor</a> : uint8_t { <br />
+&#160;&#160;<a class="el" href="#a4639c74c35d500365670dd87c558c0c5a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a> =0
 , <br />
-&#160;&#160;<a class="el" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4a5dc984e2aef527ea2daaeffe646a6a52">cpu_vendor::amd</a> =1
+&#160;&#160;<a class="el" href="#a4639c74c35d500365670dd87c558c0c5a5dc984e2aef527ea2daaeffe646a6a52">amd</a> =1
 , <br />
-&#160;&#160;<a class="el" href="group__cpuid.html#gga7f13ea202e71639d6c875e4e301f3ca4aad921d60486366258809553a3db49a4a">cpu_vendor::unknown</a> =2
+&#160;&#160;<a class="el" href="#a4639c74c35d500365670dd87c558c0c5aad921d60486366258809553a3db49a4a">unknown</a> =2
 <br />
  }</td></tr>
-<tr class="memdesc:ga7f13ea202e71639d6c875e4e301f3ca4"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU vendor id.  <a href="group__cpuid.html#ga7f13ea202e71639d6c875e4e301f3ca4">More...</a><br /></td></tr>
-<tr class="separator:ga7f13ea202e71639d6c875e4e301f3ca4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga3eb3869fe6f24fc19b5894278c242460" id="r_ga3eb3869fe6f24fc19b5894278c242460"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga3eb3869fe6f24fc19b5894278c242460">ein::CMPINT</a> : size_t { <br />
+<tr class="memdesc:a4639c74c35d500365670dd87c558c0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">CPU vendor id.  <a href="#a4639c74c35d500365670dd87c558c0c5">More...</a><br /></td></tr>
+<tr class="separator:a4639c74c35d500365670dd87c558c0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga3eb3869fe6f24fc19b5894278c242460" id="r_ga3eb3869fe6f24fc19b5894278c242460"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga3eb3869fe6f24fc19b5894278c242460">CMPINT</a> : size_t { <br />
 &#160;&#160;<a class="el" href="group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47">CMPINT::EQ</a> = 0x0uz
 , <br />
 &#160;&#160;<a class="el" href="group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460ac562607189d77eb9dfb707464c1e7b0b">CMPINT::LT</a> = 0x1uz
@@ -337,7 +343,7 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:ga3eb3869fe6f24fc19b5894278c242460"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga462cd88db2679129e8c9b418fe426371" id="r_ga462cd88db2679129e8c9b418fe426371"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga462cd88db2679129e8c9b418fe426371">ein::CMP</a> : size_t { <br />
+<tr class="memitem:ga462cd88db2679129e8c9b418fe426371" id="r_ga462cd88db2679129e8c9b418fe426371"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga462cd88db2679129e8c9b418fe426371">CMP</a> : size_t { <br />
 &#160;&#160;<a class="el" href="group__numerics.html#gga462cd88db2679129e8c9b418fe426371a96a3c6b5f8867f54e6090e1d124a4ad7">CMP::EQ_OQ</a> = 0x00uz
 , <br />
 &#160;&#160;<a class="el" href="group__numerics.html#gga462cd88db2679129e8c9b418fe426371a44a8abcbdbbb9d5cd4211ccc3036dae0">CMP::LT_OS</a> = 0x01uz
@@ -407,15 +413,15 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ga849cffec87c96e71e01ec367f5bb01ea" id="r_ga849cffec87c96e71e01ec367f5bb01ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__cpuid.html#structein_1_1cpuid__t">cpuid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpuid.html#ga849cffec87c96e71e01ec367f5bb01ea">ein::cpuid</a> (int32_t eax, int32_t ecx) noexcept</td></tr>
-<tr class="memdesc:ga849cffec87c96e71e01ec367f5bb01ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> and returns all of the registers that it responds with.  <br /></td></tr>
-<tr class="separator:ga849cffec87c96e71e01ec367f5bb01ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2663d41f31490e13670ae3e6ce98f83" id="r_ac2663d41f31490e13670ae3e6ce98f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2663d41f31490e13670ae3e6ce98f83">ein::make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
+<tr class="memitem:a849cffec87c96e71e01ec367f5bb01ea" id="r_a849cffec87c96e71e01ec367f5bb01ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#structein_1_1cpuid__t">cpuid_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a849cffec87c96e71e01ec367f5bb01ea">cpuid</a> (int32_t eax, int32_t ecx) noexcept</td></tr>
+<tr class="memdesc:a849cffec87c96e71e01ec367f5bb01ea"><td class="mdescLeft">&#160;</td><td class="mdescRight">calls <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> and returns all of the registers that it responds with.  <br /></td></tr>
+<tr class="separator:a849cffec87c96e71e01ec367f5bb01ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2663d41f31490e13670ae3e6ce98f83" id="r_ac2663d41f31490e13670ae3e6ce98f83"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#aecbdca42b0cabce28da9ead5599d4f9f">mmap_ptr</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac2663d41f31490e13670ae3e6ce98f83">make_mmap_ptr</a> (void *p, size_t size) noexcept</td></tr>
 <tr class="memdesc:ac2663d41f31490e13670ae3e6ce98f83"><td class="mdescLeft">&#160;</td><td class="mdescRight">construct a mmap_ptr using a base pointer and its size for munmap  <br /></td></tr>
 <tr class="separator:ac2663d41f31490e13670ae3e6ce98f83"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aea392313e0b52aaba01039483b6d673f" id="r_aea392313e0b52aaba01039483b6d673f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aea392313e0b52aaba01039483b6d673f">ein::dup</a> (char const *string) noexcept</td></tr>
-<tr class="memdesc:aea392313e0b52aaba01039483b6d673f"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>  <br /></td></tr>
-<tr class="separator:aea392313e0b52aaba01039483b6d673f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1be3fbf8ac8efd01a5e3bc10219194d6" id="r_a1be3fbf8ac8efd01a5e3bc10219194d6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1be3fbf8ac8efd01a5e3bc10219194d6">dup</a> (char const *str) noexcept</td></tr>
+<tr class="memdesc:a1be3fbf8ac8efd01a5e3bc10219194d6"><td class="mdescLeft">&#160;</td><td class="mdescRight">duplicate a C string using <code>strdup</code> and manage it as a <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a>  <br /></td></tr>
+<tr class="separator:a1be3fbf8ac8efd01a5e3bc10219194d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2e9e352aca0eb99e5bff21db2bcf7029" id="r_a2e9e352aca0eb99e5bff21db2bcf7029"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a2e9e352aca0eb99e5bff21db2bcf7029">cmp_unord</a> (float, float) noexcept</td></tr>
 <tr class="separator:a2e9e352aca0eb99e5bff21db2bcf7029"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af181518fc669a0ed8499e48bbd6541cb" id="r_af181518fc669a0ed8499e48bbd6541cb"><td class="memItemLeft" align="right" valign="top">template bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af181518fc669a0ed8499e48bbd6541cb">cmp_unord</a> (double, double) noexcept</td></tr>
@@ -430,95 +436,108 @@ Functions</h2></td></tr>
 <tr class="memitem:a4fe125d6f78c0a639415b3a59ff61c68" id="r_a4fe125d6f78c0a639415b3a59ff61c68"><td class="memItemLeft" align="right" valign="top"><a class="el" href="numerics_8cpp.html#a207fd5507206d307cd63f95374fcd00d">X</a> template double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4fe125d6f78c0a639415b3a59ff61c68">scalef</a> (double, double) noexcept</td></tr>
 <tr class="separator:a4fe125d6f78c0a639415b3a59ff61c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e" id="r_ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e">ein::cmp_unord</a> (T a, T b) noexcept</td></tr>
+<tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f" id="r_ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f">ein::cmp_ord</a> (T a, T b) noexcept</td></tr>
+<tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f" id="r_ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplParams" colspan="2">template&lt;one_of_t&lt; float, double &gt; T&gt; </td></tr>
-<tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f">ein::scalef</a> (T x, T y) noexcept</td></tr>
+<tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f">scalef</a> (T x, T y) noexcept</td></tr>
 <tr class="separator:ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga772b85a099ed110b7f03db897c27b05b" id="r_ga772b85a099ed110b7f03db897c27b05b"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__numerics.html#ga3eb3869fe6f24fc19b5894278c242460">CMPINT</a> imm8, typename T &gt; <br />
 requires (one_of_t&lt;T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t&gt; &amp;&amp; (size_t(imm8) &lt; 8uz))</td></tr>
-<tr class="memitem:ga772b85a099ed110b7f03db897c27b05b"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga772b85a099ed110b7f03db897c27b05b">ein::cmpint</a> (T a, T b) noexcept</td></tr>
+<tr class="memitem:ga772b85a099ed110b7f03db897c27b05b"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga772b85a099ed110b7f03db897c27b05b">cmpint</a> (T a, T b) noexcept</td></tr>
 <tr class="separator:ga772b85a099ed110b7f03db897c27b05b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gadeb9c3d409bcba9ea1bad3b5df34eb8d" id="r_gadeb9c3d409bcba9ea1bad3b5df34eb8d"><td class="memTemplParams" colspan="2">template&lt;<a class="el" href="group__numerics.html#ga462cd88db2679129e8c9b418fe426371">CMP</a> imm8, typename T &gt; <br />
 requires (one_of_t&lt;T,float,double&gt; &amp;&amp; (size_t(imm8) &lt; 32uz))</td></tr>
-<tr class="memitem:gadeb9c3d409bcba9ea1bad3b5df34eb8d"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#gadeb9c3d409bcba9ea1bad3b5df34eb8d">ein::cmp</a> (T a, T b) noexcept</td></tr>
+<tr class="memitem:gadeb9c3d409bcba9ea1bad3b5df34eb8d"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#gadeb9c3d409bcba9ea1bad3b5df34eb8d">cmp</a> (T a, T b) noexcept</td></tr>
 <tr class="memdesc:gadeb9c3d409bcba9ea1bad3b5df34eb8d"><td class="mdescLeft">&#160;</td><td class="mdescRight">perform an avx512 style floating point comparison for scalar values.  <br /></td></tr>
 <tr class="separator:gadeb9c3d409bcba9ea1bad3b5df34eb8d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga48e448cefd9b722a4c66bf734601dee6" id="r_ga48e448cefd9b722a4c66bf734601dee6"><td class="memItemLeft" align="right" valign="top">__m128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga48e448cefd9b722a4c66bf734601dee6">ein::cast_ps</a> (__m128i a) noexcept</td></tr>
+<tr class="memitem:ab3194c02b3de9d46fd665787be44726c" id="r_ab3194c02b3de9d46fd665787be44726c"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structein_1_1bf16.html">bf16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab3194c02b3de9d46fd665787be44726c">operator&quot;&quot;_bf16</a> (long double v) noexcept</td></tr>
+<tr class="separator:ab3194c02b3de9d46fd665787be44726c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a51667097a7f73510443cf8563bc88215" id="r_a51667097a7f73510443cf8563bc88215"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structein_1_1bf16.html">bf16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a51667097a7f73510443cf8563bc88215">fast_to_bf16</a> (float f) noexcept</td></tr>
+<tr class="separator:a51667097a7f73510443cf8563bc88215"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf6f28607b0bb3001edd13b65a2af0dd" id="r_acf6f28607b0bb3001edd13b65a2af0dd"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structein_1_1bf16.html">bf16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#acf6f28607b0bb3001edd13b65a2af0dd">fast_to_bf16</a> (<a class="el" href="structein_1_1bf16.html">bf16</a> f) noexcept</td></tr>
+<tr class="separator:acf6f28607b0bb3001edd13b65a2af0dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aefd3010af93a6166c3830bb572e3121a" id="r_aefd3010af93a6166c3830bb572e3121a"><td class="memItemLeft" align="right" valign="top">constexpr <a class="el" href="structein_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aefd3010af93a6166c3830bb572e3121a">operator&quot;&quot;_fp16</a> (long double v) noexcept</td></tr>
+<tr class="separator:aefd3010af93a6166c3830bb572e3121a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga48e448cefd9b722a4c66bf734601dee6" id="r_ga48e448cefd9b722a4c66bf734601dee6"><td class="memItemLeft" align="right" valign="top">__m128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga48e448cefd9b722a4c66bf734601dee6">cast_ps</a> (__m128i a) noexcept</td></tr>
 <tr class="separator:ga48e448cefd9b722a4c66bf734601dee6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa8e64744d683dfa56429a68a3e224b7c" id="r_gaa8e64744d683dfa56429a68a3e224b7c"><td class="memItemLeft" align="right" valign="top">__m128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gaa8e64744d683dfa56429a68a3e224b7c">ein::cast_ps</a> (__m128 a) noexcept</td></tr>
+<tr class="memitem:gaa8e64744d683dfa56429a68a3e224b7c" id="r_gaa8e64744d683dfa56429a68a3e224b7c"><td class="memItemLeft" align="right" valign="top">__m128&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gaa8e64744d683dfa56429a68a3e224b7c">cast_ps</a> (__m128 a) noexcept</td></tr>
 <tr class="separator:gaa8e64744d683dfa56429a68a3e224b7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gafcfa13f6c410411518e6f68950dfd5e3" id="r_gafcfa13f6c410411518e6f68950dfd5e3"><td class="memItemLeft" align="right" valign="top">__m256&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gafcfa13f6c410411518e6f68950dfd5e3">ein::cast_ps</a> (__m256i a) noexcept</td></tr>
+<tr class="memitem:gafcfa13f6c410411518e6f68950dfd5e3" id="r_gafcfa13f6c410411518e6f68950dfd5e3"><td class="memItemLeft" align="right" valign="top">__m256&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gafcfa13f6c410411518e6f68950dfd5e3">cast_ps</a> (__m256i a) noexcept</td></tr>
 <tr class="separator:gafcfa13f6c410411518e6f68950dfd5e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaa02231df49ca43e5e3828f455bf61ad4" id="r_gaa02231df49ca43e5e3828f455bf61ad4"><td class="memItemLeft" align="right" valign="top">__m256&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gaa02231df49ca43e5e3828f455bf61ad4">ein::cast_ps</a> (__m256 a) noexcept</td></tr>
+<tr class="memitem:gaa02231df49ca43e5e3828f455bf61ad4" id="r_gaa02231df49ca43e5e3828f455bf61ad4"><td class="memItemLeft" align="right" valign="top">__m256&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gaa02231df49ca43e5e3828f455bf61ad4">cast_ps</a> (__m256 a) noexcept</td></tr>
 <tr class="separator:gaa02231df49ca43e5e3828f455bf61ad4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga1e769c6c0bfd9b16bfafd49a63b547b1" id="r_ga1e769c6c0bfd9b16bfafd49a63b547b1"><td class="memItemLeft" align="right" valign="top">__m128d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga1e769c6c0bfd9b16bfafd49a63b547b1">ein::cast_pd</a> (__m128i a) noexcept</td></tr>
+<tr class="memitem:ga1e769c6c0bfd9b16bfafd49a63b547b1" id="r_ga1e769c6c0bfd9b16bfafd49a63b547b1"><td class="memItemLeft" align="right" valign="top">__m128d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga1e769c6c0bfd9b16bfafd49a63b547b1">cast_pd</a> (__m128i a) noexcept</td></tr>
 <tr class="separator:ga1e769c6c0bfd9b16bfafd49a63b547b1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaff6a2d3a89000de76efe691b7ef51f8e" id="r_gaff6a2d3a89000de76efe691b7ef51f8e"><td class="memItemLeft" align="right" valign="top">__m128d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gaff6a2d3a89000de76efe691b7ef51f8e">ein::cast_pd</a> (__m128d a) noexcept</td></tr>
+<tr class="memitem:gaff6a2d3a89000de76efe691b7ef51f8e" id="r_gaff6a2d3a89000de76efe691b7ef51f8e"><td class="memItemLeft" align="right" valign="top">__m128d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gaff6a2d3a89000de76efe691b7ef51f8e">cast_pd</a> (__m128d a) noexcept</td></tr>
 <tr class="separator:gaff6a2d3a89000de76efe691b7ef51f8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae6b56b34cbd768a31151f3b1cc3806fc" id="r_gae6b56b34cbd768a31151f3b1cc3806fc"><td class="memItemLeft" align="right" valign="top">__m256d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gae6b56b34cbd768a31151f3b1cc3806fc">ein::cast_pd</a> (__m256i a) noexcept</td></tr>
+<tr class="memitem:gae6b56b34cbd768a31151f3b1cc3806fc" id="r_gae6b56b34cbd768a31151f3b1cc3806fc"><td class="memItemLeft" align="right" valign="top">__m256d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gae6b56b34cbd768a31151f3b1cc3806fc">cast_pd</a> (__m256i a) noexcept</td></tr>
 <tr class="separator:gae6b56b34cbd768a31151f3b1cc3806fc"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga0f67aba576f075e5a395db942d1f626b" id="r_ga0f67aba576f075e5a395db942d1f626b"><td class="memItemLeft" align="right" valign="top">__m256d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga0f67aba576f075e5a395db942d1f626b">ein::cast_pd</a> (__m256d a) noexcept</td></tr>
+<tr class="memitem:ga0f67aba576f075e5a395db942d1f626b" id="r_ga0f67aba576f075e5a395db942d1f626b"><td class="memItemLeft" align="right" valign="top">__m256d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga0f67aba576f075e5a395db942d1f626b">cast_pd</a> (__m256d a) noexcept</td></tr>
 <tr class="separator:ga0f67aba576f075e5a395db942d1f626b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga96c232a9069b65558d47740e0ac3eabf" id="r_ga96c232a9069b65558d47740e0ac3eabf"><td class="memItemLeft" align="right" valign="top">__m128i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga96c232a9069b65558d47740e0ac3eabf">ein::cast_si</a> (__m128 a) noexcept</td></tr>
+<tr class="memitem:ga96c232a9069b65558d47740e0ac3eabf" id="r_ga96c232a9069b65558d47740e0ac3eabf"><td class="memItemLeft" align="right" valign="top">__m128i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga96c232a9069b65558d47740e0ac3eabf">cast_si</a> (__m128 a) noexcept</td></tr>
 <tr class="separator:ga96c232a9069b65558d47740e0ac3eabf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac8d0aad094919dc63c92f9c116867e1d" id="r_gac8d0aad094919dc63c92f9c116867e1d"><td class="memItemLeft" align="right" valign="top">__m128i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gac8d0aad094919dc63c92f9c116867e1d">ein::cast_si</a> (__m128d a) noexcept</td></tr>
+<tr class="memitem:gac8d0aad094919dc63c92f9c116867e1d" id="r_gac8d0aad094919dc63c92f9c116867e1d"><td class="memItemLeft" align="right" valign="top">__m128i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gac8d0aad094919dc63c92f9c116867e1d">cast_si</a> (__m128d a) noexcept</td></tr>
 <tr class="separator:gac8d0aad094919dc63c92f9c116867e1d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga279a5e31024f86f1d61adf5d1fc8e4f0" id="r_ga279a5e31024f86f1d61adf5d1fc8e4f0"><td class="memItemLeft" align="right" valign="top">__m128i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga279a5e31024f86f1d61adf5d1fc8e4f0">ein::cast_si</a> (__m128i a) noexcept</td></tr>
+<tr class="memitem:ga279a5e31024f86f1d61adf5d1fc8e4f0" id="r_ga279a5e31024f86f1d61adf5d1fc8e4f0"><td class="memItemLeft" align="right" valign="top">__m128i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga279a5e31024f86f1d61adf5d1fc8e4f0">cast_si</a> (__m128i a) noexcept</td></tr>
 <tr class="separator:ga279a5e31024f86f1d61adf5d1fc8e4f0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga581b37880b8f75a2a171b4be7216225f" id="r_ga581b37880b8f75a2a171b4be7216225f"><td class="memItemLeft" align="right" valign="top">__m256i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga581b37880b8f75a2a171b4be7216225f">ein::cast_si</a> (__m256 a) noexcept</td></tr>
+<tr class="memitem:ga581b37880b8f75a2a171b4be7216225f" id="r_ga581b37880b8f75a2a171b4be7216225f"><td class="memItemLeft" align="right" valign="top">__m256i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga581b37880b8f75a2a171b4be7216225f">cast_si</a> (__m256 a) noexcept</td></tr>
 <tr class="separator:ga581b37880b8f75a2a171b4be7216225f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga52935f272f71a298ea11f06db99287c4" id="r_ga52935f272f71a298ea11f06db99287c4"><td class="memItemLeft" align="right" valign="top">__m256i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga52935f272f71a298ea11f06db99287c4">ein::cast_si</a> (__m256d a) noexcept</td></tr>
+<tr class="memitem:ga52935f272f71a298ea11f06db99287c4" id="r_ga52935f272f71a298ea11f06db99287c4"><td class="memItemLeft" align="right" valign="top">__m256i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga52935f272f71a298ea11f06db99287c4">cast_si</a> (__m256d a) noexcept</td></tr>
 <tr class="separator:ga52935f272f71a298ea11f06db99287c4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga8b8265f4869044e2fb215ec82ccbab24" id="r_ga8b8265f4869044e2fb215ec82ccbab24"><td class="memItemLeft" align="right" valign="top">__m256i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga8b8265f4869044e2fb215ec82ccbab24">ein::cast_si</a> (__m256i a) noexcept</td></tr>
+<tr class="memitem:ga8b8265f4869044e2fb215ec82ccbab24" id="r_ga8b8265f4869044e2fb215ec82ccbab24"><td class="memItemLeft" align="right" valign="top">__m256i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga8b8265f4869044e2fb215ec82ccbab24">cast_si</a> (__m256i a) noexcept</td></tr>
 <tr class="separator:ga8b8265f4869044e2fb215ec82ccbab24"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gadc4ac58ce037c230354f86433628b963" id="r_gadc4ac58ce037c230354f86433628b963"><td class="memItemLeft" align="right" valign="top">__m512&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gadc4ac58ce037c230354f86433628b963">ein::cast_ps</a> (__m512i a) noexcept</td></tr>
+<tr class="memitem:gadc4ac58ce037c230354f86433628b963" id="r_gadc4ac58ce037c230354f86433628b963"><td class="memItemLeft" align="right" valign="top">__m512&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gadc4ac58ce037c230354f86433628b963">cast_ps</a> (__m512i a) noexcept</td></tr>
 <tr class="separator:gadc4ac58ce037c230354f86433628b963"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gac1ce3983c4990597fca46d10badb2dd4" id="r_gac1ce3983c4990597fca46d10badb2dd4"><td class="memItemLeft" align="right" valign="top">__m512d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gac1ce3983c4990597fca46d10badb2dd4">ein::cast_pd</a> (__m512i a) noexcept</td></tr>
+<tr class="memitem:gac1ce3983c4990597fca46d10badb2dd4" id="r_gac1ce3983c4990597fca46d10badb2dd4"><td class="memItemLeft" align="right" valign="top">__m512d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gac1ce3983c4990597fca46d10badb2dd4">cast_pd</a> (__m512i a) noexcept</td></tr>
 <tr class="separator:gac1ce3983c4990597fca46d10badb2dd4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga242628bef83df6e1fc502a79fbb75806" id="r_ga242628bef83df6e1fc502a79fbb75806"><td class="memItemLeft" align="right" valign="top">__m512&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga242628bef83df6e1fc502a79fbb75806">ein::cast_ps</a> (__m512 a) noexcept</td></tr>
+<tr class="memitem:ga242628bef83df6e1fc502a79fbb75806" id="r_ga242628bef83df6e1fc502a79fbb75806"><td class="memItemLeft" align="right" valign="top">__m512&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga242628bef83df6e1fc502a79fbb75806">cast_ps</a> (__m512 a) noexcept</td></tr>
 <tr class="separator:ga242628bef83df6e1fc502a79fbb75806"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga47ac9e0d701b4b29d0525a05bfd360a0" id="r_ga47ac9e0d701b4b29d0525a05bfd360a0"><td class="memItemLeft" align="right" valign="top">__m512d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga47ac9e0d701b4b29d0525a05bfd360a0">ein::cast_pd</a> (__m512d a) noexcept</td></tr>
+<tr class="memitem:ga47ac9e0d701b4b29d0525a05bfd360a0" id="r_ga47ac9e0d701b4b29d0525a05bfd360a0"><td class="memItemLeft" align="right" valign="top">__m512d&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga47ac9e0d701b4b29d0525a05bfd360a0">cast_pd</a> (__m512d a) noexcept</td></tr>
 <tr class="separator:ga47ac9e0d701b4b29d0525a05bfd360a0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gad8b51db18ce16f0b9aa1dd233a015fbb" id="r_gad8b51db18ce16f0b9aa1dd233a015fbb"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gad8b51db18ce16f0b9aa1dd233a015fbb">ein::cast_si</a> (__m512 a) noexcept</td></tr>
+<tr class="memitem:gad8b51db18ce16f0b9aa1dd233a015fbb" id="r_gad8b51db18ce16f0b9aa1dd233a015fbb"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gad8b51db18ce16f0b9aa1dd233a015fbb">cast_si</a> (__m512 a) noexcept</td></tr>
 <tr class="separator:gad8b51db18ce16f0b9aa1dd233a015fbb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga88363bb5eaba546cfb6c6c7e6c29ffdb" id="r_ga88363bb5eaba546cfb6c6c7e6c29ffdb"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga88363bb5eaba546cfb6c6c7e6c29ffdb">ein::cast_si</a> (__m512d a) noexcept</td></tr>
+<tr class="memitem:ga88363bb5eaba546cfb6c6c7e6c29ffdb" id="r_ga88363bb5eaba546cfb6c6c7e6c29ffdb"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#ga88363bb5eaba546cfb6c6c7e6c29ffdb">cast_si</a> (__m512d a) noexcept</td></tr>
 <tr class="separator:ga88363bb5eaba546cfb6c6c7e6c29ffdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gab11385ef90487a80bff66f69735ae7e9" id="r_gab11385ef90487a80bff66f69735ae7e9"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gab11385ef90487a80bff66f69735ae7e9">ein::cast_si</a> (__m512i a) noexcept</td></tr>
+<tr class="memitem:gab11385ef90487a80bff66f69735ae7e9" id="r_gab11385ef90487a80bff66f69735ae7e9"><td class="memItemLeft" align="right" valign="top">__m512i&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gab11385ef90487a80bff66f69735ae7e9">cast_si</a> (__m512i a) noexcept</td></tr>
 <tr class="separator:gab11385ef90487a80bff66f69735ae7e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9edbd2934746b159a130f397bd7d1904" id="r_a9edbd2934746b159a130f397bd7d1904"><td class="memTemplParams" colspan="2">template&lt;class T , T ... xs&gt; </td></tr>
-<tr class="memitem:a9edbd2934746b159a130f397bd7d1904"><td class="memTemplItemLeft" align="right" valign="top">consteval <a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9edbd2934746b159a130f397bd7d1904">ein::operator&quot;&quot;_ss</a> () noexcept</td></tr>
-<tr class="separator:a9edbd2934746b159a130f397bd7d1904"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9da8d44f7082bb65aa909b4478211ab3" id="r_a9da8d44f7082bb65aa909b4478211ab3"><td class="memTemplParams" colspan="2">template&lt;one_of_t&lt; char &gt; T, T ... xs&gt; </td></tr>
-<tr class="memitem:a9da8d44f7082bb65aa909b4478211ab3"><td class="memTemplItemLeft" align="right" valign="top">consteval <a class="el" href="classein_1_1static__c__string.html">static_c_string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a9da8d44f7082bb65aa909b4478211ab3">ein::operator&quot;&quot;_ss</a> () noexcept</td></tr>
-<tr class="separator:a9da8d44f7082bb65aa909b4478211ab3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaeff5354fcf4acab5497e2b60433e75b6" id="r_gaeff5354fcf4acab5497e2b60433e75b6"><td class="memItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaeff5354fcf4acab5497e2b60433e75b6">ein::type_of</a> (auto const &amp;t) noexcept</td></tr>
+<tr class="memitem:afe71031c13139501d4507e7f16683f40" id="r_afe71031c13139501d4507e7f16683f40"><td class="memTemplParams" colspan="2">template&lt;typename CharT , typename Traits &gt; </td></tr>
+<tr class="memitem:afe71031c13139501d4507e7f16683f40"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#afe71031c13139501d4507e7f16683f40">to_json</a> (nlohmann::json &amp;j, const <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt; CharT, Traits &gt; &amp;s)</td></tr>
+<tr class="separator:afe71031c13139501d4507e7f16683f40"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a78e152dac3921941845b755e3425cdb6" id="r_a78e152dac3921941845b755e3425cdb6"><td class="memTemplParams" colspan="2">template&lt;class T , T ... xs&gt; </td></tr>
+<tr class="memitem:a78e152dac3921941845b755e3425cdb6"><td class="memTemplItemLeft" align="right" valign="top">consteval <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt; T, std::char_traits&lt; T &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a78e152dac3921941845b755e3425cdb6">operator&quot;&quot;_ss</a> () noexcept</td></tr>
+<tr class="separator:a78e152dac3921941845b755e3425cdb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac97ab5bec367a4e48d9cf6c98a967609" id="r_ac97ab5bec367a4e48d9cf6c98a967609"><td class="memTemplParams" colspan="2">template&lt;one_of_t&lt; char &gt; T, T ... xs&gt; </td></tr>
+<tr class="memitem:ac97ab5bec367a4e48d9cf6c98a967609"><td class="memTemplItemLeft" align="right" valign="top">consteval <a class="el" href="classein_1_1static__c__string.html">static_c_string</a>&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ac97ab5bec367a4e48d9cf6c98a967609">operator&quot;&quot;_scs</a> () noexcept</td></tr>
+<tr class="separator:ac97ab5bec367a4e48d9cf6c98a967609"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab7f1d7f754afa023d7a516761deaaf33" id="r_ab7f1d7f754afa023d7a516761deaaf33"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab7f1d7f754afa023d7a516761deaaf33">to_json</a> (nlohmann::json &amp;j, <a class="el" href="classein_1_1static__c__string.html">static_c_string</a> const &amp;s)</td></tr>
+<tr class="separator:ab7f1d7f754afa023d7a516761deaaf33"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gaeff5354fcf4acab5497e2b60433e75b6" id="r_gaeff5354fcf4acab5497e2b60433e75b6"><td class="memItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__types.html#gaeff5354fcf4acab5497e2b60433e75b6">type_of</a> (auto const &amp;t) noexcept</td></tr>
 <tr class="memdesc:gaeff5354fcf4acab5497e2b60433e75b6"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type of the (unused) argument passed to this function  <br /></td></tr>
 <tr class="separator:gaeff5354fcf4acab5497e2b60433e75b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gabe061cf9e5e42c3c3587a332483635d5" id="r_gabe061cf9e5e42c3c3587a332483635d5"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
-<tr class="memitem:gabe061cf9e5e42c3c3587a332483635d5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">ein_flatten</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__wait.html#gabe061cf9e5e42c3c3587a332483635d5">ein::wait_until</a> (auto *p, auto f) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
-<tr class="memdesc:gabe061cf9e5e42c3c3587a332483635d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
-<tr class="separator:gabe061cf9e5e42c3c3587a332483635d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga15797fd5aad0c604b5951f50d53d3623" id="r_ga15797fd5aad0c604b5951f50d53d3623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wait.html#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a> (auto k) noexcept</td></tr>
+<tr class="memitem:gadeb4d4fb7ca47b0421a7286ba500993d" id="r_gadeb4d4fb7ca47b0421a7286ba500993d"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
+<tr class="memitem:gadeb4d4fb7ca47b0421a7286ba500993d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">ein_flatten</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__wait.html#gadeb4d4fb7ca47b0421a7286ba500993d">wait_until</a> (volatile auto *p, auto f) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
+<tr class="memdesc:gadeb4d4fb7ca47b0421a7286ba500993d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
+<tr class="separator:gadeb4d4fb7ca47b0421a7286ba500993d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga15797fd5aad0c604b5951f50d53d3623" id="r_ga15797fd5aad0c604b5951f50d53d3623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__wait.html#ga15797fd5aad0c604b5951f50d53d3623">with_waiter</a> (auto k) noexcept</td></tr>
 <tr class="memdesc:ga15797fd5aad0c604b5951f50d53d3623"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds an appropriate waiter for the current CPU  <br /></td></tr>
 <tr class="separator:ga15797fd5aad0c604b5951f50d53d3623"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">argument deduction</div></td></tr>
 <tr class="memitem:ga736c44c8691e86d12b79abd6a696a3ec" id="r_ga736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; <br />
 requires ( has_simd_type&lt;T,N&gt; &amp;&amp; (N % sizeof(T) == 0) )</td></tr>
-<tr class="memitem:ga736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga736c44c8691e86d12b79abd6a696a3ec">ein::simd</a> (T __attribute((__vector_size__(N)))) -&gt; simd&lt; T, N/sizeof(T)&gt;</td></tr>
+<tr class="memitem:ga736c44c8691e86d12b79abd6a696a3ec"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga736c44c8691e86d12b79abd6a696a3ec">simd</a> (T __attribute((__vector_size__(N)))) -&gt; simd&lt; T, N/sizeof(T)&gt;</td></tr>
 <tr class="memdesc:ga736c44c8691e86d12b79abd6a696a3ec"><td class="mdescLeft">&#160;</td><td class="mdescRight">guidance when loading data from clang/gcc vector extensions  <br /></td></tr>
 <tr class="separator:ga736c44c8691e86d12b79abd6a696a3ec"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga48efda4dbc6203557e3d7b55af8bed6e" id="r_ga48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplParams" colspan="2">template&lt;typename ... Args&gt; <br />
 requires has_simd_type&lt;std::common_type&lt;Args...&gt;, sizeof...(Args)&gt;</td></tr>
-<tr class="memitem:ga48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga48efda4dbc6203557e3d7b55af8bed6e">ein::simd</a> (Args &amp;&amp;...) -&gt; simd&lt; std::common_type&lt; Args... &gt;, sizeof...(Args)&gt;</td></tr>
+<tr class="memitem:ga48efda4dbc6203557e3d7b55af8bed6e"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga48efda4dbc6203557e3d7b55af8bed6e">simd</a> (Args &amp;&amp;...) -&gt; simd&lt; std::common_type&lt; Args... &gt;, sizeof...(Args)&gt;</td></tr>
 <tr class="memdesc:ga48efda4dbc6203557e3d7b55af8bed6e"><td class="mdescLeft">&#160;</td><td class="mdescRight">guidance for loading from arguments  <br /></td></tr>
 <tr class="separator:ga48efda4dbc6203557e3d7b55af8bed6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga6def18561a39ff4a1188bc619f86d862" id="r_ga6def18561a39ff4a1188bc619f86d862"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; <br />
 requires has_simd_type&lt;T,<a class="el" href="group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/sizeof(T)&gt;</td></tr>
-<tr class="memitem:ga6def18561a39ff4a1188bc619f86d862"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga6def18561a39ff4a1188bc619f86d862">ein::simd</a> (T) -&gt; simd&lt; T, has_simd_type&lt; T, <a class="el" href="group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/sizeof(T)&gt; &gt;</td></tr>
+<tr class="memitem:ga6def18561a39ff4a1188bc619f86d862"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga6def18561a39ff4a1188bc619f86d862">simd</a> (T) -&gt; simd&lt; T, has_simd_type&lt; T, <a class="el" href="group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/sizeof(T)&gt; &gt;</td></tr>
 <tr class="memdesc:ga6def18561a39ff4a1188bc619f86d862"><td class="mdescLeft">&#160;</td><td class="mdescRight">default to max simd size for broadcast  <br /></td></tr>
 <tr class="separator:ga6def18561a39ff4a1188bc619f86d862"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">loads</div></td></tr>
@@ -527,15 +546,15 @@ requires has_simd_type&lt;T,<a class="el" href="group__simd.html#gae9b13b1a14965
 <tr class="memdesc:gad2e79d4163046939c2ae3473a9069bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from aligned memory  <br /></td></tr>
 <tr class="separator:gad2e79d4163046939c2ae3473a9069bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaed90a3dee286dda1af9ca5f28513bc3a" id="r_gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gaed90a3dee286dda1af9ca5f28513bc3a">ein::loadu</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memitem:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gaed90a3dee286dda1af9ca5f28513bc3a">loadu</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
 <tr class="memdesc:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory  <br /></td></tr>
 <tr class="separator:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4ded656b3d1da0d7acd986b7acf789a1" id="r_ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga4ded656b3d1da0d7acd986b7acf789a1">ein::lddqu</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memitem:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga4ded656b3d1da0d7acd986b7acf789a1">lddqu</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
 <tr class="memdesc:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory, optimized for crossing cachelines (legacy approach)  <br /></td></tr>
 <tr class="separator:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gaf84aa0909d95f9faf66f5ee344285677" id="r_gaf84aa0909d95f9faf66f5ee344285677"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:gaf84aa0909d95f9faf66f5ee344285677"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gaf84aa0909d95f9faf66f5ee344285677">ein::stream_load</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
+<tr class="memitem:gaf84aa0909d95f9faf66f5ee344285677"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gaf84aa0909d95f9faf66f5ee344285677">stream_load</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
 <tr class="memdesc:gaf84aa0909d95f9faf66f5ee344285677"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream <code>data</code> from memory non-temporally, bypassing cache  <br /></td></tr>
 <tr class="separator:gaf84aa0909d95f9faf66f5ee344285677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">shuffles</div></td></tr>
@@ -550,47 +569,84 @@ requires has_simd_type&lt;T,<a class="el" href="group__simd.html#gae9b13b1a14965
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
 Variables</h2></td></tr>
-<tr class="memitem:ga4639c74c35d500365670dd87c558c0c5" id="r_ga4639c74c35d500365670dd87c558c0c5"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="group__cpuid.html#ga7f13ea202e71639d6c875e4e301f3ca4">cpu_vendor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__cpuid.html#ga4639c74c35d500365670dd87c558c0c5">ein::cpu_vendor</a></td></tr>
-<tr class="memdesc:ga4639c74c35d500365670dd87c558c0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports the vendor of the CPU encountered at runtime. Cached.  <br /></td></tr>
-<tr class="separator:ga4639c74c35d500365670dd87c558c0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4639c74c35d500365670dd87c558c0c5" id="r_a4639c74c35d500365670dd87c558c0c5"><td class="memItemLeft" align="right" valign="top">enum <a class="el" href="#a4639c74c35d500365670dd87c558c0c5">cpu_vendor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4639c74c35d500365670dd87c558c0c5">cpu_vendor</a></td></tr>
+<tr class="memdesc:a4639c74c35d500365670dd87c558c0c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reports the vendor of the CPU encountered at runtime. Cached.  <br /></td></tr>
+<tr class="separator:a4639c74c35d500365670dd87c558c0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9f8820229adbc8c614428c448a370015" id="r_ga9f8820229adbc8c614428c448a370015"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
-<tr class="memitem:ga9f8820229adbc8c614428c448a370015"><td class="memTemplItemLeft" align="right" valign="top">constinit <a class="el" href="group__numerics.html#structein_1_1imm__t">imm_t</a>&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga9f8820229adbc8c614428c448a370015">ein::imm</a> {}</td></tr>
+<tr class="memitem:ga9f8820229adbc8c614428c448a370015"><td class="memTemplItemLeft" align="right" valign="top">constinit <a class="el" href="group__numerics.html#structein_1_1imm__t">imm_t</a>&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga9f8820229adbc8c614428c448a370015">imm</a> {}</td></tr>
 <tr class="separator:ga9f8820229adbc8c614428c448a370015"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2b09119ae81703a8158113efe9708d8b" id="r_ga2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga2b09119ae81703a8158113efe9708d8b">ein::max_fp_comparison_predicate</a></td></tr>
+<tr class="memitem:ga2b09119ae81703a8158113efe9708d8b" id="r_ga2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga2b09119ae81703a8158113efe9708d8b">max_fp_comparison_predicate</a></td></tr>
 <tr class="memdesc:ga2b09119ae81703a8158113efe9708d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX512 added many more floating point comparison types. Do we have them?  <br /></td></tr>
 <tr class="separator:ga2b09119ae81703a8158113efe9708d8b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gae9b13b1a14965d4f917ac518e18450e4" id="r_gae9b13b1a14965d4f917ac518e18450e4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">ein::max_simd_size</a> = 64</td></tr>
+<tr class="memitem:gae9b13b1a14965d4f917ac518e18450e4" id="r_gae9b13b1a14965d4f917ac518e18450e4"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a> = 64</td></tr>
 <tr class="memdesc:gae9b13b1a14965d4f917ac518e18450e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">largest simd register width supported on this platform in bytes  <br /></td></tr>
 <tr class="separator:gae9b13b1a14965d4f917ac518e18450e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:gafe3cd68979730cc4ce2fd0800e31d494" id="r_gafe3cd68979730cc4ce2fd0800e31d494"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
-<tr class="memitem:gafe3cd68979730cc4ce2fd0800e31d494"><td class="memTemplItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#gafe3cd68979730cc4ce2fd0800e31d494">ein::type</a></td></tr>
+<tr class="memitem:gafe3cd68979730cc4ce2fd0800e31d494"><td class="memTemplItemLeft" align="right" valign="top">const string_view&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__types.html#gafe3cd68979730cc4ce2fd0800e31d494">type</a></td></tr>
 <tr class="memdesc:gafe3cd68979730cc4ce2fd0800e31d494"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns the unmangled name of a the type <code>T</code>  <br /></td></tr>
 <tr class="separator:gafe3cd68979730cc4ce2fd0800e31d494"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Typedef Documentation</h2>
-<a id="abac483c5eb9fb59c662014d36ce22a49" name="abac483c5eb9fb59c662014d36ce22a49"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abac483c5eb9fb59c662014d36ce22a49">&#9670;&#160;</a></span>mmap_ptr</h2>
+<hr/><h2 class="groupheader">Class Documentation</h2>
+<a name="structein_1_1cpuid__t" id="structein_1_1cpuid__t"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#structein_1_1cpuid__t">&#9670;&#160;</a></span>ein::cpuid_t</h2>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">ein::mmap_ptr</a> = unique_ptr&lt;void,<a class="el" href="structein_1_1c__munmap.html">c_munmap</a>&gt;</td>
+          <td class="memname">struct ein::cpuid_t</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
+</div><div class="memdoc">
+<div class="textblock"><p>result from calling the <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> instruction </p>
+
+<p class="definition">Definition at line <a class="el" href="cpuid_8hpp_source.html#l00019">19</a> of file <a class="el" href="cpuid_8hpp_source.html">cpuid.hpp</a>.</p>
+</div><table class="fieldtable">
+<tr><th colspan="3">Class Members</th></tr>
+<tr><td class="fieldtype">
+<a id="a4da45903069e9dc69e148ad3e6851060" name="a4da45903069e9dc69e148ad3e6851060"></a>int32_t</td>
+<td class="fieldname">
+eax</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a4b471e63df57f6e0be35a890f21b6b2f" name="a4b471e63df57f6e0be35a890f21b6b2f"></a>int32_t</td>
+<td class="fieldname">
+ebx</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="a7394d1e867409adfe4a5190205c15dbd" name="a7394d1e867409adfe4a5190205c15dbd"></a>int32_t</td>
+<td class="fieldname">
+ecx</td>
+<td class="fielddoc">
+</td></tr>
+<tr><td class="fieldtype">
+<a id="afad2944f40623c3c0d3689bc7d3a7c90" name="afad2944f40623c3c0d3689bc7d3a7c90"></a>int32_t</td>
+<td class="fieldname">
+edx</td>
+<td class="fielddoc">
+</td></tr>
 </table>
+
+</div>
+</div>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="aecbdca42b0cabce28da9ead5599d4f9f" name="aecbdca42b0cabce28da9ead5599d4f9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecbdca42b0cabce28da9ead5599d4f9f">&#9670;&#160;</a></span>mmap_ptr</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#aecbdca42b0cabce28da9ead5599d4f9f">ein::mmap_ptr</a> = std::unique_ptr&lt;void,<a class="el" href="structein_1_1c__munmap.html">c_munmap</a>&gt;</td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 <p>memory mapped data, managed by std::unique_ptr. calls munmap to free. </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00045">45</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00039">39</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
 
 </div>
 </div>
@@ -599,22 +655,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">ein::static_string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char&gt;</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00244">244</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00247">247</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
 
 </div>
 </div>
@@ -623,22 +671,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#a3f1cfcb009a7263c06ab3df4b5d8005b">ein::static_u16string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char16_t&gt;</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00247">247</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00250">250</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
 
 </div>
 </div>
@@ -647,22 +687,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#aa4c83e6ece039ee7858edb27a3d6ffba">ein::static_u32string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char32_t&gt;</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00248">248</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00251">251</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
 
 </div>
 </div>
@@ -671,22 +703,14 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#ad02f9214dc72c769f5fa2102372e4ce3">ein::static_u8string</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;char8_t&gt;</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00246">246</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00249">249</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
 
 </div>
 </div>
@@ -695,50 +719,34 @@ Variables</h2></td></tr>
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">using <a class="el" href="#a3804a7dd159e1d50e1666f8861759188">ein::static_wstring</a> = <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;wchar_t&gt;</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00245">245</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00248">248</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a940b2f94c046f7d63a5c5be98ab42f02" name="a940b2f94c046f7d63a5c5be98ab42f02"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a940b2f94c046f7d63a5c5be98ab42f02">&#9670;&#160;</a></span>unique_c_ptr</h2>
+<a id="a69a7967394bea6ed79d57ef4be46f985" name="a69a7967394bea6ed79d57ef4be46f985"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a69a7967394bea6ed79d57ef4be46f985">&#9670;&#160;</a></span>unique_c_ptr</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;trivially_destructible T&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">ein::unique_c_ptr</a> = unique_ptr&lt;T, <a class="el" href="structein_1_1c__free.html">c_free</a>&gt;</td>
+          <td class="memname">using <a class="el" href="#a69a7967394bea6ed79d57ef4be46f985">ein::unique_c_ptr</a> = std::unique_ptr&lt;T, <a class="el" href="structein_1_1c__free.html">c_free</a>&gt;</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 <p>a unique_ptr managed c pointer, deleted by free() </p>
 
-<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00067">67</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00061">61</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
 
 </div>
 </div>
@@ -747,25 +755,61 @@ template&lt;trivially_destructible T&gt; </div>
 
 <div class="memitem">
 <div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="#a69a7967394bea6ed79d57ef4be46f985">unique_c_ptr</a>&lt;char const&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>a c string, managed by unique_ptr </p>
+
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00066">66</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Enumeration Type Documentation</h2>
+<a id="a4639c74c35d500365670dd87c558c0c5" name="a4639c74c35d500365670dd87c558c0c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4639c74c35d500365670dd87c558c0c5">&#9670;&#160;</a></span>cpu_vendor</h2>
+
+<div class="memitem">
+<div class="memproto">
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">ein::unique_str</a> = <a class="el" href="#a940b2f94c046f7d63a5c5be98ab42f02">unique_c_ptr</a>&lt;char const&gt;</td>
+          <td class="memname">enum class enum <a class="el" href="#a4639c74c35d500365670dd87c558c0c5">cpu_vendor</a> <a class="el" href="#a4639c74c35d500365670dd87c558c0c5">ein::cpu_vendor</a></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p>a c string, managed by unique_ptr </p>
+<p>CPU vendor id. </p>
+<p>Reports the vendor of the CPU encountered at runtime. Cached. </p>
+<table class="fieldtable">
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a4639c74c35d500365670dd87c558c0c5a4e5bbaeafc82ab7aa1385bea8ef5d30a" name="a4639c74c35d500365670dd87c558c0c5a4e5bbaeafc82ab7aa1385bea8ef5d30a"></a>intel&#160;</td><td class="fielddoc"><p><a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> reported <code>"GenuineIntel"</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4639c74c35d500365670dd87c558c0c5a5dc984e2aef527ea2daaeffe646a6a52" name="a4639c74c35d500365670dd87c558c0c5a5dc984e2aef527ea2daaeffe646a6a52"></a>amd&#160;</td><td class="fielddoc"><p><a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> reported <code>"AuthenticAMD"</code> </p>
+</td></tr>
+<tr><td class="fieldname"><a id="a4639c74c35d500365670dd87c558c0c5aad921d60486366258809553a3db49a4a" name="a4639c74c35d500365670dd87c558c0c5aad921d60486366258809553a3db49a4a"></a>unknown&#160;</td><td class="fielddoc"><p><a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> reported something else </p>
+</td></tr>
+</table>
 
-<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00072">72</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
-
+<p class="definition">Definition at line <a class="el" href="cpuid_8hpp_source.html#l00034">34</a> of file <a class="el" href="cpuid_8hpp_source.html">cpuid.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>                                    : uint8_t {</div>
+<div class="line"><span class="lineno">   35</span>  <a class="code hl_enumvalue" href="#a4639c74c35d500365670dd87c558c0c5a4e5bbaeafc82ab7aa1385bea8ef5d30a">intel</a>=0,  </div>
+<div class="line"><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="#a4639c74c35d500365670dd87c558c0c5a5dc984e2aef527ea2daaeffe646a6a52">amd</a>=1,    </div>
+<div class="line"><span class="lineno">   37</span>  <a class="code hl_enumvalue" href="#a4639c74c35d500365670dd87c558c0c5aad921d60486366258809553a3db49a4a">unknown</a>=2 </div>
+<div class="line"><span class="lineno">   38</span>};</div>
+<div class="ttc" id="anamespaceein_html_a4639c74c35d500365670dd87c558c0c5a4e5bbaeafc82ab7aa1385bea8ef5d30a"><div class="ttname"><a href="#a4639c74c35d500365670dd87c558c0c5a4e5bbaeafc82ab7aa1385bea8ef5d30a">ein::cpu_vendor::intel</a></div><div class="ttdeci">@ intel</div><div class="ttdoc">CPUID reported &quot;GenuineIntel&quot;</div></div>
+<div class="ttc" id="anamespaceein_html_a4639c74c35d500365670dd87c558c0c5a5dc984e2aef527ea2daaeffe646a6a52"><div class="ttname"><a href="#a4639c74c35d500365670dd87c558c0c5a5dc984e2aef527ea2daaeffe646a6a52">ein::cpu_vendor::amd</a></div><div class="ttdeci">@ amd</div><div class="ttdoc">CPUID reported &quot;AuthenticAMD&quot;</div></div>
+<div class="ttc" id="anamespaceein_html_a4639c74c35d500365670dd87c558c0c5aad921d60486366258809553a3db49a4a"><div class="ttname"><a href="#a4639c74c35d500365670dd87c558c0c5aad921d60486366258809553a3db49a4a">ein::cpu_vendor::unknown</a></div><div class="ttdeci">@ unknown</div><div class="ttdoc">CPUID reported something else</div></div>
+</div><!-- fragment -->
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
@@ -825,7 +869,7 @@ template&lt;trivially_destructible T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="numerics_8cppm_source.html#l00231">cmp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="numerics_8hpp_source.html#l00219">cmp()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -890,7 +934,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="numerics_8cppm_source.html#l00231">cmp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="numerics_8hpp_source.html#l00219">cmp()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -899,8 +943,44 @@ Here is the caller graph for this function:</div>
 
 </div>
 </div>
-<a id="aea392313e0b52aaba01039483b6d673f" name="aea392313e0b52aaba01039483b6d673f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aea392313e0b52aaba01039483b6d673f">&#9670;&#160;</a></span>dup()</h2>
+<a id="a849cffec87c96e71e01ec367f5bb01ea" name="a849cffec87c96e71e01ec367f5bb01ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a849cffec87c96e71e01ec367f5bb01ea">&#9670;&#160;</a></span>cpuid()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="#structein_1_1cpuid__t">cpuid_t</a> ein::cpuid </td>
+          <td>(</td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>eax</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int32_t</td>          <td class="paramname"><span class="paramname"><em>ecx</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">noexcept</span><span class="mlabel">[[pure]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calls <a href="https://en.wikipedia.org/wiki/CPUID">CPUID</a> and returns all of the registers that it responds with. </p>
+<p>this can take a 100+ cycles and stalls everything waiting for writes, so please, do this outside of the critical path. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpuid_8cpp_source.html#l00019">19</a> of file <a class="el" href="cpuid_8cpp_source.html">cpuid.cpp</a>.</p>
+
+<p class="reference">References <a class="el" href="cpuid_8hpp_source.html#l00020">ein::cpuid_t::eax</a>, <a class="el" href="cpuid_8hpp_source.html#l00020">ein::cpuid_t::ebx</a>, <a class="el" href="cpuid_8hpp_source.html#l00020">ein::cpuid_t::ecx</a>, and <a class="el" href="cpuid_8hpp_source.html#l00020">ein::cpuid_t::edx</a>.</p>
+
+</div>
+</div>
+<a id="a1be3fbf8ac8efd01a5e3bc10219194d6" name="a1be3fbf8ac8efd01a5e3bc10219194d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1be3fbf8ac8efd01a5e3bc10219194d6">&#9670;&#160;</a></span>dup()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -911,13 +991,13 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="#ad20e043c6e8f44fc20d90e797dc0bf4b">unique_str</a> ein::dup </td>
           <td>(</td>
-          <td class="paramtype">char const *</td>          <td class="paramname"><span class="paramname"><em>string</em></span></td><td>)</td>
+          <td class="paramtype">char const *</td>          <td class="paramname"><span class="paramname"><em>str</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[nonnull( 1 )]]</span><span class="mlabel">[[noescape]]</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[pure]]</span><span class="mlabel">[[nonnull( 1 )]]</span><span class="mlabel">[[noescape]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -926,8 +1006,72 @@ Here is the caller graph for this function:</div>
 <dl class="section pre"><dt>Precondition</dt><dd><code>string</code> is non-null </dd></dl>
 <dl class="section post"><dt>Postcondition</dt><dd>result is a null-terminated c string to be cleaned up by free </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00080">80</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00074">74</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
 
+</div>
+</div>
+<a id="acf6f28607b0bb3001edd13b65a2af0dd" name="acf6f28607b0bb3001edd13b65a2af0dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf6f28607b0bb3001edd13b65a2af0dd">&#9670;&#160;</a></span>fast_to_bf16() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structein_1_1bf16.html">bf16</a> ein::fast_to_bf16 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1bf16.html">bf16</a></td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bf16_8hpp_source.html#l00123">123</a> of file <a class="el" href="bf16_8hpp_source.html">bf16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  123</span>                                             {</div>
+<div class="line"><span class="lineno">  124</span>  <span class="keywordflow">return</span> f;</div>
+<div class="line"><span class="lineno">  125</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a51667097a7f73510443cf8563bc88215" name="a51667097a7f73510443cf8563bc88215"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a51667097a7f73510443cf8563bc88215">&#9670;&#160;</a></span>fast_to_bf16() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structein_1_1bf16.html">bf16</a> ein::fast_to_bf16 </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>f</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="bf16_8hpp_source.html#l00114">114</a> of file <a class="el" href="bf16_8hpp_source.html">bf16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  114</span>                                              {</div>
+<div class="line"><span class="lineno">  115</span>  <span class="keywordflow">if</span> <span class="keyword">consteval</span> {</div>
+<div class="line"><span class="lineno">  116</span>    <span class="keywordflow">return</span> f;</div>
+<div class="line"><span class="lineno">  117</span>  } <span class="keywordflow">else</span> {</div>
+<div class="line"><span class="lineno">  118</span>    <span class="keywordflow">return</span> std::bit_cast&lt;bf16&gt;(<span class="keyword">static_cast&lt;</span>uint16_t<span class="keyword">&gt;</span>(std::bit_cast&lt;uint32_t&gt;(f)&gt;&gt;16));</div>
+<div class="line"><span class="lineno">  119</span>  }</div>
+<div class="line"><span class="lineno">  120</span>}</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ac2663d41f31490e13670ae3e6ce98f83" name="ac2663d41f31490e13670ae3e6ce98f83"></a>
@@ -940,7 +1084,7 @@ Here is the caller graph for this function:</div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#abac483c5eb9fb59c662014d36ce22a49">mmap_ptr</a> ein::make_mmap_ptr </td>
+          <td class="memname"><a class="el" href="#aecbdca42b0cabce28da9ead5599d4f9f">mmap_ptr</a> ein::make_mmap_ptr </td>
           <td>(</td>
           <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
         </tr>
@@ -952,7 +1096,7 @@ Here is the caller graph for this function:</div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[nonnull( 1 )]]</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[nonnull( 1 )]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -960,45 +1104,74 @@ Here is the caller graph for this function:</div>
 <p>construct a mmap_ptr using a base pointer and its size for munmap </p>
 <dl class="section pre"><dt>Precondition</dt><dd><code>p</code> is non-null </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="memory_8cppm_source.html#l00051">51</a> of file <a class="el" href="memory_8cppm_source.html">memory.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="memory_8hpp_source.html#l00045">45</a> of file <a class="el" href="memory_8hpp_source.html">memory.hpp</a>.</p>
 
 </div>
 </div>
-<a id="a9edbd2934746b159a130f397bd7d1904" name="a9edbd2934746b159a130f397bd7d1904"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9edbd2934746b159a130f397bd7d1904">&#9670;&#160;</a></span>operator&quot;&quot;_ss() <span class="overload">[1/2]</span></h2>
+<a id="ab3194c02b3de9d46fd665787be44726c" name="ab3194c02b3de9d46fd665787be44726c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab3194c02b3de9d46fd665787be44726c">&#9670;&#160;</a></span>operator&quot;&quot;_bf16()</h2>
 
 <div class="memitem">
 <div class="memproto">
-<div class="memtemplate">
-template&lt;class T , T ... xs&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="#a2e3ce2c3dbe8116664d83ad7e4b9b17f">static_string</a> ein::operator&quot;&quot;_ss </td>
+          <td class="memname"><a class="el" href="structein_1_1bf16.html">bf16</a> ein::operator&quot;&quot;_bf16 </td>
           <td>(</td>
-          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">long double</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">consteval</span><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00372">372</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  372</span>                                                  {</div>
-<div class="line"><span class="lineno">  373</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classein_1_1basic__static__string.html">basic_static_string</a>(std::integer_sequence&lt;T,xs...&gt;{});</div>
-<div class="line"><span class="lineno">  374</span>}</div>
-<div class="ttc" id="aclassein_1_1basic__static__string_html"><div class="ttname"><a href="classein_1_1basic__static__string.html">ein::basic_static_string</a></div><div class="ttdoc">statically known interned strings these have O(1) comparison for equality</div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00048">static_string.cppm:48</a></div></div>
+<p class="definition">Definition at line <a class="el" href="bf16_8hpp_source.html#l00109">109</a> of file <a class="el" href="bf16_8hpp_source.html">bf16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                       {</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="structein_1_1bf16.html">bf16</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(v));</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="astructein_1_1bf16_html"><div class="ttname"><a href="structein_1_1bf16.html">ein::bf16</a></div><div class="ttdef"><b>Definition</b> <a href="bf16_8hpp_source.html#l00019">bf16.hpp:19</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
-<a id="a9da8d44f7082bb65aa909b4478211ab3" name="a9da8d44f7082bb65aa909b4478211ab3"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9da8d44f7082bb65aa909b4478211ab3">&#9670;&#160;</a></span>operator&quot;&quot;_ss() <span class="overload">[2/2]</span></h2>
+<a id="aefd3010af93a6166c3830bb572e3121a" name="aefd3010af93a6166c3830bb572e3121a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aefd3010af93a6166c3830bb572e3121a">&#9670;&#160;</a></span>operator&quot;&quot;_fp16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structein_1_1fp16.html">fp16</a> ein::operator&quot;&quot;_fp16 </td>
+          <td>(</td>
+          <td class="paramtype">long double</td>          <td class="paramname"><span class="paramname"><em>v</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00109">109</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  109</span>                                                       {</div>
+<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">return</span> <a class="code hl_struct" href="structein_1_1fp16.html">fp16</a>(<span class="keyword">static_cast&lt;</span><span class="keywordtype">float</span><span class="keyword">&gt;</span>(v));</div>
+<div class="line"><span class="lineno">  111</span>}</div>
+<div class="ttc" id="astructein_1_1fp16_html"><div class="ttname"><a href="structein_1_1fp16.html">ein::fp16</a></div><div class="ttdef"><b>Definition</b> <a href="fp16_8hpp_source.html#l00019">fp16.hpp:19</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ac97ab5bec367a4e48d9cf6c98a967609" name="ac97ab5bec367a4e48d9cf6c98a967609"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac97ab5bec367a4e48d9cf6c98a967609">&#9670;&#160;</a></span>operator&quot;&quot;_scs()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -1009,7 +1182,7 @@ template&lt;one_of_t&lt; char &gt; T, T ... xs&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> ein::operator&quot;&quot;_ss </td>
+          <td class="memname"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> ein::operator&quot;&quot;_scs </td>
           <td>(</td>
           <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
@@ -1017,16 +1190,49 @@ template&lt;one_of_t&lt; char &gt; T, T ... xs&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">consteval</span><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">consteval</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="static__string_8cppm_source.html#l00377">377</a> of file <a class="el" href="static__string_8cppm_source.html">static_string.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  377</span>                                                    {</div>
-<div class="line"><span class="lineno">  378</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classein_1_1static__c__string.html">static_c_string</a>(<a class="code hl_class" href="classein_1_1basic__static__string.html">basic_static_string&lt;T&gt;</a>(std::integer_sequence&lt;char,xs...&gt;{}));</div>
-<div class="line"><span class="lineno">  379</span>}</div>
-<div class="ttc" id="aclassein_1_1static__c__string_html"><div class="ttname"><a href="classein_1_1static__c__string.html">ein::static_c_string</a></div><div class="ttdef"><b>Definition</b> <a href="static__string_8cppm_source.html#l00250">static_string.cppm:250</a></div></div>
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00381">381</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  381</span>                                                     {</div>
+<div class="line"><span class="lineno">  382</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classein_1_1static__c__string.html">static_c_string</a>(<a class="code hl_class" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt;T,std::char_traits&lt;T&gt;&gt;(std::integer_sequence&lt;T,xs...&gt;{}));</div>
+<div class="line"><span class="lineno">  383</span>}</div>
+<div class="ttc" id="aclassein_1_1basic__static__string_html"><div class="ttname"><a href="classein_1_1basic__static__string.html">ein::basic_static_string</a></div><div class="ttdoc">statically known interned strings these have O(1) comparison for equality</div><div class="ttdef"><b>Definition</b> <a href="static__string_8hpp_source.html#l00040">static_string.hpp:40</a></div></div>
+<div class="ttc" id="aclassein_1_1static__c__string_html"><div class="ttname"><a href="classein_1_1static__c__string.html">ein::static_c_string</a></div><div class="ttdef"><b>Definition</b> <a href="static__string_8hpp_source.html#l00253">static_string.hpp:253</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a78e152dac3921941845b755e3425cdb6" name="a78e152dac3921941845b755e3425cdb6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a78e152dac3921941845b755e3425cdb6">&#9670;&#160;</a></span>operator&quot;&quot;_ss()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class T , T ... xs&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt; T, std::char_traits&lt; T &gt; &gt; ein::operator&quot;&quot;_ss </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">consteval</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00376">376</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  376</span>                                                                             {</div>
+<div class="line"><span class="lineno">  377</span>  <span class="keywordflow">return</span> <a class="code hl_class" href="classein_1_1basic__static__string.html">basic_static_string&lt;T,std::char_traits&lt;T&gt;</a>&gt;(std::integer_sequence&lt;T,xs...&gt;{});</div>
+<div class="line"><span class="lineno">  378</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -1087,6 +1293,87 @@ template&lt;one_of_t&lt; char &gt; T, T ... xs&gt; </div>
 </div><div class="memdoc">
 
 <p>cond xmacro </p>
+
+</div>
+</div>
+<a id="afe71031c13139501d4507e7f16683f40" name="afe71031c13139501d4507e7f16683f40"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afe71031c13139501d4507e7f16683f40">&#9670;&#160;</a></span>to_json() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename CharT , typename Traits &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">void ein::to_json </td>
+          <td>(</td>
+          <td class="paramtype">nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const <a class="el" href="classein_1_1basic__static__string.html">basic_static_string</a>&lt; CharT, Traits &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00233">233</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  233</span>                                                                          {</div>
+<div class="line"><span class="lineno">  234</span>  j = std::string(s);</div>
+<div class="line"><span class="lineno">  235</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab7f1d7f754afa023d7a516761deaaf33" name="ab7f1d7f754afa023d7a516761deaaf33"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab7f1d7f754afa023d7a516761deaaf33">&#9670;&#160;</a></span>to_json() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void ein::to_json </td>
+          <td>(</td>
+          <td class="paramtype">nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="classein_1_1static__c__string.html">static_c_string</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em>s</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="static__string_8hpp_source.html#l00389">389</a> of file <a class="el" href="static__string_8hpp_source.html">static_string.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  389</span>                                                                {</div>
+<div class="line"><span class="lineno">  390</span>  j = std::string(s);</div>
+<div class="line"><span class="lineno">  391</span>}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a4639c74c35d500365670dd87c558c0c5" name="a4639c74c35d500365670dd87c558c0c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4639c74c35d500365670dd87c558c0c5">&#9670;&#160;</a></span>cpu_vendor</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">enum <a class="el" href="#a4639c74c35d500365670dd87c558c0c5">cpu_vendor</a> <a class="el" href="#a4639c74c35d500365670dd87c558c0c5">ein::cpu_vendor</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Reports the vendor of the CPU encountered at runtime. Cached. </p>
+
+<p class="definition">Definition at line <a class="el" href="cpuid_8cpp_source.html#l00026">26</a> of file <a class="el" href="cpuid_8cpp_source.html">cpuid.cpp</a>.</p>
 
 </div>
 </div>

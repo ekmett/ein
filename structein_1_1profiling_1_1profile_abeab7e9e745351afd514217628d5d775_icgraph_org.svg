@@ -20,7 +20,7 @@
 <!-- Node2 -->
 <g id="Node000002" class="node">
 <title>Node2</title>
-<g id="a_Node000002"><a xlink:href="structein_1_1profiling_1_1profile.html#a0314eebc65169bd06007f76e8407610b" target="_top" xlink:title=" ">
+<g id="a_Node000002"><a xlink:href="structein_1_1profiling_1_1profile.html#ae786b3ef1e4bae7ae4223f9b97ec4122" target="_top" xlink:title=" ">
 <polygon fill="white" stroke="#666666" points="119.5,-462 5.5,-462 5.5,-432 119.5,-432 119.5,-462"/>
 <text text-anchor="start" x="13.5" y="-450" font-family="Helvetica,sans-Serif" font-size="10.00">ein::profiling::profile</text>
 <text text-anchor="middle" x="62.5" y="-439" font-family="Helvetica,sans-Serif" font-size="10.00">::counter</text>

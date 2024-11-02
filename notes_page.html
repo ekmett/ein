@@ -208,11 +208,11 @@ On cmake vs. clangd</h1>
 <p>So for now, I'm exploring being able to build with and without precompiled headers.</p>
 <p>All external headers used anywhere in the project more than once should be bundled into the PCH. You can do this by including that file transitively from one of:</p>
 <ul>
-<li><a class="el" href="std_8hpp.html" title="The C++ std library.">std.hpp</a> for standard library functions</li>
-<li><a class="el" href="intrinsics_8hpp.html" title="Imports all of our platform-specific intrinsics once as part of the PCH.">intrinsics.hpp</a> for platform specific intrinsics</li>
-<li><a class="el" href="third-party_8hpp.html" title="third-party libraries">third-party.hpp</a> for third-party libraries</li>
+<li>std.hpp for standard library functions</li>
+<li>intrinsics.hpp for platform specific intrinsics</li>
+<li>third-party.hpp for third-party libraries</li>
 </ul>
-<p>The intent is that since <a class="el" href="prelude_8hpp.html">prelude.hpp</a> contains all the files used by the PCH you can <code>#include</code> that at the top of a source file in the <code>module;</code> section once in the top of each source file and let it be filtered out via <code>#pragma once</code> and your code will work either way with no import changes.</p>
+<p>The intent is that since prelude.hpp contains all the files used by the PCH you can <code>#include</code> that at the top of a source file in the <code>module;</code> section once in the top of each source file and let it be filtered out via <code>#pragma once</code> and your code will work either way with no import changes.</p>
 <p>Eventually, if we want the non-PCH mode to be as fast as possible, it should adopt a 'least import' practice, but as it only exists to satisfy <code>clangd</code> I'm punting on this for now.</p>
 <p>I prefer the clarity of the code with no headers cluttering the top of each file.</p>
 <h1><a class="anchor" id="pch_big_docs"></a>

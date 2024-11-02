@@ -176,7 +176,8 @@ $(function(){initNavTree('namespaceein_1_1profiling.html',''); initResizable(tru
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
 <a href="#enum-members">Enumerations</a> &#124;
-<a href="#func-members">Functions</a>  </div>
+<a href="#func-members">Functions</a> &#124;
+<a href="#var-members">Variables</a>  </div>
   <div class="headertitle"><div class="title">ein::profiling Namespace Reference</div></div>
 </div><!--header-->
 <div class="contents">
@@ -196,7 +197,7 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="enum-members" name="enum-members"></a>
 Enumerations</h2></td></tr>
-<tr class="memitem:a3efa8e6d3fba738fbc9cd540b7ab1273" id="r_a3efa8e6d3fba738fbc9cd540b7ab1273"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3efa8e6d3fba738fbc9cd540b7ab1273">ein::profiling::scope</a> : char { <br />
+<tr class="memitem:a3efa8e6d3fba738fbc9cd540b7ab1273" id="r_a3efa8e6d3fba738fbc9cd540b7ab1273"><td class="memItemLeft" align="right" valign="top">enum class &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3efa8e6d3fba738fbc9cd540b7ab1273">scope</a> : char { <br />
 &#160;&#160;<a class="el" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a9c70933aff6b2a6d08c687a6cbb6b765">global</a> = 'g'
 , <br />
 &#160;&#160;<a class="el" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a5075140835d0bc504791c76b04c33d2b">process</a> = 'p'
@@ -207,7 +208,7 @@ Enumerations</h2></td></tr>
 <br />
  }</td></tr>
 <tr class="separator:a3efa8e6d3fba738fbc9cd540b7ab1273"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeb588ec8ceeaa1a08bf9caa9146bd596" id="r_aeb588ec8ceeaa1a08bf9caa9146bd596"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb588ec8ceeaa1a08bf9caa9146bd596">ein::profiling::event_type</a> : char { <br />
+<tr class="memitem:aeb588ec8ceeaa1a08bf9caa9146bd596" id="r_aeb588ec8ceeaa1a08bf9caa9146bd596"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aeb588ec8ceeaa1a08bf9caa9146bd596">event_type</a> : char { <br />
 &#160;&#160;<a class="el" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b">duration_begin</a> = 'B'
 , <br />
 &#160;&#160;<a class="el" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b">duration_end</a> = 'E'
@@ -257,20 +258,26 @@ Enumerations</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:a2d47fd7b5ea463deffefc7685b5a7dc1" id="r_a2d47fd7b5ea463deffefc7685b5a7dc1"><td class="memTemplParams" colspan="2">template&lt;typename Duration , typename Clock &gt; </td></tr>
-<tr class="memitem:a2d47fd7b5ea463deffefc7685b5a7dc1"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a2d47fd7b5ea463deffefc7685b5a7dc1">ein::profiling::to_json</a> (json &amp;j, const <a class="el" href="#structein_1_1profiling_1_1profile__event">profile_event</a>&lt; Duration, Clock &gt; &amp;t)</td></tr>
-<tr class="separator:a2d47fd7b5ea463deffefc7685b5a7dc1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af8081ae410d0f593229cac494a7ddba8" id="r_af8081ae410d0f593229cac494a7ddba8"><td class="memTemplParams" colspan="2">template&lt;typename Mutex , typename Duration , typename Clock &gt; </td></tr>
-<tr class="memitem:af8081ae410d0f593229cac494a7ddba8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#af8081ae410d0f593229cac494a7ddba8">ein::profiling::to_json</a> (json &amp;j, <a class="el" href="structein_1_1profiling_1_1profile.html">profile</a>&lt; Mutex, Duration, Clock &gt; const &amp;p) noexcept</td></tr>
-<tr class="separator:af8081ae410d0f593229cac494a7ddba8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac00dd714c5bb19f740eea781bd703be6" id="r_ac00dd714c5bb19f740eea781bd703be6"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ac00dd714c5bb19f740eea781bd703be6">make_args</a> (json &amp;) noexcept</td></tr>
-<tr class="separator:ac00dd714c5bb19f740eea781bd703be6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a252c59ab2b0a0cd112449556385996e8" id="r_a252c59ab2b0a0cd112449556385996e8"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V , typename ... Args&gt; </td></tr>
-<tr class="memitem:a252c59ab2b0a0cd112449556385996e8"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a252c59ab2b0a0cd112449556385996e8">make_args</a> (json &amp;j, K &amp;&amp;k, V &amp;&amp;v, Args &amp;&amp;... args)</td></tr>
-<tr class="separator:a252c59ab2b0a0cd112449556385996e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d416aad762eb40be722cb4e4c8f5e88" id="r_a1d416aad762eb40be722cb4e4c8f5e88"><td class="memTemplParams" colspan="2">template&lt;typename Duration , typename Clock &gt; </td></tr>
+<tr class="memitem:a1d416aad762eb40be722cb4e4c8f5e88"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a1d416aad762eb40be722cb4e4c8f5e88">to_json</a> (nlohmann::json &amp;j, const <a class="el" href="#structein_1_1profiling_1_1profile__event">profile_event</a>&lt; Duration, Clock &gt; &amp;t)</td></tr>
+<tr class="separator:a1d416aad762eb40be722cb4e4c8f5e88"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad39b469ba8135c97d9b99484ecdd78f3" id="r_ad39b469ba8135c97d9b99484ecdd78f3"><td class="memTemplParams" colspan="2">template&lt;typename Mutex , typename Duration , typename Clock &gt; </td></tr>
+<tr class="memitem:ad39b469ba8135c97d9b99484ecdd78f3"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#ad39b469ba8135c97d9b99484ecdd78f3">to_json</a> (nlohmann::json &amp;j, <a class="el" href="structein_1_1profiling_1_1profile.html">profile</a>&lt; Mutex, Duration, Clock &gt; const &amp;p) noexcept</td></tr>
+<tr class="separator:ad39b469ba8135c97d9b99484ecdd78f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1b79129ddb236b5d5a97f7f9bc6974a9" id="r_a1b79129ddb236b5d5a97f7f9bc6974a9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1b79129ddb236b5d5a97f7f9bc6974a9">make_args</a> (nlohmann::json &amp;) noexcept</td></tr>
+<tr class="separator:a1b79129ddb236b5d5a97f7f9bc6974a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa2a28602a6163434b92f694ebb3ff775" id="r_aa2a28602a6163434b92f694ebb3ff775"><td class="memTemplParams" colspan="2">template&lt;typename K , typename V , typename ... Args&gt; </td></tr>
+<tr class="memitem:aa2a28602a6163434b92f694ebb3ff775"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#aa2a28602a6163434b92f694ebb3ff775">make_args</a> (nlohmann::json &amp;j, K &amp;&amp;k, V &amp;&amp;v, Args &amp;&amp;... args)</td></tr>
+<tr class="separator:aa2a28602a6163434b92f694ebb3ff775"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
+Variables</h2></td></tr>
+<tr class="memitem:a7ecc4236ce07bcdcd0d33c491aa5f538" id="r_a7ecc4236ce07bcdcd0d33c491aa5f538"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:a7ecc4236ce07bcdcd0d33c491aa5f538"><td class="memTemplItemLeft" align="right" valign="top">static constexpr char const  *&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#a7ecc4236ce07bcdcd0d33c491aa5f538">duration_suffix</a></td></tr>
+<tr class="separator:a7ecc4236ce07bcdcd0d33c491aa5f538"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
-<div class="textblock"><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>parameterize all of this on a couple of types that can serialize to json for flow id and for the contents of the message, rather than use json directly </dd></dl>
+<div class="textblock"><dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo</a></b></dt><dd>parameterize all of this on a couple of types that can serialize to json for flow id and for the contents of the message, rather than use <code>nlohmann::json</code> directly </dd></dl>
 </div><hr/><h2 class="groupheader">Class Documentation</h2>
 <a name="structein_1_1profiling_1_1profile__event" id="structein_1_1profiling_1_1profile__event"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#structein_1_1profiling_1_1profile__event">&#9670;&#160;</a></span>ein::profiling::profile_event</h2>
@@ -285,7 +292,7 @@ Functions</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><div class="compoundTemplParams">template&lt;typename Duration = std::chrono::nanoseconds, typename Clock = std::chrono::high_resolution_clock&gt;<br />
 struct ein::profiling::profile_event&lt; Duration, Clock &gt;</div>
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00087">87</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00080">80</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
 </div><div class="dynheader">
 Collaboration diagram for ein::profiling::profile_event&lt; Duration, Clock &gt;:</div>
 <div class="dyncontent">
@@ -309,7 +316,7 @@ duration Duration</td>
 <table class="fieldtable">
 <tr><th colspan="3">Class Members</th></tr>
 <tr><td class="fieldtype">
-<a id="a6e0bc4784e272a4c30188ee9c70b8ff1" name="a6e0bc4784e272a4c30188ee9c70b8ff1"></a>json</td>
+<a id="a33458f158ca872b87c40ac0c79468b11" name="a33458f158ca872b87c40ac0c79468b11"></a>json</td>
 <td class="fieldname">
 args {}</td>
 <td class="fielddoc">
@@ -378,19 +385,11 @@ ts = std::chrono::duration_cast&lt;<a class="el" href="#a4745c6781fdef7bdcd01b25
 
 <div class="memitem">
 <div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">enum <a class="el" href="#aeb588ec8ceeaa1a08bf9caa9146bd596">ein::profiling::event_type</a> : char</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 <table class="fieldtable">
 <tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b" name="aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b"></a>duration_begin&#160;</td><td class="fielddoc"></td></tr>
@@ -417,37 +416,37 @@ ts = std::chrono::duration_cast&lt;<a class="el" href="#a4745c6781fdef7bdcd01b25
 <tr><td class="fieldname"><a id="aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa" name="aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa"></a>context_leave&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00050">50</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   50</span>                       : <span class="keywordtype">char</span> {</div>
-<div class="line"><span class="lineno">   51</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b">duration_begin</a> = <span class="charliteral">&#39;B&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b">duration_end</a> = <span class="charliteral">&#39;E&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52">complete</a> = <span class="charliteral">&#39;X&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a184cd5591bcdbb1e61c4dda68253ace0">instant</a> = <span class="charliteral">&#39;i&#39;</span>,</div>
-<div class="line"><span class="lineno">   52</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0">counter</a> = <span class="charliteral">&#39;C&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0b55bf0af568f890b9632c9347b2101f">async_start</a> = <span class="charliteral">&#39;b&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aad12383996907555a256b65ae2e4f1a9">async_instant</a> = <span class="charliteral">&#39;n&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596abc03e3d800dbb5b853f33ee19e58feef">async_end</a> = <span class="charliteral">&#39;e&#39;</span>,</div>
-<div class="line"><span class="lineno">   53</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a91adef9eacefaae416db9b932fb20494">flow_start</a> = <span class="charliteral">&#39;s&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b">flow_step</a> = <span class="charliteral">&#39;t&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a3c27b053c2ca12df83fff83e0bb5d92e">flow_end</a> = <span class="charliteral">&#39;f&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab4b6a22d5ac7ccfcce9fb5e17c47cdad">sample</a> = <span class="charliteral">&#39;P&#39;</span>,</div>
-<div class="line"><span class="lineno">   54</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa205eff64015f533000cd8013729d46f">object_created</a> = <span class="charliteral">&#39;N&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a">object_snapshot</a> = <span class="charliteral">&#39;O&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4">object_destroyed</a> = <span class="charliteral">&#39;D&#39;</span>,</div>
-<div class="line"><span class="lineno">   55</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a2b635a128627b79b4eaa477992d8d69c">metadata</a> = <span class="charliteral">&#39;M&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab0d7f498701d6d8b162ab3d808babca1">memory_dump_global</a> = <span class="charliteral">&#39;V&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596abcd03304d2109f78cf00cb1262c52031">memory_dump_local</a> = <span class="charliteral">&#39;v&#39;</span>,</div>
-<div class="line"><span class="lineno">   56</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073">mark</a> = <span class="charliteral">&#39;R&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f">clock_sync</a> = <span class="charliteral">&#39;c&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba">context_enter</a> = <span class="charliteral">&#39;(&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa">context_leave</a> = <span class="charliteral">&#39;)&#39;</span></div>
-<div class="line"><span class="lineno">   57</span>};</div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f">ein::profiling::clock_sync</a></div><div class="ttdeci">@ clock_sync</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00056">profiling.cppm:56</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a0b55bf0af568f890b9632c9347b2101f"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0b55bf0af568f890b9632c9347b2101f">ein::profiling::async_start</a></div><div class="ttdeci">@ async_start</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00052">profiling.cppm:52</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a184cd5591bcdbb1e61c4dda68253ace0"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a184cd5591bcdbb1e61c4dda68253ace0">ein::profiling::instant</a></div><div class="ttdeci">@ instant</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00051">profiling.cppm:51</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a2b635a128627b79b4eaa477992d8d69c"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a2b635a128627b79b4eaa477992d8d69c">ein::profiling::metadata</a></div><div class="ttdeci">@ metadata</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00055">profiling.cppm:55</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a3c27b053c2ca12df83fff83e0bb5d92e"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a3c27b053c2ca12df83fff83e0bb5d92e">ein::profiling::flow_end</a></div><div class="ttdeci">@ flow_end</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00053">profiling.cppm:53</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b">ein::profiling::duration_end</a></div><div class="ttdeci">@ duration_end</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00051">profiling.cppm:51</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0">ein::profiling::counter</a></div><div class="ttdeci">@ counter</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00052">profiling.cppm:52</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa">ein::profiling::context_leave</a></div><div class="ttdeci">@ context_leave</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00057">profiling.cppm:56</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b">ein::profiling::flow_step</a></div><div class="ttdeci">@ flow_step</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00053">profiling.cppm:53</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba">ein::profiling::context_enter</a></div><div class="ttdeci">@ context_enter</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00056">profiling.cppm:56</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b">ein::profiling::duration_begin</a></div><div class="ttdeci">@ duration_begin</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00051">profiling.cppm:51</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a91adef9eacefaae416db9b932fb20494"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a91adef9eacefaae416db9b932fb20494">ein::profiling::flow_start</a></div><div class="ttdeci">@ flow_start</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00053">profiling.cppm:53</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52">ein::profiling::complete</a></div><div class="ttdeci">@ complete</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00051">profiling.cppm:51</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aa205eff64015f533000cd8013729d46f"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa205eff64015f533000cd8013729d46f">ein::profiling::object_created</a></div><div class="ttdeci">@ object_created</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00054">profiling.cppm:54</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4">ein::profiling::object_destroyed</a></div><div class="ttdeci">@ object_destroyed</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00054">profiling.cppm:54</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aad12383996907555a256b65ae2e4f1a9"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aad12383996907555a256b65ae2e4f1a9">ein::profiling::async_instant</a></div><div class="ttdeci">@ async_instant</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00052">profiling.cppm:52</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596ab0d7f498701d6d8b162ab3d808babca1"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab0d7f498701d6d8b162ab3d808babca1">ein::profiling::memory_dump_global</a></div><div class="ttdeci">@ memory_dump_global</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00055">profiling.cppm:55</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596ab4b6a22d5ac7ccfcce9fb5e17c47cdad"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab4b6a22d5ac7ccfcce9fb5e17c47cdad">ein::profiling::sample</a></div><div class="ttdeci">@ sample</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00053">profiling.cppm:53</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a">ein::profiling::object_snapshot</a></div><div class="ttdeci">@ object_snapshot</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00054">profiling.cppm:54</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596abc03e3d800dbb5b853f33ee19e58feef"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596abc03e3d800dbb5b853f33ee19e58feef">ein::profiling::async_end</a></div><div class="ttdeci">@ async_end</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00052">profiling.cppm:52</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596abcd03304d2109f78cf00cb1262c52031"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596abcd03304d2109f78cf00cb1262c52031">ein::profiling::memory_dump_local</a></div><div class="ttdeci">@ memory_dump_local</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00055">profiling.cppm:55</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073">ein::profiling::mark</a></div><div class="ttdeci">@ mark</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00056">profiling.cppm:56</a></div></div>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00041">41</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   41</span>                : <span class="keywordtype">char</span> {</div>
+<div class="line"><span class="lineno">   42</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b">duration_begin</a> = <span class="charliteral">&#39;B&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b">duration_end</a> = <span class="charliteral">&#39;E&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52">complete</a> = <span class="charliteral">&#39;X&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a184cd5591bcdbb1e61c4dda68253ace0">instant</a> = <span class="charliteral">&#39;i&#39;</span>,</div>
+<div class="line"><span class="lineno">   43</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0">counter</a> = <span class="charliteral">&#39;C&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0b55bf0af568f890b9632c9347b2101f">async_start</a> = <span class="charliteral">&#39;b&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aad12383996907555a256b65ae2e4f1a9">async_instant</a> = <span class="charliteral">&#39;n&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596abc03e3d800dbb5b853f33ee19e58feef">async_end</a> = <span class="charliteral">&#39;e&#39;</span>,</div>
+<div class="line"><span class="lineno">   44</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a91adef9eacefaae416db9b932fb20494">flow_start</a> = <span class="charliteral">&#39;s&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b">flow_step</a> = <span class="charliteral">&#39;t&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a3c27b053c2ca12df83fff83e0bb5d92e">flow_end</a> = <span class="charliteral">&#39;f&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab4b6a22d5ac7ccfcce9fb5e17c47cdad">sample</a> = <span class="charliteral">&#39;P&#39;</span>,</div>
+<div class="line"><span class="lineno">   45</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa205eff64015f533000cd8013729d46f">object_created</a> = <span class="charliteral">&#39;N&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a">object_snapshot</a> = <span class="charliteral">&#39;O&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4">object_destroyed</a> = <span class="charliteral">&#39;D&#39;</span>,</div>
+<div class="line"><span class="lineno">   46</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a2b635a128627b79b4eaa477992d8d69c">metadata</a> = <span class="charliteral">&#39;M&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab0d7f498701d6d8b162ab3d808babca1">memory_dump_global</a> = <span class="charliteral">&#39;V&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596abcd03304d2109f78cf00cb1262c52031">memory_dump_local</a> = <span class="charliteral">&#39;v&#39;</span>,</div>
+<div class="line"><span class="lineno">   47</span>  <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073">mark</a> = <span class="charliteral">&#39;R&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f">clock_sync</a> = <span class="charliteral">&#39;c&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba">context_enter</a> = <span class="charliteral">&#39;(&#39;</span>, <a class="code hl_enumvalue" href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa">context_leave</a> = <span class="charliteral">&#39;)&#39;</span></div>
+<div class="line"><span class="lineno">   48</span>};</div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0571c6b005fb7cc31e26fc1c05b0ea8f">ein::profiling::clock_sync</a></div><div class="ttdeci">@ clock_sync</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00047">profiling.hpp:47</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a0b55bf0af568f890b9632c9347b2101f"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a0b55bf0af568f890b9632c9347b2101f">ein::profiling::async_start</a></div><div class="ttdeci">@ async_start</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00043">profiling.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a184cd5591bcdbb1e61c4dda68253ace0"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a184cd5591bcdbb1e61c4dda68253ace0">ein::profiling::instant</a></div><div class="ttdeci">@ instant</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00042">profiling.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a2b635a128627b79b4eaa477992d8d69c"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a2b635a128627b79b4eaa477992d8d69c">ein::profiling::metadata</a></div><div class="ttdeci">@ metadata</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00046">profiling.hpp:46</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a3c27b053c2ca12df83fff83e0bb5d92e"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a3c27b053c2ca12df83fff83e0bb5d92e">ein::profiling::flow_end</a></div><div class="ttdeci">@ flow_end</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00044">profiling.hpp:44</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a4e5279505a96703baac0fb4be77a218b">ein::profiling::duration_end</a></div><div class="ttdeci">@ duration_end</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00042">profiling.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a54c2df2e10f72eb74f5ba99bbf6c8df0">ein::profiling::counter</a></div><div class="ttdeci">@ counter</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00043">profiling.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6b4fa42d758449990f2c9174b3aad7fa">ein::profiling::context_leave</a></div><div class="ttdeci">@ context_leave</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00048">profiling.hpp:47</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a6bb417233a42c1035a44bbe306b76c1b">ein::profiling::flow_step</a></div><div class="ttdeci">@ flow_step</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00044">profiling.hpp:44</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a7730ebe51b02e18540bcc853124125ba">ein::profiling::context_enter</a></div><div class="ttdeci">@ context_enter</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00047">profiling.hpp:47</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a8f6619cf97ccf1ee5e565d512936cd0b">ein::profiling::duration_begin</a></div><div class="ttdeci">@ duration_begin</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00042">profiling.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596a91adef9eacefaae416db9b932fb20494"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596a91adef9eacefaae416db9b932fb20494">ein::profiling::flow_start</a></div><div class="ttdeci">@ flow_start</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00044">profiling.hpp:44</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa07f53dff875c61ecafb462d392d0c52">ein::profiling::complete</a></div><div class="ttdeci">@ complete</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00042">profiling.hpp:42</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aa205eff64015f533000cd8013729d46f"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa205eff64015f533000cd8013729d46f">ein::profiling::object_created</a></div><div class="ttdeci">@ object_created</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00045">profiling.hpp:45</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4">ein::profiling::object_destroyed</a></div><div class="ttdeci">@ object_destroyed</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00045">profiling.hpp:45</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596aad12383996907555a256b65ae2e4f1a9"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596aad12383996907555a256b65ae2e4f1a9">ein::profiling::async_instant</a></div><div class="ttdeci">@ async_instant</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00043">profiling.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596ab0d7f498701d6d8b162ab3d808babca1"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab0d7f498701d6d8b162ab3d808babca1">ein::profiling::memory_dump_global</a></div><div class="ttdeci">@ memory_dump_global</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00046">profiling.hpp:46</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596ab4b6a22d5ac7ccfcce9fb5e17c47cdad"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596ab4b6a22d5ac7ccfcce9fb5e17c47cdad">ein::profiling::sample</a></div><div class="ttdeci">@ sample</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00044">profiling.hpp:44</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a">ein::profiling::object_snapshot</a></div><div class="ttdeci">@ object_snapshot</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00045">profiling.hpp:45</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596abc03e3d800dbb5b853f33ee19e58feef"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596abc03e3d800dbb5b853f33ee19e58feef">ein::profiling::async_end</a></div><div class="ttdeci">@ async_end</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00043">profiling.hpp:43</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596abcd03304d2109f78cf00cb1262c52031"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596abcd03304d2109f78cf00cb1262c52031">ein::profiling::memory_dump_local</a></div><div class="ttdeci">@ memory_dump_local</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00046">profiling.hpp:46</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073"><div class="ttname"><a href="#aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073">ein::profiling::mark</a></div><div class="ttdeci">@ mark</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00047">profiling.hpp:47</a></div></div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -466,7 +465,7 @@ ts = std::chrono::duration_cast&lt;<a class="el" href="#a4745c6781fdef7bdcd01b25
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">strong</span></span>  </td>
+<span class="mlabels"><span class="mlabel">strong</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -477,13 +476,13 @@ ts = std::chrono::duration_cast&lt;<a class="el" href="#a4745c6781fdef7bdcd01b25
 <tr><td class="fieldname"><a id="a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8" name="a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8"></a>none&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00034">34</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   34</span>                        : <span class="keywordtype">char</span> {</div>
-<div class="line"><span class="lineno">   35</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a9c70933aff6b2a6d08c687a6cbb6b765">global</a> = <span class="charliteral">&#39;g&#39;</span>,</div>
-<div class="line"><span class="lineno">   36</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a5075140835d0bc504791c76b04c33d2b">process</a> = <span class="charliteral">&#39;p&#39;</span>,</div>
-<div class="line"><span class="lineno">   37</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273adc127f5d2483352fd20eaddb38feb6d2">thread</a> = <span class="charliteral">&#39;t&#39;</span>,</div>
-<div class="line"><span class="lineno">   38</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = <span class="charliteral">&#39;\0&#39;</span></div>
-<div class="line"><span class="lineno">   39</span>};</div>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00025">25</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   25</span>                 : <span class="keywordtype">char</span> {</div>
+<div class="line"><span class="lineno">   26</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a9c70933aff6b2a6d08c687a6cbb6b765">global</a> = <span class="charliteral">&#39;g&#39;</span>,</div>
+<div class="line"><span class="lineno">   27</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a5075140835d0bc504791c76b04c33d2b">process</a> = <span class="charliteral">&#39;p&#39;</span>,</div>
+<div class="line"><span class="lineno">   28</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273adc127f5d2483352fd20eaddb38feb6d2">thread</a> = <span class="charliteral">&#39;t&#39;</span>,</div>
+<div class="line"><span class="lineno">   29</span>  <a class="code hl_enumvalue" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a> = <span class="charliteral">&#39;\0&#39;</span></div>
+<div class="line"><span class="lineno">   30</span>};</div>
 <div class="ttc" id="anamespaceein_1_1profiling_html_a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8"><div class="ttname"><a href="#a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8">ein::profiling::scope::none</a></div><div class="ttdeci">@ none</div></div>
 <div class="ttc" id="anamespaceein_1_1profiling_html_a3efa8e6d3fba738fbc9cd540b7ab1273a5075140835d0bc504791c76b04c33d2b"><div class="ttname"><a href="#a3efa8e6d3fba738fbc9cd540b7ab1273a5075140835d0bc504791c76b04c33d2b">ein::profiling::scope::process</a></div><div class="ttdeci">@ process</div></div>
 <div class="ttc" id="anamespaceein_1_1profiling_html_a3efa8e6d3fba738fbc9cd540b7ab1273a9c70933aff6b2a6d08c687a6cbb6b765"><div class="ttname"><a href="#a3efa8e6d3fba738fbc9cd540b7ab1273a9c70933aff6b2a6d08c687a6cbb6b765">ein::profiling::scope::global</a></div><div class="ttdeci">@ global</div></div>
@@ -492,8 +491,8 @@ ts = std::chrono::duration_cast&lt;<a class="el" href="#a4745c6781fdef7bdcd01b25
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="ac00dd714c5bb19f740eea781bd703be6" name="ac00dd714c5bb19f740eea781bd703be6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac00dd714c5bb19f740eea781bd703be6">&#9670;&#160;</a></span>make_args() <span class="overload">[1/2]</span></h2>
+<a id="a1b79129ddb236b5d5a97f7f9bc6974a9" name="a1b79129ddb236b5d5a97f7f9bc6974a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1b79129ddb236b5d5a97f7f9bc6974a9">&#9670;&#160;</a></span>make_args() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -504,41 +503,44 @@ ts = std::chrono::duration_cast&lt;<a class="el" href="#a4745c6781fdef7bdcd01b25
         <tr>
           <td class="memname">void ein::profiling::make_args </td>
           <td>(</td>
-          <td class="paramtype">json &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00328">328</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  328</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00319">319</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  319</span>{}</div>
 </div><!-- fragment -->
-<p class="reference">Referenced by <a class="el" href="profiling_8cppm_source.html#l00331">make_args()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="profiling_8hpp_source.html#l00322">make_args()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
-<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceein_1_1profiling_ac00dd714c5bb19f740eea781bd703be6_icgraph.svg" width="424" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+<div class="center"><iframe scrolling="no" frameborder="0" src="namespaceein_1_1profiling_a1b79129ddb236b5d5a97f7f9bc6974a9_icgraph.svg" width="424" height="36"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
 </div>
 
 </div>
 </div>
-<a id="a252c59ab2b0a0cd112449556385996e8" name="a252c59ab2b0a0cd112449556385996e8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a252c59ab2b0a0cd112449556385996e8">&#9670;&#160;</a></span>make_args() <span class="overload">[2/2]</span></h2>
+<a id="aa2a28602a6163434b92f694ebb3ff775" name="aa2a28602a6163434b92f694ebb3ff775"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa2a28602a6163434b92f694ebb3ff775">&#9670;&#160;</a></span>make_args() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename K , typename V , typename ... Args&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ein::profiling::make_args </td>
           <td>(</td>
-          <td class="paramtype">json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+          <td class="paramtype">nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -556,34 +558,36 @@ template&lt;typename K , typename V , typename ... Args&gt; </div>
           <td class="paramtype">Args &amp;&amp;...</td>          <td class="paramname"><span class="paramname"><em>args</em></span>&#160;)</td>
         </tr>
       </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00331">331</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  331</span>                                                           {</div>
-<div class="line"><span class="lineno">  332</span>  j[std::forward(k)] = std::forward(v);</div>
-<div class="line"><span class="lineno">  333</span>  <a class="code hl_function" href="#ac00dd714c5bb19f740eea781bd703be6">make_args</a>(j,std::forward&lt;Args&gt;(args)...);</div>
-<div class="line"><span class="lineno">  334</span>}</div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_ac00dd714c5bb19f740eea781bd703be6"><div class="ttname"><a href="#ac00dd714c5bb19f740eea781bd703be6">ein::profiling::make_args</a></div><div class="ttdeci">void make_args(json &amp;) noexcept</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00328">profiling.cppm:328</a></div></div>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00322">322</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  322</span>                                                                          {</div>
+<div class="line"><span class="lineno">  323</span>  j[std::forward(k)] = std::forward(v);</div>
+<div class="line"><span class="lineno">  324</span>  <a class="code hl_function" href="#a1b79129ddb236b5d5a97f7f9bc6974a9">make_args</a>(j,std::forward&lt;Args&gt;(args)...);</div>
+<div class="line"><span class="lineno">  325</span>}</div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a1b79129ddb236b5d5a97f7f9bc6974a9"><div class="ttname"><a href="#a1b79129ddb236b5d5a97f7f9bc6974a9">ein::profiling::make_args</a></div><div class="ttdeci">void make_args(nlohmann::json &amp;) noexcept</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00319">profiling.hpp:319</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="profiling_8cppm_source.html#l00328">make_args()</a>.</p>
+<p class="reference">References <a class="el" href="profiling_8hpp_source.html#l00319">make_args()</a>.</p>
 
 </div>
 </div>
-<a id="a2d47fd7b5ea463deffefc7685b5a7dc1" name="a2d47fd7b5ea463deffefc7685b5a7dc1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2d47fd7b5ea463deffefc7685b5a7dc1">&#9670;&#160;</a></span>to_json() <span class="overload">[1/2]</span></h2>
+<a id="a1d416aad762eb40be722cb4e4c8f5e88" name="a1d416aad762eb40be722cb4e4c8f5e88"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d416aad762eb40be722cb4e4c8f5e88">&#9670;&#160;</a></span>to_json() <span class="overload">[1/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename Duration , typename Clock &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
           <td class="memname">void ein::profiling::to_json </td>
           <td>(</td>
-          <td class="paramtype">json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+          <td class="paramtype">nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -591,43 +595,38 @@ template&lt;typename Duration , typename Clock &gt; </div>
           <td class="paramtype">const <a class="el" href="#structein_1_1profiling_1_1profile__event">profile_event</a>&lt; Duration, Clock &gt; &amp;</td>          <td class="paramname"><span class="paramname"><em>t</em></span>&#160;)</td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00103">103</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  103</span>                                                                {</div>
-<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span> (not t.<a class="code hl_variable" href="#af9442da5718a9afe8f8c89c8a0b6c990">name</a>) j[<span class="stringliteral">&quot;name&quot;</span>] = t.<a class="code hl_variable" href="#af9442da5718a9afe8f8c89c8a0b6c990">name</a>;</div>
-<div class="line"><span class="lineno">  105</span>  <span class="keywordflow">if</span> (not t.<a class="code hl_variable" href="#a3e99324a71be371ff056dac4219a9a79">cat</a>) j[<span class="stringliteral">&quot;cat&quot;</span>] = t.<a class="code hl_variable" href="#a3e99324a71be371ff056dac4219a9a79">cat</a>;</div>
-<div class="line"><span class="lineno">  106</span>  j[<span class="stringliteral">&quot;ph&quot;</span>] = t.<a class="code hl_variable" href="#af698329c7339a6761938d36ec06cd26b">ph</a>;</div>
-<div class="line"><span class="lineno">  107</span>  j[<span class="stringliteral">&quot;ts&quot;</span>] = t.<a class="code hl_variable" href="#a2a73f355469077426f709b67dadb8e22">ts</a>;</div>
-<div class="line"><span class="lineno">  108</span>  j[<span class="stringliteral">&quot;pid&quot;</span>] = t.<a class="code hl_variable" href="#aeeb7ade298b7d330c75f0d0caede67ff">pid</a>;</div>
-<div class="line"><span class="lineno">  109</span>  j[<span class="stringliteral">&quot;tid&quot;</span>] = t.<a class="code hl_variable" href="#a250bcb745c9a040bd33567ccbf55bc14">tid</a>;</div>
-<div class="line"><span class="lineno">  110</span>  <span class="keywordflow">if</span> (t.<a class="code hl_variable" href="#a89e379e9da6a59c2161cfa6b3ac15668">s</a> != scope::none) j[<span class="stringliteral">&quot;s&quot;</span>] = t.<a class="code hl_variable" href="#a89e379e9da6a59c2161cfa6b3ac15668">s</a>;</div>
-<div class="line"><span class="lineno">  111</span>  <span class="keywordflow">if</span> (t.<a class="code hl_variable" href="#acd291f1d3c6508d9bbb85844687d9a59">id</a>.has_value()) j[<span class="stringliteral">&quot;id&quot;</span>] = t.<a class="code hl_variable" href="#acd291f1d3c6508d9bbb85844687d9a59">id</a>;</div>
-<div class="line"><span class="lineno">  112</span>  <span class="keywordflow">if</span> (t.<a class="code hl_variable" href="#a4fd0fbcb9a46b54e58f8a779e988270b">bp</a>) j[<span class="stringliteral">&quot;bp&quot;</span>] = t.<a class="code hl_variable" href="#a4fd0fbcb9a46b54e58f8a779e988270b">bp</a>;</div>
-<div class="line"><span class="lineno">  113</span>  <span class="keywordflow">if</span> (not t.<a class="code hl_variable" href="#a6e0bc4784e272a4c30188ee9c70b8ff1">args</a>.is_null()) j[<span class="stringliteral">&quot;args&quot;</span>] = t.<a class="code hl_variable" href="#a6e0bc4784e272a4c30188ee9c70b8ff1">args</a>;</div>
-<div class="line"><span class="lineno">  114</span>}</div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_a250bcb745c9a040bd33567ccbf55bc14"><div class="ttname"><a href="#a250bcb745c9a040bd33567ccbf55bc14">ein::profiling::profile_event::tid</a></div><div class="ttdeci">size_t tid</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00095">profiling.cppm:95</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_a2a73f355469077426f709b67dadb8e22"><div class="ttname"><a href="#a2a73f355469077426f709b67dadb8e22">ein::profiling::profile_event::ts</a></div><div class="ttdeci">size_t ts</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00093">profiling.cppm:93</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_a3e99324a71be371ff056dac4219a9a79"><div class="ttname"><a href="#a3e99324a71be371ff056dac4219a9a79">ein::profiling::profile_event::cat</a></div><div class="ttdeci">static_c_string cat</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00091">profiling.cppm:91</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_a4fd0fbcb9a46b54e58f8a779e988270b"><div class="ttname"><a href="#a4fd0fbcb9a46b54e58f8a779e988270b">ein::profiling::profile_event::bp</a></div><div class="ttdeci">static_c_string bp</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00098">profiling.cppm:98</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_a6e0bc4784e272a4c30188ee9c70b8ff1"><div class="ttname"><a href="#a6e0bc4784e272a4c30188ee9c70b8ff1">ein::profiling::profile_event::args</a></div><div class="ttdeci">json args</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00099">profiling.cppm:99</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_a89e379e9da6a59c2161cfa6b3ac15668"><div class="ttname"><a href="#a89e379e9da6a59c2161cfa6b3ac15668">ein::profiling::profile_event::s</a></div><div class="ttdeci">scope s</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00096">profiling.cppm:96</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_acd291f1d3c6508d9bbb85844687d9a59"><div class="ttname"><a href="#acd291f1d3c6508d9bbb85844687d9a59">ein::profiling::profile_event::id</a></div><div class="ttdeci">std::optional&lt; string &gt; id</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00097">profiling.cppm:97</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_aeeb7ade298b7d330c75f0d0caede67ff"><div class="ttname"><a href="#aeeb7ade298b7d330c75f0d0caede67ff">ein::profiling::profile_event::pid</a></div><div class="ttdeci">pid_t pid</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00094">profiling.cppm:94</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_af698329c7339a6761938d36ec06cd26b"><div class="ttname"><a href="#af698329c7339a6761938d36ec06cd26b">ein::profiling::profile_event::ph</a></div><div class="ttdeci">event_type ph</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00092">profiling.cppm:92</a></div></div>
-<div class="ttc" id="anamespaceein_1_1profiling_html_af9442da5718a9afe8f8c89c8a0b6c990"><div class="ttname"><a href="#af9442da5718a9afe8f8c89c8a0b6c990">ein::profiling::profile_event::name</a></div><div class="ttdeci">static_c_string name</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00090">profiling.cppm:90</a></div></div>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00096">96</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   96</span>                                                                        {</div>
+<div class="line"><span class="lineno">   97</span>  <span class="keywordflow">if</span> (not t.<a class="code hl_variable" href="#af9442da5718a9afe8f8c89c8a0b6c990">name</a>) j[<span class="stringliteral">&quot;name&quot;</span>] = t.<a class="code hl_variable" href="#af9442da5718a9afe8f8c89c8a0b6c990">name</a>;</div>
+<div class="line"><span class="lineno">   98</span>  <span class="keywordflow">if</span> (not t.<a class="code hl_variable" href="#a3e99324a71be371ff056dac4219a9a79">cat</a>) j[<span class="stringliteral">&quot;cat&quot;</span>] = t.<a class="code hl_variable" href="#a3e99324a71be371ff056dac4219a9a79">cat</a>;</div>
+<div class="line"><span class="lineno">   99</span>  j[<span class="stringliteral">&quot;ph&quot;</span>] = t.<a class="code hl_variable" href="#af698329c7339a6761938d36ec06cd26b">ph</a>;</div>
+<div class="line"><span class="lineno">  100</span>  j[<span class="stringliteral">&quot;ts&quot;</span>] = t.<a class="code hl_variable" href="#a2a73f355469077426f709b67dadb8e22">ts</a>;</div>
+<div class="line"><span class="lineno">  101</span>  j[<span class="stringliteral">&quot;pid&quot;</span>] = t.<a class="code hl_variable" href="#aeeb7ade298b7d330c75f0d0caede67ff">pid</a>;</div>
+<div class="line"><span class="lineno">  102</span>  j[<span class="stringliteral">&quot;tid&quot;</span>] = t.<a class="code hl_variable" href="#a250bcb745c9a040bd33567ccbf55bc14">tid</a>;</div>
+<div class="line"><span class="lineno">  103</span>  <span class="keywordflow">if</span> (t.<a class="code hl_variable" href="#a89e379e9da6a59c2161cfa6b3ac15668">s</a> != scope::none) j[<span class="stringliteral">&quot;s&quot;</span>] = t.<a class="code hl_variable" href="#a89e379e9da6a59c2161cfa6b3ac15668">s</a>;</div>
+<div class="line"><span class="lineno">  104</span>  <span class="keywordflow">if</span> (t.<a class="code hl_variable" href="#acd291f1d3c6508d9bbb85844687d9a59">id</a>.has_value()) j[<span class="stringliteral">&quot;id&quot;</span>] = *t.<a class="code hl_variable" href="#acd291f1d3c6508d9bbb85844687d9a59">id</a>;</div>
+<div class="line"><span class="lineno">  105</span>  <span class="keywordflow">if</span> (t.<a class="code hl_variable" href="#a4fd0fbcb9a46b54e58f8a779e988270b">bp</a>) j[<span class="stringliteral">&quot;bp&quot;</span>] = t.<a class="code hl_variable" href="#a4fd0fbcb9a46b54e58f8a779e988270b">bp</a>;</div>
+<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (not t.<a class="code hl_variable" href="#a33458f158ca872b87c40ac0c79468b11">args</a>.is_null()) j[<span class="stringliteral">&quot;args&quot;</span>] = t.<a class="code hl_variable" href="#a33458f158ca872b87c40ac0c79468b11">args</a>;</div>
+<div class="line"><span class="lineno">  107</span>}</div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a250bcb745c9a040bd33567ccbf55bc14"><div class="ttname"><a href="#a250bcb745c9a040bd33567ccbf55bc14">ein::profiling::profile_event::tid</a></div><div class="ttdeci">size_t tid</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00088">profiling.hpp:88</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a2a73f355469077426f709b67dadb8e22"><div class="ttname"><a href="#a2a73f355469077426f709b67dadb8e22">ein::profiling::profile_event::ts</a></div><div class="ttdeci">size_t ts</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00086">profiling.hpp:86</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a33458f158ca872b87c40ac0c79468b11"><div class="ttname"><a href="#a33458f158ca872b87c40ac0c79468b11">ein::profiling::profile_event::args</a></div><div class="ttdeci">nlohmann::json args</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00092">profiling.hpp:92</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a3e99324a71be371ff056dac4219a9a79"><div class="ttname"><a href="#a3e99324a71be371ff056dac4219a9a79">ein::profiling::profile_event::cat</a></div><div class="ttdeci">static_c_string cat</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00084">profiling.hpp:84</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a4fd0fbcb9a46b54e58f8a779e988270b"><div class="ttname"><a href="#a4fd0fbcb9a46b54e58f8a779e988270b">ein::profiling::profile_event::bp</a></div><div class="ttdeci">static_c_string bp</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00091">profiling.hpp:91</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_a89e379e9da6a59c2161cfa6b3ac15668"><div class="ttname"><a href="#a89e379e9da6a59c2161cfa6b3ac15668">ein::profiling::profile_event::s</a></div><div class="ttdeci">scope s</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00089">profiling.hpp:89</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_acd291f1d3c6508d9bbb85844687d9a59"><div class="ttname"><a href="#acd291f1d3c6508d9bbb85844687d9a59">ein::profiling::profile_event::id</a></div><div class="ttdeci">std::optional&lt; string &gt; id</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00090">profiling.hpp:90</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_aeeb7ade298b7d330c75f0d0caede67ff"><div class="ttname"><a href="#aeeb7ade298b7d330c75f0d0caede67ff">ein::profiling::profile_event::pid</a></div><div class="ttdeci">pid_t pid</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00087">profiling.hpp:87</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_af698329c7339a6761938d36ec06cd26b"><div class="ttname"><a href="#af698329c7339a6761938d36ec06cd26b">ein::profiling::profile_event::ph</a></div><div class="ttdeci">event_type ph</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00085">profiling.hpp:85</a></div></div>
+<div class="ttc" id="anamespaceein_1_1profiling_html_af9442da5718a9afe8f8c89c8a0b6c990"><div class="ttname"><a href="#af9442da5718a9afe8f8c89c8a0b6c990">ein::profiling::profile_event::name</a></div><div class="ttdeci">static_c_string name</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00083">profiling.hpp:83</a></div></div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="profiling_8cppm_source.html#l00099">ein::profiling::profile_event&lt; Duration, Clock &gt;::args</a>, <a class="el" href="profiling_8cppm_source.html#l00098">ein::profiling::profile_event&lt; Duration, Clock &gt;::bp</a>, <a class="el" href="profiling_8cppm_source.html#l00091">ein::profiling::profile_event&lt; Duration, Clock &gt;::cat</a>, <a class="el" href="profiling_8cppm_source.html#l00097">ein::profiling::profile_event&lt; Duration, Clock &gt;::id</a>, <a class="el" href="profiling_8cppm_source.html#l00090">ein::profiling::profile_event&lt; Duration, Clock &gt;::name</a>, <a class="el" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a>, <a class="el" href="profiling_8cppm_source.html#l00092">ein::profiling::profile_event&lt; Duration, Clock &gt;::ph</a>, <a class="el" href="profiling_8cppm_source.html#l00094">ein::profiling::profile_event&lt; Duration, Clock &gt;::pid</a>, <a class="el" href="profiling_8cppm_source.html#l00096">ein::profiling::profile_event&lt; Duration, Clock &gt;::s</a>, <a class="el" href="profiling_8cppm_source.html#l00095">ein::profiling::profile_event&lt; Duration, Clock &gt;::tid</a>, and <a class="el" href="profiling_8cppm_source.html#l00093">ein::profiling::profile_event&lt; Duration, Clock &gt;::ts</a>.</p>
+<p class="reference">References <a class="el" href="profiling_8hpp_source.html#l00092">ein::profiling::profile_event&lt; Duration, Clock &gt;::args</a>, <a class="el" href="profiling_8hpp_source.html#l00091">ein::profiling::profile_event&lt; Duration, Clock &gt;::bp</a>, <a class="el" href="profiling_8hpp_source.html#l00084">ein::profiling::profile_event&lt; Duration, Clock &gt;::cat</a>, <a class="el" href="profiling_8hpp_source.html#l00090">ein::profiling::profile_event&lt; Duration, Clock &gt;::id</a>, <a class="el" href="profiling_8hpp_source.html#l00083">ein::profiling::profile_event&lt; Duration, Clock &gt;::name</a>, <a class="el" href="#a3efa8e6d3fba738fbc9cd540b7ab1273a334c4a4c42fdb79d7ebc3e73b517e6f8">none</a>, <a class="el" href="profiling_8hpp_source.html#l00085">ein::profiling::profile_event&lt; Duration, Clock &gt;::ph</a>, <a class="el" href="profiling_8hpp_source.html#l00087">ein::profiling::profile_event&lt; Duration, Clock &gt;::pid</a>, <a class="el" href="profiling_8hpp_source.html#l00089">ein::profiling::profile_event&lt; Duration, Clock &gt;::s</a>, <a class="el" href="profiling_8hpp_source.html#l00088">ein::profiling::profile_event&lt; Duration, Clock &gt;::tid</a>, and <a class="el" href="profiling_8hpp_source.html#l00086">ein::profiling::profile_event&lt; Duration, Clock &gt;::ts</a>.</p>
 
 </div>
 </div>
-<a id="af8081ae410d0f593229cac494a7ddba8" name="af8081ae410d0f593229cac494a7ddba8"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af8081ae410d0f593229cac494a7ddba8">&#9670;&#160;</a></span>to_json() <span class="overload">[2/2]</span></h2>
+<a id="ad39b469ba8135c97d9b99484ecdd78f3" name="ad39b469ba8135c97d9b99484ecdd78f3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad39b469ba8135c97d9b99484ecdd78f3">&#9670;&#160;</a></span>to_json() <span class="overload">[2/2]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -640,7 +639,7 @@ template&lt;typename Mutex , typename Duration , typename Clock &gt; </div>
         <tr>
           <td class="memname">void ein::profiling::to_json </td>
           <td>(</td>
-          <td class="paramtype">json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
+          <td class="paramtype">nlohmann::json &amp;</td>          <td class="paramname"><span class="paramname"><em>j</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -650,24 +649,55 @@ template&lt;typename Mutex , typename Duration , typename Clock &gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="profiling_8cppm_source.html#l00218">218</a> of file <a class="el" href="profiling_8cppm_source.html">profiling.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  218</span>                                                                         {</div>
-<div class="line"><span class="lineno">  219</span>  j = {</div>
-<div class="line"><span class="lineno">  220</span>    {<span class="stringliteral">&quot;traceEvents&quot;</span>, p.<a class="code hl_variable" href="structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d">events</a>},</div>
-<div class="line"><span class="lineno">  221</span>    {<span class="stringliteral">&quot;displayTimeUnit&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(duration_suffix&lt;Duration&gt;()) }</div>
-<div class="line"><span class="lineno">  222</span>  };</div>
-<div class="line"><span class="lineno">  223</span>  <span class="keywordflow">if</span> (p.<a class="code hl_variable" href="structein_1_1profiling_1_1profile.html#a950edd31251c8343f98cf90b62e7d76d">metadata</a>.is_object())</div>
-<div class="line"><span class="lineno">  224</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;e : p.<a class="code hl_variable" href="structein_1_1profiling_1_1profile.html#a950edd31251c8343f98cf90b62e7d76d">metadata</a>.template get&lt;json::object_t&gt;())</div>
-<div class="line"><span class="lineno">  225</span>      j[e.first] = e.second;</div>
-<div class="line"><span class="lineno">  226</span>};</div>
-<div class="ttc" id="astructein_1_1profiling_1_1profile_html_a950edd31251c8343f98cf90b62e7d76d"><div class="ttname"><a href="structein_1_1profiling_1_1profile.html#a950edd31251c8343f98cf90b62e7d76d">ein::profiling::profile::metadata</a></div><div class="ttdeci">json metadata</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00129">profiling.cppm:129</a></div></div>
-<div class="ttc" id="astructein_1_1profiling_1_1profile_html_ad6741e8eafaaa5a422c431508e6b5c9d"><div class="ttname"><a href="structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d">ein::profiling::profile::events</a></div><div class="ttdeci">std::vector&lt; event &gt; events</div><div class="ttdef"><b>Definition</b> <a href="profiling_8cppm_source.html#l00128">profiling.cppm:128</a></div></div>
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00209">209</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  209</span>                                                                                 {</div>
+<div class="line"><span class="lineno">  210</span>  j = {</div>
+<div class="line"><span class="lineno">  211</span>    {<span class="stringliteral">&quot;traceEvents&quot;</span>, p.<a class="code hl_variable" href="structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d">events</a>},</div>
+<div class="line"><span class="lineno">  212</span>    {<span class="stringliteral">&quot;displayTimeUnit&quot;</span>, <span class="keyword">static_cast&lt;</span><span class="keyword">const </span><span class="keywordtype">char</span> *<span class="keyword">&gt;</span>(duration_suffix&lt;Duration&gt;) }</div>
+<div class="line"><span class="lineno">  213</span>  };</div>
+<div class="line"><span class="lineno">  214</span>  <span class="keywordflow">if</span> (p.<a class="code hl_variable" href="structein_1_1profiling_1_1profile.html#a74b4c023ca9442efe7bbc41214c25096">metadata</a>.is_object())</div>
+<div class="line"><span class="lineno">  215</span>    <span class="keywordflow">for</span> (<span class="keyword">const</span> <span class="keyword">auto</span> &amp;e : p.<a class="code hl_variable" href="structein_1_1profiling_1_1profile.html#a74b4c023ca9442efe7bbc41214c25096">metadata</a>.template get&lt;nlohmann::json::object_t&gt;())</div>
+<div class="line"><span class="lineno">  216</span>      j[e.first] = e.second;</div>
+<div class="line"><span class="lineno">  217</span>};</div>
+<div class="ttc" id="astructein_1_1profiling_1_1profile_html_a74b4c023ca9442efe7bbc41214c25096"><div class="ttname"><a href="structein_1_1profiling_1_1profile.html#a74b4c023ca9442efe7bbc41214c25096">ein::profiling::profile::metadata</a></div><div class="ttdeci">nlohmann::json metadata</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00122">profiling.hpp:122</a></div></div>
+<div class="ttc" id="astructein_1_1profiling_1_1profile_html_ad6741e8eafaaa5a422c431508e6b5c9d"><div class="ttname"><a href="structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d">ein::profiling::profile::events</a></div><div class="ttdeci">std::vector&lt; event &gt; events</div><div class="ttdef"><b>Definition</b> <a href="profiling_8hpp_source.html#l00121">profiling.hpp:121</a></div></div>
 </div><!-- fragment -->
+<p class="reference">References <a class="el" href="profiling_8hpp_source.html#l00076">duration_suffix</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Variable Documentation</h2>
+<a id="a7ecc4236ce07bcdcd0d33c491aa5f538" name="a7ecc4236ce07bcdcd0d33c491aa5f538"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7ecc4236ce07bcdcd0d33c491aa5f538">&#9670;&#160;</a></span>duration_suffix</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename T &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">char const* ein::profiling::duration_suffix</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span><span class="mlabel">constexpr</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="profiling_8hpp_source.html#l00076">76</a> of file <a class="el" href="profiling_8hpp_source.html">profiling.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="profiling_8hpp_source.html#l00209">to_json()</a>.</p>
+
 </div>
 </div>
 </div><!-- contents -->

@@ -1,0 +1,886 @@
+<!-- HTML header for doxygen 1.12.0-->
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=11"/>
+<meta name="generator" content="Doxygen 1.12.0"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>ein: ein::fp16 Struct Reference</title>
+<link rel="icon" href="favicon.ico" type="image/x-icon" />
+<!--alternate icons-->
+<link rel="icon" sizes="16x16" type="image/png" href="favicon-16x16.png"/>
+<link rel="icon" sizes="32x32" type="image/png" href="favicon-32x32.png"/>
+<link rel="icon" sizes="192x192" type="image/png" href="android-icon-192x192.png"/>
+<link rel="icon" sizes="512x512" type="image/png" href="android-icon-512x512.png"/>
+<link rel="apple-touch-icon" sizes="180x180" type="image/png" href="apple-touch-icon.png"/>
+<link rel="manifest" href="site.web-manifest">
+<!--alternate icons-->
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="cookie.js"></script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<script type="text/javascript">
+window.MathJax = {
+  options: {
+    ignoreHtmlClass: 'tex2jax_ignore',
+    processHtmlClass: 'tex2jax_process'
+  },
+  loader: {
+    load: ['[tex]/ams']
+  },
+  tex: {
+    macros: {},
+    packages: ['base','configmacros','ams']
+  }
+};
+</script>
+<script type="text/javascript" id="MathJax-script" async="async" src="mathjax/es5/tex-chtml.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+<link href="doxygen-awesome.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only.css" rel="stylesheet" type="text/css"/>
+<link href="doxygen-awesome-sidebar-only-darkmode-toggle.css" rel="stylesheet" type="text/css"/>
+<style>
+div.header div.summary { padding-right: 80px; }
+:root {
+  --font-family-monospace: 'Hasklig', monospace;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-Regular.woff2') format('woff2'), url('Hasklig-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-It.woff2') format('woff2'), url('Hasklig-It.woff') format('woff');
+  font-weight: normal;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Hasklig';
+  src: url('Hasklig-Bold.woff2') format('woff2'), url('Hasklig-Bold.woff') format('woff');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
+</style>
+<!-- extra scripts -->
+<script type="text/javascript" src="doxygen-awesome-darkmode-toggle.js"></script>
+<script type="text/javascript" src="doxygen-awesome-fragment-copy-button.js"></script>
+<script type="text/javascript" src="doxygen-awesome-paragraph-link.js"></script>
+<script type="text/javascript" src="doxygen-awesome-interactive-toc.js"></script>
+<script type="text/javascript" src="doxygen-awesome-tabs.js"></script>
+<script type="text/javascript" src="trace.js"></script>
+<script type="text/javascript" src="go-home.js"></script>
+<script type="text/javascript">
+  DoxygenAwesomeDarkModeToggle.init()
+  DoxygenAwesomeFragmentCopyButton.init()
+  DoxygenAwesomeParagraphLink.init()
+  DoxygenAwesomeInteractiveToc.init()
+  DoxygenAwesomeTabs.init()
+</script>
+<!-- end of extra scripts -->
+</head>
+<body>
+<!-- github corners -->
+<!-- end github corner -->
+<a href="https://github.com/ekmett/ein" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewBox="0 0 250 250" style="fill:#70B7FD; color:#fff; position: absolute; top: 0; border: 0; right: 0; z-index: 9999;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr id="projectrow">
+  <td id="projectlogo"><a href="index.html"><img alt="Logo" src="ein-logo.png"/></a></td>
+  <td id="projectalign">
+   <div id="projectname"><a href="index.html">ein<span id="projectnumber">&#160;0.0.1</span></a>
+   </div>
+   </div>
+   <div id="projectbrief">SIMD Tools</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- Generated by Doxygen 1.12.0 -->
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+var searchBox = new SearchBox("searchBox", "search/",'.html');
+/* @license-end */
+</script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() { codefold.init(0); });
+/* @license-end */
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function() {
+  initMenu('',true,false,'search.php','Search',true);
+  $(function() { init_search(); });
+});
+/* @license-end */
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+/* @license magnet:?xt=urn:btih:d3d9a9a6595521f9666a5e94cc830dab83b65699&amp;dn=expat.txt MIT */
+$(function(){initNavTree('structein_1_1fp16.html',''); initResizable(true); });
+/* @license-end */
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<div id="MSearchResults">
+<div class="SRPage">
+<div id="SRIndex">
+<div id="SRResults"></div>
+<div class="SRStatus" id="Loading">Loading...</div>
+<div class="SRStatus" id="Searching">Searching...</div>
+<div class="SRStatus" id="NoMatches">No Matches</div>
+</div>
+</div>
+</div>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
+<a href="#pub-methods">Public Member Functions</a> &#124;
+<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-attribs">Public Attributes</a> &#124;
+<a href="#friends">Friends</a> &#124;
+<a href="structein_1_1fp16-members.html">List of all members</a>  </div>
+  <div class="headertitle"><div class="title">ein::fp16 Struct Reference</div></div>
+</div><!--header-->
+<div class="contents">
+
+<p><code>#include &lt;<a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>&gt;</code></p>
+<table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-types" name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a74baea95bf645593492762405ea91a94" id="r_a74baea95bf645593492762405ea91a94"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a74baea95bf645593492762405ea91a94">underlying_type</a> = _Float16</td></tr>
+<tr class="separator:a74baea95bf645593492762405ea91a94"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-methods" name="pub-methods"></a>
+Public Member Functions</h2></td></tr>
+<tr class="memitem:afc6bbbc5dd7592663a44e9760da077b5" id="r_afc6bbbc5dd7592663a44e9760da077b5"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#afc6bbbc5dd7592663a44e9760da077b5">fp16</a> () noexcept=default</td></tr>
+<tr class="separator:afc6bbbc5dd7592663a44e9760da077b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6f250c7461bd5a916e5181e776821858" id="r_a6f250c7461bd5a916e5181e776821858"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6f250c7461bd5a916e5181e776821858">fp16</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> const &amp;) noexcept=default</td></tr>
+<tr class="separator:a6f250c7461bd5a916e5181e776821858"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aff0b25ab0f3ca737d885e625932d52c2" id="r_aff0b25ab0f3ca737d885e625932d52c2"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aff0b25ab0f3ca737d885e625932d52c2">fp16</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:aff0b25ab0f3ca737d885e625932d52c2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a03592dd43053748e2a433a57a3fd6f99" id="r_a03592dd43053748e2a433a57a3fd6f99"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a03592dd43053748e2a433a57a3fd6f99">fp16</a> (float <a class="el" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a>) noexcept</td></tr>
+<tr class="separator:a03592dd43053748e2a433a57a3fd6f99"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af12d46671a4eff0cdc2710200f4127b5" id="r_af12d46671a4eff0cdc2710200f4127b5"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#af12d46671a4eff0cdc2710200f4127b5">fp16</a> (_Float16 <a class="el" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a>) noexcept</td></tr>
+<tr class="separator:af12d46671a4eff0cdc2710200f4127b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7a9b752f21b99d5a0cf31c0fb23eee80" id="r_a7a9b752f21b99d5a0cf31c0fb23eee80"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7a9b752f21b99d5a0cf31c0fb23eee80">operator float</a> (this <a class="el" href="structein_1_1fp16.html">fp16</a> self) noexcept</td></tr>
+<tr class="separator:a7a9b752f21b99d5a0cf31c0fb23eee80"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaafec898c2fc71be0c5eb565c0c63a9e" id="r_aaafec898c2fc71be0c5eb565c0c63a9e"><td class="memItemLeft" align="right" valign="top">constexpr&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaafec898c2fc71be0c5eb565c0c63a9e">operator _Float16</a> (this <a class="el" href="structein_1_1fp16.html">fp16</a> self) noexcept</td></tr>
+<tr class="separator:aaafec898c2fc71be0c5eb565c0c63a9e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8efd155a752eb592e9abfaca6a85af62" id="r_a8efd155a752eb592e9abfaca6a85af62"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a> constexpr <a class="el" href="structein_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8efd155a752eb592e9abfaca6a85af62">operator=</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> const &amp;) noexcept=default</td></tr>
+<tr class="separator:a8efd155a752eb592e9abfaca6a85af62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0d25e7b65930eb719b5a0b28675ba848" id="r_a0d25e7b65930eb719b5a0b28675ba848"><td class="memItemLeft" align="right" valign="top"><a class="el" href="group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a> constexpr <a class="el" href="structein_1_1fp16.html">fp16</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a0d25e7b65930eb719b5a0b28675ba848">operator=</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> &amp;&amp;) noexcept=default</td></tr>
+<tr class="separator:a0d25e7b65930eb719b5a0b28675ba848"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aec156bdc3b62194e26e01200a016cd2d" id="r_aec156bdc3b62194e26e01200a016cd2d"><td class="memItemLeft" align="right" valign="top">constexpr uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aec156bdc3b62194e26e01200a016cd2d">to_bits</a> (this <a class="el" href="structein_1_1fp16.html">fp16</a> self) noexcept</td></tr>
+<tr class="separator:aec156bdc3b62194e26e01200a016cd2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-static-methods" name="pub-static-methods"></a>
+Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a71a01bfcf14d9880a425145e21610c49" id="r_a71a01bfcf14d9880a425145e21610c49"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structein_1_1fp16.html">fp16</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a71a01bfcf14d9880a425145e21610c49">from_bits</a> (uint16_t data) noexcept</td></tr>
+<tr class="separator:a71a01bfcf14d9880a425145e21610c49"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="pub-attribs" name="pub-attribs"></a>
+Public Attributes</h2></td></tr>
+<tr class="memitem:a1e0cd669852f594ffe5542c2dc17b616" id="r_a1e0cd669852f594ffe5542c2dc17b616"><td class="memItemLeft" align="right" valign="top">_Float16&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a></td></tr>
+<tr class="separator:a1e0cd669852f594ffe5542c2dc17b616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="friends" name="friends"></a>
+Friends</h2></td></tr>
+<tr class="memitem:aa3a407ae403f410b9918686c73de60df" id="r_aa3a407ae403f410b9918686c73de60df"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aa3a407ae403f410b9918686c73de60df">operator==</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:aa3a407ae403f410b9918686c73de60df"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa93db3bad62b2bd12b3f5dbf5c49fa6" id="r_aaa93db3bad62b2bd12b3f5dbf5c49fa6"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa93db3bad62b2bd12b3f5dbf5c49fa6">operator!=</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:aaa93db3bad62b2bd12b3f5dbf5c49fa6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a29f7614d9e2f9bb4da475811577b17f2" id="r_a29f7614d9e2f9bb4da475811577b17f2"><td class="memItemLeft" align="right" valign="top">constexpr std::partial_ordering&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a29f7614d9e2f9bb4da475811577b17f2">operator&lt;=&gt;</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:a29f7614d9e2f9bb4da475811577b17f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4788c2b9a4b018bca086790bfa4fc76a" id="r_a4788c2b9a4b018bca086790bfa4fc76a"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4788c2b9a4b018bca086790bfa4fc76a">operator&lt;</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:a4788c2b9a4b018bca086790bfa4fc76a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9023328227cca7657f69dd2087730eb1" id="r_a9023328227cca7657f69dd2087730eb1"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9023328227cca7657f69dd2087730eb1">operator&lt;=</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:a9023328227cca7657f69dd2087730eb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab925678be46d7ba12bcae88eef57b3fd" id="r_ab925678be46d7ba12bcae88eef57b3fd"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab925678be46d7ba12bcae88eef57b3fd">operator&gt;</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:ab925678be46d7ba12bcae88eef57b3fd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9a4433c7f49d8f8cb05c3157aad7fb39" id="r_a9a4433c7f49d8f8cb05c3157aad7fb39"><td class="memItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a9a4433c7f49d8f8cb05c3157aad7fb39">operator&gt;=</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> x, <a class="el" href="structein_1_1fp16.html">fp16</a> y) noexcept</td></tr>
+<tr class="separator:a9a4433c7f49d8f8cb05c3157aad7fb39"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aecb9ae4eb8dd734e2095ff4da9d5966d" id="r_aecb9ae4eb8dd734e2095ff4da9d5966d"><td class="memItemLeft" align="right" valign="top">constexpr void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aecb9ae4eb8dd734e2095ff4da9d5966d">swap</a> (<a class="el" href="structein_1_1fp16.html">fp16</a> &amp;x, <a class="el" href="structein_1_1fp16.html">fp16</a> &amp;y) noexcept</td></tr>
+<tr class="separator:aecb9ae4eb8dd734e2095ff4da9d5966d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock">
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00019">19</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="a74baea95bf645593492762405ea91a94" name="a74baea95bf645593492762405ea91a94"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a74baea95bf645593492762405ea91a94">&#9670;&#160;</a></span>underlying_type</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="#a74baea95bf645593492762405ea91a94">ein::fp16::underlying_type</a> = _Float16</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00020">20</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+
+</div>
+</div>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afc6bbbc5dd7592663a44e9760da077b5" name="afc6bbbc5dd7592663a44e9760da077b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afc6bbbc5dd7592663a44e9760da077b5">&#9670;&#160;</a></span>fp16() <span class="overload">[1/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::fp16 </td>
+          <td>(</td>
+          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6f250c7461bd5a916e5181e776821858" name="a6f250c7461bd5a916e5181e776821858"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6f250c7461bd5a916e5181e776821858">&#9670;&#160;</a></span>fp16() <span class="overload">[2/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::fp16 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[noescape]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aff0b25ab0f3ca737d885e625932d52c2" name="aff0b25ab0f3ca737d885e625932d52c2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aff0b25ab0f3ca737d885e625932d52c2">&#9670;&#160;</a></span>fp16() <span class="overload">[3/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::fp16 </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[noescape]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a03592dd43053748e2a433a57a3fd6f99" name="a03592dd43053748e2a433a57a3fd6f99"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a03592dd43053748e2a433a57a3fd6f99">&#9670;&#160;</a></span>fp16() <span class="overload">[4/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::fp16 </td>
+          <td>(</td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00034">34</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   34</span>: <a class="code hl_variable" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a>(<a class="code hl_variable" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a>) {}</div>
+<div class="ttc" id="astructein_1_1fp16_html_a1e0cd669852f594ffe5542c2dc17b616"><div class="ttname"><a href="#a1e0cd669852f594ffe5542c2dc17b616">ein::fp16::content</a></div><div class="ttdeci">_Float16 content</div><div class="ttdef"><b>Definition</b> <a href="fp16_8hpp_source.html#l00022">fp16.hpp:22</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="af12d46671a4eff0cdc2710200f4127b5" name="af12d46671a4eff0cdc2710200f4127b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af12d46671a4eff0cdc2710200f4127b5">&#9670;&#160;</a></span>fp16() <span class="overload">[5/5]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::fp16 </td>
+          <td>(</td>
+          <td class="paramtype">_Float16</td>          <td class="paramname"><span class="paramname"><em>content</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00037">37</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   37</span>: <a class="code hl_variable" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a>(<a class="code hl_variable" href="#a1e0cd669852f594ffe5542c2dc17b616">content</a>) {}</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a71a01bfcf14d9880a425145e21610c49" name="a71a01bfcf14d9880a425145e21610c49"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a71a01bfcf14d9880a425145e21610c49">&#9670;&#160;</a></span>from_bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr <a class="el" href="structein_1_1fp16.html">fp16</a> ein::fp16::from_bits </td>
+          <td>(</td>
+          <td class="paramtype">uint16_t</td>          <td class="paramname"><span class="paramname"><em>data</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00097">97</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   97</span>                                                          {</div>
+<div class="line"><span class="lineno">   98</span>    <span class="keywordflow">return</span> std::bit_cast&lt;fp16&gt;(data);</div>
+<div class="line"><span class="lineno">   99</span>  }</div>
+</div><!-- fragment -->
+<p class="reference">Referenced by <a class="el" href="fp16_8hpp_source.html#l00174">std::numeric_limits&lt; ein::fp16 &gt;::denorm_min()</a>, <a class="el" href="fp16_8hpp_source.html#l00145">std::numeric_limits&lt; ein::fp16 &gt;::epsilon()</a>, <a class="el" href="fp16_8hpp_source.html#l00162">std::numeric_limits&lt; ein::fp16 &gt;::infinity()</a>, <a class="el" href="fp16_8hpp_source.html#l00135">std::numeric_limits&lt; ein::fp16 &gt;::lowest()</a>, <a class="el" href="fp16_8hpp_source.html#l00131">std::numeric_limits&lt; ein::fp16 &gt;::max()</a>, <a class="el" href="fp16_8hpp_source.html#l00127">std::numeric_limits&lt; ein::fp16 &gt;::min()</a>, <a class="el" href="fp16_8hpp_source.html#l00166">std::numeric_limits&lt; ein::fp16 &gt;::quiet_NaN()</a>, <a class="el" href="fp16_8hpp_source.html#l00149">std::numeric_limits&lt; ein::fp16 &gt;::round_error()</a>, and <a class="el" href="fp16_8hpp_source.html#l00170">std::numeric_limits&lt; ein::fp16 &gt;::signaling_NaN()</a>.</p>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><iframe scrolling="no" frameborder="0" src="structein_1_1fp16_a71a01bfcf14d9880a425145e21610c49_icgraph.svg" width="419" height="563"><p><b>This browser is not able to show SVG: try Firefox, Chrome, Safari, or Opera instead.</b></p></iframe></div>
+</div>
+
+</div>
+</div>
+<a id="aaafec898c2fc71be0c5eb565c0c63a9e" name="aaafec898c2fc71be0c5eb565c0c63a9e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaafec898c2fc71be0c5eb565c0c63a9e">&#9670;&#160;</a></span>operator _Float16()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::operator _Float16 </td>
+          <td>(</td>
+          <td class="paramtype">this <a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00043">43</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   43</span>{ <span class="keywordflow">return</span> self.content; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a7a9b752f21b99d5a0cf31c0fb23eee80" name="a7a9b752f21b99d5a0cf31c0fb23eee80"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7a9b752f21b99d5a0cf31c0fb23eee80">&#9670;&#160;</a></span>operator float()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">ein::fp16::operator float </td>
+          <td>(</td>
+          <td class="paramtype">this <a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00040">40</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>{ <span class="keywordflow">return</span> self.content; }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a0d25e7b65930eb719b5a0b28675ba848" name="a0d25e7b65930eb719b5a0b28675ba848"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0d25e7b65930eb719b5a0b28675ba848">&#9670;&#160;</a></span>operator=() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a> constexpr <a class="el" href="structein_1_1fp16.html">fp16</a> &amp; ein::fp16::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a> &amp;&amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[noescape]]</span><span class="mlabel">[[lifetimebound]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8efd155a752eb592e9abfaca6a85af62" name="a8efd155a752eb592e9abfaca6a85af62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8efd155a752eb592e9abfaca6a85af62">&#9670;&#160;</a></span>operator=() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="group__initialization__attributes.html#gae992904b95446a57f0e0c5925a9ce7c4">ein_reinitializes</a> constexpr <a class="el" href="structein_1_1fp16.html">fp16</a> &amp; ein::fp16::operator= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a> const &amp;</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">constexpr</span><span class="mlabel">default</span><span class="mlabel">noexcept</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[noescape]]</span><span class="mlabel">[[lifetimebound]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aec156bdc3b62194e26e01200a016cd2d" name="aec156bdc3b62194e26e01200a016cd2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aec156bdc3b62194e26e01200a016cd2d">&#9670;&#160;</a></span>to_bits()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">uint16_t ein::fp16::to_bits </td>
+          <td>(</td>
+          <td class="paramtype">this <a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>self</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">constexpr</span><span class="mlabel">noexcept</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00102">102</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">  102</span>                                                      {</div>
+<div class="line"><span class="lineno">  103</span>    <span class="keywordflow">return</span> std::bit_cast&lt;uint16_t&gt;(self.content);</div>
+<div class="line"><span class="lineno">  104</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Friends And Related Symbol Documentation</h2>
+<a id="aaa93db3bad62b2bd12b3f5dbf5c49fa6" name="aaa93db3bad62b2bd12b3f5dbf5c49fa6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa93db3bad62b2bd12b3f5dbf5c49fa6">&#9670;&#160;</a></span>operator!=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator!= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00059">59</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   59</span>                                                              {</div>
+<div class="line"><span class="lineno">   60</span>    <span class="keywordflow">return</span> x.content != y.content;</div>
+<div class="line"><span class="lineno">   61</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a4788c2b9a4b018bca086790bfa4fc76a" name="a4788c2b9a4b018bca086790bfa4fc76a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4788c2b9a4b018bca086790bfa4fc76a">&#9670;&#160;</a></span>operator&lt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00069">69</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   69</span>                                                             {</div>
+<div class="line"><span class="lineno">   70</span>    <span class="keywordflow">return</span> x.content &lt; y.content;</div>
+<div class="line"><span class="lineno">   71</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9023328227cca7657f69dd2087730eb1" name="a9023328227cca7657f69dd2087730eb1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9023328227cca7657f69dd2087730eb1">&#9670;&#160;</a></span>operator&lt;=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&lt;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00074">74</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   74</span>                                                              {</div>
+<div class="line"><span class="lineno">   75</span>    <span class="keywordflow">return</span> x.content &lt;= y.content;</div>
+<div class="line"><span class="lineno">   76</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a29f7614d9e2f9bb4da475811577b17f2" name="a29f7614d9e2f9bb4da475811577b17f2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a29f7614d9e2f9bb4da475811577b17f2">&#9670;&#160;</a></span>operator&lt;=&gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::partial_ordering operator&lt;=&gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00064">64</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   64</span>                                                                              {</div>
+<div class="line"><span class="lineno">   65</span>    <span class="keywordflow">return</span> x.content &lt;=&gt; y.content;</div>
+<div class="line"><span class="lineno">   66</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aa3a407ae403f410b9918686c73de60df" name="aa3a407ae403f410b9918686c73de60df"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa3a407ae403f410b9918686c73de60df">&#9670;&#160;</a></span>operator==</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator== </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00054">54</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   54</span>                                                              {</div>
+<div class="line"><span class="lineno">   55</span>    <span class="keywordflow">return</span> x.content == y.content;</div>
+<div class="line"><span class="lineno">   56</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="ab925678be46d7ba12bcae88eef57b3fd" name="ab925678be46d7ba12bcae88eef57b3fd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab925678be46d7ba12bcae88eef57b3fd">&#9670;&#160;</a></span>operator&gt;</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt; </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00078">78</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   78</span>                                                             {</div>
+<div class="line"><span class="lineno">   79</span>    <span class="keywordflow">return</span> x.content &gt; y.content;</div>
+<div class="line"><span class="lineno">   80</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="a9a4433c7f49d8f8cb05c3157aad7fb39" name="a9a4433c7f49d8f8cb05c3157aad7fb39"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9a4433c7f49d8f8cb05c3157aad7fb39">&#9670;&#160;</a></span>operator&gt;=</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool operator&gt;= </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a></td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[nodiscard]]</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[const]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00083">83</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   83</span>                                                              {</div>
+<div class="line"><span class="lineno">   84</span>    <span class="keywordflow">return</span> x.content &gt;= y.content;</div>
+<div class="line"><span class="lineno">   85</span>  }</div>
+</div><!-- fragment -->
+</div>
+</div>
+<a id="aecb9ae4eb8dd734e2095ff4da9d5966d" name="aecb9ae4eb8dd734e2095ff4da9d5966d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aecb9ae4eb8dd734e2095ff4da9d5966d">&#9670;&#160;</a></span>swap</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void swap </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>x</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="structein_1_1fp16.html">fp16</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>y</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">friend</span><span class="mlabel">[[always_inline]]</span><span class="mlabel">[[artificial]]</span><span class="mlabel">[[noescape]]</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00088">88</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   91</span>             {</div>
+<div class="line"><span class="lineno">   92</span>    <span class="keyword">using </span>std::swap;</div>
+<div class="line"><span class="lineno">   93</span>    <a class="code hl_friend" href="#aecb9ae4eb8dd734e2095ff4da9d5966d">swap</a>(x.content,y.content);</div>
+<div class="line"><span class="lineno">   94</span>  }</div>
+<div class="ttc" id="astructein_1_1fp16_html_aecb9ae4eb8dd734e2095ff4da9d5966d"><div class="ttname"><a href="#aecb9ae4eb8dd734e2095ff4da9d5966d">ein::fp16::swap</a></div><div class="ttdeci">friend constexpr void swap(fp16 &amp;x, fp16 &amp;y) noexcept</div><div class="ttdef"><b>Definition</b> <a href="fp16_8hpp_source.html#l00088">fp16.hpp:88</a></div></div>
+</div><!-- fragment -->
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a1e0cd669852f594ffe5542c2dc17b616" name="a1e0cd669852f594ffe5542c2dc17b616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e0cd669852f594ffe5542c2dc17b616">&#9670;&#160;</a></span>content</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">_Float16 ein::fp16::content</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="fp16_8hpp_source.html#l00022">22</a> of file <a class="el" href="fp16_8hpp_source.html">fp16.hpp</a>.</p>
+
+</div>
+</div>
+<hr/>The documentation for this struct was generated from the following file:<ul>
+<li><a class="el" href="fp16_8hpp_source.html">fp16.hpp</a></li>
+</ul>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- HTML footer for doxygen 1.12.0-->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <!-- <li><a class="el" href="index.html">Home</a></li> -->
+    <li class="navelem"><a class="el" href="namespaceein.html">ein</a></li><li class="navelem"><a class="el" href="structein_1_1fp16.html">fp16</a></li>
+    <li class="footer">© 2024 Edward Kmett. All rights reserved.</li>
+    <!--<li class="footer" style="align:center">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>-->
+  </ul>
+</div>
+</body>
+<!--
+SPDX-FileType: Source
+SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+-->
+</html>

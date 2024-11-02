@@ -1,6 +1,7 @@
 var group__types =
 [
-    [ "types.cppm", "types_8cppm.html", null ],
+    [ "types.hpp", "types_8hpp.html", null ],
+    [ "ein", "namespaceein.html", null ],
     [ "ein::one_of_t", "conceptein_1_1one__of__t.html", null ],
     [ "ein::not_one_of_t", "conceptein_1_1not__one__of__t.html", null ],
     [ "ein::type_of", "group__types.html#gaeff5354fcf4acab5497e2b60433e75b6", null ],

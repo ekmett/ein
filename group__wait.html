@@ -174,25 +174,18 @@ $(function(){initNavTree('group__wait.html',''); initResizable(true); });
 
 <div class="header">
   <div class="summary">
-<a href="#modules">Modules</a> &#124;
 <a href="#files">Files</a> &#124;
 <a href="#concepts">Concepts</a> &#124;
 <a href="#nested-classes">Classes</a> &#124;
-<a href="#func-members">Functions</a> &#124;
-<a href="#var-members">Variables</a>  </div>
+<a href="#func-members">Functions</a>  </div>
   <div class="headertitle"><div class="title">Waiting</div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="modules" name="modules"></a>
-Modules</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">module &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="module__ein_8wait.html">ein.wait</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="files" name="files"></a>
 Files</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8cppm.html">wait.cppm</a></td></tr>
-<tr class="memdesc:wait_8cppm"><td class="mdescLeft">&#160;</td><td class="mdescRight">waiting strategies <br /></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">file &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="wait_8hpp.html">wait.hpp</a></td></tr>
+<tr class="memdesc:wait_8hpp"><td class="mdescLeft">&#160;</td><td class="mdescRight">waiting strategies <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="concepts" name="concepts"></a>
@@ -215,20 +208,13 @@ Classes</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="func-members" name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:gabe061cf9e5e42c3c3587a332483635d5" id="r_gabe061cf9e5e42c3c3587a332483635d5"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
-<tr class="memitem:gabe061cf9e5e42c3c3587a332483635d5"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">ein_flatten</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gabe061cf9e5e42c3c3587a332483635d5">ein::wait_until</a> (auto *p, auto f) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
-<tr class="memdesc:gabe061cf9e5e42c3c3587a332483635d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
-<tr class="separator:gabe061cf9e5e42c3c3587a332483635d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gadeb4d4fb7ca47b0421a7286ba500993d" id="r_gadeb4d4fb7ca47b0421a7286ba500993d"><td class="memTemplParams" colspan="2">template&lt;waiter W&gt; </td></tr>
+<tr class="memitem:gadeb4d4fb7ca47b0421a7286ba500993d"><td class="memTemplItemLeft" align="right" valign="top"><a class="el" href="group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">ein_flatten</a> void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="#gadeb4d4fb7ca47b0421a7286ba500993d">ein::wait_until</a> (volatile auto *p, auto f) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
+<tr class="memdesc:gadeb4d4fb7ca47b0421a7286ba500993d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Wait until a predicate holds about a given memory location.  <br /></td></tr>
+<tr class="separator:gadeb4d4fb7ca47b0421a7286ba500993d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga15797fd5aad0c604b5951f50d53d3623" id="r_ga15797fd5aad0c604b5951f50d53d3623"><td class="memItemLeft" align="right" valign="top">auto&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a> (auto k) noexcept</td></tr>
 <tr class="memdesc:ga15797fd5aad0c604b5951f50d53d3623"><td class="mdescLeft">&#160;</td><td class="mdescRight">finds an appropriate waiter for the current CPU  <br /></td></tr>
 <tr class="separator:ga15797fd5aad0c604b5951f50d53d3623"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="var-members" name="var-members"></a>
-Variables</h2></td></tr>
-<tr class="memitem:gaaa1c31bb64256e696333d924bb50a90d" id="r_gaaa1c31bb64256e696333d924bb50a90d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaa1c31bb64256e696333d924bb50a90d">ein::mwaitx::supported</a></td></tr>
-<tr class="separator:gaaa1c31bb64256e696333d924bb50a90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga94f77adfbc306130e869173daf6ea96d" id="r_ga94f77adfbc306130e869173daf6ea96d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga94f77adfbc306130e869173daf6ea96d">ein::umwait::supported</a></td></tr>
-<tr class="separator:ga94f77adfbc306130e869173daf6ea96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <hr/><h2 class="groupheader">Class Documentation</h2>
@@ -245,19 +231,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p><a class="el" href="conceptein_1_1waiter.html">waiter</a> using MONITORX/MWAITX for AMD </p>
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00059">59</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00050">50</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Types</h3></td></tr>
 <tr class="memitem:a4de38c21779e017ba18e38a712c7fb77" id="r_a4de38c21779e017ba18e38a712c7fb77"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4de38c21779e017ba18e38a712c7fb77">timer_t</a> = uint64_t</td></tr>
 <tr class="separator:a4de38c21779e017ba18e38a712c7fb77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Static Public Member Functions</h3></td></tr>
-<tr class="memitem:a3993acfadc722397212f4d983986bf21" id="r_a3993acfadc722397212f4d983986bf21"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3993acfadc722397212f4d983986bf21">monitor</a> (void *p) noexcept</td></tr>
-<tr class="separator:a3993acfadc722397212f4d983986bf21"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5232290f01cc678754b5b4977e672256" id="r_a5232290f01cc678754b5b4977e672256"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5232290f01cc678754b5b4977e672256">monitor</a> (volatile void *p) noexcept</td></tr>
+<tr class="separator:a5232290f01cc678754b5b4977e672256"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae9200d7e42df08e5721d28dd59ef3af8" id="r_ae9200d7e42df08e5721d28dd59ef3af8"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae9200d7e42df08e5721d28dd59ef3af8">mwait</a> (uint32_t timer=0) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
 <tr class="separator:ae9200d7e42df08e5721d28dd59ef3af8"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Static Public Attributes</h3></td></tr>
-<tr class="memitem:gaaa1c31bb64256e696333d924bb50a90d" id="r_gaaa1c31bb64256e696333d924bb50a90d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#gaaa1c31bb64256e696333d924bb50a90d">supported</a></td></tr>
-<tr class="separator:gaaa1c31bb64256e696333d924bb50a90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa1c31bb64256e696333d924bb50a90d" id="r_aaa1c31bb64256e696333d924bb50a90d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aaa1c31bb64256e696333d924bb50a90d">supported</a></td></tr>
+<tr class="separator:aaa1c31bb64256e696333d924bb50a90d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Typedef Documentation</h4>
 <a id="a4de38c21779e017ba18e38a712c7fb77" name="a4de38c21779e017ba18e38a712c7fb77"></a>
@@ -272,13 +258,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00060">60</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00051">51</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 
 </div>
 </div>
 <h4 class="groupheader">Member Function Documentation</h4>
-<a id="a3993acfadc722397212f4d983986bf21" name="a3993acfadc722397212f4d983986bf21"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a3993acfadc722397212f4d983986bf21">&#9670;&#160;</a></span>monitor()</h2>
+<a id="a5232290f01cc678754b5b4977e672256" name="a5232290f01cc678754b5b4977e672256"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5232290f01cc678754b5b4977e672256">&#9670;&#160;</a></span>monitor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -289,7 +275,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void ein::mwaitx::monitor </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td class="paramtype">volatile void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -300,8 +286,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00061">61</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   61</span>{ _mm_monitorx(p,0,0); }</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00052">52</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   52</span>{ _mm_monitorx(<span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(p),0,0); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -328,9 +314,36 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00062">62</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   62</span>{ _mm_mwaitx(0,0,timer); }</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00053">53</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   53</span>{ _mm_mwaitx(0,0,timer); }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h4 class="groupheader">Member Data Documentation</h4>
+<a id="aaa1c31bb64256e696333d924bb50a90d" name="aaa1c31bb64256e696333d924bb50a90d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa1c31bb64256e696333d924bb50a90d">&#9670;&#160;</a></span>supported</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool ein::mwaitx::supported</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00055">55</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="wait_8hpp_source.html#l00084">ein::with_waiter()</a>.</p>
+
 </div>
 </div>
 
@@ -349,19 +362,19 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p><a class="el" href="conceptein_1_1waiter.html">waiter</a> using <a href="https://www.felixcloutier.com/x86/umonitor">UMONITOR</a>/<a href="https://www.felixcloutier.com/x86/umwait">UMWAIT</a> for Intel </p>
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00075">75</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00060">60</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Types</h3></td></tr>
 <tr class="memitem:ae187508a4587b0d74db55f3ef08eb654" id="r_ae187508a4587b0d74db55f3ef08eb654"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ae187508a4587b0d74db55f3ef08eb654">timer_t</a> = uint64_t</td></tr>
 <tr class="separator:ae187508a4587b0d74db55f3ef08eb654"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Static Public Member Functions</h3></td></tr>
-<tr class="memitem:a376bf3e1e66eb57013fea08af54c7906" id="r_a376bf3e1e66eb57013fea08af54c7906"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a376bf3e1e66eb57013fea08af54c7906">monitor</a> (void *p) noexcept</td></tr>
-<tr class="separator:a376bf3e1e66eb57013fea08af54c7906"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a75d7da177057d8e1edeb0b4f39935b2c" id="r_a75d7da177057d8e1edeb0b4f39935b2c"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a75d7da177057d8e1edeb0b4f39935b2c">monitor</a> (volatile void *p) noexcept</td></tr>
+<tr class="separator:a75d7da177057d8e1edeb0b4f39935b2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a65af2d44aac545bf2288c7fb2f59e387" id="r_a65af2d44aac545bf2288c7fb2f59e387"><td class="memItemLeft" align="right" valign="top">static uint8_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a65af2d44aac545bf2288c7fb2f59e387">mwait</a> (uint32_t timer=0) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
 <tr class="separator:a65af2d44aac545bf2288c7fb2f59e387"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Static Public Attributes</h3></td></tr>
-<tr class="memitem:ga94f77adfbc306130e869173daf6ea96d" id="r_ga94f77adfbc306130e869173daf6ea96d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ga94f77adfbc306130e869173daf6ea96d">supported</a></td></tr>
-<tr class="separator:ga94f77adfbc306130e869173daf6ea96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94f77adfbc306130e869173daf6ea96d" id="r_a94f77adfbc306130e869173daf6ea96d"><td class="memItemLeft" align="right" valign="top">static const bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a94f77adfbc306130e869173daf6ea96d">supported</a></td></tr>
+<tr class="separator:a94f77adfbc306130e869173daf6ea96d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h4 class="groupheader">Member Typedef Documentation</h4>
 <a id="ae187508a4587b0d74db55f3ef08eb654" name="ae187508a4587b0d74db55f3ef08eb654"></a>
@@ -376,13 +389,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00076">76</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00061">61</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 
 </div>
 </div>
 <h4 class="groupheader">Member Function Documentation</h4>
-<a id="a376bf3e1e66eb57013fea08af54c7906" name="a376bf3e1e66eb57013fea08af54c7906"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a376bf3e1e66eb57013fea08af54c7906">&#9670;&#160;</a></span>monitor()</h2>
+<a id="a75d7da177057d8e1edeb0b4f39935b2c" name="a75d7da177057d8e1edeb0b4f39935b2c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a75d7da177057d8e1edeb0b4f39935b2c">&#9670;&#160;</a></span>monitor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -393,7 +406,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void ein::umwait::monitor </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
+          <td class="paramtype">volatile void *</td>          <td class="paramname"><span class="paramname"><em>p</em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -404,8 +417,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00077">77</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   77</span>{ <span class="keywordflow">return</span> _umonitor(p); }</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00062">62</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   62</span>{ <span class="keywordflow">return</span> _umonitor(<span class="keyword">const_cast&lt;</span><span class="keywordtype">void</span>*<span class="keyword">&gt;</span>(p)); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -432,9 +445,36 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00078">78</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   78</span>{ <span class="keywordflow">return</span> _umwait(1,timer); }</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00063">63</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   63</span>{ <span class="keywordflow">return</span> _umwait(1,timer); }</div>
 </div><!-- fragment -->
+</div>
+</div>
+<h4 class="groupheader">Member Data Documentation</h4>
+<a id="a94f77adfbc306130e869173daf6ea96d" name="a94f77adfbc306130e869173daf6ea96d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94f77adfbc306130e869173daf6ea96d">&#9670;&#160;</a></span>supported</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">const bool ein::umwait::supported</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00065">65</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+
+<p class="reference">Referenced by <a class="el" href="wait_8hpp_source.html#l00084">ein::with_waiter()</a>.</p>
+
 </div>
 </div>
 
@@ -453,14 +493,14 @@ Variables</h2></td></tr>
 </div><div class="memdoc">
 <div class="textblock"><p>spin <a class="el" href="conceptein_1_1waiter.html">waiter</a> using <a href="https://www.felixcloutier.com/x86/pause">PAUSE</a> </p>
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00090">90</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00069">69</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 </div><table class="memberdecls">
 <tr><td colspan="2"><h3>Public Types</h3></td></tr>
 <tr class="memitem:a04ecd724c01f16fe2a82fc7987f3b13a" id="r_a04ecd724c01f16fe2a82fc7987f3b13a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a04ecd724c01f16fe2a82fc7987f3b13a">timer_t</a> = uint64_t</td></tr>
 <tr class="separator:a04ecd724c01f16fe2a82fc7987f3b13a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Static Public Member Functions</h3></td></tr>
-<tr class="memitem:a89f5d0f22dc2c948835409712a458895" id="r_a89f5d0f22dc2c948835409712a458895"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a89f5d0f22dc2c948835409712a458895">monitor</a> (void *) noexcept</td></tr>
-<tr class="separator:a89f5d0f22dc2c948835409712a458895"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b259820d5e41504503acafa8b5dad06" id="r_a7b259820d5e41504503acafa8b5dad06"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a7b259820d5e41504503acafa8b5dad06">monitor</a> (volatile void *) noexcept</td></tr>
+<tr class="separator:a7b259820d5e41504503acafa8b5dad06"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a10681c905b236e014773ae1793565dac" id="r_a10681c905b236e014773ae1793565dac"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a10681c905b236e014773ae1793565dac">mwait</a> (uint32_t=0) noexcept <a class="el" href="group__performance__constraint__attributes.html#ga648b685f348ba488c43fc374c6cf6f0f">ein_blocking</a></td></tr>
 <tr class="separator:a10681c905b236e014773ae1793565dac"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><h3>Static Public Attributes</h3></td></tr>
@@ -480,13 +520,13 @@ Variables</h2></td></tr>
       </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00091">91</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00070">70</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 
 </div>
 </div>
 <h4 class="groupheader">Member Function Documentation</h4>
-<a id="a89f5d0f22dc2c948835409712a458895" name="a89f5d0f22dc2c948835409712a458895"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a89f5d0f22dc2c948835409712a458895">&#9670;&#160;</a></span>monitor()</h2>
+<a id="a7b259820d5e41504503acafa8b5dad06" name="a7b259820d5e41504503acafa8b5dad06"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b259820d5e41504503acafa8b5dad06">&#9670;&#160;</a></span>monitor()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -497,7 +537,7 @@ Variables</h2></td></tr>
         <tr>
           <td class="memname">static void ein::spin::monitor </td>
           <td>(</td>
-          <td class="paramtype">void *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
+          <td class="paramtype">volatile void *</td>          <td class="paramname"><span class="paramname"><em></em></span></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -508,8 +548,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00092">92</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   92</span>{}</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00071">71</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   71</span>{}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -536,8 +576,8 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00093">93</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   93</span>{ _mm_pause(); }</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00072">72</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   72</span>{ _mm_pause(); }</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -562,7 +602,7 @@ Variables</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00095">95</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00074">74</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
 
 </div>
 </div>
@@ -570,8 +610,8 @@ Variables</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="gabe061cf9e5e42c3c3587a332483635d5" name="gabe061cf9e5e42c3c3587a332483635d5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gabe061cf9e5e42c3c3587a332483635d5">&#9670;&#160;</a></span>wait_until()</h2>
+<a id="gadeb4d4fb7ca47b0421a7286ba500993d" name="gadeb4d4fb7ca47b0421a7286ba500993d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#gadeb4d4fb7ca47b0421a7286ba500993d">&#9670;&#160;</a></span>wait_until()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -584,7 +624,7 @@ template&lt;waiter W&gt; </div>
         <tr>
           <td class="memname"><a class="el" href="group__inlining__attributes.html#ga6b3e26976553b387008cfe072f52d736">ein_flatten</a> void ein::wait_until </td>
           <td>(</td>
-          <td class="paramtype">auto *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
+          <td class="paramtype">volatile auto *</td>          <td class="paramname"><span class="paramname"><em>p</em></span>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -594,7 +634,7 @@ template&lt;waiter W&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -609,15 +649,15 @@ template&lt;waiter W&gt; </div>
 </dl>
 <dl class="section post"><dt>Postcondition</dt><dd>f(p) </dd></dl>
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00049">49</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">   49</span>                                                        {</div>
-<div class="line"><span class="lineno">   50</span>  assume(W::supported);</div>
-<div class="line"><span class="lineno">   51</span>  <span class="keywordflow">while</span> (!f(p)) {</div>
-<div class="line"><span class="lineno">   52</span>    W::monitor(p);</div>
-<div class="line"><span class="lineno">   53</span>    <span class="keywordflow">if</span> (!f(p))</div>
-<div class="line"><span class="lineno">   54</span>      W::mwait(0);</div>
-<div class="line"><span class="lineno">   55</span>  }</div>
-<div class="line"><span class="lineno">   56</span>}</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00040">40</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   40</span>                                                                 {</div>
+<div class="line"><span class="lineno">   41</span>  [[assume(W::supported)]];</div>
+<div class="line"><span class="lineno">   42</span>  <span class="keywordflow">while</span> (!f(p)) {</div>
+<div class="line"><span class="lineno">   43</span>    W::monitor(p);</div>
+<div class="line"><span class="lineno">   44</span>    <span class="keywordflow">if</span> (!f(p))</div>
+<div class="line"><span class="lineno">   45</span>      W::mwait(0);</div>
+<div class="line"><span class="lineno">   46</span>  }</div>
+<div class="line"><span class="lineno">   47</span>}</div>
 </div><!-- fragment -->
 </div>
 </div>
@@ -639,79 +679,26 @@ template&lt;waiter W&gt; </div>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">export</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">noexcept</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
 
 <p>finds an appropriate waiter for the current CPU </p>
-<p>Chooses between variations of user-mode <a href="https://www.felixcloutier.com/x86/monitor">MONITOR</a> / <a href="https://www.felixcloutier.com/x86/mwait">MWAIT</a>. Usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#ga15797fd5aad0c604b5951f50d53d3623">with_waiter</a>([]&lt;<a class="code hl_concept" href="conceptein_1_1waiter.html">waiter</a> w&gt; <span class="keyword">noexcept</span> { ...; <a class="code hl_function" href="#gabe061cf9e5e42c3c3587a332483635d5">wait_until&lt;w&gt;</a>(p,f); ... });</div>
-<div class="ttc" id="aconceptein_1_1waiter_html"><div class="ttname"><a href="conceptein_1_1waiter.html">ein::waiter</a></div><div class="ttdoc">some way to wait for a value to change</div><div class="ttdef"><b>Definition</b> <a href="wait_8cppm_source.html#l00037">wait.cppm:37</a></div></div>
-<div class="ttc" id="agroup__wait_html_ga15797fd5aad0c604b5951f50d53d3623"><div class="ttname"><a href="#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a></div><div class="ttdeci">auto with_waiter(auto k) noexcept</div><div class="ttdoc">finds an appropriate waiter for the current CPU</div><div class="ttdef"><b>Definition</b> <a href="wait_8cppm_source.html#l00105">wait.cppm:105</a></div></div>
-<div class="ttc" id="agroup__wait_html_gabe061cf9e5e42c3c3587a332483635d5"><div class="ttname"><a href="#gabe061cf9e5e42c3c3587a332483635d5">ein::wait_until</a></div><div class="ttdeci">ein_flatten void wait_until(auto *p, auto f) noexcept ein_blocking</div><div class="ttdoc">Wait until a predicate holds about a given memory location.</div><div class="ttdef"><b>Definition</b> <a href="wait_8cppm_source.html#l00049">wait.cppm:49</a></div></div>
+<p>Chooses between variations of user-mode <a href="https://www.felixcloutier.com/x86/monitor">MONITOR</a> / <a href="https://www.felixcloutier.com/x86/mwait">MWAIT</a>. Usage: </p><div class="fragment"><div class="line"><a class="code hl_function" href="#ga15797fd5aad0c604b5951f50d53d3623">with_waiter</a>([]&lt;<a class="code hl_concept" href="conceptein_1_1waiter.html">waiter</a> w&gt; <span class="keyword">noexcept</span> { ...; <a class="code hl_function" href="#gadeb4d4fb7ca47b0421a7286ba500993d">wait_until&lt;w&gt;</a>(p,f); ... });</div>
+<div class="ttc" id="aconceptein_1_1waiter_html"><div class="ttname"><a href="conceptein_1_1waiter.html">ein::waiter</a></div><div class="ttdoc">some way to wait for a value to change</div><div class="ttdef"><b>Definition</b> <a href="wait_8hpp_source.html#l00028">wait.hpp:28</a></div></div>
+<div class="ttc" id="agroup__wait_html_ga15797fd5aad0c604b5951f50d53d3623"><div class="ttname"><a href="#ga15797fd5aad0c604b5951f50d53d3623">ein::with_waiter</a></div><div class="ttdeci">auto with_waiter(auto k) noexcept</div><div class="ttdoc">finds an appropriate waiter for the current CPU</div><div class="ttdef"><b>Definition</b> <a href="wait_8hpp_source.html#l00084">wait.hpp:84</a></div></div>
+<div class="ttc" id="agroup__wait_html_gadeb4d4fb7ca47b0421a7286ba500993d"><div class="ttname"><a href="#gadeb4d4fb7ca47b0421a7286ba500993d">ein::wait_until</a></div><div class="ttdeci">ein_flatten void wait_until(volatile auto *p, auto f) noexcept ein_blocking</div><div class="ttdoc">Wait until a predicate holds about a given memory location.</div><div class="ttdef"><b>Definition</b> <a href="wait_8hpp_source.html#l00040">wait.hpp:40</a></div></div>
 </div><!-- fragment --><p> invokes <code>k</code> with a waiter as a template parameter. </p>
 
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00105">105</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-<div class="fragment"><div class="line"><span class="lineno">  105</span>                                         {</div>
-<div class="line"><span class="lineno">  106</span>  <span class="keywordflow">if</span> (mwaitx::supported) <span class="keywordflow">return</span> k.template operator()&lt;mwaitx&gt;();</div>
-<div class="line"><span class="lineno">  107</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (umwait::supported) <span class="keywordflow">return</span> k.template operator()&lt;umwait&gt;();</div>
-<div class="line"><span class="lineno">  108</span>  <span class="keywordflow">else</span> k.template operator()&lt;spin&gt;();</div>
-<div class="line"><span class="lineno">  109</span>}</div>
+<p class="definition">Definition at line <a class="el" href="wait_8hpp_source.html#l00084">84</a> of file <a class="el" href="wait_8hpp_source.html">wait.hpp</a>.</p>
+<div class="fragment"><div class="line"><span class="lineno">   84</span>                                  {</div>
+<div class="line"><span class="lineno">   85</span>  <span class="keywordflow">if</span> (mwaitx::supported) <span class="keywordflow">return</span> k.template operator()&lt;mwaitx&gt;();</div>
+<div class="line"><span class="lineno">   86</span>  <span class="keywordflow">else</span> <span class="keywordflow">if</span> (umwait::supported) <span class="keywordflow">return</span> k.template operator()&lt;umwait&gt;();</div>
+<div class="line"><span class="lineno">   87</span>  <span class="keywordflow">else</span> k.template operator()&lt;spin&gt;();</div>
+<div class="line"><span class="lineno">   88</span>}</div>
 </div><!-- fragment -->
-<p class="reference">References <a class="el" href="wait_8cppm_source.html#l00064">ein::mwaitx::supported</a>, and <a class="el" href="wait_8cppm_source.html#l00080">ein::umwait::supported</a>.</p>
-
-</div>
-</div>
-<h2 class="groupheader">Variable Documentation</h2>
-<a id="gaaa1c31bb64256e696333d924bb50a90d" name="gaaa1c31bb64256e696333d924bb50a90d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#gaaa1c31bb64256e696333d924bb50a90d">&#9670;&#160;</a></span>supported <span class="overload">[1/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool ein::mwaitx::supported</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00064">64</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="wait_8cppm_source.html#l00105">ein::with_waiter()</a>.</p>
-
-</div>
-</div>
-<a id="ga94f77adfbc306130e869173daf6ea96d" name="ga94f77adfbc306130e869173daf6ea96d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ga94f77adfbc306130e869173daf6ea96d">&#9670;&#160;</a></span>supported <span class="overload">[2/2]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">const bool ein::umwait::supported</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-<p class="definition">Definition at line <a class="el" href="wait_8cppm_source.html#l00080">80</a> of file <a class="el" href="wait_8cppm_source.html">wait.cppm</a>.</p>
-
-<p class="reference">Referenced by <a class="el" href="wait_8cppm_source.html#l00105">ein::with_waiter()</a>.</p>
+<p class="reference">References <a class="el" href="wait_8hpp_source.html#l00055">ein::mwaitx::supported</a>, and <a class="el" href="wait_8hpp_source.html#l00065">ein::umwait::supported</a>.</p>
 
 </div>
 </div>
