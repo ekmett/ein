@@ -77,6 +77,10 @@ set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 # ====================================================================
 
 option(CODE_COVERAGE "Enable code coverage instrumentation" ON)
+
+if(CODE_COVERAGE)
+  set(CMAKE_UNITY_BUILD OFF)
+endif()
 option(ENABLE_TESTS "Enable tests" ON)
 option(PRECOMPILE_HEADERS "Use precompiled headers" OFF)
 option(BUILD_NATIVE "Build for current host only" ON)
@@ -126,7 +130,7 @@ if (BUILD_NATIVE)
   foreach(FEATURE ${REQUIRED_AVX512_FEATURES})
     if(NOT "${CPUINFO}" MATCHES "${FEATURE}")
       set(AVX512 OFF)
-      message(INFO "Disabling AVX512: ${FEATURE} not supported")
+      message(NOTICE "Disabling AVX512: ${FEATURE} not supported")
       break()
     endif()
   endforeach()
@@ -178,7 +182,7 @@ endmacro()
 macro(lto)
   foreach(name IN LISTS ARGN)
     set_target_properties(${name} PROPERTIES INTERPROCEDURAL_OPTIMIZATION ${lto_supported})
-    if (lto_supported)
+    if (lto_supported AND NOT CODE_COVERAGE)
       target_compile_options(${name} PRIVATE $<${CXX_Clang}:-flto=thin>)
       target_link_options(${name} PRIVATE $<${Link_Clang}:-flto=thin>)
     endif()
@@ -226,6 +230,33 @@ fetchcontentcached(
 target_compile_options(spdlog PRIVATE
   $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
 )
+
+find_package(Threads REQUIRED)
+
+# nlohmann's json library provides a solid c++ API for working with json
+fetchcontentcached(
+  NAME json
+  GIT_REPOSITORY https://github.com/nlohmann/json.git
+  GIT_TAG        v3.11.3
+  GIT_SHALLOW TRUE
+  GIT_PROGRESS TRUE
+)
+
+set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
+
+fetchcontentcached(
+  NAME Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.7.1 # or a later release
+)
+# silence a third-party warning on clang++-18+
+target_compile_options(Catch2 PRIVATE
+  $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
+)
+
+list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
+
+
 
 # compile options
 # ====================================================================
@@ -288,11 +319,11 @@ add_subdirectory(doc)
 # If CODE_COVERAGE is enabled, add a custom target to generate coverage reports
 if(CODE_COVERAGE)
   message(STATUS "Code coverage instrumentation enabled")
+
+  # Add custom target for coverage
   add_custom_target(coverage
-    COMMAND llvm-profdata merge -sparse default.profraw -o coverage.profdata
-    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o") > coverage.info
-    COMMAND genhtml coverage.info --output-directory coverage-report
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
+    COMMAND "${CMAKE_CURRENT_SOURCE_DIR}/bin/generate_coverage.sh" "${CMAKE_CURRENT_BINARY_DIR}" "${CMAKE_CURRENT_SOURCE_DIR}/default.profraw"
+    WORKING_DIRECTORY "${CMAKE_CURRENT_BINARY_DIR}"
     COMMENT "Generating code coverage report"
   )
 else()
