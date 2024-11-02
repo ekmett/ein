@@ -7,6 +7,9 @@ var hierarchy =
     [ "ein::c_munmap", "structein_1_1c__munmap.html", null ],
     [ "ein::cpuid_t", "namespaceein.html#structein_1_1cpuid__t", null ],
     [ "ein::profiling::duration_event< Profile >", "structein_1_1profiling_1_1duration__event.html", null ],
+    [ "std::false_type", null, [
+      [ "ein::detail::has_lifted_operations_impl< T >", "structein_1_1detail_1_1has__lifted__operations__impl.html", null ]
+    ] ],
     [ "ein::fp16", "structein_1_1fp16.html", null ],
     [ "std::hash<::ein::basic_static_string< CharT, Traits > >", "structstd_1_1hash_3_1_1ein_1_1basic__static__string_3_01CharT_00_01Traits_01_4_01_4.html", null ],
     [ "std::hash<::ein::static_c_string >", "structstd_1_1hash_3_1_1ein_1_1static__c__string_01_4.html", null ],
@@ -42,6 +45,13 @@ var hierarchy =
     [ "ein::detail::simd_intrinsic< T, N >", "group__simd.html#structein_1_1detail_1_1simd__intrinsic_3_01T_00_01N_01_4", null ],
     [ "ein::spin", "group__wait.html#structein_1_1spin", null ],
     [ "ein::static_c_string", "classein_1_1static__c__string.html", null ],
+    [ "ein::detail::storage_type_impl< T >", "group__simd.html#structein_1_1detail_1_1storage__type__impl", null ],
+    [ "ein::detail::storage_type_impl< bf16 >", "group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01bf16_01_4", null ],
+    [ "ein::detail::storage_type_impl< fp16 >", "group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01fp16_01_4", null ],
+    [ "std::true_type", null, [
+      [ "ein::detail::has_lifted_operations_impl< bf16 >", "structein_1_1detail_1_1has__lifted__operations__impl_3_01bf16_01_4.html", null ],
+      [ "ein::detail::has_lifted_operations_impl< fp16 >", "structein_1_1detail_1_1has__lifted__operations__impl_3_01fp16_01_4.html", null ]
+    ] ],
     [ "std::tuple_element< I, ein::simd< T, N > >", "group__simd.html#structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4", null ],
     [ "ein::umwait", "group__wait.html#structein_1_1umwait", null ]
 ];

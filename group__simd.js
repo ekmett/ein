@@ -1,8 +1,9 @@
 var group__simd =
 [
-    [ "ein", "namespaceein.html", null ],
     [ "ein::detail", "namespaceein_1_1detail.html", null ],
     [ "ein::simd_type", "conceptein_1_1simd__type.html", null ],
+    [ "ein::has_storage_type", "conceptein_1_1has__storage__type.html", null ],
+    [ "ein::has_lifted_operations", "conceptein_1_1has__lifted__operations.html", null ],
     [ "ein::has_simd_type", "conceptein_1_1has__simd__type.html", null ],
     [ "ein::has_builtin_convertvector", "conceptein_1_1has__builtin__convertvector.html", null ],
     [ "ein::simd_builtin", "conceptein_1_1simd__builtin.html", null ],
@@ -119,6 +120,15 @@ var group__simd =
     [ "std::tuple_element< I, ein::simd< T, N > >", "group__simd.html#structstd_1_1tuple__element_3_01I_00_01ein_1_1simd_3_01T_00_01N_01_4_01_4", [
       [ "type", "group__simd.html#a19c2978201d48d6253eb5be0da2d359d", null ]
     ] ],
+    [ "ein::detail::storage_type_impl< T >", "group__simd.html#structein_1_1detail_1_1storage__type__impl", [
+      [ "type", "group__simd.html#a92508468f39d9b03ea3bab1cb71ae84d", null ]
+    ] ],
+    [ "ein::detail::storage_type_impl< bf16 >", "group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01bf16_01_4", [
+      [ "type", "group__simd.html#ad7a5e2f9d90c553831a4418989f2a376", null ]
+    ] ],
+    [ "ein::detail::storage_type_impl< fp16 >", "group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01fp16_01_4", [
+      [ "type", "group__simd.html#a3897ab0186b23bb14538c1bff7ab1a92", null ]
+    ] ],
     [ "ein::detail::si< 128 >", "group__simd.html#structein_1_1detail_1_1si_3_01128_01_4", [
       [ "type", "group__simd.html#ac2533224c4cf64842e834af44836622f", null ]
     ] ],
@@ -156,9 +166,10 @@ var group__simd =
       [ "type", "group__simd.html#af8422370637e5ab2762781483a288b38", null ]
     ] ],
     [ "ein::mmask_t", "group__simd.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],
-    [ "ein::simd_data_t", "group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8", null ],
+    [ "ein::simd_data_t", "group__simd.html#ga710c10b13257153671ff0a244e058104", null ],
     [ "ein::simd_intrinsic_t", "group__simd.html#ga4b50fb78953def6f3c7fcd3da5e3f66a", null ],
     [ "ein::simd_mask_t", "group__simd.html#gae78d444e236a38a2192b04c2bfd58433", null ],
+    [ "ein::storage_type", "group__simd.html#gacda38a004fee28022c37e8e3019f9886", null ],
     [ "ein::cast_pd", "group__simd.html#gaff6a2d3a89000de76efe691b7ef51f8e", null ],
     [ "ein::cast_pd", "group__simd.html#ga1e769c6c0bfd9b16bfafd49a63b547b1", null ],
     [ "ein::cast_pd", "group__simd.html#ga0f67aba576f075e5a395db942d1f626b", null ],

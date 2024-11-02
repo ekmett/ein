@@ -1,13 +1,17 @@
 var simd__data_8hpp =
 [
+    [ "ein::detail::has_lifted_operations_impl< T >", "structein_1_1detail_1_1has__lifted__operations__impl.html", null ],
+    [ "ein::detail::has_lifted_operations_impl< bf16 >", "structein_1_1detail_1_1has__lifted__operations__impl_3_01bf16_01_4.html", null ],
+    [ "ein::detail::has_lifted_operations_impl< fp16 >", "structein_1_1detail_1_1has__lifted__operations__impl_3_01fp16_01_4.html", null ],
     [ "ein::detail::si< N >", "namespaceein_1_1detail.html#structein_1_1detail_1_1si", null ],
     [ "ein::detail::ps< N >", "namespaceein_1_1detail.html#structein_1_1detail_1_1ps", null ],
     [ "ein::detail::pd< N >", "namespaceein_1_1detail.html#structein_1_1detail_1_1pd", null ],
     [ "ein::detail::simd_intrinsic< T, N >", "namespaceein_1_1detail.html#structein_1_1detail_1_1simd__intrinsic", null ],
     [ "mmask_t", "simd__data_8hpp.html#ga239b5fd784078f2e10a6d6c43f5525dd", null ],
-    [ "simd_data_t", "simd__data_8hpp.html#ga2fe08d2d97e186bfa4d9e484443df6e8", null ],
+    [ "simd_data_t", "simd__data_8hpp.html#ga710c10b13257153671ff0a244e058104", null ],
     [ "simd_intrinsic_t", "simd__data_8hpp.html#ga4b50fb78953def6f3c7fcd3da5e3f66a", null ],
     [ "simd_mask_t", "simd__data_8hpp.html#gae78d444e236a38a2192b04c2bfd58433", null ],
+    [ "storage_type", "simd__data_8hpp.html#gacda38a004fee28022c37e8e3019f9886", null ],
     [ "cast_pd", "simd__data_8hpp.html#gaff6a2d3a89000de76efe691b7ef51f8e", null ],
     [ "cast_pd", "simd__data_8hpp.html#ga1e769c6c0bfd9b16bfafd49a63b547b1", null ],
     [ "cast_pd", "simd__data_8hpp.html#ga0f67aba576f075e5a395db942d1f626b", null ],

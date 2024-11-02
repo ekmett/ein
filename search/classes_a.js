@@ -11,5 +11,8 @@ var searchData=
   ['simd_5fintrinsic_3c_20float_2c_20n_20_3e_8',['simd_intrinsic&lt; float, N &gt;',['../group__simd.html#structein_1_1detail_1_1simd__intrinsic_3_01float_00_01N_01_4',1,'ein::detail']]],
   ['simd_5fintrinsic_3c_20t_2c_20n_20_3e_9',['simd_intrinsic&lt; T, N &gt;',['../group__simd.html#structein_1_1detail_1_1simd__intrinsic_3_01T_00_01N_01_4',1,'ein::detail']]],
   ['spin_10',['spin',['../group__wait.html#structein_1_1spin',1,'ein']]],
-  ['static_5fc_5fstring_11',['static_c_string',['../classein_1_1static__c__string.html',1,'ein']]]
+  ['static_5fc_5fstring_11',['static_c_string',['../classein_1_1static__c__string.html',1,'ein']]],
+  ['storage_5ftype_5fimpl_12',['storage_type_impl',['../group__simd.html#structein_1_1detail_1_1storage__type__impl',1,'ein::detail']]],
+  ['storage_5ftype_5fimpl_3c_20bf16_20_3e_13',['storage_type_impl&lt; bf16 &gt;',['../group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01bf16_01_4',1,'ein::detail']]],
+  ['storage_5ftype_5fimpl_3c_20fp16_20_3e_14',['storage_type_impl&lt; fp16 &gt;',['../group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01fp16_01_4',1,'ein::detail']]]
 ];

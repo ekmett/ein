@@ -181,7 +181,7 @@ $(function(){initNavTree('namespaceein.html',''); initResizable(true); });
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__simd.html">SIMD</a> &#124; <a class="el" href="group__types.html">Types</a></div></div></div>
+  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__types.html">Types</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -244,8 +244,13 @@ Concepts</h2></td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptein_1_1simd__type.html">simd_type</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">recognizes any valid simd type <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptein_1_1has__storage__type.html">has_storage_type</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptein_1_1has__lifted__operations.html">has_lifted_operations</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">Does this type have operations that semantically correct when lifted to the simd_data_t level? <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptein_1_1has__simd__type.html">has_simd_type</a></td></tr>
-<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined <br /></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight"><a class="el" href="group__simd.html#ga710c10b13257153671ff0a244e058104">ein::simd_data_t</a>&lt;<code>T</code>,<code>N&gt;</code> is defined <br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">concept &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="conceptein_1_1has__builtin__convertvector.html">has_builtin_convertvector</a></td></tr>
 <tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">can we convert simd_data_t&lt;U,N&gt; -&gt; simd_data_t&lt;T,N&gt; automatically using gcc vector extensions? <br /></td></tr>
@@ -286,9 +291,13 @@ Typedefs</h2></td></tr>
 <tr class="memitem:gab9bd44183e9aa86139541a3690cf8a2c"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#gab9bd44183e9aa86139541a3690cf8a2c">uint_t</a></td></tr>
 <tr class="memdesc:gab9bd44183e9aa86139541a3690cf8a2c"><td class="mdescLeft">&#160;</td><td class="mdescRight">returns an unsigned integer type of the same size as <code>T</code> suitable for <code>std::bitcast</code>  <br /></td></tr>
 <tr class="separator:gab9bd44183e9aa86139541a3690cf8a2c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga2fe08d2d97e186bfa4d9e484443df6e8" id="r_ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
-<tr class="memitem:ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8">simd_data_t</a> = T __attribute__((__vector_size__(N*sizeof(T)),__aligned__(N*sizeof(T))))</td></tr>
-<tr class="separator:ga2fe08d2d97e186bfa4d9e484443df6e8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:gacda38a004fee28022c37e8e3019f9886" id="r_gacda38a004fee28022c37e8e3019f9886"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
+<tr class="memitem:gacda38a004fee28022c37e8e3019f9886"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gacda38a004fee28022c37e8e3019f9886">storage_type</a></td></tr>
+<tr class="memdesc:gacda38a004fee28022c37e8e3019f9886"><td class="mdescLeft">&#160;</td><td class="mdescRight">The type used to store <code>T</code> in a simd_data_t.  <br /></td></tr>
+<tr class="separator:gacda38a004fee28022c37e8e3019f9886"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ga710c10b13257153671ff0a244e058104" id="r_ga710c10b13257153671ff0a244e058104"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
+<tr class="memitem:ga710c10b13257153671ff0a244e058104"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga710c10b13257153671ff0a244e058104">simd_data_t</a> = <a class="el" href="group__simd.html#gacda38a004fee28022c37e8e3019f9886">storage_type</a>&lt;T&gt; __attribute__((__vector_size__(N*sizeof(<a class="el" href="group__simd.html#gacda38a004fee28022c37e8e3019f9886">storage_type</a>&lt;T&gt;)),__aligned__(N*sizeof(<a class="el" href="group__simd.html#gacda38a004fee28022c37e8e3019f9886">storage_type</a>&lt;T&gt;))))</td></tr>
+<tr class="separator:ga710c10b13257153671ff0a244e058104"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga4b50fb78953def6f3c7fcd3da5e3f66a" id="r_ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="memTemplParams" colspan="2">template&lt;typename T , size_t N&gt; </td></tr>
 <tr class="memitem:ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga4b50fb78953def6f3c7fcd3da5e3f66a">simd_intrinsic_t</a></td></tr>
 <tr class="memdesc:ga4b50fb78953def6f3c7fcd3da5e3f66a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns the Intel intrinsic type associated with a simd register full of <code>N</code> values of type <code>T</code>.  <br /></td></tr>

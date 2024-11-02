@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['simd_5fdata_5ft_0',['simd_data_t',['../group__simd.html#ga2fe08d2d97e186bfa4d9e484443df6e8',1,'ein']]],
+  ['simd_5fdata_5ft_0',['simd_data_t',['../group__simd.html#ga710c10b13257153671ff0a244e058104',1,'ein']]],
   ['simd_5fintrinsic_5ft_1',['simd_intrinsic_t',['../group__simd.html#ga4b50fb78953def6f3c7fcd3da5e3f66a',1,'ein']]],
   ['simd_5fmask_5ft_2',['simd_mask_t',['../group__simd.html#gae78d444e236a38a2192b04c2bfd58433',1,'ein']]],
   ['simd_5ft_3',['simd_t',['../group__simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]],
@@ -9,5 +9,6 @@ var searchData=
   ['static_5fu16string_6',['static_u16string',['../namespaceein.html#a3f1cfcb009a7263c06ab3df4b5d8005b',1,'ein']]],
   ['static_5fu32string_7',['static_u32string',['../namespaceein.html#aa4c83e6ece039ee7858edb27a3d6ffba',1,'ein']]],
   ['static_5fu8string_8',['static_u8string',['../namespaceein.html#ad02f9214dc72c769f5fa2102372e4ce3',1,'ein']]],
-  ['static_5fwstring_9',['static_wstring',['../namespaceein.html#a3804a7dd159e1d50e1666f8861759188',1,'ein']]]
+  ['static_5fwstring_9',['static_wstring',['../namespaceein.html#a3804a7dd159e1d50e1666f8861759188',1,'ein']]],
+  ['storage_5ftype_10',['storage_type',['../group__simd.html#gacda38a004fee28022c37e8e3019f9886',1,'ein']]]
 ];
