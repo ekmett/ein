@@ -6,7 +6,7 @@ var searchData=
   ['save_3',['save',['../structein_1_1profiling_1_1profile.html#aefda25e963a2e0c27546f2c961ca8b91',1,'ein::profiling::profile']]],
   ['saved_4',['saved',['../structein_1_1profiling_1_1profile.html#a0c6455715a1435916944dd0b73d521ee',1,'ein::profiling::profile']]],
   ['scalef_5',['scalef',['../group__simd.html#ab38049d4edbb98ef7eee0bf68d08f322',1,'ein::simd::scalef'],['../namespaceein.html#a6984f13cd906f1521dfcb7e95b8f8b84',1,'ein::scalef(float, float) noexcept'],['../namespaceein.html#a4fe125d6f78c0a639415b3a59ff61c68',1,'ein::scalef(double, double) noexcept'],['../group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f',1,'ein::scalef(T x, T y) noexcept']]],
-  ['scope_6',['Scope',['../code_of_conduct_page.html#autotoc_md3',1,'']]],
+  ['scope_6',['Scope',['../code_of_conduct_page.html#autotoc_md4',1,'']]],
   ['scope_7',['scope',['../namespaceein_1_1profiling.html#a3efa8e6d3fba738fbc9cd540b7ab1273',1,'ein::profiling']]],
   ['scope_5fevent_8',['scope_event',['../structein_1_1profiling_1_1scope__event.html',1,'ein::profiling::scope_event&lt; Profile &gt;'],['../structein_1_1profiling_1_1scope__event.html#a96e678d9a4066375ee19c87b08f6ebd4',1,'ein::profiling::scope_event::scope_event()']]],
   ['security_20policy_9',['Security Policy',['../security_policy_page.html',1,'index']]],
@@ -33,8 +33,8 @@ var searchData=
   ['simd_5ft_30',['simd_t',['../group__simd.html#ad7c1a33c3bd4da168feb46a5524a610c',1,'ein::simd']]],
   ['size_31',['size',['../structein_1_1c__munmap.html#ab2b8b1c7eb7749c161999be99e91870f',1,'ein::c_munmap::size'],['../group__simd.html#a3249827db9003cca7c7e91299ac133f1',1,'ein::simd::size'],['../classein_1_1basic__static__string.html#aa740788e6dee78450edf20daf962e033',1,'ein::basic_static_string::size() const noexcept']]],
   ['size_5ftype_32',['size_type',['../classein_1_1basic__static__string.html#a94827ff8dd5bef2078b11f039eb4930f',1,'ein::basic_static_string::size_type'],['../classein_1_1static__c__string.html#adb5959e128ce531b96fb47e93b1d1a7d',1,'ein::static_c_string::size_type']]],
-  ['software_20bill_20of_20materials_33',['Software Bill of Materials',['../contributing_page.html#autotoc_md19',1,'']]],
-  ['spdx_20documentation_34',['SPDX Documentation',['../contributing_page.html#autotoc_md18',1,'']]],
+  ['software_20bill_20of_20materials_33',['Software Bill of Materials',['../contributing_page.html#autotoc_md10',1,'']]],
+  ['spdx_20documentation_34',['SPDX Documentation',['../contributing_page.html#autotoc_md6',1,'']]],
   ['spin_35',['spin',['../group__wait.html#structein_1_1spin',1,'ein']]],
   ['standards_36',['Our Standards',['../code_of_conduct_page.html#autotoc_md1',1,'']]],
   ['start_37',['start',['../structein_1_1profiling_1_1duration__event.html#a03127e8d306e53b5bdc1924382656390',1,'ein::profiling::duration_event']]],
@@ -58,6 +58,6 @@ var searchData=
   ['string_20safety_55',['String Safety',['../group__string__safety__attributes.html',1,'']]],
   ['strings_2ehpp_56',['strings.hpp',['../strings_8hpp.html',1,'']]],
   ['supported_57',['supported',['../group__wait.html#aaa1c31bb64256e696333d924bb50a90d',1,'ein::mwaitx::supported'],['../group__wait.html#a94f77adfbc306130e869173daf6ea96d',1,'ein::umwait::supported'],['../group__wait.html#ac52af65892dceb00a0d1dcd5ac705f73',1,'ein::spin::supported']]],
-  ['supported_20versions_58',['Supported Versions',['../security_policy_page.html#autotoc_md15',1,'']]],
+  ['supported_20versions_58',['Supported Versions',['../security_policy_page.html#autotoc_md12',1,'']]],
   ['swap_59',['swap',['../structein_1_1bf16.html#abf71ead439d5e984de945b14b2b8102c',1,'ein::bf16::swap'],['../structein_1_1fp16.html#aecb9ae4eb8dd734e2095ff4da9d5966d',1,'ein::fp16::swap'],['../group__simd.html#ae0c6eef701036b515f4a4f6fc18b9974',1,'ein::simd::swap'],['../classein_1_1basic__static__string.html#a1ba9ae7f3aead7e048516bff55de05f5',1,'ein::basic_static_string::swap'],['../classein_1_1static__c__string.html#a11767a3a637e777b79d53f7ea887352c',1,'ein::static_c_string::swap']]]
 ];

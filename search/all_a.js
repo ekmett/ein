@@ -98,8 +98,8 @@ var searchData=
   ['ein_5fweak_95',['ein_weak',['../group__linkage__attributes.html#ga9a1d6e122e659dcfea11d62158ee3625',1,'common.hpp']]],
   ['empty_96',['empty',['../classein_1_1basic__static__string.html#aa2d44a5a57c31442a400d448d566d619',1,'ein::basic_static_string']]],
   ['end_97',['end',['../group__simd.html#ad02d0923f7774642fa5a6a6027aa1818',1,'ein::simd::end() noexcept'],['../group__simd.html#abda7f4523729262d8447b237fa939904',1,'ein::simd::end() const noexcept'],['../classein_1_1basic__static__string.html#ac5c738c1eb1e76da79cb1013323626ee',1,'ein::basic_static_string::end()'],['../classein_1_1static__c__string.html#a111c2f082333e572769c702344d64007',1,'ein::static_c_string::end()']]],
-  ['enforcement_98',['Enforcement',['../code_of_conduct_page.html#autotoc_md4',1,'']]],
-  ['enforcement_20guidelines_99',['Enforcement Guidelines',['../code_of_conduct_page.html#autotoc_md5',1,'']]],
+  ['enforcement_98',['Enforcement',['../code_of_conduct_page.html#autotoc_md5',1,'']]],
+  ['enforcement_20guidelines_99',['Enforcement Guidelines',['../code_of_conduct_page.html#autotoc_md7',1,'']]],
   ['enforcement_20responsibilities_100',['Enforcement Responsibilities',['../code_of_conduct_page.html#autotoc_md2',1,'']]],
   ['epsilon_101',['epsilon',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html#a52a1b464f0331e8c4c40b0cd751c43df',1,'std::numeric_limits&lt; ein::bf16 &gt;::epsilon()'],['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#aae1f220f1a028dd7ea2bba2f27fbfbf5',1,'std::numeric_limits&lt; ein::fp16 &gt;::epsilon()']]],
   ['eq_102',['EQ',['../group__numerics.html#gga3eb3869fe6f24fc19b5894278c242460a2dcbad7477fd40561e8b8198f173bd47',1,'ein']]],
@@ -111,6 +111,6 @@ var searchData=
   ['event_5ftype_108',['event_type',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596',1,'ein::profiling']]],
   ['events_109',['events',['../structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d',1,'ein::profiling::profile']]],
   ['events_5fmutex_110',['events_mutex',['../structein_1_1profiling_1_1profile.html#a5acf551a1fbe59244e44bb4294fa2e62',1,'ein::profiling::profile']]],
-  ['exceptions_111',['Exceptions',['../contributing_page.html#autotoc_md17',1,'']]],
+  ['exceptions_111',['Exceptions',['../contributing_page.html#autotoc_md3',1,'']]],
   ['explicit_20template_20instantiation_112',['Explicit Template Instantiation',['../group__instantiation__attributes.html',1,'']]]
 ];
