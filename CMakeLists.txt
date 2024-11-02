@@ -9,7 +9,7 @@ set(PROJECT_BRIEF "SIMD Tools")
 
 # set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
 # set(CMAKE_CXX_MODULE_STD TRUE)
-set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
+# set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
 
 project(ein VERSION 0.0.1 LANGUAGES CXX)
 
@@ -28,6 +28,8 @@ include(CheckIPOSupported)
 include(CheckRestrict)
 include(FetchContentCached)
 
+# hack. remove
+include_directories(h)
 
 # ccache
 # ====================================================================
@@ -68,9 +70,9 @@ option(AVX512 "Enable AVX512" ON)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 
-set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/bin)
-set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
-set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_BINARY_DIR}/lib)
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/bin)
+set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
+set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}/lib)
 
 set(CXX_Clang "$<COMPILE_LANG_AND_ID:CXX,AppleClang,Clang>")
 set(CXX_Gcc "$<COMPILE_LANG_AND_ID:CXX,GNU>")
@@ -246,51 +248,24 @@ add_compile_options(
   # "$<${CXX_GccOrClang}:-Wthread-safety>"
 add_link_options("$<${Link_Clang}:--rtlib=compiler-rt>")
 
-# tests
+include(CheckRestrict)
+
+# config.hpp
+# ====================================================================
+
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/etc/config.hpp.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/include/ein/config.hpp"
+)
+
+# source
 # ====================================================================
 
 if(ENABLE_TESTS)
   include(CTest)
   enable_testing()
-  add_subdirectory(t)
-endif(ENABLE_TESTS)
+endif()
 
-# header jiujutsu
-# ====================================================================
-
-include(CheckRestrict)
-
-configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/config.hpp.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp"
-)
-
-list(APPEND SOURCE_HEADER_FILES
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/assert.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/attributes.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/intrinsics.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/prelude.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/std.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/third-party.hpp"
-  "${CMAKE_CURRENT_SOURCE_DIR}/h/posix.hpp"
-)
-
-# Replace SOURCE_DIR with BINARY_DIR for each header
-set(OUTPUT_HEADER_FILES "")
-foreach(header ${SOURCE_HEADER_FILES})
-    string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}" replaced_header "${header}")
-    list(APPEND OUTPUT_HEADER_FILES "${replaced_header}")
-endforeach()
-
-# Custom command to copy header files
-add_custom_command(
-  OUTPUT ${OUTPUT_HEADER_FILES}
-  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_CURRENT_BINARY_DIR}/h"
-  DEPENDS ${SOURCE_HEADER_FILES}
-)
-
-list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/h/config.hpp)
-add_custom_target(ein_headers ALL DEPENDS ${OUTPUT_HEADER_FILES})
 
 add_subdirectory(src)
 add_subdirectory(doc)
@@ -303,7 +278,7 @@ if(CODE_COVERAGE)
   message(STATUS "Code coverage instrumentation enabled")
   add_custom_target(coverage
     COMMAND llvm-profdata merge -sparse default.profraw -o coverage.profdata
-    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o" -o -name "*.cppm.o") > coverage.info
+    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o") > coverage.info
     COMMAND genhtml coverage.info --output-directory coverage-report
     WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
     COMMENT "Generating code coverage report"

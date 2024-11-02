@@ -1,4 +1,4 @@
-# Code of Conduct {#code_of_conduct_page}
+# Code of Conduct <!-- GITHUB {#code_of_conduct_page} GITHUB -->
 
 <!--
 SPDX-FileType: TEXT

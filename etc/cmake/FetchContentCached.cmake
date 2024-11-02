@@ -9,7 +9,7 @@ function(FetchContentCached)
   set(original_ARGS ${ARGN})
 
   # Parse specific arguments
-  cmake_parse_arguments(FCD "" "NAME;TARGET_DIR" "URL;URL_HASH;GIT_REPOSITORY;GIT_TAG;GIT_SHALLOW;GIT_PROGRESS" ${ARGN})
+  cmake_parse_arguments(FCD "" "NAME;TARGET_DIR" "URL;URL_HASH;GIT_REPOSITORY;GIT_TAG;GIT_SHALLOW;GIT_PROGRESS;SOURCE_SUBDIR" ${ARGN})
 
   # Ensure that the NAME argument is specified
   if(NOT FCD_NAME)

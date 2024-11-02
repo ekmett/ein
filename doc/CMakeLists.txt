@@ -137,7 +137,7 @@ if(DOXYGEN_FOUND)
     #WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Generating documentation"
     VERBATIM
-    DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/../h/config.hpp" apply_doxygen_awesome_patch copy_mathjax touch_nojekyll
+    DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp" apply_doxygen_awesome_patch copy_mathjax touch_nojekyll
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it

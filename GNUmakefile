@@ -2,13 +2,12 @@
 # build by accident. Not that I would ever do such a thing. Nope.
 
 HEADERS := $(shell find src -name '*.hpp' -print)
-SOURCES := $(shell find t src -name '*.cpp' -o -name '*.cppm' -print)
+SOURCES := $(shell find src -name '*.cpp' -print)
 BUILD_TYPE := RelWithDebInfo  # for release
 PRESET := native
 # BUILD_TYPE := Debug  # for debugging
 MAKEFLAGS += --no-print-directory -j
-CMAKELISTS := CMakeLists.txt t/CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
-TESTS := $(notdir $(wildcard t/t_*.cpp))
+CMAKELISTS := CMakeLists.txt $(shell find src -type f -name CMakeLists.txt)
 PHONY := all build distclean clean run test tags
 REPO := https://github.com/ekmett/ein
 LOGLEVEL :=
@@ -21,7 +20,6 @@ PORT := 8000
 ifdef DEBUG
 $(info BUILD_TYPE := $(BUILD_TYPE))
 $(info MAKEFLAGS := $(MAKEFLAGS))
-$(info TESTS = $(TESTS))
 $(info PHONY = $(PHONY))
 $(info RUN = $(RUN))
 $(info CMAKE_DEFINES = $(CMAKE_DEFINES))
@@ -43,21 +41,21 @@ server-stop:
 run: $(RUN)
 
 gen: $(CMAKELISTS)
-	@mkdir -p gen
 	@mkdir -p gen/dotfiles
 	@cmake $(LOGLEVEL) --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
+	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
 	@touch gen
 
 gen/doc/patched-dotfiles: gen
 	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
 
-gen/ein.png: gen gen/doc/patched-dotfiles
+gen/ein.png: gen
 	@dot -Tpng -o gen/ein.png gen/doc/patched-dotfiles/ein.dot
 
 png: gen/ein.png
 	@echo "\nDependency diagram available as gen/ein.png"
 
-build: gen gen/doc/patched-dotfiles
+build: gen
 	@cmake --build gen -j
 	@bin/ninjatracing gen/.ninja_log | tee gen/doc/html/ein-build.trace > gen/trace.json || @echo TRACE FAILED
 
@@ -71,17 +69,12 @@ clean:
 	@rm -rf gen tags nohup.out
 
 distclean: clean
-	@rm -rf lib/cache
+	@rm -rf lib/cache .ccache/?
 
 tags:
 	@find . -name '*.[ch]pp' -o -name '*.cppm' -type f -not -path './gen/*' -exec ctags {} +
 	@echo tags updated
 
-gen/bin/t_%: gen $(HEADERS) $(SOURCES)
-	@cmake --build gen --target $(notdir $@) -j
-
-t_%: gen/bin/t_%
-	@gen/$@
 
 define EXE_TEMPLATE
 gen/bin/$(1): gen $(HEADERS) $(SOURCES)
@@ -90,7 +83,6 @@ gen/bin/$(1): gen $(HEADERS) $(SOURCES)
 $(1): gen/bin/$(1)
 	@gen/bin/$(1)
 endef
-
 $(foreach exe,$(EXES),$(eval $(call EXE_TEMPLATE,$(exe))))
 
 test: all

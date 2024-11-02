@@ -1,4 +1,4 @@
-# Security Policy {#security_policy_page}
+# Security Policy <!-- GITHUB {#security_policy_page} GITHUB -->
 
 <!--
 SPDX-FileType: DOCUMENTATION

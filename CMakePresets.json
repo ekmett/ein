@@ -16,6 +16,8 @@
         "CMAKE_BUILD_TYPE": "RelWithDebInfo",
         "CMAKE_CXX_COMPILER_LAUNCHER": "${sourceDir}/bin/ccache.sh",
         "CMAKE_EXPORT_COMPILE_COMMANDS": "1",
+        "CMAKE_UNITY_BUILD": "1",
+        "CMAKE_UNITY_BUILD_BATCH_SIZE": "5",
         "CMAKE_COLOR_DIAGNOSTICS": "ON"
       }
     }

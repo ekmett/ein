@@ -13,58 +13,97 @@ fetchcontentcached(
   GIT_PROGRESS TRUE
 )
 
-add_library(ein STATIC
-  numerics.cpp
+set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
+
+fetchcontentcached(
+  NAME Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.7.1 # or a later release
+)
+# silence a third-party warning on clang++-18+
+target_compile_options(Catch2 PRIVATE
+  $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
 )
 
-set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
-add_dependencies(ein ein_headers)
+list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
 
-target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_json spdlog::spdlog Threads::Threads)
 
-target_sources(ein PUBLIC FILE_SET CXX_MODULES FILES
-  cpuid.cppm
-  memory.cppm
-  numerics.cppm
-  numerics/fp16.cppm
-  numerics/bf16.cppm
-  profiling.cppm
-  simd.cppm
-  simd_data.cppm
-  static_string.cppm
-  std.cppm
-  types.cppm
-  wait.cppm
+# header jiujutsu
+# ====================================================================
+
+set(EIN_SOURCE_HEADER_FILES
+  ein/attributes/calling_conventions.hpp
+  ein/attributes/common.hpp
+  ein/attributes/control_flow.hpp
+  ein/attributes/cuda.hpp
+  ein/attributes/handles.hpp
+  ein/attributes/memory.hpp
+  ein/attributes/null_safety.hpp
+  ein/attributes/performance_constraints.hpp
+  ein/attributes/strings.hpp
+  ein/attributes/targets.hpp
+  ein/attributes/thread_safety.hpp
+  ein/attributes/typestate.hpp
+  ein/assert.hpp
+  ein/concepts.hpp
+  ein/cpuid.hpp
+  ein/memory.hpp
+  ein/numerics/bf16.hpp
+  ein/numerics/fp16.hpp
+  ein/numerics.hpp
+  ein/profiling.hpp
+#  ein/simd.hpp
+#  ein/simd_data.hpp
+  ein/static_string.hpp
+  ein/types.hpp
+  ein/wait.hpp
+)
+
+set(EIN_SOURCE_FILES
+  ein/cpuid.cpp
+  ein/numerics/bf16.cpp
+  ein/numerics/fp16.cpp
+  ein/numerics.cpp
+  ein/static_string.cpp
+  ein/wait.cpp
+)
+
+add_library(ein STATIC ${EIN_SOURCE_FILES})
+target_sources(ein
+  PUBLIC
+    FILE_SET HEADERS
+    BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/ein" "${CMAKE_CURRENT_BINARY_DIR}/../include"
+    FILES ${EIN_SOURCE_HEADER_FILES} ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp
+)
+
+target_link_libraries(ein
+  PUBLIC
+    compiler_rt_builtins
+    nlohmann_json::nlohmann_json
+    spdlog::spdlog
+    Threads::Threads
 )
 
 target_include_directories(ein PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_BINARY_DIR}/h>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<INSTALL_INTERFACE:include/ein>)
 
 install(TARGETS ein
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
-  PUBLIC_HEADER DESTINATION include/ein
-  INCLUDES DESTINATION include/ein)
+  PUBLIC_HEADER DESTINATION include
+  INCLUDES DESTINATION include)
 
-set_target_properties(ein PROPERTIES PUBLIC_HEADER "${OUTPUT_HEADER_FILES}")
-
-lto(ein)
-
-# PRECOMPILE_HEADERS (EIN_PCH=1) is the fastest
-# accurate headers is a near second
-# PRE
-# EIN_PUBLIC=1 is far slower
-
-
-if(PRECOMPILE_HEADERS)
-  target_precompile_headers(ein PRIVATE ${OUTPUT_HEADER_FILES})
-  target_compile_definitions(ein PUBLIC EIN_PCH=1)
-else()
-  target_compile_definitions(ein PUBLIC EIN_PRELUDE=1)
-endif()
-
+set_target_properties(ein PROPERTIES PUBLIC_HEADER "${EIN_SOURCE_HEADER_FILES};${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
-target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops>")
+target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops;-mwaitpkg;-mmwaitx>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
+
+add_executable(ein_tests ein/tests.cpp)
+target_link_libraries(ein_tests PRIVATE ein Catch2::Catch2WithMain)
+lto(ein_tests)
+
+include(Catch)
+catch_discover_tests(ein_tests)

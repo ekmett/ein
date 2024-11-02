@@ -1,4 +1,4 @@
-# ein
+# ein <!-- GITHUB {#readme} GITHUB -->
 
 <!--
 SPDX-FileType: DOCUMENTATION
@@ -14,7 +14,7 @@ GITHUB -->
 [![Doxygen](https://img.shields.io/badge/docs-doxygen-blue.svg)](https://ekmett.github.io/ein/)
 [![GitHub commit activity](https://img.shields.io/github/commit-activity/w/ekmett/ein)](https://github.com/ekmett/ein/activity)
 [![GitHub Issues or Pull Requests](https://img.shields.io/github/issues/ekmett/ein)](https://github.com/ekmett/ein/issues)
-[C++ 23](https://img.shields.io/badge/c%2B%2B-23-blue)
+[![C++ 23](https://img.shields.io/badge/c%2B%2B-23-blue)](https://en.cppreference.com/w/cpp/23)
 [![Code of Conduct: Contributor Covenant](https://img.shields.io/badge/code_of_conduct-contributor_covenant-8a2be2)](https://github.com/EthicalSource/contributor_covenant)
 
 

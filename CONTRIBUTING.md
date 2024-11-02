@@ -1,4 +1,4 @@
-# Contribution Guidelines {#contributing_page}
+# Contribution Guidelines <!-- GITHUB {#contributing_page} GITHUB -->
 
 <!--
 SPDX-FileType: TEXT
