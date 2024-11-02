@@ -1,5 +1,6 @@
 var group__simd =
 [
+    [ "ein", "namespaceein.html", null ],
     [ "ein::detail", "namespaceein_1_1detail.html", null ],
     [ "ein::simd_type", "conceptein_1_1simd__type.html", null ],
     [ "ein::has_simd_type", "conceptein_1_1has__simd__type.html", null ],

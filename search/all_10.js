@@ -5,7 +5,7 @@ var searchData=
   ['make_5fmmap_5fptr_2',['make_mmap_ptr',['../namespaceein.html#ac2663d41f31490e13670ae3e6ce98f83',1,'ein']]],
   ['mark_3',['mark',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073',1,'ein::profiling']]],
   ['mask_5ft_4',['mask_t',['../group__simd.html#a8c539e8d158e6d2f1740ee9246867cc3',1,'ein::simd']]],
-  ['materials_5',['Software Bill of Materials',['../contributing_page.html#autotoc_md2',1,'']]],
+  ['materials_5',['Software Bill of Materials',['../contributing_page.html#autotoc_md19',1,'']]],
   ['max_6',['max',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html#af0200b86aa67f3da7805ab293fefca5b',1,'std::numeric_limits&lt; ein::bf16 &gt;::max()'],['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#abfffafea4d542638ca306d106573cd3a',1,'std::numeric_limits&lt; ein::fp16 &gt;::max()']]],
   ['max_5fexponent_7',['max_exponent',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html#a6c5b05f8de610270769de4c65d17625c',1,'std::numeric_limits&lt; ein::bf16 &gt;::max_exponent'],['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a2ac8483436c1403f9e1e745a68c8c171',1,'std::numeric_limits&lt; ein::fp16 &gt;::max_exponent']]],
   ['max_5fexponent10_8',['max_exponent10',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html#a6bef707d7254a127434b591e44c5b215',1,'std::numeric_limits&lt; ein::bf16 &gt;::max_exponent10'],['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a73eec374d8e90b9c3f0304952818f904',1,'std::numeric_limits&lt; ein::fp16 &gt;::max_exponent10']]],
