@@ -8,24 +8,7 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense
 
-      \brief an opinionated subset of clang/gcc attributes
-
-      \details
-        Historically, this header has been maintained across a number of my open source
-        projects, where it has grown organically over time. Now, I'm rather aggressively
-        pruning out historical attributes and the like. But the general philosophy is that
-        if we might need it, we may as well keep it.
-
       \ingroup attributes */
-
-/** \defgroup attributes Attributes
-
-      \brief macros used to provide useful attributes
-
-      \details
-
-        There is a large number of attributes that can be applied to methods, functions,
-        variables, structs, modules, etc. across all of the different compilers out there. */
 
 #include "common.hpp"
 
