@@ -22,3 +22,8 @@ runs:
         brew install ccache
         which ccache && ccache --version
       shell: bash
+    - name: install graphviz
+      run: |
+        brew install ccache
+        which dot && dot --version
+      shell: bash
