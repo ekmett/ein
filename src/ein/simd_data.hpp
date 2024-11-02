@@ -255,7 +255,9 @@ TEMPLATE_TEST_CASE("simd_data","[simd_data]",int8_t,uint8_t,int16_t,uint16_t,int
 
   constexpr size_t N128 = 16/sizeof(TestType);
   constexpr size_t N256 = 32/sizeof(TestType);
+#ifdef __AVX512F__
   constexpr size_t N512 = 64/sizeof(TestType);
+#endif
   SECTION("has_simd_data") {
     STATIC_REQUIRE(has_simd_type<TestType,N128>);
     STATIC_REQUIRE(has_simd_type<TestType,N256>);

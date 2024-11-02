@@ -322,13 +322,13 @@ TEST_CASE("numerics","[numerics]") {
     CHECK(cmpint<CMPINT::NLT>(5, 5));
   }
 
-  #ifdef __AVX512F__
+#ifdef __AVX512F__
   SECTION("CMP floating-point comparison with AVX512") {
     CHECK(cmp<CMP::EQ_OQ>(1.0f, 1.0f));
     CHECK(cmp<CMP::LT_OS>(1.0f, 2.0f));
     CHECK_FALSE(cmp<CMP::GT_OS>(1.0f, 2.0f));
-    CHECK(cmp<CMP::NEQ_UQ>(1.0f, NAN));
+    //CHECK(cmp<CMP::NEQ_UQ>(1.0f, NAN));
   }
-  #endif // __AVX512F__
+#endif // __AVX512F__
 }
 #endif

@@ -121,10 +121,18 @@ PRIVATE
 set_target_properties(ein PROPERTIES PUBLIC_HEADER "${EIN_SOURCE_HEADER_FILES};${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops;-mwaitpkg;-mmwaitx>")
-target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
+if(AVX512)
+  target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
+endif()
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
 
 add_executable(ein_tests ein/tests.cpp)
+
+if(CODE_COVERAGE)
+  target_compile_options(ein_tests PRIVATE -fprofile-instr-generate -fcoverage-mapping)
+  target_link_options(ein_tests PRIVATE -fprofile-instr-generate -fcoverage-mapping)
+endif()
+
 target_compile_options(ein_tests PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 if (pie_supported)
   set_property(TARGET ein_tests PROPERTY POSITION_INDEPENDENT_CODE TRUE)
@@ -135,4 +143,4 @@ target_link_libraries(ein_tests PRIVATE ein Catch2::Catch2WithMain)
 lto(ein_tests)
 
 include(Catch)
-catch_discover_tests(ein_tests)
+catch_discover_tests(ein_tests WORKING_DIRECTORY ${CMAKE_SOURCE_DIR})

@@ -88,4 +88,7 @@ $(foreach exe,$(EXES),$(eval $(call EXE_TEMPLATE,$(exe))))
 test: all
 	@ctest --test-dir gen --output-on-failure -j
 
+coverage: test
+	@cmake --build gen -j --target coverage
+
 .PHONY: $(PHONY)

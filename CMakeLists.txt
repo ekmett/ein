@@ -76,7 +76,7 @@ set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 # options
 # ====================================================================
 
-option(CODE_COVERAGE "Enable code coverage instrumentation" OFF)
+option(CODE_COVERAGE "Enable code coverage instrumentation" ON)
 option(ENABLE_TESTS "Enable tests" ON)
 option(PRECOMPILE_HEADERS "Use precompiled headers" OFF)
 option(BUILD_NATIVE "Build for current host only" ON)

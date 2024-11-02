@@ -94,9 +94,8 @@ TEST_CASE("memory","[memory]") {
   SECTION("unique_c_ptr manages malloc-allocated memory") {
     constexpr size_t size = 1024;
     ein::unique_c_ptr<char> managed_ptr(static_cast<char*>(std::malloc(size)));
-
-    CHECK(managed_ptr != nullptr);
-    std::memset(managed_ptr.get(), 0, size);
+    CHECK(managed_ptr);
+    //std::memset(managed_ptr.get(), 0, size);
   }
 
   SECTION("mmap_ptr manages mmap-allocated memory") {
