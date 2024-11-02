@@ -27,10 +27,48 @@ constexpr size_t max_simd_size
   = 32;
 #endif
 
+namespace detail {
+  template <typename T>
+  struct storage_type_impl {
+    using type = T;
+  };
+  template <> struct storage_type_impl<bf16> { using type = __bf16; };
+  template <> struct storage_type_impl<fp16> { using type = _Float16; };
+}
+
+/// \brief The type used to store \p T in a simd_data_t.
+/// \hideinitializer \hideinlinesource
+template <typename T>
+using storage_type = typename detail::storage_type_impl<T>::type;
+
+template <typename T>
+concept has_storage_type = requires {
+  typename storage_type<T>;
+  requires sizeof(T) == sizeof(storage_type<T>);
+  requires requires(T t, storage_type<T> s) {
+    std::bit_cast<storage_type<T>>(t);
+    std::bit_cast<T>(s);
+  };
+};
+
+namespace detail {
+  template <typename T> struct has_lifted_operations_impl : std::false_type {};
+  template <> struct has_lifted_operations_impl<bf16> : std::true_type {};
+  template <> struct has_lifted_operations_impl<fp16> : std::true_type {};
+}
+
+/// \brief Does this type have operations that semantically correct when lifted to the simd_data_t level?
+/// \details If not, then this is merely a storage type when converted to simd_data_t.
+/// \hideinitializer \hideinlinesource
+template <typename T>
+concept has_lifted_operations = detail::has_lifted_operations_impl<T>::value;
+
 /// \brief \ref ein::simd_data_t<\p T,\p N> is defined
 template <typename T, size_t N>
 concept has_simd_type =
-     std::is_pod_v<T>
+     has_storage_type<T>
+  && std::is_pod_v<storage_type<T>>
+  && std::is_pod_v<T>
   && one_of<sizeof(T),1,2,4,8>
   && one_of<sizeof(T)*N,16,32,64>
   && sizeof(T)*N <= max_simd_size;
@@ -38,20 +76,22 @@ concept has_simd_type =
 // \brief unadulterated clang/gcc vector extension type
 template <typename T, size_t N>
 requires has_simd_type<T,N>
-using simd_data_t = T __attribute__((__vector_size__(N*sizeof(T)),__aligned__(N*sizeof(T))));
+using simd_data_t = storage_type<T> __attribute__((__vector_size__(N*sizeof(storage_type<T>)),__aligned__(N*sizeof(storage_type<T>))));
 
 /// \brief can we convert simd_data_t<U,N> -> simd_data_t<T,N> automatically using gcc vector extensions?
 template <typename U, typename T, size_t N>
 concept has_builtin_convertvector
-      = has_simd_type<U,N>
-     && has_simd_type<T,N>
-     && requires (simd_data_t<U,N> x) {
-          __builtin_convertvector(x,simd_data_t<T,N>);
+      = has_simd_type<storage_type<U>,N>
+     && has_simd_type<storage_type<T>,N>
+     && has_lifted_operations<T>
+     && has_lifted_operations<U>
+     && requires (simd_data_t<storage_type<U>,N> x) {
+          __builtin_convertvector(x,simd_data_t<storage_type<T>,N>);
         };
 
 /// \brief is this type one of the types that is handed well automatically by clang/gcc vector extensions?
 template <typename T>
-concept simd_builtin = one_of_t<T,int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,float,double>;
+concept simd_builtin = one_of_t<T,int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,__fp16,__bf16,_Float16,float,double>;
 
 namespace detail {
 template <size_t N> struct si {};
@@ -92,7 +132,7 @@ struct simd_intrinsic<T,N> {
 
 /// \brief Returns the Intel intrinsic type associated with a simd register full of \p N values of type \p T.
 /// \details this can differ from the preferred type used by clang/gcc vector extensions.
-/// \hideinitializer
+/// \hideinitializer \hideinlinesource
 template <typename T, size_t N>
 requires has_simd_type<T,N>
 using simd_intrinsic_t = typename detail::simd_intrinsic<T,N>::type;
@@ -118,7 +158,7 @@ template <> struct mmask<64> { using type = __mmask64; };
 }
 
 /// If AVX512 is enabled returns the type of an n-bit mmask.
-/// \hideinitializer
+/// \hideinitializer \hideinlinesource
 template <size_t N>
 requires one_of<N,8,16,32,64>
 using mmask_t
@@ -242,17 +282,17 @@ TEMPLATE_TEST_CASE("simd_data","[simd_data]",int8_t,uint8_t,int16_t,uint16_t,int
     d512 x512{TestType{}};
 #endif
     SECTION("can be indexed at the right type") {
-      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x128[0])>, TestType>);
-      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x256[0])>, TestType>);
+      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x128[0])>, storage_type<TestType>>);
+      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x256[0])>, storage_type<TestType>>);
 #ifdef __AVX512F__
-      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x512[0])>, TestType>);
+      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x512[0])>, storage_type<TestType>>);
 #endif
     }
     SECTION("can be indexed with the right value") {
-      CHECK(x128[0] == TestType{});
-      CHECK(x256[0] == TestType{});
+      CHECK(x128[0] == storage_type<TestType>{});
+      CHECK(x256[0] == storage_type<TestType>{});
 #ifdef __AVX512F__
-      CHECK(x512[0] == TestType{});
+      CHECK(x512[0] == storage_type<TestType>{});
 #endif
     }
   }
