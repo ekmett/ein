@@ -71,18 +71,6 @@ set(EIN_SOURCE_FILES
   ein/wait.cpp
 )
 
-set(EIN_TEST_FILES
-  ein/concepts_tests.cpp
-  ein/cpuid_tests.cpp
-  ein/numerics/bf16_tests.cpp
-  ein/numerics/fp16_tests.cpp
-  ein/memory_tests.cpp
-  ein/profiling_tests.cpp
-  ein/static_string_tests.cpp
-  ein/wait_tests.cpp
-  ein/types_tests.cpp
-)
-
 add_library(ein STATIC ${EIN_SOURCE_FILES})
 target_sources(ein
   PUBLIC
@@ -97,7 +85,6 @@ target_link_libraries(ein
     nlohmann_json::nlohmann_json
     spdlog::spdlog
     Threads::Threads
-    doctest_includes
 )
 
 target_include_directories(ein PUBLIC

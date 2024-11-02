@@ -42,3 +42,22 @@ enum class ein_nodiscard cpu_vendor : uint8_t {
 extern const enum cpu_vendor cpu_vendor;
 
 } // end namespace ein
+
+#ifdef EIN_DOCTEST
+
+TEST_SUITE("cpuid") {
+  using namespace ein;
+
+  TEST_CASE("CPU vendor enum correctly identifies CPU") {
+    CHECK((cpu_vendor == cpu_vendor::intel || cpu_vendor == cpu_vendor::amd));
+  }
+
+  TEST_CASE("CPUID function retrieves processor info and feature bits") {
+    cpuid_t result = cpuid(1, 0);
+    bool sse2_supported = result.edx & (1 << 26);
+    CHECK(sse2_supported);
+  }
+
+} // TEST_SUITE("cpuid")
+
+#endif // EIN_DOCTEST

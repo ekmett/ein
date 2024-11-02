@@ -349,3 +349,84 @@ inline void make_args(nlohmann::json & j, K && k, V && v, Args && ... args) {
 // and in another view, task by task, we should be able to assemble a view using duration_events letting us see the time skew.
 
 } // ein;
+
+#ifdef EIN_DOCTEST
+TEST_SUITE("profiling") {
+  using namespace nlohmann;
+  using namespace ein::profiling;
+  using std::filesystem::path;
+  using namespace std::chrono;
+
+  TEST_CASE("scope enum serialization") {
+    json j = scope::global;
+    CHECK(j == "g");
+
+    j = scope::process;
+    CHECK(j == "p");
+
+    j = scope::thread;
+    CHECK(j == "t");
+  }
+
+  TEST_CASE("event_type enum serialization") {
+    json j = event_type::duration_begin;
+    CHECK(j == "B");
+
+    j = event_type::duration_end;
+    CHECK(j == "E");
+
+    j = event_type::complete;
+    CHECK(j == "X");
+  }
+
+  TEST_CASE("profile_event JSON serialization") {
+    profile_event<nanoseconds> event{
+        .name = "test_event"_ss,
+        .cat = "test_category"_ss,
+        .ph = event_type::instant,
+        .s = scope::thread
+    };
+
+    json j = event;
+    CHECK(j["name"] == "test_event");
+    CHECK(j["cat"] == "test_category");
+    CHECK(j["ph"] == "i");
+    CHECK(j["s"] == "t");
+  }
+
+  TEST_CASE("profile logging") {
+    profile<> profiler;
+    profile_event<nanoseconds> event{
+        .name = "log_event"_ss,
+        .ph = event_type::instant,
+        .s = scope::thread
+    };
+
+    profiler.log(event);
+
+    CHECK(profiler.events.size() == 1);
+    CHECK(profiler.events[0].name == "log_event"_scs);
+    CHECK(profiler.events[0].ph == event_type::instant);
+    CHECK(profiler.events[0].s == scope::thread);
+  }
+
+  TEST_CASE("profile_scope automatic saving") {
+    path test_path = "test_profile.json";
+    {
+        profile_scope<> profiler(test_path);
+        profile_event<nanoseconds> event{
+            .name = "scope_event"_ss,
+            .ph = event_type::instant,
+            .s = scope::thread
+        };
+
+        profiler.p.log(event);
+    } // `profile_scope` destructor should save the profile here
+
+    CHECK(exists(test_path));
+
+    // Clean up
+    remove(test_path);
+  }
+} // TEST_SUITE("profiling")
+#endif // EIN_DOCTEST

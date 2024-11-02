@@ -423,3 +423,115 @@ namespace std {
     /// \endcond
   }
 }  // namespace std
+
+#ifdef EIN_DOCTEST
+
+#define EIN_STR(name) \
+  (([]<typename CharT> static constexpr { \
+    if constexpr (std::is_same_v<CharT, char>) { \
+      return #name ## _ss; \
+    } else if constexpr (std::is_same_v<CharT, wchar_t>) { \
+      return L## #name ##_ss; \
+    } else if constexpr (std::is_same_v<CharT, char8_t>) { \
+      return u8## #name ##_ss; \
+    } else if constexpr (std::is_same_v<CharT, char16_t>) { \
+      return u## #name ##_ss; \
+    } else if constexpr (std::is_same_v<CharT, char32_t>) { \
+      return U## #name ##_ss; \
+    } \
+  }).template operator()<TestType>())
+
+
+TEST_SUITE("static_string") {
+  using namespace ein;
+
+  template <typename... Types>
+  static constexpr void foreach_type(auto&& func) {
+    (func.template operator()<Types>(), ...);  // Expands the lambda for each type
+  }
+
+  TEST_CASE("static_string constructors and conversions") {
+    foreach_type<char,wchar_t,char8_t,char16_t,char32_t>([] <typename TestType> static constexpr {
+      DOCTEST_SUBCASE(type<TestType>.data()) {
+        using string_t = basic_static_string<TestType>;
+
+        // Test construction from literal
+        constexpr string_t str = EIN_STR(hello);
+        CHECK(str == EIN_STR(hello));
+        CHECK(str != EIN_STR(world));
+
+        // Data retrieval and null termination
+        CHECK(str.data()[5] == typename string_t::value_type(0));
+      }
+    });
+  }
+
+  TEST_CASE("static_string element access") {
+    foreach_type<char,wchar_t,char8_t,char16_t,char32_t>([] <typename TestType> static constexpr {
+      DOCTEST_SUBCASE(type<TestType>.data()) {
+        using string_t = basic_static_string<TestType>;
+
+        constexpr string_t str = EIN_STR(abcdef);
+        CHECK(str.front() == 'a');
+        CHECK(str.back() == 'f');
+        CHECK(str[1] == 'b');
+        CHECK(str.at(2) == 'c');
+
+      }
+    });
+
+        //string_t str = STR(fedcba);
+        // Test out-of-bounds access (should throw or be undefined for consteval in production)
+        //CHECK_THROWS_AS(str.at(6), std::out_of_range);
+  }
+
+  TEST_CASE("static_string comparisons") {
+    foreach_type<char,wchar_t,char8_t,char16_t,char32_t>([] <typename TestType> static constexpr {
+      DOCTEST_SUBCASE(type<TestType>.data()) {
+        using string_t = basic_static_string<TestType>;
+
+        constexpr string_t str1 = EIN_STR(compare);
+        constexpr string_t str2 = EIN_STR(compare);
+        constexpr string_t str3 = EIN_STR(different);
+
+        CHECK(str1 == str2);
+        CHECK(str1 != str3);
+      }
+    });
+  }
+
+  TEST_CASE("static_string iterators") {
+    foreach_type<char,wchar_t,char8_t,char16_t,char32_t>([] <typename TestType> static constexpr {
+      DOCTEST_SUBCASE(type<TestType>.data()) {
+        using string_t = basic_static_string<TestType>;
+
+        constexpr string_t str = EIN_STR(iterate);
+        std::basic_string<TestType> result;
+        for (auto c : str)
+          result += c;
+        CHECK(result == EIN_STR(iterate).data());
+
+        // Reverse iteration
+        std::basic_string<typename string_t::value_type> reverse_result;
+        for (auto it = str.rbegin(); it != str.rend(); ++it)
+          reverse_result += *it;
+        CHECK(reverse_result == EIN_STR(etareti).data());
+      }
+    });
+  }
+
+  TEST_CASE("basic_static_string I/O operations") {
+    foreach_type<char,wchar_t>([] <typename TestType> static constexpr {
+      DOCTEST_SUBCASE(type<TestType>.data()) {
+        using string_t = basic_static_string<TestType>;
+        constexpr string_t str = EIN_STR(output);
+        std::basic_ostringstream<TestType> oss;
+        oss << str;
+        CHECK(oss.str()[3] == 'p');
+      }
+    });
+  }
+} // TEST_SUITE("static_string")
+
+#undef EIN_STR
+#endif // EIN_DOCTEST

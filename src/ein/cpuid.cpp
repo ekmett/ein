@@ -36,26 +36,3 @@ const enum cpu_vendor cpu_vendor = [] static noexcept {
 }();
 
 } // end namespace ein
-
-/// \cond
-#ifdef ENABLE_TESTS
-#include <doctest.h>
-
-using namespace ein;
-
-TEST_SUITE("cpuid") {
-
-  TEST_CASE("CPU vendor enum correctly identifies CPU") {
-    CHECK((cpu_vendor == cpu_vendor::intel || cpu_vendor == cpu_vendor::amd));
-  }
-
-  TEST_CASE("CPUID function retrieves processor info and feature bits") {
-    cpuid_t result = cpuid(1, 0);
-    bool sse2_supported = result.edx & (1 << 26);
-    CHECK(sse2_supported);
-  }
-
-} // TEST_SUITE("cpuid")
-
-#endif
-/// \endcond
