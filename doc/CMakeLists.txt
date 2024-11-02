@@ -58,7 +58,7 @@ if(DOXYGEN_FOUND)
     COMMENT "Patch doxygen-awesome.css"
   )
 
-  add_custom_target(apply_doxygen_awesome_patch ALL DEPENDS "${DA_OUTPUT_FILE}")
+  add_custom_target(docs_apply_doxygen_awesome_patch DEPENDS "${DA_OUTPUT_FILE}")
 
   # get mathjax
   fetchcontentcached(
@@ -106,7 +106,7 @@ if(DOXYGEN_FOUND)
   set(MATHJAX_DST "${CMAKE_CURRENT_BINARY_DIR}/html/mathjax")
 
   # arrange to copy mathjax into the html folder
-  add_custom_target(copy_mathjax ALL
+  add_custom_target(docs_copy_mathjax
     COMMAND ${CMAKE_COMMAND} -E remove_directory ${MATHJAX_DST}
     COMMAND ${CMAKE_COMMAND} -E make_directory ${MATHJAX_DST}
     COMMAND ${CMAKE_COMMAND} -E copy_directory ${MATHJAX_SRC} ${MATHJAX_DST}
@@ -120,9 +120,10 @@ if(DOXYGEN_FOUND)
   set(NOJEKYLL_FILE "${CMAKE_CURRENT_BINARY_DIR}/html/.nojekyll")
 
   # Add a custom target to touch .nojekyll
-  add_custom_target(touch_nojekyll ALL
+  add_custom_target(docs_touch_nojekyll
     COMMAND ${CMAKE_COMMAND} -E touch ${NOJEKYLL_FILE}
   )
+
 
   # Configure Doxyfile
   set(DOXYFILE_IN ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile.in)
@@ -137,7 +138,7 @@ if(DOXYGEN_FOUND)
     #WORKING_DIRECTORY ${CMAKE_CURRENT_BINARY_DIR}
     COMMENT "Generating documentation"
     VERBATIM
-    DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp" apply_doxygen_awesome_patch copy_mathjax touch_nojekyll
+    DEPENDS "${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp" docs_apply_doxygen_awesome_patch docs_copy_mathjax docs_touch_nojekyll
   )
 
   # Make sure the documentation target depends on DoxygenProject if we built it
