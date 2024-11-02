@@ -28,9 +28,9 @@ include(CheckPIESupported)
 
 check_pie_supported(OUTPUT_VARIABLE pie_supported LANGUAGES CXX)
 if (pie_supported)
-  message(STATUS "PIE is supported: ${pie_supported}")
+  # message(STATUS "PIE is supported: ${pie_supported}")
 else()
-  message(WARNING "PIE is not supported: ${pie_supported}")
+  # message(WARNING "PIE is not supported: ${pie_supported}")
 endif()
 
 

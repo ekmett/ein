@@ -13,6 +13,7 @@
 /// collect inline tests from all headers here
 #define EIN_TESTING 1
 // add headers below to include them in the test suite
+#include "assert.hpp"
 #include "cpuid.hpp"
 #include "concepts.hpp"
 #include "memory.hpp"

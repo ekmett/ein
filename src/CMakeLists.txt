@@ -125,6 +125,7 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mav
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
 
 add_executable(ein_tests ein/tests.cpp)
+target_compile_options(ein_tests PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 if (pie_supported)
   set_property(TARGET ein_tests PROPERTY POSITION_INDEPENDENT_CODE TRUE)
   target_precompile_headers(ein_tests REUSE_FROM ein)

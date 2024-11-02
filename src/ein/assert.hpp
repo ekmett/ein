@@ -24,20 +24,52 @@
 
       \hideinlinesource */
 
+#include <spdlog/spdlog.h>
+#include <spdlog/fmt/bundled/core.h>
+
 #define ein_assert(cond,...)                                           \
   do {                                                                 \
     if (!cond) [[unlikely]] {                                          \
-      []<typename ... Args> static (Args && ... args) noexcept {       \
+      []<typename ... Args> (Args && ... args) noexcept {              \
         if constexpr (sizeof...(Args) == 0)                            \
           spdlog::error(                                               \
             "{}:{}: assertion failed ({}) in function {}",             \
             __FILE__,__LINE__,#cond,__PRETTY_FUNCTION__);              \
+        else if constexpr (sizeof...(Args) == 1)                       \
+          spdlog::error(                                               \
+            "{}:{}: assertion failed ({}) in function {}: {}",         \
+            __FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,               \
+            fmt::format(std::forward<Args>(args)...));                 \
         else                                                           \
           spdlog::error(                                               \
             "{}:{}: assertion failed ({}) in function {}: {}",         \
             __FILE__,__LINE__,#cond,__PRETTY_FUNCTION__,               \
-            fmt::vformat(std::forward<Args>(args)...));                \
+            fmt::format(std::forward<Args>(args)...));                 \
         std::abort();                                                  \
       }(__VA_ARGS__);                                                  \
     }                                                                  \
   } while (0)
+
+
+#if defined(EIN_TESTING) || defined(EIN_TESTING_WAIT)
+#include <unistd.h> // fork
+//#include <sys/wait.h> // wait
+
+TEST_CASE("ein_assert(true) should not exit","[assert]") {
+  ein_assert(true);
+}
+
+// TEST_CASE("ein_assert(false) should exit","[assert]") {
+//   if (fork() == 0) {
+//     ein_assert(false,"this should exit");
+//     _exit(0);
+//   }
+//   else {
+//     int status=0;
+//     ::wait(&status);
+//     REQUIRE(WIFEXITED(status));
+//     REQUIRE(WEXITSTATUS(status) == 1);
+//   }
+// }
+
+#endif
