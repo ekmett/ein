@@ -5,13 +5,9 @@
 cmake_minimum_required(VERSION 3.30.5 FATAL_ERROR)
 cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 
-set(PROJECT_BRIEF "SIMD Tools")
-
-# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
-# set(CMAKE_CXX_MODULE_STD TRUE)
-# set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
 
 project(ein VERSION 0.0.1 LANGUAGES CXX)
+set(PROJECT_BRIEF "SIMD Tools")
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
@@ -21,34 +17,56 @@ set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
 set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
+set(CMAKE_POSITION_INDEPENDENT_)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/etc/cmake")
 
-include(CheckIPOSupported)
 include(CheckRestrict)
 include(FetchContentCached)
+include(CheckIPOSupported)
+include(CheckPIESupported)
 
-# hack. remove
-include_directories(h)
+check_pie_supported(OUTPUT_VARIABLE pie_supported LANGUAGES CXX)
+if (pie_supported)
+  message(STATUS "PIE is supported: ${pie_supported}")
+else()
+  message(WARNING "PIE is not supported: ${pie_supported}")
+endif()
+
+
+check_ipo_supported(RESULT lto_supported OUTPUT lto_check_output)
+if (lto_supported)
+  set(ENV{LLVM_PARALLEL_LINK_JOBS} 32)
+  set(CMAKE_POLICY_DEFAULT_CMP0069 NEW)
+  set(CMAKE_INTERPROCEDURAL_OPTIMIZATION TRUE)
+else()
+  message(WARNING "IPO/LTO is not supported: ${lto_check_output}")
+endif()
+
+
+# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
+# set(CMAKE_CXX_MODULE_STD TRUE)
+# set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
+
 
 # ccache
 # ====================================================================
 
 set(FETCHCONTENT_QUIET ON)  # Suppresses FetchContent output
 
-if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-  fetchcontentcached(
-    NAME ccache
-    URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
-    URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
-  )
-elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-  fetchcontentcached(
-    NAME ccache
-    URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-darwin.tar.gz
-    URL_HASH SHA256=d90514fff15943a8607e84e3f42d45f823915a92f99984f3fc88202f6295d1e8
-  )
-endif()
+# if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
+#   fetchcontentcached(
+#     NAME ccache
+#     URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
+#     URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
+#   )
+# elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
+#   fetchcontentcached(
+#     NAME ccache
+#     URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-darwin.tar.gz
+#     URL_HASH SHA256=d90514fff15943a8607e84e3f42d45f823915a92f99984f3fc88202f6295d1e8
+#   )
+# endif()
 
 set(CMAKE_CXX_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/bin/ccache.sh")
 set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
@@ -87,12 +105,6 @@ set(LLVM_COV_EXECUTABLE "llvm-cov-19 gcov" CACHE STRING "Specify the llvm-cov ex
 # add lots of debug info to Debug builds
 set(CMAKE_CXX_FLAGS_DEBUG_INIT "-O0 -g3 -ggdb3 -gcolumn-info -gembed-source")
 
-check_ipo_supported(RESULT lto_supported OUTPUT lto_check_output)
-if (lto_supported)
-  set(ENV{LLVM_PARALLEL_LINK_JOBS} 16)
-else()
-  message(WARNING "IPO/LTO is not supported: ${lto_check_output}")
-endif()
 
 # Use the restrict keyword check
 message(STATUS "Detected restrict: ${RESTRICT_KEYWORD}")
@@ -114,7 +126,7 @@ if (BUILD_NATIVE)
   foreach(FEATURE ${REQUIRED_AVX512_FEATURES})
     if(NOT "${CPUINFO}" MATCHES "${FEATURE}")
       set(AVX512 OFF)
-      message(WARNING "Disabling AVX512: ${FEATURE} not supported")
+      message(INFO "Disabling AVX512: ${FEATURE} not supported")
       break()
     endif()
   endforeach()

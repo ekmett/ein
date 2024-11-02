@@ -4,6 +4,8 @@
 
 find_package(Threads REQUIRED)
 
+set(UNITY_BUILD_BATCH_SIZE 16)
+
 # nlohmann's json library provides a solid c++ API for working with json
 fetchcontentcached(
   NAME json
@@ -26,6 +28,8 @@ target_compile_options(Catch2 PRIVATE
 )
 
 list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
+
+set(UNITY_BUILD_BATCH_SIZE 4)
 
 
 # header jiujutsu
@@ -95,6 +99,25 @@ install(TARGETS ein
   PUBLIC_HEADER DESTINATION include
   INCLUDES DESTINATION include)
 
+target_precompile_headers(ein
+PRIVATE
+  <bit>
+  <compare>
+  <cstdint>
+  <limits>
+  <string>
+  <string_view>
+  <type_traits>
+  <cxxabi.h>
+  <x86intrin.h>
+  <spdlog/spdlog.h>
+  <nlohmann/json.hpp>
+  ein/attributes/common.hpp # only headers without tests unless we can't reuse it for ein_tests anyways
+#  ein/types.hpp
+#  ein/static_string.hpp
+#  ein/concepts.hpp
+)
+
 set_target_properties(ein PROPERTIES PUBLIC_HEADER "${EIN_SOURCE_HEADER_FILES};${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops;-mwaitpkg;-mmwaitx>")
@@ -102,6 +125,11 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mav
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
 
 add_executable(ein_tests ein/tests.cpp)
+if (pie_supported)
+  set_property(TARGET ein_tests PROPERTY POSITION_INDEPENDENT_CODE TRUE)
+  target_precompile_headers(ein_tests REUSE_FROM ein)
+  set_target_properties(ein_tests PROPERTIES LINKER_LANGUAGE CXX)
+endif()
 target_link_libraries(ein_tests PRIVATE ein Catch2::Catch2WithMain)
 lto(ein_tests)
 
