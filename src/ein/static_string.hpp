@@ -441,67 +441,57 @@ namespace std {
     } \
   }).template operator()<TestType>())
 
-TEMPLATE_TEST_CASE("static_string constructors and conversions","[static_string]",char,wchar_t,char8_t,char16_t,char32_t) {
+TEMPLATE_TEST_CASE("static_string","[static_string]",char,wchar_t,char8_t,char16_t,char32_t) {
   using namespace ein;
   using string_t = basic_static_string<TestType>;
 
-  // Test construction from literal
-  constexpr string_t str = EIN_STR(hello);
-  CHECK(str == EIN_STR(hello));
-  CHECK(str != EIN_STR(world));
+  SECTION("constructors and conversions") {
+    // Test construction from literal
+    constexpr string_t str = EIN_STR(hello);
+    CHECK(str == EIN_STR(hello));
+    CHECK(str != EIN_STR(world));
 
-  // Data retrieval and null termination
-  CHECK(str.data()[5] == typename string_t::value_type(0));
-}
+    // Data retrieval and null termination
+    CHECK(str.data()[5] == typename string_t::value_type(0));
+  }
 
-TEMPLATE_TEST_CASE("static_string element access","[static_string]",char,wchar_t,char8_t,char16_t,char32_t) {
-  using namespace ein;
-  using string_t = basic_static_string<TestType>;
+  SECTION("element access") {
+    constexpr string_t str = EIN_STR(abcdef);
+    CHECK(str.front() == 'a');
+    CHECK(str.back() == 'f');
+    CHECK(str[1] == 'b');
+    CHECK(str.at(2) == 'c');
+  }
 
-  constexpr string_t str = EIN_STR(abcdef);
-  CHECK(str.front() == 'a');
-  CHECK(str.back() == 'f');
-  CHECK(str[1] == 'b');
-  CHECK(str.at(2) == 'c');
+  SECTION("comparisons") {
+    constexpr string_t str1 = EIN_STR(compare);
+    constexpr string_t str2 = EIN_STR(compare);
+    constexpr string_t str3 = EIN_STR(different);
 
-}
+    CHECK(str1 == str2);
+    CHECK(str1 != str3);
+  }
 
-TEMPLATE_TEST_CASE("static_string comparisons","[static_string]",char,wchar_t,char8_t,char16_t,char32_t) {
-  using namespace ein;
-  using string_t = basic_static_string<TestType>;
-
-  constexpr string_t str1 = EIN_STR(compare);
-  constexpr string_t str2 = EIN_STR(compare);
-  constexpr string_t str3 = EIN_STR(different);
-
-  CHECK(str1 == str2);
-  CHECK(str1 != str3);
-}
-
-TEMPLATE_TEST_CASE("static_string iterators","[static_string]",char,wchar_t,char8_t,char16_t,char32_t) {
-  using namespace ein;
-  using string_t = basic_static_string<TestType>;
-
-  constexpr string_t str = EIN_STR(iterate);
-  std::basic_string<TestType> result;
-  for (auto c : str)
+  SECTION("iterators") {
+    constexpr string_t str = EIN_STR(iterate);
+    std::basic_string<TestType> result;
+    for (auto c : str)
     result += c;
-  CHECK(result == EIN_STR(iterate).data());
+    CHECK(result == EIN_STR(iterate).data());
 
-  // Reverse iteration
-  std::basic_string<typename string_t::value_type> reverse_result;
-  for (auto it = str.rbegin(); it != str.rend(); ++it)
-    reverse_result += *it;
-  CHECK(reverse_result == EIN_STR(etareti).data());
-}
+    // Reverse iteration
+    std::basic_string<typename string_t::value_type> reverse_result;
+    for (auto it = str.rbegin(); it != str.rend(); ++it)
+      reverse_result += *it;
+    CHECK(reverse_result == EIN_STR(etareti).data());
+    }
 
-TEMPLATE_TEST_CASE("basic_static_string I/O operations","[static_string]",char,wchar_t) {
-  using namespace ein;
-  using string_t = basic_static_string<TestType>;
-  constexpr string_t str = EIN_STR(output);
-  std::basic_ostringstream<TestType> oss;
-  oss << str;
-  CHECK(oss.str()[3] == 'p');
+  SECTION("I/O operations") {
+    constexpr string_t str = EIN_STR(output);
+    std::basic_ostringstream<TestType> oss;
+    oss << str;
+    CHECK(oss.str()[3] == 'p');
+  }
 }
 
 #undef EIN_STR

@@ -89,7 +89,7 @@ public:
   /// \details sets every member of the simd structure to the same value
   ein_inline ein_artificial ein_hidden
   constexpr simd(T value) noexcept
-  : data(__extension__(data_t)(value)) {}
+  : data(__extension__(data_t){value}) {}
 
   /// \brief copy construction from clang/gcc vector intrinsics
   ein_inline ein_artificial ein_hidden
@@ -751,14 +751,14 @@ public:
 
     } else {
       if constexpr(std::is_same_v<T,float>) {
-             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_ps)(a.it(),b.it(),imm8);
-        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_ps)(a.it(),b.it(),imm8);
-  ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_ps)(a.it(),b.it(),imm8);)
+             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));
+        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));
+  ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));)
         else static_assert(false);
       } else if constexpr (std::is_same_v<T,double>) {
-             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_pd)(a.it(),b.it(),imm8);
-        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_pd)(a.it(),b.it(),imm8);
-  ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_pd)(a.it(),b.it(),imm8);)
+             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));
+        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));
+  ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));)
 /** \cond */
 #undef ein_suffix
 /** \endcond */
@@ -1293,3 +1293,41 @@ namespace std {
   /// \}
 /// \}
 }
+
+
+#if defined(EIN_TESTING) || defined(EIN_TESTING_SIMD)
+#include <string_view>
+#include "types.hpp"
+
+TEMPLATE_TEST_CASE("simd","[simd]",int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,int64_t,uint64_t,float,double) {
+  using namespace ein;
+
+  constexpr size_t N128 = 16/sizeof(TestType);
+  constexpr size_t N256 = 32/sizeof(TestType);
+#ifdef __AVX512F__
+  constexpr size_t N512 = 64/sizeof(TestType);
+#endif
+  using t128 = simd<TestType,N128>;
+  using t256 = simd<TestType,N256>;
+#ifdef __AVX512F__
+  using t512 = simd<TestType,N512>;
+#endif
+
+  SECTION("default constructors") {
+    [[maybe_unused]] t128 x128;
+    [[maybe_unused]] t256 x256;
+#ifdef __AVX512F__
+    [[maybe_unused]] t512 x512;
+#endif
+  }
+  SECTION("broadcast constructor") {
+    TestType x{}; // = GENERATE(take(10,random<TestType>()));
+    [[maybe_unused]] t128 x128(x);
+    [[maybe_unused]] t256 x256(x);
+#ifdef __AVX512F__
+    [[maybe_unused]] t512 x512(x);
+#endif
+  }
+
+}
+#endif // EIN_TESTING || EIN_TESTING_SIMD

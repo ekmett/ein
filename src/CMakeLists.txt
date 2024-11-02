@@ -99,8 +99,8 @@ install(TARGETS ein
   PUBLIC_HEADER DESTINATION include
   INCLUDES DESTINATION include)
 
-target_precompile_headers(ein
-PRIVATE
+# Define the initial list of precompiled headers
+set(PCH_HEADERS
   <bit>
   <compare>
   <cstdint>
@@ -112,11 +112,26 @@ PRIVATE
   <x86intrin.h>
   <spdlog/spdlog.h>
   <nlohmann/json.hpp>
-  ein/attributes/common.hpp # only headers without tests unless we can't reuse it for ein_tests anyways
-#  ein/types.hpp
-#  ein/static_string.hpp
-#  ein/concepts.hpp
+  ein/attributes/common.hpp
 )
+
+# Conditionally add "very stable" headers if PIE is not supported because we can't use PCH on ein_tests anyways
+if(NOT pie_supported)
+  list(APPEND PCH_HEADERS
+    ein/types.hpp
+    ein/static_string.hpp
+    ein/concepts.hpp
+  )
+endif()
+
+target_precompile_headers(ein PRIVATE ${PCH_HEADERS})
+
+if (pie_supported)
+  set_property(TARGET ein_tests PROPERTY POSITION_INDEPENDENT_CODE TRUE)
+  target_precompile_headers(ein_tests REUSE_FROM ein)
+  set_target_properties(ein_tests PROPERTIES LINKER_LANGUAGE CXX)
+endif()
+
 
 set_target_properties(ein PROPERTIES PUBLIC_HEADER "${EIN_SOURCE_HEADER_FILES};${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
@@ -128,17 +143,6 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast
 
 add_executable(ein_tests ein/tests.cpp)
 
-if(CODE_COVERAGE)
-  target_compile_options(ein_tests PRIVATE -fprofile-instr-generate -fcoverage-mapping)
-  target_link_options(ein_tests PRIVATE -fprofile-instr-generate -fcoverage-mapping)
-endif()
-
-target_compile_options(ein_tests PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
-if (pie_supported)
-  set_property(TARGET ein_tests PROPERTY POSITION_INDEPENDENT_CODE TRUE)
-  target_precompile_headers(ein_tests REUSE_FROM ein)
-  set_target_properties(ein_tests PROPERTIES LINKER_LANGUAGE CXX)
-endif()
 target_link_libraries(ein_tests PRIVATE ein Catch2::Catch2WithMain)
 lto(ein_tests)
 

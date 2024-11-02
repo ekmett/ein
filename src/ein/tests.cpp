@@ -25,3 +25,4 @@
 #include "types.hpp"
 #include "wait.hpp"
 #include "simd_data.hpp"
+#include "simd.hpp"

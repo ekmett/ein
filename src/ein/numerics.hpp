@@ -56,6 +56,14 @@ template <typename T>
 requires one_of<sizeof(T),1,2,4,8>
 using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
 
+/** \brief A compile time constant passed as an empty struct */
+template <size_t N>
+struct imm_t {
+  static constexpr size_t value = N;
+  ein_nodiscard ein_inline ein_const ein_artificial
+  consteval operator size_t () const noexcept { return N; }
+};
+
 /** \brief A compile time constant passed as an empty struct
 
     \details
@@ -64,15 +72,14 @@ using uint_t = typename integer_traits<sizeof(T)*8>::unsigned_t;
     as a syntactic form. `xs << imm<n>` isn't much of an imposition and ensures the compiler
     knows that \p N is a fixed constant known at compile time */
 template <size_t N>
-struct imm_t {
-  static constexpr size_t value = N;
-  ein_nodiscard ein_inline ein_const ein_artificial
-  consteval operator size_t () const noexcept { return N; }
-};
-
-template <size_t N>
 constinit imm_t<N> imm {};
 
+/** \brief Return true if either argument is NaN.
+
+    \details
+
+      This corresponds to checking if the two arguments are "unordered" with
+      respect to the IEEE floating point comparison predicates */
 template <typename T>
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp_unord(T a, T b) noexcept {
@@ -84,6 +91,12 @@ extern template bool cmp_unord(float,float) noexcept;
 extern template bool cmp_unord(double,double) noexcept;
 /// \endcond
 
+/** \brief Return true if neither argument is NaN.
+
+    \details
+
+      This corresponds to checking if the two arguments are "ordered" with
+      respect to the IEEE floating point comparison predicates */
 template <typename T>
 ein_nodiscard ein_inline ein_pure
 constexpr bool cmp_ord(T a, T b) noexcept {
