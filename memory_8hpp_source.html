@@ -259,21 +259,20 @@ $(function(){initNavTree('memory_8hpp_source.html',''); initResizable(true); });
 <div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span>  SECTION(<span class="stringliteral">&quot;unique_c_ptr manages malloc-allocated memory&quot;</span>) {</div>
 <div class="line"><a id="l00095" name="l00095"></a><span class="lineno">   95</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> size = 1024;</div>
 <div class="line"><a id="l00096" name="l00096"></a><span class="lineno">   96</span>    <a class="code hl_typedef" href="namespaceein.html#a69a7967394bea6ed79d57ef4be46f985">ein::unique_c_ptr&lt;char&gt;</a> managed_ptr(<span class="keyword">static_cast&lt;</span><span class="keywordtype">char</span>*<span class="keyword">&gt;</span>(std::malloc(size)));</div>
-<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span> </div>
-<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    CHECK(managed_ptr != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>    std::memset(managed_ptr.get(), 0, size);</div>
-<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span>  }</div>
-<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span> </div>
-<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>  SECTION(<span class="stringliteral">&quot;mmap_ptr manages mmap-allocated memory&quot;</span>) {</div>
-<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> size = 4096;</div>
-<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    <span class="keywordtype">void</span>* ptr = mmap(<span class="keyword">nullptr</span>, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);</div>
-<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span>    CHECK(ptr != MAP_FAILED);</div>
-<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span> </div>
-<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    <a class="code hl_typedef" href="namespaceein.html#aecbdca42b0cabce28da9ead5599d4f9f">mmap_ptr</a> managed_mmap = <a class="code hl_function" href="namespaceein.html#ac2663d41f31490e13670ae3e6ce98f83">make_mmap_ptr</a>(ptr, size);</div>
-<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>    CHECK(managed_mmap != <span class="keyword">nullptr</span>);</div>
-<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>  }</div>
-<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span>}</div>
-<div class="line"><a id="l00111" name="l00111"></a><span class="lineno">  111</span><span class="preprocessor">#endif</span></div>
+<div class="line"><a id="l00097" name="l00097"></a><span class="lineno">   97</span>    CHECK(managed_ptr);</div>
+<div class="line"><a id="l00098" name="l00098"></a><span class="lineno">   98</span>    <span class="comment">//std::memset(managed_ptr.get(), 0, size);</span></div>
+<div class="line"><a id="l00099" name="l00099"></a><span class="lineno">   99</span>  }</div>
+<div class="line"><a id="l00100" name="l00100"></a><span class="lineno">  100</span> </div>
+<div class="line"><a id="l00101" name="l00101"></a><span class="lineno">  101</span>  SECTION(<span class="stringliteral">&quot;mmap_ptr manages mmap-allocated memory&quot;</span>) {</div>
+<div class="line"><a id="l00102" name="l00102"></a><span class="lineno">  102</span>    <span class="keyword">constexpr</span> <span class="keywordtype">size_t</span> size = 4096;</div>
+<div class="line"><a id="l00103" name="l00103"></a><span class="lineno">  103</span>    <span class="keywordtype">void</span>* ptr = mmap(<span class="keyword">nullptr</span>, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);</div>
+<div class="line"><a id="l00104" name="l00104"></a><span class="lineno">  104</span>    CHECK(ptr != MAP_FAILED);</div>
+<div class="line"><a id="l00105" name="l00105"></a><span class="lineno">  105</span> </div>
+<div class="line"><a id="l00106" name="l00106"></a><span class="lineno">  106</span>    <a class="code hl_typedef" href="namespaceein.html#aecbdca42b0cabce28da9ead5599d4f9f">mmap_ptr</a> managed_mmap = <a class="code hl_function" href="namespaceein.html#ac2663d41f31490e13670ae3e6ce98f83">make_mmap_ptr</a>(ptr, size);</div>
+<div class="line"><a id="l00107" name="l00107"></a><span class="lineno">  107</span>    CHECK(managed_mmap != <span class="keyword">nullptr</span>);</div>
+<div class="line"><a id="l00108" name="l00108"></a><span class="lineno">  108</span>  }</div>
+<div class="line"><a id="l00109" name="l00109"></a><span class="lineno">  109</span>}</div>
+<div class="line"><a id="l00110" name="l00110"></a><span class="lineno">  110</span><span class="preprocessor">#endif</span></div>
 <div class="ttc" id="acommon_8hpp_html"><div class="ttname"><a href="common_8hpp.html">common.hpp</a></div></div>
 <div class="ttc" id="aconceptein_1_1trivially__destructible_html"><div class="ttname"><a href="conceptein_1_1trivially__destructible.html">ein::trivially_destructible</a></div><div class="ttdoc">a type where the destructor does no work, and therefore it is safe to simply discard.</div><div class="ttdef"><b>Definition</b> <a href="#l00023">memory.hpp:23</a></div></div>
 <div class="ttc" id="agroup__inlining__attributes_html_ga339fea4b0350c64584a58eb87db76f6b"><div class="ttname"><a href="group__inlining__attributes.html#ga339fea4b0350c64584a58eb87db76f6b">ein_artificial</a></div><div class="ttdeci">#define ein_artificial</div><div class="ttdoc">[[artificial]].</div><div class="ttdef"><b>Definition</b> <a href="common_8hpp_source.html#l00220">common.hpp:220</a></div></div>
@@ -302,7 +301,6 @@ $(function(){initNavTree('memory_8hpp_source.html',''); initResizable(true); });
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <!-- <li><a class="el" href="index.html">Home</a></li> -->
     <li class="navelem"><a class="el" href="dir_68267d1309a1af8e8297ef4c3efbcdba.html">src</a></li><li class="navelem"><a class="el" href="dir_3244af773d81c2a47a3988f18c583e0e.html">ein</a></li><li class="navelem"><a class="el" href="memory_8hpp.html">memory.hpp</a></li>
     <li class="footer">© 2024 Edward Kmett. All rights reserved.</li>
     <!--<li class="footer" style="align:center">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>-->

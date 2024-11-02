@@ -5,7 +5,7 @@ var searchData=
   ['object_5fdestroyed_2',['object_destroyed',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596aa847d2d27e43e4ed0c9c2db4ea8c37c4',1,'ein::profiling']]],
   ['object_5fsnapshot_3',['object_snapshot',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596abb944f5688ac219f45ad013c87306a7a',1,'ein::profiling']]],
   ['of_20conduct_4',['Code of Conduct',['../code_of_conduct_page.html',1,'index']]],
-  ['of_20materials_5',['Software Bill of Materials',['../contributing_page.html#autotoc_md17',1,'']]],
+  ['of_20materials_5',['Software Bill of Materials',['../contributing_page.html#autotoc_md19',1,'']]],
   ['on_20cmake_20vs_20clangd_6',['On cmake vs. clangd',['../notes_page.html#pch_cmake_vs_clangd',1,'']]],
   ['on_20documentation_20in_20headers_20and_20precompilation_7',['On documentation in headers and precompilation',['../notes_page.html#pch_big_docs',1,'']]],
   ['on_20precompiled_20headers_8',['On Precompiled Headers',['../notes_page.html#pch',1,'']]],

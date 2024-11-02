@@ -113,6 +113,6 @@ var searchData=
   ['event_5ftype_110',['event_type',['../namespaceein_1_1profiling.html#aeb588ec8ceeaa1a08bf9caa9146bd596',1,'ein::profiling']]],
   ['events_111',['events',['../structein_1_1profiling_1_1profile.html#ad6741e8eafaaa5a422c431508e6b5c9d',1,'ein::profiling::profile']]],
   ['events_5fmutex_112',['events_mutex',['../structein_1_1profiling_1_1profile.html#a5acf551a1fbe59244e44bb4294fa2e62',1,'ein::profiling::profile']]],
-  ['exceptions_113',['Exceptions',['../contributing_page.html#autotoc_md15',1,'']]],
+  ['exceptions_113',['Exceptions',['../contributing_page.html#autotoc_md17',1,'']]],
   ['explicit_20template_20instantiation_114',['Explicit Template Instantiation',['../group__instantiation__attributes.html',1,'']]]
 ];

@@ -181,7 +181,7 @@ $(function(){initNavTree('namespaceein.html',''); initResizable(true); });
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__types.html">Types</a></div></div></div>
+  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__simd.html">SIMD</a> &#124; <a class="el" href="group__types.html">Types</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -446,9 +446,11 @@ Functions</h2></td></tr>
 <tr class="separator:a4fe125d6f78c0a639415b3a59ff61c68"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e" id="r_ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga3997cf126ca7b03242a0bcd636d3b11e">cmp_unord</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if either argument is NaN.  <br /></td></tr>
 <tr class="separator:ga3997cf126ca7b03242a0bcd636d3b11e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f" id="r_ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplParams" colspan="2">template&lt;typename T &gt; </td></tr>
 <tr class="memitem:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memTemplItemLeft" align="right" valign="top">constexpr bool&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga2b74567fe42c868dbbe6ce8f60a3538f">cmp_ord</a> (T a, T b) noexcept</td></tr>
+<tr class="memdesc:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Return true if neither argument is NaN.  <br /></td></tr>
 <tr class="separator:ga2b74567fe42c868dbbe6ce8f60a3538f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f" id="r_ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplParams" colspan="2">template&lt;one_of_t&lt; float, double &gt; T&gt; </td></tr>
 <tr class="memitem:ga5ed703b37d3f23ffe3f9150fc108c44f"><td class="memTemplItemLeft" align="right" valign="top">constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga5ed703b37d3f23ffe3f9150fc108c44f">scalef</a> (T x, T y) noexcept</td></tr>
@@ -583,6 +585,7 @@ Variables</h2></td></tr>
 <tr class="separator:a4639c74c35d500365670dd87c558c0c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga9f8820229adbc8c614428c448a370015" id="r_ga9f8820229adbc8c614428c448a370015"><td class="memTemplParams" colspan="2">template&lt;size_t N&gt; </td></tr>
 <tr class="memitem:ga9f8820229adbc8c614428c448a370015"><td class="memTemplItemLeft" align="right" valign="top">constinit <a class="el" href="group__numerics.html#structein_1_1imm__t">imm_t</a>&lt; N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga9f8820229adbc8c614428c448a370015">imm</a> {}</td></tr>
+<tr class="memdesc:ga9f8820229adbc8c614428c448a370015"><td class="mdescLeft">&#160;</td><td class="mdescRight">A compile time constant passed as an empty struct.  <br /></td></tr>
 <tr class="separator:ga9f8820229adbc8c614428c448a370015"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ga2b09119ae81703a8158113efe9708d8b" id="r_ga2b09119ae81703a8158113efe9708d8b"><td class="memItemLeft" align="right" valign="top">constexpr size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="group__numerics.html#ga2b09119ae81703a8158113efe9708d8b">max_fp_comparison_predicate</a></td></tr>
 <tr class="memdesc:ga2b09119ae81703a8158113efe9708d8b"><td class="mdescLeft">&#160;</td><td class="mdescRight">AVX512 added many more floating point comparison types. Do we have them?  <br /></td></tr>
@@ -878,7 +881,7 @@ template&lt;trivially_destructible T&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="numerics_8hpp_source.html#l00219">cmp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="numerics_8hpp_source.html#l00232">cmp()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -943,7 +946,7 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p class="reference">Referenced by <a class="el" href="numerics_8hpp_source.html#l00219">cmp()</a>.</p>
+<p class="reference">Referenced by <a class="el" href="numerics_8hpp_source.html#l00232">cmp()</a>.</p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -1392,7 +1395,6 @@ template&lt;typename CharT , typename Traits &gt; </div>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <!-- <li><a class="el" href="index.html">Home</a></li> -->
     <li class="navelem"><a class="el" href="namespaceein.html">ein</a></li>
     <li class="footer">© 2024 Edward Kmett. All rights reserved.</li>
     <!--<li class="footer" style="align:center">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.12.0 </li>-->

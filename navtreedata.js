@@ -47,14 +47,14 @@ var NAVTREE =
       [ "Attribution", "code_of_conduct_page.html#autotoc_md14", null ]
     ] ],
     [ "Contribution Guidelines", "contributing_page.html", [
-      [ "Exceptions", "contributing_page.html#autotoc_md15", null ],
-      [ "SPDX Documentation", "contributing_page.html#autotoc_md16", null ],
-      [ "Software Bill of Materials", "contributing_page.html#autotoc_md17", null ],
-      [ "Policy Questions", "contributing_page.html#autotoc_md18", null ]
+      [ "Exceptions", "contributing_page.html#autotoc_md17", null ],
+      [ "SPDX Documentation", "contributing_page.html#autotoc_md18", null ],
+      [ "Software Bill of Materials", "contributing_page.html#autotoc_md19", null ],
+      [ "Policy Questions", "contributing_page.html#autotoc_md20", null ]
     ] ],
     [ "Security Policy", "security_policy_page.html", [
-      [ "Supported Versions", "security_policy_page.html#autotoc_md19", null ],
-      [ "Reporting a Vulnerability", "security_policy_page.html#autotoc_md20", null ]
+      [ "Supported Versions", "security_policy_page.html#autotoc_md15", null ],
+      [ "Reporting a Vulnerability", "security_policy_page.html#autotoc_md16", null ]
     ] ],
     [ "Installation", "installation_page.html", [
       [ "Ninja 1.12.1", "installation_page.html#install_ninja", null ],
@@ -110,7 +110,7 @@ var NAVTREEINDEX =
 "classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a1156b00e37a0acf52282f93b235859c2",
 "group__numerics.html#gga462cd88db2679129e8c9b418fe426371a70d733e8deddfedf56bef14be8bac670",
 "group__wait.html#ae9200d7e42df08e5721d28dd59ef3af8",
-"structein_1_1bf16.html#ae618a9a04eea478dc9ce01fe1c29ccba"
+"structein_1_1bf16.html#ad1ea01a9318dc2b0cee606c203a301fc"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

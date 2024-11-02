@@ -27,6 +27,7 @@ var NAVTREEINDEX3 =
 "memory_8hpp.html#ad20e043c6e8f44fc20d90e797dc0bf4b":[11,0,1,0,8,5],
 "memory_8hpp.html#aecbdca42b0cabce28da9ead5599d4f9f":[11,0,1,0,8,3],
 "memory_8hpp_source.html":[11,0,1,0,8],
+"namespaceein.html":[7,2,0],
 "namespaceein.html":[7,3,1],
 "namespaceein.html#a1be3fbf8ac8efd01a5e3bc10219194d6":[8,0,0,76],
 "namespaceein.html#a2e3ce2c3dbe8116664d83ad7e4b9b17f":[8,0,0,34],
@@ -63,7 +64,7 @@ var NAVTREEINDEX3 =
 "namespaceein.html#afad2944f40623c3c0d3689bc7d3a7c90":[11,0,1,0,7,0,3],
 "namespaceein.html#afe71031c13139501d4507e7f16683f40":[8,0,0,96],
 "namespaceein.html#structein_1_1cpuid__t":[11,0,1,0,7,0],
-"namespaceein_1_1detail.html":[7,2,0],
+"namespaceein_1_1detail.html":[7,2,1],
 "namespaceein_1_1detail.html#structein_1_1detail_1_1pd":[11,0,1,0,14,5],
 "namespaceein_1_1detail.html#structein_1_1detail_1_1ps":[11,0,1,0,14,4],
 "namespaceein_1_1detail.html#structein_1_1detail_1_1si":[11,0,1,0,14,3],
@@ -188,8 +189,8 @@ var NAVTREEINDEX3 =
 "profiling_8hpp.html#aeb588ec8ceeaa1a08bf9caa9146bd596afd3397255960a8d0ca23530e64672073":[11,0,1,0,12,5,18],
 "profiling_8hpp_source.html":[11,0,1,0,12],
 "security_policy_page.html":[3],
-"security_policy_page.html#autotoc_md19":[3,0],
-"security_policy_page.html#autotoc_md20":[3,1],
+"security_policy_page.html#autotoc_md15":[3,0],
+"security_policy_page.html#autotoc_md16":[3,1],
 "simd_8hpp.html":[11,0,1,0,13],
 "simd_8hpp.html#a387077f9d15d6ae1a2d99c018c5dca7b":[11,0,1,0,13,0],
 "simd_8hpp.html#a57e8e83821b2f7ee793874528f00f863":[11,0,1,0,13,1],
@@ -248,6 +249,5 @@ var NAVTREEINDEX3 =
 "structein_1_1bf16.html#abf71ead439d5e984de945b14b2b8102c":[10,0,0,3,19],
 "structein_1_1bf16.html#ac5f9c503ec58e5958397d9978a6275da":[8,0,0,3,2],
 "structein_1_1bf16.html#ac5f9c503ec58e5958397d9978a6275da":[10,0,0,3,2],
-"structein_1_1bf16.html#ad1ea01a9318dc2b0cee606c203a301fc":[8,0,0,3,1],
-"structein_1_1bf16.html#ad1ea01a9318dc2b0cee606c203a301fc":[10,0,0,3,1]
+"structein_1_1bf16.html#ad1ea01a9318dc2b0cee606c203a301fc":[8,0,0,3,1]
 };
