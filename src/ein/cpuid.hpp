@@ -8,9 +8,7 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-#include <array>
 #include <cstdint>
-#include <string_view>
 #include "attributes/purity.hpp"
 #include "attributes/lifetimes.hpp"
 

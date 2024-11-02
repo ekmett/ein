@@ -7,13 +7,9 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-/// \cond
-#ifdef ENABLE_TESTS
 #include <doctest.h>
-#include <nlohmann/json.hpp>
 #include <filesystem>
 #include <fstream>
-#include "static_string.hpp"
 #include "profiling.hpp"
 
 using namespace ein;
@@ -93,6 +89,3 @@ TEST_SUITE("profiling") {
   }
 
 } // TEST_SUITE("profiling")
-
-#endif
-/// \endcond

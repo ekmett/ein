@@ -7,8 +7,6 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-/// \cond
-#ifdef ENABLE_TESTS
 #include <doctest.h>
 #include <string_view>
 #include "types.hpp"
@@ -18,6 +16,7 @@ using namespace ein;
 namespace {
 struct Custom {};
 }
+
 TEST_SUITE("types") {
   TEST_CASE("type provides correct demangled names") {
     DOCTEST_SUBCASE("Basic types") {
@@ -68,5 +67,3 @@ TEST_SUITE("types") {
     }
   }
 } // TEST_SUITE("types")
-#endif // ENABLE_TESTS
-/// \endcond

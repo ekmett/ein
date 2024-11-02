@@ -6,11 +6,10 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-/// \cond
-#ifdef ENABLE_TESTS
 #include <doctest.h>
 #include <string>
 #include "concepts.hpp"
+
 using doctest::Approx;
 
 namespace {
@@ -57,5 +56,3 @@ TEST_SUITE("concepts") {
       // REQUIRE(add_floats(1, 2) == 3);         // Should fail on non-floating point inputs
   }
 } // TEST_SUITE("concepts")
-#endif
-/// \endcond

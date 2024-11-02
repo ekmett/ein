@@ -20,48 +20,86 @@ FetchContentCached(
   SOURCE_SUBDIR doctest
 )
 
-# set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
-
-# FetchContentCached(
-#   NAME Catch2
-#   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
-#   GIT_TAG        v3.7.1 # or a later release
-# )
-#FetchContent_MakeAvailable(Catch2)
-
-# silence a third-party warning on clang++-18+
-# target_compile_options(Catch2 PRIVATE
-#   $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
-# )
-
-# list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
-
-#include(Catch)
-
-#add_executable(t_ein bf16.cpp)
-#target_link_libraries(t_ein PRIVATE Catch2::Catch2WithMain ein)
-# catch_discover_tests(t_ein)
-
+add_library(doctest_includes INTERFACE)
+target_include_directories(doctest_includes INTERFACE "${FETCHCONTENT_BASE_DIR}/doctest-src/doctest")
+list(APPEND CMAKE_MODULE_PATH "${FETCHCONTENT_BASE_DIR}/doctest-src/scripts/cmake")
+include(doctest)
 
 # header jiujutsu
 # ====================================================================
 
+set(EIN_SOURCE_HEADER_FILES
+  ein/attributes/calling_conventions.hpp
+  ein/attributes/common.hpp
+  ein/attributes/control_flow.hpp
+  ein/attributes/cuda.hpp
+  ein/attributes/detection.hpp
+  ein/attributes/handles.hpp
+  ein/attributes/initialization.hpp
+  ein/attributes/inlining.hpp
+  ein/attributes/lifetimes.hpp
+  ein/attributes/linkage.hpp
+  ein/attributes/memory.hpp
+  ein/attributes/null_safety.hpp
+  ein/attributes/performance_constraints.hpp
+  ein/attributes/purity.hpp
+  ein/attributes/strings.hpp
+  ein/attributes/targets.hpp
+  ein/attributes/thread_safety.hpp
+  ein/attributes/typestate.hpp
+  ein/assert.hpp
+  ein/concepts.hpp
+  ein/cpuid.hpp
+  ein/memory.hpp
+  ein/numerics/bf16.hpp
+  ein/numerics/fp16.hpp
+  ein/numerics.hpp
+  ein/profiling.hpp
+#  ein/simd.hpp
+#  ein/simd_data.hpp
+  ein/static_string.hpp
+  ein/types.hpp
+  ein/wait.hpp
+)
 
-file(GLOB_RECURSE SOURCE_HEADER_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ein/*.hpp")
-add_custom_target(ein_headers ALL DEPENDS ${SOURCE_HEADER_FILES} ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp)
+set(EIN_SOURCE_FILES
+  ein/cpuid.cpp
+  ein/numerics/bf16.cpp
+  ein/numerics/fp16.cpp
+  ein/numerics.cpp
+  ein/static_string.cpp
+  ein/wait.cpp
+)
 
-file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ein/*.cpp")
-add_library(ein STATIC ${SOURCE_FILES} ${SOURCE_HEADER_FILES})
+set(EIN_TEST_FILES
+  ein/concepts_tests.cpp
+  ein/cpuid_tests.cpp
+  ein/numerics/bf16_tests.cpp
+  ein/numerics/fp16_tests.cpp
+  ein/memory_tests.cpp
+  ein/profiling_tests.cpp
+  ein/static_string_tests.cpp
+  ein/wait_tests.cpp
+  ein/types_tests.cpp
+)
 
-#  numerics.cpp
-#  pretty.cpp
+add_library(ein STATIC ${EIN_SOURCE_FILES})
+target_sources(ein
+  PUBLIC
+    FILE_SET HEADERS
+    BASE_DIRS "${CMAKE_CURRENT_SOURCE_DIR}/ein" "${CMAKE_CURRENT_BINARY_DIR}/../include"
+    FILES ${EIN_SOURCE_HEADER_FILES} ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp
+)
 
-add_dependencies(ein ein_headers)
-add_compile_definitions(ENABLE_TESTS=1)
+target_link_libraries(ein
+  PUBLIC
+    compiler_rt_builtins
+    nlohmann_json::nlohmann_json
+    spdlog::spdlog
+    Threads::Threads
+    doctest_includes
+)
 
-target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_json spdlog::spdlog Threads::Threads)
-
-target_include_directories(ein PRIVATE ${FETCHCONTENT_BASE_DIR}/doctest-src/doctest)
 target_include_directories(ein PUBLIC
   $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../include>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
@@ -70,17 +108,16 @@ target_include_directories(ein PUBLIC
 install(TARGETS ein
   LIBRARY DESTINATION lib
   ARCHIVE DESTINATION lib
-  PUBLIC_HEADER DESTINATION include/ein
-  INCLUDES DESTINATION include/ein)
+  PUBLIC_HEADER DESTINATION include
+  INCLUDES DESTINATION include)
 
-set_target_properties(ein PROPERTIES PUBLIC_HEADER "${OUTPUT_HEADER_FILES}")
-
+set_target_properties(ein PROPERTIES PUBLIC_HEADER "${EIN_SOURCE_HEADER_FILES};${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't this being set?!
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops;-mwaitpkg;-mmwaitx>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
 
-add_executable(doctest_ein doctest.cpp)
-target_include_directories(doctest_ein PRIVATE ${FETCHCONTENT_BASE_DIR}/doctest-src/doctest)
-target_link_libraries(doctest_ein PRIVATE ein)
-add_test(NAME doctest COMMAND doctest_ein)
+add_executable(ein_tests ein/tests.cpp)
+target_link_libraries(ein_tests PRIVATE ein doctest_includes)
+# add_test(NAME doctest COMMAND doctest_ein)
+doctest_discover_tests(ein_tests)

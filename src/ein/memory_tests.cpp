@@ -7,11 +7,8 @@
         SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
       \endlicense */
 
-/// \cond
-#ifdef ENABLE_TESTS
-#include "memory.hpp"
 #include <doctest.h>
-
+#include "memory.hpp"
 
 TEST_SUITE("memory") {
   TEST_CASE("unique_str manages strdup-allocated strings") {
@@ -39,5 +36,3 @@ TEST_SUITE("memory") {
     CHECK(managed_mmap != nullptr);
   }
 } // TEST_SUITE("memory")
-#endif
-/// \endcond

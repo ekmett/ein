@@ -11,6 +11,7 @@
       \ingroup types */
 
 #include <string>
+#include <string_view>
 #include <cxxabi.h>
 #include "attributes.hpp"
 
