@@ -5,7 +5,7 @@ on:
 
 jobs:
   docker:
-    name: Find image
+    name: Find docker image
     runs-on: ubuntu-latest
     outputs:
       image: '${{ steps.hash.outputs.image }}'
@@ -33,7 +33,8 @@ jobs:
         run: make -C '${{github.workspace}}' lint
 
   build:
-    name: Build with Docker
+    name: Build: x64 ubuntu 24.10
+
     runs-on: ubuntu-latest
     needs: docker
     container:
@@ -89,7 +90,7 @@ jobs:
         run: ctest -V
 
   traditional-build-linux:
-    name: Build without Docker (linux)
+    name: Build: x64 ubuntu 22.04
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -119,8 +120,8 @@ jobs:
         timeout-minutes: 10
 
   traditional-build-macos:
-    name: Build without Docker (macos)
-    runs-on: macos-13
+    name: Build: x64 macos-15
+    runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup/macos/compiler
