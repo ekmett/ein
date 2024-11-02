@@ -33,7 +33,7 @@ jobs:
         run: make -C '${{github.workspace}}' lint
 
   build:
-    name: Build: x64 ubuntu 24.10
+    name: "Build: x64 ubuntu 24.10"
 
     runs-on: ubuntu-latest
     needs: docker
@@ -90,7 +90,7 @@ jobs:
         run: ctest -V
 
   traditional-build-linux:
-    name: Build: x64 ubuntu 22.04
+    name: "Build: x64 ubuntu 22.04"
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -120,7 +120,7 @@ jobs:
         timeout-minutes: 10
 
   traditional-build-macos:
-    name: Build: x64 macos-15
+    name: "Build: x64 macos-15"
     runs-on: macos-15
     steps:
       - uses: actions/checkout@v4
