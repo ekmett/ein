@@ -205,3 +205,95 @@ __m512i cast_si(__m512i a) noexcept { return a; }
 
 /// \}
 } // namespace ein
+
+#if defined(EIN_TESTING) || defined(EIN_TESTING_SIMD_DATA)
+#include <string_view>
+#include "types.hpp"
+
+TEMPLATE_TEST_CASE("simd_data","[simd_data]",int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,int64_t,uint64_t,float,double) {
+  using namespace ein;
+
+  constexpr size_t N128 = 16/sizeof(TestType);
+  constexpr size_t N256 = 32/sizeof(TestType);
+  constexpr size_t N512 = 64/sizeof(TestType);
+  SECTION("has_simd_data") {
+    STATIC_REQUIRE(has_simd_type<TestType,N128>);
+    STATIC_REQUIRE(has_simd_type<TestType,N256>);
+#ifdef __AVX512F__
+    STATIC_REQUIRE(has_simd_type<TestType,N512>);
+#endif
+  }
+  SECTION("simd_data_t") {
+    using d128 = simd_data_t<TestType,N128>;
+    using d256 = simd_data_t<TestType,N256>;
+#ifdef __AVX512F__
+    using d512 = simd_data_t<TestType,N512>;
+#endif
+    SECTION("has the right size") {
+      CHECK(sizeof(d128) == 16);
+      CHECK(sizeof(d256) == 32);
+#ifdef __AVX512F__
+      CHECK(sizeof(d512) == 64);
+#endif
+    }
+    d128 x128{TestType{}};
+    d256 x256{TestType{}};
+#ifdef __AVX512F__
+    d512 x512{TestType{}};
+#endif
+    SECTION("can be indexed at the right type") {
+      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x128[0])>, TestType>);
+      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x256[0])>, TestType>);
+#ifdef __AVX512F__
+      STATIC_REQUIRE(std::is_same_v<std::remove_cvref_t<decltype(x512[0])>, TestType>);
+#endif
+    }
+    SECTION("can be indexed with the right value") {
+      CHECK(x128[0] == TestType{});
+      CHECK(x256[0] == TestType{});
+#ifdef __AVX512F__
+      CHECK(x512[0] == TestType{});
+#endif
+    }
+  }
+
+  SECTION("simd_intrinsic_t") {
+    using t128 = simd_intrinsic_t<TestType,N128>;
+    using t256 = simd_intrinsic_t<TestType,N256>;
+#ifdef __AVX512F__
+    using t512 = simd_intrinsic_t<TestType,N512>;
+#endif
+
+    [[maybe_unused]] t128 x128{};
+    [[maybe_unused]] t256 x256{};
+#ifdef __AVX512F__
+    [[maybe_unused]] t512 x512{};
+#endif
+
+//     SECTION("cast_ps") {
+//       CHECK(sizeof(cast_ps(x128)) == sizeof(x128));
+//       CHECK(sizeof(cast_ps(x256)) == sizeof(x256));
+// #ifdef __AVX512F__
+//       CHECK(sizeof(cast_ps(x512)) == sizeof(x512));
+// #endif
+//     }
+
+//     SECTION("cast_si") {
+//       CHECK(sizeof(cast_si(x128)) == sizeof(x128));
+//       CHECK(sizeof(cast_si(x256)) == sizeof(x256));
+// #ifdef __AVX512F__
+//       CHECK(sizeof(cast_si(x512)) == sizeof(x512));
+// #endif
+//     }
+
+//     SECTION("cast_pd") {
+//       CHECK(sizeof(cast_pd(x128)) == sizeof(x128));
+//       CHECK(sizeof(cast_pd(x256)) == sizeof(x256));
+// #ifdef __AVX512F__
+//       CHECK(sizeof(cast_pd(x512)) == sizeof(x512));
+// #endif
+//     }
+   }
+}
+
+#endif

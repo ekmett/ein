@@ -24,3 +24,4 @@
 #include "static_string.hpp"
 #include "types.hpp"
 #include "wait.hpp"
+#include "simd_data.hpp"
