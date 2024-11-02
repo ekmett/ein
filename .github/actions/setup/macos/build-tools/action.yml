@@ -24,6 +24,6 @@ runs:
       shell: bash
     - name: install graphviz
       run: |
-        brew install ccache
+        brew install graphviz
         which dot && dot --version
       shell: bash
