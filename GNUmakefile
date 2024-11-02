@@ -40,7 +40,7 @@ server-stop:
 
 run: $(RUN)
 
-gen: $(CMAKELISTS)
+gen: $(CMAKELISTS) CMakeGraphVizOptions.cmake
 	@mkdir -p gen/dotfiles
 	@cmake $(LOGLEVEL) --preset $(PRESET) -DCMAKE_BUILD_TYPE=$(BUILD_TYPE) --graphviz=gen/dotfiles/ein.dot
 	@bin/adjust_dotfiles.sh gen/dotfiles gen/doc/patched-dotfiles
