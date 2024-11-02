@@ -250,18 +250,25 @@ add_link_options("$<${Link_Clang}:--rtlib=compiler-rt>")
 
 include(CheckRestrict)
 
+# config.hpp
+# ====================================================================
 
-add_subdirectory(src)
-add_subdirectory(doc)
+configure_file(
+  "${CMAKE_CURRENT_SOURCE_DIR}/etc/config.hpp.in"
+  "${CMAKE_CURRENT_BINARY_DIR}/include/ein/config.hpp"
+)
 
-# tests
+# source
 # ====================================================================
 
 if(ENABLE_TESTS)
   include(CTest)
   enable_testing()
-  add_subdirectory(t)
 endif()
+
+
+add_subdirectory(src)
+add_subdirectory(doc)
 
 # Code Coverage
 # ====================================================================

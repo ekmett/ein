@@ -13,81 +13,57 @@ fetchcontentcached(
   GIT_PROGRESS TRUE
 )
 
+FetchContentCached(
+  NAME doctest
+  GIT_REPOSITORY https://github.com/doctest/doctest.git
+  GIT_TAG v2.4.11
+  SOURCE_SUBDIR doctest
+)
+
+# set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
+
+# FetchContentCached(
+#   NAME Catch2
+#   GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+#   GIT_TAG        v3.7.1 # or a later release
+# )
+#FetchContent_MakeAvailable(Catch2)
+
+# silence a third-party warning on clang++-18+
+# target_compile_options(Catch2 PRIVATE
+#   $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
+# )
+
+# list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
+
+#include(Catch)
+
+#add_executable(t_ein bf16.cpp)
+#target_link_libraries(t_ein PRIVATE Catch2::Catch2WithMain ein)
+# catch_discover_tests(t_ein)
+
+
 # header jiujutsu
 # ====================================================================
 
-configure_file(
-  "${CMAKE_CURRENT_SOURCE_DIR}/ein/config.hpp.in"
-  "${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp"
-)
 
-file(GLOB_RECURSE SOURCE_HEADER_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/*.hpp")
-
-# list(APPEND SOURCE_HEADER_FILES
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/assert.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/attributes.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/concepts.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/cpuid.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics/fp16.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/numerics/bf16.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/memory.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/profiling.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/simd.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/simd_data.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/static_string.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/std/forward_like.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/types.hpp"
-#   "${CMAKE_CURRENT_SOURCE_DIR}/ein/wait.hpp"
-#)
-
-# Replace SOURCE_DIR with BINARY_DIR for each header
-# set(OUTPUT_HEADER_FILES "")
-# foreach(header ${SOURCE_HEADER_FILES})
-#     string(REPLACE "${CMAKE_CURRENT_SOURCE_DIR}" "${CMAKE_CURRENT_BINARY_DIR}/include" replaced_header "${header}")
-#     list(APPEND OUTPUT_HEADER_FILES "${replaced_header}")
-# endforeach()
-
-# Custom command to copy header files
-#add_custom_command(
-#  OUTPUT ${OUTPUT_HEADER_FILES}
-#  COMMAND ${CMAKE_COMMAND} -E copy_if_different ${SOURCE_HEADER_FILES} "${CMAKE_CURRENT_BINARY_DIR}/h"
-#  DEPENDS ${SOURCE_HEADER_FILES}
-#)
-
-# foreach(header_file IN LISTS SOURCE_HEADER_FILES)
-#   file(RELATIVE_PATH relative_path "${CMAKE_CURRENT_SOURCE_DIR}" "${header_file}")
-#   set(target_path "${CMAKE_CURRENT_BINARY_DIR}/include/${relative_path}")
-#   get_filename_component(target_dir "${target_path}" DIRECTORY)
-#   file(MAKE_DIRECTORY "${target_dir}")
-#   add_custom_command(
-#     OUTPUT "${target_path}"
-#     COMMAND ${CMAKE_COMMAND} -E copy_if_different "${header_file}" "${target_path}"
-#     DEPENDS "${header_file}"
-#   )
-#   list(APPEND OUTPUT_HEADER_FILES "${target_path}")
-# endforeach()
-
-#list(APPEND OUTPUT_HEADER_FILES ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp)
+file(GLOB_RECURSE SOURCE_HEADER_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ein/*.hpp")
 add_custom_target(ein_headers ALL DEPENDS ${SOURCE_HEADER_FILES} ${CMAKE_CURRENT_BINARY_DIR}/../include/ein/config.hpp)
 
-add_library(ein STATIC
-   ein/static_string.cpp
-   ein/cpuid.cpp
-   ein/wait.cpp
-)
+file(GLOB_RECURSE SOURCE_FILES CONFIGURE_DEPENDS "${CMAKE_CURRENT_SOURCE_DIR}/ein/*.cpp")
+add_library(ein STATIC ${SOURCE_FILES} ${SOURCE_HEADER_FILES})
 
 #  numerics.cpp
 #  pretty.cpp
 
-
-# set_target_properties(ein PROPERTIES CXX_SCAN_FOR_MODULES ON)
 add_dependencies(ein ein_headers)
+add_compile_definitions(ENABLE_TESTS=1)
 
 target_link_libraries(ein PUBLIC compiler_rt_builtins nlohmann_json::nlohmann_json spdlog::spdlog Threads::Threads)
 
+target_include_directories(ein PRIVATE ${FETCHCONTENT_BASE_DIR}/doctest-src/doctest)
 target_include_directories(ein PUBLIC
-  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/include>
+  $<BUILD_INTERFACE:${CMAKE_CURRENT_BINARY_DIR}/../include>
   $<BUILD_INTERFACE:${CMAKE_CURRENT_SOURCE_DIR}>
   $<INSTALL_INTERFACE:include/ein>)
 
@@ -103,3 +79,8 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-std=c++23>") # why isn't
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-msse4.2;-mavx;-mbmi2;-mfma;-mavx2;-ftree-vectorize;-funroll-loops;-mwaitpkg;-mmwaitx>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mavx512bw;-mavx512vl;-mavx512vbmi2;-mavx512vp2intersect;-mavx512bf16>")
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
+
+add_executable(doctest_ein doctest.cpp)
+target_include_directories(doctest_ein PRIVATE ${FETCHCONTENT_BASE_DIR}/doctest-src/doctest)
+target_link_libraries(doctest_ein PRIVATE ein)
+add_test(NAME doctest COMMAND doctest_ein)

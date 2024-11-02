@@ -194,4 +194,7 @@ namespace std {
     static constexpr bool tinyness_before = false;
     static constexpr float_round_style round_style = round_to_nearest;
   };
+
+  extern template class numeric_limits<ein::bf16>;
+
 } // namespace std

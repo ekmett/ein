@@ -1,35 +1,48 @@
-#include <catch2/catch_all.hpp>
+
+/** \file
+
+      \license
+        SPDX-FileType: Source
+        SPDX-FileCopyrightText: 2024 Edward Kmett <ekmett@gmail.com>
+        SPDX-License-Identifier: BSD-2-Clause OR Apache-2.0
+      \endlicense */
+
+/// \cond
+#ifdef ENABLE_TESTS
+#include <doctest.h>
 #include <nlohmann/json.hpp>
 #include <filesystem>
 #include <fstream>
-#include "ein/static_string.hpp"
-#include "ein/profiling.hpp"
+#include "static_string.hpp"
+#include "profiling.hpp"
 
 using namespace ein;
 
-TEST_CASE("scope enum serialization") {
+TEST_SUITE("profiling") {
+
+  TEST_CASE("scope enum serialization") {
     nlohmann::json j = ein::profiling::scope::global;
-    REQUIRE(j == "g");
+    CHECK(j == "g");
 
     j = ein::profiling::scope::process;
-    REQUIRE(j == "p");
+    CHECK(j == "p");
 
     j = ein::profiling::scope::thread;
-    REQUIRE(j == "t");
-}
+    CHECK(j == "t");
+  }
 
-TEST_CASE("event_type enum serialization") {
+  TEST_CASE("event_type enum serialization") {
     nlohmann::json j = ein::profiling::event_type::duration_begin;
-    REQUIRE(j == "B");
+    CHECK(j == "B");
 
     j = ein::profiling::event_type::duration_end;
-    REQUIRE(j == "E");
+    CHECK(j == "E");
 
     j = ein::profiling::event_type::complete;
-    REQUIRE(j == "X");
-}
+    CHECK(j == "X");
+  }
 
-TEST_CASE("profile_event JSON serialization") {
+  TEST_CASE("profile_event JSON serialization") {
     ein::profiling::profile_event<std::chrono::nanoseconds> event{
         .name = "test_event"_ss,
         .cat = "test_category"_ss,
@@ -38,13 +51,13 @@ TEST_CASE("profile_event JSON serialization") {
     };
 
     nlohmann::json j = event;
-    REQUIRE(j["name"] == "test_event");
-    REQUIRE(j["cat"] == "test_category");
-    REQUIRE(j["ph"] == "i");
-    REQUIRE(j["s"] == "t");
-}
+    CHECK(j["name"] == "test_event");
+    CHECK(j["cat"] == "test_category");
+    CHECK(j["ph"] == "i");
+    CHECK(j["s"] == "t");
+  }
 
-TEST_CASE("profile logging") {
+  TEST_CASE("profile logging") {
     ein::profiling::profile<> profiler;
     ein::profiling::profile_event<std::chrono::nanoseconds> event{
         .name = "log_event"_ss,
@@ -54,13 +67,13 @@ TEST_CASE("profile logging") {
 
     profiler.log(event);
 
-    REQUIRE(profiler.events.size() == 1);
-    REQUIRE(profiler.events[0].name == "log_event"_scs);
-    REQUIRE(profiler.events[0].ph == ein::profiling::event_type::instant);
-    REQUIRE(profiler.events[0].s == ein::profiling::scope::thread);
-}
+    CHECK(profiler.events.size() == 1);
+    CHECK(profiler.events[0].name == "log_event"_scs);
+    CHECK(profiler.events[0].ph == ein::profiling::event_type::instant);
+    CHECK(profiler.events[0].s == ein::profiling::scope::thread);
+  }
 
-TEST_CASE("profile_scope automatic saving") {
+  TEST_CASE("profile_scope automatic saving") {
     std::filesystem::path test_path = "test_profile.json";
     {
         ein::profiling::profile_scope<> profiler(test_path);
@@ -73,8 +86,13 @@ TEST_CASE("profile_scope automatic saving") {
         profiler.p.log(event);
     } // `profile_scope` destructor should save the profile here
 
-    REQUIRE(std::filesystem::exists(test_path));
+    CHECK(std::filesystem::exists(test_path));
 
     // Clean up
     std::filesystem::remove(test_path);
-}
+  }
+
+} // TEST_SUITE("profiling")
+
+#endif
+/// \endcond

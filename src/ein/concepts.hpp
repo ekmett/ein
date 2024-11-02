@@ -26,6 +26,8 @@
     \param x the expression to check returns a result that satisfies it
     \returns x */
 
+#include <concepts>
+
 #define ein_ensures(concept, x) \
   ( \
     []<typename T> static constexpr noexcept { \
