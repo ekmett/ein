@@ -89,12 +89,11 @@ auto with_waiter(auto k) noexcept {
 /// \}
 }
 
-#ifdef EIN_DOCTEST
+#ifdef EIN_TESTING
 #include <atomic>
 #include <thread>
 #include <chrono>
-
-TEST_SUITE("wait") {
+namespace {
   // Mock waiter that simulates waiting behavior
   struct mock_waiter {
     static inline bool supported = true;
@@ -110,8 +109,11 @@ TEST_SUITE("wait") {
       std::this_thread::sleep_for(std::chrono::milliseconds(timer));
     }
   };
+}
 
-  TEST_CASE("wait_until with mock_waiter") {
+TEST_CASE("wait","[wait]") {
+
+  SECTION("wait_until with mock_waiter") {
     using namespace ein;
 
     volatile int data = 0;
@@ -131,7 +133,7 @@ TEST_SUITE("wait") {
     updater.join();
   }
 
-  TEST_CASE("wait_until with platform waiter") {
+  SECTION("wait_until with platform waiter") {
     using namespace ein;
 
     volatile int data = 0;
@@ -150,5 +152,5 @@ TEST_SUITE("wait") {
 
     updater.join();
   }
-} // TEST_SUITE("wait")
-#endif // EIN_DOCTEST
+}
+#endif

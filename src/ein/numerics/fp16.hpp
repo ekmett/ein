@@ -186,21 +186,19 @@ namespace std {
 
 } // namespace std
 
-#ifdef EIN_DOCTEST
-
-TEST_SUITE("fp16") {
+#ifdef EIN_TESTING
+TEST_CASE("fp16","[fp16]") {
   using namespace ein;
-  using doctest::Approx;
+  using Catch::Approx;
 
-  TEST_CASE("fp16 default constructors and conversion") {
-
+  SECTION("fp16 default constructors and conversion") {
     CHECK(fp16(0.5f).content == Approx(0.5f));
     CHECK(0.25_fp16 .content == Approx(0.25f));
     CHECK(static_cast<float>(1.0_fp16) == Approx(1.0f));
     CHECK(static_cast<_Float16>(0.75_fp16) == Approx(_Float16(0.75f)));
   }
 
-  TEST_CASE("fp16 comparison operators") {
+  SECTION("fp16 comparison operators") {
     CHECK(0.5_fp16 == 0.5_fp16);
     CHECK(0.1_fp16 < 0.2_fp16);
     CHECK(0.3_fp16 > 0.2_fp16);
@@ -208,25 +206,25 @@ TEST_SUITE("fp16") {
     CHECK(0.2_fp16 >= 0.2_fp16);
   }
 
-  TEST_CASE("fp16 swap function") {
+  SECTION("fp16 swap function") {
     fp16 x(1.0_fp16), y(2.0_fp16);
     swap(x, y);
     CHECK(x == fp16(2.0_fp16));
     CHECK(y == fp16(1.0_fp16));
   }
 
-  TEST_CASE("fp16 bit operations") {
+  SECTION("fp16 bit operations") {
     fp16 val = fp16::from_bits(0x3C00);
     CHECK(val.to_bits() == 0x3C00);
     CHECK(fp16::from_bits(0x7C00) == std::numeric_limits<fp16>::infinity());
   }
 
-  TEST_CASE("fp16 isnan function") {
+  SECTION("fp16 isnan function") {
     CHECK(std::isnan(fp16::from_bits(0x7FFF)));
     CHECK_FALSE(std::isnan(fp16(1.0_fp16)));
   }
 
-  TEST_CASE("fp16 numeric_limits") {
+  SECTION("fp16 numeric_limits") {
     using nl = std::numeric_limits<fp16>;
 
     CHECK(nl::is_specialized);
@@ -242,6 +240,5 @@ TEST_SUITE("fp16") {
     CHECK(std::isnan(nl::signaling_NaN()));
     CHECK(nl::denorm_min() == fp16::from_bits(0));
   }
-
-} // TEST_SUITE("fp16")
-#endif // DOCTEST_MAJOR_VERSION
+}
+#endif

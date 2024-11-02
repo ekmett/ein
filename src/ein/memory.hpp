@@ -79,12 +79,12 @@ unique_str dup(
 
 } // ein
 
-#ifdef EIN_DOCTEST
+#ifdef EIN_TESTING
 
-TEST_SUITE("memory") {
+TEST_CASE("memory","[memory]") {
   using namespace ein;
 
-  TEST_CASE("unique_str manages strdup-allocated strings") {
+  SECTION("unique_str manages strdup-allocated strings") {
     const char* original = "Hello, World!";
     unique_str managed_str = dup(original);
 
@@ -92,7 +92,7 @@ TEST_SUITE("memory") {
     CHECK(std::strcmp(managed_str.get(), original) == 0);
   }
 
-  TEST_CASE("unique_c_ptr manages malloc-allocated memory") {
+  SECTION("unique_c_ptr manages malloc-allocated memory") {
     constexpr size_t size = 1024;
     ein::unique_c_ptr<char> managed_ptr(static_cast<char*>(std::malloc(size)));
 
@@ -100,7 +100,7 @@ TEST_SUITE("memory") {
     std::memset(managed_ptr.get(), 0, size);
   }
 
-  TEST_CASE("mmap_ptr manages mmap-allocated memory") {
+  SECTION("mmap_ptr manages mmap-allocated memory") {
     constexpr size_t size = 4096;
     void* ptr = mmap(nullptr, size, PROT_READ | PROT_WRITE, MAP_PRIVATE | MAP_ANONYMOUS, -1, 0);
     CHECK(ptr != MAP_FAILED);
@@ -108,6 +108,5 @@ TEST_SUITE("memory") {
     mmap_ptr managed_mmap = make_mmap_ptr(ptr, size);
     CHECK(managed_mmap != nullptr);
   }
-} // TEST_SUITE("memory")
-
-#endif // EIN_DOCTEST
+}
+#endif

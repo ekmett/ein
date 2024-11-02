@@ -13,17 +13,20 @@ fetchcontentcached(
   GIT_PROGRESS TRUE
 )
 
-FetchContentCached(
-  NAME doctest
-  GIT_REPOSITORY https://github.com/doctest/doctest.git
-  GIT_TAG v2.4.11
-  SOURCE_SUBDIR doctest
+set(CATCH_INSTALL_DOCS OFF CACHE BOOL "skip catch docs")
+
+fetchcontentcached(
+  NAME Catch2
+  GIT_REPOSITORY https://github.com/catchorg/Catch2.git
+  GIT_TAG        v3.7.1 # or a later release
+)
+# silence a third-party warning on clang++-18+
+target_compile_options(Catch2 PRIVATE
+  $<$<AND:$<CXX_COMPILER_ID:Clang>,$<VERSION_GREATER_EQUAL:$<CXX_COMPILER_VERSION>,18>>:-Wno-unused-but-set-variable>
 )
 
-add_library(doctest_includes INTERFACE)
-target_include_directories(doctest_includes INTERFACE "${FETCHCONTENT_BASE_DIR}/doctest-src/doctest")
-list(APPEND CMAKE_MODULE_PATH "${FETCHCONTENT_BASE_DIR}/doctest-src/scripts/cmake")
-include(doctest)
+list(APPEND CMAKE_MODULE_PATH "${Catch2_SOURCE_DIR}/extras")
+
 
 # header jiujutsu
 # ====================================================================
@@ -105,6 +108,7 @@ target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-mavx512f;-mavx512dq;-mav
 target_compile_options(ein PUBLIC "$<${CXX_GccOrClang}:-Wno-unqualified-std-cast-call>")
 
 add_executable(ein_tests ein/tests.cpp)
-target_link_libraries(ein_tests PRIVATE ein doctest_includes)
-# add_test(NAME doctest COMMAND doctest_ein)
-doctest_discover_tests(ein_tests)
+target_link_libraries(ein_tests PRIVATE ein Catch2::Catch2WithMain)
+
+include(Catch)
+catch_discover_tests(ein_tests)
