@@ -26,10 +26,10 @@ var NAVTREE =
 [
   [ "ein", "index.html", [
     [ "License", "license_page.html", [
-      [ "BSD 2-Clause License", "license_page.html#autotoc_md11", null ],
-      [ "Apache License", "license_page.html#autotoc_md12", [
-        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md13", null ],
-        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md14", null ]
+      [ "BSD 2-Clause License", "license_page.html#autotoc_md15", null ],
+      [ "Apache License", "license_page.html#autotoc_md16", [
+        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md17", null ],
+        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md18", null ]
       ] ]
     ] ],
     [ "Code of Conduct", "code_of_conduct_page.html", [
@@ -47,10 +47,10 @@ var NAVTREE =
       [ "Attribution", "code_of_conduct_page.html#autotoc_md10", null ]
     ] ],
     [ "Contribution Guidelines", "contributing_page.html", [
-      [ "Exceptions", "contributing_page.html#autotoc_md15", null ],
-      [ "SPDX Documentation", "contributing_page.html#autotoc_md16", null ],
-      [ "Software Bill of Materials", "contributing_page.html#autotoc_md17", null ],
-      [ "Policy Questions", "contributing_page.html#autotoc_md18", null ]
+      [ "Exceptions", "contributing_page.html#autotoc_md11", null ],
+      [ "SPDX Documentation", "contributing_page.html#autotoc_md12", null ],
+      [ "Software Bill of Materials", "contributing_page.html#autotoc_md13", null ],
+      [ "Policy Questions", "contributing_page.html#autotoc_md14", null ]
     ] ],
     [ "Security Policy", "security_policy_page.html", [
       [ "Supported Versions", "security_policy_page.html#autotoc_md19", null ],

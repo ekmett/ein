@@ -8,8 +8,8 @@ var searchData=
   ['bf16_5',['bf16',['../structein_1_1bf16.html',1,'ein::bf16'],['../structein_1_1bf16.html#ad1ea01a9318dc2b0cee606c203a301fc',1,'ein::bf16::bf16() noexcept=default'],['../structein_1_1bf16.html#ac5f9c503ec58e5958397d9978a6275da',1,'ein::bf16::bf16(float f) noexcept'],['../structein_1_1bf16.html#a1756f7f285ffe6ae802739619f49231a',1,'ein::bf16::bf16(__bf16 f) noexcept'],['../structein_1_1bf16.html#a1d1bde135328a7c30654aadd43825fde',1,'ein::bf16::bf16(bf16 const &amp;) noexcept=default'],['../structein_1_1bf16.html#a0d16d474530be6136b9145a861f0b892',1,'ein::bf16::bf16(bf16 &amp;&amp;) noexcept=default']]],
   ['bf16_2ecpp_6',['bf16.cpp',['../bf16_8cpp.html',1,'']]],
   ['bf16_2ehpp_7',['bf16.hpp',['../bf16_8hpp.html',1,'']]],
-  ['bill_20of_20materials_8',['Software Bill of Materials',['../contributing_page.html#autotoc_md17',1,'']]],
+  ['bill_20of_20materials_8',['Software Bill of Materials',['../contributing_page.html#autotoc_md13',1,'']]],
   ['bp_9',['bp',['../namespaceein_1_1profiling.html#a4fd0fbcb9a46b54e58f8a779e988270b',1,'ein::profiling::profile_event']]],
-  ['bsd_202_20clause_20license_10',['BSD 2-Clause License',['../license_page.html#autotoc_md11',1,'']]],
+  ['bsd_202_20clause_20license_10',['BSD 2-Clause License',['../license_page.html#autotoc_md15',1,'']]],
   ['bytesize_11',['bytesize',['../group__simd.html#af34fa79e65d1522f29b99af1a45f8dd7',1,'ein::simd']]]
 ];

@@ -1,5 +1,7 @@
 <map id="simd_data.hpp" name="simd_data.hpp">
-<area shape="rect" id="Node000001" title=" " alt="" coords="5,5,124,31"/>
-<area shape="rect" id="Node000002" href="$simd_8hpp.html" title=" " alt="" coords="23,79,106,104"/>
-<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,44,67,79,62,79,62,44"/>
+<area shape="rect" id="Node000001" title=" " alt="" coords="41,5,159,31"/>
+<area shape="rect" id="Node000002" href="$simd_8hpp.html" title=" " alt="" coords="5,79,88,104"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="85,43,57,80,53,77,81,40"/>
+<area shape="rect" id="Node000003" href="$tests_8cpp.html" title=" " alt="" coords="113,79,194,104"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="119,40,147,77,143,80,115,43"/>
 </map>
