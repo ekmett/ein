@@ -120,8 +120,8 @@ jobs:
         timeout-minutes: 10
 
   traditional-build-macos:
-    name: "Build: x64 macos-15"
-    runs-on: macos-15
+    name: "Build: x64 macos-13"
+    runs-on: macos-13
     steps:
       - uses: actions/checkout@v4
       - uses: ./.github/actions/setup/macos/compiler
