@@ -80,7 +80,9 @@ option(CODE_COVERAGE "Enable code coverage instrumentation" ON)
 
 if(CODE_COVERAGE)
   set(CMAKE_UNITY_BUILD OFF)
+  set(CMAKE_UNITY_BUILD_BATCH_SIZE 0)
 endif()
+
 option(ENABLE_TESTS "Enable tests" ON)
 option(PRECOMPILE_HEADERS "Use precompiled headers" OFF)
 option(BUILD_NATIVE "Build for current host only" ON)
