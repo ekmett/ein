@@ -19,13 +19,6 @@
 #include "types.hpp"
 #include "simd_data.hpp"
 
-#ifdef __AVX512F__
-#define IF512(x,y) x
-#define ON512(x) x
-#else
-#define IF512(x,y) y
-#define ON512(x)
-#endif
 
 using namespace std;
 
@@ -191,7 +184,7 @@ public:
   /// \name iterable
   /// \{
 
-  /// access the element in the \p i th lane
+  /// \brief access the element in the \p i th lane
   ein_nodiscard ein_inline ein_artificial ein_const ein_hidden
   constexpr T & operator[](std::size_t i) noexcept { return reinterpret_cast<T *>(&data)[i]; }
 
@@ -294,14 +287,14 @@ public:
   /// \hideinlinesource
   friend ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator +(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a + b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a + b; }) {
     return x.data + y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator +=(simd other) noexcept
-  requires requires (data_t a, data_t b) { a += b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a += b; }) {
     data += other.data;
     return *this;
   }
@@ -309,14 +302,14 @@ public:
   /// \hideinlinesource
   friend ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator -(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a - b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a - b; }) {
     return x.data - y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator -=(simd other) noexcept
-  requires requires (data_t a, data_t b) { a -= b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a -= b; }) {
     data -= other.data;
     return *this;
   }
@@ -324,14 +317,14 @@ public:
   /// \hideinlinesource
   friend ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator *(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a * b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a * b; }) {
     return x.data * y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator *=(simd other) noexcept
-  requires requires (data_t a, data_t b) { a *= b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a *= b; })   {
     data *= other.data;
     return *this;
   }
@@ -339,14 +332,14 @@ public:
   /// \hideinlinesource
   friend ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator / (simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a / b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a / b; }) {
     return x.data / y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator /= (simd other) noexcept
-  requires (requires (data_t a, data_t b) { a /= b; }) {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a /= b; }) {
     data /= other.data;
     return *this;
   }
@@ -355,14 +348,14 @@ public:
   template <typename U> friend
   ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator &(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a & b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a & b; }) {
     return x.data & y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator &=(simd other) noexcept
-  requires requires (data_t a, data_t b) { a &= b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a &= b; }) {
     data &= other.data;
     return *this;
   }
@@ -371,14 +364,14 @@ public:
   template <typename U> friend
   ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator |(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a | b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a | b; }) {
     return x.data | y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator |= (simd other) noexcept
-  requires (requires (data_t a, data_t b) { a |= b; }) {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a |= b; }) {
     data |= other.data;
     return *this;
   }
@@ -387,14 +380,14 @@ public:
   friend
   ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator ^(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a ^ b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a ^ b; })  {
     return x.data ^ y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator ^= (simd other) noexcept
-  requires requires (data_t a, data_t b) { a ^= b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a ^= b; }) {
     data ^= other.data;
     return *this;
   }
@@ -402,14 +395,14 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator + () const noexcept
-  requires requires (data_t x) { + x; } {
+  requires (has_lifted_operations<T> && requires (data_t x) { + x; }) {
     return + data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   constexpr simd operator - () const noexcept
-  requires requires (data_t x) { - x; } {
+  requires (has_lifted_operations<T> && requires (data_t x) { - x; }) {
     return - data;
   }
 
@@ -420,7 +413,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator--() noexcept
-  requires requires (data_t x) { --x; } {
+  requires (has_lifted_operations<T> && requires (data_t x) { --x; }) {
     --data;
     return *this;
   }
@@ -429,7 +422,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd operator--(int) noexcept
-  requires requires (data_t x) { x--; } {
+  requires (has_lifted_operations<T> && requires (data_t x) { x--; }) {
     simd t = *this;
     data--;
     return t;
@@ -439,7 +432,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator++() noexcept
-  requires requires (data_t x) { ++x; } {
+  requires (has_lifted_operations<T> && requires (data_t x) { ++x; }) {
     ++data;
     return *this;
   }
@@ -448,7 +441,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd operator++(int) noexcept
-  requires requires (data_t x) { x++; } {
+  requires (has_lifted_operations<T> && requires (data_t x) { x++; }) {
     simd t = *this;
     data++;
     return t;
@@ -459,7 +452,7 @@ public:
   template <size_t K>
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr simd operator >>(simd x, imm_t<K>) noexcept
-  requires requires (data_t a) { a >> static_cast<T>(K); } {
+  requires (has_lifted_operations<T> && requires (data_t a) { a >> static_cast<T>(K); }) {
     return x.data >> static_cast<T>(K);
   }
 
@@ -467,7 +460,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr simd operator >>(simd x, T y) noexcept
-  requires requires (data_t a, T y) { a >> y; } {
+  requires (has_lifted_operations<T> && requires (data_t a, T y) { a >> y; }) {
     return x.data >> y;
   }
 
@@ -475,7 +468,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr simd operator >>(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a >> b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a >> b; }) {
     return x.data >> y.data;
   }
 
@@ -484,9 +477,9 @@ public:
   /// \brief shift left by an immediate constant
   /// \hideinlinesource
   template <size_t K>
-  requires requires (data_t a) { a << static_cast<T>(K); }
   ein_inline ein_artificial ein_pure ein_hidden
-  friend constexpr simd operator <<(simd x, imm_t<K>) noexcept {
+  friend constexpr simd operator <<(simd x, imm_t<K>) noexcept
+  requires (has_lifted_operations<T> && requires (data_t a) { a << static_cast<T>(K); }) {
     return x.data << static_cast<T>(K);
   }
 
@@ -494,7 +487,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr simd operator <<(simd x, T y) noexcept
-  requires requires (data_t x, T y) { x << y; } {
+  requires (has_lifted_operations<T> && requires (data_t a, T b) { a << b; }) {
     return x.data << y;
   }
 
@@ -502,7 +495,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr simd operator <<(simd x, simd y) noexcept
-  requires requires (data_t a, data_t b) { a << b; } {
+  requires (has_lifted_operations<T> && requires (data_t a, data_t b) { a << b; }) {
     return x.data << y.data;
   }
 
@@ -513,7 +506,7 @@ public:
   template <size_t K>
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator >>=(imm_t<K>) noexcept
-  requires requires (data_t a) { a >>= static_cast<T>(K); } {
+  requires (has_lifted_operations<T> && requires (data_t a) { a >>= static_cast<T>(K); }) {
     data >>= static_cast<T>(K);
     return *this;
   }
@@ -522,7 +515,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator >>=(T y) noexcept
-  requires requires (data_t x, T y) { x >>= y; } {
+  requires (has_lifted_operations<T> && requires (data_t a, T b) { a >>= b; }) {
     data >>= y;
     return *this;
   }
@@ -531,7 +524,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator >>=(simd y) noexcept
-  requires requires (data_t a) { a >>= a; } {
+  requires (has_lifted_operations<T> && requires (data_t a) { a >>= a; }) {
     data >>= y.data;
     return *this;
   }
@@ -541,8 +534,8 @@ public:
   template <size_t K>
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator <<=(imm_t<K>) noexcept
-  requires requires (data_t x) { x <<= K; } {
-    data <<= K;
+  requires (has_lifted_operations<T> && requires (data_t a) { a <<= static_cast<T>(K); }) {
+    data <<= static_cast<T>(K);
     return *this;
   }
 
@@ -552,7 +545,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator <<=(T y) noexcept
-  requires requires (data_t x, T y) { x <<= y; } {
+  requires (has_lifted_operations<T> && requires (data_t a, T b) { a <<= b; }) {
     data <<= y;
     return *this;
   }
@@ -561,7 +554,7 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_hidden
   constexpr simd & operator <<=(simd y) noexcept
-  requires (requires (data_t x) { x >>= x; }) {
+  requires (has_lifted_operations<T> && requires (data_t a) { a <<= a; }) {
     data <<= y.data;
     return *this;
   }
@@ -606,42 +599,42 @@ public:
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr mask_t operator < (simd x, simd y) noexcept
-  requires (!has_mmask<T,N> && requires (data_t a) { { a < a } -> std::same_as<mask_t>; }) {
+  requires (!has_mmask<T,N> && (has_lifted_operations<T> && requires (data_t a) { { a < a } -> std::same_as<mask_t>; })) {
     return x.data < y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr mask_t operator > (simd x, simd y) noexcept
-  requires (!has_mmask<T,N> && requires (data_t a) { { a > a } -> std::same_as<mask_t>; }) {
+  requires (!has_mmask<T,N> && (has_lifted_operations<T> && requires (data_t a) { { a > a } -> std::same_as<mask_t>; })) {
     return x.data > y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr mask_t operator <= (simd x, simd y) noexcept
-  requires (!has_mmask<T,N> && requires (data_t a) { { a <= a } -> std::same_as<mask_t>; }) {
+  requires (!has_mmask<T,N> && (has_lifted_operations<T> && requires (data_t a) { { a <= a } -> std::same_as<mask_t>; })  ) {
     return x.data <= y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr mask_t operator >= (simd x, simd y) noexcept
-  requires (!has_mmask<T,N> && requires (data_t a) { { a >= a } -> std::same_as<mask_t>; }) {
+  requires (!has_mmask<T,N> && (has_lifted_operations<T> && requires (data_t a) { { a >= a } -> std::same_as<mask_t>; })) {
     return x.data >= y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr mask_t operator == (simd x, simd y) noexcept
-  requires (!has_mmask<T,N> && requires (data_t a) { { a == a } -> std::same_as<mask_t>; }) {
+  requires (!has_mmask<T,N> && (has_lifted_operations<T> && requires (data_t a) { { a == a } -> std::same_as<mask_t>; })) {
     return x.data == y.data;
   }
 
   /// \hideinlinesource
   ein_inline ein_artificial ein_pure ein_hidden
   friend constexpr mask_t operator != (simd x, simd y) noexcept
-  requires (!has_mmask<T,N> && requires (data_t a) { { a != a } -> std::same_as<mask_t>; }) {
+  requires (!has_mmask<T,N> && (has_lifted_operations<T> && requires (data_t a) { { a != a } -> std::same_as<mask_t>; })) {
     return x.data != y.data;
   }
 
@@ -650,12 +643,12 @@ public:
 #ifdef __AVX512F__
   // implement masked compares
 
-/** \cond */
+/// \cond
 #define EIN_COMPARE_OP_SIZE(bs,cmd) \
          if constexpr (bytesize == bs) return cmd(a.it(),b.it()); \
     else
 #define EIN_COMPARE_OP_TY(opfix,ty,infix) \
-         if constexpr (std::is_same_v<T,ty>) { \
+         if constexpr (std::is_same_v<storage_type<T>,ty>) { \
      EIN_COMPARE_OP_SIZE(16,_mm_cmp##opfix##_##infix##_mask) \
      EIN_COMPARE_OP_SIZE(32,_mm256_cmp##opfix##_##infix##_mask) \
      EIN_COMPARE_OP_SIZE(64,_mm512_cmp##opfix##_##infix##_mask) \
@@ -680,38 +673,42 @@ public:
       EIN_COMPARE_OP_TY(opfix,uint16_t,epu16) \
       EIN_COMPARE_OP_TY(opfix,uint32_t,epu32) \
       EIN_COMPARE_OP_TY(opfix,uint64_t,epu64) \
-           static_assert(false); \
+      ON512FP16(
+        EIN_COMPARE_OP_TY(opfix,_Float16,ph) \
+        EIN_COMPARE_OP_TY(opfix,__fp16,ph) \
+      ) \
+      static_assert(false); \
     }
-/** \endcond */
+/// \endcond
 
   ein_inline ein_artificial ein_pure
   friend constexpr mask_t operator < (simd a, simd b) noexcept
-  requires has_mmask<T,N> && simd_builtin<T> {
+  requires (has_mmask<T,N> && simd_builtin<storage_type<T>> && has_lifted_operations<T> && not_one_of_t<T,__bf16>) {
     EIN_COMPARE_OP(<,lt)
   }
   ein_inline ein_artificial ein_pure
   friend constexpr mask_t operator > (simd a, simd b) noexcept
-  requires has_mmask<T,N> && simd_builtin<T> {
+  requires (has_mmask<T,N> && simd_builtin<storage_type<T>> && has_lifted_operations<T> && not_one_of_t<T,__bf16>) {
     EIN_COMPARE_OP(>,gt)
   }
   ein_inline ein_artificial ein_pure
   friend constexpr mask_t operator <= (simd a, simd b) noexcept
-  requires has_mmask<T,N> && simd_builtin<T> {
+  requires (has_mmask<T,N> && simd_builtin<storage_type<T>> && has_lifted_operations<T> && not_one_of_t<T,__bf16>) {
     EIN_COMPARE_OP(<=,le)
   }
   ein_inline ein_artificial ein_pure
   friend constexpr mask_t operator >= (simd a, simd b) noexcept
-  requires has_mmask<T,N> && simd_builtin<T> {
+  requires (has_mmask<T,N> && simd_builtin<storage_type<T>> && has_lifted_operations<T> && not_one_of_t<T,__bf16>) {
     EIN_COMPARE_OP(>=,ge)
   }
   ein_inline ein_artificial ein_pure
   friend constexpr mask_t operator == (simd a, simd b) noexcept
-  requires has_mmask<T,N> && simd_builtin<T> {
+  requires (has_mmask<T,N> && simd_builtin<storage_type<T>> && has_lifted_operations<T> && not_one_of_t<T,__bf16>) {
     EIN_COMPARE_OP(==,eq)
   }
   ein_inline ein_artificial ein_pure
   friend constexpr mask_t operator != (simd a, simd b) noexcept
-  requires has_mmask<T,N> && simd_builtin<T> {
+  requires (has_mmask<T,N> && simd_builtin<storage_type<T>> && has_lifted_operations<T> && not_one_of_t<T,__bf16>) {
     EIN_COMPARE_OP(!=,ne)
   }
 
@@ -749,29 +746,36 @@ public:
 /** \endcond */
 #endif
 
-    } else {
-      if constexpr(std::is_same_v<T,float>) {
-             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));
-        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));
-  ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));)
-        else static_assert(false);
-      } else if constexpr (std::is_same_v<T,double>) {
-             if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));
-        else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));
-  ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));)
-/** \cond */
+      } else {
+        if constexpr(std::is_same_v<T,float>) {
+               if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));
+          else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));
+    ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_ps)(a.it(),b.it(),static_cast<int>(imm8));)
+          else static_assert(false);
+        } else if constexpr (std::is_same_v<T,double>) {
+               if constexpr (bytesize==16)  return ein_suffix(_mm_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));
+          else if constexpr (bytesize==32)  return ein_suffix(_mm256_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));
+    ON512(else if constexpr (bytesize==64)  return ein_suffix(_mm512_cmp_pd)(a.it(),b.it(),static_cast<int>(imm8));)
+        } else
+ON512FP16(     if constexpr (one_of_t<T,__fp16,_Float16>) {
+          else if constexpr (bytesize==16)  return _mm_cmp_ph_mask(a.it(),b.it(),static_cast<int>(imm8));
+          else if constexpr (bytesize==32)  return _mm256_cmp_ph(a.it(),b.it(),static_cast<int>(imm8));
+          else if constexpr (bytesize==64)  return _mm512_cmp_ph_mask(a.it(),b.it(),static_cast<int>(imm8));
+        } else)
+/// \cond
 #undef ein_suffix
-/** \endcond */
-        else static_assert(false);
+/// \endcond
+               {
+              static_assert(false);
+        }
       }
     }
-  }
 
 // CMPINT
 
   /// \hideinlinesource
   template <CMPINT imm8>
-  requires one_of_t<T,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && (size_t(imm8) < 8uz)
+  requires one_of_t<storage_type<T>,uint8_t,int8_t,uint16_t,int16_t,uint32_t,int32_t,uint64_t,int64_t> && has_lifted_operations<T> && (size_t(imm8) < 8uz)
   ein_nodiscard ein_inline ein_artificial ein_pure
   friend constexpr
   mask_t cmpint(simd a, simd b) noexcept {
@@ -848,7 +852,7 @@ public:
       else if constexpr (bytesize==64) return _mm512_cmpeq_##infix##_mask(a.it(),b.it()); \
       else static_assert(false); \
     } else
-#define EIN_COMPARE512(op,infix) \
+#define EIN_COMPARE512(op,infix,imm8) \
     if consteval { \
       mask_t mask; \
       for (size_t i=0;i<N;++i) \
@@ -866,6 +870,12 @@ public:
         else if constexpr (N==8)  return _mm256_cmp##infix##_pd_mask(a.it(),b.it()); \
         else if constexpr (N==16) return _mm512_cmp##infix##_pd_mask(a.it(),b.it()); \
         else static_assert(false); \
+ON512FP16( \
+      } else if constexpr (one_of_t<T,_Float16,__fp16>) { \
+             if constexpr (N==4)  return _mm_cmp_ph_mask(a.it(),b.it(),static_cast<int>(imm8)); \
+        else if constexpr (N==8)  return _mm256_cmp_ph_mask(a.it(),b.it(),static_cast<int>(imm8)); \
+        else if constexpr (N==16) return _mm512_cmp_ph_mask(a.it(),b.it(),static_cast<int>(imm8)); \
+        else static_assert(false);) \
       } else \
       EIN_COMPARE512_CASE(int8_t,epi8) \
       EIN_COMPARE512_CASE(int16_t,epi16) \
@@ -878,43 +888,43 @@ public:
   /// \hideinlinesource
   ein_nodiscard ein_inline ein_pure
   friend constexpr mask_t operator == (simd a, simd b) noexcept
-  requires (has_mmask<T,N> && simd_builtin<T>) {
-    EIN_COMPARE512(==,eq)
+  requires (has_mmask<T,N> && has_lifted_operations<T> && simd_builtin<storage_type<T>>) {
+    EIN_COMPARE512(==,eq,CMP::EQ_OQ)
   }
 
   /// \hideinlinesource
   ein_nodiscard ein_inline ein_pure
   friend constexpr mask_t operator /= (simd a, simd b) noexcept
   requires (has_mmask<T,N> && simd_builtin<T>) {
-    EIN_COMPARE512(/=,neq)
+    EIN_COMPARE512(/=,neq,CMP::NEQ_UQ)
   }
 
   /// \hideinlinesource
   ein_nodiscard ein_inline ein_pure
   friend constexpr mask_t operator < (simd a, simd b) noexcept
   requires (has_mmask<T,N> && simd_builtin<T>) {
-    EIN_COMPARE512(<,lt)
+    EIN_COMPARE512(<,lt,CMP::LT_OQ)
   }
 
   /// \hideinlinesource
   ein_nodiscard ein_inline ein_pure
   friend constexpr mask_t operator <= (simd a, simd b) noexcept
   requires (has_mmask<T,N> && simd_builtin<T>) {
-    EIN_COMPARE512(<=,le)
+    EIN_COMPARE512(<=,le,CMP::LE_OQ)
   }
 
   /// \hideinlinesource
   ein_nodiscard ein_inline ein_pure
   friend constexpr mask_t operator > (simd a, simd b) noexcept
   requires (has_mmask<T,N> && simd_builtin<T>) {
-    EIN_COMPARE512(>,gt)
+    EIN_COMPARE512(>,gt,CMP::GT_OQ)
   }
 
   /// \hideinlinesource
   ein_nodiscard ein_inline ein_pure
   friend constexpr mask_t operator >= (simd a, simd b) noexcept
   requires (has_mmask<T,N> && simd_builtin<T>) {
-    EIN_COMPARE512(>=,ge)
+    EIN_COMPARE512(>=,ge,CMP::GE_OQ)
   }
 
   #undef EIN_COMPARE512
@@ -922,171 +932,7 @@ public:
   /// \}
   // end of comparisons
 
-  /// \name loads
-  /// \{
-
-/// \cond
-  #define EIN_SWITCH(on_m128,on_m128d,on_m128i,on_m256,on_m256d,on_m256i,on_m512,on_m512d,on_m512i) \
-               if constexpr (std::is_same_v<intrinsic_t,__m128>) { EIN_CASE(on_m128) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m128d>) { EIN_CASE(on_m128d) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m128i>) { EIN_CASE(on_m128i) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m256>) { EIN_CASE(on_m256) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m256d>) { EIN_CASE(on_m256d) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m256i>) { EIN_CASE(on_m256i) } \
-    ON512(else if constexpr (std::is_same_v<intrinsic_t,__m512>) { EIN_CASE(on_m512) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m512d>) { EIN_CASE(on_m512d) } \
-          else if constexpr (std::is_same_v<intrinsic_t,__m512i>) { EIN_CASE(on_m512i) }) \
-          else static_assert(false);
-
-#define EIN_CASE(f) return f(reinterpret_cast<arg1_t<decltype(f)>>(p));
-/// \endcond
-
-  /// \pre \p p is a pointer to memory with alignment >= \p N
-  ein_inline ein_pure ein_artificial
-  static constexpr simd load(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-      EIN_SWITCH(
-        _mm_load_ps,    _mm_load_pd,    _mm_load_epi32,
-        _mm256_load_ps, _mm256_load_pd, _mm256_load_epi32,
-        _mm512_load_ps, _mm512_load_pd, _mm512_load_epi32
-      )
-    }
-  }
-
-  ein_inline ein_pure ein_artificial
-  static constexpr simd loadu(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-      EIN_SWITCH(
-        _mm_loadu_ps,    _mm_loadu_pd,    _mm_loadu_epi32,
-        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_loadu_epi32,
-        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_epi32
-      )
-    }
-  }
-
-  /// \details legacy: may outperform \ref loadu when the data crosses a cache boundary
-  ein_inline ein_pure ein_artificial
-  static constexpr simd lddqu(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-      EIN_SWITCH(
-        _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128,
-        _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256,
-        _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_si512
-      )
-    }
-  }
-
-/// \cond
-#undef EIN_CASE
-#define EIN_CASE(f) return f(p);
-/// \endcond
-
-  /// \pre \p p is a pointer to memory with alignment >= \p N
-  /// \hideinlinesource
-  ein_inline ein_pure ein_artificial
-  static constexpr simd stream_load(T const * p) noexcept {
-    if consteval {
-      simd result;
-      for (size_t i = 0;i<N;++i)
-        result[i] = p[i];
-      return result;
-    } else {
-/// \cond
-      #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))
-      #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))
-      #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))
-      #define ein_mm_stream_load_pd(x)    cast_pd(_mm_stream_load_si128(x))
-      #define ein_mm256_stream_load_pd(x) cast_pd(_mm256_stream_load_si256(x))
-      #define ein_mm512_stream_load_pd(x) cast_pd(_mm512_stream_load_si512(x))
-      EIN_SWITCH(
-        ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128,
-        ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256,
-        ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512
-      )
-
-      #undef ein_mm_stream_load_ps
-      #undef ein_mm256_stream_load_ps
-      #undef ein_mm512_stream_load_ps
-      #undef ein_mm_stream_load_pd
-      #undef ein_mm256_stream_load_pd
-      #undef ein_mm512_stream_load_pd
-/// \endcond
-    }
-  }
-
-/// \cond
-#undef EIN_CASE
-#define EIN_CASE(f) f(p,x.it());
-/// \endcond
-
-  /// \}
-  // end of loads
-  /// \name stores
-  /// \{
-
-  ein_inline ein_artificial ein_hidden
-  friend constexpr void store(T * p, simd x) noexcept {
-    if consteval {
-      for (size_t i = 0;i<N;++i)
-        p[i] = x.data[i];
-    } else {
-      EIN_SWITCH(
-        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
-        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
-        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
-      )
-    }
-  }
-
-  ein_inline ein_artificial ein_hidden
-  friend constexpr void storeu(T * p, simd x) noexcept {
-    if consteval {
-      for (size_t i = 0;i<N;++i)
-        p[i] = x.data[i];
-    } else {
-      EIN_SWITCH(
-        _mm_store_ps,    _mm_store_pd,    _mm_store_epi32,
-        _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32,
-        _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32
-      )
-    }
-  }
-
-  ein_inline ein_artificial ein_hidden
-  friend constexpr void stream(T * p, simd x) noexcept {
-    if consteval {
-      for (size_t i = 0;i<N;++i)
-        p[i] = x.data[i];
-    } else {
-      EIN_SWITCH(
-        _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128,
-        _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256,
-        _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512
-      )
-    }
-  }
-
-#undef EIN_CASE
-#undef EIN_SWITCH
-
-  /// \}
-  // end of stores
-  /// \name scalef
+    /// \name scalef
   /// \{
 
   /// \hideinlinesource
@@ -1112,7 +958,14 @@ public:
 #ifdef __AVX512F__
         else if constexpr (bytesize==64) return _mm512_scalef_pd(x,y);
 #endif
-        else static_assert(false);
+#if defined(__AVX512FP16__) && defined(__AVX512VL__)
+      } else if constexpr (std::is_same_v<T,__fp16,_Float16>) {
+             if constexpr (bytesize==16) return _mm_scalef_ph(x,y);
+        else if constexpr (bytesize==32) return _mm256_scalef_ph(x,y);
+        else if constexpr (bytesize==64) return _mm512_scalef_ph(x,y);
+#endif
+      } else {
+        static_assert(false);
       }
     }
   }
@@ -1130,7 +983,6 @@ public:
       swap(x.data,y.data);
     }
   }
-
   /// \}
 }; // struct simd
 
@@ -1161,50 +1013,213 @@ simd(T) -> simd<T,has_simd_type<T,max_simd_size/sizeof(T)>>;
 
 /// \}
 // end of ctads
+
+#if 0
 /// \name loads
 /// \{
 
-/// load \p data from aligned memory
-/// \pre \p data has alignment >= \p N
-template <std::size_t N>
+/// \cond
+  #define EIN_SWITCH(on_m128,on_m128d,on_m128i,on_m128ph,on_m256,on_m256d,on_m256i,on_m256ph,on_m512,on_m512d,on_m512i,on_m512ph) \
+               if constexpr (std::is_same_v<intrinsic_t,__m128>) { EIN_CASE(on_m128) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m128d>) { EIN_CASE(on_m128d) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m128i>) { EIN_CASE(on_m128i) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m256>) { EIN_CASE(on_m256) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m256d>) { EIN_CASE(on_m256d) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m256i>) { EIN_CASE(on_m256i) } \
+    ON512(else if constexpr (std::is_same_v<intrinsic_t,__m512>) { EIN_CASE(on_m512) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m512d>) { EIN_CASE(on_m512d) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m512i>) { EIN_CASE(on_m512i) }) \
+          else
+ON512FP16(     if constexpr (std::is_same_v<intrinsic_t,__m128ph>) { EIN_CASE(on_m128ph) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m256ph>) { EIN_CASE(on_m256ph) } \
+          else if constexpr (std::is_same_v<intrinsic_t,__m512ph>) { EIN_CASE(on_m512ph) } \
+          else ) \
+               { static_assert(false) };
+
+#define EIN_CASE(f) return f(reinterpret_cast<arg1_t<decltype(f)>>(p));
+/// \endcond
+
+/// \pre \p p is a pointer to memory with alignment >= \p N
+template <size_t N, typename T>
 ein_inline ein_pure ein_artificial
-auto load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::load(data);
+static constexpr simd<T,N> load(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i = 0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    // No CPU has cared about the distinction in the datatype
+    // being loaded in almost 25 years, but here we are.
+    // I think the Pentium III was the last cpu that needed this distinction!
+    EIN_SWITCH(
+      _mm_load_ps,    _mm_load_pd,    _mm_load_epi32, _mm_load_ph,
+      _mm256_load_ps, _mm256_load_pd, _mm256_load_epi32, _mm256_load_ph,
+      _mm512_load_ps, _mm512_load_pd, _mm512_load_epi32, _mm512_load_ph
+    )
+  }
 }
 
-/// load \p data from unaligned memory
-template <std::size_t N>
+template <size_t N, typename T>
 ein_inline ein_pure ein_artificial
-auto loadu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::loadu(data);
+static constexpr simd<T,N> loadu(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i = 0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_loadu_ps,    _mm_loadu_pd,    _mm_loadu_epi32, _mm_loadu_ph,
+      _mm256_loadu_ps, _mm256_loadu_pd, _mm256_loadu_epi32, _mm256_loadu_ph,
+      _mm512_loadu_ps, _mm512_loadu_pd, _mm512_loadu_epi32, _mm512_loadu_ph
+    )
+  }
 }
 
-/// load \p data from unaligned memory, optimized for crossing cachelines (legacy approach)
-template <std::size_t N>
+  /// \details legacy: may outperform \ref loadu when the data crosses a cache boundary
+template <size_t N, typename T>
 ein_inline ein_pure ein_artificial
-auto lddqu(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::lddqu(data);
+static constexpr simd<T,N> lddqu(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i = 0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_loadu_ps,    _mm_loadu_pd,    _mm_lddqu_si128, _mm_loadu_ph,
+      _mm256_loadu_ps, _mm256_loadu_pd, _mm256_lddqu_si256, _mm256_loadu_ph,
+      _mm512_loadu_ps, _mm512_loadu_pd, _mm512_lddqu_si512, _mm512_loadu_ph
+    )
+  }
 }
 
-/// stream \p data from memory non-temporally, bypassing cache
-/// \pre \p data has alignment >= \p N
-template <std::size_t N>
+/// \cond
+#undef EIN_CASE
+#define EIN_CASE(f) return f(p);
+/// \endcond
+
+/// \pre \p p is a pointer to memory with alignment >= \p N
+/// \hideinlinesource
+template <size_t N, typename T>
 ein_inline ein_pure ein_artificial
-auto stream_load(auto const * data) noexcept -> simd<std::remove_cvref_t<decltype(*data)>,N> {
-  using T = std::remove_cvref_t<decltype(*data)>;
-  static_assert(has_simd_type<T,N>);
-  return simd<T,N>::stream_load(data);
+static constexpr simd<T,N> stream_load(T const * p) noexcept {
+  if consteval {
+    simd<T,N> result;
+    for (size_t i = 0;i<N;++i)
+      result[i] = p[i];
+    return result;
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+/// \cond
+    #define ein_mm_stream_load_ps(x)    cast_ps(_mm_stream_load_si128(x))
+    #define ein_mm256_stream_load_ps(x) cast_ps(_mm256_stream_load_si256(x))
+    #define ein_mm512_stream_load_ps(x) cast_ps(_mm512_stream_load_si512(x))
+    #define ein_mm_stream_load_pd(x)    cast_pd(_mm_stream_load_si128(x))
+    #define ein_mm256_stream_load_pd(x) cast_pd(_mm256_stream_load_si256(x))
+    #define ein_mm512_stream_load_pd(x) cast_pd(_mm512_stream_load_si512(x))
+    #define ein_mm_stream_load_ph(x)    cast_ph(_mm_stream_load_si128(x))
+    #define ein_mm256_stream_load_ph(x) cast_ph(_mm256_stream_load_si256(x))
+    #define ein_mm512_stream_load_ph(x) cast_ph(_mm512_stream_load_si512(x))
+    EIN_SWITCH(
+      ein_mm_stream_load_ps,    ein_mm_stream_load_pd,    _mm_stream_load_si128, ein_mm_stream_load_ph,
+      ein_mm256_stream_load_ps, ein_mm256_stream_load_pd, _mm256_stream_load_si256, ein_mm256_stream_load_ph,
+      ein_mm512_stream_load_ps, ein_mm512_stream_load_pd, _mm512_stream_load_si512, ein_mm512_stream_load_ph
+    )
+    #undef ein_mm_stream_load_ps
+    #undef ein_mm256_stream_load_ps
+    #undef ein_mm512_stream_load_ps
+    #undef ein_mm_stream_load_pd
+    #undef ein_mm256_stream_load_pd
+    #undef ein_mm512_stream_load_pd
+    #undef ein_mm_stream_load_ph
+    #undef ein_mm256_stream_load_ph
+    #undef ein_mm512_stream_load_ph
+/// \endcond
+  }
 }
+
+/// \cond
+#undef EIN_CASE
+#define EIN_CASE(f) f(p,x.it());
+/// \endcond
+
+  /// \}
+  // end of loads
+
+  /// \name stores
+  /// \{
+
+template <typename T, size_t N>
+ein_inline ein_artificial
+static constexpr void store(T * p, simd<T,N> x) noexcept {
+  if consteval {
+    for (size_t i = 0;i<N;++i)
+      p[i] = x.data[i];
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_store_ps,    _mm_store_pd,    _mm_store_epi32, _mm_store_ph,
+      _mm256_store_ps, _mm256_store_pd, _mm256_store_epi32, _mm256_store_ph,
+      _mm512_store_ps, _mm512_store_pd, _mm512_store_epi32, _mm512_store_ph
+    )
+  }
+}
+
+template <typename T, size_t N>
+ein_inline ein_artificial
+static constexpr void storeu(T * p, simd<T,N> x) noexcept {
+  if consteval {
+    for (size_t i = 0;i<N;++i)
+      p[i] = x.data[i];
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+    EIN_SWITCH(
+      _mm_storeu_ps,    _mm_storeu_pd,    _mm_storeu_epi32, _mm_storeu_ph,
+      _mm256_storeu_ps, _mm256_storeu_pd, _mm256_storeu_epi32, _mm256_storeu_ph,
+      _mm512_storeu_ps, _mm512_storeu_pd, _mm512_storeu_epi32, _mm512_storeu_ph
+    )
+  }
+}
+
+template <typename T, size_t N>
+ein_inline ein_artificial
+static constexpr void stream(T * p, simd<T,N> x) noexcept {
+  if consteval {
+    for (size_t i = 0;i<N;++i)
+      p[i] = x.data[i];
+  } else {
+    using intrinsic_t = simd_intrinsic_t<T,N>;
+/// \cond
+#define ein_mm_stream_ph(x,y) _mm_stream_si128(x,cast_si(y))
+#define ein_mm256_stream_ph(x,y) _mm256_stream_si256(x,cast_si(y))
+#define ein_mm512_stream_ph(x,y) _mm512_stream_si512(x,cast_si(y))
+    EIN_SWITCH(
+      _mm_stream_ps,    _mm_stream_pd,    _mm_stream_si128, ein_mm_stream_ph,
+      _mm256_stream_ps, _mm256_stream_pd, _mm256_stream_si256, ein_mm256_stream_ph,
+      _mm512_stream_ps, _mm512_stream_pd, _mm512_stream_si512, ein_mm512_stream_ph
+    )
+#undef ein_mm_stream_ph
+#undef ein_mm256_stream_ph
+#undef ein_mm512_stream_ph
+/// \endcond
+  }
+}
+
+#undef EIN_CASE
+#undef EIN_SWITCH
 
 /// \}
+// end of stores
+#endif
+/// \name loads
+/// \{
 
-namespace {
+namespace detail{
 
 template <typename T>
 struct simd_type_impl : std::false_type {};
@@ -1217,7 +1232,7 @@ struct simd_type_impl<simd<T,N>> : std::true_type {};
 
 /// recognizes any valid simd type
 template <typename SIMD>
-concept simd_type = simd_type_impl<SIMD>::value;
+concept simd_type = detail::simd_type_impl<SIMD>::value;
 
 /// \name shuffles
 /// \{
@@ -1270,6 +1285,7 @@ extern template struct simd<uint64_t,8>;
 extern template struct simd<double,8>;
 extern template struct simd<int8_t,64>;
 extern template struct simd<uint8_t,64>;
+// todo ein::fp16, ein::bf16, __fp16, __Float16, __bf16
 #endif
 
 /// \}

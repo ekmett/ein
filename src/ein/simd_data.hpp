@@ -15,6 +15,24 @@
 #include "numerics.hpp"
 #include "types.hpp"
 
+/// \cond
+#ifdef __AVX512F__
+#define IF512(x,y) x
+#define ON512(...) __VA_ARGS__
+#else
+#define IF512(x,y) y
+#define ON512(...)
+#endif
+
+#if defined(__AVX512VL__) && defined(__AVX512FP16__)
+#define ON512FP16(...) __VA_ARGS__
+#define IF512FP16(x,y) x
+#else
+#define ON512FP16(...)
+#define IF512FP16(x,y) y
+#endif
+/// \endcond
+
 namespace ein {
 /// \addtogroup simd
 /// \{
@@ -90,8 +108,9 @@ concept has_builtin_convertvector
         };
 
 /// \brief is this type one of the types that is handed well automatically by clang/gcc vector extensions?
+// \todo only add __fp16 and _Float16 on Sapphire Rapids
 template <typename T>
-concept simd_builtin = one_of_t<T,int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,__fp16,__bf16,_Float16,float,double>;
+concept simd_builtin = one_of_t<T,int8_t,uint8_t,int16_t,uint16_t,int32_t,uint32_t,float,double,__fp16,__bf16,_Float16>;
 
 namespace detail {
 template <size_t N> struct si {};
@@ -112,6 +131,13 @@ template <> struct ps<512> { using type = __m512; };
 template <> struct pd<512> { using type = __m512d; };
 #endif
 
+#if defined(__AVX512FP16__) && defined(__AVX512VL__)
+template <size_t N> struct ph {};
+template <> struct ph<128> { using type = __m128ph; };
+template <> struct ph<256> { using type = __m256ph; };
+template <> struct ph<512> { using type = __m512ph; };
+#endif
+
 template <typename T, size_t N> struct simd_intrinsic {};
 
 template <size_t N>
@@ -124,7 +150,31 @@ struct simd_intrinsic<double,N> {
   using type = typename pd<N*sizeof(double)*8>::type;
 };
 
-template <not_one_of_t<float,double> T,size_t N>
+#if defined(__AVX512FP16__) && defined(__AVX512VL__)
+template <size_t N>
+struct simd_intrinsic<__fp16,N> {
+  using type = typename ph<N*sizeof(__fp16)*8>::type;
+};
+
+template <size_t N>
+struct simd_intrinsic<_Float16,N> {
+  using type = typename ph<N*sizeof(_Float16)*8>::type;
+};
+
+template <size_t N>
+struct simd_intrinsic<ein::fp16,N> {
+  using type = typename ph<N*sizeof(ein::fp16)*8>::type;
+};
+#endif
+
+template <
+#if defined(__AVX512FP16__) && defined(__AVX512VL__)
+  not_one_of_t<float,double,__fp16,_Float16,ein::fp16> T,
+#else
+  not_one_of_t<float,double> T,
+#endif
+  size_t N
+>
 struct simd_intrinsic<T,N> {
   using type = typename ps<N*sizeof(T)*8>::type;
 };
@@ -240,6 +290,35 @@ __m512i cast_si(__m512d a) noexcept { return _mm512_castpd_si512(a); }
 
 ein_nodiscard ein_inline ein_const ein_artificial
 __m512i cast_si(__m512i a) noexcept { return a; }
+
+#if defined(__AVX512FP16__) && defined(__AVX512VL__)
+__m128i cast_si(__m128ph a) noexcept { return _mm_castph_si128(a); }
+__m128 cast_ps(__m128ph a) noexcept { return _mm_castph_ps(a); }
+__m128d cast_pd(__m128ph a) noexcept { return _mm_castph_pd(a); }
+__m128ph cast_ph(__m128ph a) noexcept { return a; }
+
+__m256i cast_si(__m256ph a) noexcept { return _mm256_castph_si256(a); }
+__m256 cast_ps(__m256ph a) noexcept { return _mm256_castph_ps(a); }
+__m256d cast_pd(__m256ph a) noexcept { return _mm256_castph_pd(a); }
+__m256ph cast_ph(__m256ph a) noexcept { return a; }
+
+__m512i cast_si(__m512ph a) noexcept { return _mm512_castph_si512(a); }
+__m512 cast_ps(__m512ph a) noexcept { return _mm512_castph_ps(a); }
+__m512d cast_pd(__m512ph a) noexcept { return _mm512_castph_pd(a); }
+__m512ph cast_ph(__m512ph a) noexcept { return a; }
+
+__m128ph cast_ph(__m128 a) noexcept { return _mm_castps_ph(a); }
+__m256ph cast_ph(__m256 a) noexcept { return _mm256_castps_ph(a); }
+__m512ph cast_ph(__m512 a) noexcept { return _mm512_castps_ph(a); }
+
+__m128ph cast_ph(__m128i a) noexcept { return _mm_castsi128_ph(a); }
+__m256ph cast_ph(__m256i a) noexcept { return _mm256_castsi256_ph(a); }
+__m512ph cast_ph(__m512i a) noexcept { return _mm512_castsi512_ph(a); }
+
+__m128ph cast_ph(__m128d a) noexcept { return _mm_castpd_ph(a); }
+__m256ph cast_ph(__m256d a) noexcept { return _mm256_castpd_ph(a); }
+__m512ph cast_ph(__m512d a) noexcept { return _mm512_castpd_ph(a); }
+#endif // __AVX512FP16__ && __AVX512VL__
 
 #endif // __AVX512F__
 

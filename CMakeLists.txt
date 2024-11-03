@@ -18,6 +18,9 @@ set(CMAKE_CXX_SCAN_FOR_MODULES OFF)
 SET(SPDLOG_BUILD_PIC ON CACHE BOOL "Force PIC for SPDLOG")
 set(CMAKE_POSITION_INDEPENDENT_CODE ON)
 set(CMAKE_POSITION_INDEPENDENT_)
+set(FETCHCONTENT_QUIET ON)  # Suppresses FetchContent output
+set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
+set(CMAKE_COLOR_DIAGNOSTICS ON)
 
 list(APPEND CMAKE_MODULE_PATH "${CMAKE_CURRENT_SOURCE_DIR}/etc/cmake")
 
@@ -26,6 +29,9 @@ include(FetchContentCached)
 include(CheckIPOSupported)
 include(CheckPIESupported)
 
+# pie
+# ====================================================================
+
 check_pie_supported(OUTPUT_VARIABLE pie_supported LANGUAGES CXX)
 if (pie_supported)
   # message(STATUS "PIE is supported: ${pie_supported}")
@@ -33,6 +39,8 @@ else()
   # message(WARNING "PIE is not supported: ${pie_supported}")
 endif()
 
+# lto
+# ====================================================================
 
 check_ipo_supported(RESULT lto_supported OUTPUT lto_check_output)
 if (lto_supported)
@@ -43,43 +51,19 @@ else()
   message(WARNING "IPO/LTO is not supported: ${lto_check_output}")
 endif()
 
-
-# set(CMAKE_EXPERIMENTAL_CXX_IMPORT_STD "0e5b6991-d74f-4b3d-a41c-cf096e0b2508")
-# set(CMAKE_CXX_MODULE_STD TRUE)
-# set(CMAKE_EXPERIMENTAL_CXX_MODULES TRUE)
-
-
-# ccache
+# tweak ccache settings
 # ====================================================================
 
-set(FETCHCONTENT_QUIET ON)  # Suppresses FetchContent output
-
-# if(CMAKE_SYSTEM_NAME STREQUAL "Linux")
-#   fetchcontentcached(
-#     NAME ccache
-#     URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-linux-x86_64.tar.xz
-#     URL_HASH SHA256=80cab87bd510eca796467aee8e663c398239e0df1c4800a0b5dff11dca0b4f18
-#   )
-# elseif(CMAKE_SYSTEM_NAME STREQUAL "Darwin")
-#   fetchcontentcached(
-#     NAME ccache
-#     URL https://github.com/ccache/ccache/releases/download/v4.10.2/ccache-4.10.2-darwin.tar.gz
-#     URL_HASH SHA256=d90514fff15943a8607e84e3f42d45f823915a92f99984f3fc88202f6295d1e8
-#   )
-# endif()
-
 set(CMAKE_CXX_COMPILER_LAUNCHER "${CMAKE_CURRENT_SOURCE_DIR}/bin/ccache.sh")
-set(CMAKE_EXPORT_COMPILE_COMMANDS ON)
-set(CMAKE_COLOR_DIAGNOSTICS ON)
 set(ENV{CCACHE_DIR} "${CMAKE_CURRENT_SOURCE_DIR}/.ccache")
 
 # options
 # ====================================================================
 
-option(CODE_COVERAGE "Enable code coverage instrumentation" ON)
 option(ENABLE_TESTS "Enable tests" ON)
 option(PRECOMPILE_HEADERS "Use precompiled headers" OFF)
 option(BUILD_NATIVE "Build for current host only" ON)
+option(USE_GOLD_LINKER "link with gold" ON)
 option(ASAN "address sanitization" OFF)
 option(TSAN "thread sanitization" OFF)
 option(MSAN "memory sanitization" OFF)
@@ -99,12 +83,21 @@ set(Link_Clang "$<LINK_LANG_AND_ID:CXX,AppleClang,Clang>")
 set(Link_Gcc "$<COMPILE_LANG_AND_ID:CXX,GNU>")
 set(Link_GccOrClang "$<LINK_LANG_AND_ID:CXX,AppleClang,Clang,GNU>")
 
-# Define an option to specify the llvm-cov executable name
-set(LLVM_COV_EXECUTABLE "llvm-cov-19 gcov" CACHE STRING "Specify the llvm-cov executable name")
-
 # add lots of debug info to Debug builds
 set(CMAKE_CXX_FLAGS_DEBUG_INIT "-O0 -g3 -ggdb3 -gcolumn-info -gembed-source")
 
+include(CheckCXXCompilerFlag)
+
+find_program(GOLD_LINKER ld.gold)
+check_cxx_compiler_flag("-fuse-ld=gold" HAS_GOLD_FLAG)
+
+set(AGGRESSIVE_LINKER_FLAGS
+  "$<IF:$<AND:$<BOOL:${GOLD_LINKER}>,$<BOOL:${USE_GOLD_LINKER}>,$<BOOL:${HAS_GOLD_FLAG}>>,-fuse-ld=gold;-Wl\,--icf=all>;-Wl,--gc-sections;-Wl,--as-needed;-Wl,--relax;-Wl,--sort-common;-Wl,--hash-style=gnu;-Wl,-O2" # ;-Wl,--strip-debug
+)
+
+function(enable_aggressive_linking TARGET)
+  target_link_options(${TARGET} PRIVATE ${AGGRESSIVE_LINKER_FLAGS})
+endfunction()
 
 # Use the restrict keyword check
 message(STATUS "Detected restrict: ${RESTRICT_KEYWORD}")
@@ -158,15 +151,6 @@ endif(UBSAN)
 # macros
 # ====================================================================
 
-macro(cover)
-  foreach(name IN LISTS ARGN)
-    target_compile_options(${name} PRIVATE
-      $<$<AND:$<BOOL:${CODE_COVERAGE}>,$<CXX_COMPILER_ID:Clang>>:-fprofile-instr-generate;-fcoverage-mapping>
-    )
-  endforeach()
-endmacro()
-
-
 # exclude targets from the 'all' target, so they have to be explicitly called for
 macro(exclude)
   foreach(name IN LISTS ARGN)
@@ -186,11 +170,11 @@ macro(lto)
 endmacro()
 
 # slight output size optimization
-macro(gc_sections)
-  foreach(name IN LISTS ARGN)
-    target_link_options(${name} PRIVATE $<${Link_GccOrClang}:-Wl,--gc-sections>)
-  endforeach()
-endmacro()
+#macro(gc_sections)
+#  foreach(name IN LISTS ARGN)
+#    target_link_options(${name} PRIVATE $<${Link_GccOrClang}:-Wl,--gc-sections>)
+#  endforeach()
+#endmacro()
 
 # third-party
 # ====================================================================
@@ -281,20 +265,3 @@ endif()
 
 add_subdirectory(src)
 add_subdirectory(doc)
-
-# Code Coverage
-# ====================================================================
-
-# If CODE_COVERAGE is enabled, add a custom target to generate coverage reports
-if(CODE_COVERAGE)
-  message(STATUS "Code coverage instrumentation enabled")
-  add_custom_target(coverage
-    COMMAND llvm-profdata merge -sparse default.profraw -o coverage.profdata
-    COMMAND ${LLVM_COV_EXECUTABLE} export --format=lcov --instr-profile=coverage.profdata $(find . -name "*.cpp.o") > coverage.info
-    COMMAND genhtml coverage.info --output-directory coverage-report
-    WORKING_DIRECTORY ${CMAKE_BINARY_DIR}
-    COMMENT "Generating code coverage report"
-  )
-else()
-  message(STATUS "Code coverage instrumentation disabled")
-endif()
