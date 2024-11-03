@@ -11,6 +11,5 @@ var searchData=
   ['size_8',['size',['../classein_1_1basic__static__string.html#aa740788e6dee78450edf20daf962e033',1,'ein::basic_static_string']]],
   ['start_9',['start',['../structein_1_1profiling_1_1duration__event.html#a03127e8d306e53b5bdc1924382656390',1,'ein::profiling::duration_event']]],
   ['static_5fc_5fstring_10',['static_c_string',['../classein_1_1static__c__string.html#ad815e594eae67ca54fe91dd20bb68fde',1,'ein::static_c_string::static_c_string() noexcept=default'],['../classein_1_1static__c__string.html#aefa94e0060288e2b869f1caacb9bffcd',1,'ein::static_c_string::static_c_string(static_c_string const &amp;) noexcept=default'],['../classein_1_1static__c__string.html#a55e5bfa66a25cc2b360e4e6c9a8bdd37',1,'ein::static_c_string::static_c_string(static_c_string &amp;&amp;) noexcept=default'],['../classein_1_1static__c__string.html#a9eb47f37ab53c9798e9cd8dbf0e79f16',1,'ein::static_c_string::static_c_string(static_string x) noexcept']]],
-  ['stop_11',['stop',['../structein_1_1profiling_1_1duration__event.html#a5ca7a925690a5fea899d9486ad2206da',1,'ein::profiling::duration_event']]],
-  ['stream_5fload_12',['stream_load',['../group__simd.html#a46c1b89940d707f5c9013599bac488ba',1,'ein::simd::stream_load()'],['../group__simd.html#gaf84aa0909d95f9faf66f5ee344285677',1,'ein::stream_load()']]]
+  ['stop_11',['stop',['../structein_1_1profiling_1_1duration__event.html#a5ca7a925690a5fea899d9486ad2206da',1,'ein::profiling::duration_event']]]
 ];

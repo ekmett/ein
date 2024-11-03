@@ -5,9 +5,9 @@ var searchData=
   ['reference_2',['reference',['../classein_1_1basic__static__string.html#a56104c0e0bd5b06b04182eb291323f44',1,'ein::basic_static_string::reference'],['../classein_1_1static__c__string.html#a5871bb863303d490cc25fa9e75590786',1,'ein::static_c_string::reference']]],
   ['reify_3',['reify',['../structein_1_1reify.html',1,'ein']]],
   ['rend_4',['rend',['../group__simd.html#a5018ddf2ac105f8189d8a72a66871545',1,'ein::simd::rend() noexcept'],['../group__simd.html#a193a4e4fc431d56648eb45bc364ece3e',1,'ein::simd::rend() const noexcept'],['../classein_1_1basic__static__string.html#ac39cc829f7f24afa99fe5882238efb9d',1,'ein::basic_static_string::rend()'],['../classein_1_1static__c__string.html#ad6c32ca8def63c5176034db5f7a8d7de',1,'ein::static_c_string::rend()']]],
-  ['reporting_20a_20vulnerability_5',['Reporting a Vulnerability',['../security_policy_page.html#autotoc_md16',1,'']]],
-  ['reproduction_20and_20distribution_6',['Terms and Conditions for use, reproduction, and distribution',['../license_page.html#autotoc_md2',1,'']]],
-  ['responsibilities_7',['Enforcement Responsibilities',['../code_of_conduct_page.html#autotoc_md6',1,'']]],
+  ['reporting_20a_20vulnerability_5',['Reporting a Vulnerability',['../security_policy_page.html#autotoc_md20',1,'']]],
+  ['reproduction_20and_20distribution_6',['Terms and Conditions for use, reproduction, and distribution',['../license_page.html#autotoc_md17',1,'']]],
+  ['responsibilities_7',['Enforcement Responsibilities',['../code_of_conduct_page.html#autotoc_md2',1,'']]],
   ['reverse_5fiterator_8',['reverse_iterator',['../classein_1_1basic__static__string.html#a90012fb5cdcb49f70ef6696abe150c2f',1,'ein::basic_static_string::reverse_iterator'],['../classein_1_1static__c__string.html#acfd3581ec9bdaffefd7324f2fa9c5fbc',1,'ein::static_c_string::reverse_iterator']]],
   ['round_5ferror_9',['round_error',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html#a95708121ee9a2d4d266ecad2f02a5e67',1,'std::numeric_limits&lt; ein::bf16 &gt;::round_error()'],['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a87140e8974f4c8bc4086e93f0df4edf0',1,'std::numeric_limits&lt; ein::fp16 &gt;::round_error()']]],
   ['round_5fstyle_10',['round_style',['../classstd_1_1numeric__limits_3_01ein_1_1bf16_01_4.html#af4d647586a42d40fba9e0f0bf1444e83',1,'std::numeric_limits&lt; ein::bf16 &gt;::round_style'],['../classstd_1_1numeric__limits_3_01ein_1_1fp16_01_4.html#a362e22310bd1b29669657c2c8436d8c9',1,'std::numeric_limits&lt; ein::fp16 &gt;::round_style']]]

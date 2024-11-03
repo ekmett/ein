@@ -181,7 +181,7 @@ $(function(){initNavTree('namespaceein.html',''); initResizable(true); });
 <a href="#enum-members">Enumerations</a> &#124;
 <a href="#func-members">Functions</a> &#124;
 <a href="#var-members">Variables</a>  </div>
-  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__simd.html">SIMD</a> &#124; <a class="el" href="group__types.html">Types</a></div></div></div>
+  <div class="headertitle"><div class="title">ein Namespace Reference<div class="ingroups"><a class="el" href="group__types.html">Types</a></div></div></div>
 </div><!--header-->
 <div class="contents">
 <table class="memberdecls">
@@ -551,23 +551,6 @@ requires has_simd_type&lt;T,<a class="el" href="group__simd.html#gae9b13b1a14965
 <tr class="memitem:ga6def18561a39ff4a1188bc619f86d862"><td class="memTemplItemLeft" align="right" valign="top">&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga6def18561a39ff4a1188bc619f86d862">simd</a> (T) -&gt; simd&lt; T, has_simd_type&lt; T, <a class="el" href="group__simd.html#gae9b13b1a14965d4f917ac518e18450e4">max_simd_size</a>/sizeof(T)&gt; &gt;</td></tr>
 <tr class="memdesc:ga6def18561a39ff4a1188bc619f86d862"><td class="mdescLeft">&#160;</td><td class="mdescRight">default to max simd size for broadcast  <br /></td></tr>
 <tr class="separator:ga6def18561a39ff4a1188bc619f86d862"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr><td colspan="2"><div class="groupHeader">loads</div></td></tr>
-<tr class="memitem:gad2e79d4163046939c2ae3473a9069bb6" id="r_gad2e79d4163046939c2ae3473a9069bb6"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:gad2e79d4163046939c2ae3473a9069bb6"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gad2e79d4163046939c2ae3473a9069bb6">load</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
-<tr class="memdesc:gad2e79d4163046939c2ae3473a9069bb6"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from aligned memory  <br /></td></tr>
-<tr class="separator:gad2e79d4163046939c2ae3473a9069bb6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaed90a3dee286dda1af9ca5f28513bc3a" id="r_gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gaed90a3dee286dda1af9ca5f28513bc3a">loadu</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
-<tr class="memdesc:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory  <br /></td></tr>
-<tr class="separator:gaed90a3dee286dda1af9ca5f28513bc3a"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ga4ded656b3d1da0d7acd986b7acf789a1" id="r_ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#ga4ded656b3d1da0d7acd986b7acf789a1">lddqu</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
-<tr class="memdesc:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="mdescLeft">&#160;</td><td class="mdescRight">load <code>data</code> from unaligned memory, optimized for crossing cachelines (legacy approach)  <br /></td></tr>
-<tr class="separator:ga4ded656b3d1da0d7acd986b7acf789a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:gaf84aa0909d95f9faf66f5ee344285677" id="r_gaf84aa0909d95f9faf66f5ee344285677"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
-<tr class="memitem:gaf84aa0909d95f9faf66f5ee344285677"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gaf84aa0909d95f9faf66f5ee344285677">stream_load</a> (auto const *data) noexcept -&gt; <a class="el" href="group__simd.html#structein_1_1simd">simd</a>&lt; std::remove_cvref_t&lt; decltype(*data)&gt;, N &gt;</td></tr>
-<tr class="memdesc:gaf84aa0909d95f9faf66f5ee344285677"><td class="mdescLeft">&#160;</td><td class="mdescRight">stream <code>data</code> from memory non-temporally, bypassing cache  <br /></td></tr>
-<tr class="separator:gaf84aa0909d95f9faf66f5ee344285677"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr><td colspan="2"><div class="groupHeader">shuffles</div></td></tr>
 <tr class="memitem:gac2c105a2927f9ca9e44820eb74633c12" id="r_gac2c105a2927f9ca9e44820eb74633c12"><td class="memTemplParams" colspan="2">template&lt;size_t ... is&gt; </td></tr>
 <tr class="memitem:gac2c105a2927f9ca9e44820eb74633c12"><td class="memTemplItemLeft" align="right" valign="top">auto&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="group__simd.html#gac2c105a2927f9ca9e44820eb74633c12">shuffle</a> (simd_type auto x)</td></tr>

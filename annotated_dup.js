@@ -21,6 +21,8 @@ var annotated_dup =
         [ "simd_intrinsic< double, N >", "group__simd.html#structein_1_1detail_1_1simd__intrinsic_3_01double_00_01N_01_4", "group__simd_structein_1_1detail_1_1simd__intrinsic_3_01double_00_01N_01_4" ],
         [ "simd_intrinsic< float, N >", "group__simd.html#structein_1_1detail_1_1simd__intrinsic_3_01float_00_01N_01_4", "group__simd_structein_1_1detail_1_1simd__intrinsic_3_01float_00_01N_01_4" ],
         [ "simd_intrinsic< T, N >", "group__simd.html#structein_1_1detail_1_1simd__intrinsic_3_01T_00_01N_01_4", "group__simd_structein_1_1detail_1_1simd__intrinsic_3_01T_00_01N_01_4" ],
+        [ "simd_type_impl", "structein_1_1detail_1_1simd__type__impl.html", null ],
+        [ "simd_type_impl< simd< T, N > >", "structein_1_1detail_1_1simd__type__impl_3_01simd_3_01T_00_01N_01_4_01_4.html", null ],
         [ "storage_type_impl", "group__simd.html#structein_1_1detail_1_1storage__type__impl", "group__simd_structein_1_1detail_1_1storage__type__impl" ],
         [ "storage_type_impl< bf16 >", "group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01bf16_01_4", "group__simd_structein_1_1detail_1_1storage__type__impl_3_01bf16_01_4" ],
         [ "storage_type_impl< fp16 >", "group__simd.html#structein_1_1detail_1_1storage__type__impl_3_01fp16_01_4", "group__simd_structein_1_1detail_1_1storage__type__impl_3_01fp16_01_4" ]
