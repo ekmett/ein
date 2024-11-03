@@ -55,8 +55,9 @@
 #include <unistd.h> // fork
 //#include <sys/wait.h> // wait
 
-TEST_CASE("ein_assert(true) should not exit","[assert]") {
+TEST_CASE("assert","[assert]") {
   ein_assert(true);
+  // REQUIRE_EXIT(ein_assert(false));
 }
 
 // TEST_CASE("ein_assert(false) should exit","[assert]") {

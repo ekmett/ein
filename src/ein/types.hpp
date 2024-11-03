@@ -59,56 +59,57 @@ concept not_one_of_t = (!one_of_t<T,candidates...>);
 
 struct Custom {};
 
-TEST_CASE("type provides correct demangled names","[types]") {
+TEST_CASE("types","[types]") {
   using namespace ein;
-  SECTION("Basic types") {
-    CHECK("int"s == type<int>);
-    CHECK("double"s == type<double>);
+  SECTION("provides correct demangled names") {
+    SECTION("Basic types") {
+      CHECK("int"s == type<int>);
+      CHECK("double"s == type<double>);
+    }
+
+    SECTION("User-defined types") {
+      CHECK(type<Custom> == "Custom"s);
+    }
+
+    SECTION("Pointers and References") {
+      CHECK(type<int*> == "int*");
+      CHECK(type<int&> == "int");
+      CHECK(type<int&> == "int");
+    }
   }
 
-  SECTION("User-defined types") {
-    CHECK(type<Custom> == "Custom"s);
+  SECTION("type_of extracts type from object") {
+    SECTION("Literals and basic types") {
+      int i = 42;
+      double d = 3.14;
+      CHECK(type_of(i) == "int");
+      CHECK(type_of(d) == "double");
+    }
+
+    SECTION("Constant and reference types") {
+      const int ci = 42;
+      CHECK(type_of(ci) == "int");
+
+      int i = 34;
+      int& ri = i;
+      REQUIRE(type_of(ri) == "int");
+    }
   }
 
-  SECTION("Pointers and References") {
-    CHECK(type<int*> == "int*");
-    CHECK(type<int&> == "int");
-    CHECK(type<int&> == "int");
-  }
-}
-
-TEST_CASE("type_of extracts type from object","[types]") {
-  using namespace ein;
-  SECTION("Literals and basic types") {
-    int i = 42;
-    double d = 3.14;
-    CHECK(type_of(i) == "int");
-    CHECK(type_of(d) == "double");
+  SECTION("one_of_t concept identifies types within list") {
+    using namespace ein;
+    SECTION("Valid and invalid cases") {
+      REQUIRE(one_of_t<int, int, double, float>);
+      REQUIRE_FALSE(one_of_t<char, int, double, float>);
+    }
   }
 
-  SECTION("Constant and reference types") {
-    const int ci = 42;
-    CHECK(type_of(ci) == "int");
-
-    int i = 34;
-    int& ri = i;
-    REQUIRE(type_of(ri) == "int");
-  }
-}
-
-TEST_CASE("one_of_t concept identifies types within list","[types]") {
-  using namespace ein;
-  SECTION("Valid and invalid cases") {
-    REQUIRE(one_of_t<int, int, double, float>);
-    REQUIRE_FALSE(one_of_t<char, int, double, float>);
-  }
-}
-
-TEST_CASE("not_one_of_t concept identifies types outside of list","[types]") {
-  using namespace ein;
-  SECTION("Valid and invalid cases") {
-    REQUIRE(not_one_of_t<char, int, double, float>);
-    REQUIRE_FALSE(not_one_of_t<int, int, double, float>);
+  SECTION("not_one_of_t concept identifies types outside of list") {
+    using namespace ein;
+    SECTION("Valid and invalid cases") {
+      REQUIRE(not_one_of_t<char, int, double, float>);
+      REQUIRE_FALSE(not_one_of_t<int, int, double, float>);
+    }
   }
 }
 #endif
