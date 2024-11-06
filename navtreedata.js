@@ -26,25 +26,25 @@ var NAVTREE =
 [
   [ "ein", "index.html", [
     [ "License", "license_page.html", [
-      [ "BSD 2-Clause License", "license_page.html#autotoc_md6", null ],
-      [ "Apache License", "license_page.html#autotoc_md7", [
-        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md8", null ],
-        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md9", null ]
+      [ "BSD 2-Clause License", "license_page.html#autotoc_md17", null ],
+      [ "Apache License", "license_page.html#autotoc_md18", [
+        [ "Terms and Conditions for use, reproduction, and distribution", "license_page.html#autotoc_md19", null ],
+        [ "APPENDIX: How to apply the Apache License to your work", "license_page.html#autotoc_md20", null ]
       ] ]
     ] ],
     [ "Code of Conduct", "code_of_conduct_page.html", [
-      [ "Our Pledge", "code_of_conduct_page.html#autotoc_md10", null ],
-      [ "Our Standards", "code_of_conduct_page.html#autotoc_md11", null ],
-      [ "Enforcement Responsibilities", "code_of_conduct_page.html#autotoc_md12", null ],
-      [ "Scope", "code_of_conduct_page.html#autotoc_md13", null ],
-      [ "Enforcement", "code_of_conduct_page.html#autotoc_md14", null ],
-      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md15", [
-        [ "Correction", "code_of_conduct_page.html#autotoc_md16", null ],
-        [ "Warning", "code_of_conduct_page.html#autotoc_md17", null ],
-        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md18", null ],
-        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md19", null ]
+      [ "Our Pledge", "code_of_conduct_page.html#autotoc_md6", null ],
+      [ "Our Standards", "code_of_conduct_page.html#autotoc_md7", null ],
+      [ "Enforcement Responsibilities", "code_of_conduct_page.html#autotoc_md8", null ],
+      [ "Scope", "code_of_conduct_page.html#autotoc_md9", null ],
+      [ "Enforcement", "code_of_conduct_page.html#autotoc_md10", null ],
+      [ "Enforcement Guidelines", "code_of_conduct_page.html#autotoc_md11", [
+        [ "Correction", "code_of_conduct_page.html#autotoc_md12", null ],
+        [ "Warning", "code_of_conduct_page.html#autotoc_md13", null ],
+        [ "Temporary Ban", "code_of_conduct_page.html#autotoc_md14", null ],
+        [ "Permanent Ban", "code_of_conduct_page.html#autotoc_md15", null ]
       ] ],
-      [ "Attribution", "code_of_conduct_page.html#autotoc_md20", null ]
+      [ "Attribution", "code_of_conduct_page.html#autotoc_md16", null ]
     ] ],
     [ "Contribution Guidelines", "contributing_page.html", [
       [ "Exceptions", "contributing_page.html#autotoc_md0", null ],

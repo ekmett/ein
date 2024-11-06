@@ -59,7 +59,7 @@ var searchData=
   ['operator_7c_3d_56',['operator|=',['../group__simd.html#a2da7bc430168e5205d7e514d8b3fe8d6',1,'ein::simd']]],
   ['ord_5fq_57',['ORD_Q',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a3b81c807768a0b8bac541c1049c5d3c6',1,'ein']]],
   ['ord_5fs_58',['ORD_S',['../group__numerics.html#gga462cd88db2679129e8c9b418fe426371a70d733e8deddfedf56bef14be8bac670',1,'ein']]],
-  ['our_20pledge_59',['Our Pledge',['../code_of_conduct_page.html#autotoc_md10',1,'']]],
-  ['our_20standards_60',['Our Standards',['../code_of_conduct_page.html#autotoc_md11',1,'']]],
+  ['our_20pledge_59',['Our Pledge',['../code_of_conduct_page.html#autotoc_md6',1,'']]],
+  ['our_20standards_60',['Our Standards',['../code_of_conduct_page.html#autotoc_md7',1,'']]],
   ['override_5fref_5ft_61',['override_ref_t',['../namespacestd_1_1detail.html#aaa168ca4fc4b19e8551e0f07a6e38c7d',1,'std::detail']]]
 ];
