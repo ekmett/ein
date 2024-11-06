@@ -7,7 +7,7 @@ cmake_policy(VERSION ${CMAKE_MAJOR_VERSION}.${CMAKE_MINOR_VERSION})
 
 
 project(ein VERSION 0.0.1 LANGUAGES CXX)
-set(PROJECT_BRIEF "SIMD Tools")
+set(PROJECT_BRIEF "一呼百應, \\\"one call, a hundred responses\\\"")
 
 set(CMAKE_CXX_STANDARD 23)
 set(CMAKE_CXX_STANDARD_REQUIRED TRUE)
