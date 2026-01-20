@@ -10,6 +10,18 @@
 
 #include <unistd.h>
 #include <sys/types.h>
+#include <chrono>
+#include <cstddef>
+#include <filesystem>
+#include <fstream>
+#include <functional>
+#include <iomanip>
+#include <mutex>
+#include <optional>
+#include <string>
+#include <thread>
+#include <utility>
+#include <vector>
 #include <spdlog/spdlog.h>
 #include <nlohmann/json.hpp>
 #include "attributes/common.hpp"
@@ -94,8 +106,8 @@ struct profile_event {
 
 template <typename Duration, typename Clock>
 void to_json(nlohmann::json& j, const profile_event<Duration, Clock> & t) {
-  if (not t.name) j["name"] = t.name;
-  if (not t.cat) j["cat"] = t.cat;
+  if (t.name) j["name"] = t.name;
+  if (t.cat) j["cat"] = t.cat;
   j["ph"] = t.ph;
   j["ts"] = t.ts;
   j["pid"] = t.pid;

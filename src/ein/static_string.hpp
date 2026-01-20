@@ -92,7 +92,7 @@ public:
 
   ein_nodiscard ein_inline ein_pure constexpr
   operator CharT const * () const noexcept {
-    return view.data; // an extra invariant that its null terminated is maintained
+    return view.data(); // an extra invariant that its null terminated is maintained
   }
 
   ein_nodiscard ein_inline ein_pure constexpr
@@ -154,7 +154,7 @@ public:
   bool empty() const noexcept { return view.empty(); }
 
   ein_nodiscard ein_inline ein_pure
-  explicit operator bool () const noexcept { return view; }
+  explicit operator bool () const noexcept { return !view.empty(); }
 
   /// \}
   /// \name comparisons

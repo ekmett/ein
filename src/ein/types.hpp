@@ -12,6 +12,9 @@
 
 #include <string>
 #include <string_view>
+#include <cstdlib>
+#include <memory>
+#include <typeinfo>
 #include <cxxabi.h>
 #include "attributes/common.hpp"
 
@@ -29,9 +32,16 @@ namespace ein {
 template <typename T>
 const string_view type = [] ein_nodiscard ein_const static noexcept -> string_view {
   // nb: copying into string is necessary because the demangled name is ephemeral
-  static const string body = [] ein_nodiscard ein_const static noexcept -> char const * {
-    int status;
-    return abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status);
+  static const string body = [] ein_nodiscard ein_const static noexcept -> string {
+    int status = 0;
+    std::unique_ptr<char, decltype(&std::free)> demangled(
+      abi::__cxa_demangle(typeid(T).name(), nullptr, nullptr, &status),
+      &std::free
+    );
+    if (status != 0 || !demangled) {
+      return typeid(T).name();
+    }
+    return demangled.get();
   }();
   return body;
 }();

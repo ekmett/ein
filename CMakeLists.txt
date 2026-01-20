@@ -103,26 +103,24 @@ endfunction()
 message(STATUS "Detected restrict: ${RESTRICT_KEYWORD}")
 
 if (BUILD_NATIVE)
-  # Check for AVX512 support.
-  execute_process(
-    COMMAND lscpu
-    COMMAND tr '[:space:]' '\\n'
-    COMMAND sort
-    COMMAND uniq
-    COMMAND grep avx512
-    OUTPUT_VARIABLE CPUINFO
+  # Check for AVX512 support without relying on external tools like lscpu.
+  set(_avx512_flags "-mavx512f -mavx512dq -mavx512bw -mavx512vl -mavx512vbmi2")
+  try_compile(
+    AVX512_SUPPORTED
+    "${CMAKE_BINARY_DIR}/cmake/avx512_check"
+    SOURCE_FROM_CONTENT main.cpp
+    "#include <immintrin.h>
+    int main() {
+      __m512i x = _mm512_set1_epi32(1);
+      (void)x;
+      return 0;
+    }"
+    CMAKE_FLAGS "-DCMAKE_CXX_STANDARD=23" "-DCMAKE_CXX_FLAGS=${_avx512_flags}"
   )
-  # Normalize flag names to avoid AMD/Intel discrepancies.
-  string(REPLACE "avx512_vbmi2" "avx512vbmi2" CPUINFO "${CPUINFO}")
-  # Check for AVX512 features required by ein/CMakeLists.txt.
-  set(REQUIRED_AVX512_FEATURES avx512f avx512dq avx512bw avx512vl avx512vbmi2)
-  foreach(FEATURE ${REQUIRED_AVX512_FEATURES})
-    if(NOT "${CPUINFO}" MATCHES "${FEATURE}")
-      set(AVX512 OFF)
-      message(NOTICE "Disabling AVX512: ${FEATURE} not supported")
-      break()
-    endif()
-  endforeach()
+  if (NOT AVX512_SUPPORTED)
+    set(AVX512 OFF)
+    message(NOTICE "Disabling AVX512: compiler/target doesn't support required flags")
+  endif()
 endif()
 
 # sanitizers
